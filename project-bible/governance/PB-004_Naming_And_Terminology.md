@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.4.0
+version: 0.4.1
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -744,17 +744,23 @@ Der Begriff trennt anpassbare Vorgaben von fachlichen Definitionen, laufendem Ga
 
 ## 4. Politische Terminologie
 
-Dieses Kapitel definiert die grundlegenden politischen Begriffe des Projekts. Die Begriffe bezeichnen ausschließlich politische Konzepte; ihre Definitionen legen weder Gameplayregeln noch Implementierung oder Balancing fest.
+Die politischen Begriffe sind nach ihren logischen Domänen gruppiert, damit ihre fachlichen Zusammenhänge unmittelbar erkennbar bleiben. Begriffe innerhalb einer Gruppe stehen in enger Beziehung zueinander und sollen deshalb gemeinsam gelesen und abgegrenzt werden.
 
-## Government
+Die Reihenfolge ist bewusst hierarchisch gewählt: Sie führt von politischen Entitäten über Staatsorganisation, Staatsorgane und politische Akteure zu übergreifenden politischen Konzepten. Spätere Dokumente MUST diese Terminologie und ihre begrifflichen Abgrenzungen übernehmen.
+
+Dieses Kapitel definiert ausschließlich politische Konzepte; ihre Definitionen legen weder Gameplayregeln noch Implementierung oder Balancing fest.
+
+## 4.1 Politische Entitäten
+
+## Country
 
 ### Definition
 
-Ein `Government` ist die Gesamtheit der Personen und Organe, die innerhalb eines State zu einem bestimmten Zeitpunkt dessen oberste politische Leitungs- und Entscheidungsfunktionen ausüben.
+Ein `Country` ist eine als Einheit betrachtete Verbindung aus Gebiet, Bevölkerung und politischer Ordnung, die in politischen und internationalen Zusammenhängen als eigenständiger Akteur referenziert wird.
 
 ### Zweck
 
-Der Begriff bezeichnet die jeweils handelnde politische Führung und grenzt sie von der dauerhaften politischen Ordnung und ihren Einrichtungen ab.
+Der Begriff stellt die gemeinsame Bezeichnung für die territorial-politische Gesamteinheit bereit, ohne sie auf State, Government oder Nation zu reduzieren.
 
 ### Verwendung
 
@@ -763,20 +769,21 @@ Der Begriff bezeichnet die jeweils handelnde politische Führung und grenzt sie 
 - Savegames
 - UI
 - Modding
+- APIs
 - Dokumentation
 
 ### Darf nicht verwechselt werden mit
 
-- `State`: ist die dauerhafte politische und rechtliche Organisation.
-- `Regime`: bezeichnet die grundlegende Ordnung politischer Herrschaft.
+- `State`: bezeichnet die dauerhafte politische und rechtliche Organisation.
+- `Government`: bezeichnet die gegenwärtige politische Führung.
+- `Nation`: bezeichnet eine kollektive Identität.
 
 ### Verwandte Begriffe
 
 - State
-- Regime
-- Cabinet
-- Executive
-- Head of Government
+- Government
+- Nation
+- Sovereignty
 
 ### Referenzen
 
@@ -859,15 +866,15 @@ Der Begriff bezeichnet kollektive Zugehörigkeit, ohne sie mit einer staatlichen
 - PB-002
 - PB-003
 
-## Country
+## Government
 
 ### Definition
 
-Ein `Country` ist eine als Einheit betrachtete Verbindung aus Gebiet, Bevölkerung und politischer Ordnung, die in politischen und internationalen Zusammenhängen als eigenständiger Akteur referenziert wird.
+Ein `Government` ist die Gesamtheit der Personen und Organe, die innerhalb eines State zu einem bestimmten Zeitpunkt dessen oberste politische Leitungs- und Entscheidungsfunktionen ausüben.
 
 ### Zweck
 
-Der Begriff stellt die gemeinsame Bezeichnung für die territorial-politische Gesamteinheit bereit, ohne sie auf State, Government oder Nation zu reduzieren.
+Der Begriff bezeichnet die jeweils handelnde politische Führung und grenzt sie von der dauerhaften politischen Ordnung und ihren Einrichtungen ab.
 
 ### Verwendung
 
@@ -876,21 +883,20 @@ Der Begriff stellt die gemeinsame Bezeichnung für die territorial-politische Ge
 - Savegames
 - UI
 - Modding
-- APIs
 - Dokumentation
 
 ### Darf nicht verwechselt werden mit
 
-- `State`: bezeichnet die dauerhafte politische und rechtliche Organisation.
-- `Government`: bezeichnet die gegenwärtige politische Führung.
-- `Nation`: bezeichnet eine kollektive Identität.
+- `State`: ist die dauerhafte politische und rechtliche Organisation.
+- `Regime`: bezeichnet die grundlegende Ordnung politischer Herrschaft.
 
 ### Verwandte Begriffe
 
 - State
-- Government
-- Nation
-- Sovereignty
+- Regime
+- Cabinet
+- Executive
+- Head of Government
 
 ### Referenzen
 
@@ -934,6 +940,8 @@ Der Begriff bezeichnet die beständige Struktur politischer Herrschaft jenseits 
 
 - PB-002
 - PB-003
+
+## 4.2 Staatsorganisation
 
 ## Constitution
 
@@ -1040,6 +1048,81 @@ Der Begriff bezeichnet verbindliche politische und rechtliche Vorgaben unterhalb
 - Judiciary
 - Authority
 - Institution
+
+### Referenzen
+
+- PB-002
+- PB-003
+
+## 4.3 Staatsorgane
+
+## Head of State
+
+### Definition
+
+Der `Head of State` ist das Amt, das einen State in seiner obersten institutionellen Kontinuität und Repräsentation verkörpert.
+
+### Zweck
+
+Der Begriff bezeichnet die staatliche Spitzenfunktion unabhängig davon, ob sie mit der Leitung des Government verbunden ist.
+
+### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Head of Government`: leitet das Government.
+- `Government`: ist die Gesamtheit der gegenwärtigen politischen Führung.
+
+### Verwandte Begriffe
+
+- State
+- Government
+- Head of Government
+- Constitution
+- Authority
+
+### Referenzen
+
+- PB-002
+- PB-003
+
+## Head of Government
+
+### Definition
+
+Der `Head of Government` ist das Amt, dem die politische Leitung und Koordination des Government zugeordnet ist.
+
+### Zweck
+
+Der Begriff bezeichnet die führende Regierungsfunktion unabhängig von ihrer Amtsbezeichnung oder ihrer Verbindung mit dem Head of State.
+
+### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Head of State`: verkörpert die oberste institutionelle Kontinuität und Repräsentation des State.
+- `Cabinet`: ist ein kollegiales Leitungsgremium.
+
+### Verwandte Begriffe
+
+- Government
+- Cabinet
+- Head of State
+- Executive
 
 ### Referenzen
 
@@ -1267,78 +1350,7 @@ Der Begriff bezeichnet die rechtsprechende Staatsfunktion unabhängig von ihrer 
 - PB-002
 - PB-003
 
-## Head of State
-
-### Definition
-
-Der `Head of State` ist das Amt, das einen State in seiner obersten institutionellen Kontinuität und Repräsentation verkörpert.
-
-### Zweck
-
-Der Begriff bezeichnet die staatliche Spitzenfunktion unabhängig davon, ob sie mit der Leitung des Government verbunden ist.
-
-### Verwendung
-
-- Game Design
-- Engine
-- Savegames
-- UI
-- Modding
-- Dokumentation
-
-### Darf nicht verwechselt werden mit
-
-- `Head of Government`: leitet das Government.
-- `Government`: ist die Gesamtheit der gegenwärtigen politischen Führung.
-
-### Verwandte Begriffe
-
-- State
-- Government
-- Head of Government
-- Constitution
-- Authority
-
-### Referenzen
-
-- PB-002
-- PB-003
-
-## Head of Government
-
-### Definition
-
-Der `Head of Government` ist das Amt, dem die politische Leitung und Koordination des Government zugeordnet ist.
-
-### Zweck
-
-Der Begriff bezeichnet die führende Regierungsfunktion unabhängig von ihrer Amtsbezeichnung oder ihrer Verbindung mit dem Head of State.
-
-### Verwendung
-
-- Game Design
-- Engine
-- Savegames
-- UI
-- Modding
-- Dokumentation
-
-### Darf nicht verwechselt werden mit
-
-- `Head of State`: verkörpert die oberste institutionelle Kontinuität und Repräsentation des State.
-- `Cabinet`: ist ein kollegiales Leitungsgremium.
-
-### Verwandte Begriffe
-
-- Government
-- Cabinet
-- Head of State
-- Executive
-
-### Referenzen
-
-- PB-002
-- PB-003
+## 4.4 Politische Akteure
 
 ## Political Party
 
@@ -1523,6 +1535,8 @@ Der Begriff bezeichnet koordinierte politische Zusammenarbeit, ohne die beteilig
 
 - PB-002
 - PB-003
+
+## 4.5 Politische Konzepte
 
 ## Ideology
 
