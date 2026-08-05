@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.2.0
+version: 0.3.0
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -136,3 +136,608 @@ Spätere, ausdrücklich als kanonisch geführte Begriffsdefinitionen in PB-004 s
 Bei einem terminologischen Konflikt hat PB-004 Vorrang vor Chats, Kommentaren, Tickets, Entwürfen, Beispielen und sonstigen informellen oder nicht-kanonischen Quellen. Konflikte mit anderen kanonischen Dokumenten MUST gemäß PB-000 ausdrücklich aufgelöst werden; PB-004 überschreibt sie nicht stillschweigend.
 
 Die Wörter **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT** und **MAY** behalten in allen späteren Abschnitten von PB-004 die in PB-000 definierte normative Bedeutung. Beschreibende Beispiele, Übersetzungen und Erläuterungen erzeugen ohne ausdrückliche normative Festlegung keine zusätzlichen Begriffe oder Ausnahmen.
+
+## 3. Allgemeine Kernbegriffe
+
+Dieses Kapitel bildet das begriffliche Fundament für alle weiteren Terminologiebereiche von PB-004. Ab diesem Kapitel MUST jeder neu aufgenommene Begriff exakt die nachfolgend verwendete Abschnittsfolge besitzen: `Definition`, `Zweck`, `Verwendung`, optional `Darf nicht verwechselt werden mit`, `Verwandte Begriffe` und `Referenzen`. Abschnitte dürfen weder umbenannt noch durch begriffsspezifische Strukturen ersetzt werden. `Verwandte Begriffe` enthält ausschließlich Verweise auf Begriffe, `Referenzen` ausschließlich Dokument-IDs.
+
+## World
+
+### Definition
+
+Die `World` ist die Gesamtheit aller innerhalb eines laufenden Spielzusammenhangs berücksichtigten Räume, Akteure, Zustände und Beziehungen. Sie bildet den Bezugsraum, in dem eine `Simulation` stattfindet.
+
+### Zweck
+
+Der Begriff grenzt den vollständigen betrachteten Zusammenhang von einzelnen Inhalten, Zustandsausschnitten und deren zeitlicher Entwicklung ab.
+
+### Verwendung
+
+- Game Design
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Scenario`: definiert die Ausgangsbedingungen und Vorgaben einer World.
+- `Game State`: beschreibt den Zustand einer World zu einem bestimmten Zeitpunkt.
+
+### Verwandte Begriffe
+
+- Scenario
+- Simulation
+- Game State
+- Entity
+
+### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+## Scenario
+
+### Definition
+
+Ein `Scenario` ist eine in sich geschlossene Festlegung der für einen Spielbeginn verfügbaren Inhalte, Regeln, Ausgangsbedingungen und zeitlichen Einordnung. Es MUST von den allgemeinen Grundlagen des Projekts trennbar bleiben.
+
+### Zweck
+
+Der Begriff bezeichnet den austauschbaren Rahmen, aus dem eine konkrete World initial hervorgehen kann, ohne diesen Rahmen mit der allgemeinen Produkt- oder Systemidentität gleichzusetzen.
+
+### Verwendung
+
+- Game Design
+- Savegames
+- UI
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `World`: umfasst den tatsächlich betrachteten und fortgeschriebenen Spielzusammenhang.
+- `Campaign`: ist der fortlaufende Spielverlauf auf Grundlage eines Scenario.
+
+### Verwandte Begriffe
+
+- World
+- Campaign
+- Timeline
+- Calendar
+- Configuration
+
+### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+## Campaign
+
+### Definition
+
+Eine `Campaign` ist ein zusammenhängender, fortlaufender Spielverlauf, der auf einem Scenario beruht und die Entwicklung seiner World über die Zeit umfasst.
+
+### Zweck
+
+Der Begriff bezeichnet die dauerhafte Kontinuität eines begonnenen Spiels einschließlich seines individuellen Verlaufs.
+
+### Verwendung
+
+- Game Design
+- Savegames
+- UI
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Scenario`: legt den Rahmen und die Ausgangsbedingungen fest.
+- `Timeline`: ordnet zeitbezogene Zustände und Vorgänge.
+
+### Verwandte Begriffe
+
+- Scenario
+- World
+- Timeline
+- Game State
+
+### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+## Timeline
+
+### Definition
+
+Eine `Timeline` ist die geordnete zeitliche Achse, auf der Zustände und Vorgänge einer World eingeordnet werden. Sie bestimmt deren Reihenfolge und zeitliche Lage, ohne selbst deren fachliche Wirkung festzulegen.
+
+### Zweck
+
+Der Begriff stellt einen gemeinsamen zeitlichen Bezugsrahmen für Verlauf, Vergleich und Nachvollziehbarkeit bereit.
+
+### Verwendung
+
+- Game Design
+- Savegames
+- UI
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Calendar`: bildet Positionen einer Timeline auf benannte Zeiteinheiten ab.
+- `Campaign`: umfasst den gesamten zusammenhängenden Spielverlauf.
+
+### Verwandte Begriffe
+
+- Calendar
+- Date
+- Tick
+- Time Step
+- Campaign
+
+### Referenzen
+
+- PB-002
+- PB-003
+
+## Calendar
+
+### Definition
+
+Ein `Calendar` ist ein Regelsystem zur Gliederung und Benennung von Positionen auf einer Timeline. Er legt fest, wie zeitliche Positionen als Dates ausgedrückt werden.
+
+### Zweck
+
+Der Begriff ermöglicht eine einheitliche, für Inhalte und Darstellung nutzbare zeitliche Einordnung.
+
+### Verwendung
+
+- Game Design
+- Savegames
+- UI
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Timeline`: ist die zugrunde liegende zeitliche Achse.
+- `Date`: bezeichnet eine einzelne Position gemäß einem Calendar.
+
+### Verwandte Begriffe
+
+- Timeline
+- Date
+- Scenario
+
+### Referenzen
+
+- PB-000
+- PB-002
+
+## Date
+
+### Definition
+
+Ein `Date` ist die eindeutige Bezeichnung einer zeitlichen Position gemäß einem bestimmten Calendar.
+
+### Zweck
+
+Der Begriff erlaubt es, Zustände und Vorgänge auf einer Timeline eindeutig zu verorten und verständlich darzustellen.
+
+### Verwendung
+
+- Game Design
+- Savegames
+- UI
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Calendar`: definiert das Regelsystem der zeitlichen Bezeichnung.
+- `Tick`: bezeichnet einen diskreten Fortschritt der Simulation.
+
+### Verwandte Begriffe
+
+- Calendar
+- Timeline
+- Tick
+
+### Referenzen
+
+- PB-000
+- PB-002
+
+## Tick
+
+### Definition
+
+Ein `Tick` ist ein einzelner, diskreter Fortschritt der Simulation entlang ihrer Timeline. Er bezeichnet eine Ordnungsposition des Simulationsfortschritts und keine festgelegte kalendarische Dauer.
+
+### Zweck
+
+Der Begriff schafft eine eindeutige Einheit für die Reihenfolge diskreter Simulationsfortschritte.
+
+### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- APIs
+- Modding
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Time Step`: bezeichnet den zeitlichen Umfang eines Simulationsfortschritts.
+- `Date`: bezeichnet eine Position gemäß einem Calendar.
+
+### Verwandte Begriffe
+
+- Time Step
+- Timeline
+- Date
+- Simulation
+
+### Referenzen
+
+- PB-002
+- PB-003
+- TECH-100
+
+## Time Step
+
+### Definition
+
+Ein `Time Step` ist der zeitliche Umfang, um den eine Simulation bei einem Fortschritt weitergeführt wird. Seine Größe ist nicht durch den Begriff selbst festgelegt.
+
+### Zweck
+
+Der Begriff trennt die verarbeitete Zeitspanne von der bloßen Reihenfolge einzelner Simulationsfortschritte.
+
+### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Tick`: bezeichnet den einzelnen diskreten Simulationsfortschritt.
+- `Date`: bezeichnet eine kalendarisch ausgedrückte zeitliche Position.
+
+### Verwandte Begriffe
+
+- Tick
+- Timeline
+- Calendar
+- Simulation
+
+### Referenzen
+
+- PB-002
+- PB-003
+- TECH-100
+
+## Simulation
+
+### Definition
+
+Die `Simulation` ist die autoritative, regelgebundene Fortschreibung des Game State über die Zeit. Sie bestimmt zulässige Zustandsänderungen und deren verbindliche Ergebnisse.
+
+### Zweck
+
+Der Begriff bezeichnet die Instanz fachlicher Autorität, durch die die World konsistent fortgeführt und Auswirkungen nachvollziehbar bestimmt werden.
+
+### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `System`: trägt einen abgegrenzten Teil der Regeln und Zuständigkeiten bei.
+- `Game State`: ist der autoritative Zustand, den die Simulation fortschreibt.
+
+### Verwandte Begriffe
+
+- Game State
+- World
+- System
+- Tick
+- Time Step
+
+### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+## Game State
+
+### Definition
+
+Der `Game State` ist die vollständige Menge der zu einem bestimmten Simulationszeitpunkt autoritativ geltenden und für die Fortführung relevanten Zustandsinformationen einer Campaign.
+
+### Zweck
+
+Der Begriff grenzt verbindlichen Simulationszustand von Darstellung, Erzählung, abgeleiteten Informationen und unverbindlichen Vorschlägen ab.
+
+### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `World`: ist der gesamte betrachtete Spielzusammenhang.
+- `Data`: bezeichnet Informationen unabhängig von ihrer Autorität oder Rolle.
+- `Configuration`: beeinflusst Verhalten, ist aber nicht allein deshalb Teil des laufenden Zustands.
+
+### Verwandte Begriffe
+
+- Simulation
+- Campaign
+- World
+- Entity
+- Data
+
+### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+## Entity
+
+### Definition
+
+Eine `Entity` ist ein innerhalb des Projekts eindeutig unterscheidbarer Gegenstand, dem Zustand, Eigenschaften oder Beziehungen zugeordnet werden können. Der Begriff setzt keine bestimmte technische Repräsentation oder Architektur voraus.
+
+### Zweck
+
+Der Begriff stellt eine gemeinsame Bezeichnung für einzeln referenzierbare fachliche Gegenstände bereit.
+
+### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Identifier`: bezeichnet eine stabile Referenz auf einen Gegenstand, nicht den Gegenstand selbst.
+- `Module`: ist eine abgegrenzte organisatorische Einheit.
+
+### Verwandte Begriffe
+
+- Identifier
+- Game State
+- Data
+- World
+
+### Referenzen
+
+- PB-000
+- PB-002
+- PB-003
+- TECH-100
+
+## Identifier
+
+### Definition
+
+Ein `Identifier` ist eine innerhalb seines festgelegten Geltungsbereichs eindeutige und stabile Referenz auf genau einen bestimmten Gegenstand. Seine konkrete Syntax und Vergaberegeln werden durch den jeweils zuständigen Standard festgelegt.
+
+### Zweck
+
+Der Begriff ermöglicht eindeutige, dauerhafte und bereichsübergreifend nachvollziehbare Referenzen.
+
+### Verwendung
+
+- Engine
+- Savegames
+- UI
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Entity`: ist der referenzierte Gegenstand.
+- Anzeigename: dient der menschlichen Darstellung und muss nicht eindeutig oder stabil sein.
+
+### Verwandte Begriffe
+
+- Entity
+- Data
+- Configuration
+
+### Referenzen
+
+- PB-000
+- PB-004
+- PB-006
+
+## System
+
+### Definition
+
+Ein `System` ist eine fachlich abgegrenzte Gesamtheit zusammengehöriger Regeln, Zuständigkeiten, Zustände und Beziehungen, die einen bestimmten Teil des Projekts beschreibt oder trägt. Ein System ist unabhängig von seiner späteren technischen Aufteilung definiert.
+
+### Zweck
+
+Der Begriff schafft stabile fachliche Grenzen für Entwurf, Verantwortung, Abhängigkeiten und Dokumentation.
+
+### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Module`: gliedert Artefakte organisatorisch oder technisch.
+- `Simulation`: führt den autoritativen Game State unter Beteiligung von Systemen fort.
+
+### Verwandte Begriffe
+
+- Module
+- Simulation
+- Game State
+- Configuration
+
+### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+- TECH-100
+
+## Module
+
+### Definition
+
+Ein `Module` ist eine abgegrenzte, benannte Einheit von zusammengehörigen Artefakten mit festgelegter Verantwortung. Seine Grenze dient der Strukturierung und begründet keine eigenständige fachliche Bedeutung.
+
+### Zweck
+
+Der Begriff ermöglicht eine klare organisatorische Aufteilung und Zuordnung von Verantwortlichkeiten, ohne fachliche Systemgrenzen vorwegzunehmen.
+
+### Verwendung
+
+- Engine
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `System`: bezeichnet eine fachliche Gesamtheit unabhängig von ihrer technischen oder organisatorischen Aufteilung.
+- `Entity`: bezeichnet einen einzeln referenzierbaren Gegenstand.
+
+### Verwandte Begriffe
+
+- System
+- Data
+- Configuration
+
+### Referenzen
+
+- PB-000
+- PB-003
+- TECH-100
+
+## Data
+
+### Definition
+
+`Data` sind formal darstellbare Informationen, die im Projekt gespeichert, übertragen, ausgewertet oder dargestellt werden können. Der Begriff legt weder Autorität noch Herkunft, Lebensdauer oder technische Repräsentation dieser Informationen fest.
+
+### Zweck
+
+Der Begriff stellt eine neutrale gemeinsame Bezeichnung für verarbeitbare Informationen bereit.
+
+### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Game State`: ist die autoritative Teilmenge der für die Fortführung einer Campaign relevanten Zustandsinformationen.
+- `Configuration`: besteht aus Vorgaben, die zulässiges oder gewünschtes Verhalten festlegen.
+
+### Verwandte Begriffe
+
+- Game State
+- Configuration
+- Entity
+- Identifier
+
+### Referenzen
+
+- PB-000
+- PB-002
+- PB-003
+- TECH-100
+
+## Configuration
+
+### Definition
+
+Eine `Configuration` ist eine festgelegte Menge von Vorgaben, durch die zulässiges oder gewünschtes Verhalten und auswählbare Varianten bestimmt werden, ohne das zugrunde liegende Konzept neu zu definieren.
+
+### Zweck
+
+Der Begriff trennt anpassbare Vorgaben von fachlichen Definitionen, laufendem Game State und allgemeinen Data.
+
+### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- APIs
+- Dokumentation
+
+### Darf nicht verwechselt werden mit
+
+- `Data`: umfasst Informationen unabhängig von ihrer steuernden Rolle.
+- `Game State`: beschreibt den autoritativen Zustand einer laufenden Campaign.
+- `Scenario`: legt einen vollständigen inhaltlichen und regelbezogenen Ausgangsrahmen fest.
+
+### Verwandte Begriffe
+
+- Data
+- Game State
+- Scenario
+- System
+- Module
+
+### Referenzen
+
+- PB-000
+- PB-002
+- PB-003
+- TECH-100
