@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.10.0
+version: 0.11.0
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -9488,5 +9488,1207 @@ Der Begriff bezeichnet einen zeitbezogenen Verfügbarkeitszustand, ohne dessen D
 
 #### Referenzen
 
+- PB-002
+- PB-003
+
+# Kapitel 11 – Technische Terminologie
+
+Technische Begriffe bilden die gemeinsame Sprache zwischen Design und Engine. Sie benennen technische Verantwortungen eindeutig, ohne fachliche Aussagen aus den zuständigen Design-Dokumenten neu zu definieren.
+
+Dieses Kapitel ist bewusst implementierungsneutral formuliert. Es legt weder eine konkrete Softwarearchitektur noch interne Hierarchien oder bestimmte technische Mittel fest.
+
+Spätere TECH-Dokumente verwenden für die hier beschriebenen Verantwortungen ausschließlich diese Begriffe und referenzieren ihre kanonischen Definitionen, statt konkurrierende technische Terminologie einzuführen.
+
+## 11.1 Datenmodell
+
+### Entity
+
+#### Definition
+
+Eine `Entity` ist ein eindeutig unterscheidbarer Gegenstand innerhalb des technischen Modells, dem Zustand, Verhalten oder Beziehungen zugeordnet werden können.
+
+#### Zweck
+
+Der Begriff bezeichnet die technische Identität eines modellierten Gegenstands, ohne festzulegen, wie seine Eigenschaften oder sein Verhalten repräsentiert werden.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Datenmodelle
+- Simulation
+- Persistenz
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Component`: bündelt einen abgegrenzten Anteil der einer Entity zugeordneten Daten oder Fähigkeiten.
+- `Attribute`: ist eine einzelne benannte Eigenschaft.
+- `Identifier`: bezeichnet einen Gegenstand innerhalb eines festgelegten Namensraums eindeutig.
+- `Reference`: stellt eine gerichtete Zuordnung zu einem anderen Gegenstand her.
+
+#### Verwandte Begriffe
+
+- Component
+- Attribute
+- Identifier
+- Reference
+- Simulation State
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Component
+
+#### Definition
+
+Eine `Component` ist eine abgegrenzte Zusammenfassung zusammengehöriger Daten oder Fähigkeiten, die einem technischen Gegenstand zugeordnet ist.
+
+#### Zweck
+
+Der Begriff bezeichnet eine fachlich zusammenhängende Einheit innerhalb eines technischen Modells, ohne eine bestimmte Zusammensetzungsform oder ein bestimmtes Architekturmodell vorzuschreiben.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Datenmodelle
+- Simulation
+- Persistenz
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Entity`: ist der eindeutig unterscheidbare modellierte Gegenstand.
+- `Attribute`: bezeichnet eine einzelne Eigenschaft und nicht deren abgegrenzte Zusammenfassung.
+- `Module`: grenzt einen auslieferbaren oder verwaltbaren technischen Funktionsumfang ab.
+- `Subsystem`: ist ein abgegrenzter Teil eines übergeordneten Systemzusammenhangs.
+
+#### Verwandte Begriffe
+
+- Entity
+- Attribute
+- System
+- Module
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Attribute
+
+#### Definition
+
+Ein `Attribute` ist eine einzeln benannte Eigenschaft eines technischen Gegenstands mit einer für sie maßgeblichen Bedeutung.
+
+#### Zweck
+
+Der Begriff bezeichnet die kleinste fachlich eigenständig benannte Eigenschaft innerhalb eines Modells, ohne ihre Repräsentation oder zulässigen Werte festzulegen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Datenmodelle
+- Simulation
+- Persistenz
+- Configuration
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Component`: fasst mehrere zusammengehörige Daten oder Fähigkeiten abgrenzbar zusammen.
+- `Identifier`: dient der eindeutigen Bezeichnung eines Gegenstands.
+- `Metadata`: beschreibt andere Daten oder technische Artefakte für einen bestimmten Kontext.
+- `Reference`: verweist auf einen anderen Gegenstand.
+
+#### Verwandte Begriffe
+
+- Entity
+- Component
+- Identifier
+- Metadata
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Identifier
+
+#### Definition
+
+Ein `Identifier` ist eine innerhalb eines festgelegten Namensraums eindeutige und stabile Bezeichnung eines bestimmten Gegenstands.
+
+#### Zweck
+
+Der Begriff ermöglicht die eindeutige Wiedererkennung und Referenzierung, ohne Eigenschaften oder Speicherort des bezeichneten Gegenstands auszudrücken.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Datenmodelle
+- Persistenz
+- Configuration
+- API
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Reference`: stellt eine konkrete gerichtete Zuordnung zu einem bezeichneten Gegenstand her.
+- `Attribute`: beschreibt eine Eigenschaft eines Gegenstands.
+- `Metadata`: liefert beschreibende Angaben für einen Kontext.
+
+#### Verwandte Begriffe
+
+- Entity
+- Reference
+- Metadata
+- API
+
+#### Referenzen
+
+- PB-000
+- PB-003
+
+### Reference
+
+#### Definition
+
+Eine `Reference` ist eine gerichtete Zuordnung von einem technischen Gegenstand zu einem anderen eindeutig bezeichneten Gegenstand.
+
+#### Zweck
+
+Der Begriff bildet Beziehungen ab, ohne den referenzierten Gegenstand zu duplizieren oder dessen Lebenszyklus und Repräsentation festzulegen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Datenmodelle
+- Simulation
+- Persistenz
+- Configuration
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Identifier`: ist die eindeutige Bezeichnung, anhand derer ein Gegenstand erkannt werden kann.
+- `Attribute`: ist eine einzelne Eigenschaft eines Gegenstands.
+- `Component`: bündelt zusammengehörige Daten oder Fähigkeiten.
+
+#### Verwandte Begriffe
+
+- Entity
+- Identifier
+- Attribute
+- Component
+
+#### Referenzen
+
+- PB-000
+- PB-003
+
+## 11.2 Simulation
+
+### Simulation
+
+#### Definition
+
+Die `Simulation` ist die regelgebundene Ermittlung der zeitlichen Entwicklung des autoritativen Zustands aus einem bestehenden Zustand und den für den betrachteten Fortschritt maßgeblichen Eingaben.
+
+#### Zweck
+
+Der Begriff bezeichnet die technische Verantwortung für nachvollziehbare Zustandsentwicklung und grenzt sie von Darstellung, Speicherung und bloßer Übermittlung ab.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Savegames
+- Tests
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Simulation Step`: ist ein abgegrenzter Fortschrittsabschnitt innerhalb der Simulation.
+- `Simulation State`: umfasst die zu einem Zeitpunkt autoritativ maßgeblichen Simulationsdaten.
+- `Processor`: verarbeitet abgegrenzte Eingaben nach festgelegten Regeln.
+
+#### Verwandte Begriffe
+
+- Simulation Step
+- Simulation State
+- State Change
+- Snapshot
+- System
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Simulation Step
+
+#### Definition
+
+Ein `Simulation Step` ist ein abgegrenzter Fortschrittsabschnitt, in dem die Simulation die dafür maßgeblichen Eingaben und Regeln auf einen Ausgangszustand anwendet.
+
+#### Zweck
+
+Der Begriff schafft einen eindeutigen Bezugsrahmen für einen Teil der Zustandsentwicklung, ohne dessen Dauer, Umfang oder Ausführungsreihenfolge festzulegen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Simulation
+- Tests
+- Diagnose
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Simulation`: bezeichnet die gesamte Verantwortung für regelgebundene Zustandsentwicklung.
+- `State Change`: ist eine einzelne feststellbare Veränderung des Zustands.
+- `Snapshot`: bildet einen Zustand zu einem bestimmten Bezugspunkt ab.
+
+#### Verwandte Begriffe
+
+- Simulation
+- Simulation State
+- State Change
+- Snapshot
+- Processor
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Simulation State
+
+#### Definition
+
+Der `Simulation State` ist die Gesamtheit der zu einem bestimmten Zeitpunkt für die Simulation autoritativ maßgeblichen Daten und Beziehungen.
+
+#### Zweck
+
+Der Begriff grenzt den vollständigen technischen Simulationszustand von einzelnen Eigenschaften, Veränderungen und gespeicherten Abbildungen ab.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Simulation
+- Savegames
+- Tests
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `State`: bezeichnet den Zustand eines abgegrenzten Gameplay-Gegenstands.
+- `State Change`: ist eine feststellbare Veränderung zwischen Zuständen.
+- `Snapshot`: ist eine abgegrenzte Abbildung eines Zustands.
+- `Savegame`: ist ein für die spätere Fortsetzung bestimmter persistenter Bestand.
+
+#### Verwandte Begriffe
+
+- Simulation
+- Simulation Step
+- State Change
+- Snapshot
+- Savegame
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### State Change
+
+#### Definition
+
+Ein `State Change` ist eine feststellbare Veränderung mindestens eines Bestandteils des Simulation State gegenüber seinem maßgeblichen Ausgangszustand.
+
+#### Zweck
+
+Der Begriff bezeichnet die Veränderung selbst, unabhängig von ihrem Auslöser, ihrer Verarbeitung, ihrer Darstellung oder ihrer Speicherung.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Simulation
+- Persistenz
+- Tests
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Event`: ist eine festgestellte und benannte Begebenheit.
+- `Command`: fordert die Ausführung einer bestimmten Absicht an.
+- `Message`: übermittelt abgegrenzte Information.
+- `Snapshot`: bildet einen Zustand an einem Bezugspunkt ab.
+
+#### Verwandte Begriffe
+
+- Simulation State
+- Simulation Step
+- Event
+- Command
+- Snapshot
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Snapshot
+
+#### Definition
+
+Ein `Snapshot` ist eine abgegrenzte, einem bestimmten Bezugspunkt zugeordnete Abbildung eines Zustands.
+
+#### Zweck
+
+Der Begriff ermöglicht Vergleich, Übergabe, Prüfung oder Wiederherstellung auf Grundlage eines festgehaltenen Zustandsbildes, ohne dessen Umfang oder Aufbewahrung festzulegen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Simulation
+- Persistenz
+- Savegames
+- Tests
+- Diagnose
+
+#### Darf nicht verwechselt werden mit
+
+- `Simulation State`: ist der vollständige autoritative Zustand der Simulation zu einem Zeitpunkt.
+- `Savegame`: ist ein persistenter Bestand zur späteren Fortsetzung.
+- `Serialization`: überführt Daten zwischen einer internen und einer übertragbaren Repräsentation.
+- `Metadata`: beschreibt Daten oder technische Artefakte.
+
+#### Verwandte Begriffe
+
+- Simulation State
+- State Change
+- Savegame
+- Serialization
+- Metadata
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+## 11.3 Systeme
+
+### System
+
+#### Definition
+
+Ein `System` ist eine abgegrenzte technische Verantwortung, die zusammengehörige Regeln und Verarbeitung für einen bestimmten Ergebnisbereich der Engine umfasst.
+
+#### Zweck
+
+Der Begriff ordnet technische Verantwortungen nach ihrem fachlichen Ergebnisbereich, ohne ihre interne Struktur, Ausführung oder Abhängigkeiten vorzuschreiben.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Simulation
+- Tests
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Subsystem`: übernimmt einen abgegrenzten Teil der Verantwortung eines übergeordneten Systemzusammenhangs.
+- `Service`: stellt eine klar bestimmte technische Fähigkeit zur Nutzung bereit.
+- `Processor`: verarbeitet eine abgegrenzte Menge von Eingaben nach festgelegten Regeln.
+- `Manager`: koordiniert Verantwortungen über deren Grenzen hinweg.
+
+#### Verwandte Begriffe
+
+- Subsystem
+- Service
+- Processor
+- Manager
+- Module
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Subsystem
+
+#### Definition
+
+Ein `Subsystem` ist ein abgegrenzter Teil eines übergeordneten Systemzusammenhangs, der einen Teil von dessen technischer Verantwortung übernimmt.
+
+#### Zweck
+
+Der Begriff erlaubt die fachliche Unterteilung eines Systemzusammenhangs, ohne eine feste Hierarchietiefe oder konkrete innere Struktur festzulegen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Simulation
+- Tests
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `System`: trägt die abgegrenzte Verantwortung für einen Ergebnisbereich.
+- `Service`: stellt eine bestimmte Fähigkeit für andere technische Beteiligte bereit.
+- `Module`: ist eine abgrenzbare Einheit zur Organisation und Bereitstellung technischen Funktionsumfangs.
+
+#### Verwandte Begriffe
+
+- System
+- Service
+- Processor
+- Module
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Service
+
+#### Definition
+
+Ein `Service` ist eine abgegrenzte technische Fähigkeit, die anderen technischen Beteiligten über einen definierten Nutzungszugang bereitgestellt wird.
+
+#### Zweck
+
+Der Begriff bezeichnet eine nutzbare Fähigkeit und ihren Verantwortungsumfang, ohne ihre interne Verarbeitung, Lebensdauer oder Bereitstellungsform festzulegen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Simulation
+- Persistenz
+- Tests
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `System`: verantwortet einen technischen Ergebnisbereich und dessen zusammengehörige Regeln.
+- `Processor`: verarbeitet abgegrenzte Eingaben nach festgelegten Regeln.
+- `Manager`: koordiniert mehrere Verantwortungen oder technische Beteiligte.
+- `API`: definiert den Vertrag für zulässige Interaktionen.
+
+#### Verwandte Begriffe
+
+- System
+- Subsystem
+- Processor
+- Manager
+- API
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Processor
+
+#### Definition
+
+Ein `Processor` ist eine technische Verantwortung, die eine abgegrenzte Menge von Eingaben nach festgelegten Regeln verarbeitet und daraus bestimmte Ausgaben oder State Changes ableitet.
+
+#### Zweck
+
+Der Begriff bezeichnet regelgebundene Verarbeitung, ohne einen gesamten Systembereich, einen dauerhaft bereitgestellten Nutzungszugang oder übergreifende Koordination zu benennen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Simulation
+- Tests
+- Diagnose
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `System`: umfasst die Verantwortung für einen gesamten technischen Ergebnisbereich.
+- `Service`: stellt eine klar bestimmte technische Fähigkeit zur Nutzung bereit.
+- `Manager`: koordiniert mehrere Verantwortungen oder technische Beteiligte.
+
+#### Verwandte Begriffe
+
+- System
+- Subsystem
+- Service
+- Manager
+- Simulation Step
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Manager
+
+#### Definition
+
+Ein `Manager` ist eine technische Verantwortung für die Koordination mehrerer abgegrenzter Verantwortungen, Gegenstände oder Abläufe über deren jeweilige Grenzen hinweg.
+
+#### Zweck
+
+Der Begriff bezeichnet übergreifende Koordination, wenn diese selbst eine klar benennbare Verantwortung bildet, ohne allgemeine Zuständigkeit für beliebige Verarbeitung auszudrücken.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Simulation
+- Persistenz
+- Tests
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `System`: verantwortet einen fachlich abgegrenzten technischen Ergebnisbereich.
+- `Service`: stellt eine bestimmte technische Fähigkeit zur Nutzung bereit.
+- `Processor`: verarbeitet abgegrenzte Eingaben nach festgelegten Regeln.
+
+#### Verwandte Begriffe
+
+- System
+- Subsystem
+- Service
+- Processor
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+## 11.4 Kommunikation
+
+### Event
+
+#### Definition
+
+Ein `Event` ist eine festgestellte und benannte Begebenheit, die innerhalb des Projekts als bereits eingetretene Tatsache kommuniziert oder verarbeitet wird.
+
+#### Zweck
+
+Der Begriff macht eine eingetretene Begebenheit für weitere technische Reaktionen verfügbar, ohne eine Handlungsaufforderung oder Antwortpflicht auszudrücken.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Simulation
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Command`: fordert die Ausführung einer bestimmten Absicht an.
+- `Message`: ist der allgemeine Übermittlungsgegenstand für abgegrenzte Information.
+- `Request`: bittet einen bestimmten Empfänger um Bearbeitung und erwartet eine Response.
+- `State Change`: ist die Veränderung des Zustands und nicht deren Mitteilung.
+
+#### Verwandte Begriffe
+
+- Message
+- Command
+- State Change
+- Request
+- Response
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Command
+
+#### Definition
+
+Ein `Command` ist eine an einen zuständigen technischen Empfänger gerichtete Aufforderung, eine bestimmte Absicht zu prüfen und bei Zulässigkeit auszuführen.
+
+#### Zweck
+
+Der Begriff übermittelt eine beabsichtigte Handlung, ohne deren Annahme, erfolgreiche Ausführung oder daraus entstehende Zustandsänderung vorwegzunehmen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Simulation
+- UI
+- Tests
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Event`: teilt eine bereits eingetretene Begebenheit mit.
+- `Request`: bittet um eine Bearbeitung, deren Ergebnis als Response zurückgegeben wird.
+- `Message`: ist der allgemeinere Übermittlungsgegenstand.
+- `Action`: ist eine autorisierte Gameplay-Handlung.
+
+#### Verwandte Begriffe
+
+- Message
+- Event
+- Request
+- Response
+- Action
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Message
+
+#### Definition
+
+Eine `Message` ist ein abgegrenzter Übermittlungsgegenstand, der Information zwischen technischen Beteiligten transportiert.
+
+#### Zweck
+
+Der Begriff bezeichnet die übermittelte Information unabhängig davon, ob sie eine Tatsache, Aufforderung, Anfrage oder Antwort ausdrückt.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Simulation
+- UI
+- Tests
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Event`: kommuniziert eine bereits eingetretene Begebenheit.
+- `Command`: fordert die Prüfung und mögliche Ausführung einer Absicht an.
+- `Request`: erwartet eine zugeordnete Response.
+- `Response`: beantwortet eine bestimmte Request.
+
+#### Verwandte Begriffe
+
+- Event
+- Command
+- Request
+- Response
+- API
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Request
+
+#### Definition
+
+Eine `Request` ist eine an einen bestimmten technischen Empfänger gerichtete Bitte um Bearbeitung, für die eine zugeordnete `Response` erwartet wird.
+
+#### Zweck
+
+Der Begriff kennzeichnet eine korrelierte Interaktion mit erwartetem Ergebnis, ohne eine Zustandsänderung oder erfolgreiche Bearbeitung zu garantieren.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- UI
+- Tests
+- API
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Command`: fordert die Prüfung und mögliche Ausführung einer Absicht an, ohne durch den Begriff eine Response zu verlangen.
+- `Message`: ist der allgemeine Übermittlungsgegenstand.
+- `Response`: enthält das der Request zugeordnete Ergebnis ihrer Bearbeitung.
+
+#### Verwandte Begriffe
+
+- Response
+- Message
+- Command
+- Service
+- API
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Response
+
+#### Definition
+
+Eine `Response` ist das einer bestimmten Request zugeordnete technische Ergebnis ihrer Bearbeitung.
+
+#### Zweck
+
+Der Begriff schließt eine angeforderte Interaktion eindeutig ab, ohne Erfolg, Dateninhalt oder Zustandsänderung des Ergebnisses vorauszusetzen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- UI
+- Tests
+- API
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Request`: ist die vorausgehende Bitte um Bearbeitung.
+- `Event`: teilt eine bereits eingetretene Begebenheit mit und beantwortet nicht notwendigerweise eine Request.
+- `Message`: ist der allgemeine Übermittlungsgegenstand.
+
+#### Verwandte Begriffe
+
+- Request
+- Message
+- Event
+- Service
+- API
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+## 11.5 Persistenz
+
+### Savegame
+
+#### Definition
+
+Ein `Savegame` ist ein persistenter, in sich zuordenbarer Bestand der für eine spätere Fortsetzung eines Spielzusammenhangs erforderlichen Daten.
+
+#### Zweck
+
+Der Begriff bezeichnet das fortsetzbare gespeicherte Ergebnis, ohne Speicherform, Umfang, Erstellung oder Wiederherstellungsverfahren festzulegen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Persistenz
+- UI
+- Tests
+- Modding
+
+#### Darf nicht verwechselt werden mit
+
+- `Snapshot`: ist eine Abbildung eines Zustands für einen bestimmten Bezugspunkt und nicht zwingend fortsetzbar.
+- `Persistence`: ist die Verantwortung für den Erhalt von Daten über ihre unmittelbare Verarbeitung hinaus.
+- `Serialization`: überführt Daten zwischen Repräsentationen.
+- `Configuration`: bestimmt anpassbare Vorgaben für Verhalten oder Aufbau.
+
+#### Verwandte Begriffe
+
+- Persistence
+- Serialization
+- Snapshot
+- Metadata
+- Configuration
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Serialization
+
+#### Definition
+
+`Serialization` ist die regelgebundene Überführung von Daten zwischen ihrer für die laufende Verarbeitung maßgeblichen Repräsentation und einer übertragbaren oder aufbewahrbaren Repräsentation.
+
+#### Zweck
+
+Der Begriff bezeichnet die Repräsentationsumwandlung, ohne Speicherung, Übertragung, Format oder langfristigen Erhalt vorauszusetzen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Persistenz
+- Savegames
+- API
+- Tests
+- Modding
+
+#### Darf nicht verwechselt werden mit
+
+- `Persistence`: erhält Daten über ihre unmittelbare Verarbeitung hinaus.
+- `Savegame`: ist ein fortsetzbarer persistenter Datenbestand.
+- `Snapshot`: ist eine einem Bezugspunkt zugeordnete Zustandsabbildung.
+- `Configuration`: enthält anpassbare Vorgaben.
+
+#### Verwandte Begriffe
+
+- Persistence
+- Savegame
+- Snapshot
+- Metadata
+- API
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Persistence
+
+#### Definition
+
+`Persistence` ist die technische Verantwortung, Daten über den Zeitraum ihrer unmittelbaren Verarbeitung hinaus zu erhalten und für eine spätere Nutzung bereitzustellen.
+
+#### Zweck
+
+Der Begriff bezeichnet den dauerhaften Datenerhalt als Verantwortung, ohne Repräsentationsumwandlung, konkreten Speicherort oder bestimmten Nutzungszweck festzulegen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Savegames
+- Configuration
+- Tests
+- Modding
+
+#### Darf nicht verwechselt werden mit
+
+- `Serialization`: überführt Daten zwischen Repräsentationen.
+- `Savegame`: ist ein bestimmter persistenter Bestand zur Fortsetzung eines Spielzusammenhangs.
+- `Configuration`: umfasst anpassbare Vorgaben für Verhalten oder Aufbau.
+- `Metadata`: beschreibt Daten oder technische Artefakte.
+
+#### Verwandte Begriffe
+
+- Serialization
+- Savegame
+- Configuration
+- Metadata
+- Snapshot
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Configuration
+
+#### Definition
+
+Eine `Configuration` ist eine ausdrücklich anpassbare Menge von Vorgaben, die Verhalten, Zusammensetzung oder Bereitstellung eines technischen Zusammenhangs bestimmt.
+
+#### Zweck
+
+Der Begriff trennt anpassbare Vorgaben von laufendem Simulationszustand, beschreibenden Zusatzangaben und dauerhaft erhaltenen Nutzdaten.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Persistenz
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Simulation State`: enthält die autoritativ maßgeblichen Daten der laufenden Simulation.
+- `Metadata`: beschreibt andere Daten oder technische Artefakte für einen bestimmten Kontext.
+- `Persistence`: ist die Verantwortung für langfristigen Datenerhalt.
+- `Savegame`: dient der späteren Fortsetzung eines Spielzusammenhangs.
+
+#### Verwandte Begriffe
+
+- Metadata
+- Persistence
+- Module
+- Plugin
+- Mod
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Metadata
+
+#### Definition
+
+`Metadata` sind einem bestimmten Kontext zugeordnete Angaben, die andere Daten oder technische Artefakte beschreiben, einordnen oder auffindbar machen.
+
+#### Zweck
+
+Der Begriff bezeichnet beschreibende Zusatzangaben, ohne sie mit den beschriebenen Nutzdaten, anpassbaren Vorgaben oder deren dauerhaftem Erhalt gleichzusetzen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Datenmodelle
+- Persistenz
+- Savegames
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Attribute`: ist eine einzelne fachlich maßgebliche Eigenschaft eines technischen Gegenstands.
+- `Configuration`: bestimmt anpassbare Vorgaben für Verhalten oder Aufbau.
+- `Persistence`: bezeichnet die Verantwortung für Datenerhalt.
+- `Identifier`: bezeichnet einen Gegenstand eindeutig.
+
+#### Verwandte Begriffe
+
+- Attribute
+- Identifier
+- Configuration
+- Persistence
+- Savegame
+
+#### Referenzen
+
+- PB-000
+- PB-002
+- PB-003
+
+## 11.6 Erweiterbarkeit
+
+### Module
+
+#### Definition
+
+Ein `Module` ist eine klar abgegrenzte Einheit zur Organisation, Bereitstellung und gemeinsamen Verwaltung eines zusammengehörigen technischen Funktionsumfangs.
+
+#### Zweck
+
+Der Begriff schafft eine stabile Grenze für technischen Funktionsumfang, ohne dessen interne Architektur, Auslieferungsform oder Erweiterungsrolle festzulegen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Tests
+- Modding
+- Dokumentation
+- Projektstruktur
+
+#### Darf nicht verwechselt werden mit
+
+- `Subsystem`: übernimmt einen Teil der Verantwortung eines übergeordneten Systemzusammenhangs.
+- `Plugin`: ergänzt einen vorgesehenen technischen Anschluss als eigenständig zuordenbare Einheit.
+- `Extension`: ist jede ausdrücklich vorgesehene Ergänzung eines bestehenden Funktionsumfangs.
+- `Mod`: ist eine nicht zum unveränderten Kernbestand gehörende Anpassungs- oder Inhaltseinheit.
+
+#### Verwandte Begriffe
+
+- System
+- Subsystem
+- Plugin
+- Extension
+- Mod
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Plugin
+
+#### Definition
+
+Ein `Plugin` ist eine eigenständig zuordenbare technische Einheit, die einen dafür vorgesehenen Anschluss nutzt, um einen bestehenden Funktionsumfang zu ergänzen.
+
+#### Zweck
+
+Der Begriff bezeichnet eine anschlussgebundene Erweiterungseinheit, ohne ihre Herkunft, Bereitstellung, Aktivierung oder internen Mittel festzulegen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Modding
+- Tests
+- Configuration
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Extension`: ist der allgemeine Begriff für eine vorgesehene Ergänzung und muss keine eigenständige Anschlusseinheit sein.
+- `Module`: organisiert einen zusammengehörigen technischen Funktionsumfang unabhängig von einer Erweiterungsrolle.
+- `Mod`: passt das Projekt oder seine Inhalte außerhalb des unveränderten Kernbestands an.
+- `API`: definiert einen Vertrag für zulässige Interaktionen.
+
+#### Verwandte Begriffe
+
+- Extension
+- Module
+- Mod
+- API
+- Configuration
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Extension
+
+#### Definition
+
+Eine `Extension` ist eine ausdrücklich vorgesehene Ergänzung eines bestehenden technischen Funktionsumfangs, die dessen Grundverantwortung nicht ersetzt.
+
+#### Zweck
+
+Der Begriff bezeichnet die Erweiterung als Rolle oder Ergebnis, unabhängig davon, ob sie durch ein Plugin, ein Module, einen Mod oder einen anderen vorgesehenen Mechanismus bereitgestellt wird.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Modding
+- Tests
+- API
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Plugin`: ist eine eigenständig zuordenbare Einheit an einem vorgesehenen Anschluss.
+- `Module`: grenzt zusammengehörigen technischen Funktionsumfang organisatorisch ab.
+- `Mod`: ist eine Anpassungs- oder Inhaltseinheit außerhalb des unveränderten Kernbestands.
+- `API`: ist der Interaktionsvertrag und nicht die Ergänzung selbst.
+
+#### Verwandte Begriffe
+
+- Plugin
+- Module
+- Mod
+- API
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Mod
+
+#### Definition
+
+Ein `Mod` ist eine als Einheit zuordenbare Anpassung oder Ergänzung des Projekts oder seiner Inhalte, die nicht zum unveränderten Kernbestand gehört.
+
+#### Zweck
+
+Der Begriff grenzt nutzer- oder projekterweiternde Änderungen vom unveränderten Kernbestand ab, ohne ihren Umfang, ihre Herkunft oder ihre technischen Mittel festzulegen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Modding
+- UI
+- Configuration
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Plugin`: nutzt als technische Einheit einen vorgesehenen Anschluss zur Ergänzung von Funktionsumfang.
+- `Extension`: bezeichnet allgemein eine vorgesehene Ergänzung eines bestehenden Funktionsumfangs.
+- `Module`: organisiert technischen Funktionsumfang und ist nicht durch seine Herkunft vom Kernbestand bestimmt.
+- `Scenario`: definiert Ausgangsbedingungen und Inhalte eines Spielzusammenhangs.
+
+#### Verwandte Begriffe
+
+- Plugin
+- Extension
+- Module
+- API
+- Configuration
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### API
+
+#### Definition
+
+Eine `API` ist ein ausdrücklich definierter Vertrag für zulässige Interaktionen zwischen voneinander abgegrenzten technischen Beteiligten.
+
+#### Zweck
+
+Der Begriff legt die Bedeutung, Voraussetzungen und erwartbaren Ergebnisse von Interaktionen fest, ohne interne Verarbeitung oder konkrete Verbindungsmittel vorzuschreiben.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Engine
+- Modding
+- Tests
+- Dokumentation
+- Projektstruktur
+
+#### Darf nicht verwechselt werden mit
+
+- `Service`: ist eine bereitgestellte technische Fähigkeit, deren Nutzung durch eine API beschrieben werden kann.
+- `Message`: ist ein übermittelter Informationsgegenstand innerhalb einer Interaktion.
+- `Plugin`: ist eine Erweiterungseinheit, die eine API nutzen kann.
+- `Extension`: ist eine Ergänzung des Funktionsumfangs und nicht deren Interaktionsvertrag.
+
+#### Verwandte Begriffe
+
+- Service
+- Message
+- Request
+- Response
+- Plugin
+- Extension
+
+#### Referenzen
+
+- PB-001
 - PB-002
 - PB-003
