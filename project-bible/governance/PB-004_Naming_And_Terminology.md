@@ -30,6 +30,7 @@ related_documents:
   - PB-005
   - PB-006
   - PB-007
+  - PB-998
   - GD-100
   - TECH-100
 systems: []
@@ -7469,11 +7470,11 @@ Der Begriff bezeichnet den diplomatischen Verständigungsprozess und grenzt ihn 
 
 #### Definition
 
-Ein `Proposal` ist ein formaler Vorschlag oder ein diplomatisches Angebot eines Akteurs an mindestens einen anderen Akteur, dessen Annahme, Ablehnung oder Veränderung noch nicht feststeht.
+Für `Proposal` gilt ausschließlich die domänenübergreifende kanonische Definition aus Abschnitt 10.2; ein diplomatischer Proposal ist deren Anwendung in der Diplomatie.
 
 #### Zweck
 
-Der Begriff bezeichnet einen zur Entscheidung gestellten Inhalt, ohne dessen Behandlung oder Ergebnis vorwegzunehmen; darüber entscheiden erst die später definierten zuständigen Spielsysteme.
+Die Aufnahme in diese Begriffsgruppe ordnet Proposal der Diplomatie zu, ohne eine konkurrierende diplomatische Grunddefinition einzuführen.
 
 #### Verwendung
 
@@ -9505,11 +9506,11 @@ Spätere TECH-Dokumente verwenden für die hier beschriebenen Verantwortungen au
 
 #### Definition
 
-Eine `Entity` ist ein eindeutig unterscheidbarer Gegenstand innerhalb des technischen Modells, dem Zustand, Verhalten oder Beziehungen zugeordnet werden können.
+Für `Entity` gilt ausschließlich die kanonische Definition aus Kapitel 3; die technische Repräsentation begründet keine zweite Bedeutung.
 
 #### Zweck
 
-Der Begriff bezeichnet die technische Identität eines modellierten Gegenstands, ohne festzulegen, wie seine Eigenschaften oder sein Verhalten repräsentiert werden.
+Die Aufnahme in diese Begriffsgruppe ordnet Entity dem technischen Modell zu, ohne die fachliche Definition auf eine technische Repräsentation zu verengen.
 
 #### Verwendung
 
@@ -9698,11 +9699,11 @@ Der Begriff bildet Beziehungen ab, ohne den referenzierten Gegenstand zu duplizi
 
 #### Definition
 
-Die `Simulation` ist die regelgebundene Ermittlung der zeitlichen Entwicklung des autoritativen Zustands aus einem bestehenden Zustand und den für den betrachteten Fortschritt maßgeblichen Eingaben.
+Für `Simulation` gilt ausschließlich die kanonische Definition aus Kapitel 3.
 
 #### Zweck
 
-Der Begriff bezeichnet die technische Verantwortung für nachvollziehbare Zustandsentwicklung und grenzt sie von Darstellung, Speicherung und bloßer Übermittlung ab.
+Die Aufnahme in diese Begriffsgruppe ordnet Simulation der technischen Verantwortung zu, ohne eine konkurrierende technische Definition einzuführen.
 
 #### Verwendung
 
@@ -9898,11 +9899,11 @@ Der Begriff ermöglicht Vergleich, Übergabe, Prüfung oder Wiederherstellung au
 
 #### Definition
 
-Ein `System` ist eine abgegrenzte technische Verantwortung, die zusammengehörige Regeln und Verarbeitung für einen bestimmten Ergebnisbereich der Engine umfasst.
+Für `System` gilt ausschließlich die kanonische Definition aus Kapitel 3; seine technische Umsetzung begründet keine zweite Bedeutung.
 
 #### Zweck
 
-Der Begriff ordnet technische Verantwortungen nach ihrem fachlichen Ergebnisbereich, ohne ihre interne Struktur, Ausführung oder Abhängigkeiten vorzuschreiben.
+Die Aufnahme in diese Begriffsgruppe ordnet System der technischen Architektur zu, ohne seine fachliche Grenze durch eine Implementierungsgrenze zu ersetzen.
 
 #### Verwendung
 
@@ -10095,11 +10096,11 @@ Der Begriff bezeichnet übergreifende Koordination, wenn diese selbst eine klar 
 
 #### Definition
 
-Ein `Event` ist eine festgestellte und benannte Begebenheit, die innerhalb des Projekts als bereits eingetretene Tatsache kommuniziert oder verarbeitet wird.
+Für `Event` gilt ausschließlich die kanonische Definition aus Abschnitt 10.4; seine technische Kommunikation oder Verarbeitung begründet keine zweite Bedeutung.
 
 #### Zweck
 
-Der Begriff macht eine eingetretene Begebenheit für weitere technische Reaktionen verfügbar, ohne eine Handlungsaufforderung oder Antwortpflicht auszudrücken.
+Die Aufnahme in diese Begriffsgruppe ordnet Event der technischen Kommunikation zu, ohne das eingetretene Ereignis mit seiner Mitteilung gleichzusetzen.
 
 #### Verwendung
 
@@ -10415,11 +10416,11 @@ Der Begriff bezeichnet den dauerhaften Datenerhalt als Verantwortung, ohne Repr�
 
 #### Definition
 
-Eine `Configuration` ist eine ausdrücklich anpassbare Menge von Vorgaben, die Verhalten, Zusammensetzung oder Bereitstellung eines technischen Zusammenhangs bestimmt.
+Für `Configuration` gilt ausschließlich die kanonische Definition aus Kapitel 3.
 
 #### Zweck
 
-Der Begriff trennt anpassbare Vorgaben von laufendem Simulationszustand, beschreibenden Zusatzangaben und dauerhaft erhaltenen Nutzdaten.
+Die Aufnahme in diese Begriffsgruppe ordnet Configuration der technischen Architektur zu, ohne eine konkurrierende technische Definition einzuführen.
 
 #### Verwendung
 
@@ -10497,11 +10498,11 @@ Der Begriff bezeichnet beschreibende Zusatzangaben, ohne sie mit den beschrieben
 
 #### Definition
 
-Ein `Module` ist eine klar abgegrenzte Einheit zur Organisation, Bereitstellung und gemeinsamen Verwaltung eines zusammengehörigen technischen Funktionsumfangs.
+Für `Module` gilt ausschließlich die kanonische Definition aus Kapitel 3.
 
 #### Zweck
 
-Der Begriff schafft eine stabile Grenze für technischen Funktionsumfang, ohne dessen interne Architektur, Auslieferungsform oder Erweiterungsrolle festzulegen.
+Die Aufnahme in diese Begriffsgruppe ordnet Module der technischen Erweiterbarkeit zu, ohne eine konkurrierende technische Definition einzuführen.
 
 #### Verwendung
 
@@ -12153,11 +12154,11 @@ Der Begriff schafft eine eindeutige, referenzierbare Ablage unabhängig von abge
 
 #### Definition
 
-`Versioning` ist für Dokumente die Kennzeichnung ihres maßgeblichen inhaltlichen Stands durch die im Frontmatter geführte Version.
+Für `Versioning` gilt ausschließlich die kanonische Definition aus Abschnitt 12.6; die Dokumentversion ist deren Anwendung auf Dokumente.
 
 #### Zweck
 
-Der Begriff macht Änderungen nachvollziehbar, ohne Document ID oder Canonical Path als Ersatz für eine Version zu verwenden.
+Die Aufnahme in diese Begriffsgruppe ordnet Versioning der Dokumentbenennung zu, ohne eine konkurrierende dokumentbezogene Grunddefinition einzuführen.
 
 #### Verwendung
 
