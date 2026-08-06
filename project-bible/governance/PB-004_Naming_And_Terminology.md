@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.13.1
+version: 0.14.0
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -12893,3 +12893,593 @@ Diese Richtlinie gilt verbindlich für sämtliche:
 - PB-998 dokumentiert die zugehörigen Architekturentscheidungen.
 - TECH-Dokumente MUST diese Regeln übernehmen.
 - GD-Dokumente MUST diese Terminologie verwenden.
+
+# Kapitel 14 – Verbotene Synonyme und häufige Fehler
+
+Konsistente Terminologie ist entscheidend, damit dasselbe Konzept in allen Projektartefakten eindeutig bezeichnet und nicht unbeabsichtigt mit einem anderen Konzept gleichgesetzt wird.
+
+Viele der folgenden Begriffe werden im allgemeinen Sprachgebrauch synonym verwendet, besitzen im Projekt jedoch unterschiedliche, bereits in den vorherigen Kapiteln festgelegte Bedeutungen. Dieses Kapitel dokumentiert typische Fehlverwendungen und erklärt die korrekte Verwendung; es ergänzt das Glossar, ohne neue Begriffe zu definieren oder bestehende Definitionen zu ersetzen.
+
+## 14.1 Politische Begriffe
+
+### Country vs State
+
+#### Problem
+
+`Country` und `State` werden häufig beide für ein politisches Gemeinwesen verwendet, wodurch territorial-politische Gesamteinheit und dauerhafte politische sowie rechtliche Organisation gleichgesetzt werden.
+
+#### Richtige Verwendung
+
+`Country` bezeichnet die Verbindung aus Gebiet, Bevölkerung und politischer Ordnung als eigenständige Gesamteinheit. `State` bezeichnet die dauerhafte politische und rechtliche Organisation, die über Institutionen Bevölkerung und Gebiet ordnet und Sovereignty beansprucht.
+
+#### Empfehlung
+
+Für die territorial-politische Einheit als Ganzes ist `Country` zu verwenden; für die dauerhafte Trägerin öffentlicher Herrschaft ist `State` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 4.1 `Country`
+- Abschnitt 4.1 `State`
+
+### Nation vs Country
+
+#### Problem
+
+`Nation` wird häufig als bloße alternative Bezeichnung für ein `Country` verwendet, obwohl kollektive Zugehörigkeit nicht mit einer territorial-politischen Einheit identisch ist.
+
+#### Richtige Verwendung
+
+`Nation` bezeichnet eine als zusammengehörig verstandene politische oder gesellschaftliche Gemeinschaft mit gemeinsamer kollektiver Identity. `Country` bezeichnet dagegen die als eigenständiger Akteur betrachtete Verbindung aus Gebiet, Bevölkerung und politischer Ordnung.
+
+#### Empfehlung
+
+Für kollektive Identität und vorgestellte Zugehörigkeit ist `Nation` zu verwenden; für die territorial-politische Gesamteinheit ist `Country` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 4.1 `Nation`
+- Abschnitt 4.1 `Country`
+
+### Government vs State
+
+#### Problem
+
+`Government` und `State` werden häufig gleichgesetzt, sodass ein Wechsel der gegenwärtigen politischen Führung fälschlich als Wechsel der dauerhaften staatlichen Organisation erscheint.
+
+#### Richtige Verwendung
+
+`Government` bezeichnet die Personen und Organe, die zu einem bestimmten Zeitpunkt die obersten politischen Leitungs- und Entscheidungsfunktionen ausüben. `State` bezeichnet die von dieser jeweiligen Führung unabhängige dauerhafte politische und rechtliche Organisation.
+
+#### Empfehlung
+
+Für die gegenwärtig handelnde politische Führung ist `Government` zu verwenden; für die institutionell dauerhafte politische und rechtliche Organisation ist `State` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 4.1 `Government`
+- Abschnitt 4.1 `State`
+
+### Regime vs Government
+
+#### Problem
+
+`Regime` wird häufig als wertende oder austauschbare Bezeichnung für ein amtierendes `Government` benutzt, obwohl beide Begriffe unterschiedliche zeitliche und institutionelle Ebenen bezeichnen.
+
+#### Richtige Verwendung
+
+`Regime` bezeichnet die grundlegende Ordnung, nach der politische Herrschaft erlangt, ausgeübt, begrenzt und übertragen wird. `Government` bezeichnet die jeweils gegenwärtig handelnde politische Führung.
+
+#### Empfehlung
+
+Für die beständige Struktur politischer Herrschaft ist `Regime` zu verwenden; für die amtierenden leitenden Personen und Organe ist `Government` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 4.1 `Regime`
+- Abschnitt 4.1 `Government`
+
+### Head of State vs Head of Government
+
+#### Problem
+
+`Head of State` und `Head of Government` werden häufig unter einer allgemeinen Bezeichnung für die politische Spitze zusammengefasst, obwohl Repräsentation und institutionelle Kontinuität von politischer Regierungsleitung getrennt sein können.
+
+#### Richtige Verwendung
+
+`Head of State` bezeichnet das Amt der obersten institutionellen Kontinuität und Repräsentation des State. `Head of Government` bezeichnet das Amt der politischen Leitung und Koordination des Government; beide Funktionen können verbunden sein, bleiben begrifflich aber getrennt.
+
+#### Empfehlung
+
+Für die staatliche Spitzen- und Repräsentationsfunktion ist `Head of State` zu verwenden; für die leitende Regierungsfunktion ist `Head of Government` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 4.3 `Head of State`
+- Abschnitt 4.3 `Head of Government`
+
+## 14.2 Gameplay- und technische Begriffe
+
+### Identifier vs Display Name
+
+#### Problem
+
+Ein `Display Name` wird häufig als `Identifier` verwendet oder ein Identifier wird als sichtbarer Benutzertext behandelt, wodurch lokalisierbare Darstellung und stabile Identifikation vermischt werden.
+
+#### Richtige Verwendung
+
+Ein `Identifier` ist die innerhalb eines Namespace eindeutige, dauerhaft stabile und nicht lokalisierte englische Bezeichnung einer Identity. Ein `Display Name` ist die für Menschen bestimmte, lokalisierbare Anzeigeform und muss weder eindeutig noch stabil sein.
+
+#### Empfehlung
+
+Für Referenzen und eindeutige Wiedererkennung ist der `Identifier` zu verwenden; für sichtbare und lokalisierbare Benennungen ist der `Display Name` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 12.1 `Identifier`
+- Abschnitt 12.6 `Immutability`
+- Abschnitt 13.5 `Identifier Usage`
+- Abschnitt 13.6 `Localization`
+
+### Action vs Proposal
+
+#### Problem
+
+Eine noch prüfbare oder ablehnbare `Proposal` wird häufig bereits als `Action` bezeichnet, obwohl noch keine tatsächlich auszuführende Gameplay-Handlung feststeht.
+
+#### Richtige Verwendung
+
+Eine `Proposal` ist ein noch nicht ausgeführter Inhalt, der validiert, verändert, angenommen oder abgelehnt werden kann. Eine `Action` ist die tatsächlich ausgeführte Gameplay-Handlung eines Player oder Actor.
+
+#### Empfehlung
+
+Vor Abschluss der Behandlung ist `Proposal` zu verwenden; für die tatsächliche Gameplay-Handlung ist `Action` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 10.2 `Action`
+- Abschnitt 10.2 `Proposal`
+
+### Proposal vs Decision
+
+#### Problem
+
+Der zur Behandlung gestellte Inhalt und die verbindliche Auswahl einer Alternative werden häufig beide als Entscheidung bezeichnet.
+
+#### Richtige Verwendung
+
+Eine `Proposal` bezeichnet den noch offenen, zur Behandlung gestellten Inhalt. Eine `Decision` ist die verbindliche Festlegung einer verfügbaren Alternative als Antwort auf eine Proposal oder einen anderen auslösenden Sachverhalt.
+
+#### Empfehlung
+
+Für den offenen Vorschlag ist `Proposal` zu verwenden; für die verbindliche Festlegung ist `Decision` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 10.2 `Proposal`
+- Abschnitt 10.2 `Decision`
+
+### Decision vs Execution
+
+#### Problem
+
+Die verbindliche Festlegung und ihr tatsächlicher Vollzug werden häufig als ein einziger Vorgang bezeichnet, obwohl eine `Decision` noch keine `Execution` ist.
+
+#### Richtige Verwendung
+
+Eine `Decision` legt eine Alternative verbindlich fest, ohne deren Vollzug vorwegzunehmen. Eine `Execution` ist der Vollzug, durch den die dafür bestimmte Action tatsächlich ausgeführt wird.
+
+#### Empfehlung
+
+Für die verbindliche Auswahl ist `Decision` zu verwenden; für den Vollzug der bestimmten Action ist `Execution` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 10.2 `Decision`
+- Abschnitt 10.2 `Execution`
+
+### Event vs Trigger
+
+#### Problem
+
+Die auslösende Voraussetzung eines Ereignisses wird häufig selbst als `Event` bezeichnet oder das eingetretene Ereignis als `Trigger` benannt.
+
+#### Richtige Verwendung
+
+Ein `Trigger` ist die festgelegte Voraussetzung, deren Erfüllung die Möglichkeit oder das Eintreten eines Event auslöst. Ein `Event` ist das innerhalb des Spielverlaufs eingetretene und als zusammengehörig betrachtete Ereignis.
+
+#### Empfehlung
+
+Für die auslösende Voraussetzung ist `Trigger` zu verwenden; für das eingetretene Ereignis ist `Event` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 10.4 `Trigger`
+- Abschnitt 10.4 `Event`
+
+### Effect vs Modifier
+
+#### Problem
+
+Jede Zustandsänderung wird häufig als `Modifier` bezeichnet oder eine verändernde Einflussgröße wird mit dem `Effect` gleichgesetzt, der sie begründet, verändert oder beendet.
+
+#### Richtige Verwendung
+
+Ein `Effect` ist eine durch einen Gameplay-Vorgang bewirkte Zustandsänderung. Ein `Modifier` ist eine dauerhafte oder temporäre Veränderung eines Wertes oder Verhaltens gegenüber dessen ansonsten maßgeblicher Ausprägung.
+
+#### Empfehlung
+
+Für die bewirkte Zustandsänderung ist `Effect` zu verwenden; für die fortwirkende Veränderung eines Wertes oder Verhaltens ist `Modifier` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 10.5 `Effect`
+- Abschnitt 10.5 `Modifier`
+
+## 14.3 Wirtschaft
+
+### Resource vs Good
+
+#### Problem
+
+Ein wirtschaftlich nutzbarer Bestand wird häufig bereits als `Good` bezeichnet oder jeder Gegenstand wirtschaftlicher Verfügung als `Resource` behandelt.
+
+#### Richtige Verwendung
+
+Eine `Resource` ist ein verfügbarer oder erschließbarer Bestand mit möglicher wirtschaftlicher Verwendbarkeit, ohne dass er bereits gewonnen oder bereitgestellt sein muss. Ein `Good` ist ein materieller oder immaterieller Gegenstand wirtschaftlicher Verfügung.
+
+#### Empfehlung
+
+Für wirtschaftlich nutzbares Potenzial ist `Resource` zu verwenden; für einen Gegenstand wirtschaftlicher Verfügung ist `Good` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 7.3 `Resource`
+- Abschnitt 7.3 `Good`
+
+### Raw Material vs Finished Good
+
+#### Problem
+
+Materielle Goods werden häufig unabhängig von ihrer Produktionsstufe als `Raw Material` oder `Finished Good` bezeichnet.
+
+#### Richtige Verwendung
+
+Ein `Raw Material` ist ein unmittelbar aus einer Resource gewonnener und noch nicht weiterverarbeiteter materieller Input. Ein `Finished Good` ist ein Good, dessen Production für seine vorgesehene Endverwendung abgeschlossen ist.
+
+#### Empfehlung
+
+Für die unmittelbar gewonnene, unverarbeitete stoffliche Form ist `Raw Material` zu verwenden; für ein für seine vorgesehene Endverwendung fertig produziertes Good ist `Finished Good` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 7.3 `Raw Material`
+- Abschnitt 7.3 `Finished Good`
+
+### Production vs Production Facility
+
+#### Problem
+
+Die wirtschaftliche Aktivität und die Einrichtung, in der sie stattfinden kann, werden häufig beide als Produktion bezeichnet.
+
+#### Richtige Verwendung
+
+`Production` bezeichnet die wirtschaftliche Aktivität, durch die Inputs eingesetzt oder verändert werden, um Outputs hervorzubringen oder bereitzustellen. Eine `Production Facility` ist die räumlich und organisatorisch abgegrenzte Einrichtung, in der ein Producer Production ausüben kann.
+
+#### Empfehlung
+
+Für den wirtschaftlichen Vorgang ist `Production` zu verwenden; für dessen möglichen institutionell-räumlichen Träger ist `Production Facility` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 7.2 `Production`
+- Abschnitt 7.7 `Production Facility`
+
+### Market vs Trade
+
+#### Problem
+
+Der wirtschaftliche Beziehungsrahmen und das darin oder außerhalb davon stattfindende Austauschhandeln werden häufig gleichgesetzt.
+
+#### Richtige Verwendung
+
+Ein `Market` ist der Beziehungszusammenhang, in dem Supply und Demand für bestimmte Goods aufeinandertreffen und Exchange-Bedingungen entstehen. `Trade` ist das auf Exchange gerichtete wirtschaftliche Handeln zwischen Economic Actors und die daraus entstehende Handelsbeziehung.
+
+#### Empfehlung
+
+Für den Ordnungs- und Beziehungsrahmen ist `Market` zu verwenden; für das wirtschaftliche Austauschhandeln ist `Trade` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 7.4 `Market`
+- Abschnitt 7.5 `Trade`
+
+### Supply vs Capacity
+
+#### Problem
+
+Die in einem Market angebotene Menge wird häufig mit dem maximal möglichen Umfang einer wirtschaftlichen Aktivität gleichgesetzt.
+
+#### Richtige Verwendung
+
+Wirtschaftliches `Supply` bezeichnet die Mengen von Goods, die Economic Actors unter bestimmten Bedingungen in einem Market zur Übertragung bereitstellen. `Capacity` bezeichnet den unter festgelegten Bedingungen innerhalb eines Zeitraums erreichbaren Umfang einer wirtschaftlichen Aktivität.
+
+#### Empfehlung
+
+Für die Angebotsseite eines Market ist `Supply` zu verwenden; für die Grenze des möglichen Aktivitätsumfangs ist `Capacity` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 7.4 `Supply`
+- Abschnitt 7.7 `Capacity`
+
+## 14.4 Gesellschaft
+
+### Population vs Population Group
+
+#### Problem
+
+Eine abgegrenzte Teilmenge wird häufig als gesamte `Population` bezeichnet oder die Gesamtbevölkerung als homogene `Population Group` behandelt.
+
+#### Richtige Verwendung
+
+Eine `Population` umfasst alle einem eindeutig bestimmten Bezugsbereich zu einem Zeitpunkt zugeordneten Personen. Eine `Population Group` umfasst nur Personen innerhalb einer Population, die hinsichtlich ausdrücklich festgelegter Merkmale übereinstimmen.
+
+#### Empfehlung
+
+Für den vollständigen personenbezogenen Bestand ist `Population` zu verwenden; für eine anhand festgelegter Merkmale abgegrenzte Menge ist `Population Group` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 6.1 `Population`
+- Abschnitt 6.1 `Population Group`
+
+### Citizen vs Resident
+
+#### Problem
+
+Rechtliche Mitgliedschaft in einem State und gewöhnlicher Aufenthalt in einem Gebiet werden häufig als dieselbe personenbezogene Zuordnung behandelt.
+
+#### Richtige Verwendung
+
+Ein `Citizen` ist durch rechtlich anerkannte, dauerhafte Mitgliedschaft in einem State bestimmt. Ein `Resident` ist durch seinen gewöhnlichen und auf Dauer ausgerichteten Lebensmittelpunkt innerhalb eines Gebietes bestimmt.
+
+#### Empfehlung
+
+Für die rechtliche staatliche Mitgliedschaft ist `Citizen` zu verwenden; für die auf tatsächlichem gewöhnlichem Aufenthalt beruhende Zuordnung ist `Resident` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 6.1 `Citizen`
+- Abschnitt 6.1 `Resident`
+
+### Profession vs Occupation
+
+#### Problem
+
+Fachliche Qualifikation und gegenwärtig regelmäßig ausgeübte Tätigkeit werden häufig mit demselben Berufsbegriff bezeichnet.
+
+#### Richtige Verwendung
+
+Eine `Profession` ist ein gesellschaftlich abgegrenztes Feld qualifizierter Tätigkeit mit gemeinsamen Kenntnissen, Fähigkeiten und anerkannten Aufgaben. Eine `Occupation` ist die von einer Person gegenwärtig regelmäßig ausgeübte Tätigkeit.
+
+#### Empfehlung
+
+Für das dauerhafte qualifizierte Tätigkeitsfeld ist `Profession` zu verwenden; für die tatsächlich und regelmäßig ausgeübte Tätigkeit ist `Occupation` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 6.2 `Profession`
+- Abschnitt 6.2 `Occupation`
+
+### Culture vs Identity
+
+#### Problem
+
+Geteilte Bedeutungen und soziale Praktiken werden häufig mit dem Zugehörigkeitsverständnis einer Person oder Gruppe gleichgesetzt.
+
+#### Richtige Verwendung
+
+Eine `Culture` ist ein von einer Gruppe getragener und weitergegebener Zusammenhang gemeinsamer Bedeutungen, Werte, Normen, Ausdrucksformen und sozialer Praktiken. Eine `Identity` ist das Verständnis eigener Zugehörigkeit und Abgrenzung.
+
+#### Empfehlung
+
+Für den geteilten gesellschaftlichen Orientierungszusammenhang ist `Culture` zu verwenden; für wahrgenommene Zugehörigkeit und Abgrenzung ist `Identity` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 6.3 `Culture`
+- Abschnitt 6.3 `Identity`
+
+### Assimilation vs Integration
+
+#### Problem
+
+Jede gesellschaftliche Einbindung wird häufig als `Assimilation` bezeichnet, obwohl `Integration` keine Aufgabe prägender kultureller Unterschiede voraussetzt.
+
+#### Richtige Verwendung
+
+`Assimilation` bezeichnet die weitgehende Aufgabe prägender Merkmale der bisherigen Culture zugunsten einer anderen Culture. `Integration` bezeichnet gleichberechtigten Zugang und gemeinsame Teilhabe, während kulturelle oder soziale Unterschiede fortbestehen können.
+
+#### Empfehlung
+
+Bei kultureller Angleichung durch weitgehenden Verlust bisheriger Unterscheidungsmerkmale ist `Assimilation` zu verwenden; bei gesellschaftlicher Einbindung ohne diese Voraussetzung ist `Integration` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 6.5 `Assimilation`
+- Abschnitt 6.5 `Integration`
+
+## 14.5 Militär
+
+### Army vs Armed Forces
+
+#### Problem
+
+`Army` wird häufig als Sammelbezeichnung für sämtliche militärischen Branches verwendet, obwohl es projektweit ausschließlich die landmilitärische Branch bezeichnet.
+
+#### Richtige Verwendung
+
+`Armed Forces` bezeichnet die Gesamtheit aller einer einheitlichen obersten militärischen Autorität zugeordneten Branches. `Army` bezeichnet die für landgebundene Kriegführung zuständige Branch dieser Armed Forces.
+
+#### Empfehlung
+
+Für die militärische Gesamtorganisation ist `Armed Forces` zu verwenden; für deren landmilitärische Branch ist `Army` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 8.1 `Army`
+- Abschnitt 8.1 `Armed Forces`
+
+### Unit vs Formation
+
+#### Problem
+
+`Unit` und `Formation` werden häufig ohne Angabe ihrer relativen organisatorischen Funktion austauschbar für jeden militärischen Verband verwendet.
+
+#### Richtige Verwendung
+
+Eine `Unit` ist die kleinste im festgelegten fachlichen Zusammenhang als selbständig geführtes Ganzes betrachtete Military Formation. Eine `Formation` ist eine konkrete, nach festgelegter Gliederung zusammengefasste und gemeinsam geführte Military Formation, ohne notwendig die kleinste Ebene zu sein.
+
+#### Empfehlung
+
+Für die im jeweiligen Zusammenhang kleinste selbständig betrachtete Ebene ist `Unit` zu verwenden; für die konkrete organisatorische Zusammenfassung ist `Formation` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 8.2 `Unit`
+- Abschnitt 8.2 `Formation`
+
+### Battle vs Campaign
+
+#### Problem
+
+Eine einzelne unmittelbare bewaffnete Auseinandersetzung wird häufig als `Campaign` bezeichnet oder ein längerfristiger strategischer Zusammenhang auf eine `Battle` reduziert.
+
+#### Richtige Verwendung
+
+Eine `Battle` ist eine größere, räumlich und zeitlich zusammenhängende unmittelbare bewaffnete Auseinandersetzung. Eine `Campaign` ist eine strategisch zusammenhängende Folge militärischer Operations für ein übergeordnetes militärisches Ziel.
+
+#### Empfehlung
+
+Für die konkrete unmittelbare Auseinandersetzung ist `Battle` zu verwenden; für die übergeordnete Folge mehrerer Operations ist `Campaign` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 8.4 `Battle`
+- Abschnitt 8.4 `Campaign`
+
+### Campaign vs Operation
+
+#### Problem
+
+Ein einzelnes abgegrenztes militärisches Vorhaben und die übergeordnete strategische Folge solcher Vorhaben werden häufig beide als `Campaign` oder `Operation` bezeichnet.
+
+#### Richtige Verwendung
+
+Eine `Operation` ist ein nach Ziel, Verantwortung, Raum und Zeit abgegrenztes militärisches Vorhaben. Eine `Campaign` verbindet mehrere Operations in einem größeren räumlichen und zeitlichen Zusammenhang unter einem übergeordneten militärischen Ziel.
+
+#### Empfehlung
+
+Für das einzelne abgegrenzte Vorhaben ist `Operation` zu verwenden; für dessen strategisch übergeordneten Zusammenhang mit weiteren Operations ist `Campaign` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 8.4 `Campaign`
+- Abschnitt 8.4 `Operation`
+
+### Supply vs Logistics
+
+#### Problem
+
+Die für militärische Kräfte bestimmten Mittel und Leistungen werden häufig mit dem gesamten Aufgabenbereich ihrer Planung, Bewegung und Erhaltung gleichgesetzt.
+
+#### Richtige Verwendung
+
+Militärisches `Supply` bezeichnet die für die fortgesetzte Handlungsfähigkeit militärischer Kräfte bestimmten materiellen Mittel und Leistungen. `Logistics` bezeichnet den umfassenden Aufgabenbereich ihrer Planung, Bereitstellung, Bewegung, Verteilung und Erhaltung.
+
+#### Empfehlung
+
+Für den Gegenstand militärischer Versorgung ist `Supply` zu verwenden; für den umfassenden militärischen Unterstützungszusammenhang ist `Logistics` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 8.5 `Supply`
+- Abschnitt 8.5 `Logistics`
+
+## 14.6 Diplomatie
+
+### Treaty vs Proposal
+
+#### Problem
+
+Ein noch offener diplomatischer Vorschlag wird häufig bereits als `Treaty` bezeichnet, obwohl ein verbindliches internationales Abkommen noch nicht begründet ist.
+
+#### Richtige Verwendung
+
+Eine `Proposal` ist ein formaler Vorschlag oder ein diplomatisches Angebot, dessen Annahme, Ablehnung oder Veränderung noch nicht feststeht. Ein `Treaty` ist ein formal begründetes internationales Abkommen, das gegenseitige Rechte, Pflichten oder Beziehungen verbindlich ordnet.
+
+#### Empfehlung
+
+Für den noch offenen diplomatischen Inhalt ist `Proposal` zu verwenden; für das formal begründete verbindliche internationale Abkommen ist `Treaty` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 9.3 `Proposal`
+- Abschnitt 9.4 `Treaty`
+
+### Alliance vs Diplomatic Relation
+
+#### Problem
+
+Jeder bestehende diplomatische Zusammenhang wird häufig als `Alliance` bezeichnet, obwohl eine Diplomatic Relation kein formales Kooperationsabkommen voraussetzt.
+
+#### Richtige Verwendung
+
+Eine `Diplomatic Relation` ist der bestehende diplomatische Zusammenhang zwischen zwei diplomatischen Akteuren. Eine `Alliance` ist ein formales internationales Abkommen zur dauerhaften organisierten Zusammenarbeit ihrer Mitglieder bei gemeinsamen internationalen Interessen.
+
+#### Empfehlung
+
+Für den allgemeinen bestehenden diplomatischen Zusammenhang ist `Diplomatic Relation` zu verwenden; für den formalen dauerhaften Kooperationszusammenhang ist `Alliance` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 9.2 `Diplomatic Relation`
+- Abschnitt 9.4 `Alliance`
+
+### Recognition vs Recognition Proposal
+
+#### Problem
+
+Der bestehende Anerkennungsstatus und der noch zu behandelnde Vorschlag zu seiner Begründung, Änderung oder Beendigung werden häufig beide als `Recognition` bezeichnet.
+
+#### Richtige Verwendung
+
+`Recognition` bezeichnet die bestehende formale Anerkennung eines politischen Akteurs oder beanspruchten internationalen Status. Ein `Recognition Proposal` ist eine Proposal, deren Gegenstand die Begründung, Änderung oder Beendigung dieser Recognition ist.
+
+#### Empfehlung
+
+Für den bestehenden formalen Status ist `Recognition` zu verwenden; für den dazu zur Entscheidung gestellten Inhalt ist `Recognition Proposal` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 9.2 `Recognition`
+- Abschnitt 9.3 `Recognition Proposal`
+
+### Sanction vs Embargo
+
+#### Problem
+
+`Sanction` und `Embargo` werden häufig als austauschbare Bezeichnungen für jede beschränkende diplomatische oder wirtschaftliche Maßnahme verwendet.
+
+#### Richtige Verwendung
+
+Eine `Sanction` ist die allgemeine diplomatische Kategorie einer formal auferlegten beschränkenden Maßnahme zur Beanstandung oder Beeinflussung eines Akteurs. Ein `Embargo` ist die von einem State angeordnete Beschränkung oder Untersagung bestimmter Handelsbeziehungen.
+
+#### Empfehlung
+
+Für die allgemeine diplomatische Zwangsmaßnahme ist `Sanction` zu verwenden; für die spezifische staatliche Beschränkung oder Untersagung von Trade ist `Embargo` zu verwenden.
+
+#### Referenzen
+
+- Abschnitt 9.3 `Sanction`
+- Abschnitt 7.5 `Embargo`
