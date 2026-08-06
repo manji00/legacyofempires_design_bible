@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.13.0
+version: 0.13.1
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -12797,3 +12797,99 @@ Der Begriff ermöglicht mehrsprachige Benutzeroberflächen, ohne Identity, Daten
 
 - PB-000
 - PB-004
+
+## 13.7 Project Language Policy
+
+Dieser Abschnitt ist eine normative, verbindliche Projektrichtlinie und kein Glossareintrag. Die nachfolgenden Regeln sind projektweit anzuwenden.
+
+### Zweck
+
+Eine einheitliche Projektsprache sichert konsistente Benennungen und verhindert, dass gleiche Konzepte in verschiedenen Projektbereichen unterschiedlich bezeichnet werden. Sie verbessert die Wartbarkeit, weil Artefakte langfristig eindeutig lesbar und auffindbar bleiben, und erleichtert die Zusammenarbeit zwischen allen Beteiligten durch ein gemeinsames sprachliches Bezugssystem. Die Trennung zwischen deutscher Dokumentationssprache, englischer technischer Benennung und lokalisierbaren Benutzertexten ermöglicht internationale Erweiterbarkeit, ohne stabile technische Bezüge zu verändern. Dadurch bleiben Terminologie, Identifier und Schnittstellen auch bei wachsendem Projektumfang langfristig stabil.
+
+### Geltungsbereich
+
+Diese Richtlinie gilt verbindlich für sämtliche:
+
+- Governance-Dokumente,
+- Design-Dokumente,
+- technischen Dokumente,
+- Quellcodes,
+- APIs,
+- Konfigurationsdateien,
+- Savegames,
+- Datenformate,
+- Build-Skripte,
+- Modding-Schnittstellen,
+- Werkzeuge und
+- Benutzeroberflächen.
+
+### Verbindliche Regeln
+
+#### Dokumentation
+
+- Die offizielle Sprache der Project Bible MUST Deutsch sein.
+- Deutsche Dokumentation MUST die kanonischen Fachbegriffe aus PB-004 verwenden.
+- Dokumente MUST innerhalb ihres jeweiligen sprachlichen und fachlichen Kontexts konsistent bleiben.
+
+#### Quellcode
+
+- Quellcode MUST ausschließlich in englischer Sprache geschrieben werden.
+- Dies umfasst insbesondere Klassen, Interfaces, Methoden, Funktionen, Variablen, Enumerationen, Namespaces und, soweit sinnvoll, Kommentare.
+
+#### Identifier
+
+- Identifier MUST ausschließlich in englischer Sprache erstellt werden.
+- Identifier MUST NOT lokalisiert werden.
+- Identifier MUST ausschließlich der Identifikation dienen und MUST NOT als Benutzertext verwendet werden.
+
+#### APIs
+
+- APIs MUST ausschließlich in englischer Sprache definiert werden.
+- Dies umfasst Endpunkte, Parameter, Request-Objekte, Response-Objekte, Commands, Events und Fehlercodes.
+
+#### Benutzeroberfläche
+
+- Benutzeroberflächen MUST grundsätzlich lokalisierbar entwickelt werden.
+- Benutzertexte MUST NOT Bestandteil technischer Identifier sein.
+- Anzeigenamen und Identifier MUST strikt getrennt werden.
+
+#### Sprache innerhalb eines Artefakts
+
+- Ein einzelnes Artefakt SHOULD keine gemischten deutschen und englischen Bezeichner enthalten. Ausgenommen sind unverändert zu verwendende kanonische Fachbegriffe, Identifier und normative Schlüsselwörter.
+- Sprachliche und terminologische Konsistenz MUST Vorrang vor persönlichem Stil haben.
+
+#### Abkürzungen
+
+- Neue Abkürzungen MUST vor ihrer Verwendung dokumentiert werden.
+- Nicht dokumentierte Abkürzungen MUST NOT verwendet werden.
+
+#### Governance
+
+- Neue Benennungsregeln MUST ausschließlich über den Governance-Prozess eingeführt oder geändert werden.
+- Änderungen projektweiter Sprachregeln MUST durch eine Architecture Decision mit dem Status `Accepted` beschlossen werden.
+
+### Beispiele
+
+**Positiv:**
+
+- `ProjectManager`
+- `ResearchProposal`
+- `COUNTRY_GERMANY`
+- `LAW_UNIVERSAL_SUFFRAGE`
+- `RESOURCE_COAL`
+- `api/v1/countries`
+
+**Negativ:**
+
+- `ProjektManager`
+- `ForschungsProposal`
+- `LAND_DEUTSCHLAND`
+- `GesetzUniversalSuffrage`
+- `CoalResourceDeutsch`
+
+### Beziehung zu anderen Dokumenten
+
+- PB-004 definiert die verbindliche Projektsprache und die projektweite Terminologie.
+- PB-998 dokumentiert die zugehörigen Architekturentscheidungen.
+- TECH-Dokumente MUST diese Regeln übernehmen.
+- GD-Dokumente MUST diese Terminologie verwenden.
