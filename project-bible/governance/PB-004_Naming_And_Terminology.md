@@ -1,11 +1,11 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.4.2
+version: 0.5.0
 status: Draft
 category: Governance
 created: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-06
 owners:
   - Project Lead
 reviewers: []
@@ -1906,6 +1906,889 @@ Der Begriff bezeichnet den institutionellen Vollzug öffentlicher Aufgaben jense
 - Ministry
 - Institution
 - Law
+
+#### Referenzen
+
+- PB-002
+- PB-003
+## 5. Territoriale Terminologie
+
+Territoriale Begriffe werden nach ihren fachlichen Beziehungen gruppiert, weil räumliche Ordnung nicht durch eine einzige Hierarchie vollständig beschrieben werden kann. Die Gruppen machen sichtbar, welche Begriffe vergleichbare Gegenstände bezeichnen und an welchen Stellen eine Abgrenzung zwischen ihnen erforderlich ist.
+
+Räumliche Begriffe beschreiben unterschiedliche Ebenen und Perspektiven. Geographische Gliederungen, politische Zuordnungen und administrative Einteilungen werden deshalb bewusst getrennt, auch wenn sie sich auf denselben Ausschnitt der World beziehen können.
+
+Spätere Dokumente MUST für diese Konzepte ausschließlich die hier festgelegte Terminologie verwenden. Sie MUST die geographische Lage eines Gebietes, seine politische Zuordnung und seine administrative Funktion als voneinander unterscheidbare Eigenschaften behandeln.
+
+## 5.1 Welt- und Gebietseinheiten
+
+### World Region
+
+#### Definition
+
+Eine `World Region` ist eine großräumige geographische Gliederung der World, die mehrere Regions zu einem übergeordneten räumlichen Zusammenhang ordnet.
+
+#### Zweck
+
+Der Begriff bezeichnet die höchste projektweit festgelegte geographische Gruppierung unterhalb der World, ohne eine politische oder administrative Einheit vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Region`: ist eine unterhalb einer World Region liegende geographische Gebietseinheit.
+- `Strategic Region`: fasst Räume nach einer strategischen Betrachtung zusammen.
+
+#### Verwandte Begriffe
+
+- World
+- Region
+- Strategic Region
+- Area
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Region
+
+#### Definition
+
+Eine `Region` ist eine geographische Gebietseinheit innerhalb einer World Region, die mehrere Provinces zu einem räumlich zusammenhängenden Ausschnitt der World ordnet.
+
+#### Zweck
+
+Der Begriff bezeichnet eine mittlere, politisch und administrativ neutrale Ebene der geographischen Weltgliederung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Province`: ist die unmittelbar unterhalb einer Region liegende geographische Gebietseinheit.
+- `Administrative Region`: ist eine durch Public Administration abgegrenzte Verwaltungseinheit.
+- `Territory`: bezeichnet ein Gebiet aufgrund seiner politischen Zuordnung.
+- `Strategic Region`: wird durch einen strategischen Zusammenhang bestimmt.
+
+#### Verwandte Begriffe
+
+- World Region
+- Province
+- Administrative Region
+- Strategic Region
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Province
+
+#### Definition
+
+Eine `Province` ist eine geographische Gebietseinheit innerhalb einer Region, die mehrere Districts zu einem zusammenhängenden Ausschnitt der World ordnet.
+
+#### Zweck
+
+Der Begriff bezeichnet die geographische Gliederungsebene zwischen Region und District unabhängig von politischer oder administrativer Zuordnung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Region`: umfasst mehrere Provinces und liegt eine geographische Ebene höher.
+- `District`: ist die unmittelbar unterhalb einer Province liegende geographische Gebietseinheit.
+- `Administrative Region`: folgt einer administrativen statt einer geographischen Abgrenzung.
+
+#### Verwandte Begriffe
+
+- Region
+- District
+- Territory
+- Administrative Region
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### District
+
+#### Definition
+
+Ein `District` ist die kleinste kanonische geographische Gebietseinheit der World und liegt innerhalb genau einer Province.
+
+#### Zweck
+
+Der Begriff bezeichnet die feinste projektweit festgelegte räumliche Gliederung, auf die größere geographische und politische Gebiete bezogen werden können.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Province`: umfasst mehrere Districts und liegt eine geographische Ebene höher.
+- `Municipality`: ist eine örtliche Verwaltungseinheit und keine geographische Grundeinheit.
+- `Area`: ist eine zweckgebundene räumliche Zusammenfassung ohne feste Hierarchiestufe.
+
+#### Verwandte Begriffe
+
+- Province
+- Municipality
+- Area
+- Zone
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 5.2 Politische Gebiete
+
+### Territory
+
+#### Definition
+
+Ein `Territory` ist ein räumlich abgegrenzter Teil der World, der einem politischen Akteur aufgrund von Sovereignty, Anspruch, Kontrolle oder einem sonstigen politischen Verhältnis zugeordnet wird.
+
+#### Zweck
+
+Der Begriff bezeichnet die allgemeine politische Zuordnung eines Gebietes, ohne deren Rechtsgrund, tatsächliche Wirksamkeit oder administrativen Status vorwegzunehmen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Region`: ist eine geographische Gebietseinheit ohne notwendige politische Zuordnung.
+- `State`: ist eine dauerhafte politische und rechtliche Ordnung und kein Gebiet.
+- `Country`: ist die im Spielzusammenhang handelnde politische Einheit und nicht ihr räumlicher Umfang.
+- `Controlled Territory`: ist ein Territory unter tatsächlich durchgesetzter politischer Kontrolle.
+
+#### Verwandte Begriffe
+
+- State
+- Country
+- Controlled Territory
+- Claim
+- Core
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Core
+
+#### Definition
+
+Ein `Core` ist ein Territory, das ein Country als dauerhaft zu seiner grundlegenden politischen und territorialen Ordnung gehörend anerkennt.
+
+#### Zweck
+
+Der Begriff bezeichnet die besondere dauerhafte Eigenzuordnung eines Gebietes durch ein Country unabhängig von gegenwärtiger Kontrolle oder fremden Ansprüchen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Claim`: ist ein geltend gemachter politischer Zuordnungsanspruch ohne notwendige Anerkennung als grundlegender Bestandteil.
+- `Controlled Territory`: wird tatsächlich kontrolliert, muss aber kein Core des kontrollierenden Country sein.
+- `Annexed Territory`: ist formell in die beanspruchte territoriale Ordnung eines Country eingegliedert.
+
+#### Verwandte Begriffe
+
+- Territory
+- Country
+- Claim
+- Controlled Territory
+- Annexed Territory
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Claim
+
+#### Definition
+
+Ein `Claim` ist der ausdrücklich geltend gemachte Anspruch eines politischen Akteurs, dass ein Territory seiner politischen Authority oder territorialen Ordnung zugeordnet sein soll.
+
+#### Zweck
+
+Der Begriff bezeichnet eine beanspruchte politische Gebietszuordnung unabhängig davon, ob sie anerkannt, durchgesetzt oder als dauerhaft grundlegend betrachtet wird.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Core`: ist die dauerhafte Eigenzuordnung eines Territory durch ein Country.
+- `Controlled Territory`: bezeichnet tatsächliche Kontrolle und keinen Anspruch.
+- `Sovereignty`: ist der Anspruch eines State auf höchste politische Authority und äußere Unabhängigkeit.
+
+#### Verwandte Begriffe
+
+- Territory
+- Core
+- Sovereignty
+- Controlled Territory
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Controlled Territory
+
+#### Definition
+
+Ein `Controlled Territory` ist ein Territory, in dem ein politischer Akteur seine Entscheidungen gegenwärtig tatsächlich und dauerhaft wirksam durchsetzen kann.
+
+#### Zweck
+
+Der Begriff bezeichnet die faktische politische Kontrolle eines Gebietes unabhängig von Sovereignty, Core-Status, Claim oder administrativer Eingliederung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Occupied Territory`: ist ein besonderer Fall fremder Kontrolle ohne vollzogene territoriale Eingliederung.
+- `Annexed Territory`: ist formell in die beanspruchte territoriale Ordnung eines Country eingegliedert.
+- `Claim`: bezeichnet einen politischen Anspruch statt tatsächlicher Kontrolle.
+
+#### Verwandte Begriffe
+
+- Territory
+- Occupied Territory
+- Annexed Territory
+- Authority
+- Claim
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Occupied Territory
+
+#### Definition
+
+Ein `Occupied Territory` ist ein Controlled Territory, das ein politischer Akteur außerhalb seiner eigenen territorialen Ordnung vorläufig beherrscht, ohne es in diese eingegliedert zu haben.
+
+#### Zweck
+
+Der Begriff bezeichnet fremde, nicht als territoriale Eingliederung behandelte Kontrolle und trennt sie von allgemeiner Kontrolle und Annexation.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Controlled Territory`: umfasst jede tatsächlich durchgesetzte politische Kontrolle und ist nicht notwendig fremd oder vorläufig.
+- `Annexed Territory`: ist in die beanspruchte territoriale Ordnung des annektierenden Country eingegliedert.
+- `Colony`: steht in einem dauerhaften Abhängigkeitsverhältnis zu einem anderen Country.
+
+#### Verwandte Begriffe
+
+- Controlled Territory
+- Annexed Territory
+- Territory
+- Claim
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Annexed Territory
+
+#### Definition
+
+Ein `Annexed Territory` ist ein Territory, das ein Country durch einen formellen Hoheitsakt in seine beanspruchte territoriale Ordnung eingegliedert hat.
+
+#### Zweck
+
+Der Begriff bezeichnet die vollzogene formelle Eingliederung eines Gebietes unabhängig von ihrer äußeren Anerkennung, tatsächlichen Kontrolle oder Einordnung als Core.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Occupied Territory`: bleibt außerhalb der eigenen territorialen Ordnung des kontrollierenden Akteurs.
+- `Controlled Territory`: bezeichnet tatsächliche Kontrolle ohne notwendige formelle Eingliederung.
+- `Core`: bezeichnet die dauerhafte grundlegende Eigenzuordnung durch ein Country.
+
+#### Verwandte Begriffe
+
+- Territory
+- Occupied Territory
+- Controlled Territory
+- Core
+- Claim
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 5.3 Verwaltungsgebiete
+
+### Administrative Region
+
+#### Definition
+
+Eine `Administrative Region` ist ein räumlich abgegrenzter Zuständigkeitsbereich der Public Administration, der mehrere örtliche Verwaltungseinheiten umfassen kann.
+
+#### Zweck
+
+Der Begriff bezeichnet eine allgemeine überörtliche Verwaltungseinheit unabhängig von ihrer geographischen Gliederung oder einer besonderen verfassungsrechtlichen Stellung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Region`: ist eine geographische Gebietseinheit.
+- `Federal State`: besitzt eine verfassungsrechtlich zugeordnete eigenständige politische Stellung innerhalb eines State.
+- `Municipality`: ist eine örtliche Verwaltungseinheit.
+
+#### Verwandte Begriffe
+
+- Public Administration
+- Region
+- Federal State
+- Municipality
+- Administrative Capacity
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Federal State
+
+#### Definition
+
+Ein `Federal State` ist eine territoriale politische Einheit innerhalb eines föderal gegliederten State, der durch dessen Constitution eigenständige Zuständigkeiten und Institutionen zugeordnet sind.
+
+#### Zweck
+
+Der Begriff bezeichnet eine verfassungsrechtlich abgesicherte Gliedeinheit und grenzt sie von rein administrativen Unterteilungen und dem übergeordneten State ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `State`: ist die übergreifende dauerhafte politische und rechtliche Ordnung.
+- `Administrative Region`: besitzt nicht notwendig eigenständige verfassungsrechtliche Zuständigkeiten.
+- `Country`: ist eine im Spielzusammenhang eigenständig handelnde politische Einheit.
+
+#### Verwandte Begriffe
+
+- State
+- Constitution
+- Autonomy
+- Administrative Region
+- Municipality
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Municipality
+
+#### Definition
+
+Eine `Municipality` ist eine örtliche territoriale Einheit der Public Administration mit einem abgegrenzten Zuständigkeitsbereich und institutionell zugeordneten öffentlichen Aufgaben.
+
+#### Zweck
+
+Der Begriff bezeichnet die lokale Ebene administrativer Gebietsorganisation unabhängig von ihrer konkreten Organform oder Bezeichnung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `District`: ist eine geographische Grundeinheit und keine notwendige Verwaltungseinheit.
+- `Administrative Region`: ist eine überörtliche Verwaltungseinheit.
+- `Capital`: ist ein politisch bestimmter zentraler Ort und keine Verwaltungsebene.
+
+#### Verwandte Begriffe
+
+- Public Administration
+- Administrative Region
+- District
+- Capital
+- Autonomy
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Capital
+
+#### Definition
+
+Eine `Capital` ist der politisch bestimmte Ort, an dem die zentralen Institutionen eines politischen Akteurs ihren maßgeblichen Sitz haben.
+
+#### Zweck
+
+Der Begriff bezeichnet den institutionellen Hauptort einer politischen Einheit, ohne eine eigene geographische oder administrative Hierarchiestufe festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Municipality`: ist eine örtliche Verwaltungseinheit, die eine Capital enthalten kann.
+- `Country`: ist die handelnde politische Einheit, deren zentrale Institutionen an einer Capital ansässig sein können.
+- `Political Capital`: bezeichnet politisch mobilisierbare Handlungsmacht und keinen Ort.
+
+#### Verwandte Begriffe
+
+- Country
+- State
+- Government
+- Institution
+- Municipality
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 5.4 Internationale Gebietsbeziehungen
+
+### Colony
+
+#### Definition
+
+Eine `Colony` ist ein territorial abgegrenztes politisches Gemeinwesen, das dauerhaft einem anderen Country untergeordnet ist und nicht als gleichberechtigter Bestandteil von dessen staatlicher Ordnung gilt.
+
+#### Zweck
+
+Der Begriff bezeichnet territoriale Fremdherrschaft bei institutioneller Abgrenzung vom übergeordneten Country.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Occupied Territory`: steht unter vorläufiger fremder Kontrolle ohne Eingliederung.
+- `Protectorate`: behält eine eigene politische Ordnung unter vertraglich oder rechtlich begrenzter äußerer Authority.
+- `Subject`: ist der allgemeine Begriff für ein politisch untergeordnetes Country.
+
+#### Verwandte Begriffe
+
+- Country
+- Subject
+- Protectorate
+- Territory
+- Sovereignty
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Protectorate
+
+#### Definition
+
+Ein `Protectorate` ist ein Country, das seine innere politische Ordnung grundsätzlich beibehält, während festgelegte Bereiche seiner äußeren Sovereignty der Authority eines anderen Country unterstehen.
+
+#### Zweck
+
+Der Begriff bezeichnet eine besondere Form politischer Unterordnung, bei der äußere Entscheidungsbefugnisse begrenzt übertragen sind und die innere Ordnung fortbesteht.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Colony`: ist ein territorial abgegrenztes, nicht gleichberechtigt eingegliedertes Gemeinwesen unter dauerhafter Fremdherrschaft.
+- `Subject`: bezeichnet allgemein ein politisch untergeordnetes Country.
+- `Puppet State`: besitzt nur begrenzte tatsächliche Eigenständigkeit gegenüber dem beherrschenden Country.
+
+#### Verwandte Begriffe
+
+- Country
+- Subject
+- Puppet State
+- Sovereignty
+- Autonomy
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Subject
+
+#### Definition
+
+Ein `Subject` ist ein Country, dessen Sovereignty durch ein dauerhaftes politisches Unterordnungsverhältnis zugunsten eines anderen Country begrenzt ist.
+
+#### Zweck
+
+Der Begriff bezeichnet die allgemeine Kategorie politisch abhängiger Countries unabhängig von der besonderen Form oder Bezeichnung ihrer Abhängigkeit.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Protectorate`: ist eine besondere Form mit grundsätzlich fortbestehender innerer Ordnung und begrenzter äußerer Sovereignty.
+- `Puppet State`: ist durch geringe tatsächliche politische Eigenständigkeit gekennzeichnet.
+- `Colony`: ist ein territorial abgegrenztes Gemeinwesen unter dauerhafter Fremdherrschaft und nicht notwendig ein Country.
+
+#### Verwandte Begriffe
+
+- Country
+- Protectorate
+- Puppet State
+- Colony
+- Sovereignty
+- Autonomy
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Puppet State
+
+#### Definition
+
+Ein `Puppet State` ist ein formal als Country fortbestehender Subject, dessen maßgebliche politische Entscheidungen tatsächlich von einem anderen Country bestimmt werden.
+
+#### Zweck
+
+Der Begriff bezeichnet die Abweichung zwischen formaler Eigenständigkeit und tatsächlicher äußerer Bestimmung der politischen Führung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Subject`: ist der Oberbegriff für ein politisch untergeordnetes Country.
+- `Protectorate`: überträgt festgelegte Bereiche äußerer Sovereignty, ohne notwendig eine tatsächliche Bestimmung maßgeblicher innerer Entscheidungen zu begründen.
+- `Government`: ist die gegenwärtige politische Führung eines State.
+
+#### Verwandte Begriffe
+
+- Country
+- Subject
+- Protectorate
+- Government
+- Sovereignty
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 5.5 Räumliche Konzepte
+
+### Border
+
+#### Definition
+
+Eine `Border` ist die festgelegte Trennlinie zwischen zwei unmittelbar aneinandergrenzenden Gebieten mit unterschiedlicher politischer, administrativer oder geographischer Zuordnung.
+
+#### Zweck
+
+Der Begriff bezeichnet eine lineare räumliche Abgrenzung und macht die Art der getrennten Gebietszuordnung ausdrücklich bestimmbar.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Frontier`: ist ein räumlicher Übergangsbereich und keine festgelegte Trennlinie.
+- `Area`: ist eine zweckgebundene räumliche Zusammenfassung.
+- `Zone`: ist ein abgegrenzter Raum mit einem zugeordneten besonderen Status.
+
+#### Verwandte Begriffe
+
+- Frontier
+- Territory
+- Region
+- Zone
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Frontier
+
+#### Definition
+
+Eine `Frontier` ist ein räumlicher Übergangsbereich an der äußeren Reichweite dauerhaft wirksamer politischer oder administrativer Ordnung.
+
+#### Zweck
+
+Der Begriff bezeichnet einen Bereich abgestufter, überlagerter oder noch nicht eindeutig verfestigter Gebietszuordnung statt einer exakten Trennlinie.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Border`: ist eine festgelegte Trennlinie zwischen unterschiedlich zugeordneten Gebieten.
+- `Controlled Territory`: ist ein Gebiet tatsächlich und dauerhaft wirksamer politischer Kontrolle.
+- `Zone`: besitzt einen ausdrücklich zugeordneten besonderen Status.
+
+#### Verwandte Begriffe
+
+- Border
+- Territory
+- Controlled Territory
+- Area
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Area
+
+#### Definition
+
+Eine `Area` ist eine für einen bestimmten fachlichen Zweck zusammengefasste räumliche Menge ohne festgelegte Stellung in der geographischen, politischen oder administrativen Gebietshierarchie.
+
+#### Zweck
+
+Der Begriff bezeichnet eine neutrale, zweckbezogene räumliche Auswahl, wenn keine kanonische Gebietseinheit oder besondere Statuszuweisung gemeint ist.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Region`: besitzt eine festgelegte Stellung in der geographischen Weltgliederung.
+- `Zone`: ist ein abgegrenzter Raum mit einem besonderen Status oder einer besonderen Regelungszuordnung.
+- `Strategic Region`: ist eine ausdrücklich strategisch bestimmte räumliche Gruppierung.
+
+#### Verwandte Begriffe
+
+- Zone
+- Strategic Region
+- Region
+- District
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Zone
+
+#### Definition
+
+Eine `Zone` ist ein abgegrenzter Raum, dem für einen festgelegten fachlichen Zusammenhang ein besonderer Status oder eine besondere Regelungszuordnung zugewiesen ist.
+
+#### Zweck
+
+Der Begriff bezeichnet eine statusbezogene räumliche Abgrenzung unabhängig von den Grenzen kanonischer geographischer, politischer oder administrativer Gebietseinheiten.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Area`: ist eine neutrale zweckbezogene räumliche Auswahl ohne notwendigen besonderen Status.
+- `Region`: ist eine festgelegte geographische Gebietseinheit.
+- `Border`: ist eine Trennlinie und kein räumlicher Bereich.
+
+#### Verwandte Begriffe
+
+- Area
+- Border
+- Strategic Region
+- Territory
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Strategic Region
+
+#### Definition
+
+Eine `Strategic Region` ist eine zusammenhängende räumliche Gruppierung, deren Abgrenzung durch einen gemeinsamen strategischen Betrachtungszusammenhang bestimmt ist.
+
+#### Zweck
+
+Der Begriff bezeichnet eine strategische Raumordnung ohne politische, administrative oder geographische Einheitlichkeit vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Region`: ist eine festgelegte geographische Gebietseinheit.
+- `World Region`: ist die höchste geographische Gruppierung unterhalb der World.
+- `Area`: ist eine allgemeine zweckbezogene räumliche Auswahl ohne notwendig strategische Bestimmung.
+- `Zone`: erhält einen besonderen Status oder eine besondere Regelungszuordnung.
+
+#### Verwandte Begriffe
+
+- Region
+- World Region
+- Area
+- Zone
 
 #### Referenzen
 
