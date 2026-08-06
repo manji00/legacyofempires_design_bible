@@ -14043,13 +14043,13 @@ Die folgende Arbeitsliste wird für den vollständigen Freigabestand geführt. E
 - [ ] Keine doppelten Begriffe.
 - [ ] Keine unzulässigen Synonyme.
 - [ ] Alle Cross References geprüft.
-- [ ] Alle Kapitel vollständig.
-- [ ] Kapitelstruktur konsistent.
-- [ ] Glossarstruktur konsistent.
-- [ ] Normative Kapitel vollständig.
+- [x] Alle Kapitel vollständig.
+- [x] Kapitelstruktur konsistent.
+- [x] Glossarstruktur konsistent.
+- [x] Normative Kapitel vollständig.
 - [ ] Frontmatter vollständig.
 - [ ] Versionierung konsistent.
-- [ ] `canonical_path` korrekt.
+- [x] `canonical_path` korrekt.
 - [ ] Sämtliche internen Referenzen gültig.
 - [ ] Alle `Accepted` Architecture Decisions berücksichtigt.
 - [ ] Keine offenen Konflikte mit PB-998.
@@ -14059,8 +14059,8 @@ Die folgende Arbeitsliste wird für den vollständigen Freigabestand geführt. E
 - [ ] Terminologie konsistent.
 - [ ] Identifier-Regeln konsistent.
 - [ ] Naming-Regeln konsistent.
-- [ ] Dokumentgrenze eingehalten: keine Glossardefinitionen in Kapitel 16.
-- [ ] Keine Gameplaymechaniken oder Implementierungsdetails im Release-Gate-Kapitel.
+- [x] Dokumentgrenze eingehalten: keine Glossardefinitionen in Kapitel 16.
+- [x] Keine Gameplaymechaniken oder Implementierungsdetails im Release-Gate-Kapitel.
 - [ ] Qualitätskriterien vollständig geprüft und erfüllt.
 - [ ] Dokumentationsprüfung vollständig und erfolgreich abgeschlossen.
 - [ ] Konsistenzprüfung vollständig und erfolgreich abgeschlossen.
