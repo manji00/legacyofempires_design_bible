@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.7.0
+version: 0.8.0
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -5678,6 +5678,1408 @@ Der Begriff bezeichnet die wirtschaftliche Ergiebigkeit eines Mitteleinsatzes un
 - Output
 - Capacity
 - Investment
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+# 8. Militärische Terminologie
+
+Militärische Begriffe bezeichnen unterschiedliche Ebenen militärischer Organisation und müssen entsprechend ihrer jeweiligen fachlichen Reichweite verwendet werden. Die Gesamtorganisation, ihre Teilorganisationen und ihre konkreten Verbände bilden voneinander abgegrenzte Begriffsbereiche.
+
+Organisation, Verbände, Kommandostrukturen, Operationen und Logistik werden bewusst getrennt, damit institutionelle Ordnung, Führung, räumlich und zeitlich begrenztes Handeln sowie materielle Unterstützung nicht miteinander vermischt werden. Militärische Konzepte beschreiben davon getrennt übergreifende Eigenschaften und Ordnungsgrundsätze.
+
+Dieses Kapitel definiert ausschließlich die kanonische militärische Terminologie. Spielmechaniken, Regeln und technische Umsetzungen werden in späteren zuständigen Dokumenten beschrieben.
+
+## 8.1 Militärische Organisation
+
+### Armed Forces
+
+#### Definition
+
+`Armed Forces` ist die Gesamtheit aller dauerhaft einer einheitlichen obersten militärischen Autorität zugeordneten militärischen Branches eines politischen Gemeinwesens.
+
+#### Zweck
+
+Der Begriff bezeichnet die militärische Gesamtorganisation und grenzt sie von einzelnen Branches, Armies und Military Formations ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Army`: ist die landmilitärische Branch der Armed Forces.
+- `Branch`: ist ein funktional abgegrenzter Teil der Armed Forces.
+- `Military Formation`: ist ein gegliederter militärischer Verband und keine militärische Gesamtorganisation.
+
+#### Verwandte Begriffe
+
+- Army
+- Navy
+- Air Force
+- Branch
+- Military Formation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Army
+
+#### Definition
+
+`Army` ist die für landgebundene Kriegführung zuständige Branch der Armed Forces.
+
+#### Zweck
+
+Der Begriff legt die landmilitärische Teilorganisation fest und verhindert eine Verwendung als Bezeichnung sämtlicher Armed Forces oder einer Military Formation.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Armed Forces`: umfassen alle militärischen Branches.
+- `Military Formation`: ist der Oberbegriff für gegliederte militärische Verbände.
+- `Division`: ist eine bestimmte Größen- und Führungsebene eines Verbandes.
+
+#### Verwandte Begriffe
+
+- Armed Forces
+- Branch
+- Military Formation
+- Division
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Navy
+
+#### Definition
+
+`Navy` ist die für maritime Kriegführung zuständige Branch der Armed Forces.
+
+#### Zweck
+
+Der Begriff bezeichnet ausschließlich die maritime Teilorganisation und trennt sie von der militärischen Gesamtorganisation und einzelnen maritimen Verbänden.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Armed Forces`: bilden die militärische Gesamtorganisation.
+- `Branch`: bezeichnet allgemein einen funktional abgegrenzten Teil der Armed Forces.
+
+#### Verwandte Begriffe
+
+- Armed Forces
+- Branch
+- Military Formation
+- Command
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Air Force
+
+#### Definition
+
+`Air Force` ist die für Kriegführung im Luftraum zuständige Branch der Armed Forces.
+
+#### Zweck
+
+Der Begriff bezeichnet ausschließlich die luftmilitärische Teilorganisation und trennt sie von der militärischen Gesamtorganisation und einzelnen luftmilitärischen Verbänden.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Armed Forces`: bilden die militärische Gesamtorganisation.
+- `Branch`: bezeichnet allgemein einen funktional abgegrenzten Teil der Armed Forces.
+
+#### Verwandte Begriffe
+
+- Armed Forces
+- Branch
+- Military Formation
+- Command
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Branch
+
+#### Definition
+
+`Branch` ist ein nach einem primären militärischen Aufgaben- oder Wirkungsbereich abgegrenzter institutioneller Teil der Armed Forces.
+
+#### Zweck
+
+Der Begriff bezeichnet die erste funktionale Gliederung der militärischen Gesamtorganisation, ohne eine bestimmte innere Verbandsstruktur vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Military Formation`: ist ein gegliederter Verband, keine institutionelle Teilorganisation.
+- `Army`: bezeichnet eine bestimmte Branch oder eine ausdrücklich so bezeichnete landmilitärische Großorganisation.
+
+#### Verwandte Begriffe
+
+- Armed Forces
+- Army
+- Navy
+- Air Force
+- Military Formation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Military Formation
+
+#### Definition
+
+`Military Formation` ist ein militärisch gegliederter, einer gemeinsamen Führung unterstellter Verband aus Personal und zugeordneten Mitteln.
+
+#### Zweck
+
+Der Begriff dient als Oberbegriff für militärische Verbände aller ausdrücklich festgelegten Ebenen und grenzt diese von Branches und der Gesamtheit der Armed Forces ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Formation`: bezeichnet die konkrete organisatorische Zusammenfassung militärischer Elemente.
+- `Unit`: ist die kleinste im jeweiligen fachlichen Zusammenhang selbständig betrachtete Military Formation.
+- `Branch`: ist ein institutioneller Teil der Armed Forces.
+
+#### Verwandte Begriffe
+
+- Armed Forces
+- Branch
+- Unit
+- Formation
+- Command
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 8.2 Verbände
+
+### Unit
+
+#### Definition
+
+`Unit` ist die kleinste in einem festgelegten fachlichen Zusammenhang als selbständig geführtes Ganzes betrachtete Military Formation.
+
+#### Zweck
+
+Der Begriff bezeichnet eine relative organisatorische Grundeinheit; ihre konkrete Größe oder Zusammensetzung folgt nicht aus dem Begriff allein.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Military Formation`: ist der ebenenübergreifende Oberbegriff.
+- `Formation`: bezeichnet eine konkrete organisatorische Zusammenfassung und ist nicht notwendig die kleinste selbständig betrachtete Ebene.
+
+#### Verwandte Begriffe
+
+- Military Formation
+- Formation
+- Company
+- Command
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Formation
+
+#### Definition
+
+`Formation` ist eine konkrete, nach einer festgelegten Gliederung zusammengefasste und gemeinsam geführte Military Formation.
+
+#### Zweck
+
+Der Begriff bezeichnet die organisatorische Gestalt eines Verbandes, ohne eine bestimmte Größenstufe festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Military Formation`: ist der allgemeine begriffliche Oberbegriff.
+- `Unit`: ist die im jeweiligen Zusammenhang kleinste selbständig betrachtete Formation.
+
+#### Verwandte Begriffe
+
+- Military Formation
+- Unit
+- Division
+- Brigade
+- Regiment
+- Battalion
+- Company
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Division
+
+#### Definition
+
+`Division` ist eine über einer Brigade oder einem Regiment und unter einer übergeordneten Großformation eingeordnete Formation.
+
+#### Zweck
+
+Der Begriff bezeichnet eine bestimmte relative Verbandsstufe, ohne Personalstärke, Gliederung oder Einsatzweise festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Brigade`: ist eine nachgeordnete Verbandsstufe.
+- `Military Formation`: umfasst Verbände aller Ebenen.
+
+#### Verwandte Begriffe
+
+- Formation
+- Brigade
+- Regiment
+- Battalion
+- Headquarters
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Brigade
+
+#### Definition
+
+`Brigade` ist eine unter einer Division und über einem Battalion eingeordnete Formation, die Regimenter umfassen kann.
+
+#### Zweck
+
+Der Begriff bezeichnet eine mittlere Verbandsstufe und grenzt sie von benachbarten Stufen ab, ohne eine feste Zusammensetzung vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Division`: ist die übergeordnete Verbandsstufe.
+- `Regiment`: ist eine eigenständige, häufig derselben relativen Ebene zugeordnete Organisationsform.
+- `Battalion`: ist die nachgeordnete Verbandsstufe.
+
+#### Verwandte Begriffe
+
+- Formation
+- Division
+- Regiment
+- Battalion
+- Headquarters
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Regiment
+
+#### Definition
+
+`Regiment` ist eine militärische Formation mit eigener institutioneller Identität, die zwischen Brigade- und Battalionsebene eingeordnet ist oder an die Stelle einer Brigadegliederung treten kann.
+
+#### Zweck
+
+Der Begriff bezeichnet eine eigenständige Organisationsform, ohne sie mit der funktional anders abgegrenzten Brigade gleichzusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Brigade`: ist eine eigene Verbandsstufe und kein alternativer Name für Regiment.
+- `Battalion`: ist eine nachgeordnete Verbandsstufe.
+
+#### Verwandte Begriffe
+
+- Formation
+- Division
+- Brigade
+- Battalion
+- Company
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Battalion
+
+#### Definition
+
+`Battalion` ist eine unter einer Brigade oder einem Regiment und über einer Company eingeordnete Formation.
+
+#### Zweck
+
+Der Begriff bezeichnet eine untere Verbandsstufe und grenzt sie von ihrer über- und nachgeordneten organisatorischen Umgebung ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Company`: ist die nachgeordnete Verbandsstufe.
+- `Regiment`: ist eine übergeordnete Formation.
+
+#### Verwandte Begriffe
+
+- Formation
+- Brigade
+- Regiment
+- Company
+- Headquarters
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Company
+
+#### Definition
+
+`Company` ist eine unter einem Battalion eingeordnete Formation aus mehreren nachgeordneten militärischen Elementen.
+
+#### Zweck
+
+Der Begriff bezeichnet eine grundlegende untere Verbandsstufe, ohne ihre Stärke, Ausstattung oder Untergliederung festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Battalion`: ist die übergeordnete Verbandsstufe.
+- `Unit`: bezeichnet relativ zum jeweiligen Zusammenhang die kleinste selbständig betrachtete Formation.
+
+#### Verwandte Begriffe
+
+- Formation
+- Battalion
+- Unit
+- Commander
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 8.3 Kommandostruktur
+
+### Commander
+
+#### Definition
+
+`Commander` ist eine Person, der die formale militärische Führungsverantwortung für einen festgelegten Command übertragen ist.
+
+#### Zweck
+
+Der Begriff bezeichnet die verantwortliche Führungsrolle und nicht den geführten Zuständigkeitsbereich oder dessen Einrichtung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Command`: ist der übertragene Führungs- und Zuständigkeitsbereich.
+- `Headquarters`: ist die organisatorische Einrichtung zur Unterstützung eines Command.
+
+#### Verwandte Begriffe
+
+- Command
+- Chain of Command
+- Headquarters
+- Military Formation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Command
+
+#### Definition
+
+`Command` ist ein formal abgegrenzter militärischer Führungs- und Zuständigkeitsbereich unter einem Commander.
+
+#### Zweck
+
+Der Begriff bezeichnet die Einheit übertragener Autorität, Verantwortung und Zuständigkeit, ohne eine bestimmte Formation oder räumliche Ebene vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Commander`: ist die verantwortliche Person.
+- `Military Formation`: ist ein militärischer Verband.
+- `Headquarters`: unterstützt die Ausübung eines Command.
+
+#### Verwandte Begriffe
+
+- Commander
+- Chain of Command
+- Headquarters
+- Theater
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Chain of Command
+
+#### Definition
+
+`Chain of Command` ist die geordnete Folge formaler militärischer Über- und Unterordnungsverhältnisse, durch die Commands miteinander verbunden sind.
+
+#### Zweck
+
+Der Begriff bezeichnet den verbindlichen Verlauf militärischer Autorität und Verantwortung über mehrere Führungsebenen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Command`: ist ein einzelner Führungs- und Zuständigkeitsbereich.
+- `Formation`: ist ein Verband und keine Autoritätsfolge.
+
+#### Verwandte Begriffe
+
+- Commander
+- Command
+- Headquarters
+- Armed Forces
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Headquarters
+
+#### Definition
+
+`Headquarters` ist die organisatorische Einrichtung, die einen Commander bei der Ausübung eines Command unterstützt.
+
+#### Zweck
+
+Der Begriff bezeichnet die Führungs- und Koordinierungseinrichtung und trennt sie von der verantwortlichen Person, dem Command und der geführten Formation.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Commander`: trägt die formale Führungsverantwortung.
+- `Command`: ist der Zuständigkeitsbereich.
+- `Military Formation`: ist der geführte Verband.
+
+#### Verwandte Begriffe
+
+- Commander
+- Command
+- Chain of Command
+- Theater
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Theater
+
+#### Definition
+
+`Theater` ist ein für übergreifende militärische Führung abgegrenzter geographischer Raum zusammenhängender möglicher oder tatsächlicher Operationen.
+
+#### Zweck
+
+Der Begriff bezeichnet den großräumigen Bezugsbereich militärischer Führung, ohne eine konkrete Operation, einen Frontverlauf oder politische Grenzen vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Front`: ist ein räumlicher Kontakt- und Wirkungszusammenhang gegnerischer Kräfte.
+- `Operation`: ist ein abgegrenztes militärisches Vorhaben.
+- `Campaign`: ist eine zusammenhängende Folge militärischer Operationen.
+
+#### Verwandte Begriffe
+
+- Command
+- Headquarters
+- Operation
+- Campaign
+- Front
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 8.4 Operationen
+
+### Operation
+
+#### Definition
+
+`Operation` ist ein nach Ziel, Verantwortung, Raum und zeitlichem Zusammenhang abgegrenztes militärisches Vorhaben.
+
+#### Zweck
+
+Der Begriff bezeichnet eine koordinierte militärische Handlungseinheit zwischen einer übergeordneten Campaign und einzelnen Battles oder Engagements.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Campaign`: verbindet mehrere Operations zu einem längerfristigen militärischen Zusammenhang.
+- `Battle`: ist eine größere unmittelbare bewaffnete Auseinandersetzung.
+- `Engagement`: ist eine begrenzte unmittelbare bewaffnete Auseinandersetzung.
+
+#### Verwandte Begriffe
+
+- Campaign
+- Battle
+- Engagement
+- Theater
+- Offensive
+- Defensive Operation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Campaign
+
+#### Definition
+
+`Campaign` ist eine strategisch zusammenhängende Folge militärischer Operations, die auf ein übergeordnetes militärisches Ziel in einem größeren räumlichen und zeitlichen Zusammenhang ausgerichtet ist.
+
+#### Zweck
+
+Der Begriff bezeichnet die übergeordnete Verbindung mehrerer Operations und grenzt sie von einzelnen Vorhaben und unmittelbaren Auseinandersetzungen ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Operation`: ist ein einzelnes abgegrenztes militärisches Vorhaben.
+- `Battle`: ist eine unmittelbare bewaffnete Auseinandersetzung.
+- `Theater`: ist ein geographischer Führungsraum und kein Vorhaben.
+
+#### Verwandte Begriffe
+
+- Operation
+- Battle
+- Engagement
+- Theater
+- Front
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Battle
+
+#### Definition
+
+`Battle` ist eine größere, räumlich und zeitlich zusammenhängende unmittelbare bewaffnete Auseinandersetzung gegnerischer militärischer Kräfte.
+
+#### Zweck
+
+Der Begriff bezeichnet eine umfangreiche konkrete Auseinandersetzung innerhalb oder außerhalb einer Operation, ohne deren Ergebnis oder Bedeutung vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Engagement`: ist eine begrenztere unmittelbare Auseinandersetzung.
+- `Operation`: ist ein zielgerichtetes militärisches Vorhaben und kann mehrere Battles umfassen.
+- `Campaign`: verbindet mehrere Operations.
+
+#### Verwandte Begriffe
+
+- Engagement
+- Operation
+- Campaign
+- Front
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Engagement
+
+#### Definition
+
+`Engagement` ist eine begrenzte, unmittelbare bewaffnete Auseinandersetzung zwischen gegnerischen militärischen Kräften.
+
+#### Zweck
+
+Der Begriff bezeichnet die kleinste hier eigenständig benannte Ebene unmittelbarer bewaffneter Auseinandersetzung und grenzt sie von größeren Battles ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Battle`: ist eine größere zusammenhängende Auseinandersetzung.
+- `Operation`: ist ein abgegrenztes militärisches Vorhaben.
+
+#### Verwandte Begriffe
+
+- Battle
+- Operation
+- Military Formation
+- Front
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Front
+
+#### Definition
+
+`Front` ist der räumliche Zusammenhang, in dem gegnerische militärische Kräfte einander gegenüberstehen und unmittelbar aufeinander einwirken können.
+
+#### Zweck
+
+Der Begriff bezeichnet eine veränderliche militärische Kontakt- und Wirkungszone, ohne sie mit einem Theater, einer politischen Grenze oder einem einzelnen Vorhaben gleichzusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Theater`: ist ein großräumiger geographischer Führungsbereich.
+- `Operation`: ist ein militärisches Vorhaben.
+- `Battle`: ist eine unmittelbare bewaffnete Auseinandersetzung.
+
+#### Verwandte Begriffe
+
+- Theater
+- Operation
+- Battle
+- Offensive
+- Defensive Operation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Offensive
+
+#### Definition
+
+`Offensive` ist eine Operation, deren bestimmender Zweck darin besteht, durch eigenes militärisches Handeln die Initiative zu ergreifen und eine angestrebte Veränderung der militärischen Lage herbeizuführen.
+
+#### Zweck
+
+Der Begriff bezeichnet die vorstoßende Zielrichtung einer Operation, ohne konkrete Mittel, Verfahren oder Erfolg festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Defensive Operation`: richtet sich bestimmend auf die Abwehr gegnerischen Handelns oder die Bewahrung einer militärischen Lage.
+- `Battle`: ist eine Auseinandersetzung und keine operative Zielrichtung.
+
+#### Verwandte Begriffe
+
+- Operation
+- Defensive Operation
+- Front
+- Campaign
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Defensive Operation
+
+#### Definition
+
+`Defensive Operation` ist eine Operation, deren bestimmender Zweck darin besteht, gegnerischem militärischem Handeln entgegenzuwirken oder eine angestrebte militärische Lage zu bewahren.
+
+#### Zweck
+
+Der Begriff bezeichnet die abwehrende oder bewahrende Zielrichtung einer Operation, ohne Passivität, konkrete Mittel oder Erfolg vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Offensive`: ist auf das Ergreifen der Initiative und eine Veränderung der militärischen Lage gerichtet.
+- `Battle`: ist eine Auseinandersetzung und keine operative Zielrichtung.
+
+#### Verwandte Begriffe
+
+- Operation
+- Offensive
+- Front
+- Campaign
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 8.5 Logistik
+
+### Supply
+
+#### Definition
+
+`Supply` ist die Gesamtheit der für die fortgesetzte Handlungsfähigkeit militärischer Kräfte bestimmten materiellen Mittel und Leistungen.
+
+#### Zweck
+
+Der Begriff bezeichnet den Gegenstand militärischer Versorgung und trennt ihn von deren Planung, Organisation und Verbindungssystemen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Logistics`: umfasst Planung, Bereitstellung, Bewegung und Erhaltung militärisch benötigter Mittel und Leistungen.
+- `Supply Line`: ist eine beständige Versorgungsverbindung.
+- `Reinforcement`: ergänzt militärische Kräfte personell oder materiell.
+
+#### Verwandte Begriffe
+
+- Logistics
+- Supply Line
+- Reinforcement
+- Readiness
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Supply Line
+
+#### Definition
+
+`Supply Line` ist eine beständige räumliche und organisatorische Verbindung, über die Supply zu militärischen Kräften gelangen kann.
+
+#### Zweck
+
+Der Begriff bezeichnet die Versorgungsverbindung und grenzt sie von den Versorgungsgütern sowie vom gesamten Aufgabenbereich der Logistics ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Supply`: bezeichnet die bestimmten Mittel und Leistungen.
+- `Logistics`: ist der übergreifende Aufgabenbereich.
+
+#### Verwandte Begriffe
+
+- Supply
+- Logistics
+- Front
+- Theater
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Logistics
+
+#### Definition
+
+`Logistics` ist der militärische Aufgabenbereich der Planung, Bereitstellung, Bewegung, Verteilung und Erhaltung der für militärische Kräfte benötigten personellen, materiellen und unterstützenden Mittel.
+
+#### Zweck
+
+Der Begriff bezeichnet den umfassenden Unterstützungszusammenhang und trennt ihn von einzelnen Supply-Beständen oder Supply Lines.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Supply`: ist der Gegenstand militärischer Versorgung.
+- `Supply Line`: ist eine konkrete Versorgungsverbindung.
+- `Mobilization`: überführt verfügbare Potenziale in militärische Verwendbarkeit.
+
+#### Verwandte Begriffe
+
+- Supply
+- Supply Line
+- Reinforcement
+- Mobilization
+- Reserve
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Reinforcement
+
+#### Definition
+
+`Reinforcement` ist die personelle oder materielle Ergänzung bestehender militärischer Kräfte.
+
+#### Zweck
+
+Der Begriff bezeichnet das Zuführen zusätzlicher Kräfte oder Mittel zu einer bestehenden militärischen Organisation und grenzt dies von ihrer erstmaligen Mobilization ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Mobilization`: stellt militärische Verwendbarkeit aus verfügbaren Potenzialen her.
+- `Reserve`: ist zurückgehaltenes oder nicht dauerhaft aktives militärisches Potenzial.
+- `Supply`: dient der fortgesetzten Handlungsfähigkeit.
+
+#### Verwandte Begriffe
+
+- Military Formation
+- Supply
+- Mobilization
+- Reserve
+- Attrition
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Mobilization
+
+#### Definition
+
+`Mobilization` ist der geordnete Übergang verfügbarer personeller, materieller und organisatorischer Potenziale in einen für militärische Aufgaben verwendbaren Zustand.
+
+#### Zweck
+
+Der Begriff bezeichnet die Herstellung militärischer Verwendbarkeit und grenzt sie von fortlaufender Versorgung, Ergänzung und dem bloßen Vorhandensein einer Reserve ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Reserve`: bezeichnet verfügbares, zurückgehaltenes oder nicht dauerhaft aktives militärisches Potenzial.
+- `Reinforcement`: ergänzt bereits bestehende militärische Kräfte.
+- `Readiness`: ist der Grad gegenwärtiger Fähigkeit zur Aufgabenerfüllung.
+
+#### Verwandte Begriffe
+
+- Reserve
+- Reinforcement
+- Readiness
+- Logistics
+- Armed Forces
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Reserve
+
+#### Definition
+
+`Reserve` ist personelles, materielles oder organisatorisches militärisches Potenzial, das verfügbar gehalten wird, ohne dauerhaft für laufende Aufgaben eingesetzt zu sein.
+
+#### Zweck
+
+Der Begriff bezeichnet zurückgehaltenes oder nicht dauerhaft aktives Potenzial und grenzt dieses vom Vorgang seiner Mobilization und von aktiven Reinforcements ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Mobilization`: ist der Übergang in militärische Verwendbarkeit.
+- `Reinforcement`: ist die Ergänzung bestehender Kräfte.
+- `Readiness`: bezeichnet einen Fähigkeitsgrad und keinen Bestand.
+
+#### Verwandte Begriffe
+
+- Mobilization
+- Reinforcement
+- Readiness
+- Logistics
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 8.6 Militärische Konzepte
+
+### Doctrine
+
+#### Definition
+
+`Doctrine` ist ein verbindlicher Zusammenhang grundlegender militärischer Vorstellungen und Leitgrundsätze für Vorbereitung, Führung und Unterstützung militärischen Handelns.
+
+#### Zweck
+
+Der Begriff bezeichnet den normativen Orientierungsrahmen militärischen Handelns, ohne einzelne Befehle, konkrete Operations oder technische Verfahren festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Command`: ist ein konkreter Führungs- und Zuständigkeitsbereich.
+- `Operation`: ist ein abgegrenztes militärisches Vorhaben.
+- `Organization`: ist die geordnete innere Beschaffenheit militärischer Kräfte.
+
+#### Verwandte Begriffe
+
+- Armed Forces
+- Command
+- Operation
+- Organization
+- Readiness
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Readiness
+
+#### Definition
+
+`Readiness` ist der Grad, in dem militärische Kräfte zu einem bestimmten Zeitpunkt für festgelegte Aufgaben unmittelbar verwendungsfähig sind.
+
+#### Zweck
+
+Der Begriff bezeichnet gegenwärtige Aufgabenerfüllungsfähigkeit und grenzt sie von struktureller Organization, angesammelter Experience und dem Vorgang der Mobilization ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Organization`: bezeichnet die innere Ordnung und Funktionsfähigkeit.
+- `Experience`: ist durch militärische Tätigkeit erworbene und bewahrte praktische Befähigung.
+- `Mobilization`: ist ein Übergang in militärische Verwendbarkeit.
+
+#### Verwandte Begriffe
+
+- Organization
+- Experience
+- Morale
+- Mobilization
+- Supply
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Morale
+
+#### Definition
+
+`Morale` ist der gemeinsame psychische Zustand militärischer Kräfte hinsichtlich Zuversicht, Zusammenhalt und Bereitschaft, militärische Aufgaben fortzuführen.
+
+#### Zweck
+
+Der Begriff bezeichnet die mentale und soziale Handlungsbereitschaft, ohne Ausbildung, strukturelle Ordnung oder gegenwärtige materielle Verwendbarkeit gleichzusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Readiness`: ist der Grad unmittelbarer Verwendungsfähigkeit.
+- `Organization`: bezeichnet innere Ordnung und Funktionsfähigkeit.
+- `Experience`: bezeichnet erworbene praktische Befähigung.
+
+#### Verwandte Begriffe
+
+- Readiness
+- Organization
+- Experience
+- Commander
+- Attrition
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Organization
+
+#### Definition
+
+`Organization` ist der Grad geordneter innerer Gliederung, Koordination und fortbestehender Funktionsfähigkeit militärischer Kräfte.
+
+#### Zweck
+
+Der Begriff bezeichnet die strukturelle und koordinative Geschlossenheit militärischer Kräfte und nicht die militärische Institution, ihre Kampferfahrung oder ihre unmittelbare Einsatzbereitschaft.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Military Formation`: ist ein militärisch gegliederter Verband.
+- `Readiness`: bezeichnet gegenwärtige Aufgabenerfüllungsfähigkeit.
+- `Experience`: ist erworbene praktische Befähigung.
+- `Morale`: ist ein psychischer und sozialer Zustand.
+
+#### Verwandte Begriffe
+
+- Military Formation
+- Readiness
+- Morale
+- Experience
+- Attrition
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Experience
+
+#### Definition
+
+`Experience` ist die durch militärische Tätigkeit erworbene und innerhalb militärischer Kräfte bewahrte praktische Befähigung.
+
+#### Zweck
+
+Der Begriff bezeichnet angesammelte handlungsbezogene Vertrautheit und grenzt sie von gegenwärtiger Readiness, struktureller Organization und psychischer Morale ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Readiness`: ist gegenwärtige Aufgabenerfüllungsfähigkeit.
+- `Organization`: ist innere Ordnung und Funktionsfähigkeit.
+- `Morale`: ist ein psychischer und sozialer Zustand.
+
+#### Verwandte Begriffe
+
+- Readiness
+- Organization
+- Morale
+- Doctrine
+- Attrition
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Attrition
+
+#### Definition
+
+`Attrition` ist der fortschreitende Verlust personeller, materieller oder organisatorischer militärischer Leistungsfähigkeit durch fortdauernde Beanspruchung.
+
+#### Zweck
+
+Der Begriff bezeichnet kumulativen militärischen Substanz- oder Fähigkeitsverlust unabhängig von einem einzelnen Battle oder Engagement und ohne eine bestimmte Ursache vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Battle`: ist eine unmittelbare bewaffnete Auseinandersetzung.
+- `Engagement`: ist eine begrenzte unmittelbare bewaffnete Auseinandersetzung.
+- `Reinforcement`: ergänzt bestehende militärische Kräfte.
+- `Organization`: bezeichnet innere Ordnung und Funktionsfähigkeit.
+
+#### Verwandte Begriffe
+
+- Battle
+- Engagement
+- Reinforcement
+- Supply
+- Organization
+- Readiness
+- Morale
 
 #### Referenzen
 
