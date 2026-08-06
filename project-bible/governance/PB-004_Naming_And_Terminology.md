@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.5.0
+version: 0.7.0
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -2789,6 +2789,1713 @@ Der Begriff bezeichnet eine strategische Raumordnung ohne politische, administra
 - World Region
 - Area
 - Zone
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 7. Wirtschaft und Produktion
+
+Wirtschaftliche Begriffe werden als zusammenhängende fachliche Domäne betrachtet, in der Akteure, Gegenstände, Aktivitäten und Ordnungszusammenhänge aufeinander bezogen sind. Wirtschaftliche Prozesse entstehen aus den Aktivitäten von Economic Actors und aus deren Beziehungen untereinander sowie zu Goods, Resources, Markets und finanziellen Mitteln.
+
+Dieses Kapitel definiert ausschließlich die kanonische Terminologie dieser Domäne. Es legt keine Regeln für Gameplay, Balancing, Simulation oder technische Implementierung fest; diese werden in späteren zuständigen Dokumenten behandelt.
+
+## 7.1 Wirtschaftliche Akteure
+
+### Economic Actor
+
+#### Definition
+
+Ein `Economic Actor` ist eine Entity, die innerhalb wirtschaftlicher Beziehungen eigenständig Güter, Ressourcen, Leistungen oder finanzielle Mittel bereitstellt, verwendet, überträgt oder beansprucht.
+
+#### Zweck
+
+Der Begriff bezeichnet den allgemeinen Träger wirtschaftlicher Aktivitäten, ohne eine bestimmte politische, gesellschaftliche oder organisatorische Form vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Producer` und `Consumer` bezeichnen besondere Rollen eines Economic Actor; eine Entity kann mehrere wirtschaftliche Rollen einnehmen.
+
+#### Verwandte Begriffe
+
+- Producer
+- Consumer
+- Employer
+- Employee
+- Investor
+- State
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Producer
+
+#### Definition
+
+Ein `Producer` ist ein Economic Actor in seiner Rolle als Hervorbringer oder Bereitsteller von Goods durch Production.
+
+#### Zweck
+
+Der Begriff ordnet die Verantwortung für ein wirtschaftliches Angebot einer handelnden Entity zu, ohne deren Organisation oder Produktionsweise festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Producer ist der Akteur; `Production` ist seine wirtschaftliche Aktivität und eine `Production Facility` ein dafür bestimmter Ort oder organisatorischer Zusammenhang.
+
+#### Verwandte Begriffe
+
+- Economic Actor
+- Production
+- Good
+- Supply
+- Production Facility
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Consumer
+
+#### Definition
+
+Ein `Consumer` ist ein Economic Actor in seiner Rolle als endgültiger Verwender von Goods zur Erfüllung eines Bedarfs, ohne diese Verwendung als weiteren Produktionsschritt zu behandeln.
+
+#### Zweck
+
+Der Begriff ordnet Consumption einer handelnden Entity zu und grenzt endgültige Verwendung von produktiver Weiterverarbeitung ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Consumer ist der Akteur; `Consumption` ist die Aktivität. Die Verwendung eines Good als `Input` einer Production ist keine Consumption dieses Good.
+
+#### Verwandte Begriffe
+
+- Economic Actor
+- Consumption
+- Good
+- Demand
+- Input
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Employer
+
+#### Definition
+
+Ein `Employer` ist ein Economic Actor, die Employment anbietet und dafür die Arbeitsleistung von Employees beansprucht.
+
+#### Zweck
+
+Der Begriff bezeichnet die nachfragende Seite einer Beschäftigungsbeziehung, ohne deren rechtliche oder organisatorische Ausgestaltung festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Employer ist nicht mit einem `Producer` gleichzusetzen; die Rollen können zusammenfallen, müssen es aber nicht.
+
+#### Verwandte Begriffe
+
+- Economic Actor
+- Employee
+- Employment
+- Producer
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Employee
+
+#### Definition
+
+Ein `Employee` ist ein Economic Actor, die im Rahmen von Employment einem Employer Arbeitsleistung gegen eine vereinbarte wirtschaftliche Gegenleistung bereitstellt.
+
+#### Zweck
+
+Der Begriff bezeichnet die leistende Seite einer Beschäftigungsbeziehung unabhängig von Tätigkeit, Qualifikation oder Vertragsform.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Employee ist nicht mit einem `Consumer` gleichzusetzen; beide Begriffe bezeichnen voneinander unabhängige wirtschaftliche Rollen.
+
+#### Verwandte Begriffe
+
+- Economic Actor
+- Employer
+- Employment
+- Consumer
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Investor
+
+#### Definition
+
+Ein `Investor` ist ein Economic Actor, die wirtschaftliche Mittel durch Investment bindet, um künftige wirtschaftliche Möglichkeiten oder Erträge zu begründen.
+
+#### Zweck
+
+Der Begriff ordnet Investment einer handelnden Entity zu, ohne Form, Laufzeit oder Ergebnis der Mittelbindung festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Investor ist nicht mit einem Mittelgeber gleichzusetzen; Credit kann eine Form der Mittelbereitstellung sein, Investment ist der weiter gefasste Verwendungszusammenhang.
+
+#### Verwandte Begriffe
+
+- Economic Actor
+- Investment
+- Credit
+- Debt
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### State
+
+#### Definition
+
+Der bereits in Kapitel 4 definierte `State` handelt als Economic Actor, soweit seine Institutionen wirtschaftliche Mittel bereitstellen, verwenden, übertragen oder beanspruchen.
+
+#### Zweck
+
+Die Verwendung ordnet wirtschaftliche Tätigkeiten der bestehenden politischen und rechtlichen Ordnung zu, ohne den Begriff State neu zu definieren.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `State` bezeichnet weiterhin die politische und rechtliche Ordnung; `Treasury` bezeichnet deren Bestand verfügbarer finanzieller Mittel und `Budget` deren geplante Zuordnung.
+
+#### Verwandte Begriffe
+
+- Economic Actor
+- Treasury
+- Tax
+- Subsidy
+- Budget
+- Debt
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 7.2 Wirtschaftliche Aktivitäten
+
+### Production
+
+#### Definition
+
+`Production` ist die wirtschaftliche Aktivität, durch die Inputs in Outputs überführt oder Goods bereitgestellt werden.
+
+#### Zweck
+
+Der Begriff bezeichnet die Hervorbringung wirtschaftlich verwendbarer Ergebnisse unabhängig von Akteur, Ort, Verfahren oder technischer Ausgestaltung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Production ist eine Aktivität; `Producer` ist ihr Akteur, `Production Facility` ihr möglicher organisatorischer oder räumlicher Zusammenhang und `Production Chain` die Beziehung mehrerer Produktionsschritte.
+
+#### Verwandte Begriffe
+
+- Producer
+- Production Facility
+- Production Chain
+- Input
+- Output
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Consumption
+
+#### Definition
+
+`Consumption` ist die endgültige wirtschaftliche Verwendung eines Good zur Erfüllung eines Bedarfs, ohne dass das Good dabei als Input einer weiteren Production dient.
+
+#### Zweck
+
+Der Begriff bezeichnet die bedarfsbezogene Endverwendung und trennt sie von produktiver Verarbeitung, Distribution und Exchange.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Consumption ist die Aktivität; `Consumer` ist der zugeordnete Akteur.
+
+#### Verwandte Begriffe
+
+- Consumer
+- Good
+- Demand
+- Input
+- Production
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Distribution
+
+#### Definition
+
+`Distribution` ist die wirtschaftliche Aktivität, durch die Goods oder Resources zwischen Akteuren oder Orten zur weiteren Verwendung verfügbar gemacht werden.
+
+#### Zweck
+
+Der Begriff bezeichnet die räumliche oder organisatorische Zuführung wirtschaftlicher Gegenstände, ohne einen Eigentumswechsel oder grenzüberschreitenden Vorgang vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Distribution ist nicht mit `Trade` gleichzusetzen; Trade betrifft Austauschbeziehungen, Distribution die Zuführung und Verteilung.
+
+#### Verwandte Begriffe
+
+- Good
+- Resource
+- Trade
+- Supply
+- Market
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Exchange
+
+#### Definition
+
+`Exchange` ist die wechselseitige Übertragung wirtschaftlicher Gegenstände oder Ansprüche zwischen Economic Actors.
+
+#### Zweck
+
+Der Begriff bezeichnet die allgemeine wirtschaftliche Gegenseitigkeitsbeziehung unabhängig von Markt, Grenze, Währung oder konkreter Gegenleistung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Trade` ist eine auf Goods oder Resources bezogene Form wirtschaftlichen Exchange; Distribution setzt keinen Exchange voraus.
+
+#### Verwandte Begriffe
+
+- Economic Actor
+- Trade
+- Market
+- Currency
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Investment
+
+#### Definition
+
+`Investment` ist die gegenwärtige Bindung wirtschaftlicher Mittel zur Begründung oder Erweiterung künftiger wirtschaftlicher Möglichkeiten oder Erträge.
+
+#### Zweck
+
+Der Begriff bezeichnet eine zukunftsgerichtete Mittelverwendung und grenzt sie von Consumption und bloßer Aufbewahrung ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Investment ist die Aktivität; `Investor` ist der handelnde Akteur. Credit kann Investment finanzieren, ist aber nicht selbst damit gleichzusetzen.
+
+#### Verwandte Begriffe
+
+- Investor
+- Credit
+- Production Facility
+- Capacity
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Employment
+
+#### Definition
+
+`Employment` ist eine wirtschaftliche Beziehung, in der ein Employee einem Employer Arbeitsleistung gegen eine vereinbarte wirtschaftliche Gegenleistung bereitstellt.
+
+#### Zweck
+
+Der Begriff bezeichnet den Zusammenhang zwischen angebotener und beanspruchter Arbeitsleistung, ohne konkrete Rechtsform oder Arbeitsbedingungen festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Employment ist die Beziehung; `Employer` und `Employee` sind ihre Rollen.
+
+#### Verwandte Begriffe
+
+- Employer
+- Employee
+- Economic Actor
+- Production
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 7.3 Güter und Ressourcen
+
+### Good
+
+#### Definition
+
+Ein `Good` ist ein abgrenzbares wirtschaftliches Ergebnis oder ein wirtschaftlich verwendbarer Gegenstand, der bereitgestellt, übertragen oder konsumiert werden kann.
+
+#### Zweck
+
+Der Begriff bezeichnet den allgemeinen Gegenstand wirtschaftlicher Bereitstellung und Verwendung unabhängig von Herstellungsstufe oder materieller Form.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Good ist nicht mit einer `Resource` gleichzusetzen: Resource bezeichnet eine verfügbare Grundlage wirtschaftlicher Aktivitäten; ein Good ist deren bereitstellbares oder verwendbares Ergebnis.
+
+#### Verwandte Begriffe
+
+- Resource
+- Raw Material
+- Intermediate Good
+- Finished Good
+- Production
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Resource
+
+#### Definition
+
+Eine `Resource` ist eine verfügbare natürliche, materielle, personelle oder finanzielle Grundlage, die für wirtschaftliche Aktivitäten eingesetzt werden kann.
+
+#### Zweck
+
+Der Begriff bezeichnet wirtschaftlich nutzbare Voraussetzungen, ohne deren Ursprung, Knappheit oder konkrete Verwendung festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Eine Resource ist nicht notwendig ein `Good`; ein Good ist ein abgrenzbares Ergebnis oder ein bereitstellbarer Gegenstand. `Raw Material` bezeichnet eine unverarbeitete materielle Resource für Production.
+
+#### Verwandte Begriffe
+
+- Good
+- Raw Material
+- Strategic Resource
+- Input
+- Production
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Raw Material
+
+#### Definition
+
+Ein `Raw Material` ist eine materielle Resource, die vor ihrer ersten wirtschaftlich maßgeblichen Verarbeitung als Input einer Production verwendet wird.
+
+#### Zweck
+
+Der Begriff bezeichnet den unverarbeiteten Ausgangsstoff einer Herstellung und grenzt ihn von bereits hervorgebrachten Zwischenprodukten ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Raw Material ist eine `Resource`; ein `Intermediate Good` ist bereits Output eines Produktionsschritts.
+
+#### Verwandte Begriffe
+
+- Resource
+- Intermediate Good
+- Input
+- Production
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Intermediate Good
+
+#### Definition
+
+Ein `Intermediate Good` ist ein Good, das als Output eines Produktionsschritts hervorgebracht und als Input eines weiteren Produktionsschritts bestimmt ist.
+
+#### Zweck
+
+Der Begriff bezeichnet ein wirtschaftliches Zwischenergebnis innerhalb einer Production Chain.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Intermediate Good unterscheidet sich vom `Raw Material` durch seine vorherige Verarbeitung und vom `Finished Good` durch seine Bestimmung zur weiteren Production.
+
+#### Verwandte Begriffe
+
+- Good
+- Raw Material
+- Finished Good
+- Production Chain
+- Input
+- Output
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Finished Good
+
+#### Definition
+
+Ein `Finished Good` ist ein Good, das im betrachteten wirtschaftlichen Zusammenhang für eine Verwendung außerhalb weiterer Production bestimmt ist.
+
+#### Zweck
+
+Der Begriff bezeichnet das Endergebnis einer Production Chain relativ zu seinem vorgesehenen Verwendungszusammenhang.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Finished Good kann in einem anderen Zusammenhang als Input dienen; `Intermediate Good` bezeichnet dagegen ausdrücklich die Bestimmung zur weiteren Production.
+
+#### Verwandte Begriffe
+
+- Good
+- Intermediate Good
+- Consumer
+- Consumption
+- Output
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Strategic Resource
+
+#### Definition
+
+Eine `Strategic Resource` ist eine Resource, deren verlässliche Verfügbarkeit für die dauerhafte Handlungsfähigkeit eines Economic Actor von besonderer Bedeutung ist.
+
+#### Zweck
+
+Der Begriff kennzeichnet die Bedeutung einer Resource für wirtschaftliche Handlungsfähigkeit, ohne konkrete Ressourcentypen oder Folgen ihrer Knappheit festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Strategic Resource ist eine Bedeutungszuordnung und keine Verarbeitungsstufe wie `Raw Material`, `Intermediate Good` oder `Finished Good`.
+
+#### Verwandte Begriffe
+
+- Resource
+- Raw Material
+- Supply
+- Trade
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 7.4 Märkte
+
+### Market
+
+#### Definition
+
+Ein `Market` ist der wirtschaftliche Beziehungszusammenhang, in dem Supply und Demand für bestimmte Goods, Resources oder Leistungen aufeinandertreffen und Bedingungen ihres Exchange entstehen.
+
+#### Zweck
+
+Der Begriff bezeichnet den Ordnungszusammenhang wirtschaftlicher Angebote und Nachfragen unabhängig von Ort, Institution oder technischer Abbildung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Market ist der Beziehungszusammenhang; `Trade` ist eine wirtschaftliche Aktivität und `Trade Route` eine dauerhafte räumliche Verbindung für Trade.
+
+#### Verwandte Begriffe
+
+- Supply
+- Demand
+- Price
+- Competition
+- Exchange
+- Trade
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Local Market
+
+#### Definition
+
+Ein `Local Market` ist ein Market, dessen maßgeblicher Beziehungszusammenhang auf einen örtlich begrenzten Raum ausgerichtet ist.
+
+#### Zweck
+
+Der Begriff unterscheidet Märkte nach ihrer räumlichen Reichweite, ohne eine bestimmte geographische oder administrative Gebietseinheit festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Local Market bezeichnet keine besondere Marktmechanik und ist nicht automatisch mit einem `National Market` verbunden.
+
+#### Verwandte Begriffe
+
+- Market
+- National Market
+- Supply
+- Demand
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### National Market
+
+#### Definition
+
+Ein `National Market` ist ein Market, dessen maßgeblicher Beziehungszusammenhang das wirtschaftliche Gebiet eines Country umfasst.
+
+#### Zweck
+
+Der Begriff bezeichnet eine auf ein Country bezogene Marktreichweite, ohne politische Begriffe oder Regeln wirtschaftlicher Integration neu festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- National Market bezeichnet einen wirtschaftlichen Zusammenhang und weder den `State` noch dessen `Treasury`.
+
+#### Verwandte Begriffe
+
+- Market
+- Local Market
+- International Market
+- Country
+- Trade
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### International Market
+
+#### Definition
+
+Ein `International Market` ist ein Market, dessen maßgeblicher Beziehungszusammenhang Economic Actors aus den wirtschaftlichen Gebieten mehrerer Countries umfasst.
+
+#### Zweck
+
+Der Begriff bezeichnet eine länderübergreifende Marktreichweite unabhängig von konkreten Handelsbeziehungen oder politischen Vereinbarungen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- International Market ist der Beziehungszusammenhang; `Import` und `Export` bezeichnen richtungsbezogene grenzüberschreitende Trade-Vorgänge.
+
+#### Verwandte Begriffe
+
+- Market
+- National Market
+- Trade
+- Import
+- Export
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Supply
+
+#### Definition
+
+`Supply` ist die Gesamtheit der Goods, Resources oder Leistungen, die Economic Actors in einem Market zu bestimmten Bedingungen zur Abgabe bereitstellen.
+
+#### Zweck
+
+Der Begriff bezeichnet die Angebotsseite eines Market und nicht bloß vorhandene Bestände oder hergestellte Mengen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Supply ist keine `Production`: Production bringt Outputs hervor, während Supply deren Bereitstellung in einem Market bezeichnet.
+
+#### Verwandte Begriffe
+
+- Market
+- Demand
+- Price
+- Producer
+- Production
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Demand
+
+#### Definition
+
+`Demand` ist die Gesamtheit der von Economic Actors in einem Market zu bestimmten Bedingungen angestrebten Erwerbe von Goods, Resources oder Leistungen.
+
+#### Zweck
+
+Der Begriff bezeichnet die Nachfrageseite eines Market und nicht jeden Bedarf oder jede Consumption.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Demand ist keine `Consumption`: Demand betrifft den angestrebten Erwerb in einem Market, Consumption die endgültige Verwendung eines Good.
+
+#### Verwandte Begriffe
+
+- Market
+- Supply
+- Price
+- Consumer
+- Consumption
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Price
+
+#### Definition
+
+Ein `Price` ist die in einer Exchange-Beziehung ausgedrückte wirtschaftliche Gegenleistung für eine bestimmte Menge eines Good, einer Resource oder einer Leistung.
+
+#### Zweck
+
+Der Begriff bezeichnet die Austauschbedingung eines wirtschaftlichen Gegenstands in einer festgelegten Währung oder anderen Gegenleistung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Price ist weder der Wert eines Bestands im `Treasury` noch das geplante Volumen eines `Budget`.
+
+#### Verwandte Begriffe
+
+- Market
+- Supply
+- Demand
+- Exchange
+- Currency
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Competition
+
+#### Definition
+
+`Competition` ist die wirtschaftliche Beziehung, in der mehrere Economic Actors um begrenzte Möglichkeiten des Angebots, Erwerbs oder Einsatzes wirtschaftlicher Mittel konkurrieren.
+
+#### Zweck
+
+Der Begriff bezeichnet das gleichzeitige Streben nach nicht unbegrenzt verfügbaren wirtschaftlichen Möglichkeiten, ohne dessen Regeln oder Ergebnis festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Competition ist keine politische Rivalität und setzt keinen bestimmten Markttyp voraus.
+
+#### Verwandte Begriffe
+
+- Economic Actor
+- Market
+- Supply
+- Demand
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 7.5 Handel
+
+### Trade
+
+#### Definition
+
+`Trade` ist Exchange von Goods oder Resources zwischen Economic Actors.
+
+#### Zweck
+
+Der Begriff bezeichnet den wirtschaftlichen Austausch handelbarer Gegenstände unabhängig von räumlicher Reichweite, Grenze, Transportweg oder Marktform.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Trade ist die Austauschaktivität; ein `Market` ist ihr möglicher Beziehungszusammenhang und eine `Trade Route` eine dauerhafte räumliche Verbindung für wiederkehrenden Trade.
+
+#### Verwandte Begriffe
+
+- Exchange
+- Good
+- Resource
+- Market
+- Trade Route
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Trade Route
+
+#### Definition
+
+Eine `Trade Route` ist eine dauerhaft genutzte räumliche Verbindung, entlang der Trade zwischen Economic Actors oder Markets stattfindet.
+
+#### Zweck
+
+Der Begriff bezeichnet den beständigen räumlichen Zusammenhang von Handelsbeziehungen, ohne Verkehrsart, Infrastruktur oder Ablauf festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Eine Trade Route ist weder ein einzelner `Trade` noch mit `Distribution` insgesamt gleichzusetzen.
+
+#### Verwandte Begriffe
+
+- Trade
+- Market
+- Distribution
+- Import
+- Export
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Import
+
+#### Definition
+
+Ein `Import` ist Trade, bei dem Goods oder Resources aus dem wirtschaftlichen Gebiet eines Country in dessen wirtschaftliches Gebiet gelangen.
+
+#### Zweck
+
+Der Begriff bezeichnet Trade aus Sicht des empfangenden Country und legt weder Transport, Abgaben noch politische Bedingungen fest.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Derselbe grenzüberschreitende Trade kann für das abgebende Country ein `Export` sein; Import ist nicht die Ware selbst.
+
+#### Verwandte Begriffe
+
+- Trade
+- Export
+- Country
+- Tariff
+- International Market
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Export
+
+#### Definition
+
+Ein `Export` ist Trade, bei dem Goods oder Resources aus dem wirtschaftlichen Gebiet eines Country in das wirtschaftliche Gebiet eines anderen Country gelangen.
+
+#### Zweck
+
+Der Begriff bezeichnet Trade aus Sicht des abgebenden Country und legt weder Transport, Abgaben noch politische Bedingungen fest.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Derselbe grenzüberschreitende Trade kann für das empfangende Country ein `Import` sein; Export ist nicht die Ware selbst.
+
+#### Verwandte Begriffe
+
+- Trade
+- Import
+- Country
+- Tariff
+- International Market
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Tariff
+
+#### Definition
+
+Ein `Tariff` ist eine durch einen State festgelegte Abgabe auf bestimmte Imports oder Exports.
+
+#### Zweck
+
+Der Begriff bezeichnet die wirtschaftliche Abgabe auf grenzüberschreitenden Trade, ohne Höhe, Erhebung oder Wirkung festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Tariff ist eine auf Import oder Export bezogene Abgabe; `Tax` ist der allgemeine Begriff für eine verpflichtende finanzielle Abgabe.
+
+#### Verwandte Begriffe
+
+- State
+- Tax
+- Import
+- Export
+- Trade
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Embargo
+
+#### Definition
+
+Ein `Embargo` ist eine durch einen politischen Akteur festgelegte Beschränkung oder Untersagung bestimmter Trade-Beziehungen mit einem anderen Akteur oder Gebiet.
+
+#### Zweck
+
+Der Begriff bezeichnet die politische Begrenzung von Trade, ohne Anlass, Umfang, Durchsetzung oder Folgen festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Embargo ist keine Abgabe wie `Tariff` und keine räumliche Verbindung wie `Trade Route`.
+
+#### Verwandte Begriffe
+
+- Trade
+- Tariff
+- Import
+- Export
+- Market
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 7.6 Finanzen
+
+### Currency
+
+#### Definition
+
+Eine `Currency` ist eine institutionell anerkannte Recheneinheit und ein allgemein verwendbares Mittel zur Erfüllung finanzieller Verpflichtungen innerhalb eines bestimmten Geltungszusammenhangs.
+
+#### Zweck
+
+Der Begriff bezeichnet den gemeinsamen Maßstab und das Übertragungsmittel finanzieller Beziehungen, ohne Ausgestaltung oder Träger festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Currency ist nicht mit `Treasury` gleichzusetzen; Treasury ist ein Bestand finanzieller Mittel.
+
+#### Verwandte Begriffe
+
+- Price
+- Treasury
+- Credit
+- Debt
+- Inflation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Treasury
+
+#### Definition
+
+Ein `Treasury` ist der einem State unmittelbar verfügbare Bestand finanzieller Mittel.
+
+#### Zweck
+
+Der Begriff bezeichnet vorhandene staatliche Finanzmittel zu einem bestimmten Zeitpunkt und trennt sie von Planung, Einnahmen, Ausgaben und Verpflichtungen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Treasury ist ein Bestand; `Budget` ist eine geplante Zuordnung finanzieller Mittel und `Debt` eine Verpflichtung gegenüber einem Mittelgeber.
+
+#### Verwandte Begriffe
+
+- State
+- Currency
+- Budget
+- Tax
+- Subsidy
+- Debt
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Tax
+
+#### Definition
+
+Eine `Tax` ist eine durch einen State aufgrund seiner Authority verpflichtend beanspruchte finanzielle Abgabe ohne unmittelbar zugeordnete individuelle Gegenleistung.
+
+#### Zweck
+
+Der Begriff bezeichnet eine allgemeine Form staatlicher Einnahmen, ohne Steuergegenstand, Bemessung, Erhebung oder Verwendung festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein `Tariff` ist eine besondere Abgabe auf Import oder Export; eine Tax ist nicht mit einem `Price` für eine konkrete Gegenleistung gleichzusetzen.
+
+#### Verwandte Begriffe
+
+- State
+- Treasury
+- Budget
+- Tariff
+- Subsidy
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Subsidy
+
+#### Definition
+
+Eine `Subsidy` ist eine durch einen State gewährte wirtschaftliche Unterstützung zugunsten bestimmter Economic Actors, Goods oder Aktivitäten.
+
+#### Zweck
+
+Der Begriff bezeichnet eine gezielte staatliche Mittelgewährung oder Entlastung, ohne Voraussetzung, Form, Umfang oder Wirkung festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Eine Subsidy ist keine allgemeine Ausgabeart und keine Gegenleistung eines `Price`.
+
+#### Verwandte Begriffe
+
+- State
+- Economic Actor
+- Treasury
+- Budget
+- Tax
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Budget
+
+#### Definition
+
+Ein `Budget` ist die für einen bestimmten Zeitraum festgelegte Planung erwarteter finanzieller Mittelzuflüsse, Mittelabflüsse und ihrer Zuordnung.
+
+#### Zweck
+
+Der Begriff bezeichnet eine Finanzplanung und trennt geplante Größen von vorhandenen Beständen und bestehenden Verpflichtungen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Ein Budget ist eine Planung; `Treasury` ist der verfügbare Bestand, `Debt` eine Verpflichtung und `Credit` eine bereitgestellte Verfügungsmöglichkeit.
+
+#### Verwandte Begriffe
+
+- Treasury
+- Tax
+- Subsidy
+- Debt
+- Credit
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Debt
+
+#### Definition
+
+`Debt` ist die bestehende Verpflichtung eines Economic Actor, einem Mittelgeber wirtschaftliche Mittel aufgrund einer vorherigen Mittelbereitstellung zurückzugewähren oder anderweitig zu leisten.
+
+#### Zweck
+
+Der Begriff bezeichnet die Verpflichtungsseite einer Kreditbeziehung unabhängig von Laufzeit, Verzinsung, Währung oder Sicherung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Debt ist die Verpflichtung des Schuldners; `Credit` ist die eingeräumte oder bereitgestellte Verfügungsmöglichkeit der Kreditbeziehung. Debt ist kein negativer Treasury-Bestand.
+
+#### Verwandte Begriffe
+
+- Economic Actor
+- Credit
+- Budget
+- Treasury
+- Currency
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Credit
+
+#### Definition
+
+`Credit` ist die einem Economic Actor von einem Mittelgeber eingeräumte oder bereitgestellte Möglichkeit, gegen eine Verpflichtung gegenwärtig über wirtschaftliche Mittel zu verfügen.
+
+#### Zweck
+
+Der Begriff bezeichnet die Mittelbereitstellungs- und Verfügungsseite einer Kreditbeziehung unabhängig von Form, Laufzeit oder Kosten.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Credit ist nicht mit `Debt` gleichzusetzen: Credit bezeichnet die eingeräumte Verfügungsmöglichkeit, Debt die daraus bestehende Verpflichtung. Credit ist auch kein Treasury-Bestand.
+
+#### Verwandte Begriffe
+
+- Economic Actor
+- Debt
+- Investment
+- Treasury
+- Currency
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Inflation
+
+#### Definition
+
+`Inflation` ist ein anhaltender allgemeiner Anstieg der in einer Currency ausgedrückten Prices innerhalb eines betrachteten wirtschaftlichen Zusammenhangs.
+
+#### Zweck
+
+Der Begriff bezeichnet eine allgemeine Preisentwicklung und grenzt sie von einzelnen Preisänderungen ab, ohne Ursache, Messung oder Wirkung festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Inflation ist weder die Veränderung eines einzelnen `Price` noch eine Veränderung der Menge einer `Currency` als solche.
+
+#### Verwandte Begriffe
+
+- Currency
+- Price
+- Market
+- Supply
+- Demand
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 7.7 Produktion
+
+### Production Facility
+
+#### Definition
+
+Eine `Production Facility` ist ein räumlich oder organisatorisch abgegrenzter Zusammenhang, der dauerhaft für Production bestimmt ist.
+
+#### Zweck
+
+Der Begriff bezeichnet den Träger und Rahmen von Produktionsmöglichkeiten, ohne Bauform, Eigentum, Verfahren oder technische Repräsentation festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Eine Production Facility ist nicht die Aktivität `Production` und nicht die Abfolge `Production Chain`.
+
+#### Verwandte Begriffe
+
+- Production
+- Producer
+- Production Chain
+- Capacity
+- Efficiency
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Production Chain
+
+#### Definition
+
+Eine `Production Chain` ist ein fachlich geordneter Zusammenhang mehrerer Produktionsschritte, in dem Outputs vorangehender Schritte als Inputs nachfolgender Schritte bestimmt sind.
+
+#### Zweck
+
+Der Begriff bezeichnet die wirtschaftliche Abhängigkeit aufeinander bezogener Produktionsschritte, ohne Ablaufsteuerung, Ort oder konkrete Verfahren festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Eine Production Chain ist weder eine einzelne `Production` noch eine `Production Facility`; sie beschreibt Beziehungen zwischen Produktionsschritten.
+
+#### Verwandte Begriffe
+
+- Production
+- Production Facility
+- Input
+- Output
+- Intermediate Good
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Input
+
+#### Definition
+
+Ein `Input` ist ein Good oder eine Resource in seiner festgelegten Rolle als Voraussetzung oder Einsatzgegenstand einer bestimmten Production.
+
+#### Zweck
+
+Der Begriff bezeichnet die eingehende wirtschaftliche Rolle eines Gegenstands relativ zu einem Produktionsschritt.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Input ist eine relationale Rolle und keine Güterklasse: Dasselbe Good kann Output eines Schritts und Input eines anderen sein. Input ist nicht mit `Consumption` gleichzusetzen.
+
+#### Verwandte Begriffe
+
+- Production
+- Output
+- Good
+- Resource
+- Production Chain
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Output
+
+#### Definition
+
+Ein `Output` ist ein Good oder ein anderes wirtschaftlich verwendbares Ergebnis in seiner festgelegten Rolle als Ergebnis einer bestimmten Production.
+
+#### Zweck
+
+Der Begriff bezeichnet die hervorgehende wirtschaftliche Rolle eines Ergebnisses relativ zu einem Produktionsschritt.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Output ist eine relationale Rolle und keine Güterklasse: Ein Output kann `Intermediate Good` oder `Finished Good` sein und als Input eines weiteren Schritts dienen.
+
+#### Verwandte Begriffe
+
+- Production
+- Input
+- Good
+- Intermediate Good
+- Finished Good
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Capacity
+
+#### Definition
+
+`Capacity` ist der unter festgelegten Bedingungen verfügbare Umfang, in dem ein Economic Actor oder Production Facility eine bestimmte wirtschaftliche Aktivität ausführen kann.
+
+#### Zweck
+
+Der Begriff bezeichnet die Grenze verfügbarer wirtschaftlicher Leistungsfähigkeit, ohne tatsächliche Nutzung, Messverfahren oder Zeiteinheit festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Capacity bezeichnet mögliche Leistung; `Output` bezeichnet ein hervorgebrachtes Ergebnis und `Efficiency` das Verhältnis von Einsatz zu Ergebnis.
+
+#### Verwandte Begriffe
+
+- Economic Actor
+- Production Facility
+- Production
+- Output
+- Efficiency
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Efficiency
+
+#### Definition
+
+`Efficiency` ist die relative Güte, mit der eine wirtschaftliche Aktivität Inputs oder andere eingesetzte Mittel in beabsichtigte Outputs oder Ergebnisse überführt.
+
+#### Zweck
+
+Der Begriff bezeichnet die Einsatz-Ergebnis-Beziehung unabhängig von Messverfahren, Ursache oder Optimierungsregel.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- Efficiency ist keine `Capacity`: Capacity bezeichnet den verfügbaren Umfang einer Aktivität, Efficiency deren Einsatz-Ergebnis-Verhältnis. Sie ist auch kein Output.
+
+#### Verwandte Begriffe
+
+- Production
+- Input
+- Output
+- Capacity
+- Production Facility
 
 #### Referenzen
 
