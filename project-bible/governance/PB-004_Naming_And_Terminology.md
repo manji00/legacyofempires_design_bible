@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.15.0
+version: 0.16.0
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -13933,3 +13933,130 @@ Recommended
 ### Verifikation
 
 Ein bereichsübergreifender Vergleich bestätigt, dass wiederverwendete Bezeichnungen auf dieselbe Definition verweisen und keine Bereichseigenbedeutung erhalten.
+
+# Kapitel 16 – Akzeptanzkriterien und Release Gate
+
+Terminologie muss überprüfbar sein, damit ihre Eindeutigkeit, Vollständigkeit und projektweite Verwendbarkeit nicht von einer rein subjektiven Einschätzung abhängen. Nur nachweisbare Prüfungen können bestätigen, dass Begriffsbestand, Benennungsregeln und Verweise gemeinsam eine belastbare Grundlage bilden.
+
+Objektive Qualitätskriterien schaffen eine einheitliche Abnahmebasis, machen verbleibende Mängel sichtbar und verhindern eine Freigabe trotz ungeklärter Widersprüche. Dieses Kapitel definiert deshalb den offiziellen Release Gate für PB-004 und bildet den Abschluss des Dokuments.
+
+## 16.1 Ziel des Release Gates
+
+Der Abnahmeprozess stellt vor der Freigabe sicher, dass PB-004 vollständig, widerspruchsfrei, nachvollziehbar und mit den geltenden Governance-Vorgaben vereinbar ist. Er überführt die in diesem Dokument enthaltenen Regeln und Definitionen in prüfbare Freigabebedingungen, ohne zusätzliche Glossarbegriffe, Gameplaymechaniken oder Implementierungsdetails einzuführen.
+
+Das Release Gate darf nur auf Grundlage des vollständig geprüften Dokumentstands entschieden werden. Festgestellte Abweichungen werden vor der Freigabe behoben oder verhindern die Freigabe; eine stillschweigende Ausnahme ist nicht zulässig. Prüfergebnisse müssen so festgehalten werden, dass der geprüfte Stand, die durchgeführten Prüfungen, offene Befunde und die abschließende Entscheidung nachvollziehbar sind.
+
+Die Abnahme umfasst die Qualitätskriterien, die Dokumentations- und Konsistenzprüfung, den Governance Review und die vollständige Release Checklist. Erst ihr gemeinsamer erfolgreicher Abschluss belegt die Freigabereife von PB-004.
+
+## 16.2 Qualitätskriterien
+
+Für die Abnahme gelten die folgenden zwölf verbindlichen Qualitätskriterien:
+
+1. **Eindeutigkeit:** Jeder kanonische Begriff besitzt genau eine klar abgegrenzte kanonische Definition.
+2. **Einmaligkeit:** Jedes kanonische Konzept wird durch genau einen kanonischen Begriff bezeichnet; doppelte Begriffe und konkurrierende Definitionen sind ausgeschlossen.
+3. **Synonymkontrolle:** Nicht ausdrücklich zugelassene Synonyme, Kurzformen oder abweichende Schreibweisen werden nicht als austauschbare Bezeichnungen verwendet.
+4. **Vollständigkeit:** Sämtliche vorgesehenen Kapitel, normativen Inhalte und erforderlichen Angaben sind vorhanden und nicht durch Platzhalter oder offene Redaktionstexte ersetzt.
+5. **Strukturelle Einheitlichkeit:** Kapitel, Glossareinträge, Regeln und Querverweise folgen jeweils der für sie festgelegten Struktur.
+6. **Referenzintegrität:** Jede interne Referenz und jede Cross Reference führt eindeutig zum beabsichtigten, vorhandenen Ziel.
+7. **Governance-Konformität:** Frontmatter, Versionierung, Statusführung, kanonischer Pfad und Dokumentgrenzen entsprechen den geltenden Vorgaben.
+8. **Architekturkonformität:** Alle für PB-004 einschlägigen `Accepted` Architecture Decisions sind berücksichtigt; zu PB-998 besteht kein offener Konflikt.
+9. **Sprachliche Einheitlichkeit:** Sprache, normative Ausdrucksweise, Schreibweisen und grammatische Form sind über das gesamte Dokument konsistent.
+10. **Terminologische Einheitlichkeit:** Kanonische Begriffe, Identifier-Regeln und Naming-Regeln werden im gesamten Dokument ohne Bedeutungsverschiebung angewendet.
+11. **Redaktionelle Fehlerfreiheit:** Offene Editorial-Fehler, unbeabsichtigte Wiederholungen, beschädigte Formatierungen und für PB-004 relevante offene Punkte aus PB-999 sind beseitigt.
+12. **Prüfbarkeit:** Jedes Abnahmeergebnis ist durch einen dokumentierten Befund, einen nachvollziehbaren Vergleich oder eine eindeutig bestätigte Checklistenposition belegbar.
+
+Ein Kriterium gilt nur dann als erfüllt, wenn der vollständige Dokumentstand geprüft wurde. Stichproben dürfen vorbereitend eingesetzt werden, ersetzen jedoch keine vollständige Abnahme.
+
+## 16.3 Dokumentationsprüfung
+
+Die Dokumentationsprüfung umfasst mindestens die folgenden vollständigen Prüfungen:
+
+- **Frontmatter:** Alle gemäß PB-000 erforderlichen Felder sind vorhanden, syntaktisch korrekt und inhaltlich plausibel. `document_id`, Titel, Status, Version, Datumsangaben, Abhängigkeiten, Beziehungen, Tags, `canonical_path` und `context_priority` werden gegen Dokumentinhalt und Ablageort geprüft.
+- **Dokumentidentität:** Dokument-ID, Titel und kanonischer Pfad bezeichnen durchgehend PB-004; es bestehen keine konkurrierenden Identitäten oder Pfadangaben.
+- **Version und Änderungsstand:** Die Version entspricht dem tatsächlich erreichten Bearbeitungsstand. Datumsangaben und Status widersprechen der Version und der beabsichtigten Freigabe nicht.
+- **Kapitelbestand:** Die Kapitel 1 bis 16 sind vorhanden, vollständig, eindeutig nummeriert und in der vorgesehenen Reihenfolge angeordnet. Kapitel 16 ist der Abschluss des Dokuments.
+- **Kapitelstruktur:** Überschriftenebenen, Abschnittsnummern, Listen, Tabellen und normative Blöcke sind konsistent aufgebaut; es gibt keine verwaisten oder falsch zugeordneten Abschnitte.
+- **Glossarstruktur:** Alle Glossareinträge verwenden die in PB-004 festgelegte Eintragsstruktur vollständig und in gleichbleibender Reihenfolge. Kapitel 16 wird ausdrücklich nicht als Glossar geführt.
+- **Normative Inhalte:** Sämtliche normativen Kapitel und Pflichtangaben sind vollständig. Normative Aussagen verwenden die festgelegte normative Sprachregel konsistent.
+- **Querverweise:** Alle Cross References, Kapitelverweise, Dokumentverweise und Verweise auf Architecture Decisions werden einzeln auf Existenz, Zielgenauigkeit und korrekte Bezeichnung geprüft.
+- **Interne Referenzen:** Anker, Überschriftenziele, IDs und sonstige dokumentinterne Referenzziele sind gültig, eindeutig und erreichbar.
+- **Redaktioneller Stand:** Rechtschreibung, Grammatik, Zeichensetzung, Markdown-Formatierung, Leerstellen, Wiederholungen, Platzhalter und offene redaktionelle Markierungen werden vollständig geprüft.
+- **Editorial Backlog:** Jeder PB-004 betreffende Eintrag in PB-999 ist abgearbeitet oder vor der Freigabe eindeutig als nicht mehr anwendbar geklärt; es verbleibt kein offener freigaberelevanter Punkt.
+- **Dokumentgrenze:** Das Dokument enthält ausschließlich Terminologie, Benennungs- und Identifier-Regeln sowie die zugehörigen Qualitäts- und Freigabekriterien. Gameplaymechaniken und Implementierungsdetails sind nicht enthalten.
+
+Jeder Befund wird einer konkreten Stelle zugeordnet. Die Dokumentationsprüfung ist erst abgeschlossen, wenn sämtliche Befunde behoben und die betroffenen Prüfpositionen erneut erfolgreich geprüft wurden.
+
+## 16.4 Konsistenzprüfung
+
+Die Konsistenzprüfung wird über den gesamten Inhalt von PB-004 und gegen seine verbindlichen Referenzdokumente durchgeführt. Sie umfasst:
+
+- **Definitionen:** Jede kanonische Definition kommt genau einmal vor und widerspricht keiner anderen Definition, Abgrenzung oder Regel.
+- **Begriffsbestand:** Doppelte Begriffe, abweichende Varianten desselben Begriffs und mehrere Begriffe für dasselbe Konzept werden vollständig ermittelt und bereinigt.
+- **Synonyme und Aliasformen:** Jede zugelassene Form ist ausdrücklich dokumentiert und eindeutig zugeordnet; jede nicht zugelassene Form wird entfernt oder als nicht-kanonisch gekennzeichnet, sofern das Dokument ihre Erwähnung erfordert.
+- **Bedeutungsstabilität:** Ein kanonischer Begriff trägt in Definitionen, Beispielen, Regeln, Cross References und erläuterndem Text stets dieselbe Bedeutung.
+- **Schreibweisen:** Groß- und Kleinschreibung, Singular und Plural, Bindestriche, Abkürzungen und englische beziehungsweise deutsche Darstellungen entsprechen den festgelegten Naming-Regeln.
+- **Identifier:** Präfixe, Formate, Zeichenregeln, Eindeutigkeit und Referenzverwendung stimmen mit den festgelegten Identifier-Regeln überein; keine ID ist doppelt oder einem wechselnden Gegenstand zugeordnet.
+- **Strukturen:** Gleichartige Glossareinträge und normative Festlegungen verwenden dieselben Pflichtbestandteile, dieselbe Reihenfolge und dieselbe Überschriftenlogik.
+- **Cross References:** Ausgangstext, Zielbezeichnung und referenzierter Inhalt stimmen fachlich überein; zirkuläre Verweise ersetzen keine erforderliche Definition.
+- **Dokumentübergreifende Aussagen:** Die Aussagen von PB-004 widersprechen PB-000, PB-001, PB-002 oder PB-003 nicht und überschreiten nicht die dort festgelegten Zuständigkeiten.
+- **Architecture Decisions:** Jede einschlägige `Accepted` Decision aus PB-998 ist umgesetzt. `Pending`, `Rejected` oder `Superseded` Decisions werden nicht als verbindliche Grundlage behandelt.
+- **Version und Metadaten:** Version, Status, `updated`, Beziehungen und `canonical_path` ergeben gemeinsam einen widerspruchsfreien Freigabestand.
+- **Sprache und Normativität:** Gleiche Verbindlichkeitsgrade werden gleich ausgedrückt; erläuternde Aussagen stehen nicht im Widerspruch zu normativen Regeln.
+
+Ein festgestellter Widerspruch wird nicht durch Interpretation als erledigt betrachtet. Er muss im Dokument eindeutig beseitigt und anschließend erneut gegen alle betroffenen Stellen geprüft werden.
+
+## 16.5 Governance Review
+
+Der Governance Review beginnt erst, wenn Dokumentations- und Konsistenzprüfung abgeschlossen sind, alle dabei festgestellten Befunde behoben wurden und die Release Checklist bis auf die Review- und Freigabepositionen erfüllt ist. Review-Grundlage sind der vollständige PB-004-Dokumentstand, PB-000 bis PB-003, PB-998, der für PB-004 relevante Stand von PB-999 sowie die dokumentierten Prüfergebnisse.
+
+Im Review wird zuerst die Prüfbasis bestätigt: Dokumentidentität, Version, vorgesehener Freigabestand und Umfang müssen eindeutig sein. Anschließend wird geprüft, ob PB-004 seine Governance-Aufgabe vollständig erfüllt, seine Dokumentgrenze einhält, sämtliche einschlägigen `Accepted` Architecture Decisions berücksichtigt und keine ungeklärten Widersprüche zu verbindlichen Project-Bible-Dokumenten enthält. Danach werden die Nachweise der Dokumentations- und Konsistenzprüfung sowie jede Position der Release Checklist kontrolliert.
+
+Jeder Review-Befund muss die betroffene Stelle, die verletzte Vorgabe, die erforderliche Korrektur und seinen Bearbeitungsstand benennen. Ein freigabeverhindernder Befund setzt die betroffene Checklistenposition zurück. Nach der Korrektur werden mindestens die betroffene Stelle, ihre Querverbindungen und alle dadurch berührten Prüfpunkte erneut geprüft; eine bloße Bestätigung der Änderung genügt nicht.
+
+Der Review endet mit genau einem Ergebnis:
+
+- **Erfolgreich abgeschlossen:** Es bestehen keine offenen Befunde, sämtliche anwendbaren Nachweise sind bestätigt und alle Review-Voraussetzungen sind erfüllt.
+- **Nicht erfolgreich abgeschlossen:** Mindestens ein Befund oder Nachweis ist offen, widersprüchlich oder nicht ausreichend; PB-004 bleibt nicht freigabebereit.
+
+Das Ergebnis wird zusammen mit geprüftem Dokumentstand, Review-Datum, Reviewenden, Befunden und Abschlussentscheidung nachvollziehbar festgehalten. Nur ein erfolgreich abgeschlossener Governance Review erlaubt die Bestätigung der letzten beiden Positionen der Release Checklist.
+
+## 16.6 Release Checklist
+
+Die folgende Arbeitsliste wird für den vollständigen Freigabestand geführt. Eine Checkbox darf erst markiert werden, wenn die zugehörige Prüfung vollständig durchgeführt und ihr Ergebnis belegt wurde.
+
+- [ ] Alle Begriffe besitzen genau eine kanonische Definition.
+- [ ] Keine widersprüchlichen Definitionen vorhanden.
+- [ ] Keine doppelten Begriffe.
+- [ ] Keine unzulässigen Synonyme.
+- [ ] Alle Cross References geprüft.
+- [ ] Alle Kapitel vollständig.
+- [ ] Kapitelstruktur konsistent.
+- [ ] Glossarstruktur konsistent.
+- [ ] Normative Kapitel vollständig.
+- [ ] Frontmatter vollständig.
+- [ ] Versionierung konsistent.
+- [ ] `canonical_path` korrekt.
+- [ ] Sämtliche internen Referenzen gültig.
+- [ ] Alle `Accepted` Architecture Decisions berücksichtigt.
+- [ ] Keine offenen Konflikte mit PB-998.
+- [ ] Keine offenen Editorial-Fehler.
+- [ ] PB-999 Editorial Backlog abgearbeitet.
+- [ ] Sprache konsistent.
+- [ ] Terminologie konsistent.
+- [ ] Identifier-Regeln konsistent.
+- [ ] Naming-Regeln konsistent.
+- [ ] Dokumentgrenze eingehalten: keine Glossardefinitionen in Kapitel 16.
+- [ ] Keine Gameplaymechaniken oder Implementierungsdetails im Release-Gate-Kapitel.
+- [ ] Qualitätskriterien vollständig geprüft und erfüllt.
+- [ ] Dokumentationsprüfung vollständig und erfolgreich abgeschlossen.
+- [ ] Konsistenzprüfung vollständig und erfolgreich abgeschlossen.
+- [ ] Prüfnachweise vollständig und dem geprüften Dokumentstand zugeordnet.
+- [ ] Keine offenen freigabeverhindernden Befunde.
+- [ ] Dokument bereit für Governance Review.
+- [ ] Governance Review erfolgreich abgeschlossen.
+- [ ] PB-004 Version 1.0 freigabebereit.
+
+PB-004 gilt erst dann als abgeschlossen, wenn sämtliche Punkte der Release Checklist erfüllt wurden. Nicht anwendbare, übersprungene oder nur teilweise geprüfte Punkte gelten nicht als erfüllt.
+
+Erst danach darf die Version `1.0.0` gesetzt werden. Das Setzen dieser Version vor dem vollständigen Abschluss der Checkliste und dem erfolgreich abgeschlossenen Governance Review ist unzulässig.
+
