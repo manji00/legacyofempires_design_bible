@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.16.0
+version: 0.16.1
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -27,14 +27,29 @@ depends_on:
   - PB-002
   - PB-003
 related_documents:
-  - PB-005
-  - PB-006
-  - PB-007
+  - PB-997
   - PB-998
-  - GD-100
-  - TECH-100
+  - PB-999
 systems: []
-requirements: []
+requirements:
+  - REQ-TERM-001
+  - REQ-TERM-002
+  - REQ-TERM-003
+  - REQ-TERM-004
+  - REQ-TERM-005
+  - REQ-TERM-006
+  - REQ-TERM-007
+  - REQ-TERM-008
+  - REQ-TERM-009
+  - REQ-TERM-010
+  - REQ-TERM-011
+  - REQ-TERM-012
+  - REQ-TERM-013
+  - REQ-TERM-014
+  - REQ-TERM-015
+  - REQ-TERM-016
+  - REQ-TERM-017
+  - REQ-TERM-018
 design_goals: []
 tags:
   - governance
@@ -49,7 +64,7 @@ context_priority: critical
 
 # PB-004 – Naming & Terminology
 
-# Kapitel 1 – Zweck und Geltungsbereich
+## Kapitel 1 – Zweck und Geltungsbereich
 
 PB-004 schafft ein verbindliches, projektweites Vokabular, damit fachliche Konzepte über Dokumente, Implementierungen und Inhalte hinweg eindeutig bezeichnet und verstanden werden. Einheitliche Begriffe verhindern, dass unklare Synonyme dasselbe Konzept scheinbar trennen oder dass ein einzelner Ausdruck mehrere, miteinander unvereinbare Bedeutungen erhält.
 
@@ -65,7 +80,7 @@ Besteht ein Konflikt zwischen einer vorgeschlagenen Begriffsdefinition in PB-004
 
 Die Begriffe **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT** und **MAY** werden gemäß PB-000 normativ verwendet. Deutsche Erläuterungen verändern ihre dort festgelegte Verbindlichkeit nicht.
 
-# Kapitel 2 – Grundprinzipien der Terminologie
+## Kapitel 2 – Grundprinzipien der Terminologie
 
 Die folgenden Regeln gelten für jede Verwendung projektbezogener Begriffe. Sie bestimmen, wie spätere Begriffsdefinitionen erstellt, verwendet und geändert werden; sie nehmen diese Definitionen nicht vorweg.
 
@@ -138,21 +153,21 @@ Bei einem terminologischen Konflikt hat PB-004 Vorrang vor Chats, Kommentaren, T
 
 Die Wörter **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT** und **MAY** behalten in allen späteren Abschnitten von PB-004 die in PB-000 definierte normative Bedeutung. Beschreibende Beispiele, Übersetzungen und Erläuterungen erzeugen ohne ausdrückliche normative Festlegung keine zusätzlichen Begriffe oder Ausnahmen.
 
-# Kapitel 3 – Allgemeine Kernbegriffe
+## Kapitel 3 – Allgemeine Kernbegriffe
 
 Dieses Kapitel bildet das begriffliche Fundament für alle weiteren Terminologiebereiche von PB-004. Ab diesem Kapitel MUST jeder neu aufgenommene Begriff exakt die nachfolgend verwendete Abschnittsfolge besitzen: `Definition`, `Zweck`, `Verwendung`, optional `Darf nicht verwechselt werden mit`, `Verwandte Begriffe` und `Referenzen`. Abschnitte dürfen weder umbenannt noch durch begriffsspezifische Strukturen ersetzt werden. `Verwandte Begriffe` enthält ausschließlich Verweise auf Begriffe, `Referenzen` ausschließlich Dokument-IDs.
 
-## World
+### World
 
-### Definition
+#### Definition
 
 Die `World` ist die Gesamtheit aller innerhalb eines laufenden Spielzusammenhangs berücksichtigten Räume, Akteure, Zustände und Beziehungen. Sie bildet den Bezugsraum, in dem eine `Simulation` stattfindet.
 
-### Zweck
+#### Zweck
 
 Der Begriff grenzt den vollständigen betrachteten Zusammenhang von einzelnen Inhalten, Zustandsausschnitten und deren zeitlicher Entwicklung ab.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Savegames
@@ -160,35 +175,35 @@ Der Begriff grenzt den vollständigen betrachteten Zusammenhang von einzelnen In
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Scenario`: definiert die Ausgangsbedingungen und Vorgaben einer World.
 - `Game State`: beschreibt den Zustand einer World zu einem bestimmten Zeitpunkt.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Scenario
 - Simulation
 - Game State
 - Entity
 
-### Referenzen
+#### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-## Scenario
+### Scenario
 
-### Definition
+#### Definition
 
 Ein `Scenario` ist eine in sich geschlossene Festlegung der für einen Spielbeginn verfügbaren Inhalte, Regeln, Ausgangsbedingungen und zeitlichen Einordnung. Es MUST von den allgemeinen Grundlagen des Projekts trennbar bleiben.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet den austauschbaren Rahmen, aus dem eine konkrete World initial hervorgehen kann, ohne diesen Rahmen mit der allgemeinen Produkt- oder Systemidentität gleichzusetzen.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Savegames
@@ -197,12 +212,12 @@ Der Begriff bezeichnet den austauschbaren Rahmen, aus dem eine konkrete World in
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `World`: umfasst den tatsächlich betrachteten und fortgeschriebenen Spielzusammenhang.
 - `Campaign`: ist der fortlaufende Spielverlauf auf Grundlage eines Scenario.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - World
 - Campaign
@@ -210,59 +225,59 @@ Der Begriff bezeichnet den austauschbaren Rahmen, aus dem eine konkrete World in
 - Calendar
 - Configuration
 
-### Referenzen
+#### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-## Campaign
+### Campaign
 
-### Definition
+#### Definition
 
 Eine `Campaign` ist ein zusammenhängender, fortlaufender Spielverlauf, der auf einem Scenario beruht und die Entwicklung seiner World über die Zeit umfasst.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die dauerhafte Kontinuität eines begonnenen Spiels einschließlich seines individuellen Verlaufs.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Savegames
 - UI
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Scenario`: legt den Rahmen und die Ausgangsbedingungen fest.
 - `Timeline`: ordnet zeitbezogene Zustände und Vorgänge.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Scenario
 - World
 - Timeline
 - Game State
 
-### Referenzen
+#### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-## Timeline
+### Timeline
 
-### Definition
+#### Definition
 
 Eine `Timeline` ist die geordnete zeitliche Achse, auf der Zustände und Vorgänge einer World eingeordnet werden. Sie bestimmt deren Reihenfolge und zeitliche Lage, ohne selbst deren fachliche Wirkung festzulegen.
 
-### Zweck
+#### Zweck
 
 Der Begriff stellt einen gemeinsamen zeitlichen Bezugsrahmen für Verlauf, Vergleich und Nachvollziehbarkeit bereit.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Savegames
@@ -271,12 +286,12 @@ Der Begriff stellt einen gemeinsamen zeitlichen Bezugsrahmen für Verlauf, Vergl
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Calendar`: bildet Positionen einer Timeline auf benannte Zeiteinheiten ab.
 - `Campaign`: umfasst den gesamten zusammenhängenden Spielverlauf.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Calendar
 - Date
@@ -284,22 +299,22 @@ Der Begriff stellt einen gemeinsamen zeitlichen Bezugsrahmen für Verlauf, Vergl
 - Time Step
 - Campaign
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Calendar
+### Calendar
 
-### Definition
+#### Definition
 
 Ein `Calendar` ist ein Regelsystem zur Gliederung und Benennung von Positionen auf einer Timeline. Er legt fest, wie zeitliche Positionen als Dates ausgedrückt werden.
 
-### Zweck
+#### Zweck
 
 Der Begriff ermöglicht eine einheitliche, für Inhalte und Darstellung nutzbare zeitliche Einordnung.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Savegames
@@ -308,33 +323,33 @@ Der Begriff ermöglicht eine einheitliche, für Inhalte und Darstellung nutzbare
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Timeline`: ist die zugrunde liegende zeitliche Achse.
 - `Date`: bezeichnet eine einzelne Position gemäß einem Calendar.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Timeline
 - Date
 - Scenario
 
-### Referenzen
+#### Referenzen
 
 - PB-000
 - PB-002
 
-## Date
+### Date
 
-### Definition
+#### Definition
 
 Ein `Date` ist die eindeutige Bezeichnung einer zeitlichen Position gemäß einem bestimmten Calendar.
 
-### Zweck
+#### Zweck
 
 Der Begriff erlaubt es, Zustände und Vorgänge auf einer Timeline eindeutig zu verorten und verständlich darzustellen.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Savegames
@@ -343,33 +358,33 @@ Der Begriff erlaubt es, Zustände und Vorgänge auf einer Timeline eindeutig zu 
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Calendar`: definiert das Regelsystem der zeitlichen Bezeichnung.
 - `Tick`: bezeichnet einen diskreten Fortschritt der Simulation.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Calendar
 - Timeline
 - Tick
 
-### Referenzen
+#### Referenzen
 
 - PB-000
 - PB-002
 
-## Tick
+### Tick
 
-### Definition
+#### Definition
 
 Ein `Tick` ist ein einzelner, diskreter Fortschritt der Simulation entlang ihrer Timeline. Er bezeichnet eine Ordnungsposition des Simulationsfortschritts und keine festgelegte kalendarische Dauer.
 
-### Zweck
+#### Zweck
 
 Der Begriff schafft eine eindeutige Einheit für die Reihenfolge diskreter Simulationsfortschritte.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -378,35 +393,34 @@ Der Begriff schafft eine eindeutige Einheit für die Reihenfolge diskreter Simul
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Time Step`: bezeichnet den zeitlichen Umfang eines Simulationsfortschritts.
 - `Date`: bezeichnet eine Position gemäß einem Calendar.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Time Step
 - Timeline
 - Date
 - Simulation
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
-- TECH-100
 
-## Time Step
+### Time Step
 
-### Definition
+#### Definition
 
 Ein `Time Step` ist der zeitliche Umfang, um den eine Simulation bei einem Fortschritt weitergeführt wird. Seine Größe ist nicht durch den Begriff selbst festgelegt.
 
-### Zweck
+#### Zweck
 
 Der Begriff trennt die verarbeitete Zeitspanne von der bloßen Reihenfolge einzelner Simulationsfortschritte.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -415,35 +429,34 @@ Der Begriff trennt die verarbeitete Zeitspanne von der bloßen Reihenfolge einze
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Tick`: bezeichnet den einzelnen diskreten Simulationsfortschritt.
 - `Date`: bezeichnet eine kalendarisch ausgedrückte zeitliche Position.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Tick
 - Timeline
 - Calendar
 - Simulation
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
-- TECH-100
 
-## Simulation
+### Simulation
 
-### Definition
+#### Definition
 
 Die `Simulation` ist die autoritative, regelgebundene Fortschreibung des Game State über die Zeit. Sie bestimmt zulässige Zustandsänderungen und deren verbindliche Ergebnisse.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die Instanz fachlicher Autorität, durch die die World konsistent fortgeführt und Auswirkungen nachvollziehbar bestimmt werden.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -453,12 +466,12 @@ Der Begriff bezeichnet die Instanz fachlicher Autorität, durch die die World ko
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `System`: trägt einen abgegrenzten Teil der Regeln und Zuständigkeiten bei.
 - `Game State`: ist der autoritative Zustand, den die Simulation fortschreibt.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Game State
 - World
@@ -466,24 +479,24 @@ Der Begriff bezeichnet die Instanz fachlicher Autorität, durch die die World ko
 - Tick
 - Time Step
 
-### Referenzen
+#### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-## Game State
+### Game State
 
-### Definition
+#### Definition
 
 Der `Game State` ist die vollständige Menge der zu einem bestimmten Simulationszeitpunkt autoritativ geltenden und für die Fortführung relevanten Zustandsinformationen einer Campaign.
 
-### Zweck
+#### Zweck
 
 Der Begriff grenzt verbindlichen Simulationszustand von Darstellung, Erzählung, abgeleiteten Informationen und unverbindlichen Vorschlägen ab.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -493,13 +506,13 @@ Der Begriff grenzt verbindlichen Simulationszustand von Darstellung, Erzählung,
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `World`: ist der gesamte betrachtete Spielzusammenhang.
 - `Data`: bezeichnet Informationen unabhängig von ihrer Autorität oder Rolle.
 - `Configuration`: beeinflusst Verhalten, ist aber nicht allein deshalb Teil des laufenden Zustands.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Simulation
 - Campaign
@@ -507,24 +520,24 @@ Der Begriff grenzt verbindlichen Simulationszustand von Darstellung, Erzählung,
 - Entity
 - Data
 
-### Referenzen
+#### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-## Entity
+### Entity
 
-### Definition
+#### Definition
 
 Eine `Entity` ist ein innerhalb des Projekts eindeutig unterscheidbarer Gegenstand, dem Zustand, Eigenschaften oder Beziehungen zugeordnet werden können. Der Begriff setzt keine bestimmte technische Repräsentation oder Architektur voraus.
 
-### Zweck
+#### Zweck
 
 Der Begriff stellt eine gemeinsame Bezeichnung für einzeln referenzierbare fachliche Gegenstände bereit.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -534,36 +547,35 @@ Der Begriff stellt eine gemeinsame Bezeichnung für einzeln referenzierbare fach
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Identifier`: bezeichnet eine stabile Referenz auf einen Gegenstand, nicht den Gegenstand selbst.
 - `Module`: ist eine abgegrenzte organisatorische Einheit.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Identifier
 - Game State
 - Data
 - World
 
-### Referenzen
+#### Referenzen
 
 - PB-000
 - PB-002
 - PB-003
-- TECH-100
 
-## Identifier
+### Identifier
 
-### Definition
+#### Definition
 
 Ein `Identifier` ist eine innerhalb seines festgelegten Geltungsbereichs eindeutige und stabile Referenz auf genau einen bestimmten Gegenstand. Seine konkrete Syntax und Vergaberegeln werden durch den jeweils zuständigen Standard festgelegt.
 
-### Zweck
+#### Zweck
 
 Der Begriff ermöglicht eindeutige, dauerhafte und bereichsübergreifend nachvollziehbare Referenzen.
 
-### Verwendung
+#### Verwendung
 
 - Engine
 - Savegames
@@ -572,34 +584,33 @@ Der Begriff ermöglicht eindeutige, dauerhafte und bereichsübergreifend nachvol
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Entity`: ist der referenzierte Gegenstand.
 - Anzeigename: dient der menschlichen Darstellung und muss nicht eindeutig oder stabil sein.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Entity
 - Data
 - Configuration
 
-### Referenzen
+#### Referenzen
 
 - PB-000
 - PB-004
-- PB-006
 
-## System
+### System
 
-### Definition
+#### Definition
 
 Ein `System` ist eine fachlich abgegrenzte Gesamtheit zusammengehöriger Regeln, Zuständigkeiten, Zustände und Beziehungen, die einen bestimmten Teil des Projekts beschreibt oder trägt. Ein System ist unabhängig von seiner späteren technischen Aufteilung definiert.
 
-### Zweck
+#### Zweck
 
 Der Begriff schafft stabile fachliche Grenzen für Entwurf, Verantwortung, Abhängigkeiten und Dokumentation.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -609,71 +620,69 @@ Der Begriff schafft stabile fachliche Grenzen für Entwurf, Verantwortung, Abhä
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Module`: gliedert Artefakte organisatorisch oder technisch.
 - `Simulation`: führt den autoritativen Game State unter Beteiligung von Systemen fort.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Module
 - Simulation
 - Game State
 - Configuration
 
-### Referenzen
+#### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
-- TECH-100
 
-## Module
+### Module
 
-### Definition
+#### Definition
 
 Ein `Module` ist eine abgegrenzte, benannte Einheit von zusammengehörigen Artefakten mit festgelegter Verantwortung. Seine Grenze dient der Strukturierung und begründet keine eigenständige fachliche Bedeutung.
 
-### Zweck
+#### Zweck
 
 Der Begriff ermöglicht eine klare organisatorische Aufteilung und Zuordnung von Verantwortlichkeiten, ohne fachliche Systemgrenzen vorwegzunehmen.
 
-### Verwendung
+#### Verwendung
 
 - Engine
 - Modding
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `System`: bezeichnet eine fachliche Gesamtheit unabhängig von ihrer technischen oder organisatorischen Aufteilung.
 - `Entity`: bezeichnet einen einzeln referenzierbaren Gegenstand.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - System
 - Data
 - Configuration
 
-### Referenzen
+#### Referenzen
 
 - PB-000
 - PB-003
-- TECH-100
 
-## Data
+### Data
 
-### Definition
+#### Definition
 
 `Data` sind formal darstellbare Informationen, die im Projekt gespeichert, übertragen, ausgewertet oder dargestellt werden können. Der Begriff legt weder Autorität noch Herkunft, Lebensdauer oder technische Repräsentation dieser Informationen fest.
 
-### Zweck
+#### Zweck
 
 Der Begriff stellt eine neutrale gemeinsame Bezeichnung für verarbeitbare Informationen bereit.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -683,36 +692,35 @@ Der Begriff stellt eine neutrale gemeinsame Bezeichnung für verarbeitbare Infor
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Game State`: ist die autoritative Teilmenge der für die Fortführung einer Campaign relevanten Zustandsinformationen.
 - `Configuration`: besteht aus Vorgaben, die zulässiges oder gewünschtes Verhalten festlegen.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Game State
 - Configuration
 - Entity
 - Identifier
 
-### Referenzen
+#### Referenzen
 
 - PB-000
 - PB-002
 - PB-003
-- TECH-100
 
-## Configuration
+### Configuration
 
-### Definition
+#### Definition
 
 Eine `Configuration` ist eine festgelegte Menge von Vorgaben, durch die zulässiges oder gewünschtes Verhalten und auswählbare Varianten bestimmt werden, ohne das zugrunde liegende Konzept neu zu definieren.
 
-### Zweck
+#### Zweck
 
 Der Begriff trennt anpassbare Vorgaben von fachlichen Definitionen, laufendem Game State und allgemeinen Data.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -722,13 +730,13 @@ Der Begriff trennt anpassbare Vorgaben von fachlichen Definitionen, laufendem Ga
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Data`: umfasst Informationen unabhängig von ihrer steuernden Rolle.
 - `Game State`: beschreibt den autoritativen Zustand einer laufenden Campaign.
 - `Scenario`: legt einen vollständigen inhaltlichen und regelbezogenen Ausgangsrahmen fest.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Data
 - Game State
@@ -736,14 +744,13 @@ Der Begriff trennt anpassbare Vorgaben von fachlichen Definitionen, laufendem Ga
 - System
 - Module
 
-### Referenzen
+#### Referenzen
 
 - PB-000
 - PB-002
 - PB-003
-- TECH-100
 
-# Kapitel 4 – Politische Terminologie
+## Kapitel 4 – Politische Terminologie
 
 Politische Begriffe werden fachlich und hierarchisch gruppiert. Die fünf Gruppen bilden unterschiedliche Ebenen politischer Ordnung ab und verdeutlichen die Beziehungen und notwendigen Abgrenzungen zwischen den Begriffen.
 
@@ -751,19 +758,19 @@ Die Reihenfolge führt von politischen Entitäten über die institutionelle Ordn
 
 Spätere Dokumente MUST diese Begriffe in ihrer hier festgelegten kanonischen Bedeutung verwenden.
 
-## 4.1 Politische Entitäten
+### 4.1 Politische Entitäten
 
-### Country
+#### Country
 
-#### Definition
+##### Definition
 
 Ein `Country` ist eine als Einheit betrachtete Verbindung aus Gebiet, Bevölkerung und politischer Ordnung, die in politischen und internationalen Zusammenhängen als eigenständiger Akteur referenziert wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff stellt die gemeinsame Bezeichnung für die territorial-politische Gesamteinheit bereit, ohne sie auf State, Government oder Nation zu reduzieren.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -773,36 +780,36 @@ Der Begriff stellt die gemeinsame Bezeichnung für die territorial-politische Ge
 - APIs
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `State`: bezeichnet die dauerhafte politische und rechtliche Organisation.
 - `Government`: bezeichnet die gegenwärtige politische Führung.
 - `Nation`: bezeichnet eine kollektive Identität.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Government
 - Nation
 - Sovereignty
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### State
+#### State
 
-#### Definition
+##### Definition
 
 Ein `State` ist eine dauerhafte politische und rechtliche Organisation, die über Institutionen eine Bevölkerung und ein Gebiet ordnet und dafür Sovereignty beansprucht.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die organisierte Trägerin öffentlicher Herrschaft unabhängig von ihrer jeweiligen Führung, gesellschaftlichen Identität oder geografischen Benennung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -811,13 +818,13 @@ Der Begriff bezeichnet die organisierte Trägerin öffentlicher Herrschaft unabh
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Government`: übt die gegenwärtige politische Leitung aus.
 - `Nation`: bezeichnet eine kollektive politische oder gesellschaftliche Identität.
 - `Country`: bezeichnet eine territorial-politische Einheit als Ganzes.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Government
 - Nation
@@ -825,23 +832,23 @@ Der Begriff bezeichnet die organisierte Trägerin öffentlicher Herrschaft unabh
 - Sovereignty
 - Institution
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Nation
+#### Nation
 
-#### Definition
+##### Definition
 
 Eine `Nation` ist eine als zusammengehörig verstandene politische oder gesellschaftliche Gemeinschaft, die sich auf eine gemeinsame kollektive Identität bezieht.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet kollektive Zugehörigkeit, ohne sie mit einer staatlichen Organisation oder einem bestimmten Gebiet gleichzusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Savegames
@@ -849,35 +856,35 @@ Der Begriff bezeichnet kollektive Zugehörigkeit, ohne sie mit einer staatlichen
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `State`: ist eine politische und rechtliche Organisation.
 - `Country`: ist eine territorial-politische Einheit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Country
 - Sovereignty
 - Autonomy
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Government
+#### Government
 
-#### Definition
+##### Definition
 
 Ein `Government` ist die Gesamtheit der Personen und Organe, die innerhalb eines State zu einem bestimmten Zeitpunkt dessen oberste politische Leitungs- und Entscheidungsfunktionen ausüben.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die jeweils handelnde politische Führung und grenzt sie von der dauerhaften politischen Ordnung und ihren Einrichtungen ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -886,12 +893,12 @@ Der Begriff bezeichnet die jeweils handelnde politische Führung und grenzt sie 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `State`: ist die dauerhafte politische und rechtliche Organisation.
 - `Regime`: bezeichnet die grundlegende Ordnung politischer Herrschaft.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Regime
@@ -899,23 +906,23 @@ Der Begriff bezeichnet die jeweils handelnde politische Führung und grenzt sie 
 - Executive
 - Head of Government
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Regime
+#### Regime
 
-#### Definition
+##### Definition
 
 Ein `Regime` ist die grundlegende Ordnung, nach der politische Herrschaft innerhalb eines State erlangt, ausgeübt, begrenzt und übertragen wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die beständige Struktur politischer Herrschaft jenseits der jeweils amtierenden Personen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -924,12 +931,12 @@ Der Begriff bezeichnet die beständige Struktur politischer Herrschaft jenseits 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Government`: ist die gegenwärtig handelnde politische Führung.
 - `Constitution`: ist die grundlegende normative Ordnung eines State.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Government
 - State
@@ -937,24 +944,24 @@ Der Begriff bezeichnet die beständige Struktur politischer Herrschaft jenseits 
 - Legitimacy
 - Authority
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 4.2 Staatsorganisation
+### 4.2 Staatsorganisation
 
-### Constitution
+#### Constitution
 
-#### Definition
+##### Definition
 
 Eine `Constitution` ist die grundlegende normative Ordnung eines State, welche die Ausübung öffentlicher Authority, die maßgeblichen Institutionen und deren Beziehungen festlegt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den obersten Ordnungsrahmen, an dem die staatliche Herrschaftsstruktur und ihre Zuständigkeiten ausgerichtet sind.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -963,12 +970,12 @@ Der Begriff bezeichnet den obersten Ordnungsrahmen, an dem die staatliche Herrsc
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Law`: ist eine verbindliche allgemeine Norm innerhalb der politischen Ordnung.
 - `Regime`: bezeichnet die tatsächliche grundlegende Ordnung politischer Herrschaft.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Regime
@@ -976,22 +983,22 @@ Der Begriff bezeichnet den obersten Ordnungsrahmen, an dem die staatliche Herrsc
 - Law
 - Authority
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Institution
+#### Institution
 
-#### Definition
+##### Definition
 
 Eine `Institution` ist eine dauerhaft etablierte politische oder rechtliche Ordnungseinheit mit anerkannten Aufgaben, Zuständigkeiten oder Verfahrensregeln.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet beständige Träger und Ordnungen politischer Funktionen unabhängig von einzelnen Amtsinhabern.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1000,12 +1007,12 @@ Der Begriff bezeichnet beständige Träger und Ordnungen politischer Funktionen 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Government`: bezeichnet die gegenwärtige politische Führung.
 - `Public Administration`: bezeichnet die Gesamtheit der Einrichtungen und Tätigkeiten zur Ausführung öffentlicher Aufgaben.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Constitution
 - State
@@ -1013,22 +1020,22 @@ Der Begriff bezeichnet beständige Träger und Ordnungen politischer Funktionen 
 - Parliament
 - Public Administration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Law
+#### Law
 
-#### Definition
+##### Definition
 
 Ein `Law` ist eine von zuständiger öffentlicher Authority gesetzte oder anerkannte, allgemein verbindliche Norm innerhalb eines State.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet verbindliche politische und rechtliche Vorgaben unterhalb der grundlegenden Verfassungsordnung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1037,12 +1044,12 @@ Der Begriff bezeichnet verbindliche politische und rechtliche Vorgaben unterhalb
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Constitution`: bildet die grundlegende normative Ordnung.
 - `Authority`: ist die anerkannte Befugnis, verbindliche Entscheidungen zu treffen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Constitution
 - Legislature
@@ -1050,24 +1057,24 @@ Der Begriff bezeichnet verbindliche politische und rechtliche Vorgaben unterhalb
 - Authority
 - Institution
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 4.3 Staatsorgane
+### 4.3 Staatsorgane
 
-### Head of State
+#### Head of State
 
-#### Definition
+##### Definition
 
 Der `Head of State` ist das Amt, das einen State in seiner obersten institutionellen Kontinuität und Repräsentation verkörpert.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die staatliche Spitzenfunktion unabhängig davon, ob sie mit der Leitung des Government verbunden ist.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1076,12 +1083,12 @@ Der Begriff bezeichnet die staatliche Spitzenfunktion unabhängig davon, ob sie 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Head of Government`: leitet das Government.
 - `Government`: ist die Gesamtheit der gegenwärtigen politischen Führung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Government
@@ -1089,22 +1096,22 @@ Der Begriff bezeichnet die staatliche Spitzenfunktion unabhängig davon, ob sie 
 - Constitution
 - Authority
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Head of Government
+#### Head of Government
 
-#### Definition
+##### Definition
 
 Der `Head of Government` ist das Amt, dem die politische Leitung und Koordination des Government zugeordnet ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die führende Regierungsfunktion unabhängig von ihrer Amtsbezeichnung oder ihrer Verbindung mit dem Head of State.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1113,34 +1120,34 @@ Der Begriff bezeichnet die führende Regierungsfunktion unabhängig von ihrer Am
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Head of State`: verkörpert die oberste institutionelle Kontinuität und Repräsentation des State.
 - `Cabinet`: ist ein kollegiales Leitungsgremium.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Government
 - Cabinet
 - Head of State
 - Executive
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Cabinet
+#### Cabinet
 
-#### Definition
+##### Definition
 
 Ein `Cabinet` ist das kollegiale Leitungsgremium des Government, in dem der Head of Government und die für zentrale Regierungsbereiche verantwortlichen Mitglieder zusammenwirken.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die gemeinsame politische Führung und Abstimmung der obersten Regierungsverantwortlichen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1149,34 +1156,34 @@ Der Begriff bezeichnet die gemeinsame politische Führung und Abstimmung der obe
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Government`: umfasst die politische Führung insgesamt.
 - `Ministry`: ist eine einzelne nach Aufgabenbereich gegliederte Regierungsinstitution.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Government
 - Ministry
 - Executive
 - Head of Government
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Ministry
+#### Ministry
 
-#### Definition
+##### Definition
 
 Ein `Ministry` ist eine nach einem öffentlichen Aufgabenbereich gegliederte Institution des Government unter politischer Leitung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die dauerhafte institutionelle Bündelung von Verantwortung für einen abgegrenzten Regierungsbereich.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1185,12 +1192,12 @@ Der Begriff bezeichnet die dauerhafte institutionelle Bündelung von Verantwortu
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Cabinet`: ist das kollegiale Leitungsgremium des Government.
 - `Public Administration`: umfasst die öffentliche Verwaltung insgesamt.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Government
 - Cabinet
@@ -1198,22 +1205,22 @@ Der Begriff bezeichnet die dauerhafte institutionelle Bündelung von Verantwortu
 - Institution
 - Public Administration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Parliament
+#### Parliament
 
-#### Definition
+##### Definition
 
 Ein `Parliament` ist eine beratende und beschlussfassende politische Institution mit zusammengesetzter Mitgliedschaft, die insbesondere öffentliche Repräsentations- und Gesetzgebungsfunktionen wahrnimmt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die konkrete institutionelle Versammlung, in der politische Beratung, Repräsentation und verbindliche Beschlussfassung gebündelt sind.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1222,12 +1229,12 @@ Der Begriff bezeichnet die konkrete institutionelle Versammlung, in der politisc
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Legislature`: bezeichnet die Funktion oder Gesamtheit der gesetzgebenden Staatsgewalt.
 - `Cabinet`: ist das kollegiale Leitungsgremium des Government.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Legislature
 - Institution
@@ -1235,22 +1242,22 @@ Der Begriff bezeichnet die konkrete institutionelle Versammlung, in der politisc
 - Political Party
 - Opposition
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Legislature
+#### Legislature
 
-#### Definition
+##### Definition
 
 Die `Legislature` ist die Institution oder Gesamtheit von Institutionen eines State, der die Zuständigkeit zur Beratung und Verabschiedung von Laws zugeordnet ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die gesetzgebende Staatsfunktion unabhängig davon, durch welche konkrete institutionelle Form sie wahrgenommen wird.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1259,12 +1266,12 @@ Der Begriff bezeichnet die gesetzgebende Staatsfunktion unabhängig davon, durch
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Parliament`: ist eine konkrete politische Institution, die gesetzgebende Funktionen wahrnehmen kann.
 - `Executive`: bezeichnet die leitende und ausführende Staatsgewalt.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Parliament
 - Executive
@@ -1272,22 +1279,22 @@ Der Begriff bezeichnet die gesetzgebende Staatsfunktion unabhängig davon, durch
 - Law
 - Constitution
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Executive
+#### Executive
 
-#### Definition
+##### Definition
 
 Die `Executive` ist die Institution oder Gesamtheit von Institutionen eines State, der die politische Leitung und Ausführung von Laws und öffentlichen Entscheidungen zugeordnet ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die leitende und ausführende Staatsfunktion unabhängig von ihren konkreten Organen oder Amtsinhabern.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1296,12 +1303,12 @@ Der Begriff bezeichnet die leitende und ausführende Staatsfunktion unabhängig 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Government`: bezeichnet die jeweils handelnde politische Führung.
 - `Public Administration`: führt öffentliche Aufgaben innerhalb zugewiesener Zuständigkeiten aus.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Government
 - Legislature
@@ -1309,22 +1316,22 @@ Der Begriff bezeichnet die leitende und ausführende Staatsfunktion unabhängig 
 - Cabinet
 - Public Administration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Judiciary
+#### Judiciary
 
-#### Definition
+##### Definition
 
 Die `Judiciary` ist die Institution oder Gesamtheit von Institutionen eines State, der die verbindliche Auslegung und Anwendung von Law in Streit- und Entscheidungsfällen zugeordnet ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die rechtsprechende Staatsfunktion unabhängig von ihrer konkreten institutionellen Gliederung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1333,12 +1340,12 @@ Der Begriff bezeichnet die rechtsprechende Staatsfunktion unabhängig von ihrer 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Legislature`: verabschiedet Laws.
 - `Executive`: leitet und vollzieht öffentliche Entscheidungen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Legislature
 - Executive
@@ -1346,24 +1353,24 @@ Der Begriff bezeichnet die rechtsprechende Staatsfunktion unabhängig von ihrer 
 - Constitution
 - Institution
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 4.4 Politische Akteure
+### 4.4 Politische Akteure
 
-### Political Party
+#### Political Party
 
-#### Definition
+##### Definition
 
 Eine `Political Party` ist eine dauerhaft organisierte politische Vereinigung, die gemeinsame politische Ziele verfolgt und auf die Besetzung oder Ausübung öffentlicher Authority hinwirkt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine beständige Organisation zur Bündelung politischer Programme, Unterstützung und Führungspersonen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1372,12 +1379,12 @@ Der Begriff bezeichnet eine beständige Organisation zur Bündelung politischer 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Faction`: ist eine organisierte Strömung innerhalb eines größeren politischen Zusammenhangs.
 - `Interest Group`: vertritt gemeinsame Interessen, ohne notwendig öffentliche Authority anzustreben.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Faction
 - Interest Group
@@ -1385,22 +1392,22 @@ Der Begriff bezeichnet eine beständige Organisation zur Bündelung politischer 
 - Coalition
 - Ideology
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Faction
+#### Faction
 
-#### Definition
+##### Definition
 
 Eine `Faction` ist eine organisierte politische Strömung innerhalb eines größeren politischen Akteurs oder Zusammenhangs, die gemeinsame Ziele verfolgt und dessen Richtung oder Entscheidungen beeinflussen will.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet interne politische Organisation und Konkurrenz, ohne daraus eine eigenständige Political Party oder Interest Group abzuleiten.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1409,12 +1416,12 @@ Der Begriff bezeichnet interne politische Organisation und Konkurrenz, ohne dara
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Political Party`: ist eine eigenständige dauerhafte politische Vereinigung.
 - `Interest Group`: organisiert sich um gemeinsame Interessen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Political Party
 - Interest Group
@@ -1422,22 +1429,22 @@ Der Begriff bezeichnet interne politische Organisation und Konkurrenz, ohne dara
 - Opposition
 - Ideology
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Interest Group
+#### Interest Group
 
-#### Definition
+##### Definition
 
 Eine `Interest Group` ist eine organisierte Gemeinschaft, die gemeinsame gesellschaftliche oder materielle Interessen gegenüber politischen Entscheidungsträgern vertritt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die gebündelte politische Einflussnahme aus gemeinsamen Interessen, ohne die Übernahme öffentlicher Authority vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1446,34 +1453,34 @@ Der Begriff bezeichnet die gebündelte politische Einflussnahme aus gemeinsamen 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Political Party`: wirkt auf die Besetzung oder Ausübung öffentlicher Authority hin.
 - `Faction`: ist eine Strömung innerhalb eines größeren politischen Zusammenhangs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Political Party
 - Faction
 - Opposition
 - Political Capital
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Opposition
+#### Opposition
 
-#### Definition
+##### Definition
 
 Die `Opposition` ist die Gesamtheit politischer Akteure, die der gegenwärtigen politischen Führung oder deren maßgeblicher Ausrichtung organisiert entgegentreten.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die relationale politische Gegenposition zur amtierenden Führung, ohne eine bestimmte Organisationsform vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1482,12 +1489,12 @@ Der Begriff bezeichnet die relationale politische Gegenposition zur amtierenden 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Faction`: ist eine organisierte interne Strömung.
 - `Coalition`: koordiniert mehrere Akteure zur Verfolgung gemeinsamer politischer Ziele.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Government
 - Political Party
@@ -1495,22 +1502,22 @@ Der Begriff bezeichnet die relationale politische Gegenposition zur amtierenden 
 - Coalition
 - Legitimacy
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Coalition
+#### Coalition
 
-#### Definition
+##### Definition
 
 Eine `Coalition` ist eine vereinbarte Zusammenarbeit mehrerer politischer Akteure zur Verfolgung gemeinsamer politischer Ziele unter Erhalt ihrer jeweiligen Eigenständigkeit.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet koordinierte politische Zusammenarbeit, ohne die beteiligten Akteure zu einer einzigen Organisation zu verschmelzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1519,12 +1526,12 @@ Der Begriff bezeichnet koordinierte politische Zusammenarbeit, ohne die beteilig
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Political Party`: ist selbst eine dauerhafte politische Vereinigung.
 - `Faction`: besteht innerhalb eines größeren politischen Zusammenhangs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Political Party
 - Faction
@@ -1532,24 +1539,24 @@ Der Begriff bezeichnet koordinierte politische Zusammenarbeit, ohne die beteilig
 - Opposition
 - Cabinet
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 4.5 Politische Konzepte
+### 4.5 Politische Konzepte
 
-### Ideology
+#### Ideology
 
-#### Definition
+##### Definition
 
 Eine `Ideology` ist ein zusammenhängendes System politischer Grundannahmen, Werte und Zielvorstellungen zur Deutung und Gestaltung gesellschaftlicher und politischer Ordnung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den normativen und deutenden Bezugsrahmen politischer Ziele und Positionen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1558,12 +1565,12 @@ Der Begriff bezeichnet den normativen und deutenden Bezugsrahmen politischer Zie
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Political Party`: ist eine politische Organisation und kein System von Vorstellungen.
 - `Regime`: ist die grundlegende Ordnung politischer Herrschaft.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Political Party
 - Faction
@@ -1571,23 +1578,23 @@ Der Begriff bezeichnet den normativen und deutenden Bezugsrahmen politischer Zie
 - Legitimacy
 - Constitution
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Legitimacy
+#### Legitimacy
 
-#### Definition
+##### Definition
 
 `Legitimacy` ist das Ausmaß, in dem die Ausübung politischer Authority von den für eine politische Ordnung maßgeblichen Akteuren als berechtigt anerkannt wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die anerkannte Rechtfertigung politischer Herrschaft und grenzt sie von bloßer Durchsetzungsfähigkeit ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1596,12 +1603,12 @@ Der Begriff bezeichnet die anerkannte Rechtfertigung politischer Herrschaft und 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Authority`: ist die anerkannte Befugnis zu verbindlichen Entscheidungen.
 - `Sovereignty`: ist der Anspruch auf höchste politische Authority.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Authority
 - Sovereignty
@@ -1609,22 +1616,22 @@ Der Begriff bezeichnet die anerkannte Rechtfertigung politischer Herrschaft und 
 - Regime
 - Opposition
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Authority
+#### Authority
 
-#### Definition
+##### Definition
 
 `Authority` ist die anerkannte Befugnis eines politischen Akteurs oder einer Institution, innerhalb eines bestimmten Geltungsbereichs verbindliche Entscheidungen zu treffen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet rechtfertigbare politische Entscheidungsbefugnis und grenzt sie von Fähigkeit, Einfluss oder bloßer Gewalt ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1633,12 +1640,12 @@ Der Begriff bezeichnet rechtfertigbare politische Entscheidungsbefugnis und gren
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Legitimacy`: bezeichnet die Anerkennung politischer Herrschaft als berechtigt.
 - `Sovereignty`: bezeichnet den Anspruch auf höchste politische Authority.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Legitimacy
 - Sovereignty
@@ -1646,23 +1653,23 @@ Der Begriff bezeichnet rechtfertigbare politische Entscheidungsbefugnis und gren
 - Law
 - Institution
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Sovereignty
+#### Sovereignty
 
-#### Definition
+##### Definition
 
 `Sovereignty` ist der Anspruch eines State auf höchste politische Authority über seine inneren Angelegenheiten und auf politische Unabhängigkeit gegenüber äußeren Autoritäten.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die oberste Zuordnung politischer Entscheidungsgewalt und die Unabhängigkeit ihrer Ausübung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1671,12 +1678,12 @@ Der Begriff bezeichnet die oberste Zuordnung politischer Entscheidungsgewalt und
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Autonomy`: ist begrenzte eigenständige Entscheidungsbefugnis innerhalb einer übergeordneten Ordnung.
 - `Authority`: kann auf einen begrenzten Geltungsbereich bezogen sein.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Authority
@@ -1684,23 +1691,23 @@ Der Begriff bezeichnet die oberste Zuordnung politischer Entscheidungsgewalt und
 - Autonomy
 - Country
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Autonomy
+#### Autonomy
 
-#### Definition
+##### Definition
 
 `Autonomy` ist die anerkannte Befugnis eines politischen Akteurs oder Gebietes, bestimmte Angelegenheiten innerhalb einer übergeordneten politischen Ordnung eigenständig zu regeln.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet abgegrenzte politische Selbstbestimmung, ohne vollständige Sovereignty vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1709,12 +1716,12 @@ Der Begriff bezeichnet abgegrenzte politische Selbstbestimmung, ohne vollständi
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Sovereignty`: beansprucht höchste politische Authority und äußere Unabhängigkeit.
 - `Decentralization`: beschreibt die Verteilung von Zuständigkeiten weg von einer politischen Mitte.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Sovereignty
 - Authority
@@ -1722,22 +1729,22 @@ Der Begriff bezeichnet abgegrenzte politische Selbstbestimmung, ohne vollständi
 - Decentralization
 - State
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Centralization
+#### Centralization
 
-#### Definition
+##### Definition
 
 `Centralization` ist das Ausmaß, in dem politische Entscheidungsbefugnisse und administrative Zuständigkeiten bei einer übergeordneten politischen Mitte gebündelt sind.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die vertikale Konzentration öffentlicher Zuständigkeiten innerhalb einer politischen Ordnung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1746,12 +1753,12 @@ Der Begriff bezeichnet die vertikale Konzentration öffentlicher Zuständigkeite
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Authority`: bezeichnet anerkannte Entscheidungsbefugnis als solche.
 - `Administrative Capacity`: bezeichnet die Fähigkeit, öffentliche Entscheidungen wirksam auszuführen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Decentralization
 - Autonomy
@@ -1759,22 +1766,22 @@ Der Begriff bezeichnet die vertikale Konzentration öffentlicher Zuständigkeite
 - State
 - Public Administration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Decentralization
+#### Decentralization
 
-#### Definition
+##### Definition
 
 `Decentralization` ist das Ausmaß, in dem politische Entscheidungsbefugnisse und administrative Zuständigkeiten von einer übergeordneten politischen Mitte auf nachgeordnete oder eigenständige Einheiten verteilt sind.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die vertikale Verteilung öffentlicher Zuständigkeiten innerhalb einer politischen Ordnung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1783,12 +1790,12 @@ Der Begriff bezeichnet die vertikale Verteilung öffentlicher Zuständigkeiten i
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Autonomy`: bezeichnet die anerkannte eigenständige Regelungsbefugnis eines Akteurs oder Gebietes.
 - `Administrative Capacity`: bezeichnet die Fähigkeit zur wirksamen Ausführung öffentlicher Aufgaben.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Centralization
 - Autonomy
@@ -1796,22 +1803,22 @@ Der Begriff bezeichnet die vertikale Verteilung öffentlicher Zuständigkeiten i
 - State
 - Public Administration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Political Capital
+#### Political Capital
 
-#### Definition
+##### Definition
 
 `Political Capital` ist die verfügbare Fähigkeit eines politischen Akteurs, Unterstützung, Beziehungen, Vertrauen und Einfluss zur Durchsetzung politischer Vorhaben zu mobilisieren.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die politisch nutzbare Handlungsmacht, die aus Unterstützung und Einflussbeziehungen hervorgeht.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1820,12 +1827,12 @@ Der Begriff bezeichnet die politisch nutzbare Handlungsmacht, die aus Unterstüt
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Authority`: ist anerkannte verbindliche Entscheidungsbefugnis.
 - `Legitimacy`: ist die Anerkennung politischer Herrschaft als berechtigt.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Authority
 - Legitimacy
@@ -1833,22 +1840,22 @@ Der Begriff bezeichnet die politisch nutzbare Handlungsmacht, die aus Unterstüt
 - Political Party
 - Interest Group
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Administrative Capacity
+#### Administrative Capacity
 
-#### Definition
+##### Definition
 
 `Administrative Capacity` ist die Fähigkeit eines State und seiner zuständigen Institutionen, öffentliche Entscheidungen verlässlich, wirksam und innerhalb ihres Geltungsbereichs auszuführen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die tatsächliche organisatorische Leistungsfähigkeit öffentlicher Aufgabenerfüllung unabhängig von der formalen Zuweisung von Authority.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1857,12 +1864,12 @@ Der Begriff bezeichnet die tatsächliche organisatorische Leistungsfähigkeit ö
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Authority`: bezeichnet die anerkannte Befugnis zu verbindlichen Entscheidungen.
 - `Public Administration`: bezeichnet die Einrichtungen und Tätigkeiten, durch die öffentliche Aufgaben ausgeführt werden.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Public Administration
 - State
@@ -1871,22 +1878,22 @@ Der Begriff bezeichnet die tatsächliche organisatorische Leistungsfähigkeit ö
 - Centralization
 - Decentralization
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Public Administration
+#### Public Administration
 
-#### Definition
+##### Definition
 
 Die `Public Administration` ist die Gesamtheit der dauerhaften öffentlichen Einrichtungen, Verfahren und Tätigkeiten, durch die Laws und verbindliche politische Entscheidungen ausgeführt sowie öffentliche Aufgaben wahrgenommen werden.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den institutionellen Vollzug öffentlicher Aufgaben jenseits der politischen Richtungsentscheidung durch das Government.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1895,13 +1902,13 @@ Der Begriff bezeichnet den institutionellen Vollzug öffentlicher Aufgaben jense
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Government`: bestimmt die gegenwärtige politische Leitung.
 - `Executive`: bezeichnet die leitende und ausführende Staatsfunktion insgesamt.
 - `Administrative Capacity`: bezeichnet die Fähigkeit zur wirksamen Aufgabenerfüllung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Administrative Capacity
 - Executive
@@ -1910,11 +1917,11 @@ Der Begriff bezeichnet den institutionellen Vollzug öffentlicher Aufgaben jense
 - Institution
 - Law
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
-# Kapitel 5 – Territoriale Terminologie
+## Kapitel 5 – Territoriale Terminologie
 
 Territoriale Begriffe werden nach ihren fachlichen Beziehungen gruppiert, weil räumliche Ordnung nicht durch eine einzige Hierarchie vollständig beschrieben werden kann. Die Gruppen machen sichtbar, welche Begriffe vergleichbare Gegenstände bezeichnen und an welchen Stellen eine Abgrenzung zwischen ihnen erforderlich ist.
 
@@ -1922,19 +1929,19 @@ Räumliche Begriffe beschreiben unterschiedliche Ebenen und Perspektiven. Geogra
 
 Spätere Dokumente MUST für diese Konzepte ausschließlich die hier festgelegte Terminologie verwenden. Sie MUST die geographische Lage eines Gebietes, seine politische Zuordnung und seine administrative Funktion als voneinander unterscheidbare Eigenschaften behandeln.
 
-## 5.1 Welt- und Gebietseinheiten
+### 5.1 Welt- und Gebietseinheiten
 
-### World Region
+#### World Region
 
-#### Definition
+##### Definition
 
 Eine `World Region` ist eine großräumige geographische Gliederung der World, die mehrere Regions zu einem übergeordneten räumlichen Zusammenhang ordnet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die höchste projektweit festgelegte geographische Gruppierung unterhalb der World, ohne eine politische oder administrative Einheit vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1943,34 +1950,34 @@ Der Begriff bezeichnet die höchste projektweit festgelegte geographische Gruppi
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Region`: ist eine unterhalb einer World Region liegende geographische Gebietseinheit.
 - `Strategic Region`: fasst Räume nach einer strategischen Betrachtung zusammen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - World
 - Region
 - Strategic Region
 - Area
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Region
+#### Region
 
-#### Definition
+##### Definition
 
 Eine `Region` ist eine geographische Gebietseinheit innerhalb einer World Region, die mehrere Provinces zu einem räumlich zusammenhängenden Ausschnitt der World ordnet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine mittlere, politisch und administrativ neutrale Ebene der geographischen Weltgliederung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -1979,36 +1986,36 @@ Der Begriff bezeichnet eine mittlere, politisch und administrativ neutrale Ebene
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Province`: ist die unmittelbar unterhalb einer Region liegende geographische Gebietseinheit.
 - `Administrative Region`: ist eine durch Public Administration abgegrenzte Verwaltungseinheit.
 - `Territory`: bezeichnet ein Gebiet aufgrund seiner politischen Zuordnung.
 - `Strategic Region`: wird durch einen strategischen Zusammenhang bestimmt.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - World Region
 - Province
 - Administrative Region
 - Strategic Region
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Province
+#### Province
 
-#### Definition
+##### Definition
 
 Eine `Province` ist eine geographische Gebietseinheit innerhalb einer Region, die mehrere Districts zu einem zusammenhängenden Ausschnitt der World ordnet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die geographische Gliederungsebene zwischen Region und District unabhängig von politischer oder administrativer Zuordnung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2017,35 +2024,35 @@ Der Begriff bezeichnet die geographische Gliederungsebene zwischen Region und Di
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Region`: umfasst mehrere Provinces und liegt eine geographische Ebene höher.
 - `District`: ist die unmittelbar unterhalb einer Province liegende geographische Gebietseinheit.
 - `Administrative Region`: folgt einer administrativen statt einer geographischen Abgrenzung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Region
 - District
 - Territory
 - Administrative Region
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### District
+#### District
 
-#### Definition
+##### Definition
 
 Ein `District` ist die kleinste kanonische geographische Gebietseinheit der World und liegt innerhalb genau einer Province.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die feinste projektweit festgelegte räumliche Gliederung, auf die größere geographische und politische Gebiete bezogen werden können.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2054,37 +2061,37 @@ Der Begriff bezeichnet die feinste projektweit festgelegte räumliche Gliederung
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Province`: umfasst mehrere Districts und liegt eine geographische Ebene höher.
 - `Municipality`: ist eine örtliche Verwaltungseinheit und keine geographische Grundeinheit.
 - `Area`: ist eine zweckgebundene räumliche Zusammenfassung ohne feste Hierarchiestufe.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Province
 - Municipality
 - Area
 - Zone
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 5.2 Politische Gebiete
+### 5.2 Politische Gebiete
 
-### Territory
+#### Territory
 
-#### Definition
+##### Definition
 
 Ein `Territory` ist ein räumlich abgegrenzter Teil der World, der einem politischen Akteur aufgrund von Sovereignty, Anspruch, Kontrolle oder einem sonstigen politischen Verhältnis zugeordnet wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die allgemeine politische Zuordnung eines Gebietes, ohne deren Rechtsgrund, tatsächliche Wirksamkeit oder administrativen Status vorwegzunehmen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2093,14 +2100,14 @@ Der Begriff bezeichnet die allgemeine politische Zuordnung eines Gebietes, ohne 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Region`: ist eine geographische Gebietseinheit ohne notwendige politische Zuordnung.
 - `State`: ist eine dauerhafte politische und rechtliche Ordnung und kein Gebiet.
 - `Country`: ist die im Spielzusammenhang handelnde politische Einheit und nicht ihr räumlicher Umfang.
 - `Controlled Territory`: ist ein Territory unter tatsächlich durchgesetzter politischer Kontrolle.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Country
@@ -2108,22 +2115,22 @@ Der Begriff bezeichnet die allgemeine politische Zuordnung eines Gebietes, ohne 
 - Claim
 - Core
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Core
+#### Core
 
-#### Definition
+##### Definition
 
 Ein `Core` ist ein Territory, das ein Country als dauerhaft zu seiner grundlegenden politischen und territorialen Ordnung gehörend anerkennt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die besondere dauerhafte Eigenzuordnung eines Gebietes durch ein Country unabhängig von gegenwärtiger Kontrolle oder fremden Ansprüchen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2132,13 +2139,13 @@ Der Begriff bezeichnet die besondere dauerhafte Eigenzuordnung eines Gebietes du
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Claim`: ist ein geltend gemachter politischer Zuordnungsanspruch ohne notwendige Anerkennung als grundlegender Bestandteil.
 - `Controlled Territory`: wird tatsächlich kontrolliert, muss aber kein Core des kontrollierenden Country sein.
 - `Annexed Territory`: ist formell in die beanspruchte territoriale Ordnung eines Country eingegliedert.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Territory
 - Country
@@ -2146,22 +2153,22 @@ Der Begriff bezeichnet die besondere dauerhafte Eigenzuordnung eines Gebietes du
 - Controlled Territory
 - Annexed Territory
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Claim
+#### Claim
 
-#### Definition
+##### Definition
 
 Ein `Claim` ist der ausdrücklich geltend gemachte Anspruch eines politischen Akteurs, dass ein Territory seiner politischen Authority oder territorialen Ordnung zugeordnet sein soll.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine beanspruchte politische Gebietszuordnung unabhängig davon, ob sie anerkannt, durchgesetzt oder als dauerhaft grundlegend betrachtet wird.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2170,35 +2177,35 @@ Der Begriff bezeichnet eine beanspruchte politische Gebietszuordnung unabhängig
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Core`: ist die dauerhafte Eigenzuordnung eines Territory durch ein Country.
 - `Controlled Territory`: bezeichnet tatsächliche Kontrolle und keinen Anspruch.
 - `Sovereignty`: ist der Anspruch eines State auf höchste politische Authority und äußere Unabhängigkeit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Territory
 - Core
 - Sovereignty
 - Controlled Territory
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Controlled Territory
+#### Controlled Territory
 
-#### Definition
+##### Definition
 
 Ein `Controlled Territory` ist ein Territory, in dem ein politischer Akteur seine Entscheidungen gegenwärtig tatsächlich und dauerhaft wirksam durchsetzen kann.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die faktische politische Kontrolle eines Gebietes unabhängig von Sovereignty, Core-Status, Claim oder administrativer Eingliederung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2207,13 +2214,13 @@ Der Begriff bezeichnet die faktische politische Kontrolle eines Gebietes unabhä
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Occupied Territory`: ist ein besonderer Fall fremder Kontrolle ohne vollzogene territoriale Eingliederung.
 - `Annexed Territory`: ist formell in die beanspruchte territoriale Ordnung eines Country eingegliedert.
 - `Claim`: bezeichnet einen politischen Anspruch statt tatsächlicher Kontrolle.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Territory
 - Occupied Territory
@@ -2221,22 +2228,22 @@ Der Begriff bezeichnet die faktische politische Kontrolle eines Gebietes unabhä
 - Authority
 - Claim
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Occupied Territory
+#### Occupied Territory
 
-#### Definition
+##### Definition
 
 Ein `Occupied Territory` ist ein Controlled Territory, das ein politischer Akteur außerhalb seiner eigenen territorialen Ordnung vorläufig beherrscht, ohne es in diese eingegliedert zu haben.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet fremde, nicht als territoriale Eingliederung behandelte Kontrolle und trennt sie von allgemeiner Kontrolle und Annexation.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2245,35 +2252,35 @@ Der Begriff bezeichnet fremde, nicht als territoriale Eingliederung behandelte K
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Controlled Territory`: umfasst jede tatsächlich durchgesetzte politische Kontrolle und ist nicht notwendig fremd oder vorläufig.
 - `Annexed Territory`: ist in die beanspruchte territoriale Ordnung des annektierenden Country eingegliedert.
 - `Colony`: steht in einem dauerhaften Abhängigkeitsverhältnis zu einem anderen Country.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Controlled Territory
 - Annexed Territory
 - Territory
 - Claim
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Annexed Territory
+#### Annexed Territory
 
-#### Definition
+##### Definition
 
 Ein `Annexed Territory` ist ein Territory, das ein Country durch einen formellen Hoheitsakt in seine beanspruchte territoriale Ordnung eingegliedert hat.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die vollzogene formelle Eingliederung eines Gebietes unabhängig von ihrer äußeren Anerkennung, tatsächlichen Kontrolle oder Einordnung als Core.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2282,13 +2289,13 @@ Der Begriff bezeichnet die vollzogene formelle Eingliederung eines Gebietes unab
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Occupied Territory`: bleibt außerhalb der eigenen territorialen Ordnung des kontrollierenden Akteurs.
 - `Controlled Territory`: bezeichnet tatsächliche Kontrolle ohne notwendige formelle Eingliederung.
 - `Core`: bezeichnet die dauerhafte grundlegende Eigenzuordnung durch ein Country.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Territory
 - Occupied Territory
@@ -2296,24 +2303,24 @@ Der Begriff bezeichnet die vollzogene formelle Eingliederung eines Gebietes unab
 - Core
 - Claim
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 5.3 Verwaltungsgebiete
+### 5.3 Verwaltungsgebiete
 
-### Administrative Region
+#### Administrative Region
 
-#### Definition
+##### Definition
 
 Eine `Administrative Region` ist ein räumlich abgegrenzter Zuständigkeitsbereich der Public Administration, der mehrere örtliche Verwaltungseinheiten umfassen kann.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine allgemeine überörtliche Verwaltungseinheit unabhängig von ihrer geographischen Gliederung oder einer besonderen verfassungsrechtlichen Stellung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2322,13 +2329,13 @@ Der Begriff bezeichnet eine allgemeine überörtliche Verwaltungseinheit unabhä
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Region`: ist eine geographische Gebietseinheit.
 - `Federal State`: besitzt eine verfassungsrechtlich zugeordnete eigenständige politische Stellung innerhalb eines State.
 - `Municipality`: ist eine örtliche Verwaltungseinheit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Public Administration
 - Region
@@ -2336,22 +2343,22 @@ Der Begriff bezeichnet eine allgemeine überörtliche Verwaltungseinheit unabhä
 - Municipality
 - Administrative Capacity
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Federal State
+#### Federal State
 
-#### Definition
+##### Definition
 
 Ein `Federal State` ist eine territoriale politische Einheit innerhalb eines föderal gegliederten State, der durch dessen Constitution eigenständige Zuständigkeiten und Institutionen zugeordnet sind.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine verfassungsrechtlich abgesicherte Gliedeinheit und grenzt sie von rein administrativen Unterteilungen und dem übergeordneten State ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2360,13 +2367,13 @@ Der Begriff bezeichnet eine verfassungsrechtlich abgesicherte Gliedeinheit und g
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `State`: ist die übergreifende dauerhafte politische und rechtliche Ordnung.
 - `Administrative Region`: besitzt nicht notwendig eigenständige verfassungsrechtliche Zuständigkeiten.
 - `Country`: ist eine im Spielzusammenhang eigenständig handelnde politische Einheit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Constitution
@@ -2374,22 +2381,22 @@ Der Begriff bezeichnet eine verfassungsrechtlich abgesicherte Gliedeinheit und g
 - Administrative Region
 - Municipality
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Municipality
+#### Municipality
 
-#### Definition
+##### Definition
 
 Eine `Municipality` ist eine örtliche territoriale Einheit der Public Administration mit einem abgegrenzten Zuständigkeitsbereich und institutionell zugeordneten öffentlichen Aufgaben.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die lokale Ebene administrativer Gebietsorganisation unabhängig von ihrer konkreten Organform oder Bezeichnung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2398,13 +2405,13 @@ Der Begriff bezeichnet die lokale Ebene administrativer Gebietsorganisation unab
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `District`: ist eine geographische Grundeinheit und keine notwendige Verwaltungseinheit.
 - `Administrative Region`: ist eine überörtliche Verwaltungseinheit.
 - `Capital`: ist ein politisch bestimmter zentraler Ort und keine Verwaltungsebene.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Public Administration
 - Administrative Region
@@ -2412,22 +2419,22 @@ Der Begriff bezeichnet die lokale Ebene administrativer Gebietsorganisation unab
 - Capital
 - Autonomy
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Capital
+#### Capital
 
-#### Definition
+##### Definition
 
 Eine `Capital` ist der politisch bestimmte Ort, an dem die zentralen Institutionen eines politischen Akteurs ihren maßgeblichen Sitz haben.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den institutionellen Hauptort einer politischen Einheit, ohne eine eigene geographische oder administrative Hierarchiestufe festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2436,13 +2443,13 @@ Der Begriff bezeichnet den institutionellen Hauptort einer politischen Einheit, 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Municipality`: ist eine örtliche Verwaltungseinheit, die eine Capital enthalten kann.
 - `Country`: ist die handelnde politische Einheit, deren zentrale Institutionen an einer Capital ansässig sein können.
 - `Political Capital`: bezeichnet politisch mobilisierbare Handlungsmacht und keinen Ort.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Country
 - State
@@ -2450,24 +2457,24 @@ Der Begriff bezeichnet den institutionellen Hauptort einer politischen Einheit, 
 - Institution
 - Municipality
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 5.4 Internationale Gebietsbeziehungen
+### 5.4 Internationale Gebietsbeziehungen
 
-### Colony
+#### Colony
 
-#### Definition
+##### Definition
 
 Eine `Colony` ist ein territorial abgegrenztes politisches Gemeinwesen, das dauerhaft einem anderen Country untergeordnet ist und nicht als gleichberechtigter Bestandteil von dessen staatlicher Ordnung gilt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet territoriale Fremdherrschaft bei institutioneller Abgrenzung vom übergeordneten Country.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2476,13 +2483,13 @@ Der Begriff bezeichnet territoriale Fremdherrschaft bei institutioneller Abgrenz
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Occupied Territory`: steht unter vorläufiger fremder Kontrolle ohne Eingliederung.
 - `Protectorate`: behält eine eigene politische Ordnung unter vertraglich oder rechtlich begrenzter äußerer Authority.
 - `Subject`: ist der allgemeine Begriff für ein politisch untergeordnetes Country.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Country
 - Subject
@@ -2490,22 +2497,22 @@ Der Begriff bezeichnet territoriale Fremdherrschaft bei institutioneller Abgrenz
 - Territory
 - Sovereignty
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Protectorate
+#### Protectorate
 
-#### Definition
+##### Definition
 
 Ein `Protectorate` ist ein Country, das seine innere politische Ordnung grundsätzlich beibehält, während festgelegte Bereiche seiner äußeren Sovereignty der Authority eines anderen Country unterstehen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine besondere Form politischer Unterordnung, bei der äußere Entscheidungsbefugnisse begrenzt übertragen sind und die innere Ordnung fortbesteht.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2514,13 +2521,13 @@ Der Begriff bezeichnet eine besondere Form politischer Unterordnung, bei der äu
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Colony`: ist ein territorial abgegrenztes, nicht gleichberechtigt eingegliedertes Gemeinwesen unter dauerhafter Fremdherrschaft.
 - `Subject`: bezeichnet allgemein ein politisch untergeordnetes Country.
 - `Puppet State`: besitzt nur begrenzte tatsächliche Eigenständigkeit gegenüber dem beherrschenden Country.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Country
 - Subject
@@ -2528,22 +2535,22 @@ Der Begriff bezeichnet eine besondere Form politischer Unterordnung, bei der äu
 - Sovereignty
 - Autonomy
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Subject
+#### Subject
 
-#### Definition
+##### Definition
 
 Ein `Subject` ist ein Country, dessen Sovereignty durch ein dauerhaftes politisches Unterordnungsverhältnis zugunsten eines anderen Country begrenzt ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die allgemeine Kategorie politisch abhängiger Countries unabhängig von der besonderen Form oder Bezeichnung ihrer Abhängigkeit.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2552,13 +2559,13 @@ Der Begriff bezeichnet die allgemeine Kategorie politisch abhängiger Countries 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Protectorate`: ist eine besondere Form mit grundsätzlich fortbestehender innerer Ordnung und begrenzter äußerer Sovereignty.
 - `Puppet State`: ist durch geringe tatsächliche politische Eigenständigkeit gekennzeichnet.
 - `Colony`: ist ein territorial abgegrenztes Gemeinwesen unter dauerhafter Fremdherrschaft und nicht notwendig ein Country.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Country
 - Protectorate
@@ -2567,22 +2574,22 @@ Der Begriff bezeichnet die allgemeine Kategorie politisch abhängiger Countries 
 - Sovereignty
 - Autonomy
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Puppet State
+#### Puppet State
 
-#### Definition
+##### Definition
 
 Ein `Puppet State` ist ein formal als Country fortbestehender Subject, dessen maßgebliche politische Entscheidungen tatsächlich von einem anderen Country bestimmt werden.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Abweichung zwischen formaler Eigenständigkeit und tatsächlicher äußerer Bestimmung der politischen Führung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2591,13 +2598,13 @@ Der Begriff bezeichnet die Abweichung zwischen formaler Eigenständigkeit und ta
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Subject`: ist der Oberbegriff für ein politisch untergeordnetes Country.
 - `Protectorate`: überträgt festgelegte Bereiche äußerer Sovereignty, ohne notwendig eine tatsächliche Bestimmung maßgeblicher innerer Entscheidungen zu begründen.
 - `Government`: ist die gegenwärtige politische Führung eines State.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Country
 - Subject
@@ -2605,24 +2612,24 @@ Der Begriff bezeichnet die Abweichung zwischen formaler Eigenständigkeit und ta
 - Government
 - Sovereignty
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 5.5 Räumliche Konzepte
+### 5.5 Räumliche Konzepte
 
-### Border
+#### Border
 
-#### Definition
+##### Definition
 
 Eine `Border` ist die festgelegte Trennlinie zwischen zwei unmittelbar aneinandergrenzenden Gebieten mit unterschiedlicher politischer, administrativer oder geographischer Zuordnung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine lineare räumliche Abgrenzung und macht die Art der getrennten Gebietszuordnung ausdrücklich bestimmbar.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2631,35 +2638,35 @@ Der Begriff bezeichnet eine lineare räumliche Abgrenzung und macht die Art der 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Frontier`: ist ein räumlicher Übergangsbereich und keine festgelegte Trennlinie.
 - `Area`: ist eine zweckgebundene räumliche Zusammenfassung.
 - `Zone`: ist ein abgegrenzter Raum mit einem zugeordneten besonderen Status.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Frontier
 - Territory
 - Region
 - Zone
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Frontier
+#### Frontier
 
-#### Definition
+##### Definition
 
 Eine `Frontier` ist ein räumlicher Übergangsbereich an der äußeren Reichweite dauerhaft wirksamer politischer oder administrativer Ordnung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen Bereich abgestufter, überlagerter oder noch nicht eindeutig verfestigter Gebietszuordnung statt einer exakten Trennlinie.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2668,35 +2675,35 @@ Der Begriff bezeichnet einen Bereich abgestufter, überlagerter oder noch nicht 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Border`: ist eine festgelegte Trennlinie zwischen unterschiedlich zugeordneten Gebieten.
 - `Controlled Territory`: ist ein Gebiet tatsächlich und dauerhaft wirksamer politischer Kontrolle.
 - `Zone`: besitzt einen ausdrücklich zugeordneten besonderen Status.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Border
 - Territory
 - Controlled Territory
 - Area
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Area
+#### Area
 
-#### Definition
+##### Definition
 
 Eine `Area` ist eine für einen bestimmten fachlichen Zweck zusammengefasste räumliche Menge ohne festgelegte Stellung in der geographischen, politischen oder administrativen Gebietshierarchie.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine neutrale, zweckbezogene räumliche Auswahl, wenn keine kanonische Gebietseinheit oder besondere Statuszuweisung gemeint ist.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2705,35 +2712,35 @@ Der Begriff bezeichnet eine neutrale, zweckbezogene räumliche Auswahl, wenn kei
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Region`: besitzt eine festgelegte Stellung in der geographischen Weltgliederung.
 - `Zone`: ist ein abgegrenzter Raum mit einem besonderen Status oder einer besonderen Regelungszuordnung.
 - `Strategic Region`: ist eine ausdrücklich strategisch bestimmte räumliche Gruppierung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Zone
 - Strategic Region
 - Region
 - District
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Zone
+#### Zone
 
-#### Definition
+##### Definition
 
 Eine `Zone` ist ein abgegrenzter Raum, dem für einen festgelegten fachlichen Zusammenhang ein besonderer Status oder eine besondere Regelungszuordnung zugewiesen ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine statusbezogene räumliche Abgrenzung unabhängig von den Grenzen kanonischer geographischer, politischer oder administrativer Gebietseinheiten.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2742,35 +2749,35 @@ Der Begriff bezeichnet eine statusbezogene räumliche Abgrenzung unabhängig von
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Area`: ist eine neutrale zweckbezogene räumliche Auswahl ohne notwendigen besonderen Status.
 - `Region`: ist eine festgelegte geographische Gebietseinheit.
 - `Border`: ist eine Trennlinie und kein räumlicher Bereich.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Area
 - Border
 - Strategic Region
 - Territory
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Strategic Region
+#### Strategic Region
 
-#### Definition
+##### Definition
 
 Eine `Strategic Region` ist eine zusammenhängende räumliche Gruppierung, deren Abgrenzung durch einen gemeinsamen strategischen Betrachtungszusammenhang bestimmt ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine strategische Raumordnung ohne politische, administrative oder geographische Einheitlichkeit vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2779,25 +2786,25 @@ Der Begriff bezeichnet eine strategische Raumordnung ohne politische, administra
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Region`: ist eine festgelegte geographische Gebietseinheit.
 - `World Region`: ist die höchste geographische Gruppierung unterhalb der World.
 - `Area`: ist eine allgemeine zweckbezogene räumliche Auswahl ohne notwendig strategische Bestimmung.
 - `Zone`: erhält einen besonderen Status oder eine besondere Regelungszuordnung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Region
 - World Region
 - Area
 - Zone
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
-# Kapitel 6 – Bevölkerung und Gesellschaft
+## Kapitel 6 – Bevölkerung und Gesellschaft
 
 Bevölkerung wird auf mehreren voneinander abzugrenzenden Ebenen beschrieben. Individuen, Haushalte und zusammengefasste Gruppen sind unterschiedliche Konzepte und dürfen nicht stellvertretend füreinander verwendet werden.
 
@@ -2805,19 +2812,19 @@ Kultur, gesellschaftliche Ordnung und demographische Entwicklung bilden eigenst�
 
 Spätere Systeme und Dokumente MUST für diese Gegenstände die nachfolgend festgelegte Terminologie verwenden.
 
-## 6.1 Bevölkerung
+### 6.1 Bevölkerung
 
-### Population
+#### Population
 
-#### Definition
+##### Definition
 
 Eine `Population` ist die Gesamtheit der Personen, die einem räumlichen, politischen oder sonst eindeutig bestimmten Bezugsbereich zu einem bestimmten Zeitpunkt zugeordnet sind.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den vollständigen personenbezogenen Bestand eines Bezugsbereichs, ohne dessen innere Gliederung oder rechtliche Stellung vorwegzunehmen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2826,13 +2833,13 @@ Der Begriff bezeichnet den vollständigen personenbezogenen Bestand eines Bezugs
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Population Group`: fasst nur Personen mit festgelegten gemeinsamen Merkmalen zusammen.
 - `Household`: verbindet Personen durch eine gemeinsame Lebens- und Versorgungsgemeinschaft.
 - `Citizen`: bezeichnet eine Person mit rechtlicher Mitgliedschaft in einem State.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Population Group
 - Household
@@ -2840,22 +2847,22 @@ Der Begriff bezeichnet den vollständigen personenbezogenen Bestand eines Bezugs
 - Resident
 - Migration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Population Group
+#### Population Group
 
-#### Definition
+##### Definition
 
 Eine `Population Group` ist eine innerhalb einer Population abgegrenzte Menge von Personen, die hinsichtlich ausdrücklich festgelegter gesellschaftlicher, kultureller, demographischer oder rechtlicher Merkmale übereinstimmen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff ermöglicht die fachliche Zusammenfassung vergleichbarer Personen, ohne sie als Individuen oder Household zu behandeln und ohne zusätzliche Gemeinsamkeiten zu unterstellen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2864,14 +2871,14 @@ Der Begriff ermöglicht die fachliche Zusammenfassung vergleichbarer Personen, o
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Population`: umfasst alle Personen des bestimmten Bezugsbereichs.
 - `Household`: beruht auf einer gemeinsamen Lebens- und Versorgungsgemeinschaft.
 - `Social Class`: ordnet Personen nach ihrer gesellschaftlichen Stellung.
 - `Identity`: ist das Zugehörigkeitsverständnis einer Person oder Gruppe.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Population
 - Household
@@ -2879,22 +2886,22 @@ Der Begriff ermöglicht die fachliche Zusammenfassung vergleichbarer Personen, o
 - Culture
 - Identity
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Household
+#### Household
 
-#### Definition
+##### Definition
 
 Ein `Household` ist eine auf Dauer angelegte Gemeinschaft einer oder mehrerer Personen, die ihre alltägliche Lebensführung und wesentliche Mittel ihrer Versorgung gemeinsam ordnen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die soziale Versorgungseinheit zwischen einzelner Person und größeren Bevölkerungszusammenfassungen, unabhängig von Verwandtschaft oder Rechtsform.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2903,13 +2910,13 @@ Der Begriff bezeichnet die soziale Versorgungseinheit zwischen einzelner Person 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Population Group`: entsteht durch übereinstimmende festgelegte Merkmale.
 - `Population`: ist der vollständige Personenbestand eines Bezugsbereichs.
 - `Resident`: ist eine einzelne Person mit gewöhnlichem Aufenthalt.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Population
 - Population Group
@@ -2918,22 +2925,22 @@ Der Begriff bezeichnet die soziale Versorgungseinheit zwischen einzelner Person 
 - Income
 - Wealth
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Citizen
+#### Citizen
 
-#### Definition
+##### Definition
 
 Ein `Citizen` ist eine natürliche Person, die kraft einer rechtlich anerkannten Zugehörigkeit dauerhaft Mitglied eines State ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die formelle personenbezogene Mitgliedschaft in einer staatlichen Ordnung unabhängig von Aufenthaltsort, gesellschaftlicher Stellung oder politischer Haltung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2942,35 +2949,35 @@ Der Begriff bezeichnet die formelle personenbezogene Mitgliedschaft in einer sta
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Resident`: wird durch gewöhnlichen Aufenthalt statt staatlicher Mitgliedschaft bestimmt.
 - `Population`: umfasst auch Personen ohne Citizenship.
 - `Nation`: ist eine vorgestellte politische und gesellschaftliche Gemeinschaft und keine individuelle Rechtsstellung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Population
 - Resident
 - Identity
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Resident
+#### Resident
 
-#### Definition
+##### Definition
 
 Ein `Resident` ist eine natürliche Person, deren gewöhnlicher und auf Dauer ausgerichteter Lebensmittelpunkt innerhalb eines bestimmten Gebietes liegt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die auf tatsächlichem Aufenthalt beruhende Zuordnung einer Person zu einem Gebiet unabhängig von Citizenship oder kultureller Zugehörigkeit.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -2979,13 +2986,13 @@ Der Begriff bezeichnet die auf tatsächlichem Aufenthalt beruhende Zuordnung ein
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Citizen`: besitzt eine rechtliche Mitgliedschaft in einem State unabhängig vom Aufenthalt.
 - `Population`: ist die Gesamtheit der einem Bezugsbereich zugeordneten Personen.
 - `Immigration`: bezeichnet die auf ein Zielgebiet bezogene Zuwanderung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Citizen
 - Population
@@ -2994,24 +3001,24 @@ Der Begriff bezeichnet die auf tatsächlichem Aufenthalt beruhende Zuordnung ein
 - Immigration
 - Emigration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 6.2 Gesellschaft
+### 6.2 Gesellschaft
 
-### Social Class
+#### Social Class
 
-#### Definition
+##### Definition
 
 Eine `Social Class` ist eine gesellschaftliche Kategorie, deren Angehörige aufgrund dauerhaft vergleichbarer Stellung in der sozialen Ordnung zusammengefasst werden.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine strukturierte gesellschaftliche Lage, ohne eine bestimmte Profession, Occupation, Einkommenshöhe oder politische Organisation vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3020,14 +3027,14 @@ Der Begriff bezeichnet eine strukturierte gesellschaftliche Lage, ohne eine best
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Profession`: bezeichnet ein abgegrenztes Feld qualifizierter Tätigkeit.
 - `Occupation`: bezeichnet die tatsächlich ausgeübte regelmäßige Tätigkeit.
 - `Wealth`: ist der Bestand wirtschaftlich nutzbarer Werte.
 - `Interest Group`: ist ein organisierter politischer Akteur.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Population Group
 - Profession
@@ -3037,22 +3044,22 @@ Der Begriff bezeichnet eine strukturierte gesellschaftliche Lage, ohne eine best
 - Income
 - Social Mobility
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Profession
+#### Profession
 
-#### Definition
+##### Definition
 
 Eine `Profession` ist ein gesellschaftlich abgegrenztes Feld qualifizierter Tätigkeit, das durch einen gemeinsamen Bestand an Kenntnissen, Fähigkeiten und anerkannten Aufgaben bestimmt wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine dauerhafte fachliche Qualifikation und Tätigkeitszuordnung unabhängig davon, ob oder in welcher konkreten Occupation sie gegenwärtig ausgeübt wird.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3061,13 +3068,13 @@ Der Begriff bezeichnet eine dauerhafte fachliche Qualifikation und Tätigkeitszu
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Occupation`: ist die gegenwärtig regelmäßig ausgeübte Tätigkeit einer Person.
 - `Education`: ist der Erwerb und die Vermittlung von Wissen und Fähigkeiten.
 - `Social Class`: bezeichnet die Stellung in der gesellschaftlichen Ordnung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Occupation
 - Education
@@ -3075,22 +3082,22 @@ Der Begriff bezeichnet eine dauerhafte fachliche Qualifikation und Tätigkeitszu
 - Social Class
 - Income
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Occupation
+#### Occupation
 
-#### Definition
+##### Definition
 
 Eine `Occupation` ist die von einer Person regelmäßig ausgeübte Tätigkeit, durch die sie eine bestimmte gesellschaftliche oder wirtschaftliche Aufgabe wahrnimmt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die tatsächliche gegenwärtige Tätigkeit unabhängig von fachlicher Qualifikation, gesellschaftlicher Stellung oder daraus erzieltem Income.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3099,35 +3106,35 @@ Der Begriff bezeichnet die tatsächliche gegenwärtige Tätigkeit unabhängig vo
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Profession`: ist ein qualifiziertes Tätigkeitsfeld und nicht dessen notwendige gegenwärtige Ausübung.
 - `Income`: bezeichnet den innerhalb eines Zeitraums erfolgenden wirtschaftlichen Zufluss.
 - `Social Class`: bezeichnet eine gesellschaftliche Stellung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Profession
 - Education
 - Social Class
 - Income
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Education
+#### Education
 
-#### Definition
+##### Definition
 
 `Education` ist der geordnete Erwerb und die geordnete Vermittlung von Wissen, Fähigkeiten und Urteilsvermögen durch Personen und gesellschaftliche Einrichtungen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet Bildung als umfassenden Entwicklungszusammenhang, ohne sie auf Lesefähigkeit, einen formalen Abschluss oder eine bestimmte Profession zu reduzieren.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3136,34 +3143,34 @@ Der Begriff bezeichnet Bildung als umfassenden Entwicklungszusammenhang, ohne si
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Literacy`: ist die Fähigkeit, schriftliche Informationen zu verstehen und auszudrücken.
 - `Profession`: ist ein gesellschaftlich abgegrenztes qualifiziertes Tätigkeitsfeld.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Literacy
 - Profession
 - Occupation
 - Social Mobility
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Literacy
+#### Literacy
 
-#### Definition
+##### Definition
 
 `Literacy` ist die Fähigkeit einer Person, schriftlich dargestellte Informationen in einer Language zu verstehen und sich in dieser schriftlich verständlich auszudrücken.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet schriftsprachliche Befähigung und grenzt sie von umfassender Education, fachlicher Qualifikation und bloßer Kenntnis einer Language ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3172,35 +3179,35 @@ Der Begriff bezeichnet schriftsprachliche Befähigung und grenzt sie von umfasse
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Education`: umfasst weitergehenden Erwerb von Wissen, Fähigkeiten und Urteilsvermögen.
 - `Language`: ist ein gemeinsames System sprachlicher Verständigung.
 - `Profession`: bezeichnet ein qualifiziertes Tätigkeitsfeld.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Education
 - Language
 - Profession
 - Social Mobility
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Wealth
+#### Wealth
 
-#### Definition
+##### Definition
 
 `Wealth` ist der zu einem bestimmten Zeitpunkt einer Person, einem Household oder einer Gruppe zugeordnete Bestand wirtschaftlich nutzbarer Werte abzüglich der ihr zugeordneten Verpflichtungen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine Bestandsgröße wirtschaftlicher Verfügungsmöglichkeiten und trennt sie von zeitbezogenen Zuflüssen und gesellschaftlicher Stellung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3209,35 +3216,35 @@ Der Begriff bezeichnet eine Bestandsgröße wirtschaftlicher Verfügungsmöglich
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Income`: ist ein wirtschaftlicher Zufluss innerhalb eines Zeitraums.
 - `Social Class`: bezeichnet eine gesellschaftliche Stellung und nicht einen Wertbestand.
 - `Political Capital`: bezeichnet politisch mobilisierbare Handlungsmacht.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Income
 - Household
 - Social Class
 - Social Mobility
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Income
+#### Income
 
-#### Definition
+##### Definition
 
 `Income` ist die Gesamtheit wirtschaftlicher Werte, die einer Person, einem Household oder einer Gruppe innerhalb eines bestimmten Zeitraums zufließen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine zeitraumbezogene Zuflussgröße unabhängig vom bereits vorhandenen Wealth oder der gesellschaftlichen Stellung der Empfänger.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3246,13 +3253,13 @@ Der Begriff bezeichnet eine zeitraumbezogene Zuflussgröße unabhängig vom bere
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Wealth`: ist ein zu einem Zeitpunkt bestehender Wertbestand.
 - `Occupation`: ist eine tatsächlich ausgeübte Tätigkeit und nicht deren möglicher Ertrag.
 - `Social Class`: bezeichnet die Stellung in der gesellschaftlichen Ordnung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Wealth
 - Household
@@ -3260,24 +3267,24 @@ Der Begriff bezeichnet eine zeitraumbezogene Zuflussgröße unabhängig vom bere
 - Profession
 - Social Class
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 6.3 Kultur
+### 6.3 Kultur
 
-### Culture
+#### Culture
 
-#### Definition
+##### Definition
 
 Eine `Culture` ist ein von einer Gruppe getragener und weitergegebener Zusammenhang gemeinsamer Bedeutungen, Werte, Normen, Ausdrucksformen und sozialer Praktiken.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen erlernten gesellschaftlichen Orientierungszusammenhang, ohne ihn mit Religion, Language oder individuellem Zugehörigkeitsverständnis gleichzusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3286,14 +3293,14 @@ Der Begriff bezeichnet einen erlernten gesellschaftlichen Orientierungszusammenh
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Religion`: ordnet Überzeugungen und Praktiken in Bezug auf Heiliges, Transzendentes oder letzte Sinnfragen.
 - `Language`: ist ein gemeinsames System sprachlicher Verständigung.
 - `Identity`: ist das Verständnis eigener Zugehörigkeit und Abgrenzung.
 - `Nation`: ist eine vorgestellte politische und gesellschaftliche Gemeinschaft.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Religion
 - Language
@@ -3302,22 +3309,22 @@ Der Begriff bezeichnet einen erlernten gesellschaftlichen Orientierungszusammenh
 - Assimilation
 - Integration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Religion
+#### Religion
 
-#### Definition
+##### Definition
 
 Eine `Religion` ist ein geordneter Zusammenhang geteilter Überzeugungen, Deutungen, Normen und Praktiken, die sich auf Heiliges, Transzendentes oder letzte Sinnfragen beziehen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet religiöse Zugehörigkeits- und Deutungsordnungen, ohne sie mit der gesamten Culture, einer Institution oder politischer Ideology gleichzusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3326,14 +3333,14 @@ Der Begriff bezeichnet religiöse Zugehörigkeits- und Deutungsordnungen, ohne s
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Culture`: umfasst einen breiteren Zusammenhang geteilter Bedeutungen und Praktiken.
 - `Ideology`: ist ein zusammenhängendes Modell politischer Ordnung und gesellschaftlicher Entwicklung.
 - `Institution`: ist eine dauerhaft geordnete Einrichtung mit festgelegten Aufgaben.
 - `Identity`: bezeichnet das Verständnis eigener Zugehörigkeit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Culture
 - Identity
@@ -3341,22 +3348,22 @@ Der Begriff bezeichnet religiöse Zugehörigkeits- und Deutungsordnungen, ohne s
 - Institution
 - Ideology
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Language
+#### Language
 
-#### Definition
+##### Definition
 
 Eine `Language` ist ein gemeinsames, regelhaftes System gesprochener, geschriebener oder gebärdeter Zeichen, durch das Personen Bedeutungen ausdrücken und miteinander verständigen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet ein Mittel sprachlicher Verständigung unabhängig von Literacy, kultureller Zugehörigkeit oder persönlicher Identity.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3365,13 +3372,13 @@ Der Begriff bezeichnet ein Mittel sprachlicher Verständigung unabhängig von Li
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Literacy`: bezeichnet schriftsprachliche Befähigung in einer Language.
 - `Culture`: ist ein umfassender Zusammenhang gemeinsamer Bedeutungen und Praktiken.
 - `Identity`: bezeichnet das Verständnis eigener Zugehörigkeit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Literacy
 - Culture
@@ -3380,22 +3387,22 @@ Der Begriff bezeichnet ein Mittel sprachlicher Verständigung unabhängig von Li
 - Assimilation
 - Integration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Identity
+#### Identity
 
-#### Definition
+##### Definition
 
 Eine `Identity` ist das Verständnis einer Person oder Gruppe davon, welchen sozialen, kulturellen, politischen oder sonstigen Gemeinschaften sie sich zugehörig sieht und wodurch sie sich von anderen unterscheidet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet wahrgenommene Zugehörigkeit und Abgrenzung, ohne daraus Culture, Religion, Language, Citizenship oder politische Haltung abzuleiten.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3404,7 +3411,7 @@ Der Begriff bezeichnet wahrgenommene Zugehörigkeit und Abgrenzung, ohne daraus 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Culture`: ist ein geteilter Zusammenhang von Bedeutungen und Praktiken.
 - `Religion`: ist eine religiöse Deutungs- und Praxisordnung.
@@ -3412,7 +3419,7 @@ Der Begriff bezeichnet wahrgenommene Zugehörigkeit und Abgrenzung, ohne daraus 
 - `Citizen`: bezeichnet eine rechtliche Mitgliedschaft in einem State.
 - `Political Support`: ist Zustimmung zu einem politischen Akteur, Ziel oder Vorhaben.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Culture
 - Religion
@@ -3422,24 +3429,24 @@ Der Begriff bezeichnet wahrgenommene Zugehörigkeit und Abgrenzung, ohne daraus 
 - Assimilation
 - Integration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 6.4 Gesellschaftliche Dynamik
+### 6.4 Gesellschaftliche Dynamik
 
-### Loyalty
+#### Loyalty
 
-#### Definition
+##### Definition
 
 `Loyalty` ist die dauerhafte Bindungsbereitschaft einer Person oder Gruppe gegenüber einem politischen oder gesellschaftlichen Bezugsobjekt, die auch bei einzelnen Meinungsunterschieden fortbestehen kann.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet beständige Verbundenheit und trennt sie von gegenstandsbezogener politischer Zustimmung, allgemeiner Legitimacy und persönlicher Identity.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3448,35 +3455,35 @@ Der Begriff bezeichnet beständige Verbundenheit und trennt sie von gegenstandsb
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Political Support`: ist Zustimmung zu einem bestimmten politischen Akteur, Ziel oder Vorhaben.
 - `Legitimacy`: ist die anerkannte Rechtmäßigkeit politischer Ordnung oder Herrschaft.
 - `Identity`: ist das Verständnis eigener Zugehörigkeit und Abgrenzung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Political Support
 - Legitimacy
 - Identity
 - Radicalization
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Political Support
+#### Political Support
 
-#### Definition
+##### Definition
 
 `Political Support` ist die zustimmende Haltung einer Person oder Gruppe gegenüber einem bestimmten politischen Akteur, Ziel, Vorhaben oder einer politischen Ordnung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet gegenstandsbezogene politische Zustimmung unabhängig von dauerhafter Loyalty, institutioneller Legitimacy oder organisatorischer Mitgliedschaft.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3485,14 +3492,14 @@ Der Begriff bezeichnet gegenstandsbezogene politische Zustimmung unabhängig von
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Loyalty`: ist eine fortdauernde Bindungsbereitschaft gegenüber einem Bezugsobjekt.
 - `Legitimacy`: bezeichnet anerkannte Rechtmäßigkeit.
 - `Political Party`: ist ein organisierter politischer Akteur.
 - `Interest Group`: vertritt dauerhaft gemeinsame politische Interessen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Loyalty
 - Legitimacy
@@ -3500,22 +3507,22 @@ Der Begriff bezeichnet gegenstandsbezogene politische Zustimmung unabhängig von
 - Interest Group
 - Radicalization
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Radicalization
+#### Radicalization
 
-#### Definition
+##### Definition
 
 `Radicalization` ist eine gesellschaftliche Entwicklung, in der Personen oder Gruppen zunehmend grundlegende und kompromissunwillige Veränderungen einer bestehenden politischen oder gesellschaftlichen Ordnung befürworten.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Veränderung politischer oder gesellschaftlicher Haltung hin zu fundamentaler Ordnungsablehnung, ohne eine bestimmte Ideology, Organisation oder Handlungsform vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3524,13 +3531,13 @@ Der Begriff bezeichnet die Veränderung politischer oder gesellschaftlicher Halt
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Political Support`: bezeichnet Zustimmung und nicht die Richtung oder Intensivierung einer Haltungsentwicklung.
 - `Opposition`: ist die Gesamtheit politischer Akteure, die der gegenwärtigen politischen Führung entgegenstehen.
 - `Ideology`: ist ein zusammenhängendes Modell politischer Ordnung und gesellschaftlicher Entwicklung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Political Support
 - Loyalty
@@ -3538,22 +3545,22 @@ Der Begriff bezeichnet die Veränderung politischer oder gesellschaftlicher Halt
 - Ideology
 - Social Mobility
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Social Mobility
+#### Social Mobility
 
-#### Definition
+##### Definition
 
 `Social Mobility` ist die Veränderung der gesellschaftlichen Stellung einer Person, eines Household oder einer Gruppe innerhalb einer gesellschaftlichen Ordnung oder zwischen aufeinanderfolgenden Generationen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet Positionswechsel in der sozialen Struktur unabhängig davon, ob sie mit Veränderungen von Profession, Occupation, Education, Income oder Wealth einhergehen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3562,14 +3569,14 @@ Der Begriff bezeichnet Positionswechsel in der sozialen Struktur unabhängig dav
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Migration`: ist die dauerhafte Verlagerung des gewöhnlichen Aufenthaltsortes.
 - `Social Class`: ist eine Kategorie gesellschaftlicher Stellung.
 - `Income`: bezeichnet wirtschaftliche Zuflüsse in einem Zeitraum.
 - `Wealth`: bezeichnet einen wirtschaftlichen Wertbestand.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Social Class
 - Education
@@ -3578,24 +3585,24 @@ Der Begriff bezeichnet Positionswechsel in der sozialen Struktur unabhängig dav
 - Income
 - Wealth
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 6.5 Bevölkerungsentwicklung
+### 6.5 Bevölkerungsentwicklung
 
-### Birth Rate
+#### Birth Rate
 
-#### Definition
+##### Definition
 
 Eine `Birth Rate` ist die Anzahl der Lebendgeburten innerhalb einer Population während eines bestimmten Zeitraums im Verhältnis zu einer festgelegten Bezugsgröße dieser Population.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die relative Häufigkeit von Geburten und ermöglicht ihre Vergleichbarkeit über unterschiedlich große Populationen und Zeiträume hinweg.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3604,13 +3611,13 @@ Der Begriff bezeichnet die relative Häufigkeit von Geburten und ermöglicht ihr
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Population`: ist der Personenbestand und keine Veränderungsrate.
 - `Death Rate`: bezeichnet die relative Häufigkeit von Todesfällen.
 - `Immigration`: verändert eine Population durch Zuwanderung statt durch Geburten.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Population
 - Death Rate
@@ -3618,22 +3625,22 @@ Der Begriff bezeichnet die relative Häufigkeit von Geburten und ermöglicht ihr
 - Immigration
 - Emigration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Death Rate
+#### Death Rate
 
-#### Definition
+##### Definition
 
 Eine `Death Rate` ist die Anzahl der Todesfälle innerhalb einer Population während eines bestimmten Zeitraums im Verhältnis zu einer festgelegten Bezugsgröße dieser Population.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die relative Häufigkeit von Todesfällen und ermöglicht ihre Vergleichbarkeit über unterschiedlich große Populationen und Zeiträume hinweg.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3642,13 +3649,13 @@ Der Begriff bezeichnet die relative Häufigkeit von Todesfällen und ermöglicht
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Population`: ist der Personenbestand und keine Veränderungsrate.
 - `Birth Rate`: bezeichnet die relative Häufigkeit von Lebendgeburten.
 - `Emigration`: verändert eine Population durch Abwanderung statt durch Todesfälle.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Population
 - Birth Rate
@@ -3656,22 +3663,22 @@ Der Begriff bezeichnet die relative Häufigkeit von Todesfällen und ermöglicht
 - Immigration
 - Emigration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Migration
+#### Migration
 
-#### Definition
+##### Definition
 
 `Migration` ist die auf Dauer ausgerichtete Verlagerung des gewöhnlichen Aufenthaltsortes einer Person oder Gruppe von einem Herkunftsgebiet in ein anderes Gebiet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den allgemeinen demographischen Ortswechsel, ohne die Perspektive des Herkunfts- oder Zielgebietes festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3680,14 +3687,14 @@ Der Begriff bezeichnet den allgemeinen demographischen Ortswechsel, ohne die Per
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Immigration`: betrachtet Migration aus der Perspektive des Zielgebietes.
 - `Emigration`: betrachtet Migration aus der Perspektive des Herkunftsgebietes.
 - `Social Mobility`: ist eine Veränderung gesellschaftlicher Stellung.
 - `Assimilation`: ist die Aufgabe prägender kultureller Unterscheidungsmerkmale zugunsten einer anderen Culture.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Population
 - Resident
@@ -3696,22 +3703,22 @@ Der Begriff bezeichnet den allgemeinen demographischen Ortswechsel, ohne die Per
 - Assimilation
 - Integration
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Immigration
+#### Immigration
 
-#### Definition
+##### Definition
 
 `Immigration` ist Migration aus der Perspektive des Zielgebietes, in dem Personen oder Gruppen ihren gewöhnlichen Aufenthalt neu und auf Dauer begründen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet ausschließlich die auf ein Zielgebiet bezogene Zuwanderung und grenzt sie vom allgemeinen Ortswechsel und seiner Herkunftsperspektive ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3720,13 +3727,13 @@ Der Begriff bezeichnet ausschließlich die auf ein Zielgebiet bezogene Zuwanderu
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Migration`: ist der perspektivisch neutrale Oberbegriff.
 - `Emigration`: betrachtet denselben Ortswechsel aus der Perspektive des Herkunftsgebietes.
 - `Integration`: bezeichnet gesellschaftliche Einbindung bei fortbestehenden Unterschieden.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Migration
 - Emigration
@@ -3735,22 +3742,22 @@ Der Begriff bezeichnet ausschließlich die auf ein Zielgebiet bezogene Zuwanderu
 - Integration
 - Assimilation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Emigration
+#### Emigration
 
-#### Definition
+##### Definition
 
 `Emigration` ist Migration aus der Perspektive des Herkunftsgebietes, aus dem Personen oder Gruppen ihren gewöhnlichen Aufenthalt auf Dauer verlagern.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet ausschließlich die auf ein Herkunftsgebiet bezogene Abwanderung und grenzt sie vom allgemeinen Ortswechsel und seiner Zielperspektive ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3759,13 +3766,13 @@ Der Begriff bezeichnet ausschließlich die auf ein Herkunftsgebiet bezogene Abwa
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Migration`: ist der perspektivisch neutrale Oberbegriff.
 - `Immigration`: betrachtet denselben Ortswechsel aus der Perspektive des Zielgebietes.
 - `Assimilation`: bezeichnet kulturelle Angleichung und keinen Ortswechsel.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Migration
 - Immigration
@@ -3774,22 +3781,22 @@ Der Begriff bezeichnet ausschließlich die auf ein Herkunftsgebiet bezogene Abwa
 - Integration
 - Assimilation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Assimilation
+#### Assimilation
 
-#### Definition
+##### Definition
 
 `Assimilation` ist eine auf Dauer wirkende kulturelle Veränderung, durch die eine Person oder Gruppe prägende Unterscheidungsmerkmale ihrer bisherigen Culture zugunsten einer anderen Culture weitgehend aufgibt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet kulturelle Angleichung durch den Verlust wesentlicher bisheriger Unterscheidungsmerkmale und grenzt sie von gesellschaftlicher Einbindung bei fortbestehenden Unterschieden ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3798,13 +3805,13 @@ Der Begriff bezeichnet kulturelle Angleichung durch den Verlust wesentlicher bis
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Integration`: ermöglicht gesellschaftliche Einbindung bei fortbestehenden kulturellen oder sozialen Unterschieden.
 - `Migration`: bezeichnet die Verlagerung des gewöhnlichen Aufenthaltsortes.
 - `Identity`: bezeichnet das Verständnis eigener Zugehörigkeit und Abgrenzung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Integration
 - Culture
@@ -3813,22 +3820,22 @@ Der Begriff bezeichnet kulturelle Angleichung durch den Verlust wesentlicher bis
 - Migration
 - Population Group
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Integration
+#### Integration
 
-#### Definition
+##### Definition
 
 `Integration` ist ein wechselseitiger gesellschaftlicher Prozess, durch den Personen oder Gruppen gleichberechtigten Zugang zu sozialen Zusammenhängen und gemeinsame Teilhabe erlangen, während kulturelle oder soziale Unterschiede fortbestehen können.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet gesellschaftliche Einbindung ohne die Aufgabe prägender kultureller Unterscheidungsmerkmale vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3837,13 +3844,13 @@ Der Begriff bezeichnet gesellschaftliche Einbindung ohne die Aufgabe prägender 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Assimilation`: setzt die weitgehende Aufgabe prägender Merkmale der bisherigen Culture zugunsten einer anderen voraus.
 - `Immigration`: bezeichnet die auf ein Zielgebiet bezogene Migration.
 - `Political Support`: bezeichnet Zustimmung zu einem politischen Bezugsobjekt.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Assimilation
 - Culture
@@ -3853,12 +3860,12 @@ Der Begriff bezeichnet gesellschaftliche Einbindung ohne die Aufgabe prägender 
 - Immigration
 - Population Group
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-# Kapitel 7 – Wirtschaft und Produktion
+## Kapitel 7 – Wirtschaft und Produktion
 
 Wirtschaftliche Begriffe bilden eine zusammenhängende fachliche Domäne. Wirtschaftliche Prozesse entstehen aus dem Zusammenwirken von Akteuren, ihren Aktivitäten und ihren Beziehungen über Güter, Ressourcen, Märkte, Handel, Finanzen und Produktion.
 
@@ -3866,19 +3873,19 @@ Die Begriffsgruppen trennen wirtschaftliche Akteure, Aktivitäten und Gegenstän
 
 Dieses Kapitel definiert die kanonische Terminologie dieser Domäne. Gameplayregeln, Systemabläufe, Werte und technische Implementierungen verbleiben in den zuständigen Game-Design-, Balancing- und Technikdokumenten.
 
-## 7.1 Wirtschaftliche Akteure
+### 7.1 Wirtschaftliche Akteure
 
-### Economic Actor
+#### Economic Actor
 
-#### Definition
+##### Definition
 
 Ein `Economic Actor` ist eine Person, Gruppe, Organisation oder ein State, die beziehungsweise der eigenständig wirtschaftliche Entscheidungen trifft, wirtschaftliche Aktivitäten ausübt oder wirtschaftliche Beziehungen eingeht.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den allgemeinen Träger wirtschaftlichen Handelns, ohne eine bestimmte Rolle, Rechtsform oder politische Stellung vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3887,13 +3894,13 @@ Der Begriff bezeichnet den allgemeinen Träger wirtschaftlichen Handelns, ohne e
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Producer`: ist ein Economic Actor in der Rolle der Herstellung oder Bereitstellung von Goods.
 - `Consumer`: ist ein Economic Actor in der Rolle der Nutzung oder des Verbrauchs von Goods.
 - `State`: ist eine politische und rechtliche Ordnung, die als Economic Actor handeln kann.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Producer
 - Consumer
@@ -3902,22 +3909,22 @@ Der Begriff bezeichnet den allgemeinen Träger wirtschaftlichen Handelns, ohne e
 - Investor
 - State
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Producer
+#### Producer
 
-#### Definition
+##### Definition
 
 Ein `Producer` ist ein Economic Actor, der Goods durch Production hervorbringt, bearbeitet oder zur wirtschaftlichen Nutzung bereitstellt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die produktive Rolle eines Economic Actor unabhängig von Art, Umfang oder Organisation der Production.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3926,13 +3933,13 @@ Der Begriff bezeichnet die produktive Rolle eines Economic Actor unabhängig von
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Economic Actor`: ist der Oberbegriff für Träger wirtschaftlichen Handelns.
 - `Production`: ist die wirtschaftliche Aktivität und nicht ihr Akteur.
 - `Production Facility`: ist eine räumlich und organisatorisch abgegrenzte Einrichtung der Production.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Economic Actor
 - Production
@@ -3940,22 +3947,22 @@ Der Begriff bezeichnet die produktive Rolle eines Economic Actor unabhängig von
 - Production Facility
 - Consumer
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Consumer
+#### Consumer
 
-#### Definition
+##### Definition
 
 Ein `Consumer` ist ein Economic Actor, der Goods zur Befriedigung eigener oder zugeordneter Bedürfnisse nutzt oder verbraucht.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die nachfragende und nutzende Rolle eines Economic Actor, ohne eine bestimmte Art des Erwerbs oder der Verwendung vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -3964,13 +3971,13 @@ Der Begriff bezeichnet die nachfragende und nutzende Rolle eines Economic Actor,
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Economic Actor`: ist der Oberbegriff für Träger wirtschaftlichen Handelns.
 - `Consumption`: ist die wirtschaftliche Aktivität der Nutzung oder des Verbrauchs.
 - `Demand`: ist die auf einen möglichen Erwerb gerichtete Bereitschaft und Fähigkeit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Economic Actor
 - Consumption
@@ -3978,22 +3985,22 @@ Der Begriff bezeichnet die nachfragende und nutzende Rolle eines Economic Actor,
 - Demand
 - Producer
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Employer
+#### Employer
 
-#### Definition
+##### Definition
 
 Ein `Employer` ist ein Economic Actor, der im Rahmen von Employment Arbeitsleistung anderer Economic Actors in Anspruch nimmt und dafür eine vereinbarte Gegenleistung schuldet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die arbeitsnachfragende Seite einer Employment-Beziehung unabhängig von ihrer organisatorischen oder rechtlichen Form.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4002,34 +4009,34 @@ Der Begriff bezeichnet die arbeitsnachfragende Seite einer Employment-Beziehung 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Employee`: erbringt die vereinbarte Arbeitsleistung.
 - `Producer`: bezeichnet eine produktive Rolle und setzt keine Employment-Beziehung voraus.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Employee
 - Employment
 - Economic Actor
 - Production
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Employee
+#### Employee
 
-#### Definition
+##### Definition
 
 Ein `Employee` ist ein Economic Actor, der einem Employer im Rahmen von Employment vereinbarte Arbeitsleistung gegen eine geschuldete Gegenleistung erbringt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die arbeitserbringende Seite einer Employment-Beziehung, ohne Profession, Occupation oder gesellschaftliche Stellung festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4038,13 +4045,13 @@ Der Begriff bezeichnet die arbeitserbringende Seite einer Employment-Beziehung, 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Employer`: nimmt die vereinbarte Arbeitsleistung in Anspruch.
 - `Occupation`: ist eine regelmäßig ausgeübte Tätigkeit und nicht die Stellung in einer Employment-Beziehung.
 - `Profession`: ist ein qualifiziertes Tätigkeitsfeld.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Employer
 - Employment
@@ -4053,22 +4060,22 @@ Der Begriff bezeichnet die arbeitserbringende Seite einer Employment-Beziehung, 
 - Profession
 - Income
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Investor
+#### Investor
 
-#### Definition
+##### Definition
 
 Ein `Investor` ist ein Economic Actor, der wirtschaftliche Werte für Investment bereitstellt und damit eine künftige wirtschaftliche Wirkung oder einen wirtschaftlichen Ertrag anstrebt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den Träger eines Investment, ohne dessen Gegenstand, Finanzierung oder Ergebnis festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4077,34 +4084,34 @@ Der Begriff bezeichnet den Träger eines Investment, ohne dessen Gegenstand, Fin
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Investment`: ist die wirtschaftliche Aktivität der zielgerichteten Bereitstellung von Werten.
 - `Credit`: ist die zeitweilige Überlassung von Verfügungsmacht mit Rückzahlungsanspruch.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Economic Actor
 - Investment
 - Credit
 - Production Facility
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### State
+#### State
 
-#### Definition
+##### Definition
 
 Der `State` ist das in Kapitel 4.1 definierte politische Gemeinwesen; innerhalb der wirtschaftlichen Domäne handelt er als Economic Actor, soweit er wirtschaftliche Entscheidungen trifft, Aktivitäten ausübt oder Beziehungen eingeht.
 
-#### Zweck
+##### Zweck
 
 Der Eintrag ordnet den bereits definierten State der wirtschaftlichen Domäne zu, ohne seine politische Definition zu ersetzen oder einen eigenständigen wirtschaftlichen Staatsbegriff einzuführen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4113,13 +4120,13 @@ Der Eintrag ordnet den bereits definierten State der wirtschaftlichen Domäne zu
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Economic Actor`: ist der allgemeine Oberbegriff und keine politische Entität.
 - `Treasury`: bezeichnet die einem State zugeordneten verfügbaren finanziellen Mittel.
 - `National Market`: ist ein auf den Wirtschaftsraum eines Country bezogener Market.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Economic Actor
 - Treasury
@@ -4128,24 +4135,24 @@ Der Eintrag ordnet den bereits definierten State der wirtschaftlichen Domäne zu
 - Budget
 - National Market
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 7.2 Wirtschaftliche Aktivitäten
+### 7.2 Wirtschaftliche Aktivitäten
 
-### Production
+#### Production
 
-#### Definition
+##### Definition
 
 `Production` ist die wirtschaftliche Aktivität, durch die ein Producer Inputs einsetzt oder verändert, um Outputs hervorzubringen oder bereitzustellen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den Vorgang wirtschaftlicher Hervorbringung und grenzt ihn von seinem Akteur, seiner Einrichtung und der Folge verbundener Produktionsstufen ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4154,13 +4161,13 @@ Der Begriff bezeichnet den Vorgang wirtschaftlicher Hervorbringung und grenzt ih
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Producer`: ist der handelnde Economic Actor.
 - `Production Facility`: ist eine Einrichtung, in der Production stattfinden kann.
 - `Production Chain`: ist eine fachliche Folge voneinander abhängiger Produktionsstufen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Producer
 - Input
@@ -4170,22 +4177,22 @@ Der Begriff bezeichnet den Vorgang wirtschaftlicher Hervorbringung und grenzt ih
 - Capacity
 - Efficiency
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Consumption
+#### Consumption
 
-#### Definition
+##### Definition
 
 `Consumption` ist die wirtschaftliche Aktivität, durch die ein Consumer ein Good zur Befriedigung eines Bedürfnisses nutzt oder verbraucht.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die bedürfnisbezogene Verwendung von Goods und trennt sie von deren Erwerb, Austausch oder produktivem Einsatz als Input.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4194,35 +4201,35 @@ Der Begriff bezeichnet die bedürfnisbezogene Verwendung von Goods und trennt si
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Consumer`: ist der handelnde Economic Actor.
 - `Exchange`: ist die wechselseitige Übertragung wirtschaftlicher Werte.
 - `Input`: wird für eine wirtschaftliche Aktivität eingesetzt.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Consumer
 - Good
 - Demand
 - Exchange
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Distribution
+#### Distribution
 
-#### Definition
+##### Definition
 
 `Distribution` ist die wirtschaftliche Aktivität, durch die Goods oder wirtschaftliche Werte zwischen Akteuren, Verwendungszwecken oder Orten zugeordnet und weitergegeben werden.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Verteilung und Weiterleitung wirtschaftlicher Gegenstände, ohne einen Eigentumswechsel, einen Market oder grenzüberschreitenden Trade vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4231,13 +4238,13 @@ Der Begriff bezeichnet die Verteilung und Weiterleitung wirtschaftlicher Gegenst
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Exchange`: beruht auf wechselseitiger Übertragung.
 - `Trade`: ist auf Austausch gerichtetes wirtschaftliches Handeln zwischen Akteuren.
 - `Trade Route`: ist eine beständige räumliche Verbindung für Trade.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Good
 - Exchange
@@ -4245,22 +4252,22 @@ Der Begriff bezeichnet die Verteilung und Weiterleitung wirtschaftlicher Gegenst
 - Market
 - Supply
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Exchange
+#### Exchange
 
-#### Definition
+##### Definition
 
 `Exchange` ist die wirtschaftliche Aktivität, bei der Economic Actors einander wirtschaftliche Werte wechselseitig übertragen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den einzelnen wechselseitigen Übertragungsvorgang unabhängig davon, ob er über einen Market, als Trade oder unter Verwendung von Currency erfolgt.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4269,13 +4276,13 @@ Der Begriff bezeichnet den einzelnen wechselseitigen Übertragungsvorgang unabh�
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Trade`: bezeichnet auf Exchange gerichtetes wirtschaftliches Handeln und die daraus entstehenden Handelsbeziehungen.
 - `Distribution`: setzt keine wechselseitige Übertragung voraus.
 - `Market`: ist der Zusammenhang, in dem Supply und Demand aufeinandertreffen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Economic Actor
 - Trade
@@ -4283,22 +4290,22 @@ Der Begriff bezeichnet den einzelnen wechselseitigen Übertragungsvorgang unabh�
 - Currency
 - Good
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Investment
+#### Investment
 
-#### Definition
+##### Definition
 
 `Investment` ist die wirtschaftliche Aktivität, bei der wirtschaftliche Werte gegenwärtig für den Aufbau, Erhalt oder die Verbesserung künftiger wirtschaftlicher Möglichkeiten bereitgestellt werden.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine zukunftsgerichtete Verwendung wirtschaftlicher Werte unabhängig von Gegenstand, Finanzierung und tatsächlich eintretendem Ertrag.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4307,13 +4314,13 @@ Der Begriff bezeichnet eine zukunftsgerichtete Verwendung wirtschaftlicher Werte
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Investor`: ist der handelnde Economic Actor.
 - `Credit`: überlässt Verfügungsmacht nur zeitweilig und begründet einen Rückzahlungsanspruch.
 - `Subsidy`: ist eine staatliche wirtschaftliche Zuwendung für einen bestimmten Zweck.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Investor
 - Credit
@@ -4321,22 +4328,22 @@ Der Begriff bezeichnet eine zukunftsgerichtete Verwendung wirtschaftlicher Werte
 - Capacity
 - Efficiency
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Employment
+#### Employment
 
-#### Definition
+##### Definition
 
 `Employment` ist eine wirtschaftliche Beziehung, in der ein Employee einem Employer vereinbarte Arbeitsleistung gegen eine geschuldete Gegenleistung erbringt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet das Verhältnis zwischen arbeitserbringendem und arbeitsnachfragendem Economic Actor, ohne konkrete Tätigkeit, Qualifikation oder Vergütungsform festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4345,13 +4352,13 @@ Der Begriff bezeichnet das Verhältnis zwischen arbeitserbringendem und arbeitsn
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Occupation`: bezeichnet eine regelmäßig ausgeübte Tätigkeit.
 - `Profession`: bezeichnet ein qualifiziertes Tätigkeitsfeld.
 - `Production`: ist wirtschaftliche Hervorbringung und setzt Employment nicht voraus.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Employer
 - Employee
@@ -4360,24 +4367,24 @@ Der Begriff bezeichnet das Verhältnis zwischen arbeitserbringendem und arbeitsn
 - Profession
 - Income
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 7.3 Güter und Ressourcen
+### 7.3 Güter und Ressourcen
 
-### Good
+#### Good
 
-#### Definition
+##### Definition
 
 Ein `Good` ist ein materieller oder immaterieller Gegenstand wirtschaftlicher Verfügung, der ein Bedürfnis befriedigen, in wirtschaftlichen Aktivitäten eingesetzt oder zwischen Economic Actors übertragen werden kann.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den allgemeinen wirtschaftlichen Gegenstand von Production, Consumption, Distribution und Exchange, ohne Herkunft oder Produktionsstufe festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4386,14 +4393,14 @@ Der Begriff bezeichnet den allgemeinen wirtschaftlichen Gegenstand von Productio
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Resource`: ist ein verfügbarer oder erschließbarer Bestand mit möglicher wirtschaftlicher Verwendbarkeit.
 - `Raw Material`: ist ein unmittelbar gewonnener und noch nicht weiterverarbeiteter Input.
 - `Intermediate Good`: ist für weitere Production bestimmt.
 - `Finished Good`: ist für seine vorgesehene Endverwendung bereit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Resource
 - Raw Material
@@ -4402,22 +4409,22 @@ Der Begriff bezeichnet den allgemeinen wirtschaftlichen Gegenstand von Productio
 - Production
 - Consumption
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Resource
+#### Resource
 
-#### Definition
+##### Definition
 
 Eine `Resource` ist ein verfügbarer oder erschließbarer materieller oder immaterieller Bestand, der für wirtschaftliche Aktivitäten genutzt werden kann.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet wirtschaftlich verwendbares Potenzial, ohne vorauszusetzen, dass es bereits gewonnen, verarbeitet, als Good bereitgestellt oder tatsächlich eingesetzt wurde.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4426,13 +4433,13 @@ Der Begriff bezeichnet wirtschaftlich verwendbares Potenzial, ohne vorauszusetze
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Good`: ist ein Gegenstand wirtschaftlicher Verfügung.
 - `Raw Material`: ist ein gewonnener, noch nicht weiterverarbeiteter Input.
 - `Strategic Resource`: besitzt besondere Bedeutung für übergeordnete wirtschaftliche oder staatliche Handlungsfähigkeit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Good
 - Raw Material
@@ -4440,22 +4447,22 @@ Der Begriff bezeichnet wirtschaftlich verwendbares Potenzial, ohne vorauszusetze
 - Input
 - Production
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Raw Material
+#### Raw Material
 
-#### Definition
+##### Definition
 
 Ein `Raw Material` ist ein unmittelbar aus einer Resource gewonnener und noch nicht weiterverarbeiteter materieller Input für Production.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die erste stoffliche Form nach der Gewinnung und grenzt sie von der zugrunde liegenden Resource sowie bereits verarbeiteten Goods ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4464,13 +4471,13 @@ Der Begriff bezeichnet die erste stoffliche Form nach der Gewinnung und grenzt s
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Resource`: kann noch unerschlossen oder ungewonnen sein.
 - `Intermediate Good`: ist bereits durch Production hervorgebracht und für weitere Production bestimmt.
 - `Input`: ist die funktionale Rolle eines eingesetzten Gegenstands und keine Produktionsstufe.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Resource
 - Good
@@ -4478,22 +4485,22 @@ Der Begriff bezeichnet die erste stoffliche Form nach der Gewinnung und grenzt s
 - Input
 - Production
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Intermediate Good
+#### Intermediate Good
 
-#### Definition
+##### Definition
 
 Ein `Intermediate Good` ist ein durch Production hervorgebrachtes Good, das für den Einsatz als Input in weiterer Production bestimmt ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine zwischen Gewinnung und vorgesehener Endverwendung liegende Produktionsstufe, ohne eine bestimmte Zahl weiterer Stufen vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4502,13 +4509,13 @@ Der Begriff bezeichnet eine zwischen Gewinnung und vorgesehener Endverwendung li
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Raw Material`: ist unmittelbar gewonnen und noch nicht weiterverarbeitet.
 - `Finished Good`: ist für seine vorgesehene Endverwendung bereit.
 - `Input`: ist eine Rolle innerhalb einer Aktivität und nicht notwendig eine Güterklasse.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Good
 - Raw Material
@@ -4517,22 +4524,22 @@ Der Begriff bezeichnet eine zwischen Gewinnung und vorgesehener Endverwendung li
 - Output
 - Production Chain
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Finished Good
+#### Finished Good
 
-#### Definition
+##### Definition
 
 Ein `Finished Good` ist ein Good, dessen Production für seine vorgesehene Endverwendung abgeschlossen ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den Abschluss der für einen bestimmten Verwendungszweck vorgesehenen Production, ohne auszuschließen, dass das Good in einem anderen Zusammenhang als Input dienen kann.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4541,12 +4548,12 @@ Der Begriff bezeichnet den Abschluss der für einen bestimmten Verwendungszweck 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Intermediate Good`: ist für weitere Production bestimmt.
 - `Output`: ist jedes Ergebnis einer wirtschaftlichen Aktivität unabhängig von seiner Produktionsstufe.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Good
 - Intermediate Good
@@ -4554,22 +4561,22 @@ Der Begriff bezeichnet den Abschluss der für einen bestimmten Verwendungszweck 
 - Consumption
 - Production Chain
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Strategic Resource
+#### Strategic Resource
 
-#### Definition
+##### Definition
 
 Eine `Strategic Resource` ist eine Resource, deren Verfügbarkeit besondere Bedeutung für die übergeordnete wirtschaftliche oder staatliche Handlungsfähigkeit besitzt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff kennzeichnet die besondere Bedeutung einer Resource, ohne eine konkrete Verwendung, Knappheit oder politische Maßnahme festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4578,12 +4585,12 @@ Der Begriff kennzeichnet die besondere Bedeutung einer Resource, ohne eine konkr
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Resource`: ist der allgemeine Oberbegriff ohne notwendige strategische Bedeutung.
 - `Raw Material`: bezeichnet eine gewonnene und unverarbeitete Form unabhängig von ihrer Bedeutung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Resource
 - Raw Material
@@ -4591,24 +4598,24 @@ Der Begriff kennzeichnet die besondere Bedeutung einer Resource, ohne eine konkr
 - Trade
 - Embargo
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 7.4 Märkte
+### 7.4 Märkte
 
-### Market
+#### Market
 
-#### Definition
+##### Definition
 
 Ein `Market` ist ein wirtschaftlicher Beziehungszusammenhang, in dem Supply und Demand für bestimmte Goods aufeinandertreffen und Exchange-Bedingungen entstehen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den Ordnungs- und Beziehungsrahmen wirtschaftlichen Austauschs, ohne einen bestimmten Ort, räumlichen Umfang oder einzelne Transaktion vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4617,13 +4624,13 @@ Der Begriff bezeichnet den Ordnungs- und Beziehungsrahmen wirtschaftlichen Austa
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Trade`: ist das auf Exchange gerichtete wirtschaftliche Handeln zwischen Akteuren.
 - `Exchange`: ist ein wechselseitiger Übertragungsvorgang.
 - `Trade Route`: ist eine beständige räumliche Verbindung für Trade.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Supply
 - Demand
@@ -4632,22 +4639,22 @@ Der Begriff bezeichnet den Ordnungs- und Beziehungsrahmen wirtschaftlichen Austa
 - Exchange
 - Trade
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Local Market
+#### Local Market
 
-#### Definition
+##### Definition
 
 Ein `Local Market` ist ein Market, dessen maßgeblicher wirtschaftlicher Beziehungszusammenhang auf ein örtlich begrenztes Gebiet bezogen ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff unterscheidet räumlich begrenzte Marktbeziehungen von Markets mit landesweitem oder grenzüberschreitendem Bezugsraum.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4656,12 +4663,12 @@ Der Begriff unterscheidet räumlich begrenzte Marktbeziehungen von Markets mit l
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `National Market`: bezieht sich auf den Wirtschaftsraum eines Country.
 - `International Market`: verbindet Economic Actors über Grenzen von Countries hinweg.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Market
 - National Market
@@ -4669,22 +4676,22 @@ Der Begriff unterscheidet räumlich begrenzte Marktbeziehungen von Markets mit l
 - Supply
 - Demand
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### National Market
+#### National Market
 
-#### Definition
+##### Definition
 
 Ein `National Market` ist ein Market, dessen maßgeblicher wirtschaftlicher Beziehungszusammenhang auf den Wirtschaftsraum eines Country bezogen ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet landesweit zusammenhängende Marktbeziehungen, ohne vollständige Abgeschlossenheit gegenüber lokalen oder internationalen Markets vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4693,13 +4700,13 @@ Der Begriff bezeichnet landesweit zusammenhängende Marktbeziehungen, ohne volls
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Local Market`: ist auf ein örtlich begrenztes Gebiet bezogen.
 - `International Market`: verbindet Economic Actors über Grenzen von Countries hinweg.
 - `State`: ist ein politisches Gemeinwesen und kein Market.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Market
 - Local Market
@@ -4708,22 +4715,22 @@ Der Begriff bezeichnet landesweit zusammenhängende Marktbeziehungen, ohne volls
 - Import
 - Export
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### International Market
+#### International Market
 
-#### Definition
+##### Definition
 
 Ein `International Market` ist ein Market, dessen wirtschaftlicher Beziehungszusammenhang Economic Actors über die Grenzen von Countries hinweg verbindet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet grenzüberschreitende Marktbeziehungen unabhängig von ihrer räumlichen Reichweite, institutionellen Ordnung oder den beteiligten Goods.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4732,12 +4739,12 @@ Der Begriff bezeichnet grenzüberschreitende Marktbeziehungen unabhängig von ih
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `National Market`: ist auf den Wirtschaftsraum eines Country bezogen.
 - `Trade`: ist wirtschaftliches Handeln und nicht der Marktbeziehungszusammenhang.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Market
 - National Market
@@ -4747,22 +4754,22 @@ Der Begriff bezeichnet grenzüberschreitende Marktbeziehungen unabhängig von ih
 - Tariff
 - Embargo
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Supply
+#### Supply
 
-#### Definition
+##### Definition
 
 `Supply` ist die Gesamtheit der Mengen von Goods, die Economic Actors unter bestimmten Bedingungen in einem Market zur Übertragung bereitstellen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Angebotsseite eines Market und trennt die Bereitstellungsbereitschaft von vorhandenen Beständen, Production und tatsächlich erfolgtem Exchange.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4771,13 +4778,13 @@ Der Begriff bezeichnet die Angebotsseite eines Market und trennt die Bereitstell
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Demand`: bezeichnet die auf Erwerb gerichtete Bereitschaft und Fähigkeit.
 - `Production`: bringt Outputs hervor, stellt sie aber nicht notwendig in einem Market bereit.
 - `Output`: ist das Ergebnis einer wirtschaftlichen Aktivität.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Market
 - Demand
@@ -4786,22 +4793,22 @@ Der Begriff bezeichnet die Angebotsseite eines Market und trennt die Bereitstell
 - Good
 - Competition
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Demand
+#### Demand
 
-#### Definition
+##### Definition
 
 `Demand` ist die Gesamtheit der Mengen von Goods, die Economic Actors unter bestimmten Bedingungen in einem Market zu erwerben bereit und fähig sind.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Nachfrageseite eines Market und trennt Erwerbsbereitschaft und Erwerbsfähigkeit von Bedürfnis, Consumption und tatsächlich erfolgtem Exchange.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4810,13 +4817,13 @@ Der Begriff bezeichnet die Nachfrageseite eines Market und trennt Erwerbsbereits
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Supply`: bezeichnet zur Übertragung bereitgestellte Goods.
 - `Consumption`: ist die Nutzung oder der Verbrauch eines Good.
 - `Consumer`: ist ein Economic Actor in einer nutzenden oder verbrauchenden Rolle.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Market
 - Supply
@@ -4825,22 +4832,22 @@ Der Begriff bezeichnet die Nachfrageseite eines Market und trennt Erwerbsbereits
 - Good
 - Competition
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Price
+#### Price
 
-#### Definition
+##### Definition
 
 Ein `Price` ist der in einer wirtschaftlichen Beziehung einem Good oder einer Leistung zugeordnete Gegenwert, zu dem eine Übertragung angeboten, nachgefragt oder vollzogen wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den wirtschaftlichen Gegenwert einer möglichen oder tatsächlichen Übertragung, ohne seine Bildung, Einheit oder Angemessenheit festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4849,12 +4856,12 @@ Der Begriff bezeichnet den wirtschaftlichen Gegenwert einer möglichen oder tats
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Currency`: ist ein allgemein anerkanntes Mittel zur Angabe und Übertragung wirtschaftlicher Werte.
 - `Tax`: ist eine verpflichtende Abgabe an einen State.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Market
 - Supply
@@ -4863,22 +4870,22 @@ Der Begriff bezeichnet den wirtschaftlichen Gegenwert einer möglichen oder tats
 - Exchange
 - Inflation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Competition
+#### Competition
 
-#### Definition
+##### Definition
 
 `Competition` ist eine wirtschaftliche Beziehung, in der mehrere Economic Actors unabhängig voneinander um begrenzte Möglichkeiten des Angebots, Erwerbs oder wirtschaftlichen Erfolgs streben.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet konkurrierendes wirtschaftliches Handeln, ohne eine bestimmte Marktstruktur, Strategie oder Wirkung vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4887,12 +4894,12 @@ Der Begriff bezeichnet konkurrierendes wirtschaftliches Handeln, ohne eine besti
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Market`: ist der Beziehungszusammenhang, in dem Competition auftreten kann.
 - `Exchange`: ist eine wechselseitige Übertragung und kein Konkurrenzverhältnis.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Economic Actor
 - Market
@@ -4900,24 +4907,24 @@ Der Begriff bezeichnet konkurrierendes wirtschaftliches Handeln, ohne eine besti
 - Demand
 - Price
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 7.5 Handel
+### 7.5 Handel
 
-### Trade
+#### Trade
 
-#### Definition
+##### Definition
 
 `Trade` ist das auf Exchange von Goods oder wirtschaftlichen Werten gerichtete wirtschaftliche Handeln zwischen Economic Actors und die daraus entstehende Handelsbeziehung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet wirtschaftliches Austauschhandeln unabhängig davon, ob es innerhalb eines Gebietes, über Grenzen hinweg, über einen Market oder entlang einer Trade Route erfolgt.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4926,13 +4933,13 @@ Der Begriff bezeichnet wirtschaftliches Austauschhandeln unabhängig davon, ob e
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Market`: ist der Beziehungszusammenhang von Supply und Demand.
 - `Exchange`: ist der einzelne wechselseitige Übertragungsvorgang.
 - `Trade Route`: ist eine beständige räumliche Verbindung für Trade.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Exchange
 - Market
@@ -4942,22 +4949,22 @@ Der Begriff bezeichnet wirtschaftliches Austauschhandeln unabhängig davon, ob e
 - Tariff
 - Embargo
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Trade Route
+#### Trade Route
 
-#### Definition
+##### Definition
 
 Eine `Trade Route` ist eine beständige räumliche Verbindung zwischen Herkunfts-, Durchgangs- und Zielorten, über die Trade regelmäßig erfolgt oder erfolgen kann.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den räumlichen Zusammenhang wiederkehrenden Trade und grenzt ihn vom Trade selbst sowie von einzelnen Transport- oder Austauschvorgängen ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -4966,13 +4973,13 @@ Der Begriff bezeichnet den räumlichen Zusammenhang wiederkehrenden Trade und gr
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Trade`: ist das wirtschaftliche Austauschhandeln.
 - `Distribution`: ist die Zuordnung und Weitergabe von Goods oder Werten.
 - `Import`: betrachtet grenzüberschreitenden Trade aus der Perspektive des Ziel-Country.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Trade
 - Distribution
@@ -4981,22 +4988,22 @@ Der Begriff bezeichnet den räumlichen Zusammenhang wiederkehrenden Trade und gr
 - Market
 - Embargo
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Import
+#### Import
 
-#### Definition
+##### Definition
 
 `Import` ist grenzüberschreitender Trade aus der Perspektive des Country, in dessen Wirtschaftsraum Goods oder wirtschaftliche Werte eingebracht werden.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet ausschließlich die Zielperspektive grenzüberschreitenden Trade und grenzt sie von dessen Herkunftsperspektive ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5005,13 +5012,13 @@ Der Begriff bezeichnet ausschließlich die Zielperspektive grenzüberschreitende
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Export`: betrachtet denselben grenzüberschreitenden Trade aus der Perspektive des Herkunfts-Country.
 - `Trade`: ist der perspektivisch allgemeine Begriff.
 - `Immigration`: bezeichnet die dauerhafte Zuwanderung von Personen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Trade
 - Export
@@ -5020,22 +5027,22 @@ Der Begriff bezeichnet ausschließlich die Zielperspektive grenzüberschreitende
 - Tariff
 - Embargo
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Export
+#### Export
 
-#### Definition
+##### Definition
 
 `Export` ist grenzüberschreitender Trade aus der Perspektive des Country, aus dessen Wirtschaftsraum Goods oder wirtschaftliche Werte ausgeführt werden.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet ausschließlich die Herkunftsperspektive grenzüberschreitenden Trade und grenzt sie von dessen Zielperspektive ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5044,13 +5051,13 @@ Der Begriff bezeichnet ausschließlich die Herkunftsperspektive grenzüberschrei
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Import`: betrachtet denselben grenzüberschreitenden Trade aus der Perspektive des Ziel-Country.
 - `Trade`: ist der perspektivisch allgemeine Begriff.
 - `Emigration`: bezeichnet die dauerhafte Abwanderung von Personen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Trade
 - Import
@@ -5059,22 +5066,22 @@ Der Begriff bezeichnet ausschließlich die Herkunftsperspektive grenzüberschrei
 - Tariff
 - Embargo
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Tariff
+#### Tariff
 
-#### Definition
+##### Definition
 
 Ein `Tariff` ist eine von einem State aufgrund grenzüberschreitenden Trade erhobene verpflichtende Abgabe auf bestimmte Goods oder wirtschaftliche Übertragungen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine handelsbezogene Abgabe und grenzt sie von der allgemeinen Kategorie der Tax sowie von einem Verbot des Trade ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5083,12 +5090,12 @@ Der Begriff bezeichnet eine handelsbezogene Abgabe und grenzt sie von der allgem
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Tax`: ist der Oberbegriff für verpflichtende staatliche Abgaben.
 - `Embargo`: beschränkt oder untersagt bestimmte Handelsbeziehungen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Trade
 - Import
@@ -5097,22 +5104,22 @@ Der Begriff bezeichnet eine handelsbezogene Abgabe und grenzt sie von der allgem
 - State
 - Embargo
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Embargo
+#### Embargo
 
-#### Definition
+##### Definition
 
 Ein `Embargo` ist eine von einem State angeordnete Beschränkung oder Untersagung bestimmter Handelsbeziehungen mit festgelegten Economic Actors, Countries oder für festgelegte Goods.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine staatliche Begrenzung von Trade, ohne ihre Gründe, Reichweite, Durchsetzung oder Wirkung festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5121,12 +5128,12 @@ Der Begriff bezeichnet eine staatliche Begrenzung von Trade, ohne ihre Gründe, 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Tariff`: erhebt eine Abgabe, ohne Trade notwendig zu untersagen.
 - `Trade Route`: ist eine räumliche Verbindung und keine staatliche Maßnahme.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Trade
@@ -5135,24 +5142,24 @@ Der Begriff bezeichnet eine staatliche Begrenzung von Trade, ohne ihre Gründe, 
 - Tariff
 - Strategic Resource
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 7.6 Finanzen
+### 7.6 Finanzen
 
-### Currency
+#### Currency
 
-#### Definition
+##### Definition
 
 Eine `Currency` ist ein innerhalb eines wirtschaftlichen Zusammenhangs allgemein anerkanntes Mittel zur Angabe, Aufbewahrung und Übertragung wirtschaftlicher Werte.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die gemeinsame wirtschaftliche Rechnungs- und Übertragungsgrundlage, ohne eine konkrete Form, Herausgabeordnung oder technische Repräsentation festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5161,13 +5168,13 @@ Der Begriff bezeichnet die gemeinsame wirtschaftliche Rechnungs- und Übertragun
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Treasury`: ist der Bestand verfügbarer finanzieller Mittel eines State.
 - `Credit`: ist die zeitweilige Überlassung wirtschaftlicher Verfügungsmacht.
 - `Price`: ist der einem Good oder einer Leistung zugeordnete Gegenwert.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Price
 - Exchange
@@ -5175,22 +5182,22 @@ Der Begriff bezeichnet die gemeinsame wirtschaftliche Rechnungs- und Übertragun
 - Credit
 - Inflation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Treasury
+#### Treasury
 
-#### Definition
+##### Definition
 
 Ein `Treasury` ist die Gesamtheit der einem State zu einem bestimmten Zeitpunkt zur Erfüllung seiner finanziellen Verpflichtungen und Vorhaben verfügbaren finanziellen Mittel.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen staatlichen Bestand verfügbarer Mittel und trennt ihn von der zeitraumbezogenen Planung eines Budget sowie von Forderungen und Verpflichtungen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5199,13 +5206,13 @@ Der Begriff bezeichnet einen staatlichen Bestand verfügbarer Mittel und trennt 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Budget`: ist eine Planung erwarteter Einnahmen und vorgesehener Ausgaben für einen Zeitraum.
 - `Debt`: ist die Gesamtheit bestehender Rückzahlungsverpflichtungen.
 - `Credit`: bezeichnet die Überlassungsbeziehung, nicht den Bestand verfügbarer Staatsmittel.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Budget
@@ -5214,22 +5221,22 @@ Der Begriff bezeichnet einen staatlichen Bestand verfügbarer Mittel und trennt 
 - Debt
 - Currency
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Tax
+#### Tax
 
-#### Definition
+##### Definition
 
 Eine `Tax` ist eine von einem State aufgrund seiner Rechtsordnung verpflichtend erhobene wirtschaftliche Abgabe ohne Anspruch des Abgabepflichtigen auf eine unmittelbar entsprechende individuelle Gegenleistung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die allgemeine Kategorie verpflichtender staatlicher Abgaben und grenzt sie von freiwilligen Übertragungen, Credit und staatlichen Zuwendungen ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5238,13 +5245,13 @@ Der Begriff bezeichnet die allgemeine Kategorie verpflichtender staatlicher Abga
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Tariff`: ist eine Tax aufgrund grenzüberschreitenden Trade.
 - `Credit`: begründet einen Rückzahlungsanspruch.
 - `Subsidy`: ist eine staatliche Zuwendung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Tariff
@@ -5252,22 +5259,22 @@ Der Begriff bezeichnet die allgemeine Kategorie verpflichtender staatlicher Abga
 - Budget
 - Subsidy
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Subsidy
+#### Subsidy
 
-#### Definition
+##### Definition
 
 Eine `Subsidy` ist eine von einem State gewährte wirtschaftliche Zuwendung zur Unterstützung eines festgelegten wirtschaftlichen Zwecks oder Empfängers.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet zweckbezogene staatliche Unterstützung, ohne ihre Form, Bedingungen, Finanzierung oder Wirkung festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5276,13 +5283,13 @@ Der Begriff bezeichnet zweckbezogene staatliche Unterstützung, ohne ihre Form, 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Investment`: ist eine zukunftsgerichtete Bereitstellung wirtschaftlicher Werte und nicht notwendig staatlich.
 - `Credit`: begründet einen Rückzahlungsanspruch.
 - `Tax`: ist eine verpflichtende Abgabe an einen State.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Treasury
@@ -5291,22 +5298,22 @@ Der Begriff bezeichnet zweckbezogene staatliche Unterstützung, ohne ihre Form, 
 - Investment
 - Credit
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Budget
+#### Budget
 
-#### Definition
+##### Definition
 
 Ein `Budget` ist die für einen bestimmten Zeitraum geordnete Gegenüberstellung erwarteter Einnahmen und vorgesehener Ausgaben eines Economic Actor.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine zeitraumbezogene finanzielle Planung und trennt sie von verfügbaren Beständen, tatsächlich eingetretenen Zahlungsströmen und bestehenden Verpflichtungen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5315,13 +5322,13 @@ Der Begriff bezeichnet eine zeitraumbezogene finanzielle Planung und trennt sie 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Treasury`: ist der zu einem Zeitpunkt verfügbare Bestand finanzieller Mittel eines State.
 - `Debt`: ist die Gesamtheit bestehender Rückzahlungsverpflichtungen.
 - `Income`: bezeichnet tatsächlich zufließende wirtschaftliche Werte.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Economic Actor
 - Treasury
@@ -5331,22 +5338,22 @@ Der Begriff bezeichnet eine zeitraumbezogene finanzielle Planung und trennt sie 
 - Credit
 - Income
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Debt
+#### Debt
 
-#### Definition
+##### Definition
 
 `Debt` ist die Gesamtheit der zu einem bestimmten Zeitpunkt bestehenden Verpflichtungen eines Economic Actor, überlassene wirtschaftliche Werte nach vereinbarten Bedingungen zurückzugewähren.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den Bestand von Rückzahlungsverpflichtungen aus der Perspektive des Schuldners und trennt ihn von der zugrunde liegenden Credit-Beziehung und finanzieller Planung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5355,13 +5362,13 @@ Der Begriff bezeichnet den Bestand von Rückzahlungsverpflichtungen aus der Pers
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Credit`: ist die Beziehung der zeitweiligen Überlassung wirtschaftlicher Verfügungsmacht.
 - `Budget`: ist eine Planung für einen Zeitraum.
 - `Treasury`: bezeichnet verfügbare staatliche finanzielle Mittel.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Economic Actor
 - Credit
@@ -5369,22 +5376,22 @@ Der Begriff bezeichnet den Bestand von Rückzahlungsverpflichtungen aus der Pers
 - Treasury
 - Currency
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Credit
+#### Credit
 
-#### Definition
+##### Definition
 
 `Credit` ist eine wirtschaftliche Beziehung, in der ein Economic Actor einem anderen wirtschaftliche Verfügungsmacht zeitweilig überlässt und einen Anspruch auf Rückgewähr nach vereinbarten Bedingungen erhält.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Überlassungs- und Rückgewährbeziehung und grenzt sie vom Bestand der daraus entstandenen Debt sowie von Investment und Subsidy ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5393,13 +5400,13 @@ Der Begriff bezeichnet die Überlassungs- und Rückgewährbeziehung und grenzt s
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Debt`: bezeichnet bestehende Rückzahlungsverpflichtungen aus der Perspektive des Schuldners.
 - `Investment`: setzt keinen Anspruch auf Rückgewähr überlassener Werte voraus.
 - `Subsidy`: ist eine staatliche Zuwendung für einen bestimmten Zweck oder Empfänger.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Economic Actor
 - Debt
@@ -5408,22 +5415,22 @@ Der Begriff bezeichnet die Überlassungs- und Rückgewährbeziehung und grenzt s
 - Currency
 - Budget
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Inflation
+#### Inflation
 
-#### Definition
+##### Definition
 
 `Inflation` ist eine über einen Zeitraum anhaltende allgemeine Erhöhung von Prices innerhalb eines Currency- und Wirtschaftsraums, durch die die wirtschaftliche Verfügungskraft derselben Currency-Einheit abnimmt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine allgemeine Preisentwicklung und grenzt sie von einzelnen Price-Änderungen sowie von Veränderungen einzelner Goods oder Markets ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5432,12 +5439,12 @@ Der Begriff bezeichnet eine allgemeine Preisentwicklung und grenzt sie von einze
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Price`: ist der Gegenwert eines bestimmten Good oder einer Leistung.
 - `Currency`: ist das Mittel zur Angabe, Aufbewahrung und Übertragung wirtschaftlicher Werte.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Price
 - Currency
@@ -5445,24 +5452,24 @@ Der Begriff bezeichnet eine allgemeine Preisentwicklung und grenzt sie von einze
 - Supply
 - Demand
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 7.7 Produktion
+### 7.7 Produktion
 
-### Production Facility
+#### Production Facility
 
-#### Definition
+##### Definition
 
 Eine `Production Facility` ist eine räumlich und organisatorisch abgegrenzte Einrichtung, in der ein Producer Production ausüben kann.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den institutionell-räumlichen Träger von Production und trennt ihn von der Aktivität, dem handelnden Producer und der Folge von Produktionsstufen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5471,13 +5478,13 @@ Der Begriff bezeichnet den institutionell-räumlichen Träger von Production und
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Production`: ist die wirtschaftliche Aktivität.
 - `Producer`: ist der handelnde Economic Actor.
 - `Production Chain`: ist eine fachliche Folge abhängiger Produktionsstufen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Producer
 - Production
@@ -5487,22 +5494,22 @@ Der Begriff bezeichnet den institutionell-räumlichen Träger von Production und
 - Capacity
 - Efficiency
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Production Chain
+#### Production Chain
 
-#### Definition
+##### Definition
 
 Eine `Production Chain` ist eine fachlich zusammenhängende Folge voneinander abhängiger Produktionsstufen, in der Outputs früherer Stufen als Inputs späterer Stufen dienen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Abhängigkeit mehrerer Produktionsstufen und grenzt sie von einer einzelnen Production, einer Production Facility und der bloßen Klassifikation von Goods ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5511,13 +5518,13 @@ Der Begriff bezeichnet die Abhängigkeit mehrerer Produktionsstufen und grenzt s
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Production`: ist eine wirtschaftliche Aktivität und kann nur eine Stufe umfassen.
 - `Production Facility`: ist eine räumlich und organisatorisch abgegrenzte Einrichtung.
 - `Intermediate Good`: ist ein Good zwischen Produktionsstufen und nicht deren gesamte Folge.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Production
 - Production Facility
@@ -5527,22 +5534,22 @@ Der Begriff bezeichnet die Abhängigkeit mehrerer Produktionsstufen und grenzt s
 - Input
 - Output
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Input
+#### Input
 
-#### Definition
+##### Definition
 
 Ein `Input` ist eine Resource, ein Good, eine Arbeitsleistung oder ein anderer wirtschaftlicher Wert, der in einer wirtschaftlichen Aktivität eingesetzt oder verändert wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die funktionale Rolle eines eingesetzten wirtschaftlichen Gegenstands und trennt sie von dessen Güterklasse, Herkunft und dem Ergebnis der Aktivität.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5551,13 +5558,13 @@ Der Begriff bezeichnet die funktionale Rolle eines eingesetzten wirtschaftlichen
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Output`: ist das Ergebnis einer wirtschaftlichen Aktivität.
 - `Raw Material`: ist eine bestimmte, unmittelbar gewonnene Güterklasse.
 - `Intermediate Good`: ist ein für weitere Production bestimmtes Good.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Output
 - Production
@@ -5567,22 +5574,22 @@ Der Begriff bezeichnet die funktionale Rolle eines eingesetzten wirtschaftlichen
 - Intermediate Good
 - Production Chain
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Output
+#### Output
 
-#### Definition
+##### Definition
 
 Ein `Output` ist ein Good, eine Leistung oder ein anderer wirtschaftlicher Wert, der als Ergebnis einer wirtschaftlichen Aktivität hervorgebracht oder bereitgestellt wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die funktionale Rolle eines wirtschaftlichen Ergebnisses und trennt sie von dessen Güterklasse, weiterer Verwendung und dem dafür eingesetzten Input.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5591,13 +5598,13 @@ Der Begriff bezeichnet die funktionale Rolle eines wirtschaftlichen Ergebnisses 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Input`: wird in einer wirtschaftlichen Aktivität eingesetzt oder verändert.
 - `Finished Good`: ist für seine vorgesehene Endverwendung bereit.
 - `Intermediate Good`: ist für weitere Production bestimmt.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Input
 - Production
@@ -5606,22 +5613,22 @@ Der Begriff bezeichnet die funktionale Rolle eines wirtschaftlichen Ergebnisses 
 - Finished Good
 - Production Chain
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Capacity
+#### Capacity
 
-#### Definition
+##### Definition
 
 `Capacity` ist der unter festgelegten Bedingungen innerhalb eines bestimmten Zeitraums erreichbare Umfang einer wirtschaftlichen Aktivität.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine Grenze des möglichen Aktivitätsumfangs und trennt sie vom tatsächlich erreichten Output sowie vom Verhältnis zwischen Einsatz und Ergebnis.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5630,13 +5637,13 @@ Der Begriff bezeichnet eine Grenze des möglichen Aktivitätsumfangs und trennt 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Output`: ist ein tatsächlich hervorgebrachtes oder bereitgestelltes Ergebnis.
 - `Efficiency`: beschreibt das Verhältnis zwischen eingesetzten Mitteln und erreichtem Ergebnis.
 - `Production Facility`: ist eine Einrichtung und keine Umfangsgrenze.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Production
 - Production Facility
@@ -5645,22 +5652,22 @@ Der Begriff bezeichnet eine Grenze des möglichen Aktivitätsumfangs und trennt 
 - Efficiency
 - Investment
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Efficiency
+#### Efficiency
 
-#### Definition
+##### Definition
 
 `Efficiency` ist das Verhältnis zwischen den für eine wirtschaftliche Aktivität eingesetzten Mitteln und dem damit erreichten Ergebnis unter festgelegten Bedingungen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die wirtschaftliche Ergiebigkeit eines Mitteleinsatzes und trennt sie vom maximal möglichen Umfang einer Aktivität und von der bloßen Menge ihres Output.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5669,13 +5676,13 @@ Der Begriff bezeichnet die wirtschaftliche Ergiebigkeit eines Mitteleinsatzes un
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Capacity`: bezeichnet den erreichbaren Umfang einer Aktivität.
 - `Output`: ist das hervorgebrachte oder bereitgestellte Ergebnis.
 - `Price`: ist der wirtschaftliche Gegenwert einer Übertragung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Production
 - Production Facility
@@ -5684,12 +5691,12 @@ Der Begriff bezeichnet die wirtschaftliche Ergiebigkeit eines Mitteleinsatzes un
 - Capacity
 - Investment
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-# Kapitel 8 – Militärische Terminologie
+## Kapitel 8 – Militärische Terminologie
 
 Militärische Begriffe bezeichnen unterschiedliche Ebenen militärischer Organisation und müssen entsprechend ihrer jeweiligen fachlichen Reichweite verwendet werden. Die Gesamtorganisation, ihre Teilorganisationen und ihre konkreten Verbände bilden voneinander abgegrenzte Begriffsbereiche.
 
@@ -5697,19 +5704,19 @@ Organisation, Verbände, Kommandostrukturen, Operationen und Logistik werden bew
 
 Dieses Kapitel definiert die kanonische militärische Terminologie. Spielmechaniken, Regeln und technische Umsetzungen verbleiben in den zuständigen Dokumenten.
 
-## 8.1 Militärische Organisation
+### 8.1 Militärische Organisation
 
-### Armed Forces
+#### Armed Forces
 
-#### Definition
+##### Definition
 
 `Armed Forces` ist die Gesamtheit aller dauerhaft einer einheitlichen obersten militärischen Autorität zugeordneten militärischen Branches eines politischen Gemeinwesens.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die militärische Gesamtorganisation und grenzt sie von einzelnen Branches, Armies und Military Formations ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5718,13 +5725,13 @@ Der Begriff bezeichnet die militärische Gesamtorganisation und grenzt sie von e
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Army`: ist die landmilitärische Branch der Armed Forces.
 - `Branch`: ist ein funktional abgegrenzter Teil der Armed Forces.
 - `Military Formation`: ist ein gegliederter militärischer Verband und keine militärische Gesamtorganisation.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Army
 - Navy
@@ -5732,22 +5739,22 @@ Der Begriff bezeichnet die militärische Gesamtorganisation und grenzt sie von e
 - Branch
 - Military Formation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Army
+#### Army
 
-#### Definition
+##### Definition
 
 `Army` ist die für landgebundene Kriegführung zuständige Branch der Armed Forces.
 
-#### Zweck
+##### Zweck
 
 Der Begriff legt die landmilitärische Teilorganisation fest und verhindert eine Verwendung als Bezeichnung sämtlicher Armed Forces oder einer Military Formation.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5756,35 +5763,35 @@ Der Begriff legt die landmilitärische Teilorganisation fest und verhindert eine
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Armed Forces`: umfassen alle militärischen Branches.
 - `Military Formation`: ist der Oberbegriff für gegliederte militärische Verbände.
 - `Division`: ist eine bestimmte Größen- und Führungsebene eines Verbandes.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Armed Forces
 - Branch
 - Military Formation
 - Division
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Navy
+#### Navy
 
-#### Definition
+##### Definition
 
 `Navy` ist die für maritime Kriegführung zuständige Branch der Armed Forces.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet ausschließlich die maritime Teilorganisation und trennt sie von der militärischen Gesamtorganisation und einzelnen maritimen Verbänden.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5793,34 +5800,34 @@ Der Begriff bezeichnet ausschließlich die maritime Teilorganisation und trennt 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Armed Forces`: bilden die militärische Gesamtorganisation.
 - `Branch`: bezeichnet allgemein einen funktional abgegrenzten Teil der Armed Forces.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Armed Forces
 - Branch
 - Military Formation
 - Command
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Air Force
+#### Air Force
 
-#### Definition
+##### Definition
 
 `Air Force` ist die für Kriegführung im Luftraum zuständige Branch der Armed Forces.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet ausschließlich die luftmilitärische Teilorganisation und trennt sie von der militärischen Gesamtorganisation und einzelnen luftmilitärischen Verbänden.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5829,34 +5836,34 @@ Der Begriff bezeichnet ausschließlich die luftmilitärische Teilorganisation un
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Armed Forces`: bilden die militärische Gesamtorganisation.
 - `Branch`: bezeichnet allgemein einen funktional abgegrenzten Teil der Armed Forces.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Armed Forces
 - Branch
 - Military Formation
 - Command
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Branch
+#### Branch
 
-#### Definition
+##### Definition
 
 `Branch` ist ein nach einem primären militärischen Aufgaben- oder Wirkungsbereich abgegrenzter institutioneller Teil der Armed Forces.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die erste funktionale Gliederung der militärischen Gesamtorganisation, ohne eine bestimmte innere Verbandsstruktur vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5865,12 +5872,12 @@ Der Begriff bezeichnet die erste funktionale Gliederung der militärischen Gesam
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Military Formation`: ist ein gegliederter Verband, keine institutionelle Teilorganisation.
 - `Army`: bezeichnet eine bestimmte Branch oder eine ausdrücklich so bezeichnete landmilitärische Großorganisation.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Armed Forces
 - Army
@@ -5878,22 +5885,22 @@ Der Begriff bezeichnet die erste funktionale Gliederung der militärischen Gesam
 - Air Force
 - Military Formation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Military Formation
+#### Military Formation
 
-#### Definition
+##### Definition
 
 `Military Formation` ist ein militärisch gegliederter, einer gemeinsamen Führung unterstellter Verband aus Personal und zugeordneten Mitteln.
 
-#### Zweck
+##### Zweck
 
 Der Begriff dient als Oberbegriff für militärische Verbände aller ausdrücklich festgelegten Ebenen und grenzt diese von Branches und der Gesamtheit der Armed Forces ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5902,13 +5909,13 @@ Der Begriff dient als Oberbegriff für militärische Verbände aller ausdrückli
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Formation`: bezeichnet die konkrete organisatorische Zusammenfassung militärischer Elemente.
 - `Unit`: ist die kleinste im jeweiligen fachlichen Zusammenhang selbständig betrachtete Military Formation.
 - `Branch`: ist ein institutioneller Teil der Armed Forces.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Armed Forces
 - Branch
@@ -5916,24 +5923,24 @@ Der Begriff dient als Oberbegriff für militärische Verbände aller ausdrückli
 - Formation
 - Command
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 8.2 Verbände
+### 8.2 Verbände
 
-### Unit
+#### Unit
 
-#### Definition
+##### Definition
 
 `Unit` ist die kleinste in einem festgelegten fachlichen Zusammenhang als selbständig geführtes Ganzes betrachtete Military Formation.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine relative organisatorische Grundeinheit; ihre konkrete Größe oder Zusammensetzung folgt nicht aus dem Begriff allein.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5942,34 +5949,34 @@ Der Begriff bezeichnet eine relative organisatorische Grundeinheit; ihre konkret
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Military Formation`: ist der ebenenübergreifende Oberbegriff.
 - `Formation`: bezeichnet eine konkrete organisatorische Zusammenfassung und ist nicht notwendig die kleinste selbständig betrachtete Ebene.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Military Formation
 - Formation
 - Company
 - Command
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Formation
+#### Formation
 
-#### Definition
+##### Definition
 
 `Formation` ist eine konkrete, nach einer festgelegten Gliederung zusammengefasste und gemeinsam geführte Military Formation.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die organisatorische Gestalt eines Verbandes, ohne eine bestimmte Größenstufe festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -5978,12 +5985,12 @@ Der Begriff bezeichnet die organisatorische Gestalt eines Verbandes, ohne eine b
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Military Formation`: ist der allgemeine begriffliche Oberbegriff.
 - `Unit`: ist die im jeweiligen Zusammenhang kleinste selbständig betrachtete Formation.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Military Formation
 - Unit
@@ -5993,22 +6000,22 @@ Der Begriff bezeichnet die organisatorische Gestalt eines Verbandes, ohne eine b
 - Battalion
 - Company
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Division
+#### Division
 
-#### Definition
+##### Definition
 
 `Division` ist eine über einer Brigade oder einem Regiment und unter einer übergeordneten Großformation eingeordnete Formation.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine bestimmte relative Verbandsstufe, ohne Personalstärke, Gliederung oder Einsatzweise festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6017,12 +6024,12 @@ Der Begriff bezeichnet eine bestimmte relative Verbandsstufe, ohne Personalstär
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Brigade`: ist eine nachgeordnete Verbandsstufe.
 - `Military Formation`: umfasst Verbände aller Ebenen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Formation
 - Brigade
@@ -6030,22 +6037,22 @@ Der Begriff bezeichnet eine bestimmte relative Verbandsstufe, ohne Personalstär
 - Battalion
 - Headquarters
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Brigade
+#### Brigade
 
-#### Definition
+##### Definition
 
 `Brigade` ist eine unter einer Division und über einem Battalion eingeordnete Formation, die Regimenter umfassen kann.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine mittlere Verbandsstufe und grenzt sie von benachbarten Stufen ab, ohne eine feste Zusammensetzung vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6054,13 +6061,13 @@ Der Begriff bezeichnet eine mittlere Verbandsstufe und grenzt sie von benachbart
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Division`: ist die übergeordnete Verbandsstufe.
 - `Regiment`: ist eine eigenständige, häufig derselben relativen Ebene zugeordnete Organisationsform.
 - `Battalion`: ist die nachgeordnete Verbandsstufe.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Formation
 - Division
@@ -6068,22 +6075,22 @@ Der Begriff bezeichnet eine mittlere Verbandsstufe und grenzt sie von benachbart
 - Battalion
 - Headquarters
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Regiment
+#### Regiment
 
-#### Definition
+##### Definition
 
 `Regiment` ist eine militärische Formation mit eigener institutioneller Identität, die zwischen Brigade- und Battalionsebene eingeordnet ist oder an die Stelle einer Brigadegliederung treten kann.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine eigenständige Organisationsform, ohne sie mit der funktional anders abgegrenzten Brigade gleichzusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6092,12 +6099,12 @@ Der Begriff bezeichnet eine eigenständige Organisationsform, ohne sie mit der f
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Brigade`: ist eine eigene Verbandsstufe und kein alternativer Name für Regiment.
 - `Battalion`: ist eine nachgeordnete Verbandsstufe.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Formation
 - Division
@@ -6105,22 +6112,22 @@ Der Begriff bezeichnet eine eigenständige Organisationsform, ohne sie mit der f
 - Battalion
 - Company
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Battalion
+#### Battalion
 
-#### Definition
+##### Definition
 
 `Battalion` ist eine unter einer Brigade oder einem Regiment und über einer Company eingeordnete Formation.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine untere Verbandsstufe und grenzt sie von ihrer über- und nachgeordneten organisatorischen Umgebung ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6129,12 +6136,12 @@ Der Begriff bezeichnet eine untere Verbandsstufe und grenzt sie von ihrer über-
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Company`: ist die nachgeordnete Verbandsstufe.
 - `Regiment`: ist eine übergeordnete Formation.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Formation
 - Brigade
@@ -6142,22 +6149,22 @@ Der Begriff bezeichnet eine untere Verbandsstufe und grenzt sie von ihrer über-
 - Company
 - Headquarters
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Company
+#### Company
 
-#### Definition
+##### Definition
 
 `Company` ist eine unter einem Battalion eingeordnete Formation aus mehreren nachgeordneten militärischen Elementen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine grundlegende untere Verbandsstufe, ohne ihre Stärke, Ausstattung oder Untergliederung festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6166,36 +6173,36 @@ Der Begriff bezeichnet eine grundlegende untere Verbandsstufe, ohne ihre Stärke
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Battalion`: ist die übergeordnete Verbandsstufe.
 - `Unit`: bezeichnet relativ zum jeweiligen Zusammenhang die kleinste selbständig betrachtete Formation.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Formation
 - Battalion
 - Unit
 - Commander
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 8.3 Kommandostruktur
+### 8.3 Kommandostruktur
 
-### Commander
+#### Commander
 
-#### Definition
+##### Definition
 
 `Commander` ist eine Person, der die formale militärische Führungsverantwortung für einen festgelegten Command übertragen ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die verantwortliche Führungsrolle und nicht den geführten Zuständigkeitsbereich oder dessen Einrichtung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6204,34 +6211,34 @@ Der Begriff bezeichnet die verantwortliche Führungsrolle und nicht den geführt
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Command`: ist der übertragene Führungs- und Zuständigkeitsbereich.
 - `Headquarters`: ist die organisatorische Einrichtung zur Unterstützung eines Command.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Command
 - Chain of Command
 - Headquarters
 - Military Formation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Command
+#### Command
 
-#### Definition
+##### Definition
 
 `Command` ist ein formal abgegrenzter militärischer Führungs- und Zuständigkeitsbereich unter einem Commander.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Einheit übertragener Autorität, Verantwortung und Zuständigkeit, ohne eine bestimmte Formation oder räumliche Ebene vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6240,35 +6247,35 @@ Der Begriff bezeichnet die Einheit übertragener Autorität, Verantwortung und Z
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Commander`: ist die verantwortliche Person.
 - `Military Formation`: ist ein militärischer Verband.
 - `Headquarters`: unterstützt die Ausübung eines Command.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Commander
 - Chain of Command
 - Headquarters
 - Theater
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Chain of Command
+#### Chain of Command
 
-#### Definition
+##### Definition
 
 `Chain of Command` ist die geordnete Folge formaler militärischer Über- und Unterordnungsverhältnisse, durch die Commands miteinander verbunden sind.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den verbindlichen Verlauf militärischer Autorität und Verantwortung über mehrere Führungsebenen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6277,34 +6284,34 @@ Der Begriff bezeichnet den verbindlichen Verlauf militärischer Autorität und V
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Command`: ist ein einzelner Führungs- und Zuständigkeitsbereich.
 - `Formation`: ist ein Verband und keine Autoritätsfolge.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Commander
 - Command
 - Headquarters
 - Armed Forces
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Headquarters
+#### Headquarters
 
-#### Definition
+##### Definition
 
 `Headquarters` ist die organisatorische Einrichtung, die einen Commander bei der Ausübung eines Command unterstützt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Führungs- und Koordinierungseinrichtung und trennt sie von der verantwortlichen Person, dem Command und der geführten Formation.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6313,35 +6320,35 @@ Der Begriff bezeichnet die Führungs- und Koordinierungseinrichtung und trennt s
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Commander`: trägt die formale Führungsverantwortung.
 - `Command`: ist der Zuständigkeitsbereich.
 - `Military Formation`: ist der geführte Verband.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Commander
 - Command
 - Chain of Command
 - Theater
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Theater
+#### Theater
 
-#### Definition
+##### Definition
 
 `Theater` ist ein für übergreifende militärische Führung abgegrenzter geographischer Raum zusammenhängender möglicher oder tatsächlicher Operationen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den großräumigen Bezugsbereich militärischer Führung, ohne eine konkrete Operation, einen Frontverlauf oder politische Grenzen vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6350,13 +6357,13 @@ Der Begriff bezeichnet den großräumigen Bezugsbereich militärischer Führung,
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Front`: ist ein räumlicher Kontakt- und Wirkungszusammenhang gegnerischer Kräfte.
 - `Operation`: ist ein abgegrenztes militärisches Vorhaben.
 - `Campaign`: ist eine zusammenhängende Folge militärischer Operationen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Command
 - Headquarters
@@ -6364,24 +6371,24 @@ Der Begriff bezeichnet den großräumigen Bezugsbereich militärischer Führung,
 - Campaign
 - Front
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 8.4 Operationen
+### 8.4 Operationen
 
-### Operation
+#### Operation
 
-#### Definition
+##### Definition
 
 `Operation` ist ein nach Ziel, Verantwortung, Raum und zeitlichem Zusammenhang abgegrenztes militärisches Vorhaben.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine koordinierte militärische Handlungseinheit zwischen einer übergeordneten Campaign und einzelnen Battles oder Engagements.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6390,13 +6397,13 @@ Der Begriff bezeichnet eine koordinierte militärische Handlungseinheit zwischen
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Campaign`: verbindet mehrere Operations zu einem längerfristigen militärischen Zusammenhang.
 - `Battle`: ist eine größere unmittelbare bewaffnete Auseinandersetzung.
 - `Engagement`: ist eine begrenzte unmittelbare bewaffnete Auseinandersetzung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Campaign
 - Battle
@@ -6405,22 +6412,22 @@ Der Begriff bezeichnet eine koordinierte militärische Handlungseinheit zwischen
 - Offensive
 - Defensive Operation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Campaign
+#### Campaign
 
-#### Definition
+##### Definition
 
 `Campaign` ist eine strategisch zusammenhängende Folge militärischer Operations, die auf ein übergeordnetes militärisches Ziel in einem größeren räumlichen und zeitlichen Zusammenhang ausgerichtet ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die übergeordnete Verbindung mehrerer Operations und grenzt sie von einzelnen Vorhaben und unmittelbaren Auseinandersetzungen ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6429,13 +6436,13 @@ Der Begriff bezeichnet die übergeordnete Verbindung mehrerer Operations und gre
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Operation`: ist ein einzelnes abgegrenztes militärisches Vorhaben.
 - `Battle`: ist eine unmittelbare bewaffnete Auseinandersetzung.
 - `Theater`: ist ein geographischer Führungsraum und kein Vorhaben.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Operation
 - Battle
@@ -6443,22 +6450,22 @@ Der Begriff bezeichnet die übergeordnete Verbindung mehrerer Operations und gre
 - Theater
 - Front
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Battle
+#### Battle
 
-#### Definition
+##### Definition
 
 `Battle` ist eine größere, räumlich und zeitlich zusammenhängende unmittelbare bewaffnete Auseinandersetzung gegnerischer militärischer Kräfte.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine umfangreiche konkrete Auseinandersetzung innerhalb oder außerhalb einer Operation, ohne deren Ergebnis oder Bedeutung vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6467,35 +6474,35 @@ Der Begriff bezeichnet eine umfangreiche konkrete Auseinandersetzung innerhalb o
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Engagement`: ist eine begrenztere unmittelbare Auseinandersetzung.
 - `Operation`: ist ein zielgerichtetes militärisches Vorhaben und kann mehrere Battles umfassen.
 - `Campaign`: verbindet mehrere Operations.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Engagement
 - Operation
 - Campaign
 - Front
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Engagement
+#### Engagement
 
-#### Definition
+##### Definition
 
 `Engagement` ist eine begrenzte, unmittelbare bewaffnete Auseinandersetzung zwischen gegnerischen militärischen Kräften.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die kleinste hier eigenständig benannte Ebene unmittelbarer bewaffneter Auseinandersetzung und grenzt sie von größeren Battles ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6504,34 +6511,34 @@ Der Begriff bezeichnet die kleinste hier eigenständig benannte Ebene unmittelba
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Battle`: ist eine größere zusammenhängende Auseinandersetzung.
 - `Operation`: ist ein abgegrenztes militärisches Vorhaben.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Battle
 - Operation
 - Military Formation
 - Front
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Front
+#### Front
 
-#### Definition
+##### Definition
 
 `Front` ist der räumliche Zusammenhang, in dem gegnerische militärische Kräfte einander gegenüberstehen und unmittelbar aufeinander einwirken können.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine veränderliche militärische Kontakt- und Wirkungszone, ohne sie mit einem Theater, einer politischen Grenze oder einem einzelnen Vorhaben gleichzusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6540,13 +6547,13 @@ Der Begriff bezeichnet eine veränderliche militärische Kontakt- und Wirkungszo
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Theater`: ist ein großräumiger geographischer Führungsbereich.
 - `Operation`: ist ein militärisches Vorhaben.
 - `Battle`: ist eine unmittelbare bewaffnete Auseinandersetzung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Theater
 - Operation
@@ -6554,22 +6561,22 @@ Der Begriff bezeichnet eine veränderliche militärische Kontakt- und Wirkungszo
 - Offensive
 - Defensive Operation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Offensive
+#### Offensive
 
-#### Definition
+##### Definition
 
 `Offensive` ist eine Operation, deren bestimmender Zweck darin besteht, durch eigenes militärisches Handeln die Initiative zu ergreifen und eine angestrebte Veränderung der militärischen Lage herbeizuführen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die vorstoßende Zielrichtung einer Operation, ohne konkrete Mittel, Verfahren oder Erfolg festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6578,34 +6585,34 @@ Der Begriff bezeichnet die vorstoßende Zielrichtung einer Operation, ohne konkr
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Defensive Operation`: richtet sich bestimmend auf die Abwehr gegnerischen Handelns oder die Bewahrung einer militärischen Lage.
 - `Battle`: ist eine Auseinandersetzung und keine operative Zielrichtung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Operation
 - Defensive Operation
 - Front
 - Campaign
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Defensive Operation
+#### Defensive Operation
 
-#### Definition
+##### Definition
 
 `Defensive Operation` ist eine Operation, deren bestimmender Zweck darin besteht, gegnerischem militärischem Handeln entgegenzuwirken oder eine angestrebte militärische Lage zu bewahren.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die abwehrende oder bewahrende Zielrichtung einer Operation, ohne Passivität, konkrete Mittel oder Erfolg vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6614,36 +6621,36 @@ Der Begriff bezeichnet die abwehrende oder bewahrende Zielrichtung einer Operati
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Offensive`: ist auf das Ergreifen der Initiative und eine Veränderung der militärischen Lage gerichtet.
 - `Battle`: ist eine Auseinandersetzung und keine operative Zielrichtung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Operation
 - Offensive
 - Front
 - Campaign
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 8.5 Logistik
+### 8.5 Logistik
 
-### Supply
+#### Supply
 
-#### Definition
+##### Definition
 
 `Supply` ist die Gesamtheit der für die fortgesetzte Handlungsfähigkeit militärischer Kräfte bestimmten materiellen Mittel und Leistungen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den Gegenstand militärischer Versorgung und trennt ihn von deren Planung, Organisation und Verbindungssystemen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6652,35 +6659,35 @@ Der Begriff bezeichnet den Gegenstand militärischer Versorgung und trennt ihn v
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Logistics`: umfasst Planung, Bereitstellung, Bewegung und Erhaltung militärisch benötigter Mittel und Leistungen.
 - `Supply Line`: ist eine beständige Versorgungsverbindung.
 - `Reinforcement`: ergänzt militärische Kräfte personell oder materiell.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Logistics
 - Supply Line
 - Reinforcement
 - Readiness
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Supply Line
+#### Supply Line
 
-#### Definition
+##### Definition
 
 `Supply Line` ist eine beständige räumliche und organisatorische Verbindung, über die Supply zu militärischen Kräften gelangen kann.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Versorgungsverbindung und grenzt sie von den Versorgungsgütern sowie vom gesamten Aufgabenbereich der Logistics ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6689,34 +6696,34 @@ Der Begriff bezeichnet die Versorgungsverbindung und grenzt sie von den Versorgu
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Supply`: bezeichnet die bestimmten Mittel und Leistungen.
 - `Logistics`: ist der übergreifende Aufgabenbereich.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Supply
 - Logistics
 - Front
 - Theater
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Logistics
+#### Logistics
 
-#### Definition
+##### Definition
 
 `Logistics` ist der militärische Aufgabenbereich der Planung, Bereitstellung, Bewegung, Verteilung und Erhaltung der für militärische Kräfte benötigten personellen, materiellen und unterstützenden Mittel.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den umfassenden Unterstützungszusammenhang und trennt ihn von einzelnen Supply-Beständen oder Supply Lines.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6725,13 +6732,13 @@ Der Begriff bezeichnet den umfassenden Unterstützungszusammenhang und trennt ih
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Supply`: ist der Gegenstand militärischer Versorgung.
 - `Supply Line`: ist eine konkrete Versorgungsverbindung.
 - `Mobilization`: überführt verfügbare Potenziale in militärische Verwendbarkeit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Supply
 - Supply Line
@@ -6739,22 +6746,22 @@ Der Begriff bezeichnet den umfassenden Unterstützungszusammenhang und trennt ih
 - Mobilization
 - Reserve
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Reinforcement
+#### Reinforcement
 
-#### Definition
+##### Definition
 
 `Reinforcement` ist die personelle oder materielle Ergänzung bestehender militärischer Kräfte.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet das Zuführen zusätzlicher Kräfte oder Mittel zu einer bestehenden militärischen Organisation und grenzt dies von ihrer erstmaligen Mobilization ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6763,13 +6770,13 @@ Der Begriff bezeichnet das Zuführen zusätzlicher Kräfte oder Mittel zu einer 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Mobilization`: stellt militärische Verwendbarkeit aus verfügbaren Potenzialen her.
 - `Reserve`: ist zurückgehaltenes oder nicht dauerhaft aktives militärisches Potenzial.
 - `Supply`: dient der fortgesetzten Handlungsfähigkeit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Military Formation
 - Supply
@@ -6777,22 +6784,22 @@ Der Begriff bezeichnet das Zuführen zusätzlicher Kräfte oder Mittel zu einer 
 - Reserve
 - Attrition
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Mobilization
+#### Mobilization
 
-#### Definition
+##### Definition
 
 `Mobilization` ist der geordnete Übergang verfügbarer personeller, materieller und organisatorischer Potenziale in einen für militärische Aufgaben verwendbaren Zustand.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Herstellung militärischer Verwendbarkeit und grenzt sie von fortlaufender Versorgung, Ergänzung und dem bloßen Vorhandensein einer Reserve ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6801,13 +6808,13 @@ Der Begriff bezeichnet die Herstellung militärischer Verwendbarkeit und grenzt 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Reserve`: bezeichnet verfügbares, zurückgehaltenes oder nicht dauerhaft aktives militärisches Potenzial.
 - `Reinforcement`: ergänzt bereits bestehende militärische Kräfte.
 - `Readiness`: ist der Grad gegenwärtiger Fähigkeit zur Aufgabenerfüllung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Reserve
 - Reinforcement
@@ -6815,22 +6822,22 @@ Der Begriff bezeichnet die Herstellung militärischer Verwendbarkeit und grenzt 
 - Logistics
 - Armed Forces
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Reserve
+#### Reserve
 
-#### Definition
+##### Definition
 
 `Reserve` ist personelles, materielles oder organisatorisches militärisches Potenzial, das verfügbar gehalten wird, ohne dauerhaft für laufende Aufgaben eingesetzt zu sein.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet zurückgehaltenes oder nicht dauerhaft aktives Potenzial und grenzt dieses vom Vorgang seiner Mobilization und von aktiven Reinforcements ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6839,37 +6846,37 @@ Der Begriff bezeichnet zurückgehaltenes oder nicht dauerhaft aktives Potenzial 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Mobilization`: ist der Übergang in militärische Verwendbarkeit.
 - `Reinforcement`: ist die Ergänzung bestehender Kräfte.
 - `Readiness`: bezeichnet einen Fähigkeitsgrad und keinen Bestand.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Mobilization
 - Reinforcement
 - Readiness
 - Logistics
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 8.6 Militärische Konzepte
+### 8.6 Militärische Konzepte
 
-### Doctrine
+#### Doctrine
 
-#### Definition
+##### Definition
 
 `Doctrine` ist ein verbindlicher Zusammenhang grundlegender militärischer Vorstellungen und Leitgrundsätze für Vorbereitung, Führung und Unterstützung militärischen Handelns.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den normativen Orientierungsrahmen militärischen Handelns, ohne einzelne Befehle, konkrete Operations oder technische Verfahren festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6878,13 +6885,13 @@ Der Begriff bezeichnet den normativen Orientierungsrahmen militärischen Handeln
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Command`: ist ein konkreter Führungs- und Zuständigkeitsbereich.
 - `Operation`: ist ein abgegrenztes militärisches Vorhaben.
 - `Organization`: ist die geordnete innere Beschaffenheit militärischer Kräfte.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Armed Forces
 - Command
@@ -6892,22 +6899,22 @@ Der Begriff bezeichnet den normativen Orientierungsrahmen militärischen Handeln
 - Organization
 - Readiness
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Readiness
+#### Readiness
 
-#### Definition
+##### Definition
 
 `Readiness` ist der Grad, in dem militärische Kräfte zu einem bestimmten Zeitpunkt für festgelegte Aufgaben unmittelbar verwendungsfähig sind.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet gegenwärtige Aufgabenerfüllungsfähigkeit und grenzt sie von struktureller Organization, angesammelter Experience und dem Vorgang der Mobilization ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6916,13 +6923,13 @@ Der Begriff bezeichnet gegenwärtige Aufgabenerfüllungsfähigkeit und grenzt si
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Organization`: bezeichnet die innere Ordnung und Funktionsfähigkeit.
 - `Experience`: ist durch militärische Tätigkeit erworbene und bewahrte praktische Befähigung.
 - `Mobilization`: ist ein Übergang in militärische Verwendbarkeit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Organization
 - Experience
@@ -6930,22 +6937,22 @@ Der Begriff bezeichnet gegenwärtige Aufgabenerfüllungsfähigkeit und grenzt si
 - Mobilization
 - Supply
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Morale
+#### Morale
 
-#### Definition
+##### Definition
 
 `Morale` ist der gemeinsame psychische Zustand militärischer Kräfte hinsichtlich Zuversicht, Zusammenhalt und Bereitschaft, militärische Aufgaben fortzuführen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die mentale und soziale Handlungsbereitschaft, ohne Ausbildung, strukturelle Ordnung oder gegenwärtige materielle Verwendbarkeit gleichzusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6954,13 +6961,13 @@ Der Begriff bezeichnet die mentale und soziale Handlungsbereitschaft, ohne Ausbi
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Readiness`: ist der Grad unmittelbarer Verwendungsfähigkeit.
 - `Organization`: bezeichnet innere Ordnung und Funktionsfähigkeit.
 - `Experience`: bezeichnet erworbene praktische Befähigung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Readiness
 - Organization
@@ -6968,22 +6975,22 @@ Der Begriff bezeichnet die mentale und soziale Handlungsbereitschaft, ohne Ausbi
 - Commander
 - Attrition
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Organization
+#### Organization
 
-#### Definition
+##### Definition
 
 `Organization` ist der Grad geordneter innerer Gliederung, Koordination und fortbestehender Funktionsfähigkeit militärischer Kräfte.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die strukturelle und koordinative Geschlossenheit militärischer Kräfte und nicht die militärische Institution, ihre Kampferfahrung oder ihre unmittelbare Einsatzbereitschaft.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -6992,14 +6999,14 @@ Der Begriff bezeichnet die strukturelle und koordinative Geschlossenheit militä
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Military Formation`: ist ein militärisch gegliederter Verband.
 - `Readiness`: bezeichnet gegenwärtige Aufgabenerfüllungsfähigkeit.
 - `Experience`: ist erworbene praktische Befähigung.
 - `Morale`: ist ein psychischer und sozialer Zustand.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Military Formation
 - Readiness
@@ -7007,22 +7014,22 @@ Der Begriff bezeichnet die strukturelle und koordinative Geschlossenheit militä
 - Experience
 - Attrition
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Experience
+#### Experience
 
-#### Definition
+##### Definition
 
 `Experience` ist die durch militärische Tätigkeit erworbene und innerhalb militärischer Kräfte bewahrte praktische Befähigung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet angesammelte handlungsbezogene Vertrautheit und grenzt sie von gegenwärtiger Readiness, struktureller Organization und psychischer Morale ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7031,13 +7038,13 @@ Der Begriff bezeichnet angesammelte handlungsbezogene Vertrautheit und grenzt si
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Readiness`: ist gegenwärtige Aufgabenerfüllungsfähigkeit.
 - `Organization`: ist innere Ordnung und Funktionsfähigkeit.
 - `Morale`: ist ein psychischer und sozialer Zustand.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Readiness
 - Organization
@@ -7045,22 +7052,22 @@ Der Begriff bezeichnet angesammelte handlungsbezogene Vertrautheit und grenzt si
 - Doctrine
 - Attrition
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Attrition
+#### Attrition
 
-#### Definition
+##### Definition
 
 `Attrition` ist der fortschreitende Verlust personeller, materieller oder organisatorischer militärischer Leistungsfähigkeit durch fortdauernde Beanspruchung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet kumulativen militärischen Substanz- oder Fähigkeitsverlust unabhängig von einem einzelnen Battle oder Engagement und ohne eine bestimmte Ursache vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7069,14 +7076,14 @@ Der Begriff bezeichnet kumulativen militärischen Substanz- oder Fähigkeitsverl
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Battle`: ist eine unmittelbare bewaffnete Auseinandersetzung.
 - `Engagement`: ist eine begrenzte unmittelbare bewaffnete Auseinandersetzung.
 - `Reinforcement`: ergänzt bestehende militärische Kräfte.
 - `Organization`: bezeichnet innere Ordnung und Funktionsfähigkeit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Battle
 - Engagement
@@ -7086,12 +7093,12 @@ Der Begriff bezeichnet kumulativen militärischen Substanz- oder Fähigkeitsverl
 - Readiness
 - Morale
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-# Kapitel 9 – Diplomatie und Internationale Beziehungen
+## Kapitel 9 – Diplomatie und Internationale Beziehungen
 
 Diplomatie umfasst die Beziehungen zwischen politischen Akteuren und das auf diese Beziehungen gerichtete Handeln. Beziehungen, diplomatische Handlungen und daraus hervorgehende Abkommen sind eigenständige Konzepte und dürfen nicht gleichgesetzt werden. Verträge sind mögliche Ergebnisse diplomatischer Prozesse, nicht deren Ausgangspunkt.
 
@@ -7099,19 +7106,19 @@ Die Begriffsgruppen trennen Akteure, Beziehungen, Handlungen und Abkommen, ohne 
 
 Dieses Kapitel definiert die kanonische diplomatische Terminologie. Spielmechaniken, Regeln und technische Umsetzungen verbleiben in den zuständigen Dokumenten.
 
-## 9.1 Diplomatische Akteure
+### 9.1 Diplomatische Akteure
 
-### Country
+#### Country
 
-#### Definition
+##### Definition
 
 Für `Country` gilt ausschließlich die kanonische Definition aus Abschnitt 4.1.
 
-#### Zweck
+##### Zweck
 
 Die Aufnahme in diese Begriffsgruppe ordnet ein Country als möglichen diplomatischen Akteur ein, ohne den politischen Begriff erneut zu definieren.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7121,35 +7128,35 @@ Die Aufnahme in diese Begriffsgruppe ordnet ein Country als möglichen diplomati
 - APIs
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Government`: ist die gegenwärtige politische Führung und kann ein Country diplomatisch vertreten.
 - `Diplomatic Mission`: ist eine offizielle Vertretung eines diplomatischen Akteurs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Government
 - Diplomatic Relation
 - Diplomatic Mission
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Government
+#### Government
 
-#### Definition
+##### Definition
 
 Für `Government` gilt ausschließlich die kanonische Definition aus Abschnitt 4.1.
 
-#### Zweck
+##### Zweck
 
 Die Aufnahme in diese Begriffsgruppe ordnet ein Government als mögliche diplomatisch handelnde politische Führung ein, ohne den politischen Begriff erneut zu definieren.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7158,35 +7165,35 @@ Die Aufnahme in diese Begriffsgruppe ordnet ein Government als mögliche diploma
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Country`: ist die territorial-politische Einheit als Ganzes.
 - `Diplomatic Mission`: ist eine offizielle Vertretung eines diplomatischen Akteurs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Country
 - Diplomat
 - Diplomatic Mission
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Diplomatic Mission
+#### Diplomatic Mission
 
-#### Definition
+##### Definition
 
 Eine `Diplomatic Mission` ist eine dauerhafte oder zeitlich begrenzte offizielle Vertretung eines diplomatischen Akteurs gegenüber einem anderen diplomatischen Akteur oder einem internationalen Zusammenhang.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die institutionalisierte diplomatische Vertretung und grenzt sie von den vertretenen Akteuren und den für sie handelnden Personen ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7195,12 +7202,12 @@ Der Begriff bezeichnet die institutionalisierte diplomatische Vertretung und gre
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Diplomat`: ist eine mit diplomatischer Vertretung betraute Person.
 - `Government`: ist die gegenwärtige politische Führung eines State.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Country
 - Government
@@ -7208,22 +7215,22 @@ Der Begriff bezeichnet die institutionalisierte diplomatische Vertretung und gre
 - Diplomatic Relation
 - International Organization
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Diplomat
+#### Diplomat
 
-#### Definition
+##### Definition
 
 Ein `Diplomat` ist eine Person, die zur offiziellen Vertretung eines diplomatischen Akteurs in diplomatischen Beziehungen und Handlungen bevollmächtigt ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die bevollmächtigte handelnde Person und nicht den vertretenen Akteur, dessen Beziehung oder dessen Vertretungseinrichtung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7232,36 +7239,36 @@ Der Begriff bezeichnet die bevollmächtigte handelnde Person und nicht den vertr
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Diplomatic Mission`: ist eine offizielle Vertretung und keine Person.
 - `Government`: ist eine politische Führung und nicht deren einzelner Vertreter.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Country
 - Government
 - Diplomatic Mission
 - Negotiation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 9.2 Diplomatische Beziehungen
+### 9.2 Diplomatische Beziehungen
 
-### Diplomatic Relation
+#### Diplomatic Relation
 
-#### Definition
+##### Definition
 
 Eine `Diplomatic Relation` ist der bestehende diplomatische Zusammenhang zwischen zwei diplomatischen Akteuren, innerhalb dessen sie einander politisch begegnen und aufeinander Bezug nehmen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Beziehung selbst und trennt sie von einzelnen Einschätzungen, Handlungen und Abkommen innerhalb dieser Beziehung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7270,12 +7277,12 @@ Der Begriff bezeichnet die Beziehung selbst und trennt sie von einzelnen Einsch�
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Negotiation`: ist eine diplomatische Handlung.
 - `Treaty`: ist ein formales internationales Abkommen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Country
 - Government
@@ -7284,22 +7291,22 @@ Der Begriff bezeichnet die Beziehung selbst und trennt sie von einzelnen Einsch�
 - Influence
 - Reputation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Recognition
+#### Recognition
 
-#### Definition
+##### Definition
 
 `Recognition` ist die formale Anerkennung eines politischen Akteurs oder eines von ihm beanspruchten internationalen Status durch einen anderen diplomatischen Akteur.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen bestehenden Anerkennungsstatus und grenzt ihn vom Vorschlag seiner Begründung sowie von allgemeiner Zustimmung oder Vertrauen ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7308,34 +7315,34 @@ Der Begriff bezeichnet einen bestehenden Anerkennungsstatus und grenzt ihn vom V
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Recognition Proposal`: ist ein Vorschlag zur Begründung oder Änderung von Recognition.
 - `Reputation`: ist eine akteursübergreifende zugeschriebene Bewertung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Country
 - Diplomatic Relation
 - Recognition Proposal
 - Sovereignty
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Trust
+#### Trust
 
-#### Definition
+##### Definition
 
 `Trust` ist die innerhalb einer Diplomatic Relation bestehende Erwartung eines Akteurs, dass der andere Akteur als verlässlich und in seinen Absichten hinreichend berechenbar handelt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine beziehungsgebundene Erwartung und grenzt sie von Einfluss, formaler Anerkennung und allgemeiner Reputation ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7344,34 +7351,34 @@ Der Begriff bezeichnet eine beziehungsgebundene Erwartung und grenzt sie von Ein
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Reputation`: ist nicht auf eine einzelne Diplomatic Relation beschränkt.
 - `Influence`: bezeichnet die Fähigkeit, auf andere Akteure einzuwirken.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Diplomatic Relation
 - Reputation
 - Influence
 - Agreement
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Influence
+#### Influence
 
-#### Definition
+##### Definition
 
 `Influence` ist die Fähigkeit eines politischen Akteurs, die Auffassungen, Entscheidungen oder Handlungsbedingungen anderer politischer Akteure zu prägen, ohne deren formale Entscheidungszuständigkeit zu übernehmen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet politische Einwirkungsfähigkeit und grenzt sie von Herrschaft, Vertrauen und zugeschriebener Reputation ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7380,12 +7387,12 @@ Der Begriff bezeichnet politische Einwirkungsfähigkeit und grenzt sie von Herrs
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Trust`: ist eine beziehungsgebundene Erwartung von Verlässlichkeit.
 - `Sphere of Influence`: ist ein internationaler Beziehungszusammenhang verdichteter Influence.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Diplomatic Relation
 - Trust
@@ -7393,22 +7400,22 @@ Der Begriff bezeichnet politische Einwirkungsfähigkeit und grenzt sie von Herrs
 - Sphere of Influence
 - Balance of Power
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Reputation
+#### Reputation
 
-#### Definition
+##### Definition
 
 `Reputation` ist die über einzelne Diplomatic Relations hinausreichende, einem politischen Akteur zugeschriebene Bewertung seines bisherigen und erwartbaren internationalen Verhaltens.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine akteursübergreifende Zuschreibung und trennt sie von beziehungsgebundenem Trust, formaler Recognition und tatsächlicher Influence.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7417,36 +7424,36 @@ Der Begriff bezeichnet eine akteursübergreifende Zuschreibung und trennt sie vo
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Trust`: besteht innerhalb einer bestimmten Diplomatic Relation.
 - `Recognition`: ist ein formaler Anerkennungsstatus.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Diplomatic Relation
 - Trust
 - Influence
 - Recognition
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 9.3 Diplomatische Handlungen
+### 9.3 Diplomatische Handlungen
 
-### Negotiation
+#### Negotiation
 
-#### Definition
+##### Definition
 
 Eine `Negotiation` ist ein geordneter diplomatischer Austausch zwischen Akteuren mit dem Ziel, unterschiedliche Positionen zu klären und eine gemeinsame Regelung zu ermöglichen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den diplomatischen Verständigungsprozess und grenzt ihn von darin eingebrachten Proposals und daraus hervorgehenden Agreements ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7455,34 +7462,34 @@ Der Begriff bezeichnet den diplomatischen Verständigungsprozess und grenzt ihn 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Proposal`: ist ein formaler Vorschlag oder ein diplomatisches Angebot.
 - `Agreement`: ist eine übereinstimmende Willensfestlegung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Diplomat
 - Proposal
 - Agreement
 - Treaty
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Proposal
+#### Proposal
 
-#### Definition
+##### Definition
 
 Für `Proposal` gilt ausschließlich die domänenübergreifende kanonische Definition aus Abschnitt 10.2; ein diplomatischer Proposal ist deren Anwendung in der Diplomatie.
 
-#### Zweck
+##### Zweck
 
 Die Aufnahme in diese Begriffsgruppe ordnet Proposal der Diplomatie zu, ohne eine konkurrierende diplomatische Grunddefinition einzuführen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7491,35 +7498,35 @@ Die Aufnahme in diese Begriffsgruppe ordnet Proposal der Diplomatie zu, ohne ein
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Negotiation`: ist der diplomatische Austausch, in dem Proposals behandelt werden können.
 - `Agreement`: setzt eine übereinstimmende Willensfestlegung voraus.
 - `Treaty`: ist ein formales internationales Abkommen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Negotiation
 - Agreement
 - Recognition Proposal
 - Ultimatum
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Agreement
+#### Agreement
 
-#### Definition
+##### Definition
 
 Ein `Agreement` ist die übereinstimmende Willensfestlegung von mindestens zwei Akteuren hinsichtlich eines gemeinsamen diplomatischen Gegenstands.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet das allgemeine Ergebnis diplomatischer Verständigung, ohne zwingend die Form oder Verbindlichkeit eines Treaty vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7528,34 +7535,34 @@ Der Begriff bezeichnet das allgemeine Ergebnis diplomatischer Verständigung, oh
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Proposal`: ist noch keine übereinstimmende Willensfestlegung.
 - `Treaty`: ist eine besondere formale Art internationalen Abkommens.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Negotiation
 - Proposal
 - Treaty
 - Guarantee
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Guarantee
+#### Guarantee
 
-#### Definition
+##### Definition
 
 Eine `Guarantee` ist die formale einseitige Zusage eines diplomatischen Akteurs, für den Fortbestand eines bezeichneten internationalen Zustands oder Anspruchs einzustehen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine einseitig übernommene diplomatische Verpflichtung und grenzt sie von gegenseitigen Agreements und bloßen politischen Erklärungen ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7564,34 +7571,34 @@ Der Begriff bezeichnet eine einseitig übernommene diplomatische Verpflichtung u
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Alliance`: begründet eine wechselseitige organisierte Zusammenarbeit.
 - `Defensive Pact`: ist ein gegenseitiges Abkommen über defensive Unterstützung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Agreement
 - Alliance
 - Defensive Pact
 - Neutrality
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Recognition Proposal
+#### Recognition Proposal
 
-#### Definition
+##### Definition
 
 Ein `Recognition Proposal` ist ein Proposal, dessen Gegenstand die Begründung, Änderung oder Beendigung formaler Recognition ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den zur Entscheidung gestellten Anerkennungsgegenstand und nicht den daraus möglicherweise hervorgehenden Anerkennungsstatus.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7600,34 +7607,34 @@ Der Begriff bezeichnet den zur Entscheidung gestellten Anerkennungsgegenstand un
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Recognition`: ist der bestehende formale Anerkennungsstatus.
 - `Proposal`: bezeichnet die allgemeine Form eines formalen Vorschlags oder Angebots.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Proposal
 - Recognition
 - Negotiation
 - Country
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Sanction
+#### Sanction
 
-#### Definition
+##### Definition
 
 Eine `Sanction` ist eine von einem diplomatischen Akteur formal auferlegte beschränkende Maßnahme gegenüber einem anderen Akteur mit dem Zweck, dessen Verhalten zu beanstanden oder zu beeinflussen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet diplomatischen Zwang durch eine Beschränkung und grenzt ihn von einer Forderung, einem Abkommen und bewaffnetem Konflikt ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7636,34 +7643,34 @@ Der Begriff bezeichnet diplomatischen Zwang durch eine Beschränkung und grenzt 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Ultimatum`: ist eine befristete Forderung mit angekündigter Folge.
 - `War`: ist ein Zustand organisierter bewaffneter Auseinandersetzung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Diplomatic Relation
 - Ultimatum
 - Agreement
 - War
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Ultimatum
+#### Ultimatum
 
-#### Definition
+##### Definition
 
 Ein `Ultimatum` ist eine formale, abschließende und befristete diplomatische Forderung, die für den Fall ihrer Nichterfüllung eine bestimmte nachteilige Folge ankündigt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine Forderung unter ausdrücklich angekündigtem Entscheidungsdruck und grenzt sie von einem ergebnisoffenen Proposal und einer bereits vollzogenen Sanction ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7672,36 +7679,36 @@ Der Begriff bezeichnet eine Forderung unter ausdrücklich angekündigtem Entsche
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Proposal`: lässt Annahme, Ablehnung oder Veränderung ohne begriffsnotwendige Drohfolge offen.
 - `Sanction`: ist eine auferlegte beschränkende Maßnahme.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Proposal
 - Negotiation
 - Sanction
 - War
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 9.4 Internationale Abkommen
+### 9.4 Internationale Abkommen
 
-### Treaty
+#### Treaty
 
-#### Definition
+##### Definition
 
 Ein `Treaty` ist ein formal begründetes internationales Abkommen zwischen mindestens zwei diplomatischen Akteuren, das ihre gegenseitigen Rechte, Pflichten oder Beziehungen verbindlich ordnet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine formalisierte Art von Agreement als Ergebnis diplomatischer Verständigung, ohne einen bestimmten Regelungsgegenstand vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7710,12 +7717,12 @@ Der Begriff bezeichnet eine formalisierte Art von Agreement als Ergebnis diploma
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Agreement`: ist der allgemeinere Begriff für eine übereinstimmende Willensfestlegung.
 - `Proposal`: ist ein noch nicht übereinstimmend festgelegter Vorschlag.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Negotiation
 - Proposal
@@ -7723,22 +7730,22 @@ Der Begriff bezeichnet eine formalisierte Art von Agreement als Ergebnis diploma
 - Alliance
 - Peace Treaty
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Alliance
+#### Alliance
 
-#### Definition
+##### Definition
 
 Eine `Alliance` ist ein formales internationales Abkommen zur dauerhaften organisierten Zusammenarbeit ihrer Mitglieder bei gemeinsamen internationalen Interessen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen umfassenden Kooperationszusammenhang und grenzt ihn von Abkommen mit einem einzelnen begrenzten Gegenstand ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7747,12 +7754,12 @@ Der Begriff bezeichnet einen umfassenden Kooperationszusammenhang und grenzt ihn
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Defensive Pact`: beschränkt sich auf gegenseitige defensive Unterstützung.
 - `International Organization`: ist eine eigenständige internationale Einrichtung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Treaty
 - Defensive Pact
@@ -7760,22 +7767,22 @@ Der Begriff bezeichnet einen umfassenden Kooperationszusammenhang und grenzt ihn
 - International Organization
 - Balance of Power
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Trade Agreement
+#### Trade Agreement
 
-#### Definition
+##### Definition
 
 Ein `Trade Agreement` ist ein Treaty, das den wirtschaftlichen Austausch zwischen seinen Parteien ordnet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet ein internationales Abkommen mit handelsbezogenem Gegenstand, ohne konkrete Waren, Bedingungen oder wirtschaftliche Verfahren festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7784,34 +7791,34 @@ Der Begriff bezeichnet ein internationales Abkommen mit handelsbezogenem Gegenst
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Trade`: ist die wirtschaftliche Übertragung von Goods oder Services.
 - `Treaty`: kann andere internationale Gegenstände regeln.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Treaty
 - Agreement
 - Trade
 - Market
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Non-Aggression Pact
+#### Non-Aggression Pact
 
-#### Definition
+##### Definition
 
 Ein `Non-Aggression Pact` ist ein Treaty, durch das sich seine Parteien gegenseitig verpflichten, keinen War gegeneinander zu beginnen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den vereinbarten Verzicht auf gegenseitige Kriegseröffnung und grenzt ihn von Neutrality und gegenseitiger Unterstützungsverpflichtung ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7820,34 +7827,34 @@ Der Begriff bezeichnet den vereinbarten Verzicht auf gegenseitige Kriegseröffnu
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Defensive Pact`: verpflichtet zu gegenseitiger defensiver Unterstützung.
 - `Neutrality`: ist eine internationale Haltung und kein notwendigerweise gegenseitiges Abkommen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Treaty
 - War
 - Neutrality
 - Defensive Pact
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Defensive Pact
+#### Defensive Pact
 
-#### Definition
+##### Definition
 
 Ein `Defensive Pact` ist ein Treaty, durch das sich seine Parteien zu gegenseitiger Unterstützung gegen von außen gegen eine Partei gerichtete Aggression verpflichten.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine begrenzte gegenseitige defensive Verpflichtung und grenzt sie von umfassender Alliance und einseitiger Guarantee ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7856,34 +7863,34 @@ Der Begriff bezeichnet eine begrenzte gegenseitige defensive Verpflichtung und g
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Alliance`: bezeichnet einen umfassenderen organisierten Kooperationszusammenhang.
 - `Guarantee`: ist eine einseitige Zusage.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Treaty
 - Alliance
 - Guarantee
 - Non-Aggression Pact
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Military Access
+#### Military Access
 
-#### Definition
+##### Definition
 
 `Military Access` ist ein internationales Abkommen, durch das ein politischer Akteur militärischen Kräften eines anderen Akteurs die Anwesenheit oder Bewegung in einem abgegrenzten Gebiet gestattet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die diplomatische Erlaubnis und nicht deren konkrete militärische Nutzung, Führung oder logistische Ausgestaltung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7892,36 +7899,36 @@ Der Begriff bezeichnet die diplomatische Erlaubnis und nicht deren konkrete mili
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Territorial Control`: bezeichnet tatsächliche politische oder administrative Verfügungsgewalt über ein Gebiet.
 - `Occupation`: bezeichnet gemäß Abschnitt 6.2 die regelmäßig ausgeübte Tätigkeit einer Person und besitzt keine militärische Bedeutung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Agreement
 - Treaty
 - Territory
 - Armed Forces
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 9.5 Konflikte
+### 9.5 Konflikte
 
-### War
+#### War
 
-#### Definition
+##### Definition
 
 `War` ist ein zwischen politischen Akteuren bestehender Zustand organisierter bewaffneter Auseinandersetzung zur Durchsetzung widerstreitender politischer Ziele.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den übergreifenden Konfliktzustand und nicht einzelne Operations, Battles oder die diplomatische Begründung des Konflikts.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7930,12 +7937,12 @@ Der Begriff bezeichnet den übergreifenden Konfliktzustand und nicht einzelne Op
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Casus Belli`: ist ein geltend gemachter Rechtfertigungsgrund.
 - `Battle`: ist eine konkrete bewaffnete Auseinandersetzung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Casus Belli
 - Ceasefire
@@ -7943,22 +7950,22 @@ Der Begriff bezeichnet den übergreifenden Konfliktzustand und nicht einzelne Op
 - Peace Treaty
 - Battle
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Casus Belli
+#### Casus Belli
 
-#### Definition
+##### Definition
 
 Ein `Casus Belli` ist ein formal geltend gemachter politischer Rechtfertigungsgrund für die Einleitung eines War gegen einen bezeichneten politischen Akteur.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die beanspruchte Rechtfertigung und grenzt sie vom War selbst, seinen Zielen und seinem Ergebnis ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -7967,34 +7974,34 @@ Der Begriff bezeichnet die beanspruchte Rechtfertigung und grenzt sie vom War se
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Ultimatum`: ist eine befristete diplomatische Forderung.
 - `War`: ist der Zustand bewaffneter Auseinandersetzung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - War
 - Ultimatum
 - Diplomatic Relation
 - Peace Treaty
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Ceasefire
+#### Ceasefire
 
-#### Definition
+##### Definition
 
 Ein `Ceasefire` ist eine begrenzte Vereinbarung der Konfliktparteien, bewaffnete Handlungen vorübergehend oder unter festgelegten Bedingungen auszusetzen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine Unterbrechung bewaffneter Handlungen, ohne den War oder dessen Streitgegenstände notwendig zu beenden.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8003,34 +8010,34 @@ Der Begriff bezeichnet eine Unterbrechung bewaffneter Handlungen, ohne den War o
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Armistice`: beendet die allgemeinen bewaffneten Handlungen eines War auf Grundlage eines formalen Abkommens.
 - `Peace Treaty`: beendet den War und ordnet seine politischen Folgen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - War
 - Armistice
 - Peace Treaty
 - Agreement
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Armistice
+#### Armistice
 
-#### Definition
+##### Definition
 
 Ein `Armistice` ist ein formales internationales Abkommen, das die allgemeinen bewaffneten Handlungen zwischen Parteien eines War beendet, ohne den War und seine politischen Streitgegenstände notwendig abschließend zu regeln.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die umfassende Beendigung der Kampfhandlungen und grenzt sie von begrenztem Ceasefire und abschließendem Peace Treaty ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8039,34 +8046,34 @@ Der Begriff bezeichnet die umfassende Beendigung der Kampfhandlungen und grenzt 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Ceasefire`: ist eine begrenzte Aussetzung bewaffneter Handlungen.
 - `Peace Treaty`: beendet den War und regelt seine politischen Folgen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - War
 - Ceasefire
 - Peace Treaty
 - Treaty
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Peace Treaty
+#### Peace Treaty
 
-#### Definition
+##### Definition
 
 Ein `Peace Treaty` ist ein Treaty, das einen War zwischen seinen Parteien beendet und die daraus hervorgehenden internationalen Rechte, Pflichten oder Beziehungen ordnet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die formale Beendigung des Konfliktzustands und dessen politische Regelung, nicht lediglich das Ende bewaffneter Handlungen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8075,12 +8082,12 @@ Der Begriff bezeichnet die formale Beendigung des Konfliktzustands und dessen po
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Armistice`: beendet allgemeine Kampfhandlungen, aber nicht notwendig den War.
 - `Ceasefire`: setzt bewaffnete Handlungen begrenzt aus.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Treaty
 - War
@@ -8088,22 +8095,22 @@ Der Begriff bezeichnet die formale Beendigung des Konfliktzustands und dessen po
 - Armistice
 - Agreement
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Occupation
+#### Occupation
 
-#### Definition
+##### Definition
 
 Für `Occupation` gilt ausschließlich die kanonische Definition aus Abschnitt 6.2 als regelmäßig ausgeübte Tätigkeit einer Person.
 
-#### Zweck
+##### Zweck
 
 Die Aufnahme in diese Begriffsgruppe dokumentiert die notwendige Abgrenzung: Der Begriff erhält keine zweite militärische oder territoriale Bedeutung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8112,36 +8119,36 @@ Die Aufnahme in diese Begriffsgruppe dokumentiert die notwendige Abgrenzung: Der
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Territorial Control`: bezeichnet tatsächliche politische oder administrative Verfügungsgewalt über ein Gebiet.
 - `Military Access`: ist eine internationale Erlaubnis zur Anwesenheit oder Bewegung militärischer Kräfte.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Profession
 - Territorial Control
 - Military Access
 - War
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 9.6 Internationale Konzepte
+### 9.6 Internationale Konzepte
 
-### Neutrality
+#### Neutrality
 
-#### Definition
+##### Definition
 
 `Neutrality` ist die internationale Haltung eines politischen Akteurs, sich gegenüber einem War anderer Akteure keiner Konfliktpartei als kriegführende Partei anzuschließen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine Haltung gegenüber einem fremden Konflikt und grenzt sie von Bündnisfreiheit, gegenseitigem Gewaltverzicht und Passivität ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8150,34 +8157,34 @@ Der Begriff bezeichnet eine Haltung gegenüber einem fremden Konflikt und grenzt
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Non-Aggression Pact`: ist ein gegenseitiges Treaty über den Verzicht auf Kriegseröffnung.
 - `Alliance`: ist ein organisierter internationaler Kooperationszusammenhang.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - War
 - Non-Aggression Pact
 - Alliance
 - Guarantee
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Sphere of Influence
+#### Sphere of Influence
 
-#### Definition
+##### Definition
 
 Eine `Sphere of Influence` ist ein internationaler Beziehungszusammenhang, in dem die politischen Handlungsmöglichkeiten mehrerer Akteure in besonderem Maß durch die Influence eines bestimmten politischen Akteurs geprägt sind.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine verdichtete Struktur politischer Einwirkung, ohne formale Herrschaft, Alliance oder Protectorate Relationship vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8186,34 +8193,34 @@ Der Begriff bezeichnet eine verdichtete Struktur politischer Einwirkung, ohne fo
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Influence`: ist die Fähigkeit eines Akteurs zur politischen Einwirkung.
 - `Protectorate Relationship`: ist eine formalisierte asymmetrische internationale Beziehung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Influence
 - Diplomatic Relation
 - Balance of Power
 - Protectorate Relationship
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Balance of Power
+#### Balance of Power
 
-#### Definition
+##### Definition
 
 `Balance of Power` ist die internationale Konstellation, in der die Handlungsmöglichkeiten politischer Akteure durch die Verteilung und wechselseitige Begrenzung ihrer Macht geprägt sind.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen übergreifenden Beziehungszustand und nicht ein einzelnes Abkommen, eine Alliance oder die Influence eines einzelnen Akteurs.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8222,34 +8229,34 @@ Der Begriff bezeichnet einen übergreifenden Beziehungszustand und nicht ein ein
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Sphere of Influence`: bezeichnet die verdichtete Influence eines bestimmten Akteurs.
 - `Alliance`: ist ein formales internationales Abkommen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Influence
 - Sphere of Influence
 - Alliance
 - Diplomatic Relation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### International Organization
+#### International Organization
 
-#### Definition
+##### Definition
 
 Eine `International Organization` ist eine durch internationale Übereinkunft begründete dauerhafte Einrichtung, in der mehrere diplomatische Akteure gemeinsame internationale Angelegenheiten geordnet behandeln.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine eigenständige institutionelle Form internationaler Zusammenarbeit und grenzt sie von einzelnen Agreements und Alliances ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8258,12 +8265,12 @@ Der Begriff bezeichnet eine eigenständige institutionelle Form internationaler 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Alliance`: ist ein Abkommen zur organisierten Zusammenarbeit seiner Mitglieder.
 - `Diplomatic Mission`: ist eine offizielle Vertretung eines diplomatischen Akteurs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Country
 - Government
@@ -8272,22 +8279,22 @@ Der Begriff bezeichnet eine eigenständige institutionelle Form internationaler 
 - Treaty
 - Alliance
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Protectorate Relationship
+#### Protectorate Relationship
 
-#### Definition
+##### Definition
 
 Eine `Protectorate Relationship` ist eine formalisierte asymmetrische internationale Beziehung, in der ein politischer Akteur die äußere Schutzverantwortung für einen anderen übernimmt und dadurch dessen internationale Handlungsfreiheit begrenzt ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Beziehung zwischen den beteiligten Akteuren und trennt sie von den Akteuren selbst, territorialer Herrschaft und bloßer Influence.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8296,12 +8303,12 @@ Der Begriff bezeichnet die Beziehung zwischen den beteiligten Akteuren und trenn
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Protectorate`: ist gemäß Abschnitt 5.4 ein Political Territory innerhalb einer Protectorate Relationship.
 - `Sphere of Influence`: setzt keine formalisierte Schutzverantwortung voraus.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Protectorate
 - Diplomatic Relation
@@ -8309,12 +8316,12 @@ Der Begriff bezeichnet die Beziehung zwischen den beteiligten Akteuren und trenn
 - Sphere of Influence
 - Sovereignty
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-# Kapitel 10 – Gameplay- und Designbegriffe
+## Kapitel 10 – Gameplay- und Designbegriffe
 
 Dieses Kapitel definiert die domänenübergreifende Sprache für Gameplay-Interaktionen, Prozesse und Spielzustände. Die Begriffe bezeichnen allgemeine Konzepte, ohne die Mechaniken einzelner Systeme festzulegen.
 
@@ -8322,19 +8329,19 @@ Dieselben Begriffe werden in sämtlichen Spielsystemen einheitlich verwendet. Po
 
 Spätere Dokumente MUST für diese Konzepte die hier festgelegte Terminologie verwenden. Regeln, Abläufe, Werte und technische Repräsentationen verbleiben in den zuständigen Dokumenten.
 
-## 10.1 Spielerinteraktion
+### 10.1 Spielerinteraktion
 
-### Player
+#### Player
 
-#### Definition
+##### Definition
 
 Ein `Player` ist eine Person, die innerhalb einer Campaign Entscheidungen trifft und durch Interaktionen Einfluss auf deren Verlauf nimmt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den menschlichen Ursprung von Spielabsichten und grenzt ihn von den innerhalb der World handelnden Akteuren ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8343,12 +8350,12 @@ Der Begriff bezeichnet den menschlichen Ursprung von Spielabsichten und grenzt i
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Actor`: ist ein innerhalb der World handlungsfähiges Subjekt.
 - `Player Intent`: ist die von einem Player verfolgte Absicht.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Player Intent
 - Input
@@ -8356,22 +8363,22 @@ Der Begriff bezeichnet den menschlichen Ursprung von Spielabsichten und grenzt i
 - Actor
 - Campaign
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Player Intent
+#### Player Intent
 
-#### Definition
+##### Definition
 
 `Player Intent` ist die von einem Player mit einer Interaktion verfolgte, noch nicht notwendig als gültige Handlung bestimmte Absicht.
 
-#### Zweck
+##### Zweck
 
 Der Begriff trennt das angestrebte Ergebnis einer Spielerinteraktion von ihrem Input, ihrer formalen Ausgestaltung und einer späteren Execution.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8380,12 +8387,12 @@ Der Begriff trennt das angestrebte Ergebnis einer Spielerinteraktion von ihrem I
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Input`: ist eine vom Spiel entgegengenommene Eingabe.
 - `Action`: ist eine zur Ausführung bestimmte Gameplay-Handlung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Player
 - Input
@@ -8393,22 +8400,22 @@ Der Begriff trennt das angestrebte Ergebnis einer Spielerinteraktion von ihrem I
 - Target
 - Action
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Input
+#### Input
 
-#### Definition
+##### Definition
 
 Ein `Input` ist eine vom Spiel entgegengenommene Eingabe eines Player, durch die eine Interaktion begonnen, fortgeführt oder beeinflusst wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Eingabe selbst, ohne daraus eine bestimmte Absicht, Gültigkeit oder Zustandsänderung abzuleiten.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8417,34 +8424,34 @@ Der Begriff bezeichnet die Eingabe selbst, ohne daraus eine bestimmte Absicht, G
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Player Intent`: bezeichnet die mit einer Interaktion verfolgte Absicht.
 - `Selection`: bestimmt etwas als aktuellen Gegenstand einer Interaktion.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Player
 - Player Intent
 - Selection
 - Confirmation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Selection
+#### Selection
 
-#### Definition
+##### Definition
 
 Eine `Selection` ist die Bestimmung eines verfügbaren Gegenstands als aktuellen Bezugspunkt einer Spielerinteraktion.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die interaktive Auswahl, ohne den ausgewählten Gegenstand notwendig zum Target einer Action zu machen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8453,34 +8460,34 @@ Der Begriff bezeichnet die interaktive Auswahl, ohne den ausgewählten Gegenstan
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Target`: ist der bezeichnete Bezugspunkt einer Handlung oder eines Prozesses.
 - `Decision`: legt eine Alternative verbindlich fest.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Player
 - Input
 - Target
 - Action
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Target
+#### Target
 
-#### Definition
+##### Definition
 
 Ein `Target` ist der eindeutig bezeichnete Gegenstand, auf den eine Action, ein Proposal, ein Effect oder ein anderer Gameplay-Prozess gerichtet ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff stellt einen domänenübergreifenden Bezugspunkt bereit, ohne dessen Art oder die auf ihn anwendbaren Regeln festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8489,12 +8496,12 @@ Der Begriff stellt einen domänenübergreifenden Bezugspunkt bereit, ohne dessen
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Selection`: ist die aktuelle interaktive Auswahl und begründet nicht notwendig einen Handlungsbezug.
 - `Objective`: ist ein angestrebter Zustand oder ein angestrebtes Ergebnis.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Selection
 - Action
@@ -8502,24 +8509,24 @@ Der Begriff stellt einen domänenübergreifenden Bezugspunkt bereit, ohne dessen
 - Effect
 - Objective
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 10.2 Gameplay-Handlungen
+### 10.2 Gameplay-Handlungen
 
-### Action
+#### Action
 
-#### Definition
+##### Definition
 
 Eine `Action` ist eine tatsächlich ausgeführte Gameplay-Handlung, durch die ein Player oder Actor innerhalb eines Spielsystems handelt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die tatsächliche Handlung und grenzt sie insbesondere von einer noch veränderbaren Proposal, einer Decision, ihrem Vollzug als Execution und dem Ergebnis der Handlung ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8528,13 +8535,13 @@ Der Begriff bezeichnet die tatsächliche Handlung und grenzt sie insbesondere vo
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Proposal`: wird vor einer möglichen Ausführung zur Prüfung oder Entscheidung gestellt.
 - `Execution`: ist der Vollzug einer Action.
 - `Effect`: ist eine durch einen Vorgang bewirkte Zustandsänderung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Player Intent
 - Proposal
@@ -8542,22 +8549,22 @@ Der Begriff bezeichnet die tatsächliche Handlung und grenzt sie insbesondere vo
 - Execution
 - Effect
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Proposal
+#### Proposal
 
-#### Definition
+##### Definition
 
 Ein `Proposal` ist domänenübergreifend ein formaler Vorschlag oder eine beabsichtigte Handlung, die vor ihrer möglichen Ausführung validiert, verändert, angenommen oder abgelehnt werden kann.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen noch nicht ausgeführten, zur weiteren Behandlung gestellten Inhalt. Er gilt in sämtlichen Spielsystemen; Diplomatie ist lediglich eines seiner möglichen Anwendungsgebiete.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8566,13 +8573,13 @@ Der Begriff bezeichnet einen noch nicht ausgeführten, zur weiteren Behandlung g
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Action`: ist die zur tatsächlichen Ausführung bestimmte Gameplay-Handlung.
 - `Decision`: legt fest, wie über eine Proposal oder einen anderen auslösenden Sachverhalt entschieden wird.
 - `Execution`: vollzieht eine bestimmte Action.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Action
 - Decision
@@ -8580,22 +8587,22 @@ Der Begriff bezeichnet einen noch nicht ausgeführten, zur weiteren Behandlung g
 - Execution
 - Cancellation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Decision
+#### Decision
 
-#### Definition
+##### Definition
 
 Eine `Decision` ist die verbindliche Festlegung einer verfügbaren Alternative als Antwort auf eine Proposal oder einen anderen auslösenden Sachverhalt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Entscheidung selbst, ohne ihre Bestätigung, Ausführung oder daraus hervorgehenden Effects vorwegzunehmen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8604,13 +8611,13 @@ Der Begriff bezeichnet die Entscheidung selbst, ohne ihre Bestätigung, Ausführ
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Proposal`: ist ein zur Behandlung gestellter Inhalt.
 - `Confirmation`: bestätigt eine zuvor bestimmte Eingabe, Auswahl oder Entscheidung.
 - `Outcome`: ist das unmittelbare Ergebnis eines Vorgangs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Proposal
 - Confirmation
@@ -8618,22 +8625,22 @@ Der Begriff bezeichnet die Entscheidung selbst, ohne ihre Bestätigung, Ausführ
 - Cancellation
 - Outcome
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Confirmation
+#### Confirmation
 
-#### Definition
+##### Definition
 
 Eine `Confirmation` ist die ausdrückliche Bestätigung, dass eine zuvor bestimmte Eingabe, Auswahl, Proposal oder Decision in ihrer vorliegenden Form fortgeführt werden soll.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen bestätigenden Interaktionsschritt und nicht die bestätigte Festlegung oder deren Execution.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8642,12 +8649,12 @@ Der Begriff bezeichnet einen bestätigenden Interaktionsschritt und nicht die be
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Decision`: ist die verbindliche Festlegung einer Alternative.
 - `Execution`: ist der Vollzug einer Action.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Input
 - Selection
@@ -8655,22 +8662,22 @@ Der Begriff bezeichnet einen bestätigenden Interaktionsschritt und nicht die be
 - Decision
 - Execution
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Execution
+#### Execution
 
-#### Definition
+##### Definition
 
 Eine `Execution` ist der Vollzug, durch den eine dafür bestimmte Action tatsächlich ausgeführt wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff trennt den Vollzug von der vorherigen Absicht, Proposal, Decision oder Confirmation sowie von den daraus hervorgehenden Effects.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8679,13 +8686,13 @@ Der Begriff trennt den Vollzug von der vorherigen Absicht, Proposal, Decision od
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Action`: ist die Handlung, die vollzogen wird.
 - `Effect`: ist eine durch den Vollzug bewirkte Zustandsänderung.
 - `Outcome`: ist das unmittelbare Ergebnis eines Vorgangs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Action
 - Proposal
@@ -8693,22 +8700,22 @@ Der Begriff trennt den Vollzug von der vorherigen Absicht, Proposal, Decision od
 - Confirmation
 - Effect
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Cancellation
+#### Cancellation
 
-#### Definition
+##### Definition
 
 Eine `Cancellation` ist die Beendigung einer noch nicht abgeschlossenen Proposal, Action oder eines laufenden Prozesses, ohne dessen vorgesehenen Abschluss herbeizuführen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den Abbruch vor Completion und legt weder seine Zulässigkeit noch seine möglichen Consequences fest.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8717,12 +8724,12 @@ Der Begriff bezeichnet den Abbruch vor Completion und legt weder seine Zulässig
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Completion`: ist der vorgesehene Abschluss eines fortschreitenden Vorgangs.
 - `Execution`: ist der Vollzug einer Action.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Proposal
 - Action
@@ -8730,24 +8737,24 @@ Der Begriff bezeichnet den Abbruch vor Completion und legt weder seine Zulässig
 - Completion
 - Consequence
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 10.3 Laufende Prozesse
+### 10.3 Laufende Prozesse
 
-### Project
+#### Project
 
-#### Definition
+##### Definition
 
 Ein `Project` ist ein über einen längeren Zeitraum laufender, auf einen bestimmten angestrebten Zustand oder ein Ergebnis ausgerichteter Gameplay-Prozess.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen fortdauernden Prozess und grenzt ihn von einzelnen Actions, untergeordneten Tasks und bloßen Zielbeschreibungen ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8756,13 +8763,13 @@ Der Begriff bezeichnet einen fortdauernden Prozess und grenzt ihn von einzelnen 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Task`: ist eine abgegrenzte zu erledigende Einheit.
 - `Objective`: beschreibt einen angestrebten Zustand oder ein angestrebtes Ergebnis.
 - `Action`: ist eine zur Ausführung bestimmte einzelne Gameplay-Handlung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Task
 - Objective
@@ -8770,22 +8777,22 @@ Der Begriff bezeichnet einen fortdauernden Prozess und grenzt ihn von einzelnen 
 - Completion
 - Cancellation
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Task
+#### Task
 
-#### Definition
+##### Definition
 
 Ein `Task` ist eine abgegrenzte, zu erledigende Einheit innerhalb eines Gameplay-Zusammenhangs.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen bestimmten Erledigungsgegenstand, ohne einen länger laufenden Gesamtprozess oder dessen Ziel festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8794,13 +8801,13 @@ Der Begriff bezeichnet einen bestimmten Erledigungsgegenstand, ohne einen länge
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Project`: ist ein länger laufender Gameplay-Prozess.
 - `Objective`: bezeichnet den angestrebten Zustand oder das angestrebte Ergebnis.
 - `Action`: ist eine zur Ausführung bestimmte Gameplay-Handlung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Project
 - Objective
@@ -8808,22 +8815,22 @@ Der Begriff bezeichnet einen bestimmten Erledigungsgegenstand, ohne einen länge
 - Progress
 - Completion
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Objective
+#### Objective
 
-#### Definition
+##### Definition
 
 Ein `Objective` ist ein ausdrücklich bezeichneter Zustand oder ein ausdrücklich bezeichnetes Ergebnis, dessen Erreichen angestrebt wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet das Ziel eines Handelns oder Prozesses und nicht den Weg, die Handlung oder den Prozess zu seiner Erreichung.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8832,13 +8839,13 @@ Der Begriff bezeichnet das Ziel eines Handelns oder Prozesses und nicht den Weg,
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Target`: ist der Gegenstand, auf den ein Vorgang gerichtet ist.
 - `Task`: ist eine zu erledigende Einheit.
 - `Outcome`: ist das tatsächlich eingetretene unmittelbare Ergebnis.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Target
 - Project
@@ -8846,22 +8853,22 @@ Der Begriff bezeichnet das Ziel eines Handelns oder Prozesses und nicht den Weg,
 - Mission
 - Outcome
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Mission
+#### Mission
 
-#### Definition
+##### Definition
 
 Eine `Mission` ist ein abgegrenzter Gameplay-Auftrag, der mindestens ein Objective als zu erreichenden Gegenstand festlegt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen zielgebundenen Auftrag und grenzt ihn von einem eigenständig laufenden Project, einer einzelnen Task und einer priorisierenden Agenda ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8870,13 +8877,13 @@ Der Begriff bezeichnet einen zielgebundenen Auftrag und grenzt ihn von einem eig
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Objective`: ist der angestrebte Zustand oder das angestrebte Ergebnis.
 - `Task`: ist eine abgegrenzte zu erledigende Einheit.
 - `Agenda`: ordnet mehrere Anliegen oder Vorhaben nach einer verfolgten Ausrichtung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Objective
 - Task
@@ -8884,22 +8891,22 @@ Der Begriff bezeichnet einen zielgebundenen Auftrag und grenzt ihn von einem eig
 - Agenda
 - Completion
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Agenda
+#### Agenda
 
-#### Definition
+##### Definition
 
 Eine `Agenda` ist eine geordnete Zusammenstellung von Anliegen, Objectives oder Vorhaben, die ein Akteur verfolgt oder priorisiert.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine übergreifende Ausrichtung mehrerer Gegenstände, ohne daraus einzelne Missions, Projects oder Actions abzuleiten.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8908,12 +8915,12 @@ Der Begriff bezeichnet eine übergreifende Ausrichtung mehrerer Gegenstände, oh
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Mission`: ist ein abgegrenzter zielgebundener Auftrag.
 - `Objective`: ist ein einzelner angestrebter Zustand oder ein einzelnes angestrebtes Ergebnis.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Objective
 - Mission
@@ -8921,24 +8928,24 @@ Der Begriff bezeichnet eine übergreifende Ausrichtung mehrerer Gegenstände, oh
 - Decision
 - Actor
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 10.4 Spielereignisse
+### 10.4 Spielereignisse
 
-### Trigger
+#### Trigger
 
-#### Definition
+##### Definition
 
 Ein `Trigger` ist die festgelegte Voraussetzung, deren Erfüllung die Möglichkeit oder das Eintreten eines Event auslöst.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den auslösenden Bezug eines Ereignisses und grenzt ihn von einer allgemein geprüften Condition sowie vom Event selbst ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8947,34 +8954,34 @@ Der Begriff bezeichnet den auslösenden Bezug eines Ereignisses und grenzt ihn v
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Condition`: ist ein prüfbarer Sachverhalt, ohne notwendig ein Event auszulösen.
 - `Event`: ist das eingetretene Ereignis.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Condition
 - Event
 - State
 - Outcome
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Condition
+#### Condition
 
-#### Definition
+##### Definition
 
 Eine `Condition` ist ein eindeutig prüfbarer Sachverhalt, der zu einem bestimmten Zeitpunkt erfüllt oder nicht erfüllt ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff stellt eine allgemeine Sprache für Voraussetzungen und Prüfungen bereit, ohne festzulegen, was aus ihrem Ergebnis folgt.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -8983,13 +8990,13 @@ Der Begriff stellt eine allgemeine Sprache für Voraussetzungen und Prüfungen b
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Trigger`: ist eine als Auslöser für ein Event festgelegte Voraussetzung.
 - `Requirement`: bezeichnet etwas, das für einen bestimmten Gegenstand erfüllt sein muss.
 - `State`: ist die Gesamtheit maßgeblicher Eigenschaften eines Gegenstands zu einem Zeitpunkt.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Trigger
 - Requirement
@@ -8997,22 +9004,22 @@ Der Begriff stellt eine allgemeine Sprache für Voraussetzungen und Prüfungen b
 - State
 - Event
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Event
+#### Event
 
-#### Definition
+##### Definition
 
 Ein `Event` ist ein innerhalb des Spielverlaufs eingetretenes und als zusammengehörig betrachtetes Ereignis.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet das eingetretene Ereignis und grenzt es von seiner auslösenden Voraussetzung, seinem unmittelbaren Outcome und seinen weiteren Consequences ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9021,13 +9028,13 @@ Der Begriff bezeichnet das eingetretene Ereignis und grenzt es von seiner auslö
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Trigger`: ist die Voraussetzung für ein Event.
 - `Outcome`: ist das unmittelbare Ergebnis eines Vorgangs.
 - `Effect`: ist eine Zustandsänderung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Trigger
 - Condition
@@ -9035,22 +9042,22 @@ Der Begriff bezeichnet das eingetretene Ereignis und grenzt es von seiner auslö
 - Consequence
 - Effect
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Outcome
+#### Outcome
 
-#### Definition
+##### Definition
 
 Ein `Outcome` ist das unmittelbar aus einem Event, einer Action, einer Decision oder einem anderen abgeschlossenen Vorgang hervorgegangene Ergebnis.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet, was ein Vorgang unmittelbar ergeben hat, ohne längerfristige Consequences oder einzelne Zustandsänderungen damit gleichzusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9059,13 +9066,13 @@ Der Begriff bezeichnet, was ein Vorgang unmittelbar ergeben hat, ohne längerfri
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Effect`: ist eine bestimmte Zustandsänderung.
 - `Consequence`: ist eine aus einem Vorgang oder Outcome hervorgehende weitere Folge.
 - `Objective`: ist ein angestrebtes und nicht notwendig tatsächlich erreichtes Ergebnis.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Event
 - Action
@@ -9073,22 +9080,22 @@ Der Begriff bezeichnet, was ein Vorgang unmittelbar ergeben hat, ohne längerfri
 - Effect
 - Consequence
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Consequence
+#### Consequence
 
-#### Definition
+##### Definition
 
 Eine `Consequence` ist eine aus einem Vorgang, Event oder Outcome hervorgehende weitere Folge.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen Folgebezug über das unmittelbare Outcome hinaus, ohne dessen Zeitpunkt, Umfang oder konkrete Ausgestaltung festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9097,12 +9104,12 @@ Der Begriff bezeichnet einen Folgebezug über das unmittelbare Outcome hinaus, o
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Outcome`: ist das unmittelbare Ergebnis eines Vorgangs.
 - `Effect`: ist eine bestimmte Zustandsänderung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Event
 - Outcome
@@ -9110,24 +9117,24 @@ Der Begriff bezeichnet einen Folgebezug über das unmittelbare Outcome hinaus, o
 - State
 - Modifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 10.5 Regeln
+### 10.5 Regeln
 
-### Requirement
+#### Requirement
 
-#### Definition
+##### Definition
 
 Ein `Requirement` ist eine Voraussetzung, die für die Verfügbarkeit, Gültigkeit, Fortführung oder den Abschluss eines bestimmten Gameplay-Gegenstands erfüllt sein muss.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine notwendige Voraussetzung, ohne die prüfende Condition oder die übergreifende Rule damit gleichzusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9136,35 +9143,35 @@ Der Begriff bezeichnet eine notwendige Voraussetzung, ohne die prüfende Conditi
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Condition`: ist ein allgemein prüfbarer Sachverhalt.
 - `Restriction`: begrenzt eine ansonsten bestehende Möglichkeit.
 - `Rule`: ist eine verbindliche allgemeine Festlegung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Condition
 - Restriction
 - Rule
 - Completion
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Restriction
+#### Restriction
 
-#### Definition
+##### Definition
 
 Eine `Restriction` ist eine verbindliche Begrenzung einer ansonsten bestehenden Gameplay-Möglichkeit.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine Einschränkung, ohne sie mit einer notwendigen Requirement oder der Gesamtheit einer Rule gleichzusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9173,35 +9180,35 @@ Der Begriff bezeichnet eine Einschränkung, ohne sie mit einer notwendigen Requi
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Requirement`: muss für einen bestimmten Gegenstand erfüllt sein.
 - `Rule`: ist eine allgemeine verbindliche Festlegung.
 - `Cooldown`: begrenzt erneute Verfügbarkeit anhand eines fortschreitenden Zeitraums.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Requirement
 - Rule
 - Condition
 - Cooldown
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Rule
+#### Rule
 
-#### Definition
+##### Definition
 
 Eine `Rule` ist eine verbindliche allgemeine Festlegung darüber, wie ein Gameplay-Sachverhalt behandelt wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die normative Grundlage eines Spielzusammenhangs, ohne eine konkrete Mechanik, Requirement, Restriction oder Wirkung zu bestimmen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9210,13 +9217,13 @@ Der Begriff bezeichnet die normative Grundlage eines Spielzusammenhangs, ohne ei
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Requirement`: ist eine notwendige Voraussetzung für einen bestimmten Gegenstand.
 - `Restriction`: begrenzt eine bestehende Möglichkeit.
 - `Effect`: ist eine Zustandsänderung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Requirement
 - Restriction
@@ -9224,22 +9231,22 @@ Der Begriff bezeichnet die normative Grundlage eines Spielzusammenhangs, ohne ei
 - Effect
 - Modifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Effect
+#### Effect
 
-#### Definition
+##### Definition
 
 Ein `Effect` ist eine durch eine Action, ein Event, eine Rule oder einen anderen Gameplay-Vorgang bewirkte Zustandsänderung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Zustandsänderung selbst und grenzt sie vom auslösenden Vorgang, dessen gesamtem Outcome und einer wert- oder verhaltensbezogenen Veränderung durch einen Modifier ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9248,13 +9255,13 @@ Der Begriff bezeichnet die Zustandsänderung selbst und grenzt sie vom auslösen
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Outcome`: ist das unmittelbare Gesamtergebnis eines Vorgangs.
 - `Consequence`: ist eine weitere Folge eines Vorgangs oder Outcome.
 - `Modifier`: verändert einen Wert oder ein Verhalten dauerhaft oder temporär.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Action
 - Event
@@ -9263,22 +9270,22 @@ Der Begriff bezeichnet die Zustandsänderung selbst und grenzt sie vom auslösen
 - Modifier
 - State
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Modifier
+#### Modifier
 
-#### Definition
+##### Definition
 
 Ein `Modifier` ist eine dauerhafte oder temporäre Veränderung eines Wertes oder Verhaltens gegenüber dessen ansonsten maßgeblicher Ausprägung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die verändernde Einflussgröße und grenzt sie von einer beliebigen Zustandsänderung, ihrer Ursache und dem betroffenen Wert oder Verhalten ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9287,13 +9294,13 @@ Der Begriff bezeichnet die verändernde Einflussgröße und grenzt sie von einer
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Effect`: ist eine Zustandsänderung und kann einen Modifier begründen, verändern oder beenden.
 - `Rule`: legt verbindlich fest, wie ein Gameplay-Sachverhalt behandelt wird.
 - `Status`: ist eine benannte Einordnung eines gegenwärtigen State.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Effect
 - Rule
@@ -9301,24 +9308,24 @@ Der Begriff bezeichnet die verändernde Einflussgröße und grenzt sie von einer
 - Status
 - Cooldown
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-## 10.6 Fortschritt
+### 10.6 Fortschritt
 
-### State
+#### State
 
-#### Definition
+##### Definition
 
 Ein `State` ist die Gesamtheit der zu einem bestimmten Zeitpunkt maßgeblichen Eigenschaften eines abgegrenzten Gameplay-Gegenstands.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet dessen gegenwärtige Beschaffenheit und grenzt sie von einer benannten Einordnung, zeitlicher Entwicklung und einzelnen Zustandsänderung ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9327,13 +9334,13 @@ Der Begriff bezeichnet dessen gegenwärtige Beschaffenheit und grenzt sie von ei
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Game State`: beschreibt den Zustand der gesamten World zu einem bestimmten Zeitpunkt.
 - `Status`: ist eine benannte Einordnung eines State.
 - `Progress`: beschreibt die Entwicklung hin zu einem Bezugspunkt.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Game State
 - Status
@@ -9341,22 +9348,22 @@ Der Begriff bezeichnet dessen gegenwärtige Beschaffenheit und grenzt sie von ei
 - Effect
 - Condition
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Status
+#### Status
 
-#### Definition
+##### Definition
 
 Ein `Status` ist eine benannte Einordnung des gegenwärtigen State eines Gameplay-Gegenstands hinsichtlich eines bestimmten Betrachtungszwecks.
 
-#### Zweck
+##### Zweck
 
 Der Begriff stellt eine verständliche Zustandsklassifikation bereit, ohne den vollständigen State oder dessen zeitliche Entwicklung abzubilden.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9365,13 +9372,13 @@ Der Begriff stellt eine verständliche Zustandsklassifikation bereit, ohne den v
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `State`: umfasst sämtliche maßgeblichen Eigenschaften des betrachteten Gegenstands.
 - `Progress`: beschreibt eine Entwicklung hin zu einem Bezugspunkt.
 - `Condition`: ist ein prüfbarer Sachverhalt.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Progress
@@ -9379,22 +9386,22 @@ Der Begriff stellt eine verständliche Zustandsklassifikation bereit, ohne den v
 - Condition
 - Modifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Progress
+#### Progress
 
-#### Definition
+##### Definition
 
 `Progress` ist der erreichte Stand der Entwicklung eines fortschreitenden Vorgangs im Verhältnis zu einem bestimmten Bezugspunkt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den Entwicklungsstand, ohne den vollständigen State, einen Status oder den vorgesehenen Abschluss des Vorgangs damit gleichzusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9403,13 +9410,13 @@ Der Begriff bezeichnet den Entwicklungsstand, ohne den vollständigen State, ein
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Status`: ist eine benannte Einordnung eines State.
 - `Completion`: ist der vorgesehene Abschluss eines Vorgangs.
 - `Outcome`: ist das unmittelbare Ergebnis eines abgeschlossenen Vorgangs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - State
 - Status
@@ -9417,22 +9424,22 @@ Der Begriff bezeichnet den Entwicklungsstand, ohne den vollständigen State, ein
 - Task
 - Completion
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Completion
+#### Completion
 
-#### Definition
+##### Definition
 
 `Completion` ist der vorgesehene Abschluss eines fortschreitenden Vorgangs nach Erfüllung der dafür maßgeblichen Requirements.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den regulären Abschluss und grenzt ihn von laufendem Progress, vorzeitiger Cancellation und dem daraus hervorgehenden Outcome ab.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9441,13 +9448,13 @@ Der Begriff bezeichnet den regulären Abschluss und grenzt ihn von laufendem Pro
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Progress`: bezeichnet den erreichten Entwicklungsstand.
 - `Cancellation`: beendet einen Vorgang ohne seinen vorgesehenen Abschluss.
 - `Outcome`: ist das unmittelbare Ergebnis eines abgeschlossenen Vorgangs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Progress
 - Requirement
@@ -9455,22 +9462,22 @@ Der Begriff bezeichnet den regulären Abschluss und grenzt ihn von laufendem Pro
 - Outcome
 - Project
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Cooldown
+#### Cooldown
 
-#### Definition
+##### Definition
 
 Ein `Cooldown` ist ein fortschreitender Zeitraum, während dessen die erneute Verfügbarkeit eines bestimmten Gameplay-Gegenstands begrenzt ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet einen zeitbezogenen Verfügbarkeitszustand, ohne dessen Dauer, Beginn, Ende oder zugrunde liegende Rule festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Game Design
 - Engine
@@ -9479,13 +9486,13 @@ Der Begriff bezeichnet einen zeitbezogenen Verfügbarkeitszustand, ohne dessen D
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Restriction`: ist der allgemeinere Begriff für eine verbindliche Begrenzung.
 - `Progress`: bezeichnet einen Entwicklungsstand im Verhältnis zu einem Bezugspunkt.
 - `Modifier`: verändert einen Wert oder ein Verhalten.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Restriction
 - Rule
@@ -9493,12 +9500,12 @@ Der Begriff bezeichnet einen zeitbezogenen Verfügbarkeitszustand, ohne dessen D
 - Status
 - Progress
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-# Kapitel 11 – Technische Terminologie
+## Kapitel 11 – Technische Terminologie
 
 Technische Begriffe bilden die gemeinsame Sprache zwischen Design und Engine. Sie benennen technische Verantwortungen eindeutig, ohne fachliche Aussagen aus den zuständigen Design-Dokumenten neu zu definieren.
 
@@ -9506,19 +9513,19 @@ Dieses Kapitel ist bewusst implementierungsneutral formuliert. Es legt weder ein
 
 Spätere TECH-Dokumente MUST für die hier beschriebenen Verantwortungen diese Begriffe verwenden und ihre kanonischen Definitionen referenzieren. Sie MUST NOT konkurrierende technische Terminologie einführen.
 
-## 11.1 Datenmodell
+### 11.1 Datenmodell
 
-### Entity
+#### Entity
 
-#### Definition
+##### Definition
 
 Für `Entity` gilt ausschließlich die kanonische Definition aus Kapitel 3; die technische Repräsentation begründet keine zweite Bedeutung.
 
-#### Zweck
+##### Zweck
 
 Die Aufnahme in diese Begriffsgruppe ordnet Entity dem technischen Modell zu, ohne die fachliche Definition auf eine technische Repräsentation zu verengen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Datenmodelle
@@ -9527,14 +9534,14 @@ Die Aufnahme in diese Begriffsgruppe ordnet Entity dem technischen Modell zu, oh
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Component`: bündelt einen abgegrenzten Anteil der einer Entity zugeordneten Daten oder Fähigkeiten.
 - `Attribute`: ist eine einzelne benannte Eigenschaft.
 - `Identifier`: bezeichnet einen Gegenstand innerhalb eines festgelegten Namensraums eindeutig.
 - `Reference`: stellt eine gerichtete Zuordnung zu einem anderen Gegenstand her.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Component
 - Attribute
@@ -9542,23 +9549,23 @@ Die Aufnahme in diese Begriffsgruppe ordnet Entity dem technischen Modell zu, oh
 - Reference
 - Simulation State
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Component
+#### Component
 
-#### Definition
+##### Definition
 
 Eine `Component` ist eine abgegrenzte Zusammenfassung zusammengehöriger Daten oder Fähigkeiten, die einem technischen Gegenstand zugeordnet ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine fachlich zusammenhängende Einheit innerhalb eines technischen Modells, ohne eine bestimmte Zusammensetzungsform oder ein bestimmtes Architekturmodell vorzuschreiben.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Datenmodelle
@@ -9567,37 +9574,37 @@ Der Begriff bezeichnet eine fachlich zusammenhängende Einheit innerhalb eines t
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Entity`: ist der eindeutig unterscheidbare modellierte Gegenstand.
 - `Attribute`: bezeichnet eine einzelne Eigenschaft und nicht deren abgegrenzte Zusammenfassung.
 - `Module`: grenzt einen auslieferbaren oder verwaltbaren technischen Funktionsumfang ab.
 - `Subsystem`: ist ein abgegrenzter Teil eines übergeordneten Systemzusammenhangs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Entity
 - Attribute
 - System
 - Module
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Attribute
+#### Attribute
 
-#### Definition
+##### Definition
 
 Ein `Attribute` ist eine einzeln benannte Eigenschaft eines technischen Gegenstands mit einer für sie maßgeblichen Bedeutung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die kleinste fachlich eigenständig benannte Eigenschaft innerhalb eines Modells, ohne ihre Repräsentation oder zulässigen Werte festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Datenmodelle
@@ -9606,36 +9613,36 @@ Der Begriff bezeichnet die kleinste fachlich eigenständig benannte Eigenschaft 
 - Configuration
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Component`: fasst mehrere zusammengehörige Daten oder Fähigkeiten abgrenzbar zusammen.
 - `Identifier`: dient der eindeutigen Bezeichnung eines Gegenstands.
 - `Metadata`: beschreibt andere Daten oder technische Artefakte für einen bestimmten Kontext.
 - `Reference`: verweist auf einen anderen Gegenstand.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Entity
 - Component
 - Identifier
 - Metadata
 
-#### Referenzen
+##### Referenzen
 
 - PB-002
 - PB-003
 
-### Identifier
+#### Identifier
 
-#### Definition
+##### Definition
 
 Ein `Identifier` ist eine innerhalb eines festgelegten Namensraums eindeutige und stabile Bezeichnung eines bestimmten Gegenstands.
 
-#### Zweck
+##### Zweck
 
 Der Begriff ermöglicht die eindeutige Wiedererkennung und Referenzierung, ohne Eigenschaften oder Speicherort des bezeichneten Gegenstands auszudrücken.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Datenmodelle
@@ -9644,35 +9651,35 @@ Der Begriff ermöglicht die eindeutige Wiedererkennung und Referenzierung, ohne 
 - API
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Reference`: stellt eine konkrete gerichtete Zuordnung zu einem bezeichneten Gegenstand her.
 - `Attribute`: beschreibt eine Eigenschaft eines Gegenstands.
 - `Metadata`: liefert beschreibende Angaben für einen Kontext.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Entity
 - Reference
 - Metadata
 - API
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-003
 
-### Reference
+#### Reference
 
-#### Definition
+##### Definition
 
 Eine `Reference` ist eine gerichtete Zuordnung von einem technischen Gegenstand zu einem anderen eindeutig bezeichneten Gegenstand.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bildet Beziehungen ab, ohne den referenzierten Gegenstand zu duplizieren oder dessen Lebenszyklus und Repräsentation festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Datenmodelle
@@ -9681,37 +9688,37 @@ Der Begriff bildet Beziehungen ab, ohne den referenzierten Gegenstand zu duplizi
 - Configuration
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Identifier`: ist die eindeutige Bezeichnung, anhand derer ein Gegenstand erkannt werden kann.
 - `Attribute`: ist eine einzelne Eigenschaft eines Gegenstands.
 - `Component`: bündelt zusammengehörige Daten oder Fähigkeiten.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Entity
 - Identifier
 - Attribute
 - Component
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-003
 
-## 11.2 Simulation
+### 11.2 Simulation
 
-### Simulation
+#### Simulation
 
-#### Definition
+##### Definition
 
 Für `Simulation` gilt ausschließlich die kanonische Definition aus Kapitel 3.
 
-#### Zweck
+##### Zweck
 
 Die Aufnahme in diese Begriffsgruppe ordnet Simulation der technischen Verantwortung zu, ohne eine konkurrierende technische Definition einzuführen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -9720,13 +9727,13 @@ Die Aufnahme in diese Begriffsgruppe ordnet Simulation der technischen Verantwor
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Simulation Step`: ist ein abgegrenzter Fortschrittsabschnitt innerhalb der Simulation.
 - `Simulation State`: umfasst die zu einem Zeitpunkt autoritativ maßgeblichen Simulationsdaten.
 - `Processor`: verarbeitet abgegrenzte Eingaben nach festgelegten Regeln.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Simulation Step
 - Simulation State
@@ -9734,23 +9741,23 @@ Die Aufnahme in diese Begriffsgruppe ordnet Simulation der technischen Verantwor
 - Snapshot
 - System
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Simulation Step
+#### Simulation Step
 
-#### Definition
+##### Definition
 
 Ein `Simulation Step` ist ein abgegrenzter Fortschrittsabschnitt, in dem die Simulation die dafür maßgeblichen Eingaben und Regeln auf einen Ausgangszustand anwendet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff schafft einen eindeutigen Bezugsrahmen für einen Teil der Zustandsentwicklung, ohne dessen Dauer, Umfang oder Ausführungsreihenfolge festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -9759,13 +9766,13 @@ Der Begriff schafft einen eindeutigen Bezugsrahmen für einen Teil der Zustandse
 - Diagnose
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Simulation`: bezeichnet die gesamte Verantwortung für regelgebundene Zustandsentwicklung.
 - `State Change`: ist eine einzelne feststellbare Veränderung des Zustands.
 - `Snapshot`: bildet einen Zustand zu einem bestimmten Bezugspunkt ab.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Simulation
 - Simulation State
@@ -9773,23 +9780,23 @@ Der Begriff schafft einen eindeutigen Bezugsrahmen für einen Teil der Zustandse
 - Snapshot
 - Processor
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Simulation State
+#### Simulation State
 
-#### Definition
+##### Definition
 
 Der `Simulation State` ist die Gesamtheit der zu einem bestimmten Zeitpunkt für die Simulation autoritativ maßgeblichen Daten und Beziehungen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff grenzt den vollständigen technischen Simulationszustand von einzelnen Eigenschaften, Veränderungen und gespeicherten Abbildungen ab.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -9798,14 +9805,14 @@ Der Begriff grenzt den vollständigen technischen Simulationszustand von einzeln
 - Tests
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `State`: bezeichnet den Zustand eines abgegrenzten Gameplay-Gegenstands.
 - `State Change`: ist eine feststellbare Veränderung zwischen Zuständen.
 - `Snapshot`: ist eine abgegrenzte Abbildung eines Zustands.
 - `Savegame`: ist ein für die spätere Fortsetzung bestimmter persistenter Bestand.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Simulation
 - Simulation Step
@@ -9813,23 +9820,23 @@ Der Begriff grenzt den vollständigen technischen Simulationszustand von einzeln
 - Snapshot
 - Savegame
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### State Change
+#### State Change
 
-#### Definition
+##### Definition
 
 Ein `State Change` ist eine feststellbare Veränderung mindestens eines Bestandteils des Simulation State gegenüber seinem maßgeblichen Ausgangszustand.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Veränderung selbst, unabhängig von ihrem Auslöser, ihrer Verarbeitung, ihrer Darstellung oder ihrer Speicherung.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -9838,14 +9845,14 @@ Der Begriff bezeichnet die Veränderung selbst, unabhängig von ihrem Auslöser,
 - Tests
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Event`: ist eine festgestellte und benannte Begebenheit.
 - `Command`: fordert die Ausführung einer bestimmten Absicht an.
 - `Message`: übermittelt abgegrenzte Information.
 - `Snapshot`: bildet einen Zustand an einem Bezugspunkt ab.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Simulation State
 - Simulation Step
@@ -9853,23 +9860,23 @@ Der Begriff bezeichnet die Veränderung selbst, unabhängig von ihrem Auslöser,
 - Command
 - Snapshot
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Snapshot
+#### Snapshot
 
-#### Definition
+##### Definition
 
 Ein `Snapshot` ist eine abgegrenzte, einem bestimmten Bezugspunkt zugeordnete Abbildung eines Zustands.
 
-#### Zweck
+##### Zweck
 
 Der Begriff ermöglicht Vergleich, Übergabe, Prüfung oder Wiederherstellung auf Grundlage eines festgehaltenen Zustandsbildes, ohne dessen Umfang oder Aufbewahrung festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Simulation
@@ -9878,14 +9885,14 @@ Der Begriff ermöglicht Vergleich, Übergabe, Prüfung oder Wiederherstellung au
 - Tests
 - Diagnose
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Simulation State`: ist der vollständige autoritative Zustand der Simulation zu einem Zeitpunkt.
 - `Savegame`: ist ein persistenter Bestand zur späteren Fortsetzung.
 - `Serialization`: überführt Daten zwischen einer internen und einer übertragbaren Repräsentation.
 - `Metadata`: beschreibt Daten oder technische Artefakte.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Simulation State
 - State Change
@@ -9893,25 +9900,25 @@ Der Begriff ermöglicht Vergleich, Übergabe, Prüfung oder Wiederherstellung au
 - Serialization
 - Metadata
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-## 11.3 Systeme
+### 11.3 Systeme
 
-### System
+#### System
 
-#### Definition
+##### Definition
 
 Für `System` gilt ausschließlich die kanonische Definition aus Kapitel 3; seine technische Umsetzung begründet keine zweite Bedeutung.
 
-#### Zweck
+##### Zweck
 
 Die Aufnahme in diese Begriffsgruppe ordnet System der technischen Architektur zu, ohne seine fachliche Grenze durch eine Implementierungsgrenze zu ersetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -9920,14 +9927,14 @@ Die Aufnahme in diese Begriffsgruppe ordnet System der technischen Architektur z
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Subsystem`: übernimmt einen abgegrenzten Teil der Verantwortung eines übergeordneten Systemzusammenhangs.
 - `Service`: stellt eine klar bestimmte technische Fähigkeit zur Nutzung bereit.
 - `Processor`: verarbeitet eine abgegrenzte Menge von Eingaben nach festgelegten Regeln.
 - `Manager`: koordiniert Verantwortungen über deren Grenzen hinweg.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Subsystem
 - Service
@@ -9935,23 +9942,23 @@ Die Aufnahme in diese Begriffsgruppe ordnet System der technischen Architektur z
 - Manager
 - Module
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Subsystem
+#### Subsystem
 
-#### Definition
+##### Definition
 
 Ein `Subsystem` ist ein abgegrenzter Teil eines übergeordneten Systemzusammenhangs, der einen Teil von dessen technischer Verantwortung übernimmt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff erlaubt die fachliche Unterteilung eines Systemzusammenhangs, ohne eine feste Hierarchietiefe oder konkrete innere Struktur festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -9960,36 +9967,36 @@ Der Begriff erlaubt die fachliche Unterteilung eines Systemzusammenhangs, ohne e
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `System`: trägt die abgegrenzte Verantwortung für einen Ergebnisbereich.
 - `Service`: stellt eine bestimmte Fähigkeit für andere technische Beteiligte bereit.
 - `Module`: ist eine abgrenzbare Einheit zur Organisation und Bereitstellung technischen Funktionsumfangs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - System
 - Service
 - Processor
 - Module
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Service
+#### Service
 
-#### Definition
+##### Definition
 
 Ein `Service` ist eine abgegrenzte technische Fähigkeit, die anderen technischen Beteiligten über einen definierten Nutzungszugang bereitgestellt wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine nutzbare Fähigkeit und ihren Verantwortungsumfang, ohne ihre interne Verarbeitung, Lebensdauer oder Bereitstellungsform festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -9998,14 +10005,14 @@ Der Begriff bezeichnet eine nutzbare Fähigkeit und ihren Verantwortungsumfang, 
 - Tests
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `System`: verantwortet einen technischen Ergebnisbereich und dessen zusammengehörige Regeln.
 - `Processor`: verarbeitet abgegrenzte Eingaben nach festgelegten Regeln.
 - `Manager`: koordiniert mehrere Verantwortungen oder technische Beteiligte.
 - `API`: definiert den Vertrag für zulässige Interaktionen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - System
 - Subsystem
@@ -10013,23 +10020,23 @@ Der Begriff bezeichnet eine nutzbare Fähigkeit und ihren Verantwortungsumfang, 
 - Manager
 - API
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Processor
+#### Processor
 
-#### Definition
+##### Definition
 
 Ein `Processor` ist eine technische Verantwortung, die eine abgegrenzte Menge von Eingaben nach festgelegten Regeln verarbeitet und daraus bestimmte Ausgaben oder State Changes ableitet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet regelgebundene Verarbeitung, ohne einen gesamten Systembereich, einen dauerhaft bereitgestellten Nutzungszugang oder übergreifende Koordination zu benennen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10038,13 +10045,13 @@ Der Begriff bezeichnet regelgebundene Verarbeitung, ohne einen gesamten Systembe
 - Diagnose
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `System`: umfasst die Verantwortung für einen gesamten technischen Ergebnisbereich.
 - `Service`: stellt eine klar bestimmte technische Fähigkeit zur Nutzung bereit.
 - `Manager`: koordiniert mehrere Verantwortungen oder technische Beteiligte.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - System
 - Subsystem
@@ -10052,23 +10059,23 @@ Der Begriff bezeichnet regelgebundene Verarbeitung, ohne einen gesamten Systembe
 - Manager
 - Simulation Step
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Manager
+#### Manager
 
-#### Definition
+##### Definition
 
 Ein `Manager` ist eine technische Verantwortung für die Koordination mehrerer abgegrenzter Verantwortungen, Gegenstände oder Abläufe über deren jeweilige Grenzen hinweg.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet übergreifende Koordination, wenn diese selbst eine klar benennbare Verantwortung bildet, ohne allgemeine Zuständigkeit für beliebige Verarbeitung auszudrücken.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10077,38 +10084,38 @@ Der Begriff bezeichnet übergreifende Koordination, wenn diese selbst eine klar 
 - Tests
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `System`: verantwortet einen fachlich abgegrenzten technischen Ergebnisbereich.
 - `Service`: stellt eine bestimmte technische Fähigkeit zur Nutzung bereit.
 - `Processor`: verarbeitet abgegrenzte Eingaben nach festgelegten Regeln.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - System
 - Subsystem
 - Service
 - Processor
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-## 11.4 Kommunikation
+### 11.4 Kommunikation
 
-### Event
+#### Event
 
-#### Definition
+##### Definition
 
 Für `Event` gilt ausschließlich die kanonische Definition aus Abschnitt 10.4; seine technische Kommunikation oder Verarbeitung begründet keine zweite Bedeutung.
 
-#### Zweck
+##### Zweck
 
 Die Aufnahme in diese Begriffsgruppe ordnet Event der technischen Kommunikation zu, ohne das eingetretene Ereignis mit seiner Mitteilung gleichzusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10117,14 +10124,14 @@ Die Aufnahme in diese Begriffsgruppe ordnet Event der technischen Kommunikation 
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Command`: fordert die Ausführung einer bestimmten Absicht an.
 - `Message`: ist der allgemeine Übermittlungsgegenstand für abgegrenzte Information.
 - `Request`: bittet einen bestimmten Empfänger um Bearbeitung und erwartet eine Response.
 - `State Change`: ist die Veränderung des Zustands und nicht deren Mitteilung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Message
 - Command
@@ -10132,23 +10139,23 @@ Die Aufnahme in diese Begriffsgruppe ordnet Event der technischen Kommunikation 
 - Request
 - Response
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Command
+#### Command
 
-#### Definition
+##### Definition
 
 Ein `Command` ist eine an einen zuständigen technischen Empfänger gerichtete Aufforderung, eine bestimmte Absicht zu prüfen und bei Zulässigkeit auszuführen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff übermittelt eine beabsichtigte Handlung, ohne deren Annahme, erfolgreiche Ausführung oder daraus entstehende Zustandsänderung vorwegzunehmen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10157,14 +10164,14 @@ Der Begriff übermittelt eine beabsichtigte Handlung, ohne deren Annahme, erfolg
 - Tests
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Event`: teilt eine bereits eingetretene Begebenheit mit.
 - `Request`: bittet um eine Bearbeitung, deren Ergebnis als Response zurückgegeben wird.
 - `Message`: ist der allgemeinere Übermittlungsgegenstand.
 - `Action`: ist eine autorisierte Gameplay-Handlung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Message
 - Event
@@ -10172,23 +10179,23 @@ Der Begriff übermittelt eine beabsichtigte Handlung, ohne deren Annahme, erfolg
 - Response
 - Action
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Message
+#### Message
 
-#### Definition
+##### Definition
 
 Eine `Message` ist ein abgegrenzter Übermittlungsgegenstand, der Information zwischen technischen Beteiligten transportiert.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die übermittelte Information unabhängig davon, ob sie eine Tatsache, Aufforderung, Anfrage oder Antwort ausdrückt.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10197,14 +10204,14 @@ Der Begriff bezeichnet die übermittelte Information unabhängig davon, ob sie e
 - Tests
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Event`: kommuniziert eine bereits eingetretene Begebenheit.
 - `Command`: fordert die Prüfung und mögliche Ausführung einer Absicht an.
 - `Request`: erwartet eine zugeordnete Response.
 - `Response`: beantwortet eine bestimmte Request.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Event
 - Command
@@ -10212,23 +10219,23 @@ Der Begriff bezeichnet die übermittelte Information unabhängig davon, ob sie e
 - Response
 - API
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Request
+#### Request
 
-#### Definition
+##### Definition
 
 Eine `Request` ist eine an einen bestimmten technischen Empfänger gerichtete Bitte um Bearbeitung, für die eine zugeordnete `Response` erwartet wird.
 
-#### Zweck
+##### Zweck
 
 Der Begriff kennzeichnet eine korrelierte Interaktion mit erwartetem Ergebnis, ohne eine Zustandsänderung oder erfolgreiche Bearbeitung zu garantieren.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10237,13 +10244,13 @@ Der Begriff kennzeichnet eine korrelierte Interaktion mit erwartetem Ergebnis, o
 - API
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Command`: fordert die Prüfung und mögliche Ausführung einer Absicht an, ohne durch den Begriff eine Response zu verlangen.
 - `Message`: ist der allgemeine Übermittlungsgegenstand.
 - `Response`: enthält das der Request zugeordnete Ergebnis ihrer Bearbeitung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Response
 - Message
@@ -10251,23 +10258,23 @@ Der Begriff kennzeichnet eine korrelierte Interaktion mit erwartetem Ergebnis, o
 - Service
 - API
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Response
+#### Response
 
-#### Definition
+##### Definition
 
 Eine `Response` ist das einer bestimmten Request zugeordnete technische Ergebnis ihrer Bearbeitung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff schließt eine angeforderte Interaktion eindeutig ab, ohne Erfolg, Dateninhalt oder Zustandsänderung des Ergebnisses vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10276,13 +10283,13 @@ Der Begriff schließt eine angeforderte Interaktion eindeutig ab, ohne Erfolg, D
 - API
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Request`: ist die vorausgehende Bitte um Bearbeitung.
 - `Event`: teilt eine bereits eingetretene Begebenheit mit und beantwortet nicht notwendigerweise eine Request.
 - `Message`: ist der allgemeine Übermittlungsgegenstand.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Request
 - Message
@@ -10290,25 +10297,25 @@ Der Begriff schließt eine angeforderte Interaktion eindeutig ab, ohne Erfolg, D
 - Service
 - API
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-## 11.5 Persistenz
+### 11.5 Persistenz
 
-### Savegame
+#### Savegame
 
-#### Definition
+##### Definition
 
 Ein `Savegame` ist ein persistenter, in sich zuordenbarer Bestand der für eine spätere Fortsetzung eines Spielzusammenhangs erforderlichen Daten.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet das fortsetzbare gespeicherte Ergebnis, ohne Speicherform, Umfang, Erstellung oder Wiederherstellungsverfahren festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10317,14 +10324,14 @@ Der Begriff bezeichnet das fortsetzbare gespeicherte Ergebnis, ohne Speicherform
 - Tests
 - Modding
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Snapshot`: ist eine Abbildung eines Zustands für einen bestimmten Bezugspunkt und nicht zwingend fortsetzbar.
 - `Persistence`: ist die Verantwortung für den Erhalt von Daten über ihre unmittelbare Verarbeitung hinaus.
 - `Serialization`: überführt Daten zwischen Repräsentationen.
 - `Configuration`: bestimmt anpassbare Vorgaben für Verhalten oder Aufbau.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Persistence
 - Serialization
@@ -10332,23 +10339,23 @@ Der Begriff bezeichnet das fortsetzbare gespeicherte Ergebnis, ohne Speicherform
 - Metadata
 - Configuration
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Serialization
+#### Serialization
 
-#### Definition
+##### Definition
 
 `Serialization` ist die regelgebundene Überführung von Daten zwischen ihrer für die laufende Verarbeitung maßgeblichen Repräsentation und einer übertragbaren oder aufbewahrbaren Repräsentation.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Repräsentationsumwandlung, ohne Speicherung, Übertragung, Format oder langfristigen Erhalt vorauszusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Persistenz
@@ -10357,14 +10364,14 @@ Der Begriff bezeichnet die Repräsentationsumwandlung, ohne Speicherung, Übertr
 - Tests
 - Modding
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Persistence`: erhält Daten über ihre unmittelbare Verarbeitung hinaus.
 - `Savegame`: ist ein fortsetzbarer persistenter Datenbestand.
 - `Snapshot`: ist eine einem Bezugspunkt zugeordnete Zustandsabbildung.
 - `Configuration`: enthält anpassbare Vorgaben.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Persistence
 - Savegame
@@ -10372,23 +10379,23 @@ Der Begriff bezeichnet die Repräsentationsumwandlung, ohne Speicherung, Übertr
 - Metadata
 - API
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Persistence
+#### Persistence
 
-#### Definition
+##### Definition
 
 `Persistence` ist die technische Verantwortung, Daten über den Zeitraum ihrer unmittelbaren Verarbeitung hinaus zu erhalten und für eine spätere Nutzung bereitzustellen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet den dauerhaften Datenerhalt als Verantwortung, ohne Repräsentationsumwandlung, konkreten Speicherort oder bestimmten Nutzungszweck festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10397,14 +10404,14 @@ Der Begriff bezeichnet den dauerhaften Datenerhalt als Verantwortung, ohne Repr�
 - Tests
 - Modding
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Serialization`: überführt Daten zwischen Repräsentationen.
 - `Savegame`: ist ein bestimmter persistenter Bestand zur Fortsetzung eines Spielzusammenhangs.
 - `Configuration`: umfasst anpassbare Vorgaben für Verhalten oder Aufbau.
 - `Metadata`: beschreibt Daten oder technische Artefakte.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Serialization
 - Savegame
@@ -10412,23 +10419,23 @@ Der Begriff bezeichnet den dauerhaften Datenerhalt als Verantwortung, ohne Repr�
 - Metadata
 - Snapshot
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Configuration
+#### Configuration
 
-#### Definition
+##### Definition
 
 Für `Configuration` gilt ausschließlich die kanonische Definition aus Kapitel 3.
 
-#### Zweck
+##### Zweck
 
 Die Aufnahme in diese Begriffsgruppe ordnet Configuration der technischen Architektur zu, ohne eine konkurrierende technische Definition einzuführen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10437,14 +10444,14 @@ Die Aufnahme in diese Begriffsgruppe ordnet Configuration der technischen Archit
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Simulation State`: enthält die autoritativ maßgeblichen Daten der laufenden Simulation.
 - `Metadata`: beschreibt andere Daten oder technische Artefakte für einen bestimmten Kontext.
 - `Persistence`: ist die Verantwortung für langfristigen Datenerhalt.
 - `Savegame`: dient der späteren Fortsetzung eines Spielzusammenhangs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Metadata
 - Persistence
@@ -10452,23 +10459,23 @@ Die Aufnahme in diese Begriffsgruppe ordnet Configuration der technischen Archit
 - Plugin
 - Mod
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Metadata
+#### Metadata
 
-#### Definition
+##### Definition
 
 `Metadata` sind einem bestimmten Kontext zugeordnete Angaben, die andere Daten oder technische Artefakte beschreiben, einordnen oder auffindbar machen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet beschreibende Zusatzangaben, ohne sie mit den beschriebenen Nutzdaten, anpassbaren Vorgaben oder deren dauerhaftem Erhalt gleichzusetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Datenmodelle
@@ -10477,14 +10484,14 @@ Der Begriff bezeichnet beschreibende Zusatzangaben, ohne sie mit den beschrieben
 - Modding
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Attribute`: ist eine einzelne fachlich maßgebliche Eigenschaft eines technischen Gegenstands.
 - `Configuration`: bestimmt anpassbare Vorgaben für Verhalten oder Aufbau.
 - `Persistence`: bezeichnet die Verantwortung für Datenerhalt.
 - `Identifier`: bezeichnet einen Gegenstand eindeutig.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Attribute
 - Identifier
@@ -10492,25 +10499,25 @@ Der Begriff bezeichnet beschreibende Zusatzangaben, ohne sie mit den beschrieben
 - Persistence
 - Savegame
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-002
 - PB-003
 
-## 11.6 Erweiterbarkeit
+### 11.6 Erweiterbarkeit
 
-### Module
+#### Module
 
-#### Definition
+##### Definition
 
 Für `Module` gilt ausschließlich die kanonische Definition aus Kapitel 3.
 
-#### Zweck
+##### Zweck
 
 Die Aufnahme in diese Begriffsgruppe ordnet Module der technischen Erweiterbarkeit zu, ohne eine konkurrierende technische Definition einzuführen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10519,14 +10526,14 @@ Die Aufnahme in diese Begriffsgruppe ordnet Module der technischen Erweiterbarke
 - Dokumentation
 - Projektstruktur
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Subsystem`: übernimmt einen Teil der Verantwortung eines übergeordneten Systemzusammenhangs.
 - `Plugin`: ergänzt einen vorgesehenen technischen Anschluss als eigenständig zuordenbare Einheit.
 - `Extension`: ist jede ausdrücklich vorgesehene Ergänzung eines bestehenden Funktionsumfangs.
 - `Mod`: ist eine nicht zum unveränderten Kernbestand gehörende Anpassungs- oder Inhaltseinheit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - System
 - Subsystem
@@ -10534,23 +10541,23 @@ Die Aufnahme in diese Begriffsgruppe ordnet Module der technischen Erweiterbarke
 - Extension
 - Mod
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Plugin
+#### Plugin
 
-#### Definition
+##### Definition
 
 Ein `Plugin` ist eine eigenständig zuordenbare technische Einheit, die einen dafür vorgesehenen Anschluss nutzt, um einen bestehenden Funktionsumfang zu ergänzen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet eine anschlussgebundene Erweiterungseinheit, ohne ihre Herkunft, Bereitstellung, Aktivierung oder internen Mittel festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10559,14 +10566,14 @@ Der Begriff bezeichnet eine anschlussgebundene Erweiterungseinheit, ohne ihre He
 - Configuration
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Extension`: ist der allgemeine Begriff für eine vorgesehene Ergänzung und muss keine eigenständige Anschlusseinheit sein.
 - `Module`: organisiert einen zusammengehörigen technischen Funktionsumfang unabhängig von einer Erweiterungsrolle.
 - `Mod`: passt das Projekt oder seine Inhalte außerhalb des unveränderten Kernbestands an.
 - `API`: definiert einen Vertrag für zulässige Interaktionen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Extension
 - Module
@@ -10574,23 +10581,23 @@ Der Begriff bezeichnet eine anschlussgebundene Erweiterungseinheit, ohne ihre He
 - API
 - Configuration
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Extension
+#### Extension
 
-#### Definition
+##### Definition
 
 Eine `Extension` ist eine ausdrücklich vorgesehene Ergänzung eines bestehenden technischen Funktionsumfangs, die dessen Grundverantwortung nicht ersetzt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bezeichnet die Erweiterung als Rolle oder Ergebnis, unabhängig davon, ob sie durch ein Plugin, ein Module, einen Mod oder einen anderen vorgesehenen Mechanismus bereitgestellt wird.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10599,37 +10606,37 @@ Der Begriff bezeichnet die Erweiterung als Rolle oder Ergebnis, unabhängig davo
 - API
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Plugin`: ist eine eigenständig zuordenbare Einheit an einem vorgesehenen Anschluss.
 - `Module`: grenzt zusammengehörigen technischen Funktionsumfang organisatorisch ab.
 - `Mod`: ist eine Anpassungs- oder Inhaltseinheit außerhalb des unveränderten Kernbestands.
 - `API`: ist der Interaktionsvertrag und nicht die Ergänzung selbst.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Plugin
 - Module
 - Mod
 - API
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### Mod
+#### Mod
 
-#### Definition
+##### Definition
 
 Ein `Mod` ist eine als Einheit zuordenbare Anpassung oder Ergänzung des Projekts oder seiner Inhalte, die nicht zum unveränderten Kernbestand gehört.
 
-#### Zweck
+##### Zweck
 
 Der Begriff grenzt nutzer- oder projekterweiternde Änderungen vom unveränderten Kernbestand ab, ohne ihren Umfang, ihre Herkunft oder ihre technischen Mittel festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10638,14 +10645,14 @@ Der Begriff grenzt nutzer- oder projekterweiternde Änderungen vom unveränderte
 - Configuration
 - Dokumentation
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Plugin`: nutzt als technische Einheit einen vorgesehenen Anschluss zur Ergänzung von Funktionsumfang.
 - `Extension`: bezeichnet allgemein eine vorgesehene Ergänzung eines bestehenden Funktionsumfangs.
 - `Module`: organisiert technischen Funktionsumfang und ist nicht durch seine Herkunft vom Kernbestand bestimmt.
 - `Scenario`: definiert Ausgangsbedingungen und Inhalte eines Spielzusammenhangs.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Plugin
 - Extension
@@ -10653,23 +10660,23 @@ Der Begriff grenzt nutzer- oder projekterweiternde Änderungen vom unveränderte
 - API
 - Configuration
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-### API
+#### API
 
-#### Definition
+##### Definition
 
 Eine `API` ist ein ausdrücklich definierter Vertrag für zulässige Interaktionen zwischen voneinander abgegrenzten technischen Beteiligten.
 
-#### Zweck
+##### Zweck
 
 Der Begriff legt die Bedeutung, Voraussetzungen und erwartbaren Ergebnisse von Interaktionen fest, ohne interne Verarbeitung oder konkrete Verbindungsmittel vorzuschreiben.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Engine
@@ -10678,14 +10685,14 @@ Der Begriff legt die Bedeutung, Voraussetzungen und erwartbaren Ergebnisse von I
 - Dokumentation
 - Projektstruktur
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Service`: ist eine bereitgestellte technische Fähigkeit, deren Nutzung durch eine API beschrieben werden kann.
 - `Message`: ist ein übermittelter Informationsgegenstand innerhalb einer Interaktion.
 - `Plugin`: ist eine Erweiterungseinheit, die eine API nutzen kann.
 - `Extension`: ist eine Ergänzung des Funktionsumfangs und nicht deren Interaktionsvertrag.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Service
 - Message
@@ -10694,14 +10701,14 @@ Der Begriff legt die Bedeutung, Voraussetzungen und erwartbaren Ergebnisse von I
 - Plugin
 - Extension
 
-#### Referenzen
+##### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
 
-# Kapitel 12 – Identifier-Standards
+## Kapitel 12 – Identifier-Standards
 
 Stabile Identifier ermöglichen die langfristig eindeutige Wiedererkennung und Referenzierung derselben Identity in Dokumentation, Inhalten und technischen Zusammenhängen. Sie dienen ausschließlich der Identifikation; Anzeigenamen und Identifier sind unterschiedliche Konzepte, und ein Identifier stellt niemals einen Benutzertext dar.
 
@@ -10709,1167 +10716,1167 @@ Alle Identifier des Projekts MUST ausschließlich in englischer Sprache erstellt
 
 Ein veröffentlichter Identifier MUST stabil bleiben und MUST weder geändert noch einer anderen Identity zugeordnet werden. Die Beispiele dieses Kapitels sind ausschließlich illustrativ, erläutern die Identifier-Philosophie und bilden weder vollständige Identifierlisten noch verbindliche Inhaltskataloge.
 
-## 12.1 Grundprinzipien
+### 12.1 Grundprinzipien
 
-### Identity
+#### Identity
 
-#### Definition
+##### Definition
 
 `Identity` ist die über Zeit fortbestehende begriffliche Gleichheit eines bestimmten Gegenstands, unabhängig von veränderlichen Eigenschaften oder Anzeigenamen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bestimmt, welcher Gegenstand als derselbe wiedererkannt wird.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Game Design
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Identifier`: ist die stabile Bezeichnung einer Identity.
 - `Namespace`: grenzt den Eindeutigkeitsraum ab.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Namespace
 - Scope
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Identifier
+#### Identifier
 
-#### Definition
+##### Definition
 
 `Identifier` ist eine innerhalb eines festgelegten Namespace eindeutige, sprachunabhängige und dauerhaft stabile englische Bezeichnung einer Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff dient ausschließlich der eindeutigen Identifikation und Referenzierung.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Game Design
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Identity`: ist der bezeichnete Gegenstand als derselbe.
 - `Anzeigename`: ist ein für Menschen bestimmter und lokalisierbarer Text.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identity
 - Namespace
 - Stable Reference
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Namespace
+#### Namespace
 
-#### Definition
+##### Definition
 
 `Namespace` ist ein benannter Abgrenzungsraum, innerhalb dessen Identifier eindeutig sein müssen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff verhindert Kollisionen zwischen getrennten Identifier-Bereichen.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Game Design
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Scope`: bestimmt den Geltungsbereich einer Regel oder Zuordnung.
 - `Identifier`: bezeichnet innerhalb des Namespace genau eine Identity.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Scope
 - Namespacing
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Scope
+#### Scope
 
-#### Definition
+##### Definition
 
 `Scope` ist der ausdrücklich abgegrenzte Geltungsbereich einer Benennung, Regel oder Zuordnung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff macht sichtbar, in welchem Zusammenhang eine Festlegung maßgeblich ist.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Game Design
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Namespace`: bestimmt den Eindeutigkeitsraum von Identifiern.
 - `Identity`: bezeichnet die fortbestehende Gleichheit eines Gegenstands.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Namespace
 - Identity
 - Configuration Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-## 12.2 Dokument-Identifier
+### 12.2 Dokument-Identifier
 
-### Document ID
+#### Document ID
 
-#### Definition
+##### Definition
 
 `Document ID` ist der kanonische Identifier eines Project-Bible-Dokuments.
 
-#### Zweck
+##### Zweck
 
 Der Begriff ermöglicht die dauerhafte, vom Titel unabhängige Zuordnung eines Dokuments.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Traceability
 - Reviews
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Canonical Path`: bezeichnet dessen kanonischen Ablageort.
 - `Version Identifier`: bezeichnet einen bestimmten Versionsstand.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Canonical Path
 - Version Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Canonical Path
+#### Canonical Path
 
-#### Definition
+##### Definition
 
 `Canonical Path` ist der für ein Dokument oder Artefakt autoritativ festgelegte Pfad.
 
-#### Zweck
+##### Zweck
 
 Der Begriff bestimmt den maßgeblichen Ablagebezug, ohne selbst die Identity des Dokuments zu ersetzen.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Traceability
 - Reviews
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Document ID`: bezeichnet das Dokument unabhängig vom Pfad.
 - `Internal Reference`: verweist innerhalb des Projekts.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Document ID
 - Internal Reference
 - Stable Reference
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Version Identifier
+#### Version Identifier
 
-#### Definition
+##### Definition
 
 `Version Identifier` ist ein Identifier für einen ausdrücklich abgegrenzten Versionsstand eines Dokuments oder Artefakts.
 
-#### Zweck
+##### Zweck
 
 Der Begriff macht unterschiedliche freigegebene Stände unterscheidbar, ohne die fortbestehende Identity zu ändern.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Traceability
 - Reviews
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Document ID`: bezeichnet das Dokument über Versionen hinweg.
 - `Transient Reference`: ist nicht auf langfristige Gültigkeit angelegt.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Document ID
 - Versioning
 - Stable Reference
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-## 12.3 Inhalts-Identifier
+### 12.3 Inhalts-Identifier
 
-### Country Identifier
+#### Country Identifier
 
-#### Definition
+##### Definition
 
 `Country Identifier` ist der Identifier einer Country-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert ein Country sprachunabhängig und unabhängig von seinem Anzeigenamen.
 
-#### Verwendung
+##### Verwendung
 
 - Content
 - Game Design
 - Modding
 - UI
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Region Identifier`: bezeichnet eine Region.
 - `Faction Identifier`: bezeichnet eine Faction.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Country
 - Region Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Region Identifier
+#### Region Identifier
 
-#### Definition
+##### Definition
 
 `Region Identifier` ist der Identifier einer Region-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert eine Region stabil über lokalisierte Bezeichnungen hinweg.
 
-#### Verwendung
+##### Verwendung
 
 - Content
 - Game Design
 - Modding
 - UI
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Country Identifier`: bezeichnet ein Country.
 - `Resource Identifier`: bezeichnet eine Resource.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Region
 - Country Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Character Identifier
+#### Character Identifier
 
-#### Definition
+##### Definition
 
 `Character Identifier` ist der Identifier einer Character-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert einen Character unabhängig von Titel, Rolle oder Anzeigename.
 
-#### Verwendung
+##### Verwendung
 
 - Content
 - Game Design
 - Modding
 - UI
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Faction Identifier`: bezeichnet eine Faction.
 - `Country Identifier`: bezeichnet ein Country.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Character
 - Faction Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Law Identifier
+#### Law Identifier
 
-#### Definition
+##### Definition
 
 `Law Identifier` ist der Identifier einer Law-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert ein Law unabhängig von seiner lokalisierten Darstellung.
 
-#### Verwendung
+##### Verwendung
 
 - Content
 - Game Design
 - Modding
 - UI
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Project Identifier`: bezeichnet ein Project.
 - `Technology Identifier`: bezeichnet eine Technology.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Law
 - Stable Reference
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Project Identifier
+#### Project Identifier
 
-#### Definition
+##### Definition
 
 `Project Identifier` ist der Identifier einer Project-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert ein Project unabhängig von Anzeigename oder Fortschritt.
 
-#### Verwendung
+##### Verwendung
 
 - Content
 - Game Design
 - Modding
 - UI
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Mission Identifier`: bezeichnet eine Mission.
 - `Event Identifier`: bezeichnet ein Event.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Project
 - Mission Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Mission Identifier
+#### Mission Identifier
 
-#### Definition
+##### Definition
 
 `Mission Identifier` ist der Identifier einer Mission-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert eine Mission unabhängig von Status und Benutzertext.
 
-#### Verwendung
+##### Verwendung
 
 - Content
 - Game Design
 - Modding
 - UI
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Project Identifier`: bezeichnet ein Project.
 - `Event Identifier`: bezeichnet ein Event.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Mission
 - Project Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Event Identifier
+#### Event Identifier
 
-#### Definition
+##### Definition
 
 `Event Identifier` ist der Identifier einer Event-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert ein fachliches Event unabhängig von seiner lokalisierten Beschreibung.
 
-#### Verwendung
+##### Verwendung
 
 - Content
 - Game Design
 - Modding
 - UI
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Mission Identifier`: bezeichnet eine Mission.
 - `System Identifier`: bezeichnet ein technisches System.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Event
 - Mission Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Faction Identifier
+#### Faction Identifier
 
-#### Definition
+##### Definition
 
 `Faction Identifier` ist der Identifier einer Faction-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert eine Faction unabhängig von Name, Mitgliedschaft oder Führung.
 
-#### Verwendung
+##### Verwendung
 
 - Content
 - Game Design
 - Modding
 - UI
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Country Identifier`: bezeichnet ein Country.
 - `Character Identifier`: bezeichnet einen Character.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Faction
 - Character Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Resource Identifier
+#### Resource Identifier
 
-#### Definition
+##### Definition
 
 `Resource Identifier` ist der Identifier einer Resource-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert eine Resource unabhängig von lokalisierten Bezeichnungen.
 
-#### Verwendung
+##### Verwendung
 
 - Content
 - Game Design
 - Modding
 - UI
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Building Identifier`: bezeichnet ein Building.
 - `Technology Identifier`: bezeichnet eine Technology.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Resource
 - Building Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Building Identifier
+#### Building Identifier
 
-#### Definition
+##### Definition
 
 `Building Identifier` ist der Identifier einer Building-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert ein Building unabhängig von lokalisierter Darstellung.
 
-#### Verwendung
+##### Verwendung
 
 - Content
 - Game Design
 - Modding
 - UI
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Resource Identifier`: bezeichnet eine Resource.
 - `Technology Identifier`: bezeichnet eine Technology.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Building
 - Resource Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Technology Identifier
+#### Technology Identifier
 
-#### Definition
+##### Definition
 
 `Technology Identifier` ist der Identifier einer Technology-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert eine Technology unabhängig von Anzeigename oder Beschreibung.
 
-#### Verwendung
+##### Verwendung
 
 - Content
 - Game Design
 - Modding
 - UI
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Law Identifier`: bezeichnet ein Law.
 - `Building Identifier`: bezeichnet ein Building.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Technology
 - Building Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-## 12.4 Technische Identifier
+### 12.4 Technische Identifier
 
-### System Identifier
+#### System Identifier
 
-#### Definition
+##### Definition
 
 `System Identifier` ist der Identifier einer technischen System-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert eine technische Systemverantwortung stabil und sprachunabhängig.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Dokumentation
 - Tests
 - Modding
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Component Identifier`: bezeichnet eine Component.
 - `API Identifier`: bezeichnet eine API.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - System
 - Component Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Component Identifier
+#### Component Identifier
 
-#### Definition
+##### Definition
 
 `Component Identifier` ist der Identifier einer technischen Component-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert eine Component unabhängig von ihrer Darstellung oder Einordnung.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Dokumentation
 - Tests
 - Modding
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `System Identifier`: bezeichnet ein System.
 - `Configuration Identifier`: bezeichnet eine Configuration.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Component
 - System Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Configuration Identifier
+#### Configuration Identifier
 
-#### Definition
+##### Definition
 
 `Configuration Identifier` ist der Identifier einer Configuration-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert eine abgegrenzte Configuration unabhängig von ihren Werten.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Dokumentation
 - Tests
 - Modding
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Database Identifier`: bezeichnet einen Datenbankgegenstand.
 - `Component Identifier`: bezeichnet eine Component.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Configuration
 - Component Identifier
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### API Identifier
+#### API Identifier
 
-#### Definition
+##### Definition
 
 `API Identifier` ist der Identifier einer API-Identity.
 
-#### Zweck
+##### Zweck
 
 Der Begriff referenziert einen abgegrenzten API-Vertrag unabhängig von Dokumentationstexten.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Dokumentation
 - Tests
 - Modding
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `System Identifier`: bezeichnet ein System.
 - `Database Identifier`: bezeichnet einen Datenbankgegenstand.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - API
 - Stable Reference
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Database Identifier
+#### Database Identifier
 
-#### Definition
+##### Definition
 
 `Database Identifier` ist der Identifier einer dauerhaft zuordenbaren Identity im Datenbankkontext.
 
-#### Zweck
+##### Zweck
 
 Der Begriff ermöglicht stabile Zuordnung im Datenbankkontext, ohne Speichertechnik oder Schema festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Technische Spezifikationen
 - Dokumentation
 - Tests
 - Modding
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Configuration Identifier`: bezeichnet eine Configuration.
 - `API Identifier`: bezeichnet eine API.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Persistence
 - Stable Reference
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-## 12.5 Referenzen
+### 12.5 Referenzen
 
-### Internal Reference
+#### Internal Reference
 
-#### Definition
+##### Definition
 
 `Internal Reference` ist eine Reference auf eine Identity innerhalb des Projekts.
 
-#### Zweck
+##### Zweck
 
 Der Begriff verknüpft Projektartefakte durch Identifier statt durch Anzeigenamen.
 
-#### Verwendung
+##### Verwendung
 
 - Dokumentation
 - Traceability
 - Reviews
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `External Reference`: verweist auf einen Gegenstand außerhalb des Projekts.
 - `Stable Reference`: bleibt langfristig auflösbar.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Reference
 - Identifier
 - Stable Reference
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### External Reference
+#### External Reference
 
-#### Definition
+##### Definition
 
 `External Reference` ist eine Reference auf einen außerhalb des Projekts verantworteten Gegenstand.
 
-#### Zweck
+##### Zweck
 
 Der Begriff ordnet externe Quellen oder Artefakte zu, ohne ihnen eine interne Identity zuzuschreiben.
 
-#### Verwendung
+##### Verwendung
 
 - Dokumentation
 - Traceability
 - Reviews
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Internal Reference`: verweist innerhalb des Projekts.
 - `Stable Reference`: beschreibt die angestrebte Dauerhaftigkeit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Reference
 - Internal Reference
 - Transient Reference
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Stable Reference
+#### Stable Reference
 
-#### Definition
+##### Definition
 
 `Stable Reference` ist eine Reference, deren Zielzuordnung langfristig unverändert und auflösbar bleiben soll.
 
-#### Zweck
+##### Zweck
 
 Der Begriff sichert dauerhafte Nachvollziehbarkeit über Anzeigenamen und Überarbeitungen hinweg.
 
-#### Verwendung
+##### Verwendung
 
 - Dokumentation
 - Traceability
 - Reviews
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Transient Reference`: ist nur für einen begrenzten Zusammenhang bestimmt.
 - `Version Identifier`: bezeichnet einen bestimmten Stand.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Reference
 - Identifier
 - Immutability
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Transient Reference
+#### Transient Reference
 
-#### Definition
+##### Definition
 
 `Transient Reference` ist eine ausdrücklich nur für einen begrenzten Zusammenhang oder Zeitraum bestimmte Reference.
 
-#### Zweck
+##### Zweck
 
 Der Begriff erlaubt vorläufige Zuordnung, ohne dauerhafte Verlässlichkeit zu behaupten.
 
-#### Verwendung
+##### Verwendung
 
 - Dokumentation
 - Traceability
 - Reviews
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Stable Reference`: ist auf langfristige Auflösbarkeit angelegt.
 - `Internal Reference`: bestimmt die Herkunft des Ziels.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Reference
 - Stable Reference
 - Scope
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-## 12.6 Identifier-Regeln
+### 12.6 Identifier-Regeln
 
-### Uniqueness
+#### Uniqueness
 
-#### Definition
+##### Definition
 
 `Uniqueness` ist die Regel, dass ein Identifier innerhalb seines Namespace genau einer Identity zugeordnet ist.
 
-#### Zweck
+##### Zweck
 
 Der Begriff verhindert Mehrdeutigkeit und kollidierende Zuordnungen.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Content
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Stability`: erhält eine Zuordnung über Zeit.
 - `Namespacing`: grenzt den Eindeutigkeitsraum ab.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Namespace
 - Identity
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Stability
+#### Stability
 
-#### Definition
+##### Definition
 
 `Stability` ist die Regel, dass die Zuordnung eines veröffentlichten Identifier zu seiner Identity dauerhaft erhalten bleibt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff ermöglicht langfristig verlässliche Referenzen.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Content
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Immutability`: verbietet die nachträgliche Änderung des veröffentlichten Identifier.
 - `Versioning`: unterscheidet Stände.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Stable Reference
 - Immutability
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Readability
+#### Readability
 
-#### Definition
+##### Definition
 
 `Readability` ist die Regel, Identifier für Menschen erkennbar und sinnvoll unterscheidbar zu benennen, ohne Benutzertext zu bilden.
 
-#### Zweck
+##### Zweck
 
 Der Begriff unterstützt Prüfung und Wartung, ohne Lokalisierung oder Bedeutungsableitung zu verlangen.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Content
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Anzeigename`: ist lokalisierbarer Benutzertext.
 - `Stability`: hat Vorrang vor späterer sprachlicher Verbesserung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Namespacing
 - Stability
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Namespacing
+#### Namespacing
 
-#### Definition
+##### Definition
 
 `Namespacing` ist die Regel, Identifier durch einen ausdrücklich bestimmten Namespace zu ordnen und dort eindeutig zu halten.
 
-#### Zweck
+##### Zweck
 
 Der Begriff verhindert Kollisionen und macht den Identifikationsbereich erkennbar.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Content
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Uniqueness`: fordert Eindeutigkeit innerhalb dieses Bereichs.
 - `Scope`: begrenzt den Geltungszusammenhang.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Namespace
 - Uniqueness
 - Scope
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Versioning
+#### Versioning
 
-#### Definition
+##### Definition
 
 `Versioning` ist die Regel, unterschiedliche maßgebliche Stände durch gesonderte Versionsangaben zu unterscheiden, ohne bestehende Identity umzubenennen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff ermöglicht nachvollziehbare Entwicklung bei stabilen Identifiern.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Content
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Version Identifier`: bezeichnet einen bestimmten Stand.
 - `Immutability`: schützt den veröffentlichten Identifier.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Version Identifier
 - Stability
 - Immutability
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
 - PB-002
 - PB-003
 
-### Immutability
+#### Immutability
 
-#### Definition
+##### Definition
 
 `Immutability` ist die Regel, dass ein veröffentlichter Identifier nicht geändert, lokalisiert oder einer anderen Identity zugeordnet werden darf.
 
-#### Zweck
+##### Zweck
 
 Der Begriff schützt Referenzen und historische Nachvollziehbarkeit dauerhaft.
 
-#### Verwendung
+##### Verwendung
 
 - Governance
 - Dokumentation
 - Content
 - Technische Spezifikationen
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Stability`: bezeichnet die dauerhafte Erhaltung der Zuordnung.
 - `Versioning`: unterscheidet Änderungen ohne Umbenennung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Stability
 - Stable Reference
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-001
@@ -11888,7 +11895,7 @@ Die folgenden Formen dienen ausschließlich der Erläuterung und definieren kein
 
 Die zugehörigen Anzeigenamen MAY lokalisiert und geändert werden; die Identifier MUST englisch, unverändert und nicht lokalisiert bleiben.
 
-# Kapitel 13 – Benennungs- und Schreibregeln
+## Kapitel 13 – Benennungs- und Schreibregeln
 
 Einheitliche Schreibweisen machen Begriffe, Referenzen und Bezeichnungen über Dokumentation, Quellcode, Daten und Benutzertexte hinweg eindeutig auffindbar und verständlich. Sie verhindern, dass bloße Schreibvarianten wie unterschiedliche Konzepte behandelt werden.
 
@@ -11896,924 +11903,924 @@ Konsistenz hat Vorrang vor persönlichen Vorlieben und individuellen Schreibstil
 
 Die folgenden Regeln gelten für alle zukünftigen Project-Bible-Dokumente, technischen Spezifikationen und den Quellcode sowie für Daten, Identifier und Benutzertexte. Sie bestimmen ausschließlich Benennung und Schreibweise, nicht deren technische Implementierung.
 
-## 13.1 Allgemeine Schreibregeln
+### 13.1 Allgemeine Schreibregeln
 
-### Project Language
+#### Project Language
 
-#### Definition
+##### Definition
 
 `Project Language` ist die Zuordnung einer verbindlichen Sprache zu einer projektweiten Text- oder Benennungskategorie.
 
-#### Zweck
+##### Zweck
 
 Der Begriff trennt die Sprache der Dokumentation, des Quellcodes, der Identifier und der lokalisierbaren Benutzertexte eindeutig voneinander.
 
-#### Verwendung
+##### Verwendung
 
 - Kanonische Dokumentation MUST in deutscher Sprache verfasst werden.
 - Quellcode und Identifier MUST in englischer Sprache verfasst werden.
 - Lokalisierbare Benutzertexte MAY in mehreren Sprachen vorliegen.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Documentation Language`: gilt ausschließlich für Dokumentation.
 - `Localization`: stellt Benutzertexte in mehreren Sprachen bereit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Documentation Language
 - Code Language
 - Identifier Language
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Capitalization
+#### Capitalization
 
-#### Definition
+##### Definition
 
 `Capitalization` ist die verbindliche Groß- und Kleinschreibung einer Bezeichnung innerhalb ihrer Benennungskategorie.
 
-#### Zweck
+##### Zweck
 
 Der Begriff verhindert abweichende Schreibvarianten desselben Namens.
 
-#### Verwendung
+##### Verwendung
 
 - Kanonische Fachbegriffe MUST die in PB-004 festgelegte Groß- und Kleinschreibung bewahren.
 - Namen ohne speziellere Regel MUST innerhalb derselben Kategorie einheitlich geschrieben werden.
 - Eine abweichende Groß- oder Kleinschreibung MUST NOT als neues Konzept oder stilistische Variante eingeführt werden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Display Name`: darf eine lokalisierte Anzeigeform besitzen.
 - `Identifier`: besitzt zusätzlich Regeln zu Sprache, Stabilität und Eindeutigkeit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Terminology Consistency
 - Identifier
 - Display Name
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Singular vs. Plural
+#### Singular vs. Plural
 
-#### Definition
+##### Definition
 
 `Singular vs. Plural` ist die Regel, ob eine Benennung ein einzelnes Konzept oder eine Sammlung bezeichnet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff macht Anzahl und fachliche Bedeutung einer Bezeichnung erkennbar.
 
-#### Verwendung
+##### Verwendung
 
 - Namen einzelner Konzepte, Typen und Einträge SHOULD im Singular stehen.
 - Namen tatsächlicher Sammlungen oder Gruppen SHOULD im Plural stehen.
 - Singular und Plural MUST NOT ohne Bedeutungsunterschied als austauschbare Namen desselben Elements verwendet werden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Capitalization`: regelt Groß- und Kleinschreibung.
 - `Display Name`: kann aus sprachlichen Gründen eine andere grammatische Form benötigen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Terminology Consistency
 - Class Naming
 - JSON Keys
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Abbreviations
+#### Abbreviations
 
-#### Definition
+##### Definition
 
 `Abbreviations` sind dokumentierte Kurzformen eindeutig benannter Begriffe.
 
-#### Zweck
+##### Zweck
 
 Der Begriff begrenzt Kurzformen auf verständliche und projektweit nachvollziehbare Verwendungen.
 
-#### Verwendung
+##### Verwendung
 
 - Neue Abkürzungen MUST vor ihrer projektweiten Verwendung dokumentiert werden.
 - Eine Abkürzung MUST eindeutig ihrem ausgeschriebenen kanonischen Begriff zugeordnet sein.
 - Nicht dokumentierte, persönliche oder kontextabhängige Kurzformen MUST NOT in kanonischen Namen oder Identifiern verwendet werden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Identifier`: identifiziert eine Identity und ist nicht bloß eine Kurzform.
 - `Alias`: ist eine ausdrücklich zugeordnete alternative Bezeichnung.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Canonical Term
 - Identifier
 - Terminology Consistency
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Terminology Consistency
+#### Terminology Consistency
 
-#### Definition
+##### Definition
 
 `Terminology Consistency` ist die Regel, dass derselbe Begriff projektweit dieselbe Schreibweise und dieselbe festgelegte Bedeutung besitzt.
 
-#### Zweck
+##### Zweck
 
 Der Begriff schützt das gemeinsame Vokabular vor stilistischen Varianten, impliziten Synonymen und widersprüchlicher Verwendung.
 
-#### Verwendung
+##### Verwendung
 
 - Dieselben Begriffe MUST in allen Projektbereichen dieselbe kanonische Schreibweise besitzen.
 - Konsistenz MUST Vorrang vor individuellen Schreibstilen und persönlichen Vorlieben haben.
 - Eine abweichende Benennung MUST als dokumentierte Anzeigeform, technische Abbildung oder ausdrücklich vorläufiger Arbeitsbegriff erkennbar sein.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Capitalization`: ist nur ein Teil der konsistenten Schreibweise.
 - `Localization`: darf die Anzeigeform, nicht aber die kanonische Bedeutung ändern.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Canonical Term
 - Capitalization
 - Localization
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-## 13.2 Dokumente
+### 13.2 Dokumente
 
-### Document Naming
+#### Document Naming
 
-#### Definition
+##### Definition
 
 `Document Naming` ist die Bildung eines Dokumentnamens aus seiner Document ID und einem eindeutigen Titel.
 
-#### Zweck
+##### Zweck
 
 Der Begriff verbindet menschliche Erkennbarkeit mit stabiler projektweiter Zuordnung.
 
-#### Verwendung
+##### Verwendung
 
 - Ein kanonisches Dokument MUST seine festgelegte Document ID und seinen offiziellen Titel verwenden.
 - Der Titel SHOULD den Gegenstand eindeutig und ohne nicht dokumentierte Abkürzungen benennen.
 - Eine Übersetzung oder Titeländerung MUST NOT die Document ID verändern.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Document IDs`: identifizieren Dokumente unabhängig vom Titel.
 - `File Naming`: bezeichnet die Repräsentation eines Dokuments im Dateisystem.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Document Identifier
 - Canonical Paths
 - Markdown Files
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Document IDs
+#### Document IDs
 
-#### Definition
+##### Definition
 
 `Document IDs` sind stabile Document Identifier gemäß der in PB-000 festgelegten Dokumentfamilie und Nummer.
 
-#### Zweck
+##### Zweck
 
 Der Begriff ermöglicht eindeutige Referenzen unabhängig von Titel, Dateiname oder Speicherort.
 
-#### Verwendung
+##### Verwendung
 
 - Jedes kanonische Dokument MUST genau eine eindeutige Document ID besitzen.
 - Die Document ID MUST unverändert und nicht lokalisiert bleiben.
 - Eine vergebene Document ID MUST NOT für ein anderes Dokument wiederverwendet werden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Versioning`: unterscheidet Stände desselben Dokuments.
 - `Canonical Paths`: bezeichnet den festgelegten Ablageort.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Document Identifier
 - Stable Reference
 - Versioning
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Canonical Paths
+#### Canonical Paths
 
-#### Definition
+##### Definition
 
 `Canonical Paths` sind die im Frontmatter festgelegten maßgeblichen Pfade kanonischer Dokumente.
 
-#### Zweck
+##### Zweck
 
 Der Begriff schafft eine eindeutige, referenzierbare Ablage unabhängig von abgeleiteten Ausgaben.
 
-#### Verwendung
+##### Verwendung
 
 - Ein kanonisches Dokument MUST genau einen `canonical_path` ausweisen.
 - Referenzen SHOULD den Canonical Path oder die Document ID statt eines abgeleiteten Ausgabeorts verwenden.
 - Kopien, Exporte und generierte Darstellungen MUST NOT als zusätzlicher Canonical Path bezeichnet werden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Directory Naming`: regelt Namen einzelner Verzeichnisse.
 - `External Reference`: verweist auf ein Ziel außerhalb der Project Bible.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Document IDs
 - Internal Reference
 - File Naming
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Versioning
+#### Versioning
 
-#### Definition
+##### Definition
 
 Für `Versioning` gilt ausschließlich die kanonische Definition aus Abschnitt 12.6; die Dokumentversion ist deren Anwendung auf Dokumente.
 
-#### Zweck
+##### Zweck
 
 Die Aufnahme in diese Begriffsgruppe ordnet Versioning der Dokumentbenennung zu, ohne eine konkurrierende dokumentbezogene Grunddefinition einzuführen.
 
-#### Verwendung
+##### Verwendung
 
 - Dokumentversionen MUST dem in PB-000 festgelegten Versionsschema folgen.
 - Die Version MUST im Frontmatter geführt werden.
 - Versionsangaben MUST NOT an den Dokumenttitel, die Document ID oder den Canonical Path angehängt werden, sofern keine ausdrücklich definierte Ausnahme besteht.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Document IDs`: bleiben über verschiedene Versionen stabil.
 - `updated`: bezeichnet ein Datum und keine Version.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Version Identifier
 - Document IDs
 - Stability
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-## 13.3 Dateien und Verzeichnisse
+### 13.3 Dateien und Verzeichnisse
 
-### File Naming
+#### File Naming
 
-#### Definition
+##### Definition
 
 `File Naming` ist die eindeutige und konsistente Benennung von Dateien nach ihrem Inhalt und ihrer Rolle.
 
-#### Zweck
+##### Zweck
 
 Der Begriff macht Dateien ohne Kenntnis eines bestimmten Werkzeugs unterscheidbar und auffindbar.
 
-#### Verwendung
+##### Verwendung
 
 - Dateinamen MUST innerhalb ihrer Kategorie einem einzigen dokumentierten Benennungsmuster folgen.
 - Dateinamen MUST englische Identifier verwenden; kanonische Dokumentdateien MAY den festgelegten deutschen Dokumenttitel abbilden.
 - Leerzeichen und nicht dokumentierte Kurzformen SHOULD vermieden werden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Document Naming`: benennt das Dokument als fachliche Einheit.
 - `Asset Naming`: ergänzt die Rolle eines Assets.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Directory Naming
 - Canonical Paths
 - Identifier Language
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Directory Naming
+#### Directory Naming
 
-#### Definition
+##### Definition
 
 `Directory Naming` ist die konsistente Benennung von Verzeichnissen nach ihrem fachlichen Inhalt oder ihrer festgelegten Kategorie.
 
-#### Zweck
+##### Zweck
 
 Der Begriff hält Pfade verständlich und vermeidet konkurrierende Namen für dieselbe Ablagerolle.
 
-#### Verwendung
+##### Verwendung
 
 - Verzeichnisnamen MUST innerhalb derselben Struktur einem einheitlichen englischen Benennungsmuster folgen.
 - Ein Verzeichnisname SHOULD eine fachliche Kategorie statt eines vorübergehenden Arbeitszustands benennen.
 - Synonyme und nicht dokumentierte Abkürzungen MUST NOT parallele Verzeichnisnamen für denselben Zweck bilden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Namespace Naming`: bezeichnet einen logischen Namensraum.
 - `Canonical Paths`: legt den vollständigen maßgeblichen Dokumentpfad fest.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - File Naming
 - Canonical Paths
 - Terminology Consistency
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Markdown Files
+#### Markdown Files
 
-#### Definition
+##### Definition
 
 `Markdown Files` sind Dokumentdateien, deren Name eine Document ID und einen lesbaren Titel gemäß der Dokumentkategorie abbildet.
 
-#### Zweck
+##### Zweck
 
 Der Begriff hält kanonische Dokumentdateien eindeutig ihren Dokumenten zugeordnet.
 
-#### Verwendung
+##### Verwendung
 
 - Eine kanonische Markdown-Datei MUST mit ihrer Document ID beginnen und den offiziellen Titel in der bestehenden dateisicheren Form anschließen.
 - Wörter des Titelteils SHOULD durch Unterstriche getrennt werden.
 - Die Dateiendung MUST `.md` lauten.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Document Naming`: bestimmt ID und offiziellen Titel.
 - `Versioning`: gehört nicht als Versionssuffix in den kanonischen Dateinamen.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - File Naming
 - Document IDs
 - Canonical Paths
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Asset Naming
+#### Asset Naming
 
-#### Definition
+##### Definition
 
 `Asset Naming` ist die englische, rollenbezogene Benennung einer nicht als kanonisches Dokument behandelten Projektressource.
 
-#### Zweck
+##### Zweck
 
 Der Begriff unterscheidet Assets gleichen Gegenstands anhand ihrer fachlichen Rolle, ohne eine technische Verarbeitung festzulegen.
 
-#### Verwendung
+##### Verwendung
 
 - Ein Assetname MUST Gegenstand und erforderlichenfalls Rolle oder Variante eindeutig erkennen lassen.
 - Assets derselben Kategorie MUST dasselbe dokumentierte Benennungsmuster verwenden.
 - Lokalisierte Anzeigenamen MUST NOT als stabile Asset Identifier verwendet werden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Display Name`: ist der Benutzertext eines dargestellten Konzepts.
 - `File Naming`: gilt zusätzlich für die konkrete Assetdatei.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - File Naming
 - Identifier
 - Display Name
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-## 13.4 Quellcode
+### 13.4 Quellcode
 
-### Class Naming
+#### Class Naming
 
-#### Definition
+##### Definition
 
 `Class Naming` ist die englische Benennung eines Klassentyps durch ein eindeutiges Substantiv oder eine eindeutige Nominalphrase im Singular.
 
-#### Zweck
+##### Zweck
 
 Der Begriff macht den bezeichneten Typ unabhängig von einer konkreten Sprachsyntax fachlich verständlich.
 
-#### Verwendung
+##### Verwendung
 
 - Klassennamen MUST englisch sein und ein einzelnes fachliches Konzept bezeichnen.
 - Klassennamen SHOULD im Singular stehen.
 - Ein Klassenname MUST die festgelegte kanonische Terminologie bewahren.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Interface Naming`: bezeichnet einen Vertrag oder eine Fähigkeit.
 - `System Naming`: bezeichnet ein abgegrenztes fachliches System.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Code Language
 - Singular vs. Plural
 - Terminology Consistency
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Interface Naming
+#### Interface Naming
 
-#### Definition
+##### Definition
 
 `Interface Naming` ist die englische Benennung eines Vertrags oder einer angebotenen Fähigkeit nach seiner fachlichen Bedeutung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff lässt den beschriebenen Vertrag erkennen, ohne eine sprach- oder werkzeugspezifische Markierung vorzuschreiben.
 
-#### Verwendung
+##### Verwendung
 
 - Interfacenamen MUST englisch und fachlich eindeutig sein.
 - Ein Interfacename SHOULD den Vertrag oder die Fähigkeit und nicht eine konkrete Umsetzung benennen.
 - Präfixe oder Suffixe MUST nur verwendet werden, wenn eine speziellere projektweite Konvention sie ausdrücklich festlegt.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Class Naming`: benennt einen Klassentyp.
 - `Service Naming`: benennt eine angebotene fachliche Dienstrolle.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Code Language
 - Class Naming
 - Service Naming
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Enumeration Naming
+#### Enumeration Naming
 
-#### Definition
+##### Definition
 
 `Enumeration Naming` ist die englische Benennung eines geschlossenen fachlichen Wertebereichs und seiner Werte.
 
-#### Zweck
+##### Zweck
 
 Der Begriff macht Zugehörigkeit und Bedeutung von Auswahlwerten konsistent erkennbar.
 
-#### Verwendung
+##### Verwendung
 
 - Der Name einer Enumeration MUST den Wertebereich im Singular bezeichnen.
 - Jeder Wert MUST innerhalb dieses Wertebereichs eindeutig und englisch benannt sein.
 - Werte MUST dieselben kanonischen Begriffe und dieselbe Schreiblogik verwenden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Identifier`: kann eine einzelne persistente Identity bezeichnen.
 - `Configuration Identifier`: identifiziert eine Konfigurationsangabe.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Singular vs. Plural
 - Code Language
 - Terminology Consistency
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### System Naming
+#### System Naming
 
-#### Definition
+##### Definition
 
 `System Naming` ist die englische Benennung eines abgegrenzten fachlichen Systems nach seiner Verantwortung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff schafft eine einheitliche Zuordnung zwischen Systemname, System Identifier und Dokumentation.
 
-#### Verwendung
+##### Verwendung
 
 - Ein Systemname MUST seine fachliche Verantwortung statt einer konkreten Umsetzung benennen.
 - Derselbe Systemname MUST projektweit konsistent verwendet werden.
 - Der zugehörige System Identifier MUST eindeutig auf diesen Systemnamen abbildbar sein.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Service Naming`: bezeichnet eine Dienstrolle innerhalb eines fachlichen Zusammenhangs.
 - `Namespace Naming`: ordnet Namen in einem logischen Bereich.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - System Identifier
 - Terminology Consistency
 - Namespace Naming
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Service Naming
+#### Service Naming
 
-#### Definition
+##### Definition
 
 `Service Naming` ist die englische Benennung einer fachlichen Dienstrolle nach der von ihr angebotenen Verantwortung.
 
-#### Zweck
+##### Zweck
 
 Der Begriff verhindert Namen, die nur eine vorübergehende technische Umsetzung oder ein verwendetes Werkzeug beschreiben.
 
-#### Verwendung
+##### Verwendung
 
 - Ein Servicename MUST die fachliche Dienstrolle eindeutig benennen.
 - Servicenamen SHOULD im Singular stehen.
 - Ein Servicename MUST NOT einen Produkt-, Werkzeug- oder Implementierungsnamen als Ersatz für seine fachliche Verantwortung verwenden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `System Naming`: bezeichnet ein umfassenderes fachliches System.
 - `Interface Naming`: bezeichnet einen Vertrag oder eine Fähigkeit.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Class Naming
 - Interface Naming
 - Code Language
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Namespace Naming
+#### Namespace Naming
 
-#### Definition
+##### Definition
 
 `Namespace Naming` ist die englische, hierarchische Benennung eines logischen Namensraums nach fachlichen Bereichen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff macht Zugehörigkeit sichtbar und verhindert konkurrierende logische Bereiche für dieselben Konzepte.
 
-#### Verwendung
+##### Verwendung
 
 - Namespacebestandteile MUST englisch sein und vom allgemeinen zum spezifischen fachlichen Bereich führen.
 - Namen von Organisation, Projekt und Domäne MUST konsistent verwendet werden, sofern sie Bestandteil eines Namespace sind.
 - Ein Namespace MUST NOT nach einem vorübergehenden Werkzeug oder einer konkreten Umsetzung benannt werden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Namespace`: ist der durch den Namen bezeichnete Eindeutigkeitsraum.
 - `Directory Naming`: benennt einen physischen Ablagebereich.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Namespacing
 - System Naming
 - Identifier Language
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-## 13.5 Datenformate
+### 13.5 Datenformate
 
-### JSON Keys
+#### JSON Keys
 
-#### Definition
+##### Definition
 
 `JSON Keys` sind englische Feldbezeichnungen in JSON-Daten, die einem projektweit dokumentierten Benennungsmuster folgen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff hält gleichbedeutende Felder über Datenbestände und Spezifikationen hinweg konsistent.
 
-#### Verwendung
+##### Verwendung
 
 - JSON Keys MUST englisch sein.
 - JSON Keys MUST innerhalb eines Schemas ein einheitliches Benennungsmuster verwenden.
 - Dasselbe fachliche Feld MUST in vergleichbaren Strukturen denselben Key verwenden; Sammlungen SHOULD im Plural, einzelne Werte SHOULD im Singular benannt werden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Identifier Usage`: regelt Werte, die eine Identity referenzieren.
 - `Display Name`: ist kein stabiler Feldname.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier Language
 - Singular vs. Plural
 - YAML Fields
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### YAML Fields
+#### YAML Fields
 
-#### Definition
+##### Definition
 
 `YAML Fields` sind englische Feldbezeichnungen in YAML-Daten, die einem projektweit dokumentierten Benennungsmuster folgen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff hält Frontmatter, Konfiguration und andere YAML-Strukturen sprachlich konsistent.
 
-#### Verwendung
+##### Verwendung
 
 - YAML Fields MUST englisch sein.
 - YAML Fields MUST innerhalb eines Schemas ein einheitliches Benennungsmuster verwenden.
 - Ein bereits definiertes gleichbedeutendes JSON- oder Konfigurationsfeld SHOULD dieselbe Feldbezeichnung verwenden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Configuration Files`: bezeichnet Dateien mit Konfigurationsangaben.
 - `Document Naming`: benennt Dokumente, nicht deren Frontmatter-Felder.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - JSON Keys
 - Identifier Language
 - Configuration Files
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Configuration Files
+#### Configuration Files
 
-#### Definition
+##### Definition
 
 `Configuration Files` sind Konfigurationsdateien mit englischen, stabilen und innerhalb ihres Schemas konsistenten Datei-, Abschnitts- und Feldnamen.
 
-#### Zweck
+##### Zweck
 
 Der Begriff verhindert sprachlich gemischte oder durch persönliche Kurzformen geprägte Konfigurationsbezeichnungen.
 
-#### Verwendung
+##### Verwendung
 
 - Namen von Konfigurationsdateien, Abschnitten und Feldern MUST englisch sein.
 - Gleichartige Konfigurationsdateien MUST dasselbe Benennungsmuster verwenden.
 - Anzeigenamen und andere Benutzertexte MUST als lokalisierbare Werte von stabilen Konfigurationsnamen getrennt bleiben.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Configuration Identifier`: identifiziert eine Konfigurationsangabe.
 - `Localization`: verwaltet sprachabhängige Benutzertexte.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - File Naming
 - JSON Keys
 - YAML Fields
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Identifier Usage
+#### Identifier Usage
 
-#### Definition
+##### Definition
 
 `Identifier Usage` ist die Regel, stabile englische Identifier für Referenzen und Anzeigenamen ausschließlich für die Darstellung zu verwenden.
 
-#### Zweck
+##### Zweck
 
 Der Begriff trennt maschinenlesbare Identity von veränderlichem oder lokalisiertem Benutzertext.
 
-#### Verwendung
+##### Verwendung
 
 - Referenzen in Daten MUST den dafür vorgesehenen Identifier und MUST NOT den Anzeigenamen als Ersatz verwenden.
 - Anzeigenamen und Identifier MUST als unterschiedliche Konzepte behandelt und getrennt gespeichert beziehungsweise spezifiziert werden.
 - Identifier MUST englisch, stabil und nicht lokalisiert bleiben; Anzeigenamen MAY übersetzt oder geändert werden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Display Name`: ist lokalisierbarer Benutzertext.
 - `Identifier Language`: bestimmt ausschließlich die Sprache eines Identifier.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Identity
 - Display Name
 - Localization
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-## 13.6 Sprachregeln
+### 13.6 Sprachregeln
 
-### Documentation Language
+#### Documentation Language
 
-#### Definition
+##### Definition
 
 `Documentation Language` ist die verbindliche Sprache für kanonische Projektdokumentation.
 
-#### Zweck
+##### Zweck
 
 Der Begriff sorgt für eine einheitliche redaktionelle Sprache, während kanonische englische Fachbegriffe unverändert referenzierbar bleiben.
 
-#### Verwendung
+##### Verwendung
 
 - Kanonische Projektdokumentation MUST in deutscher Sprache erstellt werden.
 - Kanonische englische Begriffe, Identifier, Eigennamen und normative Schlüsselwörter MUST in ihrer festgelegten Form erhalten bleiben.
 - Eine Übersetzung eines kanonischen Begriffs MAY ihn erläutern, MUST ihn aber nicht als neue kanonische Bezeichnung ersetzen.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Code Language`: gilt für Quellcode.
 - `User Interface Language`: kann je Lokalisierung variieren.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Project Language
 - Canonical Term
 - Localization
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Code Language
+#### Code Language
 
-#### Definition
+##### Definition
 
 `Code Language` ist die verbindliche natürliche Sprache für Benennungen im Quellcode.
 
-#### Zweck
+##### Zweck
 
 Der Begriff verhindert gemischtsprachige Quellcodebezeichnungen und hält sie projektweit verständlich.
 
-#### Verwendung
+##### Verwendung
 
 - Quellcode MUST in englischer Sprache geschrieben werden.
 - Namen von Typen, Verträgen, Systemen, Diensten, Funktionen, Werten und anderen Codeelementen MUST englisch sein.
 - Lokalisierte Benutzertexte MUST NOT als Quellcodebezeichnungen verwendet werden.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Identifier Language`: gilt für sämtliche projektweiten Identifier, auch außerhalb des Quellcodes.
 - `Documentation Language`: gilt für kanonische Dokumentation.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Project Language
 - Identifier Language
 - Class Naming
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Identifier Language
+#### Identifier Language
 
-#### Definition
+##### Definition
 
 `Identifier Language` ist die verbindliche natürliche Sprache, aus der lesbare Bestandteile eines Identifier gebildet werden.
 
-#### Zweck
+##### Zweck
 
 Der Begriff hält Identifier unabhängig von Dokumentations- und Anzeigesprache stabil und projektweit verständlich.
 
-#### Verwendung
+##### Verwendung
 
 - Identifier MUST ausschließlich in englischer Sprache erstellt werden.
 - Identifier MUST NOT übersetzt oder lokalisiert werden.
 - Neu gebildete Identifier MUST die englische Form des kanonischen Begriffs verwenden und dokumentierte Abkürzungen beachten.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Display Name`: darf lokalisiert werden.
 - `Code Language`: gilt für alle Benennungen im Quellcode, nicht nur Identifier.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Identifier
 - Stability
 - Abbreviations
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### User Interface Language
+#### User Interface Language
 
-#### Definition
+##### Definition
 
 `User Interface Language` ist die für einen Benutzer dargestellte Sprache der Benutzeroberfläche.
 
-#### Zweck
+##### Zweck
 
 Der Begriff trennt lokalisierbare Darstellung von stabiler interner Terminologie und Identity.
 
-#### Verwendung
+##### Verwendung
 
 - Benutzeroberflächen MAY lokalisiert werden und mehrere User Interface Languages anbieten.
 - Sichtbare Anzeigenamen und Benutzertexte MAY sprachabhängig sein.
 - Die User Interface Language MUST NOT Identifier, fachliche Identity oder kanonische Bedeutung verändern.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Documentation Language`: ist projektweit Deutsch.
 - `Identifier Language`: ist projektweit Englisch und nicht lokalisierbar.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - Localization
 - Display Name
 - Project Language
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-### Localization
+#### Localization
 
-#### Definition
+##### Definition
 
 `Localization` ist die Zuordnung sprach- oder regionsabhängiger Benutzertexte zu stabilen, nicht lokalisierten Identifiern.
 
-#### Zweck
+##### Zweck
 
 Der Begriff ermöglicht mehrsprachige Benutzeroberflächen, ohne Identity, Datenreferenzen oder kanonische Begriffe zu vervielfachen.
 
-#### Verwendung
+##### Verwendung
 
 - Benutzertexte und Anzeigenamen MAY lokalisiert werden.
 - Jede lokalisierte Anzeigeform MUST eindeutig auf denselben stabilen Identifier verweisen.
 - Lokalisierung MUST NOT Identifier übersetzen, neue fachliche Identities erzeugen oder die kanonische Bedeutung eines Konzepts verändern.
 
-#### Darf nicht verwechselt werden mit
+##### Darf nicht verwechselt werden mit
 
 - `Translation`: ist die sprachliche Übertragung eines Textes und nicht die gesamte Zuordnung zu einer Identity.
 - `Display Name`: ist ein einzelner darstellbarer Name.
 
-#### Verwandte Begriffe
+##### Verwandte Begriffe
 
 - User Interface Language
 - Display Name
 - Identifier Usage
 
-#### Referenzen
+##### Referenzen
 
 - PB-000
 - PB-004
 
-## 13.7 Project Language Policy
+### 13.7 Project Language Policy
 
 Dieser Abschnitt ist eine normative, verbindliche Projektrichtlinie und kein Glossareintrag. Die nachfolgenden Regeln sind projektweit anzuwenden.
 
-### Zweck
+#### Zweck
 
 Eine einheitliche Projektsprache sichert konsistente Benennungen und verhindert, dass gleiche Konzepte in verschiedenen Projektbereichen unterschiedlich bezeichnet werden. Sie verbessert die Wartbarkeit, weil Artefakte langfristig eindeutig lesbar und auffindbar bleiben, und erleichtert die Zusammenarbeit zwischen allen Beteiligten durch ein gemeinsames sprachliches Bezugssystem. Die Trennung zwischen deutscher Dokumentationssprache, englischer technischer Benennung und lokalisierbaren Benutzertexten ermöglicht internationale Erweiterbarkeit, ohne stabile technische Bezüge zu verändern. Dadurch bleiben Terminologie, Identifier und Schnittstellen auch bei wachsendem Projektumfang langfristig stabil.
 
-### Geltungsbereich
+#### Geltungsbereich
 
 Diese Richtlinie gilt verbindlich für sämtliche:
 
@@ -12830,52 +12837,52 @@ Diese Richtlinie gilt verbindlich für sämtliche:
 - Werkzeuge und
 - Benutzeroberflächen.
 
-### Verbindliche Regeln
+#### Verbindliche Regeln
 
-#### Dokumentation
+##### Dokumentation
 
 - Die offizielle Sprache der Project Bible MUST Deutsch sein.
 - Deutsche Dokumentation MUST die kanonischen Fachbegriffe aus PB-004 verwenden.
 - Dokumente MUST innerhalb ihres jeweiligen sprachlichen und fachlichen Kontexts konsistent bleiben.
 
-#### Quellcode
+##### Quellcode
 
 - Quellcode MUST ausschließlich in englischer Sprache geschrieben werden.
 - Dies umfasst insbesondere Klassen, Interfaces, Methoden, Funktionen, Variablen, Enumerationen, Namespaces und, soweit sinnvoll, Kommentare.
 
-#### Identifier
+##### Identifier
 
 - Identifier MUST ausschließlich in englischer Sprache erstellt werden.
 - Identifier MUST NOT lokalisiert werden.
 - Identifier MUST ausschließlich der Identifikation dienen und MUST NOT als Benutzertext verwendet werden.
 
-#### APIs
+##### APIs
 
 - APIs MUST ausschließlich in englischer Sprache definiert werden.
 - Dies umfasst Endpunkte, Parameter, Request-Objekte, Response-Objekte, Commands, Events und Fehlercodes.
 
-#### Benutzeroberfläche
+##### Benutzeroberfläche
 
 - Benutzeroberflächen MUST grundsätzlich lokalisierbar entwickelt werden.
 - Benutzertexte MUST NOT Bestandteil technischer Identifier sein.
 - Anzeigenamen und Identifier MUST strikt getrennt werden.
 
-#### Sprache innerhalb eines Artefakts
+##### Sprache innerhalb eines Artefakts
 
 - Ein einzelnes Artefakt SHOULD keine gemischten deutschen und englischen Bezeichner enthalten. Ausgenommen sind unverändert zu verwendende kanonische Fachbegriffe, Identifier und normative Schlüsselwörter.
 - Sprachliche und terminologische Konsistenz MUST Vorrang vor persönlichem Stil haben.
 
-#### Abkürzungen
+##### Abkürzungen
 
 - Neue Abkürzungen MUST vor ihrer Verwendung dokumentiert werden.
 - Nicht dokumentierte Abkürzungen MUST NOT verwendet werden.
 
-#### Governance
+##### Governance
 
 - Neue Benennungsregeln MUST ausschließlich über den Governance-Prozess eingeführt oder geändert werden.
 - Änderungen projektweiter Sprachregeln MUST durch eine Architecture Decision mit dem Status `Accepted` beschlossen werden.
 
-### Beispiele
+#### Beispiele
 
 **Positiv:**
 
@@ -12894,1060 +12901,1060 @@ Diese Richtlinie gilt verbindlich für sämtliche:
 - `GesetzUniversalSuffrage`
 - `CoalResourceDeutsch`
 
-### Beziehung zu anderen Dokumenten
+#### Beziehung zu anderen Dokumenten
 
 - PB-004 definiert die verbindliche Projektsprache und die projektweite Terminologie.
 - PB-998 dokumentiert die zugehörigen Architekturentscheidungen.
 - TECH-Dokumente MUST diese Regeln übernehmen.
 - GD-Dokumente MUST diese Terminologie verwenden.
 
-# Kapitel 14 – Verbotene Synonyme und häufige Fehler
+## Kapitel 14 – Verbotene Synonyme und häufige Fehler
 
 Konsistente Terminologie ist entscheidend, damit dasselbe Konzept in allen Projektartefakten eindeutig bezeichnet und nicht unbeabsichtigt mit einem anderen Konzept gleichgesetzt wird.
 
 Viele der folgenden Begriffe werden im allgemeinen Sprachgebrauch synonym verwendet, besitzen im Projekt jedoch unterschiedliche, bereits in den vorherigen Kapiteln festgelegte Bedeutungen. Dieses Kapitel dokumentiert typische Fehlverwendungen und erklärt die korrekte Verwendung; es ergänzt das Glossar, ohne neue Begriffe zu definieren oder bestehende Definitionen zu ersetzen.
 
-## 14.1 Politische Begriffe
+### 14.1 Politische Begriffe
 
-### Country vs State
+#### Country vs State
 
-#### Problem
+##### Problem
 
 `Country` und `State` werden häufig beide für ein politisches Gemeinwesen verwendet, wodurch territorial-politische Gesamteinheit und dauerhafte politische sowie rechtliche Organisation gleichgesetzt werden.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 `Country` bezeichnet die Verbindung aus Gebiet, Bevölkerung und politischer Ordnung als eigenständige Gesamteinheit. `State` bezeichnet die dauerhafte politische und rechtliche Organisation, die über Institutionen Bevölkerung und Gebiet ordnet und Sovereignty beansprucht.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die territorial-politische Einheit als Ganzes ist `Country` zu verwenden; für die dauerhafte Trägerin öffentlicher Herrschaft ist `State` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 4.1 `Country`
 - Abschnitt 4.1 `State`
 
-### Nation vs Country
+#### Nation vs Country
 
-#### Problem
+##### Problem
 
 `Nation` wird häufig als bloße alternative Bezeichnung für ein `Country` verwendet, obwohl kollektive Zugehörigkeit nicht mit einer territorial-politischen Einheit identisch ist.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 `Nation` bezeichnet eine als zusammengehörig verstandene politische oder gesellschaftliche Gemeinschaft mit gemeinsamer kollektiver Identity. `Country` bezeichnet dagegen die als eigenständiger Akteur betrachtete Verbindung aus Gebiet, Bevölkerung und politischer Ordnung.
 
-#### Empfehlung
+##### Empfehlung
 
 Für kollektive Identität und vorgestellte Zugehörigkeit ist `Nation` zu verwenden; für die territorial-politische Gesamteinheit ist `Country` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 4.1 `Nation`
 - Abschnitt 4.1 `Country`
 
-### Government vs State
+#### Government vs State
 
-#### Problem
+##### Problem
 
 `Government` und `State` werden häufig gleichgesetzt, sodass ein Wechsel der gegenwärtigen politischen Führung fälschlich als Wechsel der dauerhaften staatlichen Organisation erscheint.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 `Government` bezeichnet die Personen und Organe, die zu einem bestimmten Zeitpunkt die obersten politischen Leitungs- und Entscheidungsfunktionen ausüben. `State` bezeichnet die von dieser jeweiligen Führung unabhängige dauerhafte politische und rechtliche Organisation.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die gegenwärtig handelnde politische Führung ist `Government` zu verwenden; für die institutionell dauerhafte politische und rechtliche Organisation ist `State` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 4.1 `Government`
 - Abschnitt 4.1 `State`
 
-### Regime vs Government
+#### Regime vs Government
 
-#### Problem
+##### Problem
 
 `Regime` wird häufig als wertende oder austauschbare Bezeichnung für ein amtierendes `Government` benutzt, obwohl beide Begriffe unterschiedliche zeitliche und institutionelle Ebenen bezeichnen.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 `Regime` bezeichnet die grundlegende Ordnung, nach der politische Herrschaft erlangt, ausgeübt, begrenzt und übertragen wird. `Government` bezeichnet die jeweils gegenwärtig handelnde politische Führung.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die beständige Struktur politischer Herrschaft ist `Regime` zu verwenden; für die amtierenden leitenden Personen und Organe ist `Government` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 4.1 `Regime`
 - Abschnitt 4.1 `Government`
 
-### Head of State vs Head of Government
+#### Head of State vs Head of Government
 
-#### Problem
+##### Problem
 
 `Head of State` und `Head of Government` werden häufig unter einer allgemeinen Bezeichnung für die politische Spitze zusammengefasst, obwohl Repräsentation und institutionelle Kontinuität von politischer Regierungsleitung getrennt sein können.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 `Head of State` bezeichnet das Amt der obersten institutionellen Kontinuität und Repräsentation des State. `Head of Government` bezeichnet das Amt der politischen Leitung und Koordination des Government; beide Funktionen können verbunden sein, bleiben begrifflich aber getrennt.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die staatliche Spitzen- und Repräsentationsfunktion ist `Head of State` zu verwenden; für die leitende Regierungsfunktion ist `Head of Government` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 4.3 `Head of State`
 - Abschnitt 4.3 `Head of Government`
 
-## 14.2 Gameplay- und technische Begriffe
+### 14.2 Gameplay- und technische Begriffe
 
-### Identifier vs Display Name
+#### Identifier vs Display Name
 
-#### Problem
+##### Problem
 
 Ein `Display Name` wird häufig als `Identifier` verwendet oder ein Identifier wird als sichtbarer Benutzertext behandelt, wodurch lokalisierbare Darstellung und stabile Identifikation vermischt werden.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Ein `Identifier` ist die innerhalb eines Namespace eindeutige, dauerhaft stabile und nicht lokalisierte englische Bezeichnung einer Identity. Ein `Display Name` ist die für Menschen bestimmte, lokalisierbare Anzeigeform und muss weder eindeutig noch stabil sein.
 
-#### Empfehlung
+##### Empfehlung
 
 Für Referenzen und eindeutige Wiedererkennung ist der `Identifier` zu verwenden; für sichtbare und lokalisierbare Benennungen ist der `Display Name` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 12.1 `Identifier`
 - Abschnitt 12.6 `Immutability`
 - Abschnitt 13.5 `Identifier Usage`
 - Abschnitt 13.6 `Localization`
 
-### Action vs Proposal
+#### Action vs Proposal
 
-#### Problem
+##### Problem
 
 Eine noch prüfbare oder ablehnbare `Proposal` wird häufig bereits als `Action` bezeichnet, obwohl noch keine tatsächlich auszuführende Gameplay-Handlung feststeht.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Proposal` ist ein noch nicht ausgeführter Inhalt, der validiert, verändert, angenommen oder abgelehnt werden kann. Eine `Action` ist die tatsächlich ausgeführte Gameplay-Handlung eines Player oder Actor.
 
-#### Empfehlung
+##### Empfehlung
 
 Vor Abschluss der Behandlung ist `Proposal` zu verwenden; für die tatsächliche Gameplay-Handlung ist `Action` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 10.2 `Action`
 - Abschnitt 10.2 `Proposal`
 
-### Proposal vs Decision
+#### Proposal vs Decision
 
-#### Problem
+##### Problem
 
 Der zur Behandlung gestellte Inhalt und die verbindliche Auswahl einer Alternative werden häufig beide als Entscheidung bezeichnet.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Proposal` bezeichnet den noch offenen, zur Behandlung gestellten Inhalt. Eine `Decision` ist die verbindliche Festlegung einer verfügbaren Alternative als Antwort auf eine Proposal oder einen anderen auslösenden Sachverhalt.
 
-#### Empfehlung
+##### Empfehlung
 
 Für den offenen Vorschlag ist `Proposal` zu verwenden; für die verbindliche Festlegung ist `Decision` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 10.2 `Proposal`
 - Abschnitt 10.2 `Decision`
 
-### Decision vs Execution
+#### Decision vs Execution
 
-#### Problem
+##### Problem
 
 Die verbindliche Festlegung und ihr tatsächlicher Vollzug werden häufig als ein einziger Vorgang bezeichnet, obwohl eine `Decision` noch keine `Execution` ist.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Decision` legt eine Alternative verbindlich fest, ohne deren Vollzug vorwegzunehmen. Eine `Execution` ist der Vollzug, durch den die dafür bestimmte Action tatsächlich ausgeführt wird.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die verbindliche Auswahl ist `Decision` zu verwenden; für den Vollzug der bestimmten Action ist `Execution` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 10.2 `Decision`
 - Abschnitt 10.2 `Execution`
 
-### Event vs Trigger
+#### Event vs Trigger
 
-#### Problem
+##### Problem
 
 Die auslösende Voraussetzung eines Ereignisses wird häufig selbst als `Event` bezeichnet oder das eingetretene Ereignis als `Trigger` benannt.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Ein `Trigger` ist die festgelegte Voraussetzung, deren Erfüllung die Möglichkeit oder das Eintreten eines Event auslöst. Ein `Event` ist das innerhalb des Spielverlaufs eingetretene und als zusammengehörig betrachtete Ereignis.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die auslösende Voraussetzung ist `Trigger` zu verwenden; für das eingetretene Ereignis ist `Event` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 10.4 `Trigger`
 - Abschnitt 10.4 `Event`
 
-### Effect vs Modifier
+#### Effect vs Modifier
 
-#### Problem
+##### Problem
 
 Jede Zustandsänderung wird häufig als `Modifier` bezeichnet oder eine verändernde Einflussgröße wird mit dem `Effect` gleichgesetzt, der sie begründet, verändert oder beendet.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Ein `Effect` ist eine durch einen Gameplay-Vorgang bewirkte Zustandsänderung. Ein `Modifier` ist eine dauerhafte oder temporäre Veränderung eines Wertes oder Verhaltens gegenüber dessen ansonsten maßgeblicher Ausprägung.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die bewirkte Zustandsänderung ist `Effect` zu verwenden; für die fortwirkende Veränderung eines Wertes oder Verhaltens ist `Modifier` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 10.5 `Effect`
 - Abschnitt 10.5 `Modifier`
 
-## 14.3 Wirtschaft
+### 14.3 Wirtschaft
 
-### Resource vs Good
+#### Resource vs Good
 
-#### Problem
+##### Problem
 
 Ein wirtschaftlich nutzbarer Bestand wird häufig bereits als `Good` bezeichnet oder jeder Gegenstand wirtschaftlicher Verfügung als `Resource` behandelt.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Resource` ist ein verfügbarer oder erschließbarer Bestand mit möglicher wirtschaftlicher Verwendbarkeit, ohne dass er bereits gewonnen oder bereitgestellt sein muss. Ein `Good` ist ein materieller oder immaterieller Gegenstand wirtschaftlicher Verfügung.
 
-#### Empfehlung
+##### Empfehlung
 
 Für wirtschaftlich nutzbares Potenzial ist `Resource` zu verwenden; für einen Gegenstand wirtschaftlicher Verfügung ist `Good` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 7.3 `Resource`
 - Abschnitt 7.3 `Good`
 
-### Raw Material vs Finished Good
+#### Raw Material vs Finished Good
 
-#### Problem
+##### Problem
 
 Materielle Goods werden häufig unabhängig von ihrer Produktionsstufe als `Raw Material` oder `Finished Good` bezeichnet.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Ein `Raw Material` ist ein unmittelbar aus einer Resource gewonnener und noch nicht weiterverarbeiteter materieller Input. Ein `Finished Good` ist ein Good, dessen Production für seine vorgesehene Endverwendung abgeschlossen ist.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die unmittelbar gewonnene, unverarbeitete stoffliche Form ist `Raw Material` zu verwenden; für ein für seine vorgesehene Endverwendung fertig produziertes Good ist `Finished Good` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 7.3 `Raw Material`
 - Abschnitt 7.3 `Finished Good`
 
-### Production vs Production Facility
+#### Production vs Production Facility
 
-#### Problem
+##### Problem
 
 Die wirtschaftliche Aktivität und die Einrichtung, in der sie stattfinden kann, werden häufig beide als Produktion bezeichnet.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 `Production` bezeichnet die wirtschaftliche Aktivität, durch die Inputs eingesetzt oder verändert werden, um Outputs hervorzubringen oder bereitzustellen. Eine `Production Facility` ist die räumlich und organisatorisch abgegrenzte Einrichtung, in der ein Producer Production ausüben kann.
 
-#### Empfehlung
+##### Empfehlung
 
 Für den wirtschaftlichen Vorgang ist `Production` zu verwenden; für dessen möglichen institutionell-räumlichen Träger ist `Production Facility` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 7.2 `Production`
 - Abschnitt 7.7 `Production Facility`
 
-### Market vs Trade
+#### Market vs Trade
 
-#### Problem
+##### Problem
 
 Der wirtschaftliche Beziehungsrahmen und das darin oder außerhalb davon stattfindende Austauschhandeln werden häufig gleichgesetzt.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Ein `Market` ist der Beziehungszusammenhang, in dem Supply und Demand für bestimmte Goods aufeinandertreffen und Exchange-Bedingungen entstehen. `Trade` ist das auf Exchange gerichtete wirtschaftliche Handeln zwischen Economic Actors und die daraus entstehende Handelsbeziehung.
 
-#### Empfehlung
+##### Empfehlung
 
 Für den Ordnungs- und Beziehungsrahmen ist `Market` zu verwenden; für das wirtschaftliche Austauschhandeln ist `Trade` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 7.4 `Market`
 - Abschnitt 7.5 `Trade`
 
-### Supply vs Capacity
+#### Supply vs Capacity
 
-#### Problem
+##### Problem
 
 Die in einem Market angebotene Menge wird häufig mit dem maximal möglichen Umfang einer wirtschaftlichen Aktivität gleichgesetzt.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Wirtschaftliches `Supply` bezeichnet die Mengen von Goods, die Economic Actors unter bestimmten Bedingungen in einem Market zur Übertragung bereitstellen. `Capacity` bezeichnet den unter festgelegten Bedingungen innerhalb eines Zeitraums erreichbaren Umfang einer wirtschaftlichen Aktivität.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die Angebotsseite eines Market ist `Supply` zu verwenden; für die Grenze des möglichen Aktivitätsumfangs ist `Capacity` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 7.4 `Supply`
 - Abschnitt 7.7 `Capacity`
 
-## 14.4 Gesellschaft
+### 14.4 Gesellschaft
 
-### Population vs Population Group
+#### Population vs Population Group
 
-#### Problem
+##### Problem
 
 Eine abgegrenzte Teilmenge wird häufig als gesamte `Population` bezeichnet oder die Gesamtbevölkerung als homogene `Population Group` behandelt.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Population` umfasst alle einem eindeutig bestimmten Bezugsbereich zu einem Zeitpunkt zugeordneten Personen. Eine `Population Group` umfasst nur Personen innerhalb einer Population, die hinsichtlich ausdrücklich festgelegter Merkmale übereinstimmen.
 
-#### Empfehlung
+##### Empfehlung
 
 Für den vollständigen personenbezogenen Bestand ist `Population` zu verwenden; für eine anhand festgelegter Merkmale abgegrenzte Menge ist `Population Group` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 6.1 `Population`
 - Abschnitt 6.1 `Population Group`
 
-### Citizen vs Resident
+#### Citizen vs Resident
 
-#### Problem
+##### Problem
 
 Rechtliche Mitgliedschaft in einem State und gewöhnlicher Aufenthalt in einem Gebiet werden häufig als dieselbe personenbezogene Zuordnung behandelt.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Ein `Citizen` ist durch rechtlich anerkannte, dauerhafte Mitgliedschaft in einem State bestimmt. Ein `Resident` ist durch seinen gewöhnlichen und auf Dauer ausgerichteten Lebensmittelpunkt innerhalb eines Gebietes bestimmt.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die rechtliche staatliche Mitgliedschaft ist `Citizen` zu verwenden; für die auf tatsächlichem gewöhnlichem Aufenthalt beruhende Zuordnung ist `Resident` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 6.1 `Citizen`
 - Abschnitt 6.1 `Resident`
 
-### Profession vs Occupation
+#### Profession vs Occupation
 
-#### Problem
+##### Problem
 
 Fachliche Qualifikation und gegenwärtig regelmäßig ausgeübte Tätigkeit werden häufig mit demselben Berufsbegriff bezeichnet.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Profession` ist ein gesellschaftlich abgegrenztes Feld qualifizierter Tätigkeit mit gemeinsamen Kenntnissen, Fähigkeiten und anerkannten Aufgaben. Eine `Occupation` ist die von einer Person gegenwärtig regelmäßig ausgeübte Tätigkeit.
 
-#### Empfehlung
+##### Empfehlung
 
 Für das dauerhafte qualifizierte Tätigkeitsfeld ist `Profession` zu verwenden; für die tatsächlich und regelmäßig ausgeübte Tätigkeit ist `Occupation` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 6.2 `Profession`
 - Abschnitt 6.2 `Occupation`
 
-### Culture vs Identity
+#### Culture vs Identity
 
-#### Problem
+##### Problem
 
 Geteilte Bedeutungen und soziale Praktiken werden häufig mit dem Zugehörigkeitsverständnis einer Person oder Gruppe gleichgesetzt.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Culture` ist ein von einer Gruppe getragener und weitergegebener Zusammenhang gemeinsamer Bedeutungen, Werte, Normen, Ausdrucksformen und sozialer Praktiken. Eine `Identity` ist das Verständnis eigener Zugehörigkeit und Abgrenzung.
 
-#### Empfehlung
+##### Empfehlung
 
 Für den geteilten gesellschaftlichen Orientierungszusammenhang ist `Culture` zu verwenden; für wahrgenommene Zugehörigkeit und Abgrenzung ist `Identity` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 6.3 `Culture`
 - Abschnitt 6.3 `Identity`
 
-### Assimilation vs Integration
+#### Assimilation vs Integration
 
-#### Problem
+##### Problem
 
 Jede gesellschaftliche Einbindung wird häufig als `Assimilation` bezeichnet, obwohl `Integration` keine Aufgabe prägender kultureller Unterschiede voraussetzt.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 `Assimilation` bezeichnet die weitgehende Aufgabe prägender Merkmale der bisherigen Culture zugunsten einer anderen Culture. `Integration` bezeichnet gleichberechtigten Zugang und gemeinsame Teilhabe, während kulturelle oder soziale Unterschiede fortbestehen können.
 
-#### Empfehlung
+##### Empfehlung
 
 Bei kultureller Angleichung durch weitgehenden Verlust bisheriger Unterscheidungsmerkmale ist `Assimilation` zu verwenden; bei gesellschaftlicher Einbindung ohne diese Voraussetzung ist `Integration` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 6.5 `Assimilation`
 - Abschnitt 6.5 `Integration`
 
-## 14.5 Militär
+### 14.5 Militär
 
-### Army vs Armed Forces
+#### Army vs Armed Forces
 
-#### Problem
+##### Problem
 
 `Army` wird häufig als Sammelbezeichnung für sämtliche militärischen Branches verwendet, obwohl es projektweit ausschließlich die landmilitärische Branch bezeichnet.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 `Armed Forces` bezeichnet die Gesamtheit aller einer einheitlichen obersten militärischen Autorität zugeordneten Branches. `Army` bezeichnet die für landgebundene Kriegführung zuständige Branch dieser Armed Forces.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die militärische Gesamtorganisation ist `Armed Forces` zu verwenden; für deren landmilitärische Branch ist `Army` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 8.1 `Army`
 - Abschnitt 8.1 `Armed Forces`
 
-### Unit vs Formation
+#### Unit vs Formation
 
-#### Problem
+##### Problem
 
 `Unit` und `Formation` werden häufig ohne Angabe ihrer relativen organisatorischen Funktion austauschbar für jeden militärischen Verband verwendet.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Unit` ist die kleinste im festgelegten fachlichen Zusammenhang als selbständig geführtes Ganzes betrachtete Military Formation. Eine `Formation` ist eine konkrete, nach festgelegter Gliederung zusammengefasste und gemeinsam geführte Military Formation, ohne notwendig die kleinste Ebene zu sein.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die im jeweiligen Zusammenhang kleinste selbständig betrachtete Ebene ist `Unit` zu verwenden; für die konkrete organisatorische Zusammenfassung ist `Formation` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 8.2 `Unit`
 - Abschnitt 8.2 `Formation`
 
-### Battle vs Campaign
+#### Battle vs Campaign
 
-#### Problem
+##### Problem
 
 Eine einzelne unmittelbare bewaffnete Auseinandersetzung wird häufig als `Campaign` bezeichnet oder ein längerfristiger strategischer Zusammenhang auf eine `Battle` reduziert.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Battle` ist eine größere, räumlich und zeitlich zusammenhängende unmittelbare bewaffnete Auseinandersetzung. Eine `Campaign` ist eine strategisch zusammenhängende Folge militärischer Operations für ein übergeordnetes militärisches Ziel.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die konkrete unmittelbare Auseinandersetzung ist `Battle` zu verwenden; für die übergeordnete Folge mehrerer Operations ist `Campaign` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 8.4 `Battle`
 - Abschnitt 8.4 `Campaign`
 
-### Campaign vs Operation
+#### Campaign vs Operation
 
-#### Problem
+##### Problem
 
 Ein einzelnes abgegrenztes militärisches Vorhaben und die übergeordnete strategische Folge solcher Vorhaben werden häufig beide als `Campaign` oder `Operation` bezeichnet.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Operation` ist ein nach Ziel, Verantwortung, Raum und Zeit abgegrenztes militärisches Vorhaben. Eine `Campaign` verbindet mehrere Operations in einem größeren räumlichen und zeitlichen Zusammenhang unter einem übergeordneten militärischen Ziel.
 
-#### Empfehlung
+##### Empfehlung
 
 Für das einzelne abgegrenzte Vorhaben ist `Operation` zu verwenden; für dessen strategisch übergeordneten Zusammenhang mit weiteren Operations ist `Campaign` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 8.4 `Campaign`
 - Abschnitt 8.4 `Operation`
 
-### Supply vs Logistics
+#### Supply vs Logistics
 
-#### Problem
+##### Problem
 
 Die für militärische Kräfte bestimmten Mittel und Leistungen werden häufig mit dem gesamten Aufgabenbereich ihrer Planung, Bewegung und Erhaltung gleichgesetzt.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Militärisches `Supply` bezeichnet die für die fortgesetzte Handlungsfähigkeit militärischer Kräfte bestimmten materiellen Mittel und Leistungen. `Logistics` bezeichnet den umfassenden Aufgabenbereich ihrer Planung, Bereitstellung, Bewegung, Verteilung und Erhaltung.
 
-#### Empfehlung
+##### Empfehlung
 
 Für den Gegenstand militärischer Versorgung ist `Supply` zu verwenden; für den umfassenden militärischen Unterstützungszusammenhang ist `Logistics` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 8.5 `Supply`
 - Abschnitt 8.5 `Logistics`
 
-## 14.6 Diplomatie
+### 14.6 Diplomatie
 
-### Treaty vs Proposal
+#### Treaty vs Proposal
 
-#### Problem
+##### Problem
 
 Ein noch offener diplomatischer Vorschlag wird häufig bereits als `Treaty` bezeichnet, obwohl ein verbindliches internationales Abkommen noch nicht begründet ist.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Proposal` ist ein formaler Vorschlag oder ein diplomatisches Angebot, dessen Annahme, Ablehnung oder Veränderung noch nicht feststeht. Ein `Treaty` ist ein formal begründetes internationales Abkommen, das gegenseitige Rechte, Pflichten oder Beziehungen verbindlich ordnet.
 
-#### Empfehlung
+##### Empfehlung
 
 Für den noch offenen diplomatischen Inhalt ist `Proposal` zu verwenden; für das formal begründete verbindliche internationale Abkommen ist `Treaty` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 9.3 `Proposal`
 - Abschnitt 9.4 `Treaty`
 
-### Alliance vs Diplomatic Relation
+#### Alliance vs Diplomatic Relation
 
-#### Problem
+##### Problem
 
 Jeder bestehende diplomatische Zusammenhang wird häufig als `Alliance` bezeichnet, obwohl eine Diplomatic Relation kein formales Kooperationsabkommen voraussetzt.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Diplomatic Relation` ist der bestehende diplomatische Zusammenhang zwischen zwei diplomatischen Akteuren. Eine `Alliance` ist ein formales internationales Abkommen zur dauerhaften organisierten Zusammenarbeit ihrer Mitglieder bei gemeinsamen internationalen Interessen.
 
-#### Empfehlung
+##### Empfehlung
 
 Für den allgemeinen bestehenden diplomatischen Zusammenhang ist `Diplomatic Relation` zu verwenden; für den formalen dauerhaften Kooperationszusammenhang ist `Alliance` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 9.2 `Diplomatic Relation`
 - Abschnitt 9.4 `Alliance`
 
-### Recognition vs Recognition Proposal
+#### Recognition vs Recognition Proposal
 
-#### Problem
+##### Problem
 
 Der bestehende Anerkennungsstatus und der noch zu behandelnde Vorschlag zu seiner Begründung, Änderung oder Beendigung werden häufig beide als `Recognition` bezeichnet.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 `Recognition` bezeichnet die bestehende formale Anerkennung eines politischen Akteurs oder beanspruchten internationalen Status. Ein `Recognition Proposal` ist eine Proposal, deren Gegenstand die Begründung, Änderung oder Beendigung dieser Recognition ist.
 
-#### Empfehlung
+##### Empfehlung
 
 Für den bestehenden formalen Status ist `Recognition` zu verwenden; für den dazu zur Entscheidung gestellten Inhalt ist `Recognition Proposal` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 9.2 `Recognition`
 - Abschnitt 9.3 `Recognition Proposal`
 
-### Sanction vs Embargo
+#### Sanction vs Embargo
 
-#### Problem
+##### Problem
 
 `Sanction` und `Embargo` werden häufig als austauschbare Bezeichnungen für jede beschränkende diplomatische oder wirtschaftliche Maßnahme verwendet.
 
-#### Richtige Verwendung
+##### Richtige Verwendung
 
 Eine `Sanction` ist die allgemeine diplomatische Kategorie einer formal auferlegten beschränkenden Maßnahme zur Beanstandung oder Beeinflussung eines Akteurs. Ein `Embargo` ist die von einem State angeordnete Beschränkung oder Untersagung bestimmter Handelsbeziehungen.
 
-#### Empfehlung
+##### Empfehlung
 
 Für die allgemeine diplomatische Zwangsmaßnahme ist `Sanction` zu verwenden; für die spezifische staatliche Beschränkung oder Untersagung von Trade ist `Embargo` zu verwenden.
 
-#### Referenzen
+##### Referenzen
 
 - Abschnitt 9.3 `Sanction`
 - Abschnitt 7.5 `Embargo`
 
-# Kapitel 15 – Requirements & Design Goals
+## Kapitel 15 – Requirements & Design Goals
 
 Terminologie muss langfristig stabil bleiben, weil Dokumente, Entscheidungen und andere Projektartefakte dauerhaft auf dieselben Bedeutungen und Referenzen angewiesen sind. Unkontrollierte Bedeutungs- oder Benennungswechsel würden diese Zusammenhänge entwerten.
 
 Dokumentierte Anforderungen machen die erwartete Qualität prüfbar und verhindern, dass terminologische Entscheidungen von implizitem Wissen oder persönlichem Sprachgefühl abhängen. Dieses Kapitel definiert deshalb die projektweiten Qualitätsziele für die gesamte Terminologie und bildet den Maßstab für zukünftige Erweiterungen und Reviews.
 
-## 15.1 Allgemeine Anforderungen
+### 15.1 Allgemeine Anforderungen
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-001
 
-### Titel
+#### Titel
 
 Eindeutige Terminologie
 
-### Beschreibung
+#### Beschreibung
 
 Die projektweite Terminologie MUST eindeutig sein. Jede zulässige Verwendung MUST ohne konkurrierende fachliche Auslegung einem bestimmten Konzept zugeordnet werden können.
 
-### Begründung
+#### Begründung
 
 Eindeutigkeit verhindert abweichende Interpretationen in Zusammenarbeit, Dokumentation und Prüfung.
 
-### Priorität
+#### Priorität
 
 Mandatory
 
-### Verifikation
+#### Verifikation
 
 Ein Terminologie-Review prüft jede Verwendung auf mehrere mögliche fachliche Auslegungen; ungeklärte Mehrdeutigkeiten gelten als Nichterfüllung.
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-002
 
-### Titel
+#### Titel
 
 Verständlichkeit für Menschen und KI
 
-### Beschreibung
+#### Beschreibung
 
 Terminologie MUST für Menschen und KI-Assistenten gleichermaßen verständlich sein. Normative Aussagen MUST ihren Gegenstand, ihre Verbindlichkeit und ihre Abgrenzung ohne vorausgesetztes informelles Kontextwissen erkennen lassen.
 
-### Begründung
+#### Begründung
 
 Gemeinsame Verständlichkeit ermöglicht verlässliche Zusammenarbeit und reproduzierbare Auswertung unabhängig vom jeweiligen Leser.
 
-### Priorität
+#### Priorität
 
 Mandatory
 
-### Verifikation
+#### Verifikation
 
 Ein Review durch einen menschlichen Leser und eine isolierte maschinelle Kontextprüfung bestätigen jeweils dieselbe Bedeutung, Verbindlichkeit und Abgrenzung.
 
-## 15.2 Anforderungen an Begriffe
+### 15.2 Anforderungen an Begriffe
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-003
 
-### Titel
+#### Titel
 
 Genau eine kanonische Bedeutung
 
-### Beschreibung
+#### Beschreibung
 
 Jeder kanonische Begriff MUST genau eine kanonische Bedeutung besitzen. Dieselbe Bezeichnung MUST NOT gleichzeitig unterschiedliche fachliche Konzepte bezeichnen.
 
-### Begründung
+#### Begründung
 
 Eine eindeutige Bedeutungszuordnung schützt Referenzen und verhindert kontextabhängige Umdeutungen.
 
-### Priorität
+#### Priorität
 
 Mandatory
 
-### Verifikation
+#### Verifikation
 
 Das Review vergleicht die Verwendungen eines Begriffs projektweit mit seiner kanonischen Definition; jede zweite oder abweichende Bedeutung führt zur Ablehnung.
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-004
 
-### Titel
+#### Titel
 
 Widerspruchsfreie Verwendung von Fachbegriffen
 
-### Beschreibung
+#### Beschreibung
 
 Fachbegriffe MUST in allen Projektbereichen gemäß ihrer kanonischen Bedeutung verwendet werden und MUST NOT widersprüchlich verwendet werden. Bereichsspezifische Formulierungen MUST die bestehende Bedeutung unverändert lassen.
 
-### Begründung
+#### Begründung
 
 Widerspruchsfreiheit bewahrt ein gemeinsames fachliches Modell über Dokumentgrenzen hinweg.
 
-### Priorität
+#### Priorität
 
 Mandatory
 
-### Verifikation
+#### Verifikation
 
 Ein projektweiter Verwendungsabgleich prüft Stichproben und alle geänderten Fundstellen gegen PB-004; festgestellte Bedeutungswidersprüche müssen vor Freigabe behoben sein.
 
-## 15.3 Anforderungen an Dokumentation
+### 15.3 Anforderungen an Dokumentation
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-005
 
-### Titel
+#### Titel
 
 Referenzierung bestehender Definitionen
 
-### Beschreibung
+#### Beschreibung
 
 Dokumente MUST auf bestehende kanonische Definitionen referenzieren, statt sie erneut oder abweichend zu formulieren. Eine notwendige Erläuterung MUST als Erläuterung erkennbar bleiben und MUST die referenzierte Bedeutung unverändert lassen.
 
-### Begründung
+#### Begründung
 
 Direkte Referenzen erhalten eine einzige autoritative Quelle und reduzieren divergierende Kopien.
 
-### Priorität
+#### Priorität
 
 Mandatory
 
-### Verifikation
+#### Verifikation
 
 Das Dokumentreview prüft jeden verwendeten kanonischen Begriff auf eine auflösbare Referenz und sucht nach duplizierten oder konkurrierenden Definitionen.
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-006
 
-### Titel
+#### Titel
 
 Nachvollziehbare terminologische Änderungen
 
-### Beschreibung
+#### Beschreibung
 
 Jede normative Änderung an der Terminologie MUST versioniert, begründet und hinsichtlich ihrer betroffenen Referenzen geprüft werden. Die Dokumentation MUST erkennen lassen, welche Festlegung gilt.
 
-### Begründung
+#### Begründung
 
 Nachvollziehbarkeit schützt die Aussagekraft älterer Referenzen und ermöglicht belastbare Reviews.
 
-### Priorität
+#### Priorität
 
 Mandatory
 
-### Verifikation
+#### Verifikation
 
 Versionsstand, Änderungsbegründung und Referenzprüfung werden im Review gemeinsam kontrolliert; fehlt eines dieser Elemente, darf die Änderung nicht freigegeben werden.
 
-## 15.4 Anforderungen an Erweiterbarkeit
+### 15.4 Anforderungen an Erweiterbarkeit
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-007
 
-### Titel
+#### Titel
 
 Keine Ersetzung bestehender Begriffe durch Erweiterungen
 
-### Beschreibung
+#### Beschreibung
 
 Neue Begriffe MUST bestehende kanonische Begriffe ergänzen und MUST NOT bestehende Begriffe ersetzen. Eine Ablösung darf ausschließlich als ausdrücklich beschlossene Änderung außerhalb einer bloßen Erweiterung erfolgen.
 
-### Begründung
+#### Begründung
 
 Erweiterungen sollen den Begriffsbestand vergrößern, ohne gültige Referenzen unerwartet zu entwerten.
 
-### Priorität
+#### Priorität
 
 Mandatory
 
-### Verifikation
+#### Verifikation
 
 Vor Aufnahme eines neuen Begriffs wird geprüft, ob sein Zweck bereits durch einen bestehenden Begriff erfüllt wird oder ob bestehende Verwendungen dadurch verdrängt würden.
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-008
 
-### Titel
+#### Titel
 
 Rückwärtskompatible Erweiterungen
 
-### Beschreibung
+#### Beschreibung
 
 Terminologische Erweiterungen MUST rückwärtskompatibel sein. Bestehende gültige Bedeutungen, Verwendungen und Referenzen MUST nach einer Erweiterung weiterhin unverändert verständlich und auflösbar bleiben.
 
-### Begründung
+#### Begründung
 
 Rückwärtskompatibilität erhält den Wert bestehender Dokumentation und verhindert erzwungene Folgeänderungen ohne fachlichen Grund.
 
-### Priorität
+#### Priorität
 
 Mandatory
 
-### Verifikation
+#### Verifikation
 
 Ein Vorher-nachher-Abgleich bestätigt, dass alle zuvor gültigen Definitionen und Referenzen weiterhin dieselbe Aussage besitzen und auflösbar sind.
 
-## 15.5 Anforderungen an Konsistenz
+### 15.5 Anforderungen an Konsistenz
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-009
 
-### Titel
+#### Titel
 
 Stabile Identifier
 
-### Beschreibung
+#### Beschreibung
 
 Identifier MUST stabil bleiben. Sie MUST NOT wegen redaktioneller, stilistischer oder persönlicher Präferenzen geändert, neu vergeben oder für einen anderen Gegenstand wiederverwendet werden.
 
-### Begründung
+#### Begründung
 
 Stabile Identifier sichern dauerhafte Referenzierbarkeit unabhängig von veränderlichen Darstellungen.
 
-### Priorität
+#### Priorität
 
 Mandatory
 
-### Verifikation
+#### Verifikation
 
 Das Review vergleicht Identifier mit früheren freigegebenen Ständen und weist unbegründete Änderungen, Wiederverwendungen oder Neuzuordnungen zurück.
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-010
 
-### Titel
+#### Titel
 
 Vorrang der Konsistenz
 
-### Beschreibung
+#### Beschreibung
 
 Terminologische Konsistenz MUST Vorrang vor persönlichem Stil haben. Autoren MUST die kanonische Bezeichnung auch dann verwenden, wenn sie eine andere Formulierung bevorzugen.
 
-### Begründung
+#### Begründung
 
 Projektweite Einheitlichkeit ist für gemeinsames Verständnis wichtiger als individuelle sprachliche Variation.
 
-### Priorität
+#### Priorität
 
 Mandatory
 
-### Verifikation
+#### Verifikation
 
 Ein Terminologieabgleich prüft geänderte Texte auf stilistisch motivierte Synonyme und ersetzt oder beanstandet jede nicht zugelassene Variante.
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-011
 
-### Titel
+#### Titel
 
 Vorrang von Architekturentscheidungen
 
-### Beschreibung
+#### Beschreibung
 
 Geltende Architekturentscheidungen MUST Vorrang vor individuellen terminologischen Präferenzen haben. Terminologische Festlegungen MUST einschlägige Architecture Decisions respektieren und MUST ihnen nicht widersprechen.
 
-### Begründung
+#### Begründung
 
 Der Vorrang beschlossener Architektur erhält die Kohärenz zwischen Projektentscheidungen und ihrer Sprache.
 
-### Priorität
+#### Priorität
 
 Mandatory
 
-### Verifikation
+#### Verifikation
 
 Das Review gleicht jede betroffene terminologische Änderung mit PB-998 und den referenzierten Architecture Decisions ab; ein Widerspruch verhindert die Freigabe.
 
-## 15.6 Langfristige Designziele
+### 15.6 Langfristige Designziele
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-012
 
-### Titel
+#### Titel
 
 Langfristige Wartbarkeit
 
-### Beschreibung
+#### Beschreibung
 
 Die Terminologie SHOULD über lange Projektzeiträume verständlich, prüfbar und mit vertretbarem redaktionellem Aufwand pflegbar bleiben.
 
-### Begründung
+#### Begründung
 
 Wartbarkeit verhindert, dass wachsender Umfang zu unkontrollierter begrifflicher Abweichung führt.
 
-### Priorität
+#### Priorität
 
 Recommended
 
-### Verifikation
+#### Verifikation
 
 Regelmäßige Reviews prüfen, ob Definitionen auffindbar sind, Änderungen lokal nachvollzogen werden können und keine vermeidbaren Mehrfachpflegepunkte bestehen.
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-013
 
-### Titel
+#### Titel
 
 Internationale Zusammenarbeit
 
-### Beschreibung
+#### Beschreibung
 
 Die Terminologie SHOULD internationale Zusammenarbeit unterstützen, indem kanonische Bezeichnungen sprachübergreifend eindeutig zugeordnet und lokalisierte Darstellungen klar von ihnen getrennt werden können.
 
-### Begründung
+#### Begründung
 
 Sprachübergreifende Zuordnung reduziert Missverständnisse zwischen Mitwirkenden mit unterschiedlichem sprachlichem Hintergrund.
 
-### Priorität
+#### Priorität
 
 Recommended
 
-### Verifikation
+#### Verifikation
 
 Ein Review prüft anhand mindestens einer lokalisierten Darstellung, ob die Zuordnung zur kanonischen Bezeichnung ohne Bedeutungsverlust eindeutig bleibt.
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-014
 
-### Titel
+#### Titel
 
 Erweiterbarkeit
 
-### Beschreibung
+#### Beschreibung
 
 Die Terminologie SHOULD neue fachliche Bereiche aufnehmen können, ohne bestehende Bedeutungsgrenzen aufzuweichen oder den vorhandenen Bestand neu ordnen zu müssen.
 
-### Begründung
+#### Begründung
 
 Ein erweiterbarer Begriffsbestand unterstützt Projektwachstum bei gleichzeitiger Stabilität.
 
-### Priorität
+#### Priorität
 
 Recommended
 
-### Verifikation
+#### Verifikation
 
 Bei jeder Erweiterung wird geprüft, ob sie durch eine klar abgegrenzte Ergänzung möglich ist und bestehende Definitionen unverändert bleiben.
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-015
 
-### Titel
+#### Titel
 
 Eindeutige Kommunikation und geringe Mehrdeutigkeit
 
-### Beschreibung
+#### Beschreibung
 
 Die Terminologie SHOULD eindeutige Kommunikation ermöglichen und die verbleibende Mehrdeutigkeit auf das fachlich unvermeidbare Minimum begrenzen.
 
-### Begründung
+#### Begründung
 
 Geringe Mehrdeutigkeit senkt Abstimmungsaufwand und Fehlinterpretationen in allen Projektbereichen.
 
-### Priorität
+#### Priorität
 
 Recommended
 
-### Verifikation
+#### Verifikation
 
 Unabhängige Leser ordnen repräsentative Aussagen demselben fachlichen Gegenstand zu; abweichende Zuordnungen werden als Verbesserungsbedarf dokumentiert.
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-016
 
-### Titel
+#### Titel
 
 Hohe Referenzierbarkeit
 
-### Beschreibung
+#### Beschreibung
 
 Terminologische Festlegungen SHOULD dauerhaft eindeutig auffindbar und präzise referenzierbar sein.
 
-### Begründung
+#### Begründung
 
 Hohe Referenzierbarkeit ermöglicht belastbare Querverweise, Reviews und spätere Pflege.
 
-### Priorität
+#### Priorität
 
 Recommended
 
-### Verifikation
+#### Verifikation
 
 Ein Referenztest bestätigt, dass jede geprüfte Festlegung über Dokument, Abschnitt und stabile Bezeichnung eindeutig gefunden werden kann.
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-017
 
-### Titel
+#### Titel
 
 Stabile Dokumentation
 
-### Beschreibung
+#### Beschreibung
 
 Die Terminologie SHOULD dazu beitragen, dass die fachliche Aussage bestehender Dokumentation über Versionen hinweg stabil bleibt.
 
-### Begründung
+#### Begründung
 
 Stabile Dokumentation bewahrt Wissen und vermeidet unnötige Überarbeitungen aufgrund rein sprachlicher Veränderungen.
 
-### Priorität
+#### Priorität
 
 Recommended
 
-### Verifikation
+#### Verifikation
 
 Ein Versionsvergleich prüft, ob unveränderte Referenzen und Aussagen weiterhin dieselbe terminologische Bedeutung besitzen.
 
-### Requirement ID
+#### Requirement ID
 
 REQ-TERM-018
 
-### Titel
+#### Titel
 
 Wiederverwendbarkeit
 
-### Beschreibung
+#### Beschreibung
 
 Kanonische Terminologie SHOULD in unterschiedlichen Projektbereichen wiederverwendbar sein, sofern derselbe fachliche Gegenstand bezeichnet wird, und MUST dabei ihre Bedeutung beibehalten.
 
-### Begründung
+#### Begründung
 
 Wiederverwendbarkeit vermeidet parallele Begriffsbestände und stärkt ein gemeinsames Projektverständnis.
 
-### Priorität
+#### Priorität
 
 Recommended
 
-### Verifikation
+#### Verifikation
 
 Ein bereichsübergreifender Vergleich bestätigt, dass wiederverwendete Bezeichnungen auf dieselbe Definition verweisen und keine Bereichseigenbedeutung erhalten.
 
-# Kapitel 16 – Akzeptanzkriterien und Release Gate
+## Kapitel 16 – Akzeptanzkriterien und Release Gate
 
 Terminologie muss überprüfbar sein, damit ihre Eindeutigkeit, Vollständigkeit und projektweite Verwendbarkeit nicht von subjektiven Einschätzungen abhängen. Nur nachweisbare Prüfungen können bestätigen, dass Begriffsbestand, Benennungsregeln und Verweise gemeinsam eine belastbare Grundlage bilden.
 
 Objektive Qualitätskriterien schaffen eine einheitliche Abnahmebasis, machen Mängel sichtbar und verhindern die Freigabe bei ungeklärten Widersprüchen. Dieses Kapitel definiert deshalb den offiziellen Release Gate für PB-004 und bildet den Abschluss des Dokuments.
 
-## 16.1 Ziel des Release Gates
+### 16.1 Ziel des Release Gates
 
 Der Abnahmeprozess stellt vor der Freigabe sicher, dass PB-004 vollständig, widerspruchsfrei, nachvollziehbar und mit den geltenden Governance-Vorgaben vereinbar ist. Er überführt die in diesem Dokument enthaltenen Regeln und Definitionen in prüfbare Freigabebedingungen, ohne zusätzliche Glossarbegriffe, Gameplaymechaniken oder Implementierungsdetails einzuführen.
 
@@ -13955,7 +13962,7 @@ Der Abnahmeprozess stellt vor der Freigabe sicher, dass PB-004 vollständig, wid
 
 Die Abnahme umfasst die Qualitätskriterien, die Dokumentations- und Konsistenzprüfung, den Governance Review und die vollständige Release Checklist. Nur ihr gemeinsamer erfolgreicher Abschluss belegt die Freigabereife von PB-004.
 
-## 16.2 Qualitätskriterien
+### 16.2 Qualitätskriterien
 
 Für die Abnahme gelten die folgenden zwölf verbindlichen Qualitätskriterien:
 
@@ -13974,7 +13981,7 @@ Für die Abnahme gelten die folgenden zwölf verbindlichen Qualitätskriterien:
 
 Ein Kriterium gilt nur dann als erfüllt, wenn der vollständige Dokumentstand geprüft wurde. Stichproben dürfen vorbereitend eingesetzt werden, ersetzen jedoch keine vollständige Abnahme.
 
-## 16.3 Dokumentationsprüfung
+### 16.3 Dokumentationsprüfung
 
 Die Dokumentationsprüfung umfasst mindestens die folgenden vollständigen Prüfungen:
 
@@ -13993,7 +14000,7 @@ Die Dokumentationsprüfung umfasst mindestens die folgenden vollständigen Prüf
 
 Jeder Befund wird einer konkreten Stelle zugeordnet. Die Dokumentationsprüfung ist erst abgeschlossen, wenn sämtliche Befunde behoben und die betroffenen Prüfpositionen erneut erfolgreich geprüft wurden.
 
-## 16.4 Konsistenzprüfung
+### 16.4 Konsistenzprüfung
 
 Die Konsistenzprüfung wird über den gesamten Inhalt von PB-004 und gegen seine verbindlichen Referenzdokumente durchgeführt. Sie umfasst:
 
@@ -14012,7 +14019,7 @@ Die Konsistenzprüfung wird über den gesamten Inhalt von PB-004 und gegen seine
 
 Ein festgestellter Widerspruch wird nicht durch Interpretation als erledigt betrachtet. Er muss im Dokument eindeutig beseitigt und anschließend erneut gegen alle betroffenen Stellen geprüft werden.
 
-## 16.5 Governance Review
+### 16.5 Governance Review
 
 Der Governance Review beginnt erst, wenn Dokumentations- und Konsistenzprüfung abgeschlossen sind, alle dabei festgestellten Befunde behoben wurden und die Release Checklist bis auf die Review- und Freigabepositionen erfüllt ist. Review-Grundlage sind der vollständige PB-004-Dokumentstand, PB-000 bis PB-003, PB-998, der für PB-004 relevante Stand von PB-999 sowie die dokumentierten Prüfergebnisse.
 
@@ -14027,7 +14034,7 @@ Der Review endet mit genau einem Ergebnis:
 
 Das Ergebnis wird zusammen mit geprüftem Dokumentstand, Review-Datum, Reviewenden, Befunden und Abschlussentscheidung nachvollziehbar festgehalten. Nur ein erfolgreich abgeschlossener Governance Review erlaubt die Bestätigung der letzten beiden Positionen der Release Checklist.
 
-## 16.6 Release Checklist
+### 16.6 Release Checklist
 
 Die folgende Arbeitsliste wird für den vollständigen Freigabestand geführt. Eine Checkbox darf erst markiert werden, wenn die zugehörige Prüfung vollständig durchgeführt und ihr Ergebnis belegt wurde.
 
@@ -14066,4 +14073,3 @@ Die folgende Arbeitsliste wird für den vollständigen Freigabestand geführt. E
 PB-004 gilt erst dann als abgeschlossen, wenn sämtliche Punkte der Release Checklist erfüllt wurden. Nicht anwendbare, übersprungene oder nur teilweise geprüfte Punkte gelten nicht als erfüllt.
 
 Erst danach darf die Version `1.0.0` gesetzt werden. Das Setzen dieser Version vor dem vollständigen Abschluss der Checkliste und dem erfolgreich abgeschlossenen Governance Review ist unzulässig.
-
