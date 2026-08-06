@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.4.1
+version: 0.4.2
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -744,25 +744,23 @@ Der Begriff trennt anpassbare Vorgaben von fachlichen Definitionen, laufendem Ga
 
 ## 4. Politische Terminologie
 
-Die politischen Begriffe sind nach ihren logischen Domänen gruppiert, damit ihre fachlichen Zusammenhänge unmittelbar erkennbar bleiben. Begriffe innerhalb einer Gruppe stehen in enger Beziehung zueinander und sollen deshalb gemeinsam gelesen und abgegrenzt werden.
+Die politischen Begriffe sind fachlich und hierarchisch gruppiert. Die fünf Gruppen bilden unterschiedliche Ebenen politischer Ordnung ab und machen die Beziehungen sowie notwendigen Abgrenzungen zwischen den Begriffen sichtbar.
 
-Die Reihenfolge ist bewusst hierarchisch gewählt: Sie führt von politischen Entitäten über Staatsorganisation, Staatsorgane und politische Akteure zu übergreifenden politischen Konzepten. Spätere Dokumente MUST diese Terminologie und ihre begrifflichen Abgrenzungen übernehmen.
-
-Dieses Kapitel definiert ausschließlich politische Konzepte; ihre Definitionen legen weder Gameplayregeln noch Implementierung oder Balancing fest.
+Die Reihenfolge führt bewusst von politischen Entitäten über die institutionelle Ordnung und ihre Organe bis zu politischen Akteuren und abstrakten Konzepten. Spätere Dokumente MUST diese Begriffe entsprechend ihrer hier festgelegten kanonischen Bedeutung verwenden.
 
 ## 4.1 Politische Entitäten
 
-## Country
+### Country
 
-### Definition
+#### Definition
 
 Ein `Country` ist eine als Einheit betrachtete Verbindung aus Gebiet, Bevölkerung und politischer Ordnung, die in politischen und internationalen Zusammenhängen als eigenständiger Akteur referenziert wird.
 
-### Zweck
+#### Zweck
 
 Der Begriff stellt die gemeinsame Bezeichnung für die territorial-politische Gesamteinheit bereit, ohne sie auf State, Government oder Nation zu reduzieren.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -772,36 +770,36 @@ Der Begriff stellt die gemeinsame Bezeichnung für die territorial-politische Ge
 - APIs
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `State`: bezeichnet die dauerhafte politische und rechtliche Organisation.
 - `Government`: bezeichnet die gegenwärtige politische Führung.
 - `Nation`: bezeichnet eine kollektive Identität.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - State
 - Government
 - Nation
 - Sovereignty
 
-### Referenzen
+#### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-## State
+### State
 
-### Definition
+#### Definition
 
 Ein `State` ist eine dauerhafte politische und rechtliche Organisation, die über Institutionen eine Bevölkerung und ein Gebiet ordnet und dafür Sovereignty beansprucht.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die organisierte Trägerin öffentlicher Herrschaft unabhängig von ihrer jeweiligen Führung, gesellschaftlichen Identität oder geografischen Benennung.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -810,13 +808,13 @@ Der Begriff bezeichnet die organisierte Trägerin öffentlicher Herrschaft unabh
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Government`: übt die gegenwärtige politische Leitung aus.
 - `Nation`: bezeichnet eine kollektive politische oder gesellschaftliche Identität.
 - `Country`: bezeichnet eine territorial-politische Einheit als Ganzes.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Government
 - Nation
@@ -824,23 +822,23 @@ Der Begriff bezeichnet die organisierte Trägerin öffentlicher Herrschaft unabh
 - Sovereignty
 - Institution
 
-### Referenzen
+#### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-## Nation
+### Nation
 
-### Definition
+#### Definition
 
 Eine `Nation` ist eine als zusammengehörig verstandene politische oder gesellschaftliche Gemeinschaft, die sich auf eine gemeinsame kollektive Identität bezieht.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet kollektive Zugehörigkeit, ohne sie mit einer staatlichen Organisation oder einem bestimmten Gebiet gleichzusetzen.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Savegames
@@ -848,35 +846,35 @@ Der Begriff bezeichnet kollektive Zugehörigkeit, ohne sie mit einer staatlichen
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `State`: ist eine politische und rechtliche Organisation.
 - `Country`: ist eine territorial-politische Einheit.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - State
 - Country
 - Sovereignty
 - Autonomy
 
-### Referenzen
+#### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-## Government
+### Government
 
-### Definition
+#### Definition
 
 Ein `Government` ist die Gesamtheit der Personen und Organe, die innerhalb eines State zu einem bestimmten Zeitpunkt dessen oberste politische Leitungs- und Entscheidungsfunktionen ausüben.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die jeweils handelnde politische Führung und grenzt sie von der dauerhaften politischen Ordnung und ihren Einrichtungen ab.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -885,12 +883,12 @@ Der Begriff bezeichnet die jeweils handelnde politische Führung und grenzt sie 
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `State`: ist die dauerhafte politische und rechtliche Organisation.
 - `Regime`: bezeichnet die grundlegende Ordnung politischer Herrschaft.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - State
 - Regime
@@ -898,23 +896,23 @@ Der Begriff bezeichnet die jeweils handelnde politische Führung und grenzt sie 
 - Executive
 - Head of Government
 
-### Referenzen
+#### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-## Regime
+### Regime
 
-### Definition
+#### Definition
 
 Ein `Regime` ist die grundlegende Ordnung, nach der politische Herrschaft innerhalb eines State erlangt, ausgeübt, begrenzt und übertragen wird.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die beständige Struktur politischer Herrschaft jenseits der jeweils amtierenden Personen.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -923,12 +921,12 @@ Der Begriff bezeichnet die beständige Struktur politischer Herrschaft jenseits 
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Government`: ist die gegenwärtig handelnde politische Führung.
 - `Constitution`: ist die grundlegende normative Ordnung eines State.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Government
 - State
@@ -936,24 +934,24 @@ Der Begriff bezeichnet die beständige Struktur politischer Herrschaft jenseits 
 - Legitimacy
 - Authority
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
 ## 4.2 Staatsorganisation
 
-## Constitution
+### Constitution
 
-### Definition
+#### Definition
 
 Eine `Constitution` ist die grundlegende normative Ordnung eines State, welche die Ausübung öffentlicher Authority, die maßgeblichen Institutionen und deren Beziehungen festlegt.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet den obersten Ordnungsrahmen, an dem die staatliche Herrschaftsstruktur und ihre Zuständigkeiten ausgerichtet sind.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -962,12 +960,12 @@ Der Begriff bezeichnet den obersten Ordnungsrahmen, an dem die staatliche Herrsc
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Law`: ist eine verbindliche allgemeine Norm innerhalb der politischen Ordnung.
 - `Regime`: bezeichnet die tatsächliche grundlegende Ordnung politischer Herrschaft.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - State
 - Regime
@@ -975,22 +973,22 @@ Der Begriff bezeichnet den obersten Ordnungsrahmen, an dem die staatliche Herrsc
 - Law
 - Authority
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Institution
+### Institution
 
-### Definition
+#### Definition
 
 Eine `Institution` ist eine dauerhaft etablierte politische oder rechtliche Ordnungseinheit mit anerkannten Aufgaben, Zuständigkeiten oder Verfahrensregeln.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet beständige Träger und Ordnungen politischer Funktionen unabhängig von einzelnen Amtsinhabern.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -999,12 +997,12 @@ Der Begriff bezeichnet beständige Träger und Ordnungen politischer Funktionen 
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Government`: bezeichnet die gegenwärtige politische Führung.
 - `Public Administration`: bezeichnet die Gesamtheit der Einrichtungen und Tätigkeiten zur Ausführung öffentlicher Aufgaben.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Constitution
 - State
@@ -1012,22 +1010,22 @@ Der Begriff bezeichnet beständige Träger und Ordnungen politischer Funktionen 
 - Parliament
 - Public Administration
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Law
+### Law
 
-### Definition
+#### Definition
 
 Ein `Law` ist eine von zuständiger öffentlicher Authority gesetzte oder anerkannte, allgemein verbindliche Norm innerhalb eines State.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet verbindliche politische und rechtliche Vorgaben unterhalb der grundlegenden Verfassungsordnung.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1036,12 +1034,12 @@ Der Begriff bezeichnet verbindliche politische und rechtliche Vorgaben unterhalb
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Constitution`: bildet die grundlegende normative Ordnung.
 - `Authority`: ist die anerkannte Befugnis, verbindliche Entscheidungen zu treffen.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Constitution
 - Legislature
@@ -1049,24 +1047,24 @@ Der Begriff bezeichnet verbindliche politische und rechtliche Vorgaben unterhalb
 - Authority
 - Institution
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
 ## 4.3 Staatsorgane
 
-## Head of State
+### Head of State
 
-### Definition
+#### Definition
 
 Der `Head of State` ist das Amt, das einen State in seiner obersten institutionellen Kontinuität und Repräsentation verkörpert.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die staatliche Spitzenfunktion unabhängig davon, ob sie mit der Leitung des Government verbunden ist.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1075,12 +1073,12 @@ Der Begriff bezeichnet die staatliche Spitzenfunktion unabhängig davon, ob sie 
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Head of Government`: leitet das Government.
 - `Government`: ist die Gesamtheit der gegenwärtigen politischen Führung.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - State
 - Government
@@ -1088,22 +1086,22 @@ Der Begriff bezeichnet die staatliche Spitzenfunktion unabhängig davon, ob sie 
 - Constitution
 - Authority
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Head of Government
+### Head of Government
 
-### Definition
+#### Definition
 
 Der `Head of Government` ist das Amt, dem die politische Leitung und Koordination des Government zugeordnet ist.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die führende Regierungsfunktion unabhängig von ihrer Amtsbezeichnung oder ihrer Verbindung mit dem Head of State.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1112,34 +1110,34 @@ Der Begriff bezeichnet die führende Regierungsfunktion unabhängig von ihrer Am
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Head of State`: verkörpert die oberste institutionelle Kontinuität und Repräsentation des State.
 - `Cabinet`: ist ein kollegiales Leitungsgremium.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Government
 - Cabinet
 - Head of State
 - Executive
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Cabinet
+### Cabinet
 
-### Definition
+#### Definition
 
 Ein `Cabinet` ist das kollegiale Leitungsgremium des Government, in dem der Head of Government und die für zentrale Regierungsbereiche verantwortlichen Mitglieder zusammenwirken.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die gemeinsame politische Führung und Abstimmung der obersten Regierungsverantwortlichen.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1148,34 +1146,34 @@ Der Begriff bezeichnet die gemeinsame politische Führung und Abstimmung der obe
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Government`: umfasst die politische Führung insgesamt.
 - `Ministry`: ist eine einzelne nach Aufgabenbereich gegliederte Regierungsinstitution.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Government
 - Ministry
 - Executive
 - Head of Government
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Ministry
+### Ministry
 
-### Definition
+#### Definition
 
 Ein `Ministry` ist eine nach einem öffentlichen Aufgabenbereich gegliederte Institution des Government unter politischer Leitung.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die dauerhafte institutionelle Bündelung von Verantwortung für einen abgegrenzten Regierungsbereich.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1184,12 +1182,12 @@ Der Begriff bezeichnet die dauerhafte institutionelle Bündelung von Verantwortu
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Cabinet`: ist das kollegiale Leitungsgremium des Government.
 - `Public Administration`: umfasst die öffentliche Verwaltung insgesamt.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Government
 - Cabinet
@@ -1197,22 +1195,22 @@ Der Begriff bezeichnet die dauerhafte institutionelle Bündelung von Verantwortu
 - Institution
 - Public Administration
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Parliament
+### Parliament
 
-### Definition
+#### Definition
 
 Ein `Parliament` ist eine beratende und beschlussfassende politische Institution mit zusammengesetzter Mitgliedschaft, die insbesondere öffentliche Repräsentations- und Gesetzgebungsfunktionen wahrnimmt.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die konkrete institutionelle Versammlung, in der politische Beratung, Repräsentation und verbindliche Beschlussfassung gebündelt sind.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1221,12 +1219,12 @@ Der Begriff bezeichnet die konkrete institutionelle Versammlung, in der politisc
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Legislature`: bezeichnet die Funktion oder Gesamtheit der gesetzgebenden Staatsgewalt.
 - `Cabinet`: ist das kollegiale Leitungsgremium des Government.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Legislature
 - Institution
@@ -1234,22 +1232,22 @@ Der Begriff bezeichnet die konkrete institutionelle Versammlung, in der politisc
 - Political Party
 - Opposition
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Legislature
+### Legislature
 
-### Definition
+#### Definition
 
 Die `Legislature` ist die Institution oder Gesamtheit von Institutionen eines State, der die Zuständigkeit zur Beratung und Verabschiedung von Laws zugeordnet ist.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die gesetzgebende Staatsfunktion unabhängig davon, durch welche konkrete institutionelle Form sie wahrgenommen wird.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1258,12 +1256,12 @@ Der Begriff bezeichnet die gesetzgebende Staatsfunktion unabhängig davon, durch
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Parliament`: ist eine konkrete politische Institution, die gesetzgebende Funktionen wahrnehmen kann.
 - `Executive`: bezeichnet die leitende und ausführende Staatsgewalt.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Parliament
 - Executive
@@ -1271,22 +1269,22 @@ Der Begriff bezeichnet die gesetzgebende Staatsfunktion unabhängig davon, durch
 - Law
 - Constitution
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Executive
+### Executive
 
-### Definition
+#### Definition
 
 Die `Executive` ist die Institution oder Gesamtheit von Institutionen eines State, der die politische Leitung und Ausführung von Laws und öffentlichen Entscheidungen zugeordnet ist.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die leitende und ausführende Staatsfunktion unabhängig von ihren konkreten Organen oder Amtsinhabern.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1295,12 +1293,12 @@ Der Begriff bezeichnet die leitende und ausführende Staatsfunktion unabhängig 
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Government`: bezeichnet die jeweils handelnde politische Führung.
 - `Public Administration`: führt öffentliche Aufgaben innerhalb zugewiesener Zuständigkeiten aus.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Government
 - Legislature
@@ -1308,22 +1306,22 @@ Der Begriff bezeichnet die leitende und ausführende Staatsfunktion unabhängig 
 - Cabinet
 - Public Administration
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Judiciary
+### Judiciary
 
-### Definition
+#### Definition
 
 Die `Judiciary` ist die Institution oder Gesamtheit von Institutionen eines State, der die verbindliche Auslegung und Anwendung von Law in Streit- und Entscheidungsfällen zugeordnet ist.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die rechtsprechende Staatsfunktion unabhängig von ihrer konkreten institutionellen Gliederung.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1332,12 +1330,12 @@ Der Begriff bezeichnet die rechtsprechende Staatsfunktion unabhängig von ihrer 
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Legislature`: verabschiedet Laws.
 - `Executive`: leitet und vollzieht öffentliche Entscheidungen.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Legislature
 - Executive
@@ -1345,24 +1343,24 @@ Der Begriff bezeichnet die rechtsprechende Staatsfunktion unabhängig von ihrer 
 - Constitution
 - Institution
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
 ## 4.4 Politische Akteure
 
-## Political Party
+### Political Party
 
-### Definition
+#### Definition
 
 Eine `Political Party` ist eine dauerhaft organisierte politische Vereinigung, die gemeinsame politische Ziele verfolgt und auf die Besetzung oder Ausübung öffentlicher Authority hinwirkt.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet eine beständige Organisation zur Bündelung politischer Programme, Unterstützung und Führungspersonen.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1371,12 +1369,12 @@ Der Begriff bezeichnet eine beständige Organisation zur Bündelung politischer 
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Faction`: ist eine organisierte Strömung innerhalb eines größeren politischen Zusammenhangs.
 - `Interest Group`: vertritt gemeinsame Interessen, ohne notwendig öffentliche Authority anzustreben.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Faction
 - Interest Group
@@ -1384,22 +1382,22 @@ Der Begriff bezeichnet eine beständige Organisation zur Bündelung politischer 
 - Coalition
 - Ideology
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Faction
+### Faction
 
-### Definition
+#### Definition
 
 Eine `Faction` ist eine organisierte politische Strömung innerhalb eines größeren politischen Akteurs oder Zusammenhangs, die gemeinsame Ziele verfolgt und dessen Richtung oder Entscheidungen beeinflussen will.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet interne politische Organisation und Konkurrenz, ohne daraus eine eigenständige Political Party oder Interest Group abzuleiten.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1408,12 +1406,12 @@ Der Begriff bezeichnet interne politische Organisation und Konkurrenz, ohne dara
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Political Party`: ist eine eigenständige dauerhafte politische Vereinigung.
 - `Interest Group`: organisiert sich um gemeinsame Interessen.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Political Party
 - Interest Group
@@ -1421,22 +1419,22 @@ Der Begriff bezeichnet interne politische Organisation und Konkurrenz, ohne dara
 - Opposition
 - Ideology
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Interest Group
+### Interest Group
 
-### Definition
+#### Definition
 
 Eine `Interest Group` ist eine organisierte Gemeinschaft, die gemeinsame gesellschaftliche oder materielle Interessen gegenüber politischen Entscheidungsträgern vertritt.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die gebündelte politische Einflussnahme aus gemeinsamen Interessen, ohne die Übernahme öffentlicher Authority vorauszusetzen.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1445,34 +1443,34 @@ Der Begriff bezeichnet die gebündelte politische Einflussnahme aus gemeinsamen 
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Political Party`: wirkt auf die Besetzung oder Ausübung öffentlicher Authority hin.
 - `Faction`: ist eine Strömung innerhalb eines größeren politischen Zusammenhangs.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Political Party
 - Faction
 - Opposition
 - Political Capital
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Opposition
+### Opposition
 
-### Definition
+#### Definition
 
 Die `Opposition` ist die Gesamtheit politischer Akteure, die der gegenwärtigen politischen Führung oder deren maßgeblicher Ausrichtung organisiert entgegentreten.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die relationale politische Gegenposition zur amtierenden Führung, ohne eine bestimmte Organisationsform vorauszusetzen.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1481,12 +1479,12 @@ Der Begriff bezeichnet die relationale politische Gegenposition zur amtierenden 
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Faction`: ist eine organisierte interne Strömung.
 - `Coalition`: koordiniert mehrere Akteure zur Verfolgung gemeinsamer politischer Ziele.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Government
 - Political Party
@@ -1494,22 +1492,22 @@ Der Begriff bezeichnet die relationale politische Gegenposition zur amtierenden 
 - Coalition
 - Legitimacy
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Coalition
+### Coalition
 
-### Definition
+#### Definition
 
 Eine `Coalition` ist eine vereinbarte Zusammenarbeit mehrerer politischer Akteure zur Verfolgung gemeinsamer politischer Ziele unter Erhalt ihrer jeweiligen Eigenständigkeit.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet koordinierte politische Zusammenarbeit, ohne die beteiligten Akteure zu einer einzigen Organisation zu verschmelzen.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1518,12 +1516,12 @@ Der Begriff bezeichnet koordinierte politische Zusammenarbeit, ohne die beteilig
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Political Party`: ist selbst eine dauerhafte politische Vereinigung.
 - `Faction`: besteht innerhalb eines größeren politischen Zusammenhangs.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Political Party
 - Faction
@@ -1531,24 +1529,24 @@ Der Begriff bezeichnet koordinierte politische Zusammenarbeit, ohne die beteilig
 - Opposition
 - Cabinet
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
 ## 4.5 Politische Konzepte
 
-## Ideology
+### Ideology
 
-### Definition
+#### Definition
 
 Eine `Ideology` ist ein zusammenhängendes System politischer Grundannahmen, Werte und Zielvorstellungen zur Deutung und Gestaltung gesellschaftlicher und politischer Ordnung.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet den normativen und deutenden Bezugsrahmen politischer Ziele und Positionen.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1557,12 +1555,12 @@ Der Begriff bezeichnet den normativen und deutenden Bezugsrahmen politischer Zie
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Political Party`: ist eine politische Organisation und kein System von Vorstellungen.
 - `Regime`: ist die grundlegende Ordnung politischer Herrschaft.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Political Party
 - Faction
@@ -1570,23 +1568,23 @@ Der Begriff bezeichnet den normativen und deutenden Bezugsrahmen politischer Zie
 - Legitimacy
 - Constitution
 
-### Referenzen
+#### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-## Legitimacy
+### Legitimacy
 
-### Definition
+#### Definition
 
 `Legitimacy` ist das Ausmaß, in dem die Ausübung politischer Authority von den für eine politische Ordnung maßgeblichen Akteuren als berechtigt anerkannt wird.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die anerkannte Rechtfertigung politischer Herrschaft und grenzt sie von bloßer Durchsetzungsfähigkeit ab.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1595,12 +1593,12 @@ Der Begriff bezeichnet die anerkannte Rechtfertigung politischer Herrschaft und 
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Authority`: ist die anerkannte Befugnis zu verbindlichen Entscheidungen.
 - `Sovereignty`: ist der Anspruch auf höchste politische Authority.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Authority
 - Sovereignty
@@ -1608,22 +1606,22 @@ Der Begriff bezeichnet die anerkannte Rechtfertigung politischer Herrschaft und 
 - Regime
 - Opposition
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Authority
+### Authority
 
-### Definition
+#### Definition
 
 `Authority` ist die anerkannte Befugnis eines politischen Akteurs oder einer Institution, innerhalb eines bestimmten Geltungsbereichs verbindliche Entscheidungen zu treffen.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet rechtfertigbare politische Entscheidungsbefugnis und grenzt sie von Fähigkeit, Einfluss oder bloßer Gewalt ab.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1632,12 +1630,12 @@ Der Begriff bezeichnet rechtfertigbare politische Entscheidungsbefugnis und gren
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Legitimacy`: bezeichnet die Anerkennung politischer Herrschaft als berechtigt.
 - `Sovereignty`: bezeichnet den Anspruch auf höchste politische Authority.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Legitimacy
 - Sovereignty
@@ -1645,23 +1643,23 @@ Der Begriff bezeichnet rechtfertigbare politische Entscheidungsbefugnis und gren
 - Law
 - Institution
 
-### Referenzen
+#### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-## Sovereignty
+### Sovereignty
 
-### Definition
+#### Definition
 
 `Sovereignty` ist der Anspruch eines State auf höchste politische Authority über seine inneren Angelegenheiten und auf politische Unabhängigkeit gegenüber äußeren Autoritäten.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die oberste Zuordnung politischer Entscheidungsgewalt und die Unabhängigkeit ihrer Ausübung.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1670,12 +1668,12 @@ Der Begriff bezeichnet die oberste Zuordnung politischer Entscheidungsgewalt und
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Autonomy`: ist begrenzte eigenständige Entscheidungsbefugnis innerhalb einer übergeordneten Ordnung.
 - `Authority`: kann auf einen begrenzten Geltungsbereich bezogen sein.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - State
 - Authority
@@ -1683,23 +1681,23 @@ Der Begriff bezeichnet die oberste Zuordnung politischer Entscheidungsgewalt und
 - Autonomy
 - Country
 
-### Referenzen
+#### Referenzen
 
 - PB-001
 - PB-002
 - PB-003
 
-## Autonomy
+### Autonomy
 
-### Definition
+#### Definition
 
 `Autonomy` ist die anerkannte Befugnis eines politischen Akteurs oder Gebietes, bestimmte Angelegenheiten innerhalb einer übergeordneten politischen Ordnung eigenständig zu regeln.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet abgegrenzte politische Selbstbestimmung, ohne vollständige Sovereignty vorauszusetzen.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1708,12 +1706,12 @@ Der Begriff bezeichnet abgegrenzte politische Selbstbestimmung, ohne vollständi
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Sovereignty`: beansprucht höchste politische Authority und äußere Unabhängigkeit.
 - `Decentralization`: beschreibt die Verteilung von Zuständigkeiten weg von einer politischen Mitte.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Sovereignty
 - Authority
@@ -1721,22 +1719,22 @@ Der Begriff bezeichnet abgegrenzte politische Selbstbestimmung, ohne vollständi
 - Decentralization
 - State
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Centralization
+### Centralization
 
-### Definition
+#### Definition
 
 `Centralization` ist das Ausmaß, in dem politische Entscheidungsbefugnisse und administrative Zuständigkeiten bei einer übergeordneten politischen Mitte gebündelt sind.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die vertikale Konzentration öffentlicher Zuständigkeiten innerhalb einer politischen Ordnung.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1745,12 +1743,12 @@ Der Begriff bezeichnet die vertikale Konzentration öffentlicher Zuständigkeite
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Authority`: bezeichnet anerkannte Entscheidungsbefugnis als solche.
 - `Administrative Capacity`: bezeichnet die Fähigkeit, öffentliche Entscheidungen wirksam auszuführen.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Decentralization
 - Autonomy
@@ -1758,22 +1756,22 @@ Der Begriff bezeichnet die vertikale Konzentration öffentlicher Zuständigkeite
 - State
 - Public Administration
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Decentralization
+### Decentralization
 
-### Definition
+#### Definition
 
 `Decentralization` ist das Ausmaß, in dem politische Entscheidungsbefugnisse und administrative Zuständigkeiten von einer übergeordneten politischen Mitte auf nachgeordnete oder eigenständige Einheiten verteilt sind.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die vertikale Verteilung öffentlicher Zuständigkeiten innerhalb einer politischen Ordnung.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1782,12 +1780,12 @@ Der Begriff bezeichnet die vertikale Verteilung öffentlicher Zuständigkeiten i
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Autonomy`: bezeichnet die anerkannte eigenständige Regelungsbefugnis eines Akteurs oder Gebietes.
 - `Administrative Capacity`: bezeichnet die Fähigkeit zur wirksamen Ausführung öffentlicher Aufgaben.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Centralization
 - Autonomy
@@ -1795,22 +1793,22 @@ Der Begriff bezeichnet die vertikale Verteilung öffentlicher Zuständigkeiten i
 - State
 - Public Administration
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Political Capital
+### Political Capital
 
-### Definition
+#### Definition
 
 `Political Capital` ist die verfügbare Fähigkeit eines politischen Akteurs, Unterstützung, Beziehungen, Vertrauen und Einfluss zur Durchsetzung politischer Vorhaben zu mobilisieren.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die politisch nutzbare Handlungsmacht, die aus Unterstützung und Einflussbeziehungen hervorgeht.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1819,12 +1817,12 @@ Der Begriff bezeichnet die politisch nutzbare Handlungsmacht, die aus Unterstüt
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Authority`: ist anerkannte verbindliche Entscheidungsbefugnis.
 - `Legitimacy`: ist die Anerkennung politischer Herrschaft als berechtigt.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Authority
 - Legitimacy
@@ -1832,22 +1830,22 @@ Der Begriff bezeichnet die politisch nutzbare Handlungsmacht, die aus Unterstüt
 - Political Party
 - Interest Group
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Administrative Capacity
+### Administrative Capacity
 
-### Definition
+#### Definition
 
 `Administrative Capacity` ist die Fähigkeit eines State und seiner zuständigen Institutionen, öffentliche Entscheidungen verlässlich, wirksam und innerhalb ihres Geltungsbereichs auszuführen.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet die tatsächliche organisatorische Leistungsfähigkeit öffentlicher Aufgabenerfüllung unabhängig von der formalen Zuweisung von Authority.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1856,12 +1854,12 @@ Der Begriff bezeichnet die tatsächliche organisatorische Leistungsfähigkeit ö
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Authority`: bezeichnet die anerkannte Befugnis zu verbindlichen Entscheidungen.
 - `Public Administration`: bezeichnet die Einrichtungen und Tätigkeiten, durch die öffentliche Aufgaben ausgeführt werden.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Public Administration
 - State
@@ -1870,22 +1868,22 @@ Der Begriff bezeichnet die tatsächliche organisatorische Leistungsfähigkeit ö
 - Centralization
 - Decentralization
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
 
-## Public Administration
+### Public Administration
 
-### Definition
+#### Definition
 
 Die `Public Administration` ist die Gesamtheit der dauerhaften öffentlichen Einrichtungen, Verfahren und Tätigkeiten, durch die Laws und verbindliche politische Entscheidungen ausgeführt sowie öffentliche Aufgaben wahrgenommen werden.
 
-### Zweck
+#### Zweck
 
 Der Begriff bezeichnet den institutionellen Vollzug öffentlicher Aufgaben jenseits der politischen Richtungsentscheidung durch das Government.
 
-### Verwendung
+#### Verwendung
 
 - Game Design
 - Engine
@@ -1894,13 +1892,13 @@ Der Begriff bezeichnet den institutionellen Vollzug öffentlicher Aufgaben jense
 - Modding
 - Dokumentation
 
-### Darf nicht verwechselt werden mit
+#### Darf nicht verwechselt werden mit
 
 - `Government`: bestimmt die gegenwärtige politische Leitung.
 - `Executive`: bezeichnet die leitende und ausführende Staatsfunktion insgesamt.
 - `Administrative Capacity`: bezeichnet die Fähigkeit zur wirksamen Aufgabenerfüllung.
 
-### Verwandte Begriffe
+#### Verwandte Begriffe
 
 - Administrative Capacity
 - Executive
@@ -1909,7 +1907,7 @@ Der Begriff bezeichnet den institutionellen Vollzug öffentlicher Aufgaben jense
 - Institution
 - Law
 
-### Referenzen
+#### Referenzen
 
 - PB-002
 - PB-003
