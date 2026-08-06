@@ -48,7 +48,7 @@ context_priority: critical
 
 # PB-004 – Naming & Terminology
 
-## 1. Zweck und Geltungsbereich
+# Kapitel 1 – Zweck und Geltungsbereich
 
 PB-004 schafft ein verbindliches, projektweites Vokabular, damit fachliche Konzepte über Dokumente, Implementierungen und Inhalte hinweg eindeutig bezeichnet und verstanden werden. Einheitliche Begriffe verhindern, dass unklare Synonyme dasselbe Konzept scheinbar trennen oder dass ein einzelner Ausdruck mehrere, miteinander unvereinbare Bedeutungen erhält.
 
@@ -64,7 +64,7 @@ Besteht ein Konflikt zwischen einer vorgeschlagenen Begriffsdefinition in PB-004
 
 Die Begriffe **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT** und **MAY** werden gemäß PB-000 normativ verwendet. Deutsche Erläuterungen verändern ihre dort festgelegte Verbindlichkeit nicht.
 
-## 2. Grundprinzipien der Terminologie
+# Kapitel 2 – Grundprinzipien der Terminologie
 
 Die folgenden Regeln gelten für jede Verwendung projektbezogener Begriffe. Sie bestimmen, wie spätere Begriffsdefinitionen erstellt, verwendet und geändert werden; sie nehmen diese Definitionen nicht vorweg.
 
@@ -137,7 +137,7 @@ Bei einem terminologischen Konflikt hat PB-004 Vorrang vor Chats, Kommentaren, T
 
 Die Wörter **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT** und **MAY** behalten in allen späteren Abschnitten von PB-004 die in PB-000 definierte normative Bedeutung. Beschreibende Beispiele, Übersetzungen und Erläuterungen erzeugen ohne ausdrückliche normative Festlegung keine zusätzlichen Begriffe oder Ausnahmen.
 
-## 3. Allgemeine Kernbegriffe
+# Kapitel 3 – Allgemeine Kernbegriffe
 
 Dieses Kapitel bildet das begriffliche Fundament für alle weiteren Terminologiebereiche von PB-004. Ab diesem Kapitel MUST jeder neu aufgenommene Begriff exakt die nachfolgend verwendete Abschnittsfolge besitzen: `Definition`, `Zweck`, `Verwendung`, optional `Darf nicht verwechselt werden mit`, `Verwandte Begriffe` und `Referenzen`. Abschnitte dürfen weder umbenannt noch durch begriffsspezifische Strukturen ersetzt werden. `Verwandte Begriffe` enthält ausschließlich Verweise auf Begriffe, `Referenzen` ausschließlich Dokument-IDs.
 
@@ -742,7 +742,7 @@ Der Begriff trennt anpassbare Vorgaben von fachlichen Definitionen, laufendem Ga
 - PB-003
 - TECH-100
 
-## 4. Politische Terminologie
+# Kapitel 4 – Politische Terminologie
 
 Die politischen Begriffe sind fachlich und hierarchisch gruppiert. Die fünf Gruppen bilden unterschiedliche Ebenen politischer Ordnung ab und machen die Beziehungen sowie notwendigen Abgrenzungen zwischen den Begriffen sichtbar.
 
@@ -1911,7 +1911,7 @@ Der Begriff bezeichnet den institutionellen Vollzug öffentlicher Aufgaben jense
 
 - PB-002
 - PB-003
-## 5. Territoriale Terminologie
+# Kapitel 5 – Territoriale Terminologie
 
 Territoriale Begriffe werden nach ihren fachlichen Beziehungen gruppiert, weil räumliche Ordnung nicht durch eine einzige Hierarchie vollständig beschrieben werden kann. Die Gruppen machen sichtbar, welche Begriffe vergleichbare Gegenstände bezeichnen und an welchen Stellen eine Abgrenzung zwischen ihnen erforderlich ist.
 
@@ -2794,7 +2794,7 @@ Der Begriff bezeichnet eine strategische Raumordnung ohne politische, administra
 
 - PB-002
 - PB-003
-## 6. Bevölkerung und Gesellschaft
+# Kapitel 6 – Bevölkerung und Gesellschaft
 
 Bevölkerung wird auf mehreren, voneinander abzugrenzenden Ebenen beschrieben. Individuen, Haushalte und zusammengefasste Gruppen sind unterschiedliche Konzepte und dürfen nicht stellvertretend füreinander verwendet werden.
 
@@ -3855,7 +3855,7 @@ Der Begriff bezeichnet gesellschaftliche Einbindung ohne die Aufgabe prägender 
 - PB-002
 - PB-003
 
-## 7. Wirtschaft und Produktion
+# Kapitel 7 – Wirtschaft und Produktion
 
 Wirtschaftliche Begriffe werden als zusammenhängende fachliche Domäne betrachtet. Wirtschaftliche Prozesse entstehen aus dem Zusammenwirken von Akteuren, ihren Aktivitäten und den Beziehungen, die sie über Güter, Ressourcen, Märkte, Handel, Finanzen und Produktion miteinander verbinden.
 
@@ -5684,7 +5684,7 @@ Der Begriff bezeichnet die wirtschaftliche Ergiebigkeit eines Mitteleinsatzes un
 - PB-002
 - PB-003
 
-# 8. Militärische Terminologie
+# Kapitel 8 – Militärische Terminologie
 
 Militärische Begriffe bezeichnen unterschiedliche Ebenen militärischer Organisation und müssen entsprechend ihrer jeweiligen fachlichen Reichweite verwendet werden. Die Gesamtorganisation, ihre Teilorganisationen und ihre konkreten Verbände bilden voneinander abgegrenzte Begriffsbereiche.
 
@@ -7086,7 +7086,7 @@ Der Begriff bezeichnet kumulativen militärischen Substanz- oder Fähigkeitsverl
 - PB-002
 - PB-003
 
-# 9. Diplomatie und Internationale Beziehungen
+# Kapitel 9 – Diplomatie und Internationale Beziehungen
 
 Diplomatie beschreibt die Beziehungen zwischen politischen Akteuren sowie das auf diese Beziehungen gerichtete Handeln. Beziehungen, diplomatische Handlungen und daraus hervorgehende Abkommen sind eigenständige Konzepte und dürfen nicht gleichgesetzt werden; insbesondere sind Verträge mögliche Ergebnisse diplomatischer Prozesse und nicht deren Ausgangspunkt.
 
