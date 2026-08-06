@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.9.0
+version: 0.10.0
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -8301,6 +8301,1190 @@ Der Begriff bezeichnet die Beziehung zwischen den beteiligten Akteuren und trenn
 - Influence
 - Sphere of Influence
 - Sovereignty
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+# Kapitel 10 – Gameplay- und Designbegriffe
+
+Dieses Kapitel definiert die domänenübergreifende Sprache für Gameplay-Interaktionen, Prozesse und Spielzustände. Die Begriffe bezeichnen allgemeine Konzepte, ohne die Mechaniken einzelner Systeme festzulegen.
+
+Dieselben Begriffe werden in sämtlichen Spielsystemen einheitlich verwendet. Politik, Wirtschaft, Militär, Diplomatie, Technik und weitere Domänen dürfen sie fachlich konkretisieren, aber weder umdeuten noch durch domänenspezifische Synonyme ersetzen.
+
+Spätere Dokumente referenzieren für diese Konzepte ausschließlich die hier festgelegte Terminologie. Regeln, Abläufe, Werte und technische Repräsentationen verbleiben in den jeweils zuständigen Dokumenten.
+
+## 10.1 Spielerinteraktion
+
+### Player
+
+#### Definition
+
+Ein `Player` ist eine Person, die innerhalb einer Campaign Entscheidungen trifft und durch Interaktionen Einfluss auf deren Verlauf nimmt.
+
+#### Zweck
+
+Der Begriff bezeichnet den menschlichen Ursprung von Spielabsichten und grenzt ihn von den innerhalb der World handelnden Akteuren ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Actor`: ist ein innerhalb der World handlungsfähiges Subjekt.
+- `Player Intent`: ist die von einem Player verfolgte Absicht.
+
+#### Verwandte Begriffe
+
+- Player Intent
+- Input
+- Selection
+- Actor
+- Campaign
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Player Intent
+
+#### Definition
+
+`Player Intent` ist die von einem Player mit einer Interaktion verfolgte, noch nicht notwendig als gültige Handlung bestimmte Absicht.
+
+#### Zweck
+
+Der Begriff trennt das angestrebte Ergebnis einer Spielerinteraktion von ihrem Input, ihrer formalen Ausgestaltung und einer späteren Execution.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Input`: ist eine vom Spiel entgegengenommene Eingabe.
+- `Action`: ist eine zur Ausführung bestimmte Gameplay-Handlung.
+
+#### Verwandte Begriffe
+
+- Player
+- Input
+- Selection
+- Target
+- Action
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Input
+
+#### Definition
+
+Ein `Input` ist eine vom Spiel entgegengenommene Eingabe eines Player, durch die eine Interaktion begonnen, fortgeführt oder beeinflusst wird.
+
+#### Zweck
+
+Der Begriff bezeichnet die Eingabe selbst, ohne daraus eine bestimmte Absicht, Gültigkeit oder Zustandsänderung abzuleiten.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Player Intent`: bezeichnet die mit einer Interaktion verfolgte Absicht.
+- `Selection`: bestimmt etwas als aktuellen Gegenstand einer Interaktion.
+
+#### Verwandte Begriffe
+
+- Player
+- Player Intent
+- Selection
+- Confirmation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Selection
+
+#### Definition
+
+Eine `Selection` ist die Bestimmung eines verfügbaren Gegenstands als aktuellen Bezugspunkt einer Spielerinteraktion.
+
+#### Zweck
+
+Der Begriff bezeichnet die interaktive Auswahl, ohne den ausgewählten Gegenstand notwendig zum Target einer Action zu machen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Target`: ist der bezeichnete Bezugspunkt einer Handlung oder eines Prozesses.
+- `Decision`: legt eine Alternative verbindlich fest.
+
+#### Verwandte Begriffe
+
+- Player
+- Input
+- Target
+- Action
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Target
+
+#### Definition
+
+Ein `Target` ist der eindeutig bezeichnete Gegenstand, auf den eine Action, ein Proposal, ein Effect oder ein anderer Gameplay-Prozess gerichtet ist.
+
+#### Zweck
+
+Der Begriff stellt einen domänenübergreifenden Bezugspunkt bereit, ohne dessen Art oder die auf ihn anwendbaren Regeln festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Selection`: ist die aktuelle interaktive Auswahl und begründet nicht notwendig einen Handlungsbezug.
+- `Objective`: ist ein angestrebter Zustand oder ein angestrebtes Ergebnis.
+
+#### Verwandte Begriffe
+
+- Selection
+- Action
+- Proposal
+- Effect
+- Objective
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 10.2 Gameplay-Handlungen
+
+### Action
+
+#### Definition
+
+Eine `Action` ist eine tatsächlich ausgeführte Gameplay-Handlung, durch die ein Player oder Actor innerhalb eines Spielsystems handelt.
+
+#### Zweck
+
+Der Begriff bezeichnet die tatsächliche Handlung und grenzt sie insbesondere von einer noch veränderbaren Proposal, einer Decision, ihrem Vollzug als Execution und dem Ergebnis der Handlung ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Proposal`: wird vor einer möglichen Ausführung zur Prüfung oder Entscheidung gestellt.
+- `Execution`: ist der Vollzug einer Action.
+- `Effect`: ist eine durch einen Vorgang bewirkte Zustandsänderung.
+
+#### Verwandte Begriffe
+
+- Player Intent
+- Proposal
+- Decision
+- Execution
+- Effect
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Proposal
+
+#### Definition
+
+Ein `Proposal` ist domänenübergreifend ein formaler Vorschlag oder eine beabsichtigte Handlung, die vor ihrer möglichen Ausführung validiert, verändert, angenommen oder abgelehnt werden kann.
+
+#### Zweck
+
+Der Begriff bezeichnet einen noch nicht ausgeführten, zur weiteren Behandlung gestellten Inhalt. Er gilt in sämtlichen Spielsystemen; Diplomatie ist lediglich eines seiner möglichen Anwendungsgebiete.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Action`: ist die zur tatsächlichen Ausführung bestimmte Gameplay-Handlung.
+- `Decision`: legt fest, wie über eine Proposal oder einen anderen auslösenden Sachverhalt entschieden wird.
+- `Execution`: vollzieht eine bestimmte Action.
+
+#### Verwandte Begriffe
+
+- Action
+- Decision
+- Confirmation
+- Execution
+- Cancellation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Decision
+
+#### Definition
+
+Eine `Decision` ist die verbindliche Festlegung einer verfügbaren Alternative als Antwort auf eine Proposal oder einen anderen auslösenden Sachverhalt.
+
+#### Zweck
+
+Der Begriff bezeichnet die Entscheidung selbst, ohne ihre Bestätigung, Ausführung oder daraus hervorgehenden Effects vorwegzunehmen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Proposal`: ist ein zur Behandlung gestellter Inhalt.
+- `Confirmation`: bestätigt eine zuvor bestimmte Eingabe, Auswahl oder Entscheidung.
+- `Outcome`: ist das unmittelbare Ergebnis eines Vorgangs.
+
+#### Verwandte Begriffe
+
+- Proposal
+- Confirmation
+- Execution
+- Cancellation
+- Outcome
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Confirmation
+
+#### Definition
+
+Eine `Confirmation` ist die ausdrückliche Bestätigung, dass eine zuvor bestimmte Eingabe, Auswahl, Proposal oder Decision in ihrer vorliegenden Form fortgeführt werden soll.
+
+#### Zweck
+
+Der Begriff bezeichnet einen bestätigenden Interaktionsschritt und nicht die bestätigte Festlegung oder deren Execution.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Decision`: ist die verbindliche Festlegung einer Alternative.
+- `Execution`: ist der Vollzug einer Action.
+
+#### Verwandte Begriffe
+
+- Input
+- Selection
+- Proposal
+- Decision
+- Execution
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Execution
+
+#### Definition
+
+Eine `Execution` ist der Vollzug, durch den eine dafür bestimmte Action tatsächlich ausgeführt wird.
+
+#### Zweck
+
+Der Begriff trennt den Vollzug von der vorherigen Absicht, Proposal, Decision oder Confirmation sowie von den daraus hervorgehenden Effects.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Action`: ist die Handlung, die vollzogen wird.
+- `Effect`: ist eine durch den Vollzug bewirkte Zustandsänderung.
+- `Outcome`: ist das unmittelbare Ergebnis eines Vorgangs.
+
+#### Verwandte Begriffe
+
+- Action
+- Proposal
+- Decision
+- Confirmation
+- Effect
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Cancellation
+
+#### Definition
+
+Eine `Cancellation` ist die Beendigung einer noch nicht abgeschlossenen Proposal, Action oder eines laufenden Prozesses, ohne dessen vorgesehenen Abschluss herbeizuführen.
+
+#### Zweck
+
+Der Begriff bezeichnet den Abbruch vor Completion und legt weder seine Zulässigkeit noch seine möglichen Consequences fest.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Completion`: ist der vorgesehene Abschluss eines fortschreitenden Vorgangs.
+- `Execution`: ist der Vollzug einer Action.
+
+#### Verwandte Begriffe
+
+- Proposal
+- Action
+- Project
+- Completion
+- Consequence
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 10.3 Laufende Prozesse
+
+### Project
+
+#### Definition
+
+Ein `Project` ist ein über einen längeren Zeitraum laufender, auf einen bestimmten angestrebten Zustand oder ein Ergebnis ausgerichteter Gameplay-Prozess.
+
+#### Zweck
+
+Der Begriff bezeichnet einen fortdauernden Prozess und grenzt ihn von einzelnen Actions, untergeordneten Tasks und bloßen Zielbeschreibungen ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Task`: ist eine abgegrenzte zu erledigende Einheit.
+- `Objective`: beschreibt einen angestrebten Zustand oder ein angestrebtes Ergebnis.
+- `Action`: ist eine zur Ausführung bestimmte einzelne Gameplay-Handlung.
+
+#### Verwandte Begriffe
+
+- Task
+- Objective
+- Progress
+- Completion
+- Cancellation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Task
+
+#### Definition
+
+Ein `Task` ist eine abgegrenzte, zu erledigende Einheit innerhalb eines Gameplay-Zusammenhangs.
+
+#### Zweck
+
+Der Begriff bezeichnet einen bestimmten Erledigungsgegenstand, ohne einen länger laufenden Gesamtprozess oder dessen Ziel festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Project`: ist ein länger laufender Gameplay-Prozess.
+- `Objective`: bezeichnet den angestrebten Zustand oder das angestrebte Ergebnis.
+- `Action`: ist eine zur Ausführung bestimmte Gameplay-Handlung.
+
+#### Verwandte Begriffe
+
+- Project
+- Objective
+- Mission
+- Progress
+- Completion
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Objective
+
+#### Definition
+
+Ein `Objective` ist ein ausdrücklich bezeichneter Zustand oder ein ausdrücklich bezeichnetes Ergebnis, dessen Erreichen angestrebt wird.
+
+#### Zweck
+
+Der Begriff bezeichnet das Ziel eines Handelns oder Prozesses und nicht den Weg, die Handlung oder den Prozess zu seiner Erreichung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Target`: ist der Gegenstand, auf den ein Vorgang gerichtet ist.
+- `Task`: ist eine zu erledigende Einheit.
+- `Outcome`: ist das tatsächlich eingetretene unmittelbare Ergebnis.
+
+#### Verwandte Begriffe
+
+- Target
+- Project
+- Task
+- Mission
+- Outcome
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Mission
+
+#### Definition
+
+Eine `Mission` ist ein abgegrenzter Gameplay-Auftrag, der mindestens ein Objective als zu erreichenden Gegenstand festlegt.
+
+#### Zweck
+
+Der Begriff bezeichnet einen zielgebundenen Auftrag und grenzt ihn von einem eigenständig laufenden Project, einer einzelnen Task und einer priorisierenden Agenda ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Objective`: ist der angestrebte Zustand oder das angestrebte Ergebnis.
+- `Task`: ist eine abgegrenzte zu erledigende Einheit.
+- `Agenda`: ordnet mehrere Anliegen oder Vorhaben nach einer verfolgten Ausrichtung.
+
+#### Verwandte Begriffe
+
+- Objective
+- Task
+- Project
+- Agenda
+- Completion
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Agenda
+
+#### Definition
+
+Eine `Agenda` ist eine geordnete Zusammenstellung von Anliegen, Objectives oder Vorhaben, die ein Akteur verfolgt oder priorisiert.
+
+#### Zweck
+
+Der Begriff bezeichnet eine übergreifende Ausrichtung mehrerer Gegenstände, ohne daraus einzelne Missions, Projects oder Actions abzuleiten.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Mission`: ist ein abgegrenzter zielgebundener Auftrag.
+- `Objective`: ist ein einzelner angestrebter Zustand oder ein einzelnes angestrebtes Ergebnis.
+
+#### Verwandte Begriffe
+
+- Objective
+- Mission
+- Project
+- Decision
+- Actor
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 10.4 Spielereignisse
+
+### Trigger
+
+#### Definition
+
+Ein `Trigger` ist die festgelegte Voraussetzung, deren Erfüllung die Möglichkeit oder das Eintreten eines Event auslöst.
+
+#### Zweck
+
+Der Begriff bezeichnet den auslösenden Bezug eines Ereignisses und grenzt ihn von einer allgemein geprüften Condition sowie vom Event selbst ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Condition`: ist ein prüfbarer Sachverhalt, ohne notwendig ein Event auszulösen.
+- `Event`: ist das eingetretene Ereignis.
+
+#### Verwandte Begriffe
+
+- Condition
+- Event
+- State
+- Outcome
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Condition
+
+#### Definition
+
+Eine `Condition` ist ein eindeutig prüfbarer Sachverhalt, der zu einem bestimmten Zeitpunkt erfüllt oder nicht erfüllt ist.
+
+#### Zweck
+
+Der Begriff stellt eine allgemeine Sprache für Voraussetzungen und Prüfungen bereit, ohne festzulegen, was aus ihrem Ergebnis folgt.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Trigger`: ist eine als Auslöser für ein Event festgelegte Voraussetzung.
+- `Requirement`: bezeichnet etwas, das für einen bestimmten Gegenstand erfüllt sein muss.
+- `State`: ist die Gesamtheit maßgeblicher Eigenschaften eines Gegenstands zu einem Zeitpunkt.
+
+#### Verwandte Begriffe
+
+- Trigger
+- Requirement
+- Rule
+- State
+- Event
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Event
+
+#### Definition
+
+Ein `Event` ist ein innerhalb des Spielverlaufs eingetretenes und als zusammengehörig betrachtetes Ereignis.
+
+#### Zweck
+
+Der Begriff bezeichnet das eingetretene Ereignis und grenzt es von seiner auslösenden Voraussetzung, seinem unmittelbaren Outcome und seinen weiteren Consequences ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Trigger`: ist die Voraussetzung für ein Event.
+- `Outcome`: ist das unmittelbare Ergebnis eines Vorgangs.
+- `Effect`: ist eine Zustandsänderung.
+
+#### Verwandte Begriffe
+
+- Trigger
+- Condition
+- Outcome
+- Consequence
+- Effect
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Outcome
+
+#### Definition
+
+Ein `Outcome` ist das unmittelbar aus einem Event, einer Action, einer Decision oder einem anderen abgeschlossenen Vorgang hervorgegangene Ergebnis.
+
+#### Zweck
+
+Der Begriff bezeichnet, was ein Vorgang unmittelbar ergeben hat, ohne längerfristige Consequences oder einzelne Zustandsänderungen damit gleichzusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Effect`: ist eine bestimmte Zustandsänderung.
+- `Consequence`: ist eine aus einem Vorgang oder Outcome hervorgehende weitere Folge.
+- `Objective`: ist ein angestrebtes und nicht notwendig tatsächlich erreichtes Ergebnis.
+
+#### Verwandte Begriffe
+
+- Event
+- Action
+- Decision
+- Effect
+- Consequence
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Consequence
+
+#### Definition
+
+Eine `Consequence` ist eine aus einem Vorgang, Event oder Outcome hervorgehende weitere Folge.
+
+#### Zweck
+
+Der Begriff bezeichnet einen Folgebezug über das unmittelbare Outcome hinaus, ohne dessen Zeitpunkt, Umfang oder konkrete Ausgestaltung festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Outcome`: ist das unmittelbare Ergebnis eines Vorgangs.
+- `Effect`: ist eine bestimmte Zustandsänderung.
+
+#### Verwandte Begriffe
+
+- Event
+- Outcome
+- Effect
+- State
+- Modifier
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 10.5 Regeln
+
+### Requirement
+
+#### Definition
+
+Ein `Requirement` ist eine Voraussetzung, die für die Verfügbarkeit, Gültigkeit, Fortführung oder den Abschluss eines bestimmten Gameplay-Gegenstands erfüllt sein muss.
+
+#### Zweck
+
+Der Begriff bezeichnet eine notwendige Voraussetzung, ohne die prüfende Condition oder die übergreifende Rule damit gleichzusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Condition`: ist ein allgemein prüfbarer Sachverhalt.
+- `Restriction`: begrenzt eine ansonsten bestehende Möglichkeit.
+- `Rule`: ist eine verbindliche allgemeine Festlegung.
+
+#### Verwandte Begriffe
+
+- Condition
+- Restriction
+- Rule
+- Completion
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Restriction
+
+#### Definition
+
+Eine `Restriction` ist eine verbindliche Begrenzung einer ansonsten bestehenden Gameplay-Möglichkeit.
+
+#### Zweck
+
+Der Begriff bezeichnet eine Einschränkung, ohne sie mit einer notwendigen Requirement oder der Gesamtheit einer Rule gleichzusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Requirement`: muss für einen bestimmten Gegenstand erfüllt sein.
+- `Rule`: ist eine allgemeine verbindliche Festlegung.
+- `Cooldown`: begrenzt erneute Verfügbarkeit anhand eines fortschreitenden Zeitraums.
+
+#### Verwandte Begriffe
+
+- Requirement
+- Rule
+- Condition
+- Cooldown
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Rule
+
+#### Definition
+
+Eine `Rule` ist eine verbindliche allgemeine Festlegung darüber, wie ein Gameplay-Sachverhalt behandelt wird.
+
+#### Zweck
+
+Der Begriff bezeichnet die normative Grundlage eines Spielzusammenhangs, ohne eine konkrete Mechanik, Requirement, Restriction oder Wirkung zu bestimmen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Requirement`: ist eine notwendige Voraussetzung für einen bestimmten Gegenstand.
+- `Restriction`: begrenzt eine bestehende Möglichkeit.
+- `Effect`: ist eine Zustandsänderung.
+
+#### Verwandte Begriffe
+
+- Requirement
+- Restriction
+- Condition
+- Effect
+- Modifier
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Effect
+
+#### Definition
+
+Ein `Effect` ist eine durch eine Action, ein Event, eine Rule oder einen anderen Gameplay-Vorgang bewirkte Zustandsänderung.
+
+#### Zweck
+
+Der Begriff bezeichnet die Zustandsänderung selbst und grenzt sie vom auslösenden Vorgang, dessen gesamtem Outcome und einer wert- oder verhaltensbezogenen Veränderung durch einen Modifier ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Outcome`: ist das unmittelbare Gesamtergebnis eines Vorgangs.
+- `Consequence`: ist eine weitere Folge eines Vorgangs oder Outcome.
+- `Modifier`: verändert einen Wert oder ein Verhalten dauerhaft oder temporär.
+
+#### Verwandte Begriffe
+
+- Action
+- Event
+- Outcome
+- Consequence
+- Modifier
+- State
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Modifier
+
+#### Definition
+
+Ein `Modifier` ist eine dauerhafte oder temporäre Veränderung eines Wertes oder Verhaltens gegenüber dessen ansonsten maßgeblicher Ausprägung.
+
+#### Zweck
+
+Der Begriff bezeichnet die verändernde Einflussgröße und grenzt sie von einer beliebigen Zustandsänderung, ihrer Ursache und dem betroffenen Wert oder Verhalten ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Effect`: ist eine Zustandsänderung und kann einen Modifier begründen, verändern oder beenden.
+- `Rule`: legt verbindlich fest, wie ein Gameplay-Sachverhalt behandelt wird.
+- `Status`: ist eine benannte Einordnung eines gegenwärtigen State.
+
+#### Verwandte Begriffe
+
+- Effect
+- Rule
+- State
+- Status
+- Cooldown
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 10.6 Fortschritt
+
+### State
+
+#### Definition
+
+Ein `State` ist die Gesamtheit der zu einem bestimmten Zeitpunkt maßgeblichen Eigenschaften eines abgegrenzten Gameplay-Gegenstands.
+
+#### Zweck
+
+Der Begriff bezeichnet dessen gegenwärtige Beschaffenheit und grenzt sie von einer benannten Einordnung, zeitlicher Entwicklung und einzelnen Zustandsänderung ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Game State`: beschreibt den Zustand der gesamten World zu einem bestimmten Zeitpunkt.
+- `Status`: ist eine benannte Einordnung eines State.
+- `Progress`: beschreibt die Entwicklung hin zu einem Bezugspunkt.
+
+#### Verwandte Begriffe
+
+- Game State
+- Status
+- Progress
+- Effect
+- Condition
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Status
+
+#### Definition
+
+Ein `Status` ist eine benannte Einordnung des gegenwärtigen State eines Gameplay-Gegenstands hinsichtlich eines bestimmten Betrachtungszwecks.
+
+#### Zweck
+
+Der Begriff stellt eine verständliche Zustandsklassifikation bereit, ohne den vollständigen State oder dessen zeitliche Entwicklung abzubilden.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `State`: umfasst sämtliche maßgeblichen Eigenschaften des betrachteten Gegenstands.
+- `Progress`: beschreibt eine Entwicklung hin zu einem Bezugspunkt.
+- `Condition`: ist ein prüfbarer Sachverhalt.
+
+#### Verwandte Begriffe
+
+- State
+- Progress
+- Completion
+- Condition
+- Modifier
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Progress
+
+#### Definition
+
+`Progress` ist der erreichte Stand der Entwicklung eines fortschreitenden Vorgangs im Verhältnis zu einem bestimmten Bezugspunkt.
+
+#### Zweck
+
+Der Begriff bezeichnet den Entwicklungsstand, ohne den vollständigen State, einen Status oder den vorgesehenen Abschluss des Vorgangs damit gleichzusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Status`: ist eine benannte Einordnung eines State.
+- `Completion`: ist der vorgesehene Abschluss eines Vorgangs.
+- `Outcome`: ist das unmittelbare Ergebnis eines abgeschlossenen Vorgangs.
+
+#### Verwandte Begriffe
+
+- State
+- Status
+- Project
+- Task
+- Completion
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Completion
+
+#### Definition
+
+`Completion` ist der vorgesehene Abschluss eines fortschreitenden Vorgangs nach Erfüllung der dafür maßgeblichen Requirements.
+
+#### Zweck
+
+Der Begriff bezeichnet den regulären Abschluss und grenzt ihn von laufendem Progress, vorzeitiger Cancellation und dem daraus hervorgehenden Outcome ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Progress`: bezeichnet den erreichten Entwicklungsstand.
+- `Cancellation`: beendet einen Vorgang ohne seinen vorgesehenen Abschluss.
+- `Outcome`: ist das unmittelbare Ergebnis eines abgeschlossenen Vorgangs.
+
+#### Verwandte Begriffe
+
+- Progress
+- Requirement
+- Cancellation
+- Outcome
+- Project
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Cooldown
+
+#### Definition
+
+Ein `Cooldown` ist ein fortschreitender Zeitraum, während dessen die erneute Verfügbarkeit eines bestimmten Gameplay-Gegenstands begrenzt ist.
+
+#### Zweck
+
+Der Begriff bezeichnet einen zeitbezogenen Verfügbarkeitszustand, ohne dessen Dauer, Beginn, Ende oder zugrunde liegende Rule festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Restriction`: ist der allgemeinere Begriff für eine verbindliche Begrenzung.
+- `Progress`: bezeichnet einen Entwicklungsstand im Verhältnis zu einem Bezugspunkt.
+- `Modifier`: verändert einen Wert oder ein Verhalten.
+
+#### Verwandte Begriffe
+
+- Restriction
+- Rule
+- State
+- Status
+- Progress
 
 #### Referenzen
 
