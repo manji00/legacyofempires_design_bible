@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.14.0
+version: 0.15.0
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -13483,3 +13483,453 @@ Für die allgemeine diplomatische Zwangsmaßnahme ist `Sanction` zu verwenden; f
 
 - Abschnitt 9.3 `Sanction`
 - Abschnitt 7.5 `Embargo`
+
+# Kapitel 15 – Requirements & Design Goals
+
+Terminologie muss langfristig stabil bleiben, weil Dokumente, Entscheidungen und weitere Projektartefakte über lange Zeiträume hinweg auf dieselben Bedeutungen und Referenzen angewiesen sind. Unkontrollierte Bedeutungs- oder Benennungswechsel würden diese Zusammenhänge entwerten.
+
+Explizit dokumentierte Anforderungen machen die erwartete Qualität prüfbar und verhindern, dass terminologische Entscheidungen nur von implizitem Wissen oder persönlichem Sprachgefühl abhängen. Dieses Kapitel definiert deshalb die projektweiten Qualitätsziele für die gesamte Terminologie und bildet den Maßstab für zukünftige Erweiterungen und Reviews.
+
+## 15.1 Allgemeine Anforderungen
+
+### Requirement ID
+
+REQ-TERM-001
+
+### Titel
+
+Eindeutige Terminologie
+
+### Beschreibung
+
+Die projektweite Terminologie MUST eindeutig sein. Jede zulässige Verwendung MUST ohne konkurrierende fachliche Auslegung einem bestimmten Konzept zugeordnet werden können.
+
+### Begründung
+
+Eindeutigkeit verhindert abweichende Interpretationen in Zusammenarbeit, Dokumentation und Prüfung.
+
+### Priorität
+
+Mandatory
+
+### Verifikation
+
+Ein Terminologie-Review prüft jede Verwendung auf mehrere mögliche fachliche Auslegungen; ungeklärte Mehrdeutigkeiten gelten als Nichterfüllung.
+
+### Requirement ID
+
+REQ-TERM-002
+
+### Titel
+
+Verständlichkeit für Menschen und KI
+
+### Beschreibung
+
+Terminologie MUST für Menschen und KI-Assistenten gleichermaßen verständlich sein. Normative Aussagen MUST ihren Gegenstand, ihre Verbindlichkeit und ihre Abgrenzung ohne vorausgesetztes informelles Kontextwissen erkennen lassen.
+
+### Begründung
+
+Gemeinsame Verständlichkeit ermöglicht verlässliche Zusammenarbeit und reproduzierbare Auswertung unabhängig vom jeweiligen Leser.
+
+### Priorität
+
+Mandatory
+
+### Verifikation
+
+Ein Review durch einen menschlichen Leser und eine isolierte maschinelle Kontextprüfung bestätigen jeweils dieselbe Bedeutung, Verbindlichkeit und Abgrenzung.
+
+## 15.2 Anforderungen an Begriffe
+
+### Requirement ID
+
+REQ-TERM-003
+
+### Titel
+
+Genau eine kanonische Bedeutung
+
+### Beschreibung
+
+Jeder kanonische Begriff MUST genau eine kanonische Bedeutung besitzen. Dieselbe Bezeichnung MUST NOT gleichzeitig unterschiedliche fachliche Konzepte bezeichnen.
+
+### Begründung
+
+Eine eindeutige Bedeutungszuordnung schützt Referenzen und verhindert kontextabhängige Umdeutungen.
+
+### Priorität
+
+Mandatory
+
+### Verifikation
+
+Das Review vergleicht die Verwendungen eines Begriffs projektweit mit seiner kanonischen Definition; jede zweite oder abweichende Bedeutung führt zur Ablehnung.
+
+### Requirement ID
+
+REQ-TERM-004
+
+### Titel
+
+Widerspruchsfreie Verwendung von Fachbegriffen
+
+### Beschreibung
+
+Fachbegriffe MUST in allen Projektbereichen gemäß ihrer kanonischen Bedeutung verwendet werden und MUST NOT widersprüchlich verwendet werden. Bereichsspezifische Formulierungen MUST die bestehende Bedeutung unverändert lassen.
+
+### Begründung
+
+Widerspruchsfreiheit bewahrt ein gemeinsames fachliches Modell über Dokumentgrenzen hinweg.
+
+### Priorität
+
+Mandatory
+
+### Verifikation
+
+Ein projektweiter Verwendungsabgleich prüft Stichproben und alle geänderten Fundstellen gegen PB-004; festgestellte Bedeutungswidersprüche müssen vor Freigabe behoben sein.
+
+## 15.3 Anforderungen an Dokumentation
+
+### Requirement ID
+
+REQ-TERM-005
+
+### Titel
+
+Referenzierung bestehender Definitionen
+
+### Beschreibung
+
+Dokumente MUST auf bestehende kanonische Definitionen referenzieren, statt sie erneut oder abweichend zu formulieren. Eine notwendige Erläuterung MUST als Erläuterung erkennbar bleiben und MUST die referenzierte Bedeutung unverändert lassen.
+
+### Begründung
+
+Direkte Referenzen erhalten eine einzige autoritative Quelle und reduzieren divergierende Kopien.
+
+### Priorität
+
+Mandatory
+
+### Verifikation
+
+Das Dokumentreview prüft jeden verwendeten kanonischen Begriff auf eine auflösbare Referenz und sucht nach duplizierten oder konkurrierenden Definitionen.
+
+### Requirement ID
+
+REQ-TERM-006
+
+### Titel
+
+Nachvollziehbare terminologische Änderungen
+
+### Beschreibung
+
+Jede normative Änderung an der Terminologie MUST versioniert, begründet und hinsichtlich ihrer betroffenen Referenzen geprüft werden. Die Dokumentation MUST erkennen lassen, welche Festlegung gilt.
+
+### Begründung
+
+Nachvollziehbarkeit schützt die Aussagekraft älterer Referenzen und ermöglicht belastbare Reviews.
+
+### Priorität
+
+Mandatory
+
+### Verifikation
+
+Versionsstand, Änderungsbegründung und Referenzprüfung werden im Review gemeinsam kontrolliert; fehlt eines dieser Elemente, darf die Änderung nicht freigegeben werden.
+
+## 15.4 Anforderungen an Erweiterbarkeit
+
+### Requirement ID
+
+REQ-TERM-007
+
+### Titel
+
+Keine Ersetzung bestehender Begriffe durch Erweiterungen
+
+### Beschreibung
+
+Neue Begriffe MUST bestehende kanonische Begriffe ergänzen und MUST NOT bestehende Begriffe ersetzen. Eine Ablösung darf ausschließlich als ausdrücklich beschlossene Änderung außerhalb einer bloßen Erweiterung erfolgen.
+
+### Begründung
+
+Erweiterungen sollen den Begriffsbestand vergrößern, ohne gültige Referenzen unerwartet zu entwerten.
+
+### Priorität
+
+Mandatory
+
+### Verifikation
+
+Vor Aufnahme eines neuen Begriffs wird geprüft, ob sein Zweck bereits durch einen bestehenden Begriff erfüllt wird oder ob bestehende Verwendungen dadurch verdrängt würden.
+
+### Requirement ID
+
+REQ-TERM-008
+
+### Titel
+
+Rückwärtskompatible Erweiterungen
+
+### Beschreibung
+
+Terminologische Erweiterungen MUST rückwärtskompatibel sein. Bestehende gültige Bedeutungen, Verwendungen und Referenzen MUST nach einer Erweiterung weiterhin unverändert verständlich und auflösbar bleiben.
+
+### Begründung
+
+Rückwärtskompatibilität erhält den Wert bestehender Dokumentation und verhindert erzwungene Folgeänderungen ohne fachlichen Grund.
+
+### Priorität
+
+Mandatory
+
+### Verifikation
+
+Ein Vorher-nachher-Abgleich bestätigt, dass alle zuvor gültigen Definitionen und Referenzen weiterhin dieselbe Aussage besitzen und auflösbar sind.
+
+## 15.5 Anforderungen an Konsistenz
+
+### Requirement ID
+
+REQ-TERM-009
+
+### Titel
+
+Stabile Identifier
+
+### Beschreibung
+
+Identifier MUST stabil bleiben. Sie MUST NOT wegen redaktioneller, stilistischer oder persönlicher Präferenzen geändert, neu vergeben oder für einen anderen Gegenstand wiederverwendet werden.
+
+### Begründung
+
+Stabile Identifier sichern dauerhafte Referenzierbarkeit unabhängig von veränderlichen Darstellungen.
+
+### Priorität
+
+Mandatory
+
+### Verifikation
+
+Das Review vergleicht Identifier mit früheren freigegebenen Ständen und weist unbegründete Änderungen, Wiederverwendungen oder Neuzuordnungen zurück.
+
+### Requirement ID
+
+REQ-TERM-010
+
+### Titel
+
+Vorrang der Konsistenz
+
+### Beschreibung
+
+Terminologische Konsistenz MUST Vorrang vor persönlichem Stil haben. Autoren MUST die kanonische Bezeichnung auch dann verwenden, wenn sie eine andere Formulierung bevorzugen.
+
+### Begründung
+
+Projektweite Einheitlichkeit ist für gemeinsames Verständnis wichtiger als individuelle sprachliche Variation.
+
+### Priorität
+
+Mandatory
+
+### Verifikation
+
+Ein Terminologieabgleich prüft geänderte Texte auf stilistisch motivierte Synonyme und ersetzt oder beanstandet jede nicht zugelassene Variante.
+
+### Requirement ID
+
+REQ-TERM-011
+
+### Titel
+
+Vorrang von Architekturentscheidungen
+
+### Beschreibung
+
+Geltende Architekturentscheidungen MUST Vorrang vor individuellen terminologischen Präferenzen haben. Terminologische Festlegungen MUST einschlägige Architecture Decisions respektieren und MUST ihnen nicht widersprechen.
+
+### Begründung
+
+Der Vorrang beschlossener Architektur erhält die Kohärenz zwischen Projektentscheidungen und ihrer Sprache.
+
+### Priorität
+
+Mandatory
+
+### Verifikation
+
+Das Review gleicht jede betroffene terminologische Änderung mit PB-998 und den referenzierten Architecture Decisions ab; ein Widerspruch verhindert die Freigabe.
+
+## 15.6 Langfristige Designziele
+
+### Requirement ID
+
+REQ-TERM-012
+
+### Titel
+
+Langfristige Wartbarkeit
+
+### Beschreibung
+
+Die Terminologie SHOULD über lange Projektzeiträume verständlich, prüfbar und mit vertretbarem redaktionellem Aufwand pflegbar bleiben.
+
+### Begründung
+
+Wartbarkeit verhindert, dass wachsender Umfang zu unkontrollierter begrifflicher Abweichung führt.
+
+### Priorität
+
+Recommended
+
+### Verifikation
+
+Regelmäßige Reviews prüfen, ob Definitionen auffindbar sind, Änderungen lokal nachvollzogen werden können und keine vermeidbaren Mehrfachpflegepunkte bestehen.
+
+### Requirement ID
+
+REQ-TERM-013
+
+### Titel
+
+Internationale Zusammenarbeit
+
+### Beschreibung
+
+Die Terminologie SHOULD internationale Zusammenarbeit unterstützen, indem kanonische Bezeichnungen sprachübergreifend eindeutig zugeordnet und lokalisierte Darstellungen klar von ihnen getrennt werden können.
+
+### Begründung
+
+Sprachübergreifende Zuordnung reduziert Missverständnisse zwischen Mitwirkenden mit unterschiedlichem sprachlichem Hintergrund.
+
+### Priorität
+
+Recommended
+
+### Verifikation
+
+Ein Review prüft anhand mindestens einer lokalisierten Darstellung, ob die Zuordnung zur kanonischen Bezeichnung ohne Bedeutungsverlust eindeutig bleibt.
+
+### Requirement ID
+
+REQ-TERM-014
+
+### Titel
+
+Erweiterbarkeit
+
+### Beschreibung
+
+Die Terminologie SHOULD neue fachliche Bereiche aufnehmen können, ohne bestehende Bedeutungsgrenzen aufzuweichen oder den vorhandenen Bestand neu ordnen zu müssen.
+
+### Begründung
+
+Ein erweiterbarer Begriffsbestand unterstützt Projektwachstum bei gleichzeitiger Stabilität.
+
+### Priorität
+
+Recommended
+
+### Verifikation
+
+Bei jeder Erweiterung wird geprüft, ob sie durch eine klar abgegrenzte Ergänzung möglich ist und bestehende Definitionen unverändert bleiben.
+
+### Requirement ID
+
+REQ-TERM-015
+
+### Titel
+
+Eindeutige Kommunikation und geringe Mehrdeutigkeit
+
+### Beschreibung
+
+Die Terminologie SHOULD eindeutige Kommunikation ermöglichen und die verbleibende Mehrdeutigkeit auf das fachlich unvermeidbare Minimum begrenzen.
+
+### Begründung
+
+Geringe Mehrdeutigkeit senkt Abstimmungsaufwand und Fehlinterpretationen in allen Projektbereichen.
+
+### Priorität
+
+Recommended
+
+### Verifikation
+
+Unabhängige Leser ordnen repräsentative Aussagen demselben fachlichen Gegenstand zu; abweichende Zuordnungen werden als Verbesserungsbedarf dokumentiert.
+
+### Requirement ID
+
+REQ-TERM-016
+
+### Titel
+
+Hohe Referenzierbarkeit
+
+### Beschreibung
+
+Terminologische Festlegungen SHOULD dauerhaft eindeutig auffindbar und präzise referenzierbar sein.
+
+### Begründung
+
+Hohe Referenzierbarkeit ermöglicht belastbare Querverweise, Reviews und spätere Pflege.
+
+### Priorität
+
+Recommended
+
+### Verifikation
+
+Ein Referenztest bestätigt, dass jede geprüfte Festlegung über Dokument, Abschnitt und stabile Bezeichnung eindeutig gefunden werden kann.
+
+### Requirement ID
+
+REQ-TERM-017
+
+### Titel
+
+Stabile Dokumentation
+
+### Beschreibung
+
+Die Terminologie SHOULD dazu beitragen, dass die fachliche Aussage bestehender Dokumentation über Versionen hinweg stabil bleibt.
+
+### Begründung
+
+Stabile Dokumentation bewahrt Wissen und vermeidet unnötige Überarbeitungen aufgrund rein sprachlicher Veränderungen.
+
+### Priorität
+
+Recommended
+
+### Verifikation
+
+Ein Versionsvergleich prüft, ob unveränderte Referenzen und Aussagen weiterhin dieselbe terminologische Bedeutung besitzen.
+
+### Requirement ID
+
+REQ-TERM-018
+
+### Titel
+
+Wiederverwendbarkeit
+
+### Beschreibung
+
+Kanonische Terminologie SHOULD in unterschiedlichen Projektbereichen wiederverwendbar sein, sofern derselbe fachliche Gegenstand bezeichnet wird, und MUST dabei ihre Bedeutung beibehalten.
+
+### Begründung
+
+Wiederverwendbarkeit vermeidet parallele Begriffsbestände und stärkt ein gemeinsames Projektverständnis.
+
+### Priorität
+
+Recommended
+
+### Verifikation
+
+Ein bereichsübergreifender Vergleich bestätigt, dass wiederverwendete Bezeichnungen auf dieselbe Definition verweisen und keine Bereichseigenbedeutung erhalten.
