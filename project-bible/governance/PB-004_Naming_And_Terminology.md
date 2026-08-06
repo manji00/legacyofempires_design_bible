@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.8.0
+version: 0.9.0
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -7080,6 +7080,1227 @@ Der Begriff bezeichnet kumulativen militärischen Substanz- oder Fähigkeitsverl
 - Organization
 - Readiness
 - Morale
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+# 9. Diplomatie und Internationale Beziehungen
+
+Diplomatie beschreibt die Beziehungen zwischen politischen Akteuren sowie das auf diese Beziehungen gerichtete Handeln. Beziehungen, diplomatische Handlungen und daraus hervorgehende Abkommen sind eigenständige Konzepte und dürfen nicht gleichgesetzt werden; insbesondere sind Verträge mögliche Ergebnisse diplomatischer Prozesse und nicht deren Ausgangspunkt.
+
+Dieses Kapitel definiert ausschließlich die kanonische diplomatische Terminologie. Spielmechaniken, Regeln und technische Umsetzungen werden in späteren zuständigen Dokumenten beschrieben.
+
+## 9.1 Diplomatische Akteure
+
+### Country
+
+#### Definition
+
+Für `Country` gilt ausschließlich die kanonische Definition aus Abschnitt 4.1.
+
+#### Zweck
+
+Die Aufnahme in diese Begriffsgruppe ordnet ein Country als möglichen diplomatischen Akteur ein, ohne den politischen Begriff erneut zu definieren.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- APIs
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Government`: ist die gegenwärtige politische Führung und kann ein Country diplomatisch vertreten.
+- `Diplomatic Mission`: ist eine offizielle Vertretung eines diplomatischen Akteurs.
+
+#### Verwandte Begriffe
+
+- State
+- Government
+- Diplomatic Relation
+- Diplomatic Mission
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Government
+
+#### Definition
+
+Für `Government` gilt ausschließlich die kanonische Definition aus Abschnitt 4.1.
+
+#### Zweck
+
+Die Aufnahme in diese Begriffsgruppe ordnet ein Government als mögliche diplomatisch handelnde politische Führung ein, ohne den politischen Begriff erneut zu definieren.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Country`: ist die territorial-politische Einheit als Ganzes.
+- `Diplomatic Mission`: ist eine offizielle Vertretung eines diplomatischen Akteurs.
+
+#### Verwandte Begriffe
+
+- State
+- Country
+- Diplomat
+- Diplomatic Mission
+
+#### Referenzen
+
+- PB-001
+- PB-002
+- PB-003
+
+### Diplomatic Mission
+
+#### Definition
+
+Eine `Diplomatic Mission` ist eine dauerhafte oder zeitlich begrenzte offizielle Vertretung eines diplomatischen Akteurs gegenüber einem anderen diplomatischen Akteur oder einem internationalen Zusammenhang.
+
+#### Zweck
+
+Der Begriff bezeichnet die institutionalisierte diplomatische Vertretung und grenzt sie von den vertretenen Akteuren und den für sie handelnden Personen ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Diplomat`: ist eine mit diplomatischer Vertretung betraute Person.
+- `Government`: ist die gegenwärtige politische Führung eines State.
+
+#### Verwandte Begriffe
+
+- Country
+- Government
+- Diplomat
+- Diplomatic Relation
+- International Organization
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Diplomat
+
+#### Definition
+
+Ein `Diplomat` ist eine Person, die zur offiziellen Vertretung eines diplomatischen Akteurs in diplomatischen Beziehungen und Handlungen bevollmächtigt ist.
+
+#### Zweck
+
+Der Begriff bezeichnet die bevollmächtigte handelnde Person und nicht den vertretenen Akteur, dessen Beziehung oder dessen Vertretungseinrichtung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Diplomatic Mission`: ist eine offizielle Vertretung und keine Person.
+- `Government`: ist eine politische Führung und nicht deren einzelner Vertreter.
+
+#### Verwandte Begriffe
+
+- Country
+- Government
+- Diplomatic Mission
+- Negotiation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 9.2 Diplomatische Beziehungen
+
+### Diplomatic Relation
+
+#### Definition
+
+Eine `Diplomatic Relation` ist der bestehende diplomatische Zusammenhang zwischen zwei diplomatischen Akteuren, innerhalb dessen sie einander politisch begegnen und aufeinander Bezug nehmen.
+
+#### Zweck
+
+Der Begriff bezeichnet die Beziehung selbst und trennt sie von einzelnen Einschätzungen, Handlungen und Abkommen innerhalb dieser Beziehung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Negotiation`: ist eine diplomatische Handlung.
+- `Treaty`: ist ein formales internationales Abkommen.
+
+#### Verwandte Begriffe
+
+- Country
+- Government
+- Recognition
+- Trust
+- Influence
+- Reputation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Recognition
+
+#### Definition
+
+`Recognition` ist die formale Anerkennung eines politischen Akteurs oder eines von ihm beanspruchten internationalen Status durch einen anderen diplomatischen Akteur.
+
+#### Zweck
+
+Der Begriff bezeichnet einen bestehenden Anerkennungsstatus und grenzt ihn vom Vorschlag seiner Begründung sowie von allgemeiner Zustimmung oder Vertrauen ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Recognition Proposal`: ist ein Vorschlag zur Begründung oder Änderung von Recognition.
+- `Reputation`: ist eine akteursübergreifende zugeschriebene Bewertung.
+
+#### Verwandte Begriffe
+
+- Country
+- Diplomatic Relation
+- Recognition Proposal
+- Sovereignty
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Trust
+
+#### Definition
+
+`Trust` ist die innerhalb einer Diplomatic Relation bestehende Erwartung eines Akteurs, dass der andere Akteur als verlässlich und in seinen Absichten hinreichend berechenbar handelt.
+
+#### Zweck
+
+Der Begriff bezeichnet eine beziehungsgebundene Erwartung und grenzt sie von Einfluss, formaler Anerkennung und allgemeiner Reputation ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Reputation`: ist nicht auf eine einzelne Diplomatic Relation beschränkt.
+- `Influence`: bezeichnet die Fähigkeit, auf andere Akteure einzuwirken.
+
+#### Verwandte Begriffe
+
+- Diplomatic Relation
+- Reputation
+- Influence
+- Agreement
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Influence
+
+#### Definition
+
+`Influence` ist die Fähigkeit eines politischen Akteurs, die Auffassungen, Entscheidungen oder Handlungsbedingungen anderer politischer Akteure zu prägen, ohne deren formale Entscheidungszuständigkeit zu übernehmen.
+
+#### Zweck
+
+Der Begriff bezeichnet politische Einwirkungsfähigkeit und grenzt sie von Herrschaft, Vertrauen und zugeschriebener Reputation ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Trust`: ist eine beziehungsgebundene Erwartung von Verlässlichkeit.
+- `Sphere of Influence`: ist ein internationaler Beziehungszusammenhang verdichteter Influence.
+
+#### Verwandte Begriffe
+
+- Diplomatic Relation
+- Trust
+- Reputation
+- Sphere of Influence
+- Balance of Power
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Reputation
+
+#### Definition
+
+`Reputation` ist die über einzelne Diplomatic Relations hinausreichende, einem politischen Akteur zugeschriebene Bewertung seines bisherigen und erwartbaren internationalen Verhaltens.
+
+#### Zweck
+
+Der Begriff bezeichnet eine akteursübergreifende Zuschreibung und trennt sie von beziehungsgebundenem Trust, formaler Recognition und tatsächlicher Influence.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Trust`: besteht innerhalb einer bestimmten Diplomatic Relation.
+- `Recognition`: ist ein formaler Anerkennungsstatus.
+
+#### Verwandte Begriffe
+
+- Diplomatic Relation
+- Trust
+- Influence
+- Recognition
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 9.3 Diplomatische Handlungen
+
+### Negotiation
+
+#### Definition
+
+Eine `Negotiation` ist ein geordneter diplomatischer Austausch zwischen Akteuren mit dem Ziel, unterschiedliche Positionen zu klären und eine gemeinsame Regelung zu ermöglichen.
+
+#### Zweck
+
+Der Begriff bezeichnet den diplomatischen Verständigungsprozess und grenzt ihn von darin eingebrachten Proposals und daraus hervorgehenden Agreements ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Proposal`: ist ein formaler Vorschlag oder ein diplomatisches Angebot.
+- `Agreement`: ist eine übereinstimmende Willensfestlegung.
+
+#### Verwandte Begriffe
+
+- Diplomat
+- Proposal
+- Agreement
+- Treaty
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Proposal
+
+#### Definition
+
+Ein `Proposal` ist ein formaler Vorschlag oder ein diplomatisches Angebot eines Akteurs an mindestens einen anderen Akteur, dessen Annahme, Ablehnung oder Veränderung noch nicht feststeht.
+
+#### Zweck
+
+Der Begriff bezeichnet einen zur Entscheidung gestellten Inhalt, ohne dessen Behandlung oder Ergebnis vorwegzunehmen; darüber entscheiden erst die später definierten zuständigen Spielsysteme.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Negotiation`: ist der diplomatische Austausch, in dem Proposals behandelt werden können.
+- `Agreement`: setzt eine übereinstimmende Willensfestlegung voraus.
+- `Treaty`: ist ein formales internationales Abkommen.
+
+#### Verwandte Begriffe
+
+- Negotiation
+- Agreement
+- Recognition Proposal
+- Ultimatum
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Agreement
+
+#### Definition
+
+Ein `Agreement` ist die übereinstimmende Willensfestlegung von mindestens zwei Akteuren hinsichtlich eines gemeinsamen diplomatischen Gegenstands.
+
+#### Zweck
+
+Der Begriff bezeichnet das allgemeine Ergebnis diplomatischer Verständigung, ohne zwingend die Form oder Verbindlichkeit eines Treaty vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Proposal`: ist noch keine übereinstimmende Willensfestlegung.
+- `Treaty`: ist eine besondere formale Art internationalen Abkommens.
+
+#### Verwandte Begriffe
+
+- Negotiation
+- Proposal
+- Treaty
+- Guarantee
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Guarantee
+
+#### Definition
+
+Eine `Guarantee` ist die formale einseitige Zusage eines diplomatischen Akteurs, für den Fortbestand eines bezeichneten internationalen Zustands oder Anspruchs einzustehen.
+
+#### Zweck
+
+Der Begriff bezeichnet eine einseitig übernommene diplomatische Verpflichtung und grenzt sie von gegenseitigen Agreements und bloßen politischen Erklärungen ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Alliance`: begründet eine wechselseitige organisierte Zusammenarbeit.
+- `Defensive Pact`: ist ein gegenseitiges Abkommen über defensive Unterstützung.
+
+#### Verwandte Begriffe
+
+- Agreement
+- Alliance
+- Defensive Pact
+- Neutrality
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Recognition Proposal
+
+#### Definition
+
+Ein `Recognition Proposal` ist ein Proposal, dessen Gegenstand die Begründung, Änderung oder Beendigung formaler Recognition ist.
+
+#### Zweck
+
+Der Begriff bezeichnet den zur Entscheidung gestellten Anerkennungsgegenstand und nicht den daraus möglicherweise hervorgehenden Anerkennungsstatus.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Recognition`: ist der bestehende formale Anerkennungsstatus.
+- `Proposal`: bezeichnet die allgemeine Form eines formalen Vorschlags oder Angebots.
+
+#### Verwandte Begriffe
+
+- Proposal
+- Recognition
+- Negotiation
+- Country
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Sanction
+
+#### Definition
+
+Eine `Sanction` ist eine von einem diplomatischen Akteur formal auferlegte beschränkende Maßnahme gegenüber einem anderen Akteur mit dem Zweck, dessen Verhalten zu beanstanden oder zu beeinflussen.
+
+#### Zweck
+
+Der Begriff bezeichnet diplomatischen Zwang durch eine Beschränkung und grenzt ihn von einer Forderung, einem Abkommen und bewaffnetem Konflikt ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Ultimatum`: ist eine befristete Forderung mit angekündigter Folge.
+- `War`: ist ein Zustand organisierter bewaffneter Auseinandersetzung.
+
+#### Verwandte Begriffe
+
+- Diplomatic Relation
+- Ultimatum
+- Agreement
+- War
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Ultimatum
+
+#### Definition
+
+Ein `Ultimatum` ist eine formale, abschließende und befristete diplomatische Forderung, die für den Fall ihrer Nichterfüllung eine bestimmte nachteilige Folge ankündigt.
+
+#### Zweck
+
+Der Begriff bezeichnet eine Forderung unter ausdrücklich angekündigtem Entscheidungsdruck und grenzt sie von einem ergebnisoffenen Proposal und einer bereits vollzogenen Sanction ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Proposal`: lässt Annahme, Ablehnung oder Veränderung ohne begriffsnotwendige Drohfolge offen.
+- `Sanction`: ist eine auferlegte beschränkende Maßnahme.
+
+#### Verwandte Begriffe
+
+- Proposal
+- Negotiation
+- Sanction
+- War
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 9.4 Internationale Abkommen
+
+### Treaty
+
+#### Definition
+
+Ein `Treaty` ist ein formal begründetes internationales Abkommen zwischen mindestens zwei diplomatischen Akteuren, das ihre gegenseitigen Rechte, Pflichten oder Beziehungen verbindlich ordnet.
+
+#### Zweck
+
+Der Begriff bezeichnet eine formalisierte Art von Agreement als Ergebnis diplomatischer Verständigung, ohne einen bestimmten Regelungsgegenstand vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Agreement`: ist der allgemeinere Begriff für eine übereinstimmende Willensfestlegung.
+- `Proposal`: ist ein noch nicht übereinstimmend festgelegter Vorschlag.
+
+#### Verwandte Begriffe
+
+- Negotiation
+- Proposal
+- Agreement
+- Alliance
+- Peace Treaty
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Alliance
+
+#### Definition
+
+Eine `Alliance` ist ein formales internationales Abkommen zur dauerhaften organisierten Zusammenarbeit ihrer Mitglieder bei gemeinsamen internationalen Interessen.
+
+#### Zweck
+
+Der Begriff bezeichnet einen umfassenden Kooperationszusammenhang und grenzt ihn von Abkommen mit einem einzelnen begrenzten Gegenstand ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Defensive Pact`: beschränkt sich auf gegenseitige defensive Unterstützung.
+- `International Organization`: ist eine eigenständige internationale Einrichtung.
+
+#### Verwandte Begriffe
+
+- Treaty
+- Defensive Pact
+- Guarantee
+- International Organization
+- Balance of Power
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Trade Agreement
+
+#### Definition
+
+Ein `Trade Agreement` ist ein Treaty, das den wirtschaftlichen Austausch zwischen seinen Parteien ordnet.
+
+#### Zweck
+
+Der Begriff bezeichnet ein internationales Abkommen mit handelsbezogenem Gegenstand, ohne konkrete Waren, Bedingungen oder wirtschaftliche Verfahren festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Trade`: ist die wirtschaftliche Übertragung von Goods oder Services.
+- `Treaty`: kann andere internationale Gegenstände regeln.
+
+#### Verwandte Begriffe
+
+- Treaty
+- Agreement
+- Trade
+- Market
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Non-Aggression Pact
+
+#### Definition
+
+Ein `Non-Aggression Pact` ist ein Treaty, durch das sich seine Parteien gegenseitig verpflichten, keinen War gegeneinander zu beginnen.
+
+#### Zweck
+
+Der Begriff bezeichnet den vereinbarten Verzicht auf gegenseitige Kriegseröffnung und grenzt ihn von Neutrality und gegenseitiger Unterstützungsverpflichtung ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Defensive Pact`: verpflichtet zu gegenseitiger defensiver Unterstützung.
+- `Neutrality`: ist eine internationale Haltung und kein notwendigerweise gegenseitiges Abkommen.
+
+#### Verwandte Begriffe
+
+- Treaty
+- War
+- Neutrality
+- Defensive Pact
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Defensive Pact
+
+#### Definition
+
+Ein `Defensive Pact` ist ein Treaty, durch das sich seine Parteien zu gegenseitiger Unterstützung gegen von außen gegen eine Partei gerichtete Aggression verpflichten.
+
+#### Zweck
+
+Der Begriff bezeichnet eine begrenzte gegenseitige defensive Verpflichtung und grenzt sie von umfassender Alliance und einseitiger Guarantee ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Alliance`: bezeichnet einen umfassenderen organisierten Kooperationszusammenhang.
+- `Guarantee`: ist eine einseitige Zusage.
+
+#### Verwandte Begriffe
+
+- Treaty
+- Alliance
+- Guarantee
+- Non-Aggression Pact
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Military Access
+
+#### Definition
+
+`Military Access` ist ein internationales Abkommen, durch das ein politischer Akteur militärischen Kräften eines anderen Akteurs die Anwesenheit oder Bewegung in einem abgegrenzten Gebiet gestattet.
+
+#### Zweck
+
+Der Begriff bezeichnet die diplomatische Erlaubnis und nicht deren konkrete militärische Nutzung, Führung oder logistische Ausgestaltung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Territorial Control`: bezeichnet tatsächliche politische oder administrative Verfügungsgewalt über ein Gebiet.
+- `Occupation`: bezeichnet gemäß Abschnitt 6.2 die regelmäßig ausgeübte Tätigkeit einer Person und besitzt keine militärische Bedeutung.
+
+#### Verwandte Begriffe
+
+- Agreement
+- Treaty
+- Territory
+- Armed Forces
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 9.5 Konflikte
+
+### War
+
+#### Definition
+
+`War` ist ein zwischen politischen Akteuren bestehender Zustand organisierter bewaffneter Auseinandersetzung zur Durchsetzung widerstreitender politischer Ziele.
+
+#### Zweck
+
+Der Begriff bezeichnet den übergreifenden Konfliktzustand und nicht einzelne Operations, Battles oder die diplomatische Begründung des Konflikts.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Casus Belli`: ist ein geltend gemachter Rechtfertigungsgrund.
+- `Battle`: ist eine konkrete bewaffnete Auseinandersetzung.
+
+#### Verwandte Begriffe
+
+- Casus Belli
+- Ceasefire
+- Armistice
+- Peace Treaty
+- Battle
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Casus Belli
+
+#### Definition
+
+Ein `Casus Belli` ist ein formal geltend gemachter politischer Rechtfertigungsgrund für die Einleitung eines War gegen einen bezeichneten politischen Akteur.
+
+#### Zweck
+
+Der Begriff bezeichnet die beanspruchte Rechtfertigung und grenzt sie vom War selbst, seinen Zielen und seinem Ergebnis ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Ultimatum`: ist eine befristete diplomatische Forderung.
+- `War`: ist der Zustand bewaffneter Auseinandersetzung.
+
+#### Verwandte Begriffe
+
+- War
+- Ultimatum
+- Diplomatic Relation
+- Peace Treaty
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Ceasefire
+
+#### Definition
+
+Ein `Ceasefire` ist eine begrenzte Vereinbarung der Konfliktparteien, bewaffnete Handlungen vorübergehend oder unter festgelegten Bedingungen auszusetzen.
+
+#### Zweck
+
+Der Begriff bezeichnet eine Unterbrechung bewaffneter Handlungen, ohne den War oder dessen Streitgegenstände notwendig zu beenden.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Armistice`: beendet die allgemeinen bewaffneten Handlungen eines War auf Grundlage eines formalen Abkommens.
+- `Peace Treaty`: beendet den War und ordnet seine politischen Folgen.
+
+#### Verwandte Begriffe
+
+- War
+- Armistice
+- Peace Treaty
+- Agreement
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Armistice
+
+#### Definition
+
+Ein `Armistice` ist ein formales internationales Abkommen, das die allgemeinen bewaffneten Handlungen zwischen Parteien eines War beendet, ohne den War und seine politischen Streitgegenstände notwendig abschließend zu regeln.
+
+#### Zweck
+
+Der Begriff bezeichnet die umfassende Beendigung der Kampfhandlungen und grenzt sie von begrenztem Ceasefire und abschließendem Peace Treaty ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Ceasefire`: ist eine begrenzte Aussetzung bewaffneter Handlungen.
+- `Peace Treaty`: beendet den War und regelt seine politischen Folgen.
+
+#### Verwandte Begriffe
+
+- War
+- Ceasefire
+- Peace Treaty
+- Treaty
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Peace Treaty
+
+#### Definition
+
+Ein `Peace Treaty` ist ein Treaty, das einen War zwischen seinen Parteien beendet und die daraus hervorgehenden internationalen Rechte, Pflichten oder Beziehungen ordnet.
+
+#### Zweck
+
+Der Begriff bezeichnet die formale Beendigung des Konfliktzustands und dessen politische Regelung, nicht lediglich das Ende bewaffneter Handlungen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Armistice`: beendet allgemeine Kampfhandlungen, aber nicht notwendig den War.
+- `Ceasefire`: setzt bewaffnete Handlungen begrenzt aus.
+
+#### Verwandte Begriffe
+
+- Treaty
+- War
+- Ceasefire
+- Armistice
+- Agreement
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Occupation
+
+#### Definition
+
+Für `Occupation` gilt ausschließlich die kanonische Definition aus Abschnitt 6.2 als regelmäßig ausgeübte Tätigkeit einer Person.
+
+#### Zweck
+
+Die Aufnahme in diese Begriffsgruppe dokumentiert die notwendige Abgrenzung: Der Begriff erhält keine zweite militärische oder territoriale Bedeutung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Territorial Control`: bezeichnet tatsächliche politische oder administrative Verfügungsgewalt über ein Gebiet.
+- `Military Access`: ist eine internationale Erlaubnis zur Anwesenheit oder Bewegung militärischer Kräfte.
+
+#### Verwandte Begriffe
+
+- Profession
+- Territorial Control
+- Military Access
+- War
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 9.6 Internationale Konzepte
+
+### Neutrality
+
+#### Definition
+
+`Neutrality` ist die internationale Haltung eines politischen Akteurs, sich gegenüber einem War anderer Akteure keiner Konfliktpartei als kriegführende Partei anzuschließen.
+
+#### Zweck
+
+Der Begriff bezeichnet eine Haltung gegenüber einem fremden Konflikt und grenzt sie von Bündnisfreiheit, gegenseitigem Gewaltverzicht und Passivität ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Non-Aggression Pact`: ist ein gegenseitiges Treaty über den Verzicht auf Kriegseröffnung.
+- `Alliance`: ist ein organisierter internationaler Kooperationszusammenhang.
+
+#### Verwandte Begriffe
+
+- War
+- Non-Aggression Pact
+- Alliance
+- Guarantee
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Sphere of Influence
+
+#### Definition
+
+Eine `Sphere of Influence` ist ein internationaler Beziehungszusammenhang, in dem die politischen Handlungsmöglichkeiten mehrerer Akteure in besonderem Maß durch die Influence eines bestimmten politischen Akteurs geprägt sind.
+
+#### Zweck
+
+Der Begriff bezeichnet eine verdichtete Struktur politischer Einwirkung, ohne formale Herrschaft, Alliance oder Protectorate Relationship vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Influence`: ist die Fähigkeit eines Akteurs zur politischen Einwirkung.
+- `Protectorate Relationship`: ist eine formalisierte asymmetrische internationale Beziehung.
+
+#### Verwandte Begriffe
+
+- Influence
+- Diplomatic Relation
+- Balance of Power
+- Protectorate Relationship
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Balance of Power
+
+#### Definition
+
+`Balance of Power` ist die internationale Konstellation, in der die Handlungsmöglichkeiten politischer Akteure durch die Verteilung und wechselseitige Begrenzung ihrer Macht geprägt sind.
+
+#### Zweck
+
+Der Begriff bezeichnet einen übergreifenden Beziehungszustand und nicht ein einzelnes Abkommen, eine Alliance oder die Influence eines einzelnen Akteurs.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Sphere of Influence`: bezeichnet die verdichtete Influence eines bestimmten Akteurs.
+- `Alliance`: ist ein formales internationales Abkommen.
+
+#### Verwandte Begriffe
+
+- Influence
+- Sphere of Influence
+- Alliance
+- Diplomatic Relation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### International Organization
+
+#### Definition
+
+Eine `International Organization` ist eine durch internationale Übereinkunft begründete dauerhafte Einrichtung, in der mehrere diplomatische Akteure gemeinsame internationale Angelegenheiten geordnet behandeln.
+
+#### Zweck
+
+Der Begriff bezeichnet eine eigenständige institutionelle Form internationaler Zusammenarbeit und grenzt sie von einzelnen Agreements und Alliances ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Alliance`: ist ein Abkommen zur organisierten Zusammenarbeit seiner Mitglieder.
+- `Diplomatic Mission`: ist eine offizielle Vertretung eines diplomatischen Akteurs.
+
+#### Verwandte Begriffe
+
+- Country
+- Government
+- Diplomatic Mission
+- Agreement
+- Treaty
+- Alliance
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Protectorate Relationship
+
+#### Definition
+
+Eine `Protectorate Relationship` ist eine formalisierte asymmetrische internationale Beziehung, in der ein politischer Akteur die äußere Schutzverantwortung für einen anderen übernimmt und dadurch dessen internationale Handlungsfreiheit begrenzt ist.
+
+#### Zweck
+
+Der Begriff bezeichnet die Beziehung zwischen den beteiligten Akteuren und trennt sie von den Akteuren selbst, territorialer Herrschaft und bloßer Influence.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Protectorate`: ist gemäß Abschnitt 5.4 ein Political Territory innerhalb einer Protectorate Relationship.
+- `Sphere of Influence`: setzt keine formalisierte Schutzverantwortung voraus.
+
+#### Verwandte Begriffe
+
+- Protectorate
+- Diplomatic Relation
+- Influence
+- Sphere of Influence
+- Sovereignty
 
 #### Referenzen
 
