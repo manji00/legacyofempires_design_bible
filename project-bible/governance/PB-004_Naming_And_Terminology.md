@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.11.0
+version: 0.12.0
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -10692,3 +10692,1191 @@ Der Begriff legt die Bedeutung, Voraussetzungen und erwartbaren Ergebnisse von I
 - PB-001
 - PB-002
 - PB-003
+
+
+# Kapitel 12 – Identifier-Standards
+
+Stabile Identifier ermöglichen, dass dieselbe Identity in Dokumentation, Inhalten und technischen Zusammenhängen langfristig eindeutig wiedererkannt und referenziert wird. Sie dienen ausschließlich der Identifikation; Anzeigenamen und Identifier sind unterschiedliche Konzepte, und ein Identifier stellt niemals einen Benutzertext dar.
+
+Alle Identifier des Projekts MUST ausschließlich in englischer Sprache erstellt werden und MUST sprachunabhängig bleiben. Sie MUST niemals lokalisiert werden; Benutzeroberflächen MAY stattdessen lokalisierte Anzeigenamen und Beschreibungen verwenden. Referenzen MUST Identifier statt Anzeigenamen verwenden.
+
+Ein veröffentlichter Identifier MUST langfristig stabil bleiben und MUST danach weder geändert noch einer anderen Identity zugeordnet werden. Die Beispiele dieses Kapitels sind ausschließlich illustrativ, erläutern die Identifier-Philosophie und bilden weder vollständige Identifierlisten noch verbindliche Inhaltskataloge.
+
+## 12.1 Grundprinzipien
+
+### Identity
+
+#### Definition
+
+`Identity` ist die über Zeit fortbestehende begriffliche Gleichheit eines bestimmten Gegenstands, unabhängig von veränderlichen Eigenschaften oder Anzeigenamen.
+
+#### Zweck
+
+Der Begriff bestimmt, welcher Gegenstand als derselbe wiedererkannt wird.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Game Design
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Identifier`: ist die stabile Bezeichnung einer Identity.
+- `Namespace`: grenzt den Eindeutigkeitsraum ab.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Namespace
+- Scope
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Identifier
+
+#### Definition
+
+`Identifier` ist eine innerhalb eines festgelegten Namespace eindeutige, sprachunabhängige und dauerhaft stabile englische Bezeichnung einer Identity.
+
+#### Zweck
+
+Der Begriff dient ausschließlich der eindeutigen Identifikation und Referenzierung.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Game Design
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Identity`: ist der bezeichnete Gegenstand als derselbe.
+- `Anzeigename`: ist ein für Menschen bestimmter und lokalisierbarer Text.
+
+#### Verwandte Begriffe
+
+- Identity
+- Namespace
+- Stable Reference
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Namespace
+
+#### Definition
+
+`Namespace` ist ein benannter Abgrenzungsraum, innerhalb dessen Identifier eindeutig sein müssen.
+
+#### Zweck
+
+Der Begriff verhindert Kollisionen zwischen getrennten Identifier-Bereichen.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Game Design
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Scope`: bestimmt den Geltungsbereich einer Regel oder Zuordnung.
+- `Identifier`: bezeichnet innerhalb des Namespace genau eine Identity.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Scope
+- Namespacing
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Scope
+
+#### Definition
+
+`Scope` ist der ausdrücklich abgegrenzte Geltungsbereich einer Benennung, Regel oder Zuordnung.
+
+#### Zweck
+
+Der Begriff macht sichtbar, in welchem Zusammenhang eine Festlegung maßgeblich ist.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Game Design
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Namespace`: bestimmt den Eindeutigkeitsraum von Identifiern.
+- `Identity`: bezeichnet die fortbestehende Gleichheit eines Gegenstands.
+
+#### Verwandte Begriffe
+
+- Namespace
+- Identity
+- Configuration Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+## 12.2 Dokument-Identifier
+
+### Document ID
+
+#### Definition
+
+`Document ID` ist der kanonische Identifier eines Project-Bible-Dokuments.
+
+#### Zweck
+
+Der Begriff ermöglicht die dauerhafte, vom Titel unabhängige Zuordnung eines Dokuments.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Traceability
+- Reviews
+
+#### Darf nicht verwechselt werden mit
+
+- `Canonical Path`: bezeichnet dessen kanonischen Ablageort.
+- `Version Identifier`: bezeichnet einen bestimmten Versionsstand.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Canonical Path
+- Version Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Canonical Path
+
+#### Definition
+
+`Canonical Path` ist der für ein Dokument oder Artefakt autoritativ festgelegte Pfad.
+
+#### Zweck
+
+Der Begriff bestimmt den maßgeblichen Ablagebezug, ohne selbst die Identity des Dokuments zu ersetzen.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Traceability
+- Reviews
+
+#### Darf nicht verwechselt werden mit
+
+- `Document ID`: bezeichnet das Dokument unabhängig vom Pfad.
+- `Internal Reference`: verweist innerhalb des Projekts.
+
+#### Verwandte Begriffe
+
+- Document ID
+- Internal Reference
+- Stable Reference
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Version Identifier
+
+#### Definition
+
+`Version Identifier` ist ein Identifier für einen ausdrücklich abgegrenzten Versionsstand eines Dokuments oder Artefakts.
+
+#### Zweck
+
+Der Begriff macht unterschiedliche freigegebene Stände unterscheidbar, ohne die fortbestehende Identity zu ändern.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Traceability
+- Reviews
+
+#### Darf nicht verwechselt werden mit
+
+- `Document ID`: bezeichnet das Dokument über Versionen hinweg.
+- `Transient Reference`: ist nicht auf langfristige Gültigkeit angelegt.
+
+#### Verwandte Begriffe
+
+- Document ID
+- Versioning
+- Stable Reference
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+## 12.3 Inhalts-Identifier
+
+### Country Identifier
+
+#### Definition
+
+`Country Identifier` ist der Identifier einer Country-Identity.
+
+#### Zweck
+
+Der Begriff referenziert ein Country sprachunabhängig und unabhängig von seinem Anzeigenamen.
+
+#### Verwendung
+
+- Content
+- Game Design
+- Modding
+- UI
+
+#### Darf nicht verwechselt werden mit
+
+- `Region Identifier`: bezeichnet eine Region.
+- `Faction Identifier`: bezeichnet eine Faction.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Country
+- Region Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Region Identifier
+
+#### Definition
+
+`Region Identifier` ist der Identifier einer Region-Identity.
+
+#### Zweck
+
+Der Begriff referenziert eine Region stabil über lokalisierte Bezeichnungen hinweg.
+
+#### Verwendung
+
+- Content
+- Game Design
+- Modding
+- UI
+
+#### Darf nicht verwechselt werden mit
+
+- `Country Identifier`: bezeichnet ein Country.
+- `Resource Identifier`: bezeichnet eine Resource.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Region
+- Country Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Character Identifier
+
+#### Definition
+
+`Character Identifier` ist der Identifier einer Character-Identity.
+
+#### Zweck
+
+Der Begriff referenziert einen Character unabhängig von Titel, Rolle oder Anzeigename.
+
+#### Verwendung
+
+- Content
+- Game Design
+- Modding
+- UI
+
+#### Darf nicht verwechselt werden mit
+
+- `Faction Identifier`: bezeichnet eine Faction.
+- `Country Identifier`: bezeichnet ein Country.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Character
+- Faction Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Law Identifier
+
+#### Definition
+
+`Law Identifier` ist der Identifier einer Law-Identity.
+
+#### Zweck
+
+Der Begriff referenziert ein Law unabhängig von seiner lokalisierten Darstellung.
+
+#### Verwendung
+
+- Content
+- Game Design
+- Modding
+- UI
+
+#### Darf nicht verwechselt werden mit
+
+- `Project Identifier`: bezeichnet ein Project.
+- `Technology Identifier`: bezeichnet eine Technology.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Law
+- Stable Reference
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Project Identifier
+
+#### Definition
+
+`Project Identifier` ist der Identifier einer Project-Identity.
+
+#### Zweck
+
+Der Begriff referenziert ein Project unabhängig von Anzeigename oder Fortschritt.
+
+#### Verwendung
+
+- Content
+- Game Design
+- Modding
+- UI
+
+#### Darf nicht verwechselt werden mit
+
+- `Mission Identifier`: bezeichnet eine Mission.
+- `Event Identifier`: bezeichnet ein Event.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Project
+- Mission Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Mission Identifier
+
+#### Definition
+
+`Mission Identifier` ist der Identifier einer Mission-Identity.
+
+#### Zweck
+
+Der Begriff referenziert eine Mission unabhängig von Status und Benutzertext.
+
+#### Verwendung
+
+- Content
+- Game Design
+- Modding
+- UI
+
+#### Darf nicht verwechselt werden mit
+
+- `Project Identifier`: bezeichnet ein Project.
+- `Event Identifier`: bezeichnet ein Event.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Mission
+- Project Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Event Identifier
+
+#### Definition
+
+`Event Identifier` ist der Identifier einer Event-Identity.
+
+#### Zweck
+
+Der Begriff referenziert ein fachliches Event unabhängig von seiner lokalisierten Beschreibung.
+
+#### Verwendung
+
+- Content
+- Game Design
+- Modding
+- UI
+
+#### Darf nicht verwechselt werden mit
+
+- `Mission Identifier`: bezeichnet eine Mission.
+- `System Identifier`: bezeichnet ein technisches System.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Event
+- Mission Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Faction Identifier
+
+#### Definition
+
+`Faction Identifier` ist der Identifier einer Faction-Identity.
+
+#### Zweck
+
+Der Begriff referenziert eine Faction unabhängig von Name, Mitgliedschaft oder Führung.
+
+#### Verwendung
+
+- Content
+- Game Design
+- Modding
+- UI
+
+#### Darf nicht verwechselt werden mit
+
+- `Country Identifier`: bezeichnet ein Country.
+- `Character Identifier`: bezeichnet einen Character.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Faction
+- Character Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Resource Identifier
+
+#### Definition
+
+`Resource Identifier` ist der Identifier einer Resource-Identity.
+
+#### Zweck
+
+Der Begriff referenziert eine Resource unabhängig von lokalisierten Bezeichnungen.
+
+#### Verwendung
+
+- Content
+- Game Design
+- Modding
+- UI
+
+#### Darf nicht verwechselt werden mit
+
+- `Building Identifier`: bezeichnet ein Building.
+- `Technology Identifier`: bezeichnet eine Technology.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Resource
+- Building Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Building Identifier
+
+#### Definition
+
+`Building Identifier` ist der Identifier einer Building-Identity.
+
+#### Zweck
+
+Der Begriff referenziert ein Building unabhängig von lokalisierter Darstellung.
+
+#### Verwendung
+
+- Content
+- Game Design
+- Modding
+- UI
+
+#### Darf nicht verwechselt werden mit
+
+- `Resource Identifier`: bezeichnet eine Resource.
+- `Technology Identifier`: bezeichnet eine Technology.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Building
+- Resource Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Technology Identifier
+
+#### Definition
+
+`Technology Identifier` ist der Identifier einer Technology-Identity.
+
+#### Zweck
+
+Der Begriff referenziert eine Technology unabhängig von Anzeigename oder Beschreibung.
+
+#### Verwendung
+
+- Content
+- Game Design
+- Modding
+- UI
+
+#### Darf nicht verwechselt werden mit
+
+- `Law Identifier`: bezeichnet ein Law.
+- `Building Identifier`: bezeichnet ein Building.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Technology
+- Building Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+## 12.4 Technische Identifier
+
+### System Identifier
+
+#### Definition
+
+`System Identifier` ist der Identifier einer technischen System-Identity.
+
+#### Zweck
+
+Der Begriff referenziert eine technische Systemverantwortung stabil und sprachunabhängig.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Dokumentation
+- Tests
+- Modding
+
+#### Darf nicht verwechselt werden mit
+
+- `Component Identifier`: bezeichnet eine Component.
+- `API Identifier`: bezeichnet eine API.
+
+#### Verwandte Begriffe
+
+- Identifier
+- System
+- Component Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Component Identifier
+
+#### Definition
+
+`Component Identifier` ist der Identifier einer technischen Component-Identity.
+
+#### Zweck
+
+Der Begriff referenziert eine Component unabhängig von ihrer Darstellung oder Einordnung.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Dokumentation
+- Tests
+- Modding
+
+#### Darf nicht verwechselt werden mit
+
+- `System Identifier`: bezeichnet ein System.
+- `Configuration Identifier`: bezeichnet eine Configuration.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Component
+- System Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Configuration Identifier
+
+#### Definition
+
+`Configuration Identifier` ist der Identifier einer Configuration-Identity.
+
+#### Zweck
+
+Der Begriff referenziert eine abgegrenzte Configuration unabhängig von ihren Werten.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Dokumentation
+- Tests
+- Modding
+
+#### Darf nicht verwechselt werden mit
+
+- `Database Identifier`: bezeichnet einen Datenbankgegenstand.
+- `Component Identifier`: bezeichnet eine Component.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Configuration
+- Component Identifier
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### API Identifier
+
+#### Definition
+
+`API Identifier` ist der Identifier einer API-Identity.
+
+#### Zweck
+
+Der Begriff referenziert einen abgegrenzten API-Vertrag unabhängig von Dokumentationstexten.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Dokumentation
+- Tests
+- Modding
+
+#### Darf nicht verwechselt werden mit
+
+- `System Identifier`: bezeichnet ein System.
+- `Database Identifier`: bezeichnet einen Datenbankgegenstand.
+
+#### Verwandte Begriffe
+
+- Identifier
+- API
+- Stable Reference
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Database Identifier
+
+#### Definition
+
+`Database Identifier` ist der Identifier einer dauerhaft zuordenbaren Identity im Datenbankkontext.
+
+#### Zweck
+
+Der Begriff ermöglicht stabile Zuordnung im Datenbankkontext, ohne Speichertechnik oder Schema festzulegen.
+
+#### Verwendung
+
+- Technische Spezifikationen
+- Dokumentation
+- Tests
+- Modding
+
+#### Darf nicht verwechselt werden mit
+
+- `Configuration Identifier`: bezeichnet eine Configuration.
+- `API Identifier`: bezeichnet eine API.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Persistence
+- Stable Reference
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+## 12.5 Referenzen
+
+### Internal Reference
+
+#### Definition
+
+`Internal Reference` ist eine Reference auf eine Identity innerhalb des Projekts.
+
+#### Zweck
+
+Der Begriff verknüpft Projektartefakte durch Identifier statt durch Anzeigenamen.
+
+#### Verwendung
+
+- Dokumentation
+- Traceability
+- Reviews
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `External Reference`: verweist auf einen Gegenstand außerhalb des Projekts.
+- `Stable Reference`: bleibt langfristig auflösbar.
+
+#### Verwandte Begriffe
+
+- Reference
+- Identifier
+- Stable Reference
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### External Reference
+
+#### Definition
+
+`External Reference` ist eine Reference auf einen außerhalb des Projekts verantworteten Gegenstand.
+
+#### Zweck
+
+Der Begriff ordnet externe Quellen oder Artefakte zu, ohne ihnen eine interne Identity zuzuschreiben.
+
+#### Verwendung
+
+- Dokumentation
+- Traceability
+- Reviews
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Internal Reference`: verweist innerhalb des Projekts.
+- `Stable Reference`: beschreibt die angestrebte Dauerhaftigkeit.
+
+#### Verwandte Begriffe
+
+- Reference
+- Internal Reference
+- Transient Reference
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Stable Reference
+
+#### Definition
+
+`Stable Reference` ist eine Reference, deren Zielzuordnung langfristig unverändert und auflösbar bleiben soll.
+
+#### Zweck
+
+Der Begriff sichert dauerhafte Nachvollziehbarkeit über Anzeigenamen und Überarbeitungen hinweg.
+
+#### Verwendung
+
+- Dokumentation
+- Traceability
+- Reviews
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Transient Reference`: ist nur für einen begrenzten Zusammenhang bestimmt.
+- `Version Identifier`: bezeichnet einen bestimmten Stand.
+
+#### Verwandte Begriffe
+
+- Reference
+- Identifier
+- Immutability
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Transient Reference
+
+#### Definition
+
+`Transient Reference` ist eine ausdrücklich nur für einen begrenzten Zusammenhang oder Zeitraum bestimmte Reference.
+
+#### Zweck
+
+Der Begriff erlaubt vorläufige Zuordnung, ohne dauerhafte Verlässlichkeit zu behaupten.
+
+#### Verwendung
+
+- Dokumentation
+- Traceability
+- Reviews
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Stable Reference`: ist auf langfristige Auflösbarkeit angelegt.
+- `Internal Reference`: bestimmt die Herkunft des Ziels.
+
+#### Verwandte Begriffe
+
+- Reference
+- Stable Reference
+- Scope
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+## 12.6 Identifier-Regeln
+
+### Uniqueness
+
+#### Definition
+
+`Uniqueness` ist die Regel, dass ein Identifier innerhalb seines Namespace genau einer Identity zugeordnet ist.
+
+#### Zweck
+
+Der Begriff verhindert Mehrdeutigkeit und kollidierende Zuordnungen.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Content
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Stability`: erhält eine Zuordnung über Zeit.
+- `Namespacing`: grenzt den Eindeutigkeitsraum ab.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Namespace
+- Identity
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Stability
+
+#### Definition
+
+`Stability` ist die Regel, dass die Zuordnung eines veröffentlichten Identifier zu seiner Identity dauerhaft erhalten bleibt.
+
+#### Zweck
+
+Der Begriff ermöglicht langfristig verlässliche Referenzen.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Content
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Immutability`: verbietet die nachträgliche Änderung des veröffentlichten Identifier.
+- `Versioning`: unterscheidet Stände.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Stable Reference
+- Immutability
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Readability
+
+#### Definition
+
+`Readability` ist die Regel, Identifier für Menschen erkennbar und sinnvoll unterscheidbar zu benennen, ohne Benutzertext zu bilden.
+
+#### Zweck
+
+Der Begriff unterstützt Prüfung und Wartung, ohne Lokalisierung oder Bedeutungsableitung zu verlangen.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Content
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Anzeigename`: ist lokalisierbarer Benutzertext.
+- `Stability`: hat Vorrang vor späterer sprachlicher Verbesserung.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Namespacing
+- Stability
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Namespacing
+
+#### Definition
+
+`Namespacing` ist die Regel, Identifier durch einen ausdrücklich bestimmten Namespace zu ordnen und dort eindeutig zu halten.
+
+#### Zweck
+
+Der Begriff verhindert Kollisionen und macht den Identifikationsbereich erkennbar.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Content
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Uniqueness`: fordert Eindeutigkeit innerhalb dieses Bereichs.
+- `Scope`: begrenzt den Geltungszusammenhang.
+
+#### Verwandte Begriffe
+
+- Namespace
+- Uniqueness
+- Scope
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Versioning
+
+#### Definition
+
+`Versioning` ist die Regel, unterschiedliche maßgebliche Stände durch gesonderte Versionsangaben zu unterscheiden, ohne bestehende Identity umzubenennen.
+
+#### Zweck
+
+Der Begriff ermöglicht nachvollziehbare Entwicklung bei stabilen Identifiern.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Content
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Version Identifier`: bezeichnet einen bestimmten Stand.
+- `Immutability`: schützt den veröffentlichten Identifier.
+
+#### Verwandte Begriffe
+
+- Version Identifier
+- Stability
+- Immutability
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+### Immutability
+
+#### Definition
+
+`Immutability` ist die Regel, dass ein veröffentlichter Identifier nicht geändert, lokalisiert oder einer anderen Identity zugeordnet werden darf.
+
+#### Zweck
+
+Der Begriff schützt Referenzen und historische Nachvollziehbarkeit dauerhaft.
+
+#### Verwendung
+
+- Governance
+- Dokumentation
+- Content
+- Technische Spezifikationen
+
+#### Darf nicht verwechselt werden mit
+
+- `Stability`: bezeichnet die dauerhafte Erhaltung der Zuordnung.
+- `Versioning`: unterscheidet Änderungen ohne Umbenennung.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Stability
+- Stable Reference
+
+#### Referenzen
+
+- PB-000
+- PB-001
+- PB-002
+- PB-003
+
+**Illustrative Beispiele**
+
+Die folgenden Formen dienen ausschließlich der Erläuterung und definieren keine vollständige oder verbindliche Identifierliste:
+
+- `COUNTRY_GERMANY` veranschaulicht einen Country Identifier.
+- `LAW_UNIVERSAL_SUFFRAGE` veranschaulicht einen Law Identifier.
+- `RESOURCE_COAL` veranschaulicht einen Resource Identifier.
+- `PROJECT_INDUSTRIALIZATION` veranschaulicht einen Project Identifier.
+- `CHAR_OTTO_VON_BISMARCK` veranschaulicht einen Character Identifier.
+
+Die zugehörigen Anzeigenamen MAY lokalisiert und geändert werden; die Identifier MUST englisch, unverändert und nicht lokalisiert bleiben.
