@@ -745,9 +745,11 @@ Der Begriff trennt anpassbare Vorgaben von fachlichen Definitionen, laufendem Ga
 
 # Kapitel 4 – Politische Terminologie
 
-Die politischen Begriffe sind fachlich und hierarchisch gruppiert. Die fünf Gruppen bilden unterschiedliche Ebenen politischer Ordnung ab und machen die Beziehungen sowie notwendigen Abgrenzungen zwischen den Begriffen sichtbar.
+Politische Begriffe werden fachlich und hierarchisch gruppiert. Die fünf Gruppen bilden unterschiedliche Ebenen politischer Ordnung ab und verdeutlichen die Beziehungen und notwendigen Abgrenzungen zwischen den Begriffen.
 
-Die Reihenfolge führt bewusst von politischen Entitäten über die institutionelle Ordnung und ihre Organe bis zu politischen Akteuren und abstrakten Konzepten. Spätere Dokumente MUST diese Begriffe entsprechend ihrer hier festgelegten kanonischen Bedeutung verwenden.
+Die Reihenfolge führt von politischen Entitäten über die institutionelle Ordnung und ihre Organe bis zu politischen Akteuren und abstrakten Konzepten.
+
+Spätere Dokumente MUST diese Begriffe in ihrer hier festgelegten kanonischen Bedeutung verwenden.
 
 ## 4.1 Politische Entitäten
 
@@ -2797,11 +2799,11 @@ Der Begriff bezeichnet eine strategische Raumordnung ohne politische, administra
 - PB-003
 # Kapitel 6 – Bevölkerung und Gesellschaft
 
-Bevölkerung wird auf mehreren, voneinander abzugrenzenden Ebenen beschrieben. Individuen, Haushalte und zusammengefasste Gruppen sind unterschiedliche Konzepte und dürfen nicht stellvertretend füreinander verwendet werden.
+Bevölkerung wird auf mehreren voneinander abzugrenzenden Ebenen beschrieben. Individuen, Haushalte und zusammengefasste Gruppen sind unterschiedliche Konzepte und dürfen nicht stellvertretend füreinander verwendet werden.
 
 Kultur, gesellschaftliche Ordnung und demographische Entwicklung bilden eigenständige Begriffsbereiche. Ihre Beziehungen heben diese Trennung nicht auf.
 
-Spätere Systeme und Dokumente MUST für diese Gegenstände ausschließlich die nachfolgend festgelegte Terminologie verwenden.
+Spätere Systeme und Dokumente MUST für diese Gegenstände die nachfolgend festgelegte Terminologie verwenden.
 
 ## 6.1 Bevölkerung
 
@@ -3858,9 +3860,11 @@ Der Begriff bezeichnet gesellschaftliche Einbindung ohne die Aufgabe prägender 
 
 # Kapitel 7 – Wirtschaft und Produktion
 
-Wirtschaftliche Begriffe werden als zusammenhängende fachliche Domäne betrachtet. Wirtschaftliche Prozesse entstehen aus dem Zusammenwirken von Akteuren, ihren Aktivitäten und den Beziehungen, die sie über Güter, Ressourcen, Märkte, Handel, Finanzen und Produktion miteinander verbinden.
+Wirtschaftliche Begriffe bilden eine zusammenhängende fachliche Domäne. Wirtschaftliche Prozesse entstehen aus dem Zusammenwirken von Akteuren, ihren Aktivitäten und ihren Beziehungen über Güter, Ressourcen, Märkte, Handel, Finanzen und Produktion.
 
-Dieses Kapitel definiert ausschließlich die kanonische Terminologie dieser Domäne. Die zugehörigen Gameplayregeln, Systemabläufe, Werte und technischen Implementierungen werden in späteren Game-Design-, Balancing- und Technikdokumenten behandelt.
+Die Begriffsgruppen trennen wirtschaftliche Akteure, Aktivitäten und Gegenstände, ohne ihre fachlichen Beziehungen aufzuheben.
+
+Dieses Kapitel definiert die kanonische Terminologie dieser Domäne. Gameplayregeln, Systemabläufe, Werte und technische Implementierungen verbleiben in den zuständigen Game-Design-, Balancing- und Technikdokumenten.
 
 ## 7.1 Wirtschaftliche Akteure
 
@@ -5691,7 +5695,7 @@ Militärische Begriffe bezeichnen unterschiedliche Ebenen militärischer Organis
 
 Organisation, Verbände, Kommandostrukturen, Operationen und Logistik werden bewusst getrennt, damit institutionelle Ordnung, Führung, räumlich und zeitlich begrenztes Handeln sowie materielle Unterstützung nicht miteinander vermischt werden. Militärische Konzepte beschreiben davon getrennt übergreifende Eigenschaften und Ordnungsgrundsätze.
 
-Dieses Kapitel definiert ausschließlich die kanonische militärische Terminologie. Spielmechaniken, Regeln und technische Umsetzungen werden in späteren zuständigen Dokumenten beschrieben.
+Dieses Kapitel definiert die kanonische militärische Terminologie. Spielmechaniken, Regeln und technische Umsetzungen verbleiben in den zuständigen Dokumenten.
 
 ## 8.1 Militärische Organisation
 
@@ -7089,9 +7093,11 @@ Der Begriff bezeichnet kumulativen militärischen Substanz- oder Fähigkeitsverl
 
 # Kapitel 9 – Diplomatie und Internationale Beziehungen
 
-Diplomatie beschreibt die Beziehungen zwischen politischen Akteuren sowie das auf diese Beziehungen gerichtete Handeln. Beziehungen, diplomatische Handlungen und daraus hervorgehende Abkommen sind eigenständige Konzepte und dürfen nicht gleichgesetzt werden; insbesondere sind Verträge mögliche Ergebnisse diplomatischer Prozesse und nicht deren Ausgangspunkt.
+Diplomatie umfasst die Beziehungen zwischen politischen Akteuren und das auf diese Beziehungen gerichtete Handeln. Beziehungen, diplomatische Handlungen und daraus hervorgehende Abkommen sind eigenständige Konzepte und dürfen nicht gleichgesetzt werden. Verträge sind mögliche Ergebnisse diplomatischer Prozesse, nicht deren Ausgangspunkt.
 
-Dieses Kapitel definiert ausschließlich die kanonische diplomatische Terminologie. Spielmechaniken, Regeln und technische Umsetzungen werden in späteren zuständigen Dokumenten beschrieben.
+Die Begriffsgruppen trennen Akteure, Beziehungen, Handlungen und Abkommen, ohne ihre fachlichen Zusammenhänge aufzuheben.
+
+Dieses Kapitel definiert die kanonische diplomatische Terminologie. Spielmechaniken, Regeln und technische Umsetzungen verbleiben in den zuständigen Dokumenten.
 
 ## 9.1 Diplomatische Akteure
 
@@ -8314,7 +8320,7 @@ Dieses Kapitel definiert die domänenübergreifende Sprache für Gameplay-Intera
 
 Dieselben Begriffe werden in sämtlichen Spielsystemen einheitlich verwendet. Politik, Wirtschaft, Militär, Diplomatie, Technik und weitere Domänen dürfen sie fachlich konkretisieren, aber weder umdeuten noch durch domänenspezifische Synonyme ersetzen.
 
-Spätere Dokumente referenzieren für diese Konzepte ausschließlich die hier festgelegte Terminologie. Regeln, Abläufe, Werte und technische Repräsentationen verbleiben in den jeweils zuständigen Dokumenten.
+Spätere Dokumente MUST für diese Konzepte die hier festgelegte Terminologie verwenden. Regeln, Abläufe, Werte und technische Repräsentationen verbleiben in den zuständigen Dokumenten.
 
 ## 10.1 Spielerinteraktion
 
@@ -9498,7 +9504,7 @@ Technische Begriffe bilden die gemeinsame Sprache zwischen Design und Engine. Si
 
 Dieses Kapitel ist bewusst implementierungsneutral formuliert. Es legt weder eine konkrete Softwarearchitektur noch interne Hierarchien oder bestimmte technische Mittel fest.
 
-Spätere TECH-Dokumente verwenden für die hier beschriebenen Verantwortungen ausschließlich diese Begriffe und referenzieren ihre kanonischen Definitionen, statt konkurrierende technische Terminologie einzuführen.
+Spätere TECH-Dokumente MUST für die hier beschriebenen Verantwortungen diese Begriffe verwenden und ihre kanonischen Definitionen referenzieren. Sie MUST NOT konkurrierende technische Terminologie einführen.
 
 ## 11.1 Datenmodell
 
@@ -10697,11 +10703,11 @@ Der Begriff legt die Bedeutung, Voraussetzungen und erwartbaren Ergebnisse von I
 
 # Kapitel 12 – Identifier-Standards
 
-Stabile Identifier ermöglichen, dass dieselbe Identity in Dokumentation, Inhalten und technischen Zusammenhängen langfristig eindeutig wiedererkannt und referenziert wird. Sie dienen ausschließlich der Identifikation; Anzeigenamen und Identifier sind unterschiedliche Konzepte, und ein Identifier stellt niemals einen Benutzertext dar.
+Stabile Identifier ermöglichen die langfristig eindeutige Wiedererkennung und Referenzierung derselben Identity in Dokumentation, Inhalten und technischen Zusammenhängen. Sie dienen ausschließlich der Identifikation; Anzeigenamen und Identifier sind unterschiedliche Konzepte, und ein Identifier stellt niemals einen Benutzertext dar.
 
 Alle Identifier des Projekts MUST ausschließlich in englischer Sprache erstellt werden und MUST sprachunabhängig bleiben. Sie MUST niemals lokalisiert werden; Benutzeroberflächen MAY stattdessen lokalisierte Anzeigenamen und Beschreibungen verwenden. Referenzen MUST Identifier statt Anzeigenamen verwenden.
 
-Ein veröffentlichter Identifier MUST langfristig stabil bleiben und MUST danach weder geändert noch einer anderen Identity zugeordnet werden. Die Beispiele dieses Kapitels sind ausschließlich illustrativ, erläutern die Identifier-Philosophie und bilden weder vollständige Identifierlisten noch verbindliche Inhaltskataloge.
+Ein veröffentlichter Identifier MUST stabil bleiben und MUST weder geändert noch einer anderen Identity zugeordnet werden. Die Beispiele dieses Kapitels sind ausschließlich illustrativ, erläutern die Identifier-Philosophie und bilden weder vollständige Identifierlisten noch verbindliche Inhaltskataloge.
 
 ## 12.1 Grundprinzipien
 
@@ -11886,9 +11892,9 @@ Die zugehörigen Anzeigenamen MAY lokalisiert und geändert werden; die Identifi
 
 Einheitliche Schreibweisen machen Begriffe, Referenzen und Bezeichnungen über Dokumentation, Quellcode, Daten und Benutzertexte hinweg eindeutig auffindbar und verständlich. Sie verhindern, dass bloße Schreibvarianten wie unterschiedliche Konzepte behandelt werden.
 
-Konsistenz hat Vorrang vor persönlichen Vorlieben und individuellen Schreibstilen. Eine bereits festgelegte kanonische Form wird deshalb nicht allein aus stilistischen Gründen variiert.
+Konsistenz hat Vorrang vor persönlichen Vorlieben und individuellen Schreibstilen. Eine festgelegte kanonische Form MUST daher unverändert verwendet werden.
 
-Die folgenden Regeln gelten verbindlich für alle zukünftigen Project-Bible-Dokumente, technischen Spezifikationen und den Quellcode sowie für Daten, Identifier und Benutzertexte. Sie bestimmen ausschließlich Benennung und Schreibweise, nicht deren technische Implementierung.
+Die folgenden Regeln gelten für alle zukünftigen Project-Bible-Dokumente, technischen Spezifikationen und den Quellcode sowie für Daten, Identifier und Benutzertexte. Sie bestimmen ausschließlich Benennung und Schreibweise, nicht deren technische Implementierung.
 
 ## 13.1 Allgemeine Schreibregeln
 
@@ -13487,9 +13493,9 @@ Für die allgemeine diplomatische Zwangsmaßnahme ist `Sanction` zu verwenden; f
 
 # Kapitel 15 – Requirements & Design Goals
 
-Terminologie muss langfristig stabil bleiben, weil Dokumente, Entscheidungen und weitere Projektartefakte über lange Zeiträume hinweg auf dieselben Bedeutungen und Referenzen angewiesen sind. Unkontrollierte Bedeutungs- oder Benennungswechsel würden diese Zusammenhänge entwerten.
+Terminologie muss langfristig stabil bleiben, weil Dokumente, Entscheidungen und andere Projektartefakte dauerhaft auf dieselben Bedeutungen und Referenzen angewiesen sind. Unkontrollierte Bedeutungs- oder Benennungswechsel würden diese Zusammenhänge entwerten.
 
-Explizit dokumentierte Anforderungen machen die erwartete Qualität prüfbar und verhindern, dass terminologische Entscheidungen nur von implizitem Wissen oder persönlichem Sprachgefühl abhängen. Dieses Kapitel definiert deshalb die projektweiten Qualitätsziele für die gesamte Terminologie und bildet den Maßstab für zukünftige Erweiterungen und Reviews.
+Dokumentierte Anforderungen machen die erwartete Qualität prüfbar und verhindern, dass terminologische Entscheidungen von implizitem Wissen oder persönlichem Sprachgefühl abhängen. Dieses Kapitel definiert deshalb die projektweiten Qualitätsziele für die gesamte Terminologie und bildet den Maßstab für zukünftige Erweiterungen und Reviews.
 
 ## 15.1 Allgemeine Anforderungen
 
@@ -13937,17 +13943,17 @@ Ein bereichsübergreifender Vergleich bestätigt, dass wiederverwendete Bezeichn
 
 # Kapitel 16 – Akzeptanzkriterien und Release Gate
 
-Terminologie muss überprüfbar sein, damit ihre Eindeutigkeit, Vollständigkeit und projektweite Verwendbarkeit nicht von einer rein subjektiven Einschätzung abhängen. Nur nachweisbare Prüfungen können bestätigen, dass Begriffsbestand, Benennungsregeln und Verweise gemeinsam eine belastbare Grundlage bilden.
+Terminologie muss überprüfbar sein, damit ihre Eindeutigkeit, Vollständigkeit und projektweite Verwendbarkeit nicht von subjektiven Einschätzungen abhängen. Nur nachweisbare Prüfungen können bestätigen, dass Begriffsbestand, Benennungsregeln und Verweise gemeinsam eine belastbare Grundlage bilden.
 
-Objektive Qualitätskriterien schaffen eine einheitliche Abnahmebasis, machen verbleibende Mängel sichtbar und verhindern eine Freigabe trotz ungeklärter Widersprüche. Dieses Kapitel definiert deshalb den offiziellen Release Gate für PB-004 und bildet den Abschluss des Dokuments.
+Objektive Qualitätskriterien schaffen eine einheitliche Abnahmebasis, machen Mängel sichtbar und verhindern die Freigabe bei ungeklärten Widersprüchen. Dieses Kapitel definiert deshalb den offiziellen Release Gate für PB-004 und bildet den Abschluss des Dokuments.
 
 ## 16.1 Ziel des Release Gates
 
 Der Abnahmeprozess stellt vor der Freigabe sicher, dass PB-004 vollständig, widerspruchsfrei, nachvollziehbar und mit den geltenden Governance-Vorgaben vereinbar ist. Er überführt die in diesem Dokument enthaltenen Regeln und Definitionen in prüfbare Freigabebedingungen, ohne zusätzliche Glossarbegriffe, Gameplaymechaniken oder Implementierungsdetails einzuführen.
 
-Das Release Gate darf nur auf Grundlage des vollständig geprüften Dokumentstands entschieden werden. Festgestellte Abweichungen werden vor der Freigabe behoben oder verhindern die Freigabe; eine stillschweigende Ausnahme ist nicht zulässig. Prüfergebnisse müssen so festgehalten werden, dass der geprüfte Stand, die durchgeführten Prüfungen, offene Befunde und die abschließende Entscheidung nachvollziehbar sind.
+Über das Release Gate darf nur auf Grundlage des vollständig geprüften Dokumentstands entschieden werden. Festgestellte Abweichungen werden vor der Freigabe behoben oder verhindern die Freigabe; eine stillschweigende Ausnahme ist nicht zulässig. Prüfergebnisse müssen so festgehalten werden, dass der geprüfte Stand, die durchgeführten Prüfungen, offene Befunde und die abschließende Entscheidung nachvollziehbar sind.
 
-Die Abnahme umfasst die Qualitätskriterien, die Dokumentations- und Konsistenzprüfung, den Governance Review und die vollständige Release Checklist. Erst ihr gemeinsamer erfolgreicher Abschluss belegt die Freigabereife von PB-004.
+Die Abnahme umfasst die Qualitätskriterien, die Dokumentations- und Konsistenzprüfung, den Governance Review und die vollständige Release Checklist. Nur ihr gemeinsamer erfolgreicher Abschluss belegt die Freigabereife von PB-004.
 
 ## 16.2 Qualitätskriterien
 
