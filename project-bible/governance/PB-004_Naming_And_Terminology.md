@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.5.0
+version: 0.6.0
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -2789,6 +2789,1066 @@ Der Begriff bezeichnet eine strategische Raumordnung ohne politische, administra
 - World Region
 - Area
 - Zone
+
+#### Referenzen
+
+- PB-002
+- PB-003
+## 6. Bevölkerung und Gesellschaft
+
+Bevölkerung wird auf mehreren, voneinander abzugrenzenden Ebenen beschrieben. Individuen, Haushalte und zusammengefasste Gruppen sind unterschiedliche Konzepte und dürfen nicht stellvertretend füreinander verwendet werden.
+
+Kultur, gesellschaftliche Ordnung und demographische Entwicklung bilden eigenständige Begriffsbereiche. Ihre Beziehungen heben diese Trennung nicht auf.
+
+Spätere Systeme und Dokumente MUST für diese Gegenstände ausschließlich die nachfolgend festgelegte Terminologie verwenden.
+
+## 6.1 Bevölkerung
+
+### Population
+
+#### Definition
+
+Eine `Population` ist die Gesamtheit der Personen, die einem räumlichen, politischen oder sonst eindeutig bestimmten Bezugsbereich zu einem bestimmten Zeitpunkt zugeordnet sind.
+
+#### Zweck
+
+Der Begriff bezeichnet den vollständigen personenbezogenen Bestand eines Bezugsbereichs, ohne dessen innere Gliederung oder rechtliche Stellung vorwegzunehmen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Population Group`: fasst nur Personen mit festgelegten gemeinsamen Merkmalen zusammen.
+- `Household`: verbindet Personen durch eine gemeinsame Lebens- und Versorgungsgemeinschaft.
+- `Citizen`: bezeichnet eine Person mit rechtlicher Mitgliedschaft in einem State.
+
+#### Verwandte Begriffe
+
+- Population Group
+- Household
+- Citizen
+- Resident
+- Migration
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Population Group
+
+#### Definition
+
+Eine `Population Group` ist eine innerhalb einer Population abgegrenzte Menge von Personen, die hinsichtlich ausdrücklich festgelegter gesellschaftlicher, kultureller, demographischer oder rechtlicher Merkmale übereinstimmen.
+
+#### Zweck
+
+Der Begriff ermöglicht die fachliche Zusammenfassung vergleichbarer Personen, ohne sie als Individuen oder Household zu behandeln und ohne zusätzliche Gemeinsamkeiten zu unterstellen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Population`: umfasst alle Personen des bestimmten Bezugsbereichs.
+- `Household`: beruht auf einer gemeinsamen Lebens- und Versorgungsgemeinschaft.
+- `Social Class`: ordnet Personen nach ihrer gesellschaftlichen Stellung.
+- `Identity`: ist das Zugehörigkeitsverständnis einer Person oder Gruppe.
+
+#### Verwandte Begriffe
+
+- Population
+- Household
+- Social Class
+- Culture
+- Identity
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Household
+
+#### Definition
+
+Ein `Household` ist eine auf Dauer angelegte Gemeinschaft einer oder mehrerer Personen, die ihre alltägliche Lebensführung und wesentliche Mittel ihrer Versorgung gemeinsam ordnen.
+
+#### Zweck
+
+Der Begriff bezeichnet die soziale Versorgungseinheit zwischen einzelner Person und größeren Bevölkerungszusammenfassungen, unabhängig von Verwandtschaft oder Rechtsform.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Population Group`: entsteht durch übereinstimmende festgelegte Merkmale.
+- `Population`: ist der vollständige Personenbestand eines Bezugsbereichs.
+- `Resident`: ist eine einzelne Person mit gewöhnlichem Aufenthalt.
+
+#### Verwandte Begriffe
+
+- Population
+- Population Group
+- Citizen
+- Resident
+- Income
+- Wealth
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Citizen
+
+#### Definition
+
+Ein `Citizen` ist eine natürliche Person, die kraft einer rechtlich anerkannten Zugehörigkeit dauerhaft Mitglied eines State ist.
+
+#### Zweck
+
+Der Begriff bezeichnet die formelle personenbezogene Mitgliedschaft in einer staatlichen Ordnung unabhängig von Aufenthaltsort, gesellschaftlicher Stellung oder politischer Haltung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Resident`: wird durch gewöhnlichen Aufenthalt statt staatlicher Mitgliedschaft bestimmt.
+- `Population`: umfasst auch Personen ohne Citizenship.
+- `Nation`: ist eine vorgestellte politische und gesellschaftliche Gemeinschaft und keine individuelle Rechtsstellung.
+
+#### Verwandte Begriffe
+
+- State
+- Population
+- Resident
+- Identity
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Resident
+
+#### Definition
+
+Ein `Resident` ist eine natürliche Person, deren gewöhnlicher und auf Dauer ausgerichteter Lebensmittelpunkt innerhalb eines bestimmten Gebietes liegt.
+
+#### Zweck
+
+Der Begriff bezeichnet die auf tatsächlichem Aufenthalt beruhende Zuordnung einer Person zu einem Gebiet unabhängig von Citizenship oder kultureller Zugehörigkeit.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Citizen`: besitzt eine rechtliche Mitgliedschaft in einem State unabhängig vom Aufenthalt.
+- `Population`: ist die Gesamtheit der einem Bezugsbereich zugeordneten Personen.
+- `Immigration`: bezeichnet die auf ein Zielgebiet bezogene Zuwanderung.
+
+#### Verwandte Begriffe
+
+- Citizen
+- Population
+- Territory
+- Migration
+- Immigration
+- Emigration
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 6.2 Gesellschaft
+
+### Social Class
+
+#### Definition
+
+Eine `Social Class` ist eine gesellschaftliche Kategorie, deren Angehörige aufgrund dauerhaft vergleichbarer Stellung in der sozialen Ordnung zusammengefasst werden.
+
+#### Zweck
+
+Der Begriff bezeichnet eine strukturierte gesellschaftliche Lage, ohne eine bestimmte Profession, Occupation, Einkommenshöhe oder politische Organisation vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Profession`: bezeichnet ein abgegrenztes Feld qualifizierter Tätigkeit.
+- `Occupation`: bezeichnet die tatsächlich ausgeübte regelmäßige Tätigkeit.
+- `Wealth`: ist der Bestand wirtschaftlich nutzbarer Werte.
+- `Interest Group`: ist ein organisierter politischer Akteur.
+
+#### Verwandte Begriffe
+
+- Population Group
+- Profession
+- Occupation
+- Education
+- Wealth
+- Income
+- Social Mobility
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Profession
+
+#### Definition
+
+Eine `Profession` ist ein gesellschaftlich abgegrenztes Feld qualifizierter Tätigkeit, das durch einen gemeinsamen Bestand an Kenntnissen, Fähigkeiten und anerkannten Aufgaben bestimmt wird.
+
+#### Zweck
+
+Der Begriff bezeichnet eine dauerhafte fachliche Qualifikation und Tätigkeitszuordnung unabhängig davon, ob oder in welcher konkreten Occupation sie gegenwärtig ausgeübt wird.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Occupation`: ist die gegenwärtig regelmäßig ausgeübte Tätigkeit einer Person.
+- `Education`: ist der Erwerb und die Vermittlung von Wissen und Fähigkeiten.
+- `Social Class`: bezeichnet die Stellung in der gesellschaftlichen Ordnung.
+
+#### Verwandte Begriffe
+
+- Occupation
+- Education
+- Literacy
+- Social Class
+- Income
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Occupation
+
+#### Definition
+
+Eine `Occupation` ist die von einer Person regelmäßig ausgeübte Tätigkeit, durch die sie eine bestimmte gesellschaftliche oder wirtschaftliche Aufgabe wahrnimmt.
+
+#### Zweck
+
+Der Begriff bezeichnet die tatsächliche gegenwärtige Tätigkeit unabhängig von fachlicher Qualifikation, gesellschaftlicher Stellung oder daraus erzieltem Income.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Profession`: ist ein qualifiziertes Tätigkeitsfeld und nicht dessen notwendige gegenwärtige Ausübung.
+- `Income`: bezeichnet den innerhalb eines Zeitraums erfolgenden wirtschaftlichen Zufluss.
+- `Social Class`: bezeichnet eine gesellschaftliche Stellung.
+
+#### Verwandte Begriffe
+
+- Profession
+- Education
+- Social Class
+- Income
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Education
+
+#### Definition
+
+`Education` ist der geordnete Erwerb und die geordnete Vermittlung von Wissen, Fähigkeiten und Urteilsvermögen durch Personen und gesellschaftliche Einrichtungen.
+
+#### Zweck
+
+Der Begriff bezeichnet Bildung als umfassenden Entwicklungszusammenhang, ohne sie auf Lesefähigkeit, einen formalen Abschluss oder eine bestimmte Profession zu reduzieren.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Literacy`: ist die Fähigkeit, schriftliche Informationen zu verstehen und auszudrücken.
+- `Profession`: ist ein gesellschaftlich abgegrenztes qualifiziertes Tätigkeitsfeld.
+
+#### Verwandte Begriffe
+
+- Literacy
+- Profession
+- Occupation
+- Social Mobility
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Literacy
+
+#### Definition
+
+`Literacy` ist die Fähigkeit einer Person, schriftlich dargestellte Informationen in einer Language zu verstehen und sich in dieser schriftlich verständlich auszudrücken.
+
+#### Zweck
+
+Der Begriff bezeichnet schriftsprachliche Befähigung und grenzt sie von umfassender Education, fachlicher Qualifikation und bloßer Kenntnis einer Language ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Education`: umfasst weitergehenden Erwerb von Wissen, Fähigkeiten und Urteilsvermögen.
+- `Language`: ist ein gemeinsames System sprachlicher Verständigung.
+- `Profession`: bezeichnet ein qualifiziertes Tätigkeitsfeld.
+
+#### Verwandte Begriffe
+
+- Education
+- Language
+- Profession
+- Social Mobility
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Wealth
+
+#### Definition
+
+`Wealth` ist der zu einem bestimmten Zeitpunkt einer Person, einem Household oder einer Gruppe zugeordnete Bestand wirtschaftlich nutzbarer Werte abzüglich der ihr zugeordneten Verpflichtungen.
+
+#### Zweck
+
+Der Begriff bezeichnet eine Bestandsgröße wirtschaftlicher Verfügungsmöglichkeiten und trennt sie von zeitbezogenen Zuflüssen und gesellschaftlicher Stellung.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Income`: ist ein wirtschaftlicher Zufluss innerhalb eines Zeitraums.
+- `Social Class`: bezeichnet eine gesellschaftliche Stellung und nicht einen Wertbestand.
+- `Political Capital`: bezeichnet politisch mobilisierbare Handlungsmacht.
+
+#### Verwandte Begriffe
+
+- Income
+- Household
+- Social Class
+- Social Mobility
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Income
+
+#### Definition
+
+`Income` ist die Gesamtheit wirtschaftlicher Werte, die einer Person, einem Household oder einer Gruppe innerhalb eines bestimmten Zeitraums zufließen.
+
+#### Zweck
+
+Der Begriff bezeichnet eine zeitraumbezogene Zuflussgröße unabhängig vom bereits vorhandenen Wealth oder der gesellschaftlichen Stellung der Empfänger.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Wealth`: ist ein zu einem Zeitpunkt bestehender Wertbestand.
+- `Occupation`: ist eine tatsächlich ausgeübte Tätigkeit und nicht deren möglicher Ertrag.
+- `Social Class`: bezeichnet die Stellung in der gesellschaftlichen Ordnung.
+
+#### Verwandte Begriffe
+
+- Wealth
+- Household
+- Occupation
+- Profession
+- Social Class
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 6.3 Kultur
+
+### Culture
+
+#### Definition
+
+Eine `Culture` ist ein von einer Gruppe getragener und weitergegebener Zusammenhang gemeinsamer Bedeutungen, Werte, Normen, Ausdrucksformen und sozialer Praktiken.
+
+#### Zweck
+
+Der Begriff bezeichnet einen erlernten gesellschaftlichen Orientierungszusammenhang, ohne ihn mit Religion, Language oder individuellem Zugehörigkeitsverständnis gleichzusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Religion`: ordnet Überzeugungen und Praktiken in Bezug auf Heiliges, Transzendentes oder letzte Sinnfragen.
+- `Language`: ist ein gemeinsames System sprachlicher Verständigung.
+- `Identity`: ist das Verständnis eigener Zugehörigkeit und Abgrenzung.
+- `Nation`: ist eine vorgestellte politische und gesellschaftliche Gemeinschaft.
+
+#### Verwandte Begriffe
+
+- Religion
+- Language
+- Identity
+- Population Group
+- Assimilation
+- Integration
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Religion
+
+#### Definition
+
+Eine `Religion` ist ein geordneter Zusammenhang geteilter Überzeugungen, Deutungen, Normen und Praktiken, die sich auf Heiliges, Transzendentes oder letzte Sinnfragen beziehen.
+
+#### Zweck
+
+Der Begriff bezeichnet religiöse Zugehörigkeits- und Deutungsordnungen, ohne sie mit der gesamten Culture, einer Institution oder politischer Ideology gleichzusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Culture`: umfasst einen breiteren Zusammenhang geteilter Bedeutungen und Praktiken.
+- `Ideology`: ist ein zusammenhängendes Modell politischer Ordnung und gesellschaftlicher Entwicklung.
+- `Institution`: ist eine dauerhaft geordnete Einrichtung mit festgelegten Aufgaben.
+- `Identity`: bezeichnet das Verständnis eigener Zugehörigkeit.
+
+#### Verwandte Begriffe
+
+- Culture
+- Identity
+- Population Group
+- Institution
+- Ideology
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Language
+
+#### Definition
+
+Eine `Language` ist ein gemeinsames, regelhaftes System gesprochener, geschriebener oder gebärdeter Zeichen, durch das Personen Bedeutungen ausdrücken und miteinander verständigen.
+
+#### Zweck
+
+Der Begriff bezeichnet ein Mittel sprachlicher Verständigung unabhängig von Literacy, kultureller Zugehörigkeit oder persönlicher Identity.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Literacy`: bezeichnet schriftsprachliche Befähigung in einer Language.
+- `Culture`: ist ein umfassender Zusammenhang gemeinsamer Bedeutungen und Praktiken.
+- `Identity`: bezeichnet das Verständnis eigener Zugehörigkeit.
+
+#### Verwandte Begriffe
+
+- Literacy
+- Culture
+- Identity
+- Population Group
+- Assimilation
+- Integration
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Identity
+
+#### Definition
+
+Eine `Identity` ist das Verständnis einer Person oder Gruppe davon, welchen sozialen, kulturellen, politischen oder sonstigen Gemeinschaften sie sich zugehörig sieht und wodurch sie sich von anderen unterscheidet.
+
+#### Zweck
+
+Der Begriff bezeichnet wahrgenommene Zugehörigkeit und Abgrenzung, ohne daraus Culture, Religion, Language, Citizenship oder politische Haltung abzuleiten.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Culture`: ist ein geteilter Zusammenhang von Bedeutungen und Praktiken.
+- `Religion`: ist eine religiöse Deutungs- und Praxisordnung.
+- `Language`: ist ein System sprachlicher Verständigung.
+- `Citizen`: bezeichnet eine rechtliche Mitgliedschaft in einem State.
+- `Political Support`: ist Zustimmung zu einem politischen Akteur, Ziel oder Vorhaben.
+
+#### Verwandte Begriffe
+
+- Culture
+- Religion
+- Language
+- Citizen
+- Population Group
+- Assimilation
+- Integration
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 6.4 Gesellschaftliche Dynamik
+
+### Loyalty
+
+#### Definition
+
+`Loyalty` ist die dauerhafte Bindungsbereitschaft einer Person oder Gruppe gegenüber einem politischen oder gesellschaftlichen Bezugsobjekt, die auch bei einzelnen Meinungsunterschieden fortbestehen kann.
+
+#### Zweck
+
+Der Begriff bezeichnet beständige Verbundenheit und trennt sie von gegenstandsbezogener politischer Zustimmung, allgemeiner Legitimacy und persönlicher Identity.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Political Support`: ist Zustimmung zu einem bestimmten politischen Akteur, Ziel oder Vorhaben.
+- `Legitimacy`: ist die anerkannte Rechtmäßigkeit politischer Ordnung oder Herrschaft.
+- `Identity`: ist das Verständnis eigener Zugehörigkeit und Abgrenzung.
+
+#### Verwandte Begriffe
+
+- Political Support
+- Legitimacy
+- Identity
+- Radicalization
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Political Support
+
+#### Definition
+
+`Political Support` ist die zustimmende Haltung einer Person oder Gruppe gegenüber einem bestimmten politischen Akteur, Ziel, Vorhaben oder einer politischen Ordnung.
+
+#### Zweck
+
+Der Begriff bezeichnet gegenstandsbezogene politische Zustimmung unabhängig von dauerhafter Loyalty, institutioneller Legitimacy oder organisatorischer Mitgliedschaft.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Loyalty`: ist eine fortdauernde Bindungsbereitschaft gegenüber einem Bezugsobjekt.
+- `Legitimacy`: bezeichnet anerkannte Rechtmäßigkeit.
+- `Political Party`: ist ein organisierter politischer Akteur.
+- `Interest Group`: vertritt dauerhaft gemeinsame politische Interessen.
+
+#### Verwandte Begriffe
+
+- Loyalty
+- Legitimacy
+- Political Party
+- Interest Group
+- Radicalization
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Radicalization
+
+#### Definition
+
+`Radicalization` ist eine gesellschaftliche Entwicklung, in der Personen oder Gruppen zunehmend grundlegende und kompromissunwillige Veränderungen einer bestehenden politischen oder gesellschaftlichen Ordnung befürworten.
+
+#### Zweck
+
+Der Begriff bezeichnet die Veränderung politischer oder gesellschaftlicher Haltung hin zu fundamentaler Ordnungsablehnung, ohne eine bestimmte Ideology, Organisation oder Handlungsform vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Political Support`: bezeichnet Zustimmung und nicht die Richtung oder Intensivierung einer Haltungsentwicklung.
+- `Opposition`: ist die Gesamtheit politischer Akteure, die der gegenwärtigen politischen Führung entgegenstehen.
+- `Ideology`: ist ein zusammenhängendes Modell politischer Ordnung und gesellschaftlicher Entwicklung.
+
+#### Verwandte Begriffe
+
+- Political Support
+- Loyalty
+- Opposition
+- Ideology
+- Social Mobility
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Social Mobility
+
+#### Definition
+
+`Social Mobility` ist die Veränderung der gesellschaftlichen Stellung einer Person, eines Household oder einer Gruppe innerhalb einer gesellschaftlichen Ordnung oder zwischen aufeinanderfolgenden Generationen.
+
+#### Zweck
+
+Der Begriff bezeichnet Positionswechsel in der sozialen Struktur unabhängig davon, ob sie mit Veränderungen von Profession, Occupation, Education, Income oder Wealth einhergehen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Migration`: ist die dauerhafte Verlagerung des gewöhnlichen Aufenthaltsortes.
+- `Social Class`: ist eine Kategorie gesellschaftlicher Stellung.
+- `Income`: bezeichnet wirtschaftliche Zuflüsse in einem Zeitraum.
+- `Wealth`: bezeichnet einen wirtschaftlichen Wertbestand.
+
+#### Verwandte Begriffe
+
+- Social Class
+- Education
+- Profession
+- Occupation
+- Income
+- Wealth
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+## 6.5 Bevölkerungsentwicklung
+
+### Birth Rate
+
+#### Definition
+
+Eine `Birth Rate` ist die Anzahl der Lebendgeburten innerhalb einer Population während eines bestimmten Zeitraums im Verhältnis zu einer festgelegten Bezugsgröße dieser Population.
+
+#### Zweck
+
+Der Begriff bezeichnet die relative Häufigkeit von Geburten und ermöglicht ihre Vergleichbarkeit über unterschiedlich große Populationen und Zeiträume hinweg.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Population`: ist der Personenbestand und keine Veränderungsrate.
+- `Death Rate`: bezeichnet die relative Häufigkeit von Todesfällen.
+- `Immigration`: verändert eine Population durch Zuwanderung statt durch Geburten.
+
+#### Verwandte Begriffe
+
+- Population
+- Death Rate
+- Migration
+- Immigration
+- Emigration
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Death Rate
+
+#### Definition
+
+Eine `Death Rate` ist die Anzahl der Todesfälle innerhalb einer Population während eines bestimmten Zeitraums im Verhältnis zu einer festgelegten Bezugsgröße dieser Population.
+
+#### Zweck
+
+Der Begriff bezeichnet die relative Häufigkeit von Todesfällen und ermöglicht ihre Vergleichbarkeit über unterschiedlich große Populationen und Zeiträume hinweg.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Population`: ist der Personenbestand und keine Veränderungsrate.
+- `Birth Rate`: bezeichnet die relative Häufigkeit von Lebendgeburten.
+- `Emigration`: verändert eine Population durch Abwanderung statt durch Todesfälle.
+
+#### Verwandte Begriffe
+
+- Population
+- Birth Rate
+- Migration
+- Immigration
+- Emigration
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Migration
+
+#### Definition
+
+`Migration` ist die auf Dauer ausgerichtete Verlagerung des gewöhnlichen Aufenthaltsortes einer Person oder Gruppe von einem Herkunftsgebiet in ein anderes Gebiet.
+
+#### Zweck
+
+Der Begriff bezeichnet den allgemeinen demographischen Ortswechsel, ohne die Perspektive des Herkunfts- oder Zielgebietes festzulegen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Immigration`: betrachtet Migration aus der Perspektive des Zielgebietes.
+- `Emigration`: betrachtet Migration aus der Perspektive des Herkunftsgebietes.
+- `Social Mobility`: ist eine Veränderung gesellschaftlicher Stellung.
+- `Assimilation`: ist die Aufgabe prägender kultureller Unterscheidungsmerkmale zugunsten einer anderen Culture.
+
+#### Verwandte Begriffe
+
+- Population
+- Resident
+- Immigration
+- Emigration
+- Assimilation
+- Integration
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Immigration
+
+#### Definition
+
+`Immigration` ist Migration aus der Perspektive des Zielgebietes, in dem Personen oder Gruppen ihren gewöhnlichen Aufenthalt neu und auf Dauer begründen.
+
+#### Zweck
+
+Der Begriff bezeichnet ausschließlich die auf ein Zielgebiet bezogene Zuwanderung und grenzt sie vom allgemeinen Ortswechsel und seiner Herkunftsperspektive ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Migration`: ist der perspektivisch neutrale Oberbegriff.
+- `Emigration`: betrachtet denselben Ortswechsel aus der Perspektive des Herkunftsgebietes.
+- `Integration`: bezeichnet gesellschaftliche Einbindung bei fortbestehenden Unterschieden.
+
+#### Verwandte Begriffe
+
+- Migration
+- Emigration
+- Resident
+- Population
+- Integration
+- Assimilation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Emigration
+
+#### Definition
+
+`Emigration` ist Migration aus der Perspektive des Herkunftsgebietes, aus dem Personen oder Gruppen ihren gewöhnlichen Aufenthalt auf Dauer verlagern.
+
+#### Zweck
+
+Der Begriff bezeichnet ausschließlich die auf ein Herkunftsgebiet bezogene Abwanderung und grenzt sie vom allgemeinen Ortswechsel und seiner Zielperspektive ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Migration`: ist der perspektivisch neutrale Oberbegriff.
+- `Immigration`: betrachtet denselben Ortswechsel aus der Perspektive des Zielgebietes.
+- `Assimilation`: bezeichnet kulturelle Angleichung und keinen Ortswechsel.
+
+#### Verwandte Begriffe
+
+- Migration
+- Immigration
+- Resident
+- Population
+- Integration
+- Assimilation
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Assimilation
+
+#### Definition
+
+`Assimilation` ist eine auf Dauer wirkende kulturelle Veränderung, durch die eine Person oder Gruppe prägende Unterscheidungsmerkmale ihrer bisherigen Culture zugunsten einer anderen Culture weitgehend aufgibt.
+
+#### Zweck
+
+Der Begriff bezeichnet kulturelle Angleichung durch den Verlust wesentlicher bisheriger Unterscheidungsmerkmale und grenzt sie von gesellschaftlicher Einbindung bei fortbestehenden Unterschieden ab.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Integration`: ermöglicht gesellschaftliche Einbindung bei fortbestehenden kulturellen oder sozialen Unterschieden.
+- `Migration`: bezeichnet die Verlagerung des gewöhnlichen Aufenthaltsortes.
+- `Identity`: bezeichnet das Verständnis eigener Zugehörigkeit und Abgrenzung.
+
+#### Verwandte Begriffe
+
+- Integration
+- Culture
+- Language
+- Identity
+- Migration
+- Population Group
+
+#### Referenzen
+
+- PB-002
+- PB-003
+
+### Integration
+
+#### Definition
+
+`Integration` ist ein wechselseitiger gesellschaftlicher Prozess, durch den Personen oder Gruppen gleichberechtigten Zugang zu sozialen Zusammenhängen und gemeinsame Teilhabe erlangen, während kulturelle oder soziale Unterschiede fortbestehen können.
+
+#### Zweck
+
+Der Begriff bezeichnet gesellschaftliche Einbindung ohne die Aufgabe prägender kultureller Unterscheidungsmerkmale vorauszusetzen.
+
+#### Verwendung
+
+- Game Design
+- Engine
+- Savegames
+- UI
+- Modding
+- Dokumentation
+
+#### Darf nicht verwechselt werden mit
+
+- `Assimilation`: setzt die weitgehende Aufgabe prägender Merkmale der bisherigen Culture zugunsten einer anderen voraus.
+- `Immigration`: bezeichnet die auf ein Zielgebiet bezogene Migration.
+- `Political Support`: bezeichnet Zustimmung zu einem politischen Bezugsobjekt.
+
+#### Verwandte Begriffe
+
+- Assimilation
+- Culture
+- Language
+- Identity
+- Migration
+- Immigration
+- Population Group
 
 #### Referenzen
 
