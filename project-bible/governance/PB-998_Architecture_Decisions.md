@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.1.0
+version: 1.2.0
 status: Living Document
 category: Governance
 created: 2026-08-06
@@ -372,5 +372,64 @@ Ein zentrales Register schafft eine eindeutige Quelle, globale IDs und einen kon
 
 **Verwandte Entscheidungen**
 
+- AD-005
+- AD-006
+
+# Gameplay & Engine
+
+## AD-008 – Proposal als allgemeines Gameplay-Konzept
+
+**Status**
+
+Accepted
+
+**Entscheidungsdatum**
+
+2026-08-06
+
+**Betroffene Dokumente**
+
+- PB-003
+- PB-004
+- GD-100 (zukünftig; noch zu erstellen)
+- TECH-100 (zukünftig; noch zu erstellen)
+
+**Kontext**
+
+Während der Erstellung von PB-004 Kapitel 9 wurde `Proposal` zunächst im diplomatischen Kontext betrachtet. Bei der Definition der domänenübergreifenden Gameplay-Terminologie in PB-004 Kapitel 10 wurde festgestellt, dass das Konzept nicht ausschließlich zur Diplomatie gehört.
+
+Dasselbe Grundkonzept kann unter anderem in Diplomatie, Gesetzgebung, Regierung, Forschung, Bauwesen, Wirtschaft, Handel und Budgetierung sowie für andere strukturierte Spieler- oder Systemvorhaben verwendet werden.
+
+**Entscheidung**
+
+`Proposal` ist ein allgemeiner, domänenübergreifender Gameplay-Begriff.
+
+Ein `Proposal` beschreibt einen formalisierten Vorschlag oder eine beabsichtigte Handlung, die vor ihrer Ausführung validiert, geprüft, verändert, bestätigt, angenommen, abgelehnt, zurückgezogen oder anderweitig verarbeitet werden kann.
+
+`Proposal` ist nicht mit der tatsächlichen Ausführung gleichzusetzen. Die Ausführung wird durch die kanonischen Begriffe `Action` beziehungsweise `Execution` entsprechend den Definitionen in PB-004 Kapitel 10 beschrieben.
+
+`Diplomatic Proposal` ist eine Spezialisierung des allgemeinen `Proposal`-Konzepts und keine eigenständige konkurrierende Grunddefinition.
+
+**Begründung**
+
+Die allgemeine Definition unterstützt die Designphilosophie aus PB-003: Der Spieler formuliert Absichten, während die Simulation deren Gültigkeit, Voraussetzungen, Kosten und Konsequenzen bestimmt.
+
+Eine gemeinsame `Proposal`-Abstraktion verhindert doppelte Definitionen in mehreren Domänen, ermöglicht einheitliche Validierung, unterstützt strukturierte und freie Spielerhandlungen, verbessert die Konsistenz zwischen Game Design, Engine, UI, Savegames und Modding und trennt Absicht, Entscheidung und tatsächliche Ausführung.
+
+**Konsequenzen**
+
+- `Proposal` ist künftig ein kanonischer Gameplay-Begriff.
+- Die verbindliche Definition befindet sich in PB-004 Kapitel 10.
+- Fachdomänen dürfen `Proposal` verwenden und spezialisieren.
+- Fachdomänen dürfen `Proposal` nicht unabhängig neu definieren.
+- `Diplomatic Proposal` baut auf der allgemeinen `Proposal`-Definition auf.
+- Zukünftige GD- und TECH-Dokumente müssen `Proposal`, `Decision`, `Action` und `Execution` sauber voneinander trennen.
+- `Proposal` allein verändert keinen autoritativen Spielzustand.
+- Eine Zustandsänderung erfolgt erst nach Validierung und autorisierter Ausführung durch die Simulation.
+
+**Verwandte Entscheidungen**
+
+- AD-001
+- AD-004
 - AD-005
 - AD-006
