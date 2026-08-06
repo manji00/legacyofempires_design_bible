@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.12.0
+version: 0.13.0
 status: Draft
 category: Governance
 created: 2026-08-05
@@ -11880,3 +11880,920 @@ Die folgenden Formen dienen ausschließlich der Erläuterung und definieren kein
 - `CHAR_OTTO_VON_BISMARCK` veranschaulicht einen Character Identifier.
 
 Die zugehörigen Anzeigenamen MAY lokalisiert und geändert werden; die Identifier MUST englisch, unverändert und nicht lokalisiert bleiben.
+
+# Kapitel 13 – Benennungs- und Schreibregeln
+
+Einheitliche Schreibweisen machen Begriffe, Referenzen und Bezeichnungen über Dokumentation, Quellcode, Daten und Benutzertexte hinweg eindeutig auffindbar und verständlich. Sie verhindern, dass bloße Schreibvarianten wie unterschiedliche Konzepte behandelt werden.
+
+Konsistenz hat Vorrang vor persönlichen Vorlieben und individuellen Schreibstilen. Eine bereits festgelegte kanonische Form wird deshalb nicht allein aus stilistischen Gründen variiert.
+
+Die folgenden Regeln gelten verbindlich für alle zukünftigen Project-Bible-Dokumente, technischen Spezifikationen und den Quellcode sowie für Daten, Identifier und Benutzertexte. Sie bestimmen ausschließlich Benennung und Schreibweise, nicht deren technische Implementierung.
+
+## 13.1 Allgemeine Schreibregeln
+
+### Project Language
+
+#### Definition
+
+`Project Language` ist die Zuordnung einer verbindlichen Sprache zu einer projektweiten Text- oder Benennungskategorie.
+
+#### Zweck
+
+Der Begriff trennt die Sprache der Dokumentation, des Quellcodes, der Identifier und der lokalisierbaren Benutzertexte eindeutig voneinander.
+
+#### Verwendung
+
+- Kanonische Dokumentation MUST in deutscher Sprache verfasst werden.
+- Quellcode und Identifier MUST in englischer Sprache verfasst werden.
+- Lokalisierbare Benutzertexte MAY in mehreren Sprachen vorliegen.
+
+#### Darf nicht verwechselt werden mit
+
+- `Documentation Language`: gilt ausschließlich für Dokumentation.
+- `Localization`: stellt Benutzertexte in mehreren Sprachen bereit.
+
+#### Verwandte Begriffe
+
+- Documentation Language
+- Code Language
+- Identifier Language
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Capitalization
+
+#### Definition
+
+`Capitalization` ist die verbindliche Groß- und Kleinschreibung einer Bezeichnung innerhalb ihrer Benennungskategorie.
+
+#### Zweck
+
+Der Begriff verhindert abweichende Schreibvarianten desselben Namens.
+
+#### Verwendung
+
+- Kanonische Fachbegriffe MUST die in PB-004 festgelegte Groß- und Kleinschreibung bewahren.
+- Namen ohne speziellere Regel MUST innerhalb derselben Kategorie einheitlich geschrieben werden.
+- Eine abweichende Groß- oder Kleinschreibung MUST NOT als neues Konzept oder stilistische Variante eingeführt werden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Display Name`: darf eine lokalisierte Anzeigeform besitzen.
+- `Identifier`: besitzt zusätzlich Regeln zu Sprache, Stabilität und Eindeutigkeit.
+
+#### Verwandte Begriffe
+
+- Terminology Consistency
+- Identifier
+- Display Name
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Singular vs. Plural
+
+#### Definition
+
+`Singular vs. Plural` ist die Regel, ob eine Benennung ein einzelnes Konzept oder eine Sammlung bezeichnet.
+
+#### Zweck
+
+Der Begriff macht Anzahl und fachliche Bedeutung einer Bezeichnung erkennbar.
+
+#### Verwendung
+
+- Namen einzelner Konzepte, Typen und Einträge SHOULD im Singular stehen.
+- Namen tatsächlicher Sammlungen oder Gruppen SHOULD im Plural stehen.
+- Singular und Plural MUST NOT ohne Bedeutungsunterschied als austauschbare Namen desselben Elements verwendet werden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Capitalization`: regelt Groß- und Kleinschreibung.
+- `Display Name`: kann aus sprachlichen Gründen eine andere grammatische Form benötigen.
+
+#### Verwandte Begriffe
+
+- Terminology Consistency
+- Class Naming
+- JSON Keys
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Abbreviations
+
+#### Definition
+
+`Abbreviations` sind dokumentierte Kurzformen eindeutig benannter Begriffe.
+
+#### Zweck
+
+Der Begriff begrenzt Kurzformen auf verständliche und projektweit nachvollziehbare Verwendungen.
+
+#### Verwendung
+
+- Neue Abkürzungen MUST vor ihrer projektweiten Verwendung dokumentiert werden.
+- Eine Abkürzung MUST eindeutig ihrem ausgeschriebenen kanonischen Begriff zugeordnet sein.
+- Nicht dokumentierte, persönliche oder kontextabhängige Kurzformen MUST NOT in kanonischen Namen oder Identifiern verwendet werden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Identifier`: identifiziert eine Identity und ist nicht bloß eine Kurzform.
+- `Alias`: ist eine ausdrücklich zugeordnete alternative Bezeichnung.
+
+#### Verwandte Begriffe
+
+- Canonical Term
+- Identifier
+- Terminology Consistency
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Terminology Consistency
+
+#### Definition
+
+`Terminology Consistency` ist die Regel, dass derselbe Begriff projektweit dieselbe Schreibweise und dieselbe festgelegte Bedeutung besitzt.
+
+#### Zweck
+
+Der Begriff schützt das gemeinsame Vokabular vor stilistischen Varianten, impliziten Synonymen und widersprüchlicher Verwendung.
+
+#### Verwendung
+
+- Dieselben Begriffe MUST in allen Projektbereichen dieselbe kanonische Schreibweise besitzen.
+- Konsistenz MUST Vorrang vor individuellen Schreibstilen und persönlichen Vorlieben haben.
+- Eine abweichende Benennung MUST als dokumentierte Anzeigeform, technische Abbildung oder ausdrücklich vorläufiger Arbeitsbegriff erkennbar sein.
+
+#### Darf nicht verwechselt werden mit
+
+- `Capitalization`: ist nur ein Teil der konsistenten Schreibweise.
+- `Localization`: darf die Anzeigeform, nicht aber die kanonische Bedeutung ändern.
+
+#### Verwandte Begriffe
+
+- Canonical Term
+- Capitalization
+- Localization
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+## 13.2 Dokumente
+
+### Document Naming
+
+#### Definition
+
+`Document Naming` ist die Bildung eines Dokumentnamens aus seiner Document ID und einem eindeutigen Titel.
+
+#### Zweck
+
+Der Begriff verbindet menschliche Erkennbarkeit mit stabiler projektweiter Zuordnung.
+
+#### Verwendung
+
+- Ein kanonisches Dokument MUST seine festgelegte Document ID und seinen offiziellen Titel verwenden.
+- Der Titel SHOULD den Gegenstand eindeutig und ohne nicht dokumentierte Abkürzungen benennen.
+- Eine Übersetzung oder Titeländerung MUST NOT die Document ID verändern.
+
+#### Darf nicht verwechselt werden mit
+
+- `Document IDs`: identifizieren Dokumente unabhängig vom Titel.
+- `File Naming`: bezeichnet die Repräsentation eines Dokuments im Dateisystem.
+
+#### Verwandte Begriffe
+
+- Document Identifier
+- Canonical Paths
+- Markdown Files
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Document IDs
+
+#### Definition
+
+`Document IDs` sind stabile Document Identifier gemäß der in PB-000 festgelegten Dokumentfamilie und Nummer.
+
+#### Zweck
+
+Der Begriff ermöglicht eindeutige Referenzen unabhängig von Titel, Dateiname oder Speicherort.
+
+#### Verwendung
+
+- Jedes kanonische Dokument MUST genau eine eindeutige Document ID besitzen.
+- Die Document ID MUST unverändert und nicht lokalisiert bleiben.
+- Eine vergebene Document ID MUST NOT für ein anderes Dokument wiederverwendet werden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Versioning`: unterscheidet Stände desselben Dokuments.
+- `Canonical Paths`: bezeichnet den festgelegten Ablageort.
+
+#### Verwandte Begriffe
+
+- Document Identifier
+- Stable Reference
+- Versioning
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Canonical Paths
+
+#### Definition
+
+`Canonical Paths` sind die im Frontmatter festgelegten maßgeblichen Pfade kanonischer Dokumente.
+
+#### Zweck
+
+Der Begriff schafft eine eindeutige, referenzierbare Ablage unabhängig von abgeleiteten Ausgaben.
+
+#### Verwendung
+
+- Ein kanonisches Dokument MUST genau einen `canonical_path` ausweisen.
+- Referenzen SHOULD den Canonical Path oder die Document ID statt eines abgeleiteten Ausgabeorts verwenden.
+- Kopien, Exporte und generierte Darstellungen MUST NOT als zusätzlicher Canonical Path bezeichnet werden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Directory Naming`: regelt Namen einzelner Verzeichnisse.
+- `External Reference`: verweist auf ein Ziel außerhalb der Project Bible.
+
+#### Verwandte Begriffe
+
+- Document IDs
+- Internal Reference
+- File Naming
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Versioning
+
+#### Definition
+
+`Versioning` ist für Dokumente die Kennzeichnung ihres maßgeblichen inhaltlichen Stands durch die im Frontmatter geführte Version.
+
+#### Zweck
+
+Der Begriff macht Änderungen nachvollziehbar, ohne Document ID oder Canonical Path als Ersatz für eine Version zu verwenden.
+
+#### Verwendung
+
+- Dokumentversionen MUST dem in PB-000 festgelegten Versionsschema folgen.
+- Die Version MUST im Frontmatter geführt werden.
+- Versionsangaben MUST NOT an den Dokumenttitel, die Document ID oder den Canonical Path angehängt werden, sofern keine ausdrücklich definierte Ausnahme besteht.
+
+#### Darf nicht verwechselt werden mit
+
+- `Document IDs`: bleiben über verschiedene Versionen stabil.
+- `updated`: bezeichnet ein Datum und keine Version.
+
+#### Verwandte Begriffe
+
+- Version Identifier
+- Document IDs
+- Stability
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+## 13.3 Dateien und Verzeichnisse
+
+### File Naming
+
+#### Definition
+
+`File Naming` ist die eindeutige und konsistente Benennung von Dateien nach ihrem Inhalt und ihrer Rolle.
+
+#### Zweck
+
+Der Begriff macht Dateien ohne Kenntnis eines bestimmten Werkzeugs unterscheidbar und auffindbar.
+
+#### Verwendung
+
+- Dateinamen MUST innerhalb ihrer Kategorie einem einzigen dokumentierten Benennungsmuster folgen.
+- Dateinamen MUST englische Identifier verwenden; kanonische Dokumentdateien MAY den festgelegten deutschen Dokumenttitel abbilden.
+- Leerzeichen und nicht dokumentierte Kurzformen SHOULD vermieden werden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Document Naming`: benennt das Dokument als fachliche Einheit.
+- `Asset Naming`: ergänzt die Rolle eines Assets.
+
+#### Verwandte Begriffe
+
+- Directory Naming
+- Canonical Paths
+- Identifier Language
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Directory Naming
+
+#### Definition
+
+`Directory Naming` ist die konsistente Benennung von Verzeichnissen nach ihrem fachlichen Inhalt oder ihrer festgelegten Kategorie.
+
+#### Zweck
+
+Der Begriff hält Pfade verständlich und vermeidet konkurrierende Namen für dieselbe Ablagerolle.
+
+#### Verwendung
+
+- Verzeichnisnamen MUST innerhalb derselben Struktur einem einheitlichen englischen Benennungsmuster folgen.
+- Ein Verzeichnisname SHOULD eine fachliche Kategorie statt eines vorübergehenden Arbeitszustands benennen.
+- Synonyme und nicht dokumentierte Abkürzungen MUST NOT parallele Verzeichnisnamen für denselben Zweck bilden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Namespace Naming`: bezeichnet einen logischen Namensraum.
+- `Canonical Paths`: legt den vollständigen maßgeblichen Dokumentpfad fest.
+
+#### Verwandte Begriffe
+
+- File Naming
+- Canonical Paths
+- Terminology Consistency
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Markdown Files
+
+#### Definition
+
+`Markdown Files` sind Dokumentdateien, deren Name eine Document ID und einen lesbaren Titel gemäß der Dokumentkategorie abbildet.
+
+#### Zweck
+
+Der Begriff hält kanonische Dokumentdateien eindeutig ihren Dokumenten zugeordnet.
+
+#### Verwendung
+
+- Eine kanonische Markdown-Datei MUST mit ihrer Document ID beginnen und den offiziellen Titel in der bestehenden dateisicheren Form anschließen.
+- Wörter des Titelteils SHOULD durch Unterstriche getrennt werden.
+- Die Dateiendung MUST `.md` lauten.
+
+#### Darf nicht verwechselt werden mit
+
+- `Document Naming`: bestimmt ID und offiziellen Titel.
+- `Versioning`: gehört nicht als Versionssuffix in den kanonischen Dateinamen.
+
+#### Verwandte Begriffe
+
+- File Naming
+- Document IDs
+- Canonical Paths
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Asset Naming
+
+#### Definition
+
+`Asset Naming` ist die englische, rollenbezogene Benennung einer nicht als kanonisches Dokument behandelten Projektressource.
+
+#### Zweck
+
+Der Begriff unterscheidet Assets gleichen Gegenstands anhand ihrer fachlichen Rolle, ohne eine technische Verarbeitung festzulegen.
+
+#### Verwendung
+
+- Ein Assetname MUST Gegenstand und erforderlichenfalls Rolle oder Variante eindeutig erkennen lassen.
+- Assets derselben Kategorie MUST dasselbe dokumentierte Benennungsmuster verwenden.
+- Lokalisierte Anzeigenamen MUST NOT als stabile Asset Identifier verwendet werden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Display Name`: ist der Benutzertext eines dargestellten Konzepts.
+- `File Naming`: gilt zusätzlich für die konkrete Assetdatei.
+
+#### Verwandte Begriffe
+
+- File Naming
+- Identifier
+- Display Name
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+## 13.4 Quellcode
+
+### Class Naming
+
+#### Definition
+
+`Class Naming` ist die englische Benennung eines Klassentyps durch ein eindeutiges Substantiv oder eine eindeutige Nominalphrase im Singular.
+
+#### Zweck
+
+Der Begriff macht den bezeichneten Typ unabhängig von einer konkreten Sprachsyntax fachlich verständlich.
+
+#### Verwendung
+
+- Klassennamen MUST englisch sein und ein einzelnes fachliches Konzept bezeichnen.
+- Klassennamen SHOULD im Singular stehen.
+- Ein Klassenname MUST die festgelegte kanonische Terminologie bewahren.
+
+#### Darf nicht verwechselt werden mit
+
+- `Interface Naming`: bezeichnet einen Vertrag oder eine Fähigkeit.
+- `System Naming`: bezeichnet ein abgegrenztes fachliches System.
+
+#### Verwandte Begriffe
+
+- Code Language
+- Singular vs. Plural
+- Terminology Consistency
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Interface Naming
+
+#### Definition
+
+`Interface Naming` ist die englische Benennung eines Vertrags oder einer angebotenen Fähigkeit nach seiner fachlichen Bedeutung.
+
+#### Zweck
+
+Der Begriff lässt den beschriebenen Vertrag erkennen, ohne eine sprach- oder werkzeugspezifische Markierung vorzuschreiben.
+
+#### Verwendung
+
+- Interfacenamen MUST englisch und fachlich eindeutig sein.
+- Ein Interfacename SHOULD den Vertrag oder die Fähigkeit und nicht eine konkrete Umsetzung benennen.
+- Präfixe oder Suffixe MUST nur verwendet werden, wenn eine speziellere projektweite Konvention sie ausdrücklich festlegt.
+
+#### Darf nicht verwechselt werden mit
+
+- `Class Naming`: benennt einen Klassentyp.
+- `Service Naming`: benennt eine angebotene fachliche Dienstrolle.
+
+#### Verwandte Begriffe
+
+- Code Language
+- Class Naming
+- Service Naming
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Enumeration Naming
+
+#### Definition
+
+`Enumeration Naming` ist die englische Benennung eines geschlossenen fachlichen Wertebereichs und seiner Werte.
+
+#### Zweck
+
+Der Begriff macht Zugehörigkeit und Bedeutung von Auswahlwerten konsistent erkennbar.
+
+#### Verwendung
+
+- Der Name einer Enumeration MUST den Wertebereich im Singular bezeichnen.
+- Jeder Wert MUST innerhalb dieses Wertebereichs eindeutig und englisch benannt sein.
+- Werte MUST dieselben kanonischen Begriffe und dieselbe Schreiblogik verwenden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Identifier`: kann eine einzelne persistente Identity bezeichnen.
+- `Configuration Identifier`: identifiziert eine Konfigurationsangabe.
+
+#### Verwandte Begriffe
+
+- Singular vs. Plural
+- Code Language
+- Terminology Consistency
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### System Naming
+
+#### Definition
+
+`System Naming` ist die englische Benennung eines abgegrenzten fachlichen Systems nach seiner Verantwortung.
+
+#### Zweck
+
+Der Begriff schafft eine einheitliche Zuordnung zwischen Systemname, System Identifier und Dokumentation.
+
+#### Verwendung
+
+- Ein Systemname MUST seine fachliche Verantwortung statt einer konkreten Umsetzung benennen.
+- Derselbe Systemname MUST projektweit konsistent verwendet werden.
+- Der zugehörige System Identifier MUST eindeutig auf diesen Systemnamen abbildbar sein.
+
+#### Darf nicht verwechselt werden mit
+
+- `Service Naming`: bezeichnet eine Dienstrolle innerhalb eines fachlichen Zusammenhangs.
+- `Namespace Naming`: ordnet Namen in einem logischen Bereich.
+
+#### Verwandte Begriffe
+
+- System Identifier
+- Terminology Consistency
+- Namespace Naming
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Service Naming
+
+#### Definition
+
+`Service Naming` ist die englische Benennung einer fachlichen Dienstrolle nach der von ihr angebotenen Verantwortung.
+
+#### Zweck
+
+Der Begriff verhindert Namen, die nur eine vorübergehende technische Umsetzung oder ein verwendetes Werkzeug beschreiben.
+
+#### Verwendung
+
+- Ein Servicename MUST die fachliche Dienstrolle eindeutig benennen.
+- Servicenamen SHOULD im Singular stehen.
+- Ein Servicename MUST NOT einen Produkt-, Werkzeug- oder Implementierungsnamen als Ersatz für seine fachliche Verantwortung verwenden.
+
+#### Darf nicht verwechselt werden mit
+
+- `System Naming`: bezeichnet ein umfassenderes fachliches System.
+- `Interface Naming`: bezeichnet einen Vertrag oder eine Fähigkeit.
+
+#### Verwandte Begriffe
+
+- Class Naming
+- Interface Naming
+- Code Language
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Namespace Naming
+
+#### Definition
+
+`Namespace Naming` ist die englische, hierarchische Benennung eines logischen Namensraums nach fachlichen Bereichen.
+
+#### Zweck
+
+Der Begriff macht Zugehörigkeit sichtbar und verhindert konkurrierende logische Bereiche für dieselben Konzepte.
+
+#### Verwendung
+
+- Namespacebestandteile MUST englisch sein und vom allgemeinen zum spezifischen fachlichen Bereich führen.
+- Namen von Organisation, Projekt und Domäne MUST konsistent verwendet werden, sofern sie Bestandteil eines Namespace sind.
+- Ein Namespace MUST NOT nach einem vorübergehenden Werkzeug oder einer konkreten Umsetzung benannt werden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Namespace`: ist der durch den Namen bezeichnete Eindeutigkeitsraum.
+- `Directory Naming`: benennt einen physischen Ablagebereich.
+
+#### Verwandte Begriffe
+
+- Namespacing
+- System Naming
+- Identifier Language
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+## 13.5 Datenformate
+
+### JSON Keys
+
+#### Definition
+
+`JSON Keys` sind englische Feldbezeichnungen in JSON-Daten, die einem projektweit dokumentierten Benennungsmuster folgen.
+
+#### Zweck
+
+Der Begriff hält gleichbedeutende Felder über Datenbestände und Spezifikationen hinweg konsistent.
+
+#### Verwendung
+
+- JSON Keys MUST englisch sein.
+- JSON Keys MUST innerhalb eines Schemas ein einheitliches Benennungsmuster verwenden.
+- Dasselbe fachliche Feld MUST in vergleichbaren Strukturen denselben Key verwenden; Sammlungen SHOULD im Plural, einzelne Werte SHOULD im Singular benannt werden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Identifier Usage`: regelt Werte, die eine Identity referenzieren.
+- `Display Name`: ist kein stabiler Feldname.
+
+#### Verwandte Begriffe
+
+- Identifier Language
+- Singular vs. Plural
+- YAML Fields
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### YAML Fields
+
+#### Definition
+
+`YAML Fields` sind englische Feldbezeichnungen in YAML-Daten, die einem projektweit dokumentierten Benennungsmuster folgen.
+
+#### Zweck
+
+Der Begriff hält Frontmatter, Konfiguration und andere YAML-Strukturen sprachlich konsistent.
+
+#### Verwendung
+
+- YAML Fields MUST englisch sein.
+- YAML Fields MUST innerhalb eines Schemas ein einheitliches Benennungsmuster verwenden.
+- Ein bereits definiertes gleichbedeutendes JSON- oder Konfigurationsfeld SHOULD dieselbe Feldbezeichnung verwenden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Configuration Files`: bezeichnet Dateien mit Konfigurationsangaben.
+- `Document Naming`: benennt Dokumente, nicht deren Frontmatter-Felder.
+
+#### Verwandte Begriffe
+
+- JSON Keys
+- Identifier Language
+- Configuration Files
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Configuration Files
+
+#### Definition
+
+`Configuration Files` sind Konfigurationsdateien mit englischen, stabilen und innerhalb ihres Schemas konsistenten Datei-, Abschnitts- und Feldnamen.
+
+#### Zweck
+
+Der Begriff verhindert sprachlich gemischte oder durch persönliche Kurzformen geprägte Konfigurationsbezeichnungen.
+
+#### Verwendung
+
+- Namen von Konfigurationsdateien, Abschnitten und Feldern MUST englisch sein.
+- Gleichartige Konfigurationsdateien MUST dasselbe Benennungsmuster verwenden.
+- Anzeigenamen und andere Benutzertexte MUST als lokalisierbare Werte von stabilen Konfigurationsnamen getrennt bleiben.
+
+#### Darf nicht verwechselt werden mit
+
+- `Configuration Identifier`: identifiziert eine Konfigurationsangabe.
+- `Localization`: verwaltet sprachabhängige Benutzertexte.
+
+#### Verwandte Begriffe
+
+- File Naming
+- JSON Keys
+- YAML Fields
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Identifier Usage
+
+#### Definition
+
+`Identifier Usage` ist die Regel, stabile englische Identifier für Referenzen und Anzeigenamen ausschließlich für die Darstellung zu verwenden.
+
+#### Zweck
+
+Der Begriff trennt maschinenlesbare Identity von veränderlichem oder lokalisiertem Benutzertext.
+
+#### Verwendung
+
+- Referenzen in Daten MUST den dafür vorgesehenen Identifier und MUST NOT den Anzeigenamen als Ersatz verwenden.
+- Anzeigenamen und Identifier MUST als unterschiedliche Konzepte behandelt und getrennt gespeichert beziehungsweise spezifiziert werden.
+- Identifier MUST englisch, stabil und nicht lokalisiert bleiben; Anzeigenamen MAY übersetzt oder geändert werden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Display Name`: ist lokalisierbarer Benutzertext.
+- `Identifier Language`: bestimmt ausschließlich die Sprache eines Identifier.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Identity
+- Display Name
+- Localization
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+## 13.6 Sprachregeln
+
+### Documentation Language
+
+#### Definition
+
+`Documentation Language` ist die verbindliche Sprache für kanonische Projektdokumentation.
+
+#### Zweck
+
+Der Begriff sorgt für eine einheitliche redaktionelle Sprache, während kanonische englische Fachbegriffe unverändert referenzierbar bleiben.
+
+#### Verwendung
+
+- Kanonische Projektdokumentation MUST in deutscher Sprache erstellt werden.
+- Kanonische englische Begriffe, Identifier, Eigennamen und normative Schlüsselwörter MUST in ihrer festgelegten Form erhalten bleiben.
+- Eine Übersetzung eines kanonischen Begriffs MAY ihn erläutern, MUST ihn aber nicht als neue kanonische Bezeichnung ersetzen.
+
+#### Darf nicht verwechselt werden mit
+
+- `Code Language`: gilt für Quellcode.
+- `User Interface Language`: kann je Lokalisierung variieren.
+
+#### Verwandte Begriffe
+
+- Project Language
+- Canonical Term
+- Localization
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Code Language
+
+#### Definition
+
+`Code Language` ist die verbindliche natürliche Sprache für Benennungen im Quellcode.
+
+#### Zweck
+
+Der Begriff verhindert gemischtsprachige Quellcodebezeichnungen und hält sie projektweit verständlich.
+
+#### Verwendung
+
+- Quellcode MUST in englischer Sprache geschrieben werden.
+- Namen von Typen, Verträgen, Systemen, Diensten, Funktionen, Werten und anderen Codeelementen MUST englisch sein.
+- Lokalisierte Benutzertexte MUST NOT als Quellcodebezeichnungen verwendet werden.
+
+#### Darf nicht verwechselt werden mit
+
+- `Identifier Language`: gilt für sämtliche projektweiten Identifier, auch außerhalb des Quellcodes.
+- `Documentation Language`: gilt für kanonische Dokumentation.
+
+#### Verwandte Begriffe
+
+- Project Language
+- Identifier Language
+- Class Naming
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Identifier Language
+
+#### Definition
+
+`Identifier Language` ist die verbindliche natürliche Sprache, aus der lesbare Bestandteile eines Identifier gebildet werden.
+
+#### Zweck
+
+Der Begriff hält Identifier unabhängig von Dokumentations- und Anzeigesprache stabil und projektweit verständlich.
+
+#### Verwendung
+
+- Identifier MUST ausschließlich in englischer Sprache erstellt werden.
+- Identifier MUST NOT übersetzt oder lokalisiert werden.
+- Neu gebildete Identifier MUST die englische Form des kanonischen Begriffs verwenden und dokumentierte Abkürzungen beachten.
+
+#### Darf nicht verwechselt werden mit
+
+- `Display Name`: darf lokalisiert werden.
+- `Code Language`: gilt für alle Benennungen im Quellcode, nicht nur Identifier.
+
+#### Verwandte Begriffe
+
+- Identifier
+- Stability
+- Abbreviations
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### User Interface Language
+
+#### Definition
+
+`User Interface Language` ist die für einen Benutzer dargestellte Sprache der Benutzeroberfläche.
+
+#### Zweck
+
+Der Begriff trennt lokalisierbare Darstellung von stabiler interner Terminologie und Identity.
+
+#### Verwendung
+
+- Benutzeroberflächen MAY lokalisiert werden und mehrere User Interface Languages anbieten.
+- Sichtbare Anzeigenamen und Benutzertexte MAY sprachabhängig sein.
+- Die User Interface Language MUST NOT Identifier, fachliche Identity oder kanonische Bedeutung verändern.
+
+#### Darf nicht verwechselt werden mit
+
+- `Documentation Language`: ist projektweit Deutsch.
+- `Identifier Language`: ist projektweit Englisch und nicht lokalisierbar.
+
+#### Verwandte Begriffe
+
+- Localization
+- Display Name
+- Project Language
+
+#### Referenzen
+
+- PB-000
+- PB-004
+
+### Localization
+
+#### Definition
+
+`Localization` ist die Zuordnung sprach- oder regionsabhängiger Benutzertexte zu stabilen, nicht lokalisierten Identifiern.
+
+#### Zweck
+
+Der Begriff ermöglicht mehrsprachige Benutzeroberflächen, ohne Identity, Datenreferenzen oder kanonische Begriffe zu vervielfachen.
+
+#### Verwendung
+
+- Benutzertexte und Anzeigenamen MAY lokalisiert werden.
+- Jede lokalisierte Anzeigeform MUST eindeutig auf denselben stabilen Identifier verweisen.
+- Lokalisierung MUST NOT Identifier übersetzen, neue fachliche Identities erzeugen oder die kanonische Bedeutung eines Konzepts verändern.
+
+#### Darf nicht verwechselt werden mit
+
+- `Translation`: ist die sprachliche Übertragung eines Textes und nicht die gesamte Zuordnung zu einer Identity.
+- `Display Name`: ist ein einzelner darstellbarer Name.
+
+#### Verwandte Begriffe
+
+- User Interface Language
+- Display Name
+- Identifier Usage
+
+#### Referenzen
+
+- PB-000
+- PB-004
