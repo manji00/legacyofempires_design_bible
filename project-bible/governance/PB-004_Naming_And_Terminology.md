@@ -2,7 +2,10 @@
 document_id: PB-004
 title: Naming & Terminology
 version: 0.16.1
-status: Draft
+status: Release Candidate
+release_stage: RC1
+review_status: Passed
+review_process: PB-997
 category: Governance
 created: 2026-08-05
 updated: 2026-08-06
@@ -14073,3 +14076,9 @@ Die folgende Arbeitsliste wird für den vollständigen Freigabestand geführt. E
 PB-004 gilt erst dann als abgeschlossen, wenn sämtliche Punkte der Release Checklist erfüllt wurden. Nicht anwendbare, übersprungene oder nur teilweise geprüfte Punkte gelten nicht als erfüllt.
 
 Erst danach darf die Version `1.0.0` gesetzt werden. Das Setzen dieser Version vor dem vollständigen Abschluss der Checkliste und dem erfolgreich abgeschlossenen Governance Review ist unzulässig.
+
+# Release Candidate
+
+PB-004 ist als Release Candidate 1 (RC1) für den bevorstehenden Governance Audit ausgewiesen. Der Review nach PB-997 wurde erfolgreich bestanden; alle fünf Reviewphasen – Structure Review, Terminology Review, Editorial Review, Technical Review und Release Review – sind abgeschlossen.
+
+Dieser Stand enthält ausschließlich die Release-Metadaten und den Release-Hinweis zur Vorbereitung auf den Governance Audit. Version `1.0.0` wird erst nach Abschluss des vollständigen Governance Reviews vergeben.
