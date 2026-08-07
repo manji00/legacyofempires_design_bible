@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.6.0
+version: 1.7.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -616,9 +616,134 @@ Alle sechs Einträge fassen bereits an anderer Stelle in PB-000 normativ geregel
 - GOV-B-005
 - WP-001
 
+## AD-012 – Process Ownership Model
+
+**Status**
+
+Pending
+
+**Entscheidungsdatum**
+
+2026-08-07
+
+**Betroffene Dokumente**
+
+- PB-000
+- PB-997
+
+**Kontext**
+
+`GOV-B-006` aus `GA-001` stellt fest, dass PB-000 die Review-Level
+`Lightweight Review`, `Standard Review` und `Architecture Review` einschließlich
+einer Checkliste definiert, während PB-997 parallel einen ausführbaren
+Governance-Prozess beschreibt. Der genehmigte Resolution Plan `GA-001-RES`
+ordnet das Finding `WP-003` zu und verlangt vor jeder Umsetzung eine
+Architecture Decision, die PB-000 als Heimat der Meta-Klassifikation und PB-997
+als alleinige Prozessheimat festlegt. Ohne diese Grenze bleiben die Zuordnung
+von Änderungsklassen zu Review-Leveln, die zuständigen Freigaberollen und die
+Bedeutung von Nachweisartefakten mehrdeutig.
+
+Diese Decision bereitet ausschließlich das Process Ownership Model vor. Sie
+setzt weder die erforderliche Synchronisierung von PB-000 und PB-997 um noch
+entscheidet sie das gemeinsame Zustands-, Release- oder Versionierungsmodell
+aus `GOV-B-014`.
+
+**Entscheidung**
+
+PB-000 und PB-997 erhalten getrennte, komplementäre Verantwortungen:
+
+- **PB-000 definiert Governance-Regeln.** Dazu gehören die zulässigen
+  Änderungsklassen, die Namen und Auswahlkriterien der Review-Level, die
+  grundlegenden Rollen und ihre Entscheidungsbefugnisse sowie die normative
+  Pflicht, den jeweils anwendbaren Prozess aus PB-997 zu durchlaufen. PB-000
+  beschreibt keinen ausführbaren Reviewablauf, keine Prozessphasen und keine
+  dokumentinternen Reviewchecklisten.
+- **PB-997 definiert Governance-Prozesse.** Dazu gehören Auslöser, Reihenfolge
+  und Abschluss der Reviewaktivitäten, die je Review-Level anzuwendenden
+  Prüfschritte, erforderliche Eingaben und Nachweise, Eskalation,
+  Wiederholungsprüfung sowie die Protokollierung der Freigabeentscheidung.
+  PB-997 führt keine konkurrierenden Änderungsklassen, Review-Level oder
+  Rollenbefugnisse ein, sondern operationalisiert ausschließlich die in PB-000
+  definierten Regeln.
+- Bei einem Konflikt dieser Verantwortungsbereiche wird nicht nach Aktualität
+  oder Detailgrad priorisiert. Die Regel beziehungsweise Klassifikation wird in
+  PB-000 und der zugehörige Ablauf in PB-997 korrigiert; bis zur expliziten
+  Auflösung gelten widersprüchliche Aussagen nicht gleichzeitig.
+
+Die verbindliche Zuordnungsmatrix lautet:
+
+| Änderungsklasse | Review-Level | Zuständige Freigaberolle |
+|---|---|---|
+| Redaktionelle Änderung ohne normative oder verhaltensbezogene Wirkung, insbesondere Rechtschreibung, Formatierung, Linkkorrektur, Beispielpflege und rein klarstellende Formulierung | `Lightweight Review` | Document Owner oder ausdrücklich delegierter Reviewer |
+| Normative oder fachliche Änderung innerhalb bestehender Architekturgrenzen, insbesondere neue oder geänderte Requirements, Mechaniken, Autorenregeln, Balancing Policy und nicht-architektonische Governance-Regeln | `Standard Review` | Document Owner und Project Lead |
+| Strukturelle oder grenzverändernde Änderung, insbesondere Autorität, Ownership, systemübergreifende Schnittstellen, Persistenz, Determinismus, Mod-Kompatibilität und Änderungen am Governance-Prozessmodell | `Architecture Review` | Architecture Board; Annahme wird durch den Status `Accepted` der zugehörigen Architecture Decision in PB-998 dokumentiert |
+
+Für die Zuordnung gilt das höchste durch irgendeinen Teil einer Änderung
+ausgelöste Review-Level. Eine Änderung darf nicht in kleinere Teile zerlegt
+werden, um ein erforderliches höheres Review-Level zu umgehen. Ein höheres
+Level schließt die Prüfziele der niedrigeren Level ein; PB-997 legt fest, wie
+diese Prüfziele prozessual ausgeführt und nachgewiesen werden.
+
+Freigaberollen sind Entscheidungsrollen und keine Dokumentklassen. Der
+Document Owner verantwortet die fachliche Richtigkeit seines Dokuments, ein
+delegierter Reviewer darf ausschließlich Lightweight Reviews freigeben, der
+Project Lead genehmigt Standard Reviews gemeinsam mit dem Document Owner, und
+das Architecture Board entscheidet Architecture Reviews. Eine Person darf
+mehrere Rollen innehaben; die im Reviewnachweis festgehaltenen Rollen bleiben
+dennoch getrennt auszuweisen.
+
+Audit Reports, Resolution Plans, Reviewprotokolle, Finding-Listen,
+Prüfergebnisse, Wiederholungsprüfungen, Commit-Referenzen und Closure Reports
+sind ausschließlich **Nachweisartefakte**. Sie belegen Baseline, Durchführung,
+Ergebnis oder Freigabe eines Prozesses, definieren aber weder
+Governance-Regeln noch Governance-Prozesse und können PB-000, PB-997 oder
+PB-998 nicht ändern oder überstimmen. Welche kontrollierte Artefaktfamilie
+diese Nachweise aufnimmt und wie ihr Lifecycle gestaltet ist, bleibt den
+Entscheidungen zu `GOV-B-008` und `GOV-B-009` vorbehalten.
+
+**Begründung**
+
+Die Trennung hält stabile Klassifikationen und Befugnisse in der
+Project-Bible-Spezifikation, während der ausführbare Ablauf an genau einer Stelle
+gepflegt wird. Die Matrix macht für jede Änderungsklasse das Mindestniveau und
+die entscheidungsberechtigte Rolle sichtbar. Die ausdrückliche Einordnung von
+Prüfunterlagen als Nachweise verhindert, dass historische oder operative
+Artefakte zu einer dritten Governance-Quelle werden.
+
+**Konsequenzen**
+
+- Vor Annahme dieser Decision entsteht keine verbindliche neue Regel und keine
+  Umsetzung ist freigegeben.
+- Nach Annahme muss WP-003 PB-000 auf Regel- und Klassifikations-Ownership
+  begrenzen und PB-997 als alleinige Prozessheimat mit der festgelegten Matrix
+  operationalisieren.
+- Doppelte oder widersprüchliche Reviewabläufe und Checklisten müssen bei der
+  späteren Umsetzung aus ihrer jeweils unzuständigen Heimat entfernt werden.
+- Die konkrete Definition des gemeinsamen Status-, Reviewphase-, Release-Stage-,
+  Reviewstatus- und Versionierungsmodells bleibt außerhalb dieser Decision und
+  bedarf der für `GOV-B-014` vorgesehenen Architecture Decision.
+- Die kanonische Heimat und der Lifecycle kontrollierter Reviewnachweise bleiben
+  außerhalb dieser Decision und bedürfen der für `GOV-B-008` und `GOV-B-009`
+  vorgesehenen Architecture Decision.
+
+**Verwandte Entscheidungen**
+
+- AD-005
+- AD-007
+- AD-010
+- AD-011
+
+**Traceability**
+
+- GA-001
+- GA-001-RES
+- GOV-B-006
+- WP-003
+
 # Versionshistorie
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.7.0 | 2026-08-07 | Canonical | AD-012 als Pending Decision zum Process Ownership Model für GOV-B-006 und WP-003 vorbereitet; keine Umsetzung vorgenommen. |
 | 1.6.0 | 2026-08-07 | Canonical | AD-009 bis AD-011 umgesetzt: zentrales AD-Register, verbindlicher Lifecycle, Supersession, Frontmatter-Referenzen und vollständige WP-001-Traceability konsolidiert. |
 | 1.5.0 | 2026-08-07 | Canonical | AD-009 bis AD-011 als Accepted Decisions für WP-001 registriert. |
