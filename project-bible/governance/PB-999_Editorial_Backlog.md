@@ -1,8 +1,8 @@
 ---
 document_id: PB-999
 title: Editorial Backlog
-version: 1.0.0
-status: Living Document
+version: 1.0.1
+status: Draft
 category: Governance
 created: 2026-08-06
 updated: 2026-08-06

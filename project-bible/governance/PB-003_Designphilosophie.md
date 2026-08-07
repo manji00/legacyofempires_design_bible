@@ -1,11 +1,11 @@
 ---
 document_id: PB-003
 title: Designphilosophie
-version: 1.0.0
+version: 1.0.1
 status: Canonical
 category: Governance
 created: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-06
 owners:
   - Project Lead
 reviewers: []
@@ -28,9 +28,6 @@ depends_on:
   - PB-002
 related_documents:
   - PB-004
-  - PB-005
-  - GD-100
-  - TECH-100
 systems:
   - SYS-SIMULATION
   - SYS-POLITICS
@@ -72,7 +69,7 @@ tags:
   - scenario-driven
   - offline-first
   - ai-assisted
-canonical_path: project-bible/PB-003_Designphilosophie.md
+canonical_path: project-bible/governance/PB-003_Designphilosophie.md
 context_priority: critical
 ---
 
