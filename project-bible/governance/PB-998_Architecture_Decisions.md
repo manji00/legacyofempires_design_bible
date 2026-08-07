@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.4.0
+version: 1.5.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -558,11 +558,11 @@ Eine einzige ID-Familie und Ablage beseitigen konkurrierende Regeln, erhalten di
 
 **Status**
 
-Pending
+Accepted
 
 **Entscheidungsdatum**
 
-Ausstehend
+2026-08-07
 
 **Betroffene Dokumente**
 
@@ -575,7 +575,14 @@ PB-000 führt sechs Einträge mit den IDs `PB-000-D01` bis `PB-000-D06` unter de
 
 **Entscheidung**
 
-Unter der Voraussetzung, dass AD-010 den Status `Accepted` erhält, wird folgende Klassifikation zur Entscheidung vorbereitet:
+Architecture Decisions und Governance Specifications erfüllen unterschiedliche Aufgaben:
+
+- **Architecture Decisions** dokumentieren, **warum** eine Governance-Regel existiert. Sie bewahren den Entscheidungskontext, die Begründung und die Konsequenzen einer strukturellen Festlegung. Für sie gilt das durch AD-010 festgelegte Decision-Modell; PB-998 bleibt ihre einzige kanonische Ablage und ihr einziges kanonisches Register.
+- **Governance Specifications** dokumentieren, **was** die aktuell geltende normative Regel ist. PB-000 enthält ausschließlich solche normativen Spezifikationsregeln und führt weder ein eigenes Architecture-Decision-Register noch lokale Decision-IDs.
+
+PB-000 darf die Architecture Decisions, aus denen seine normativen Regeln hervorgegangen sind, weiterhin über das von AD-010 festgelegte kanonische Frontmatter-Feld `architecture_decisions` referenzieren. Diese Referenzen machen die Herkunft einer Regel nachvollziehbar, verlagern aber weder den Entscheidungskontext nach PB-000 noch schaffen sie dort ein zweites Decision-Register.
+
+Auf dieser Grundlage gilt folgende Klassifikation:
 
 | Eintrag | Klassifikation | Normative Heimat in PB-000 |
 |---|---|---|
@@ -586,19 +593,17 @@ Unter der Voraussetzung, dass AD-010 den Status `Accepted` erhält, wird folgend
 | `PB-000-D05` | Normative Spezifikationsregel | Prototyping Exception in PB-000 |
 | `PB-000-D06` | Normative Spezifikationsregel | Regeln für AI Assistants in PB-000 |
 
-Keiner der sechs Einträge wird als eigenständige Architecture Decision oder nicht-normativer Beschluss klassifiziert. Ihre Aussagen bleiben als normative Regeln an ihrer jeweiligen fachlichen Heimat in PB-000 erhalten; die konkurrierende Decision-Liste und ihre lokalen `PB-000-DXX`-IDs entfallen nach Annahme dieser Decision.
-
-Diese vorbereitete Festlegung ist im Status `Pending` nicht verbindlich und darf noch nicht umgesetzt werden.
+Keiner der sechs Einträge wird als eigenständige Architecture Decision oder nicht-normativer Beschluss klassifiziert. Ihre Aussagen bleiben als normative Regeln an ihrer jeweiligen fachlichen Heimat in PB-000 erhalten; die konkurrierende Decision-Liste und ihre lokalen `PB-000-DXX`-IDs entfallen.
 
 **Begründung**
 
-Alle sechs Einträge fassen bereits an anderer Stelle in PB-000 normativ geregelte Inhalte zusammen. Sie treffen keine eigenständigen Architekturentscheidungen mit dokumentiertem Kontext, Alternativen und Konsequenzen. Ihre Einordnung als Spezifikationsregeln erhält die normativen Aussagen, ohne ein zweites Decision-Register zu führen.
+Alle sechs Einträge fassen bereits an anderer Stelle in PB-000 normativ geregelte Inhalte zusammen. Sie treffen keine eigenständigen Architekturentscheidungen mit dokumentiertem Kontext, Begründung und Konsequenzen. Die Trennung zwischen begründender Architecture Decision und geltender Governance Specification erhält sowohl die historische Herleitung als auch eine eindeutige normative Quelle, ohne ein zweites Decision-Register zu führen. Das kanonische Frontmatter-Feld bewahrt die maschinenlesbare Verbindung zwischen beiden Ebenen.
 
 **Konsequenzen**
 
-- Vor der Annahme von AD-010 und dieser Decision wird PB-000 nicht geändert.
-- Nach einem Statuswechsel beider Decisions zu `Accepted` wird die lokale Decision-Liste aus PB-000 entfernt, ohne die klassifizierten normativen Regeln zu entfernen oder fachlich zu verändern.
+- Die lokale Decision-Liste wird aus PB-000 entfernt, ohne die klassifizierten normativen Regeln zu entfernen oder fachlich zu verändern.
 - Es werden keine `AD-XXX`-Einträge für `PB-000-D01` bis `PB-000-D06` migriert.
+- PB-000 referenziert AD-010 und AD-011 über `architecture_decisions`; PB-998 bleibt dennoch das einzige kanonische Architecture-Decision-Register.
 
 **Verwandte Entscheidungen**
 
