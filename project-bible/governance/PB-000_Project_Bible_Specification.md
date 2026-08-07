@@ -1,7 +1,7 @@
 ---
 document_id: PB-000
 title: Project Bible Specification
-version: 1.1.0
+version: 2.0.0
 status: Canonical
 category: Governance
 created: 2026-08-05
@@ -47,6 +47,8 @@ architecture_decisions:
   - AD-009
   - AD-010
   - AD-011
+  - AD-012
+  - AD-013
 tags:
   - governance
   - documentation
@@ -542,62 +544,44 @@ Design Goal
 
 ---
 
-## 13. Document Status Lifecycle
+## 13. Governance State and Document Status
 
-Approved document statuses are:
+Governance state consists of separate, typed dimensions. A field MUST describe
+exactly one state object; document status, review phase, review result,
+Architecture-Decision status, Work-Package status and Release Stage MUST NOT be
+equated or used to update one another implicitly. Their only interactions are
+the explicit gates defined here and operationalized by PB-997.
 
-### Idea
+PB-000 owns the classification and field rules for document status. The
+approved values of the canonical frontmatter field `status` are:
 
-A captured concept with no commitment.
+- `Idea` — captured concept with no commitment,
+- `Draft` — active authoring,
+- `Review` — substantially complete revision submitted for review,
+- `Accepted` — revision approved by the role required for its change class,
+- `Canonical` — current authoritative revision,
+- `Implemented` — canonical revision represented by referenced implementation,
+- `Superseded` — revision replaced by an identified successor revision.
 
-### Draft
-
-Actively being written. Not authoritative for implementation unless explicitly approved for prototype use.
-
-### Review
-
-Substantially complete and awaiting review.
-
-### Accepted
-
-Approved direction. May still receive non-breaking clarification.
-
-### Canonical
-
-Current authoritative source of truth.
-
-### Implemented
-
-Canonical and substantially represented in the codebase.
-
-### Deprecated
-
-Still valid for existing systems but should not be used for new work.
-
-### Superseded
-
-Replaced by another document or version.
-
-### Archived
-
-Retained for history and excluded from current guidance.
-
-### 13.1 Status Transition
-
-Recommended flow:
+The only normal document transition path is:
 
 ```text
-Idea → Draft → Review → Accepted → Canonical → Implemented
+Idea → Draft → Review → Accepted → Canonical → Implemented → Superseded
 ```
 
-Alternative terminal transitions:
+The Document Owner sets states through `Review`. `Accepted` requires the
+approval role from Section 28. `Canonical` requires `Accepted` plus a referenced
+review run whose `review_phase` is `Completed` and whose `review_status` is
+`Passed`. The Document Owner sets `Implemented` only after referencing the
+implementation; `Superseded` requires an identified successor revision.
+Rollback is not permitted: a changed revision starts a new lifecycle and does
+not inherit a review result or approval.
 
-```text
-Draft → Rejected
-Canonical → Deprecated → Superseded → Archived
-```
-
-A status change to `Canonical` SHOULD require review by the Project Lead or an explicitly delegated owner.
+PB-997 owns `review_phase`, `review_status`, `work_package_status` and
+`release_stage` and their executable processes. PB-998 exclusively owns
+`ad_status`. These fields MUST NOT be placed in document frontmatter as aliases
+for `status`; documents MAY only reference the responsible state object and its
+evidence.
 
 ---
 
@@ -636,6 +620,14 @@ Use when a change:
 - adds references without changing behavior.
 
 Git history remains the detailed change log. The document SHOULD contain a concise change-history section for significant versions.
+
+Semantic Versioning identifies a document revision only; it does not encode a
+review, Architecture Decision, Work Package or release state. A documented
+frontmatter-state or register-status-only change MUST increase at least PATCH.
+Review runs, Work Packages and releases MUST reference the exact document ID and
+version and, once available, the commit ID. A revised document after formation
+of a Release Candidate requires a new or explicitly repeated review for that
+revision.
 
 ---
 
@@ -1126,54 +1118,42 @@ A prototype SHOULD be timeboxed by question and scope, not by arbitrary polish.
 
 ---
 
-## 28. Review Process
+## 28. Governance Ownership, Change Classes and Review Levels
 
-### 28.1 Review Levels
+Governance separates three responsibilities:
 
-#### Lightweight Review
+- **Authority** is the right of a role to set or approve a rule,
+  classification or decision.
+- **Ownership** is the exclusive responsibility of a canonical document for an
+  information type; it grants no additional authority to a process actor.
+- **Execution** performs required review, approval and recording activities but
+  does not create or change the rules it applies.
 
-For:
+PB-000 owns governance rules, change classes, review-level selection and role
+authority. PB-997 is the sole process home and owns triggers, phases, steps,
+inputs, evidence, escalation, repeated review and approval recording. PB-998 is
+the sole register and status authority for Architecture Decisions. GA reports,
+resolution plans, review records, finding lists, test results, commit references
+and closure reports are evidence only and possess no rule, process or Decision
+authority.
 
-- spelling,
-- links,
-- examples,
-- formatting,
-- non-behavioral clarification.
+The binding classification matrix is:
 
-#### Standard Review
+| Change class | Review level | Approval role |
+|---|---|---|
+| Editorial change without normative or behavioral effect, including spelling, formatting, link fixes, example maintenance and purely clarifying wording | `Lightweight Review` | Document Owner or explicitly delegated Reviewer |
+| Normative or subject-matter change within existing architecture boundaries, including requirements, mechanics, authoring rules, balancing policy and non-architectural governance rules | `Standard Review` | Document Owner and Project Lead |
+| Structural or boundary-changing change, including authority, ownership, cross-system interfaces, persistence, determinism, mod compatibility and governance-process-model changes | `Architecture Review` | Architecture Board; acceptance is recorded as `Accepted` on the applicable Architecture Decision in PB-998 |
 
-For:
+The highest level triggered by any part of a change applies. Work MUST NOT be
+split to evade a higher level, and a higher level includes the review objectives
+of lower levels. A delegated Reviewer may approve only Lightweight Review; the
+Project Lead approves Standard Review jointly with the Document Owner; the
+Architecture Board decides Architecture Review. One person MAY hold multiple
+roles, but the evidence MUST record each role separately.
 
-- new mechanics,
-- changed requirements,
-- system boundaries,
-- scenario authoring rules,
-- balancing policy.
-
-#### Architecture Review
-
-For:
-
-- engine authority,
-- persistence,
-- mod compatibility,
-- deterministic simulation,
-- interfaces shared across major systems.
-
-### 28.2 Review Checklist
-
-Reviewers SHOULD verify:
-
-- purpose is clear,
-- scope is bounded,
-- terminology matches PB-004 when available,
-- requirements are testable,
-- scenario assumptions are isolated,
-- dependencies are identified,
-- offline-first behavior is addressed where relevant,
-- AI authority follows the golden architecture principle,
-- open questions are explicit,
-- version and status are correct.
+Every change MUST execute the applicable PB-997 process. PB-000 intentionally
+contains no review phases, operational checklist or evidence workflow.
 
 ---
 
@@ -1357,6 +1337,7 @@ These questions do not block adoption of PB-000.
 
 | Version | Date | Status | Summary |
 |---|---|---|---|
+| 2.0.0 | 2026-08-07 | Canonical | Implemented AD-012 and AD-013: assigned rule/process/Decision ownership, established the binding review classification matrix, and synchronized document status and Semantic Versioning with the orthogonal governance state model. |
 | 1.1.0 | 2026-08-07 | Canonical | Implemented AD-009 through AD-011: removed CTX authority, standardized the central AD register and `architecture_decisions`, and retained only normative specification rules. |
 | 1.0.2 | 2026-08-07 | Canonical | Removed the redundant local decision list; its statements remain normative in their subject-matter sections, with originating Architecture Decisions referenced through `architecture_decisions`. |
 | 1.0.0 | 2026-08-05 | Canonical | Initial Project Bible specification defining structure, metadata, IDs, lifecycle, traceability, AI usage, migration and prototyping rules. |
