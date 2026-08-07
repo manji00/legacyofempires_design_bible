@@ -54,6 +54,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-001 — CTX-000 ist eine veraltete konkurrierende Source of Truth
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED WITH AD
 - **Begründung:** Der Widerspruch zwischen operativer Kontinuitätsansicht und kanonischer Project Bible ist real. Das Board entscheidet, CTX-000 künftig als abgeleitetes, nicht-kanonisches operatives Artefakt zu führen. Weil dies seine Autorität und Dokumentklasse verändert, muss die Festlegung vor der Textkorrektur als Architecture Decision registriert werden.
 - **Resolution Path:** NEW ARCHITECTURE DECISION
@@ -65,6 +66,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-002 — Zwei konkurrierende Architecture-Decision-Systeme
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED WITH AD
 - **Begründung:** Ein einziges Decision-Modell ist für eindeutige IDs, Ablage und Supersession zwingend. Das Board bevorzugt das bestehende zentrale `AD-XXX`-Register in PB-998; die formale Entscheidung darf aber nicht durch eine redaktionelle Änderung vorweggenommen werden.
 - **Resolution Path:** NEW ARCHITECTURE DECISION
@@ -98,6 +100,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-005 — PB-000 enthält eigene Decisions entgegen AD-007
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED WITH AD
 - **Begründung:** Die sechs Einträge dürfen weder stillschweigend zu Architecture Decisions erklärt noch ohne Klassifikation entfernt werden. Nach Festlegung des einheitlichen Decision-Modells werden sie einzeln als Architecture Decision, normative Spezifikationsregel oder nicht-normativer Beschluss klassifiziert.
 - **Resolution Path:** NEW ARCHITECTURE DECISION
@@ -245,6 +248,7 @@ Alle angenommenen Findings sind genau einem fachlich verantworteten Work Package
 
 ## WP-001 — Decision Architecture and Authority
 
+- **Status:** Closed
 - **Verantwortung:** Governance Architecture
 - **Findings:** GOV-B-001, GOV-B-002, GOV-B-005
 - **Ergebnis:** Eindeutige Autorität für CTX-000 und ein einziges Architecture-Decision-System einschließlich Migration der PB-000-Decision-Einträge.
