@@ -440,11 +440,11 @@ Eine gemeinsame `Proposal`-Abstraktion verhindert doppelte Definitionen in mehre
 
 **Status**
 
-Pending
+Accepted
 
 **Entscheidungsdatum**
 
-Ausstehend
+2026-08-07
 
 **Betroffene Dokumente**
 
@@ -458,24 +458,26 @@ CTX-000 dient der Arbeitskontinuität, beansprucht derzeit jedoch eigene normati
 
 **Entscheidung**
 
-Zur Entscheidung vorbereitet wird folgende Festlegung:
+`CTX` bezeichnet eine abgeleitete operative Kontinuitätsansicht; CTX-000 ist das aktuelle Artefakt dieser Kategorie. Für CTX gilt:
 
-- CTX-000 ist eine abgeleitete, nicht-kanonische operative Kontinuitätsansicht ohne eigene normative Autorität und keine Source of Truth.
-- Die jeweils zuständigen kanonischen Project-Bible-Dokumente und Accepted Architecture Decisions bleiben für alle in CTX-000 zusammengefassten Aussagen autoritativ.
+- CTX ist niemals eine kanonische Governance-Quelle, besitzt keine eigene normative Autorität und ist keine Source of Truth.
+- Kanonische Informationen stammen immer aus den jeweils zuständigen PB-Dokumenten. Dies schließt Accepted Architecture Decisions in PB-998 ein.
+- CTX darf jederzeit vollständig aus den kanonischen Governance-Quellen neu erzeugt werden.
+- Informationen, die ausschließlich in CTX enthalten sind, besitzen keine normative Autorität.
+- Bei jedem Widerspruch haben die PB-Dokumente ausnahmslos Vorrang vor CTX.
+- CTX ist für operative Kontinuität und nicht für Governance optimiert.
 - Der Project Lead verantwortet die Aktualisierung von CTX-000. Eine Aktualisierung erfolgt nach Änderungen des kanonischen Projektstands, bevor CTX-000 erneut als Arbeitskontext verwendet wird.
 - Projektstand und nächster Arbeitsschritt werden ausschließlich aus dem Status der kanonischen Project-Bible-Dokumente, den Accepted Architecture Decisions und den ausdrücklich genehmigten Arbeitsaufträgen abgeleitet.
 - CTX-000 verweist auf diese Quellen, fasst sie nur für die operative Kontinuität zusammen und darf ihnen weder widersprechen noch einen konkurrierenden nächsten Arbeitsschritt festlegen.
 
-Diese vorbereitete Festlegung ist im Status `Pending` nicht verbindlich und darf noch nicht umgesetzt werden.
-
 **Begründung**
 
-Die Trennung bewahrt den praktischen Nutzen des Handoffs, ohne eine zweite Source of Truth neben der Project Bible zu schaffen. Eine benannte Verantwortung und eindeutige Ableitungsquellen verhindern, dass ein veralteter Handoff den kanonischen Projektstand überschreibt.
+Die Trennung bewahrt den praktischen Nutzen des Handoffs, ohne eine zweite Source of Truth neben der Project Bible zu schaffen. Die vollständige Regenerierbarkeit aus PB-Dokumenten stellt sicher, dass CTX ein austauschbares Arbeitsartefakt bleibt. Eine benannte Verantwortung, eindeutige Ableitungsquellen und der ausdrückliche Vorrang der PB-Dokumente verhindern, dass ein veralteter Handoff den kanonischen Projektstand überschreibt. Die Decision wird nach der Prüfung gegen die bestehende Governance-Architektur angenommen, da sie deren Trennung zwischen kanonischen Quellen und abgeleiteten Artefakten konkretisiert, ohne eine konkurrierende Autorität einzuführen.
 
 **Konsequenzen**
 
-- Vor einer Annahme dieser Decision erfolgen keine daraus abgeleiteten Änderungen an CTX-000 oder PB-000.
-- Nach einem Statuswechsel zu `Accepted` werden CTX-000 und PB-000 ausschließlich im durch `GOV-B-001` freigegebenen Umfang angepasst.
+- CTX-000 und PB-000 werden ausschließlich im durch `GOV-B-001` freigegebenen Umfang an diese Accepted Decision angepasst.
+- CTX-Inhalte werden bei Bedarf aus den kanonischen PB-Dokumenten regeneriert; ausschließlich in CTX dokumentierte Aussagen müssen zur Erlangung normativer Autorität in das zuständige PB-Dokument überführt und dort angenommen werden.
 - Das Frontmatterprofil für CTX-000 ist nicht Gegenstand dieser Decision und bleibt der für `GOV-B-015` vorgesehenen Resolution vorbehalten.
 
 **Verwandte Entscheidungen**
