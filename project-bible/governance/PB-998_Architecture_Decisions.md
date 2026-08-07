@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.3.0
+version: 1.4.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -493,11 +493,11 @@ Die Trennung bewahrt den praktischen Nutzen des Handoffs, ohne eine zweite Sourc
 
 **Status**
 
-Pending
+Accepted
 
 **Entscheidungsdatum**
 
-Ausstehend
+2026-08-07
 
 **Betroffene Dokumente**
 
@@ -510,24 +510,35 @@ PB-000 definiert `ADR-XXX` als Familie separater Architecture Decision Records, 
 
 **Entscheidung**
 
-Zur Entscheidung vorbereitet wird folgende Festlegung:
+Für Architecture Decisions gilt ausschließlich die global eindeutige ID-Familie `AD-XXX`. PB-998 ist ihre einzige kanonische Ablage und das einzige kanonische Architecture-Decision-Register. Separate Architecture-Decision-Dateien und konkurrierende ID-Familien werden nicht geführt.
 
-- Architecture Decisions verwenden ausschließlich global eindeutige IDs im Format `AD-XXX`.
-- PB-998 ist die einzige kanonische Ablage und das zentrale Register für Architecture Decisions; separate `ADR-XXX`-Dateien oder eine konkurrierende ADR-ID-Familie werden nicht verwendet.
-- Jede Architecture Decision besitzt genau einen Status aus `Pending`, `Accepted`, `Rejected` oder `Superseded`. Nur `Accepted` ist verbindlich.
-- Eine zu ersetzende Accepted Decision wird nicht inhaltlich umgeschrieben oder gelöscht. Eine neue AD mit der nächsten freien ID dokumentiert die neue Entscheidung; die bisherige AD wird auf `Superseded` gesetzt, und beide Einträge verweisen unter „Verwandte Entscheidungen“ aufeinander.
-- Das Frontmatter-Feld `architecture_decisions` referenziert die unmittelbar auf ein Dokument anwendbaren Accepted Decisions als Liste von `AD-XXX`-IDs. Leere Listen werden als `architecture_decisions: []` angegeben.
+Der vollständige Lifecycle einer Architecture Decision ist:
 
-Diese vorbereitete Festlegung ist im Status `Pending` nicht verbindlich und darf noch nicht umgesetzt werden.
+`Draft` → `Pending` → `Architecture Review` → `Accepted` → `Implemented` → `Verified` → `Superseded`
+
+- `Draft`: Die Decision wird ausgearbeitet und ist weder prüfbereit noch verbindlich.
+- `Pending`: Die Decision ist vollständig formuliert und wartet auf die formale Architekturprüfung.
+- `Architecture Review`: Die Decision wird auf architektonische Konsistenz, Auswirkungen und Entscheidungsreife geprüft.
+- `Accepted`: Die Decision ist angenommen, projektweit verbindlich und darf umgesetzt werden.
+- `Implemented`: Die aus der Accepted Decision folgenden Änderungen sind umgesetzt; die Decision bleibt verbindlich.
+- `Verified`: Umsetzung und beabsichtigte Wirkung sind anhand geeigneter Nachweise geprüft; die Decision bleibt verbindlich.
+- `Superseded`: Eine neuere Architecture Decision hat die Decision abgelöst; sie ist nicht mehr verbindlich und bleibt historisch erhalten.
+
+Die Stufen werden in dieser Reihenfolge durchlaufen. Eine Architecture Decision wird weder gelöscht noch durch eine inhaltliche Umschreibung ersetzt. Ab `Accepted` bleibt sie über `Implemented` und `Verified` hinweg verbindlich, bis sie `Superseded` ist.
+
+`supersedes` ist die kanonische Beziehung zwischen Architecture Decisions. Eine ablösende Decision nennt unter `supersedes` die `AD-XXX`-IDs aller von ihr ersetzten Decisions. Die ersetzten Decisions wechseln dadurch zu `Superseded`; allgemeine Verweise unter „Verwandte Entscheidungen“ ersetzen diese gerichtete Beziehung nicht.
+
+Das Frontmatter-Feld `architecture_decisions` ersetzt die Legacy-Bezeichnung `adr_references` und alle sonstigen bisherigen Referenzfelder für Architecture-Decision-Verweise. Es enthält als Liste von `AD-XXX`-IDs die unmittelbar auf ein Dokument anwendbaren, angenommenen und noch nicht supersedierten Decisions; dazu zählen auch Decisions in den Stufen `Implemented` und `Verified`. Leere Listen werden als `architecture_decisions: []` angegeben.
+
+Das Traceability-Modell darf künftig um weitere maschinenlesbare Beziehungen erweitert werden, beispielsweise um Implementierungs- und Verifikationsreferenzen. Solche Ergänzungen erweitern die Nachweiskette, ohne die ID-Familie, das Register, den Lifecycle, die `supersedes`-Beziehung oder das Frontmatter-Feld `architecture_decisions` als Kern des Decision-Modells zu ändern.
 
 **Begründung**
 
-Eine einzige ID-Familie und Ablage beseitigen konkurrierende Regeln, erhalten die bereits etablierten AD-IDs und machen Status sowie Supersession an einer Stelle nachvollziehbar. Ein eindeutiges Frontmatter-Feld schafft die von `GOV-B-002` verlangte Referenzform, ohne die weitergehende Pflege aller Decision-Referenzen aus `GOV-B-010` vorwegzunehmen.
+Eine einzige ID-Familie und Ablage beseitigen konkurrierende Regeln, erhalten die bereits etablierten AD-IDs und machen Lifecycle sowie Supersession an einer Stelle nachvollziehbar. Ein eindeutiges Frontmatter-Feld schafft die von `GOV-B-002` verlangte Referenzform, ohne die weitergehende Pflege aller Decision-Referenzen aus `GOV-B-010` vorwegzunehmen. Die Trennung des stabilen Decision-Kerns von künftig ergänzbaren Traceability-Beziehungen verhindert, dass zusätzliche Nachweisanforderungen das Entscheidungsmodell erneut fragmentieren.
 
 **Konsequenzen**
 
-- Vor einer Annahme dieser Decision erfolgen keine daraus abgeleiteten Änderungen am ADR-Kapitel, an ID-Beispielen oder am Frontmatter-Modell von PB-000.
-- Nach einem Statuswechsel zu `Accepted` werden PB-000 und PB-998 im Umfang von `GOV-B-002` auf dasselbe Modell gebracht.
+- PB-000 und die allgemeinen Regeln von PB-998 werden im Umfang von `GOV-B-002` auf dieses Modell gebracht; Legacy-Bezeichnungen, konkurrierende ID-Beispiele und bisherige Architecture-Decision-Referenzfelder werden dabei durch `AD-XXX` und `architecture_decisions` ersetzt.
 - Die vollständige Befüllung und Validierung des Referenzfelds in weiteren Dokumenten bleibt außerhalb von WP-001.
 - Die Klassifikation der Einträge `PB-000-D01` bis `PB-000-D06` wird erst durch AD-011 entschieden.
 
