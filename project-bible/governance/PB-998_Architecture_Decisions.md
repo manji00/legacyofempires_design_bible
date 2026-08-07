@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.8.0
+version: 1.9.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -770,10 +770,220 @@ Artefakte zu einer dritten Governance-Quelle werden.
 - GOV-B-006
 - WP-003
 
+## AD-013 – Unified Governance State Model
+
+**Status**
+
+Pending
+
+**Entscheidungsdatum**
+
+2026-08-07
+
+**Betroffene Dokumente**
+
+- PB-000
+- PB-004
+- PB-997
+- PB-998
+
+**Kontext**
+
+`GOV-B-014` aus `GA-001` stellt fest, dass Dokumentstatus, Reviewphasen,
+Release Stage und Reviewstatus in PB-000, PB-004 und PB-997 nicht eindeutig
+voneinander getrennt sind und die projektweite Versionierungsregel nicht mit
+dem Releaseprozess synchronisiert ist. Der genehmigte Resolution Plan
+`GA-001-RES` ordnet das Finding `WP-003` zu und verlangt vor jeder Umsetzung
+eine Architecture Decision zu Feld-Ownership, zulässigen Werten, Übergängen,
+Versionsauswirkungen und Freigabeverantwortung.
+
+Ein einziger globaler Status kann diese Anforderungen nicht widerspruchsfrei
+abbilden: Ein Dokument kann beispielsweise kanonisch sein, während eine
+Änderung daran noch geprüft wird; eine angenommene Architecture Decision kann
+auf ihre Umsetzung warten; und ein Work Package kann laufen, obwohl noch kein
+Release Candidate existiert. Diese Decision legt deshalb ausschließlich das
+gemeinsame, mehrdimensionale Governance-Zustandsmodell fest. Sie ändert weder
+Frontmatter noch Prozesse oder bestehende Governance-Regeln und nimmt keine
+Umsetzung von WP-003 vorweg.
+
+**Entscheidung**
+
+Governance-Zustand wird als Menge **getrennter, typisierter Dimensionen**
+modelliert. Es gibt keinen globalen Status, der gleichzeitig Dokument,
+Review, Architecture Decision, Work Package und Release beschreibt. Jedes
+Zustandsfeld bezeichnet genau ein Zustandsobjekt; Zustände unterschiedlicher
+Objekte dürfen weder gleichgesetzt noch stellvertretend fortgeschrieben werden.
+
+### Ownership und zulässige Zustände
+
+| Dimension / kanonisches Feld | Zustandsobjekt | Zulässige Zustände | Regel- und Feld-Ownership | Zustandsführung |
+|---|---|---|---|---|
+| Dokumentstatus / `status` | einzelne versionierte Project-Bible-Dokumentrevision | `Idea`, `Draft`, `Review`, `Accepted`, `Canonical`, `Implemented`, `Superseded` | PB-000 | kanonisches Frontmatter des Dokuments |
+| Reviewphase / `review_phase` | einzelner identifizierter Review Run | `Planned`, `In Review`, `Rework`, `Decision`, `Completed`, `Cancelled` | PB-997 | kontrollierter Reviewnachweis |
+| Reviewergebnis / `review_status` | Ergebnis eines einzelnen identifizierten Review Runs | `Pending`, `Changes Required`, `Passed`, `Rejected`, `Cancelled` | PB-997 | kontrollierter Reviewnachweis; andere Dokumente dürfen es nur referenzieren |
+| Architecture-Decision-Status / `ad_status` | einzelne `AD-XXX` | `Draft`, `Pending`, `Architecture Review`, `Accepted`, `Implemented`, `Verified`, `Superseded` | PB-998 | ausschließlich der zugehörige Eintrag in PB-998 |
+| Work-Package-Status / `work_package_status` | einzelnes abgegrenztes Work Package | `Planned`, `Ready`, `In Progress`, `Verification`, `Closed`, `Cancelled` | PB-997 | kontrollierter Work-Package- beziehungsweise Closure-Nachweis |
+| Release Stage / `release_stage` | einzelne benannte Release-Linie oder Release-Kandidatur | `Unreleased`, `Release Candidate`, `Released`, `Withdrawn` | PB-997 | kontrollierter Releasenachweis |
+
+PB-000 besitzt die Meta-Klassifikation des Dokumentstatus und die
+projektweite Semantic-Versioning-Regel. PB-997 besitzt die ausführbaren
+Review-, Work-Package- und Releaseprozesse einschließlich ihrer Nachweise.
+PB-998 besitzt den bereits durch AD-010 festgelegten
+Architecture-Decision-Lifecycle. PB-004 besitzt keine Zustandsdimension und
+keinen allgemeinen Releaseprozess; es verwendet die zuständigen Dimensionen
+nur als Terminologiedokument und Reviewgegenstand. Diese Zuordnung folgt der
+Trennung von Authority, Ownership und Execution aus AD-012.
+
+### Zulässige Übergänge
+
+Der Normalpfad jeder Dimension ist:
+
+```text
+Dokument:     Idea → Draft → Review → Accepted → Canonical → Implemented → Superseded
+Reviewphase:  Planned → In Review → Rework → In Review → Decision → Completed
+Reviewergebnis:
+              Pending → Changes Required → Pending
+              Pending → Passed | Rejected
+AD:           Draft → Pending → Architecture Review → Accepted → Implemented → Verified → Superseded
+Work Package: Planned → Ready → In Progress → Verification → Closed
+Release:      Unreleased → Release Candidate → Released → Withdrawn
+```
+
+`Cancelled` ist ausschließlich als terminaler Übergang aus einer noch nicht
+abgeschlossenen Reviewphase oder aus `Planned`, `Ready` oder `In Progress`
+eines Work Packages zulässig. Ein Release Candidate darf nach fehlgeschlagener
+Prüfung zu `Unreleased` zurückkehren. Alle anderen Rücksprünge sind verboten;
+stattdessen wird eine neue Dokumentrevision, ein neuer Review Run, ein neues
+Work Package oder eine neue Release-Kandidatur erzeugt. Für Architecture
+Decisions gelten ohne Erweiterung oder Verkürzung die in AD-010 festgelegten
+Übergänge und Supersession-Regeln.
+
+Zustände dürfen nur mit der Identität des Zustandsobjekts, dem vorherigen und
+neuen Wert, Zeitpunkt, verantwortlicher Rolle und Nachweisreferenz geändert
+werden. Ein Zustandsübergang in einer Dimension löst niemals stillschweigend
+einen Übergang in einer anderen Dimension aus.
+
+### Freigabeverantwortlichkeiten und dimensionenübergreifende Gates
+
+- Den Dokumentstatus bis einschließlich `Review` setzt der Document Owner.
+  `Accepted` erfordert die für die Änderungsklasse in AD-012 bestimmte
+  Freigaberolle. `Canonical` setzt `Accepted` und einen referenzierten Review
+  Run mit `review_phase: Completed` und `review_status: Passed` voraus.
+  `Implemented` wird vom Document Owner nach referenzierter Umsetzung gesetzt;
+  `Superseded` erfordert eine identifizierte Nachfolgerrevision.
+- Die Reviewphase wird durch den verantwortlichen Reviewer geführt. Das
+  Reviewergebnis setzt die nach AD-012 für das Review-Level zuständige
+  Freigaberolle: delegierter Reviewer beziehungsweise Document Owner für
+  Lightweight Review, Document Owner und Project Lead für Standard Review,
+  Architecture Board für Architecture Review.
+- Architecture-Decision-Status wird ausschließlich in PB-998 geführt.
+  `Accepted` erfordert das Architecture Board; `Implemented` und `Verified`
+  erfordern referenzierte Implementierungs- beziehungsweise
+  Verifikationsnachweise; `Superseded` erfordert eine gerichtete
+  `supersedes`-Beziehung.
+- Den Work-Package-Status führt der benannte Work-Package Owner. `Ready`
+  erfordert, dass alle vorgelagerten Decisions `Accepted` sind;
+  `Verification` erfordert abgeschlossene Umsetzung; `Closed` erfordert die
+  zuständige Freigaberolle und einen Closure-Nachweis gegen alle zugeordneten
+  Definitions of Done.
+- Die Release Stage führt der Project Lead. `Release Candidate` setzt für den
+  Release-Scope kanonische Dokumentrevisionen und abgeschlossene erforderliche
+  Reviews voraus. `Released` erfordert bestandene Releaseprüfungen und die
+  dokumentierte Freigabe des Project Lead; bei Architecture-Review-pflichtigem
+  Scope ist zusätzlich die Freigabe des Architecture Board erforderlich.
+  `Withdrawn` erfordert Begründung und Nachweis, verändert aber keinen
+  historischen Dokument-, Review-, AD- oder Work-Package-Status.
+
+Ein Review Run bewertet immer eine unveränderliche Dokumentversion oder
+Baseline. Eine nach dem Review inhaltlich geänderte Revision erbt weder
+`Passed` noch eine Freigabe. Ebenso beweisen `Accepted`, `Closed` oder
+`Released` jeweils nur den Zustand ihres eigenen Objekts.
+
+### Auswirkungen auf Versionierung
+
+Semantic Versioning beschreibt die Revision eines Dokuments, nicht dessen
+Review-, Work-Package-, AD- oder Releasezustand. Inhaltliche Änderungen erhöhen
+`MAJOR`, `MINOR` oder `PATCH` entsprechend ihrer normativen beziehungsweise
+redaktionellen Wirkung nach der in PB-000 verantworteten Regel. Eine reine,
+nachgewiesene Änderung von Frontmatter-Zustand oder Registerstatus erhöht
+mindestens `PATCH`, damit jede publizierte Zustandsänderung eindeutig
+referenzierbar bleibt; sie darf keine inhaltliche Änderung verdecken.
+
+Review Runs, Work Packages und Releases referenzieren daher immer eine exakte
+Dokument-ID mit Version und, sobald verfügbar, Commit-ID. Eine Release Stage
+ersetzt keine Dokumentversion. Eine neue Dokumentrevision nach Bildung eines
+Release Candidate macht für die geänderte Revision eine neue oder ausdrücklich
+wiederholte Prüfung erforderlich. Der Versionszähler von PB-998 folgt denselben
+Regeln; der Lifecycle-Status einer `AD-XXX` bleibt dennoch ein eigenständiges
+Feld des Decision-Eintrags.
+
+### Grundlage automatischer Validierung
+
+Das Modell ist als endlicher Zustandsautomat pro Dimension zu validieren. Ein
+späterer Validator muss mindestens:
+
+1. Feldwerte gegen die obigen Enumerationen prüfen,
+2. Objekt-ID, Ausgangszustand, Zielzustand, Rolle, Zeitpunkt und
+   Nachweisreferenz jedes Übergangs prüfen,
+3. nur die explizit zulässigen Kanten akzeptieren,
+4. die Freigaberolle gegen Review-Level und Änderungsklasse prüfen,
+5. dimensionenübergreifende Gates wie `Passed` vor `Canonical`, `Accepted`
+   vor `Ready` und bestandene Releaseprüfungen vor `Released` prüfen,
+6. Review- und Release-Nachweise an die exakte Dokumentversion und Baseline
+   binden und
+7. verbieten, dass abgeleitete Artefakte oder fremde Zustandsdimensionen den
+   kanonischen Zustand eines Objekts setzen.
+
+Die konkrete Schema-, Validator-, Frontmatter- und Prozessimplementierung ist
+nicht Gegenstand dieser Decision.
+
+**Begründung**
+
+Getrennte Zustandsautomaten bilden parallele Governance-Sachverhalte ab, ohne
+aus einem bestandenen Review fälschlich einen Release, aus einer angenommenen
+Decision eine Umsetzung oder aus einem geschlossenen Work Package einen
+kanonischen Dokumentstand abzuleiten. Eindeutige Ownership verhindert, dass
+PB-004, Nachweisartefakte oder Prozessbeschreibungen konkurrierende
+Statusautorität erhalten. Explizite Kanten, Rollen, Gates und versionierte
+Baselines machen das Modell zugleich menschenlesbar und später
+maschinenprüfbar.
+
+**Konsequenzen**
+
+- Solange diese Decision `Pending` ist, entsteht keine verbindliche neue Regel
+  und keine Umsetzung ist freigegeben.
+- Nach Annahme kann WP-003 die Zustandsfelder und Versionierungsregel in PB-000
+  sowie die Review-, Work-Package- und Releaseabläufe in PB-997 synchronisieren;
+  PB-004 darf anschließend nur die ihm zugewiesenen Zustände referenzieren.
+- Bestehende Statusangaben und Nachweise müssen bei der späteren Umsetzung
+  explizit einer Dimension und einem Zustandsobjekt zugeordnet werden; aus
+  gleichnamigen Legacy-Werten darf kein Status automatisch abgeleitet werden.
+- Schemata und Validatoren können später aus den Enumerationen,
+  Übergangskanten, Rollen und Gates abgeleitet werden, werden durch diese
+  Decision aber weder erstellt noch geändert.
+- Die kontrollierte Artefaktfamilie für Review- und Freigabenachweise bleibt
+  außerhalb dieser Decision und der Resolution von `GOV-B-008` und
+  `GOV-B-009` vorbehalten.
+
+**Verwandte Entscheidungen**
+
+- AD-005
+- AD-007
+- AD-010
+- AD-012
+
+**Traceability**
+
+- GA-001
+- GA-001-RES
+- GOV-B-014
+- WP-003
+
 # Versionshistorie
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.9.0 | 2026-08-07 | Canonical | AD-013 als Pending Decision zum Unified Governance State Model für GOV-B-014 und WP-003 vorbereitet; keine Umsetzung vorgenommen. |
 | 1.8.0 | 2026-08-07 | Canonical | AD-012 nach Governance-Review angenommen und das Process Ownership Model durch die Trennung von Authority, Ownership und Execution sowie eindeutige Dokumentzuständigkeiten präzisiert. |
 | 1.7.0 | 2026-08-07 | Canonical | AD-012 als Pending Decision zum Process Ownership Model für GOV-B-006 und WP-003 vorbereitet; keine Umsetzung vorgenommen. |
 | 1.6.0 | 2026-08-07 | Canonical | AD-009 bis AD-011 umgesetzt: zentrales AD-Register, verbindlicher Lifecycle, Supersession, Frontmatter-Referenzen und vollständige WP-001-Traceability konsolidiert. |
