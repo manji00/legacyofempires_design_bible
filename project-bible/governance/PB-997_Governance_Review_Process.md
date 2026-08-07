@@ -1,11 +1,11 @@
 ---
 document_id: PB-997
 title: Governance Review Process
-version: 1.0.0
+version: 1.1.0
 status: Canonical
 category: Governance
 created: 2026-08-06
-updated: 2026-08-06
+updated: 2026-08-07
 owners:
   - Project Lead
 reviewers: []
@@ -21,22 +21,22 @@ supersedes: []
 superseded_by: null
 depends_on:
   - PB-000
-  - PB-004
   - PB-998
-  - PB-999
 related_documents:
-  - PB-004
-  - PB-998
-  - PB-999
+  - GA-001
+  - GA-001-RES
+  - WP-001-CLOSE
 systems: []
 requirements: []
 design_goals: []
 tags:
   - governance
   - review
-  - quality-assurance
-  - release
-  - approval
+  - audit
+  - resolution
+  - work-package
+  - verification
+  - traceability
 canonical_path: project-bible/governance/PB-997_Governance_Review_Process.md
 context_priority: critical
 ---
@@ -45,283 +45,353 @@ context_priority: critical
 
 ## Inhaltsverzeichnis
 
-1. [Zweck](#1-zweck)
-2. [Geltungsbereich](#2-geltungsbereich)
-3. [Review-Phasen](#3-review-phasen)
-4. [Review-Regeln](#4-review-regeln)
-5. [Freigabeprozess](#5-freigabeprozess)
-6. [Qualitätskriterien](#6-qualitätskriterien)
-7. [Rollen und Verantwortlichkeiten](#7-rollen-und-verantwortlichkeiten)
-8. [Abschluss des Reviews](#8-abschluss-des-reviews)
+1. [Zweck und Prozessgrenze](#1-zweck-und-prozessgrenze)
+2. [Erprobter Governance-Lifecycle](#2-erprobter-governance-lifecycle)
+3. [Audit Report](#3-audit-report)
+4. [Resolution Plan und Architecture Board Review](#4-resolution-plan-und-architecture-board-review)
+5. [Work Package](#5-work-package)
+6. [Architecture-Decision-Lifecycle](#6-architecture-decision-lifecycle)
+7. [Implementation](#7-implementation)
+8. [Verification](#8-verification)
+9. [Closure Report](#9-closure-report)
+10. [Definition of Done eines Work Packages](#10-definition-of-done-eines-work-packages)
+11. [Traceability](#11-traceability)
+12. [Abschluss und Scope-Kontrolle](#12-abschluss-und-scope-kontrolle)
 
-# 1 Zweck
+# 1 Zweck und Prozessgrenze
 
-PB-997 definiert den verbindlichen Review- und Freigabeprozess für Governance-Dokumente der Project Bible. Der Prozess schafft eine einheitliche, wiederholbare und nachweisbare Qualitätssicherung zwischen inhaltlicher Fertigstellung und Veröffentlichung eines freigegebenen Dokumentstands.
+PB-997 dokumentiert den Governance-Prozess in der Form, in der er mit `GA-001`,
+`GA-001-RES` und `WP-001` tatsächlich durchgeführt und abgeschlossen wurde. Der
+Prozess verbindet einen lesenden Audit mit einer beschlossenen Resolution, den
+erforderlichen Architecture Decisions, einem abgegrenzten Work Package, der
+Umsetzung, der Verifikation und einem historischen Closure Report.
 
-Das Governance Review prüft ausschließlich, ob ein vorgelegter Stand die geltenden formalen, terminologischen, redaktionellen und Governance-bezogenen Anforderungen erfüllt. Es entscheidet nicht über neue Inhalte, Gameplaymechaniken, technische Implementierungen, Architektur oder Projektplanung.
+Dieses Dokument beschreibt ausschließlich diesen Ablauf. Es entscheidet keine
+Findings neu, erweitert kein Work Package und stellt keine zusätzlichen
+Anforderungen an Aufbau, Status oder Freigabe anderer PB-Dokumente. Für die
+inhaltliche Geltung von Architecture Decisions und ihren Lifecycle bleibt
+PB-998 die einzige kanonische Quelle. Audit Reports, Resolution Plans und
+Closure Reports sind Nachweisartefakte; sie werden durch PB-997 nicht zu
+kanonischen Governance-Quellen.
 
-Jedes Review muss einen eindeutig identifizierbaren Dokumentstand, dokumentierte Prüfergebnisse, nachvollziehbare Befunde und eine ausdrückliche Freigabeentscheidung besitzen. Dadurch bleibt erkennbar, was geprüft wurde, welche Korrekturen erforderlich waren und warum ein Stand freigegeben oder abgelehnt wurde.
+Der dokumentierte Ablauf ist ein Remediation- und Nachweisprozess. Er ist nicht
+mit einem allgemeinen redaktionellen Dokument-Release oder einer neuen
+Governance-1.0-Freigabe gleichzusetzen. Insbesondere bleiben die in
+`GA-001-RES` anderen Work Packages zugeordneten Findings außerhalb des Scopes
+von WP-001 und dieses Prozessnachweises.
 
-# 2 Geltungsbereich
+# 2 Erprobter Governance-Lifecycle
 
-Dieser Prozess gilt verbindlich für alle neu erstellten sowie wesentlich geänderten Dokumente der PB-Serie, bevor sie als freigegebener Governance-Stand veröffentlicht werden. Er gilt ebenso für die erneute Freigabe nach einer Änderung, wenn Status, Version oder Umfang des Dokuments ein neues Governance Review erfordern.
-
-Reine Korrekturen ohne Auswirkung auf Aussage, Geltungsbereich oder Verbindlichkeit dürfen im Rahmen der nach PB-000 zulässigen leichten Prüfung bearbeitet werden. Sobald eine Änderung normative Aussagen, Dokumentgrenzen, Abhängigkeiten, Freigabekriterien oder Governance-Verantwortlichkeiten berührt, ist der vollständige Prozess dieses Dokuments anzuwenden.
-
-Der Prozess kann später durch eine ausdrückliche Governance-Festlegung auf weitere Dokumentfamilien ausgedehnt werden, insbesondere auf:
-
-- GD-Serie,
-- TECH-Serie,
-- CNT-Serie.
-
-Bis zu einer solchen Festlegung ist PB-997 für diese Serien eine empfohlene Prüfgrundlage, aber kein automatisch verbindlicher Releaseprozess. Familienbezogene Zusatzkriterien dürfen den Prozess spezialisieren, jedoch keine seiner verbindlichen Phasen oder Freigabebedingungen stillschweigend aufheben.
-
-# 3 Review-Phasen
-
-Das Governance Review besteht aus fünf Phasen. Jede Phase besitzt einen eigenen Prüfumfang, dokumentierte Ergebnisse und ein Abschlusskriterium. Eine Phase ist erst abgeschlossen, wenn alle anwendbaren Prüfpunkte bearbeitet, alle freigabeverhindernden Befunde behoben und die Ergebnisse nachvollziehbar festgehalten wurden.
-
-## 3.1 Phase 1 – Structure Review
-
-Das Structure Review prüft, ob das Dokument vollständig, geordnet und eindeutig navigierbar ist.
-
-Geprüft werden mindestens:
-
-- Dokumentstruktur,
-- vorhandene und erforderliche Kapitel,
-- logische Reihenfolge der Kapitel,
-- konsistente Nummerierung,
-- Vollständigkeit und Funktionsfähigkeit des Inhaltsverzeichnisses.
-
-Die Phase ist abgeschlossen, wenn die Struktur dem Zweck und Geltungsbereich des Dokuments entspricht, keine erforderlichen Abschnitte fehlen und Inhaltsverzeichnis, Überschriften und Nummerierung miteinander übereinstimmen.
-
-## 3.2 Phase 2 – Terminology Review
-
-Das Terminology Review prüft die sprachliche und referenzielle Konsistenz mit den geltenden Benennungs- und Terminologieregeln.
-
-Geprüft werden mindestens:
-
-- Verwendung kanonischer Begriffe,
-- doppelte oder konkurrierende Begriffe,
-- nicht begründete Synonyme,
-- Vollständigkeit und Auflösbarkeit von Cross References,
-- Konsistenz mit PB-004.
-
-Die Phase ist abgeschlossen, wenn keine ungeklärte Mehrdeutigkeit, keine konkurrierende Benennung und keine fehlerhafte oder nicht auflösbare Referenz verbleibt. PB-997 legt dabei keine Begriffe fest; maßgeblich ist PB-004.
-
-## 3.3 Phase 3 – Editorial Review
-
-Das Editorial Review prüft die redaktionelle Qualität des vollständigen Dokumentstands.
-
-Geprüft werden mindestens:
-
-- Sprache,
-- Stil,
-- Lesbarkeit,
-- vermeidbare Wiederholungen,
-- eindeutige und verbindliche Formulierungen,
-- Glossarkonsistenz.
-
-Die Phase ist abgeschlossen, wenn der Text verständlich, widerspruchsfrei und dem Zweck entsprechend präzise formuliert ist und keine freigaberelevanten redaktionellen Befunde verbleiben.
-
-## 3.4 Phase 4 – Technical Review
-
-Das Technical Review prüft die formale und maschinenlesbare Dokumentqualität. Es bewertet keine technische Implementierung.
-
-Geprüft werden mindestens:
-
-- Vollständigkeit und Gültigkeit des Frontmatters,
-- Übereinstimmung des `canonical_path` mit dem tatsächlichen Ablageort,
-- korrekte Versionierung,
-- Existenz und Auflösbarkeit interner Referenzen,
-- gültiges und konsistentes Markdown,
-- formale Übereinstimmung von Dokumentstruktur, Metadaten und Inhalt.
-
-Die Phase ist abgeschlossen, wenn das Dokument den Vorgaben von PB-000 entspricht, alle internen Referenzen auf existierende Dokumente zeigen und keine formalen oder maschinenlesbaren Fehler verbleiben.
-
-## 3.5 Phase 5 – Release Review
-
-Das Release Review entscheidet, ob der geprüfte Stand alle Voraussetzungen für die Freigabe erfüllt.
-
-Geprüft werden mindestens:
-
-- vollständig bearbeitete und belegte Checklisten,
-- keine offenen TODOs im freizugebenden Dokumentstand,
-- keine offenen freigaberelevanten Editorial-Punkte in PB-999,
-- Einhaltung aller einschlägigen `Accepted` Architecture Decisions aus PB-998,
-- ordnungsgemäße Behandlung aller betroffenen Punkte in PB-999,
-- Release Readiness des eindeutig identifizierten Dokumentstands.
-
-Die Phase ist abgeschlossen, wenn alle vorangegangenen Phasen bestätigt, alle Freigabenachweise vollständig und keine offenen freigabeverhindernden Befunde vorhanden sind. Nicht anwendbare Prüfpunkte müssen mit einer Begründung dokumentiert werden; sie dürfen nicht stillschweigend übersprungen werden.
-
-# 4 Review-Regeln
-
-Für jedes Governance Review gelten folgende verbindliche Regeln:
-
-1. Jede Phase wird vollständig abgeschlossen, bevor die nächste Phase beginnt.
-2. Der zu prüfende Dokumentstand und sein Umfang werden vor Beginn der ersten Phase eindeutig festgehalten.
-3. Während eines Reviews werden keine neuen Features oder neuen fachlichen Inhalte ergänzt.
-4. Reviews dienen ausschließlich der Qualitätssicherung des vorgelegten Stands.
-5. Architekturänderungen erfolgen ausschließlich über PB-998 und dürfen nicht als Review-Korrektur eingeführt werden.
-6. Neue Inhalte werden erst nach Abschluss des laufenden Reviews in einem neuen Bearbeitungsstand ergänzt.
-7. Jeder Befund benennt mindestens die betroffene Stelle, das verletzte Kriterium, die erforderliche Korrektur, die verantwortliche Rolle und den Bearbeitungsstand.
-8. Ein freigabeverhindernder Befund stoppt den Übergang zur nächsten Phase.
-9. Eine Korrektur wird nicht allein durch ihre Durchführung geschlossen; die betroffene Prüfung muss erfolgreich wiederholt werden.
-10. Berührt eine Korrektur eine bereits abgeschlossene Phase, wird diese Phase erneut geöffnet und ab der betroffenen Stelle erneut geprüft. Nachfolgende Phasen werden anschließend erneut bestätigt.
-11. Prüfungen dürfen durch Werkzeuge unterstützt werden, die Freigabeentscheidung bleibt jedoch ausdrücklich einer verantwortlichen Rolle zugeordnet.
-12. Offene, widersprüchliche, unbelegte oder nur teilweise bearbeitete Prüfpunkte gelten als nicht bestanden.
-
-# 5 Freigabeprozess
-
-Der offizielle Freigabeprozess folgt dieser Reihenfolge:
+Der mit WP-001 durchlaufene Lifecycle lautet:
 
 ```text
-Feature Complete
-       ↓
-Editorial Review
-       ↓
-Governance Review
-       ↓
-Bugfixes
-       ↓
-Release Candidate
-       ↓
-Version 1.0
+Audit Report (GA-001)
+        ↓
+Resolution Plan (GA-001-RES)
+        ↓
+Architecture Board Review
+        ↓
+Accepted Architecture Decisions (AD-009 bis AD-011)
+        ↓
+Work Package (WP-001)
+        ↓
+Implementation in abgegrenzten Änderungen und Commits
+        ↓
+Verification gegen Finding- und Work-Package-DoD
+        ↓
+Closure Report (WP-001-CLOSE)
+        ↓
+Closed
 ```
 
-## 5.1 Feature Complete
+Die Schritte sind logisch gekoppelt, besitzen aber unterschiedliche Aufgaben:
+Der Audit bewertet, der Resolution Plan entscheidet über die Behandlung, das
+Architecture Board prüft notwendige Architecture Decisions, das Work Package
+bündelt die beschlossene Arbeit, die Implementation ändert die betroffenen
+Dokumente, die Verification prüft die Nachweise und der Closure Report hält den
+Abschluss historisch fest.
 
-Der Dokumentautor erklärt den vereinbarten Umfang als vollständig. Alle für diesen Umfang vorgesehenen Kapitel und Aussagen sind vorhanden. Neue Inhalte werden ab diesem Punkt für den laufenden Freigabeprozess eingefroren.
+# 3 Audit Report
 
-## 5.2 Editorial Review
+Ein Audit Report der GA-Serie bildet den unveränderten Ausgangspunkt des
+Prozesses. Im erprobten Ablauf war `GA-001` ein ausschließlich lesender
+Cross-Document Consistency Audit. Er dokumentierte je Finding mindestens die
+Identität, Kategorie, Schwere, betroffenen Dokumente, Beobachtung, Auswirkung
+und Empfehlung und schloss mit einem Gesamturteil.
 
-Vor dem formalen Governance Review wird der Gesamttext redaktionell bereinigt. Dabei gefundene sprachliche und darstellerische Mängel werden behoben. Diese vorbereitende Prüfung ersetzt Phase 3 nicht; Phase 3 bestätigt innerhalb des sequenziellen Governance Reviews, dass der vorgelegte Stand die redaktionellen Kriterien weiterhin erfüllt.
+Der Audit nimmt keine Korrektur vor und entscheidet nicht selbst, welche
+Empfehlung umgesetzt wird. Er bleibt als historischer Prüfstand erhalten. Eine
+spätere Resolution, Implementation oder Verification ändert daher weder seine
+damalige Beobachtung noch sein damaliges Gesamturteil.
 
-## 5.3 Governance Review
+```text
+geprüfte Baseline
+       ↓
+Auditprüfung
+       ↓
+Finding mit stabiler ID
+       ↓
+historischer Audit Report
+```
 
-Der vollständige, in Kapitel 3 definierte Fünf-Phasen-Prozess wird auf den festgelegten Dokumentstand angewendet. Das Ergebnis ist entweder eine dokumentierte Liste zu behebender Befunde oder die Bestätigung der Freigabereife.
+# 4 Resolution Plan und Architecture Board Review
 
-## 5.4 Bugfixes
+## 4.1 Resolution Plan
 
-In diesem Schritt werden ausschließlich die dokumentierten Review-Befunde korrigiert. Die Korrekturen dürfen den freigegebenen Umfang nicht erweitern. Jede Korrektur wird gegen das auslösende Kriterium und alle berührten bereits abgeschlossenen Phasen erneut geprüft.
+Der Resolution Plan übernimmt die Findings aus dem Audit, ohne sie
+rückwirkend umzuschreiben. `GA-001-RES` dokumentierte für jedes Finding eine
+Resolution, eine Begründung, den Resolution Path, Priorität, betroffene
+Dokumente, einen eventuellen Bedarf an einer neuen Architecture Decision und
+eine eigene Definition of Done.
 
-Erfordert ein Befund neue Inhalte oder eine Architekturentscheidung, wird der Freigabeprozess beendet. Die erforderliche Arbeit erfolgt außerhalb des Reviews; danach beginnt ein neues Review mit einem neu festgelegten Dokumentstand.
+Anschließend ordnete der Plan jedes angenommene Finding genau einem fachlich
+abgegrenzten Work Package zu und stellte zwingende Abhängigkeiten zwischen den
+Work Packages dar. Damit wurde aus einer Auditbeobachtung eine beschlossene und
+abnehmbare Resolution, ohne dass der Plan selbst die kanonischen Dokumente
+änderte.
 
-## 5.5 Release Candidate
+## 4.2 Architecture Board Review
 
-Ein Dokumentstand darf als Release Candidate bezeichnet werden, wenn alle Befunde aus dem Governance Review korrigiert und nachgeprüft wurden, alle fünf Phasen erfolgreich abgeschlossen sind und nur noch die abschließende Freigabeentscheidung aussteht. Jede nachträgliche Änderung hebt den Release-Candidate-Stand auf, sofern sie nicht erneut durch alle betroffenen Prüfungen bestätigt wurde.
+Für Resolutions mit dem Pfad `NEW ARCHITECTURE DECISION` ging der Umsetzung eine
+Architecture Board Review voraus. Im Fall von WP-001 betraf dies die
+Autoritätsgrenze von CTX-000, das zentrale Architecture-Decision-Modell und die
+Klassifikation der lokalen PB-000-Decision-Einträge.
 
-## 5.6 Version 1.0
+Das Board prüfte die vorgeschlagenen Decisions auf ihren Kontext, ihre
+Konsistenz mit der bestehenden Governance-Architektur, ihre Konsequenzen und
+ihre Entscheidungsreife. Erst die in PB-998 registrierten und angenommenen
+`AD-009`, `AD-010` und `AD-011` gaben die davon abhängigen Korrekturen frei. Der
+Resolution Plan nahm diese Entscheidungen nicht vorweg.
 
-Version `1.0.0` darf erst vergeben werden, wenn der Release Candidate ausdrücklich freigegeben wurde, der Status dem beabsichtigten kanonischen Stand entspricht und alle Abschlussbedingungen aus Kapitel 8 erfüllt sind. Die Freigabe gilt nur für den konkret geprüften Stand.
+```text
+Finding
+  ↓
+Resolution: ACCEPTED WITH AD
+  ↓
+Decision-Entwurf in PB-998
+  ↓
+Architecture Board Review
+  ↓
+Accepted
+  ↓
+abhängige Implementation zulässig
+```
 
-# 6 Qualitätskriterien
+# 5 Work Package
 
-Jedes Governance-Dokument muss vor seiner Freigabe die folgenden allgemeinen Qualitätskriterien erfüllen:
+Ein Work Package bündelt ausschließlich die Findings und Ergebnisse, die ihm
+im genehmigten Resolution Plan zugeordnet sind. Für WP-001 waren dies
+`GOV-B-001`, `GOV-B-002` und `GOV-B-005` mit dem Ergebnis „Decision
+Architecture and Authority“.
 
-## 6.1 Vollständigkeit
+Vor der Implementation waren damit festgelegt:
 
-Der angekündigte Geltungsbereich ist vollständig behandelt. Erforderliche Kapitel, Metadaten, Referenzen, Nachweise und Checklisten fehlen nicht. Ausdrücklich ausgeschlossene Inhalte werden nicht als Lücken gewertet.
+- die zu behandelnden Finding-IDs,
+- die beschlossenen Resolutionen und Resolution Paths,
+- die vorgelagerten Architecture Decisions,
+- die betroffenen Dokumente,
+- die Definition of Done jedes Findings,
+- das Ergebnis und Abschlusskriterium des Work Packages sowie
+- seine Abhängigkeiten und ausdrücklich ausgeschlossenen Arbeiten.
 
-## 6.2 Konsistenz
+Diese Abgrenzung verhinderte, dass benachbarte Findings aus WP-002 bis WP-007
+als vermeintliche Nacharbeit von WP-001 umgesetzt wurden. Kleine, thematisch
+getrennte Änderungen und ein späterer konsolidierter Implementierungsstand
+machten die Bearbeitung überprüfbar, ohne den vereinbarten Scope zu erweitern.
 
-Aussagen, Metadaten, Benennungen, Referenzen und Freigabestatus widersprechen weder einander noch den einschlägigen kanonischen Governance-Dokumenten und `Accepted` Architecture Decisions.
+# 6 Architecture-Decision-Lifecycle
 
-## 6.3 Nachvollziehbarkeit
+Der vollständige Lifecycle einer Architecture Decision ist in PB-998
+festgelegt:
 
-Prüfumfang, Befunde, Korrekturen, Wiederholungsprüfungen, Verantwortlichkeiten und Freigabeentscheidung sind für Dritte rekonstruierbar. Verdeckte Ausnahmen oder unbegründete Abweichungen sind unzulässig.
+```text
+Draft
+  ↓
+Pending
+  ↓
+Architecture Review
+  ↓
+Accepted
+  ↓
+Implemented
+  ↓
+Verified
+  ↓
+Superseded
+```
 
-## 6.4 Referenzierbarkeit
+| Stufe | Bedeutung im Governance-Prozess |
+|---|---|
+| `Draft` | Die Decision wird mit Kontext, Entscheidung, Begründung und Konsequenzen ausgearbeitet. |
+| `Pending` | Der formulierte Eintrag wartet auf die formale Architekturprüfung. |
+| `Architecture Review` | Das Architecture Board prüft Konsistenz, Auswirkungen und Entscheidungsreife. |
+| `Accepted` | Die Decision ist angenommen und gibt die von ihr abhängige Umsetzung frei. |
+| `Implemented` | Die aus der Accepted Decision folgenden Änderungen sind umgesetzt. |
+| `Verified` | Umsetzung und beabsichtigte Wirkung sind anhand der Nachweise geprüft. |
+| `Superseded` | Eine neuere Decision hat die bisherige Decision abgelöst; die historische Decision bleibt erhalten. |
 
-Dokumentidentität, Kapitelstruktur und interne Verweise erlauben stabile, eindeutige Referenzen. Alle verwendeten Dokumentreferenzen sind auflösbar und bezeichnen den beabsichtigten Gegenstand.
+Die Stufen werden nicht durch einen Audit Report, Resolution Plan oder Closure
+Report vergeben. Status und Supersession werden ausschließlich im zentralen
+Register PB-998 geführt. Im Abschlussstand von WP-001 waren AD-009 bis AD-011
+in PB-998 `Accepted`; Implementation und Verification wurden im Closure Report
+nachgewiesen, ohne dass dieses nicht-kanonische Artefakt ihren Registerstatus
+eigenmächtig änderte. Dadurch bleiben Prozessnachweis und Statusautorität klar
+getrennt.
 
-## 6.5 Eindeutigkeit
+# 7 Implementation
 
-Normative Aussagen, Zuständigkeiten, Kriterien und Ergebnisse lassen keine für die Anwendung relevante Mehrdeutigkeit offen. Ungeklärte Alternativen werden nicht als freigegebene Regel dargestellt.
+Die Implementation begann erst nach Annahme der für WP-001 erforderlichen
+Architecture Decisions. Sie setzte die beschlossenen Resolutionen in den
+ausdrücklich betroffenen Dokumenten um:
 
-## 6.6 Wartbarkeit
+- CTX-000 wurde als abgeleitete operative Kontinuitätsansicht ohne normative
+  Autorität umgesetzt,
+- PB-000 und PB-998 wurden auf `AD-XXX`, PB-998 als zentrales Register und
+  `architecture_decisions` als Referenzfeld vereinheitlicht und
+- die lokalen Einträge `PB-000-D01` bis `PB-000-D06` wurden klassifiziert und
+  das konkurrierende lokale Decision-Register entfernt.
 
-Das Dokument vermeidet unnötige Doppelpflege, besitzt eine erkennbare Zuständigkeitsgrenze und kann geändert werden, ohne seine Identität, Historie oder Referenzen zu verlieren.
+Die fachlichen Änderungen wurden durch Commits identifizierbar gemacht. Die
+Implementation blieb auf die Resolutionen und Definitionen of Done von WP-001
+begrenzt; ausdrücklich anderen Work Packages zugewiesene Punkte wurden nicht
+vorweggenommen.
 
-# 7 Rollen und Verantwortlichkeiten
+# 8 Verification
 
-Eine Person darf mehrere Rollen wahrnehmen, sofern jede Verantwortung und jede Freigabeentscheidung ausdrücklich dokumentiert bleibt. Wo unabhängige Prüfung organisatorisch möglich ist, soll der Reviewer nicht mit dem Dokumentautor identisch sein.
+Die Verification prüfte nicht nur, ob Text geändert worden war, sondern ob die
+beabsichtigte Wirkung jeder Resolution im Repository nachweisbar war. Für
+WP-001 umfasste dies:
 
-## 7.1 Dokumentautor
+1. Prüfung jeder Finding-Definition-of-Done,
+2. Prüfung der Umsetzung von AD-009, AD-010 und AD-011,
+3. Prüfung der betroffenen Dokumente und Frontmatter-Referenzen,
+4. Suche nach verbliebenen konkurrierenden normativen Regeln,
+5. Prüfung der Traceability zu den fachlichen und integrierenden Commits,
+6. Prüfung auf Konflikte innerhalb des WP-001-Scopes und
+7. Bestätigung, dass ausgeschlossene Punkte nicht stillschweigend umgesetzt
+   wurden.
 
-Der Dokumentautor:
+Eine durchgeführte Änderung allein schloss ein Finding nicht. Erst der Abgleich
+von Resolution, Architecture Decision, Implementierungsergebnis und Definition
+of Done lieferte den Abschlussnachweis. Die Verification dokumentierte auch
+bewusste Scope-Grenzen als Outstanding Items anderer bereits geplanter Work
+Packages; sie machte diese nicht zu offenen Arbeiten von WP-001.
 
-- erstellt und pflegt den zu prüfenden Dokumentstand,
-- erklärt den vereinbarten Umfang als Feature Complete,
-- stellt die erforderlichen Quellen, Referenzen und Prüfnachweise bereit,
-- nimmt während des Reviews keine Umfangserweiterung vor,
-- bearbeitet zugewiesene Befunde,
-- dokumentiert Korrekturen und meldet sie zur Nachprüfung an,
-- vergibt sich nicht selbst die abschließende Projektfreigabe.
+# 9 Closure Report
 
-## 7.2 Reviewer
+Der Closure Report fasst den unveränderten Abschlussstand eines Work Packages
+als historisches, nicht-kanonisches Nachweisartefakt zusammen. Der erprobte
+Bericht `WP-001-CLOSE` enthält:
 
-Der Reviewer:
+- Executive Summary und Scope,
+- umgesetzte Findings und Architecture Decisions,
+- geänderte Dokumente,
+- eine Traceability Matrix,
+- die Verification je Decision und für die Repository-Konsistenz,
+- Lessons Learned,
+- bereits abgegrenzte Outstanding Items und
+- die ausdrückliche Abschlussbewertung.
 
-- führt die zugewiesenen Prüfungen gegen die festgelegten Kriterien durch,
-- dokumentiert bestandene Prüfpunkte und Befunde nachvollziehbar,
-- bewertet ausschließlich den festgelegten Dokumentstand,
-- fordert keine neuen Features im Rahmen des Reviews,
-- prüft Korrekturen und betroffene Querverbindungen erneut,
-- bestätigt oder verweigert den Abschluss einer Review-Phase auf Grundlage der Nachweise.
+Der Closure Report ändert weder Resolutionen noch Architecture Decisions. Er
+schließt das Work Package nur dann als `CLOSED`, wenn sämtliche ihm
+zugeordneten Definitionen of Done erfüllt sind und innerhalb seines Scopes
+keine offene Arbeit oder kein Konflikt verbleibt. Bereits anderen Work Packages
+zugeordnete Arbeiten verhindern diesen scoped Abschluss nicht.
 
-## 7.3 Governance Maintainer
+# 10 Definition of Done eines Work Packages
 
-Der Governance Maintainer:
+Die für WP-001 tatsächlich angewandte Definition of Done ergibt sich aus den
+beschlossenen Finding-DoDs und dem Abschlusskriterium des Work Packages. Ein
+Work Package ist danach abgeschlossen, wenn:
 
-- stellt die korrekte Anwendung und Reihenfolge des Prozesses sicher,
-- bestätigt Review-Umfang, Dokumentstand und anwendbare Kriterien,
-- koordiniert Phasenübergänge und die Wiedereröffnung betroffener Phasen,
-- prüft die Einhaltung von PB-000, PB-004, PB-998 und PB-999,
-- stellt die Vollständigkeit der Freigabenachweise sicher,
-- empfiehlt auf Basis des Release Reviews Freigabe oder Ablehnung,
-- darf offene Architektur- oder Projektentscheidungen nicht selbst im Review ersetzen.
+- alle ihm im Resolution Plan zugeordneten Findings behandelt sind,
+- jede zugeordnete Resolution im genehmigten Umfang umgesetzt ist,
+- alle vorausgesetzten Architecture Decisions vor der abhängigen Umsetzung in
+  PB-998 registriert und `Accepted` sind,
+- jede Finding-spezifische Definition of Done anhand des Repository-Stands
+  erfüllt und verifiziert ist,
+- die Work-Package-weite Ergebnis- und Abschlussbedingung erfüllt ist,
+- die Kette von Finding über Resolution und Decision bis zu Commit und
+  Verification lückenlos rekonstruiert werden kann,
+- keine widersprüchliche Regel oder offene Arbeit innerhalb des vereinbarten
+  Scopes verbleibt,
+- außerhalb des Scopes liegende Punkte als bestehende Abgrenzungen benannt und
+  nicht vorweggenommen wurden und
+- ein Closure Report Ergebnis, Nachweise und Abschlussstatus festhält.
 
-## 7.4 Projektentscheidung
+Diese Definition beschreibt die Abnahme von WP-001. Sie führt keine allgemeine
+Dokument-Definition-of-Done und keine neue Anforderung an PB-Dokumente ein.
 
-Die Projektentscheidung liegt beim Project Lead oder bei einer ausdrücklich delegierten verantwortlichen Person. Diese Verantwortung:
+# 11 Traceability
 
-- entscheidet über die endgültige Freigabe oder Ablehnung,
-- bestätigt den Release Candidate als kanonischen Stand,
-- autorisiert Status und Version `1.0.0`,
-- stellt sicher, dass keine offenen freigabeverhindernden Befunde übergangen werden,
-- verweist notwendige Architekturänderungen an PB-998 und neue Inhalte in einen nachfolgenden Bearbeitungsstand.
+## 11.1 Nachweiskette
 
-Die Projektentscheidung darf eine nicht erfüllte verbindliche Freigabebedingung nicht durch eine undokumentierte Ausnahme ersetzen.
+Die im WP-001-Abschluss verwendete Traceability verbindet alle
+entscheidungs- und nachweisrelevanten Stufen:
 
-# 8 Abschluss des Reviews
+```text
+Finding
+  ↓
+Resolution
+  ↓
+Architecture Decision (AD)
+  ↓
+Work Package
+  ↓
+Commit
+  ↓
+Verification
+  ↓
+Closure
+```
 
-## 8.1 Freigabe eines Dokuments
+| Stufe | Nachweis im erprobten Ablauf |
+|---|---|
+| Finding | stabile ID `GOV-B-001`, `GOV-B-002` oder `GOV-B-005` in GA-001 |
+| Resolution | Behandlung, Resolution Path und Finding-DoD in GA-001-RES |
+| AD | `AD-009`, `AD-010` oder `AD-011` als Accepted Decision in PB-998 |
+| Work Package | Zuordnung zu WP-001 und gemeinsames Abschlusskriterium in GA-001-RES |
+| Commit | fachliche Registrierungs-, Präzisierungs-, Implementierungs- und Integrations-Commits |
+| Verification | Prüfung der jeweiligen Decision, DoD, Repository-Konsistenz und Konfliktfreiheit |
+| Closure | Traceability Matrix und Abschlussentscheidung in WP-001-CLOSE |
 
-Ein Governance-Dokument gilt als freigegeben, wenn:
+## 11.2 Rückverfolgung in beide Richtungen
 
-- der geprüfte Dokumentstand eindeutig identifiziert ist,
-- alle fünf Review-Phasen erfolgreich abgeschlossen sind,
-- alle anwendbaren Checklistenpunkte belegt sind,
-- keine offenen TODOs oder freigabeverhindernden Befunde bestehen,
-- alle das Dokument betreffenden freigaberelevanten Punkte aus PB-999 abgeschlossen oder nachvollziehbar als nicht anwendbar geklärt sind,
-- alle einschlägigen `Accepted` Architecture Decisions aus PB-998 eingehalten werden,
-- Frontmatter, Status, Version und `canonical_path` konsistent sind,
-- der Governance Maintainer die Freigabereife empfohlen hat,
-- die Projektentscheidung die Freigabe ausdrücklich bestätigt hat.
+Die Kette erlaubt die Vorwärtsprüfung, welche Änderung aus einem Finding
+entstand, und die Rückwärtsprüfung, auf welche Resolution und Decision sich ein
+Implementierungs-Commit stützt. Die Traceability Matrix des Closure Reports
+bildet dazu pro Finding mindestens Resolution, AD, Commit, betroffene Dokumente
+und Abschlussstatus gemeinsam ab.
 
-## 8.2 Vergabe von Version 1.0
+```text
+GA-001 / Finding
+        ↓
+GA-001-RES / Resolution + WP-001
+        ↓
+PB-998 / Accepted AD
+        ↓
+Repository / Commit
+        ↓
+WP-001-CLOSE / Verification + Closed
+```
 
-Version `1.0.0` darf vergeben werden, wenn der vollständige vereinbarte Dokumentumfang freigegeben ist, der Dokumentstand als Release Candidate alle Qualitäts- und Governance-Kriterien erfüllt und die Projektentscheidung die kanonische Erstveröffentlichung autorisiert hat. Eine teilweise abgeschlossene Prüfung, eine vorläufige Zustimmung oder ein offener Befund genügt nicht.
+# 12 Abschluss und Scope-Kontrolle
 
-## 8.3 Abschluss eines Governance Release
+Der vollständige Governance-Lifecycle von WP-001 endet mit einem verifizierten
+Closure Report und dem Status `Closed` für das abgegrenzte Work Package. Dieser
+Abschluss bedeutet ausschließlich, dass `GOV-B-001`, `GOV-B-002` und
+`GOV-B-005` gemäß `GA-001-RES` umgesetzt wurden.
 
-Ein Governance Release ist abgeschlossen, wenn:
+Er bedeutet nicht, dass GA-001 rückwirkend bestanden wurde, dass alle sieben
+Work Packages abgeschlossen sind oder dass Governance 1.0 freigegeben ist. Er
+ändert außerdem keine bestehenden Architecture Decisions und erweitert weder
+die Findings noch die Anforderungen an PB-Dokumente. Damit bleibt der Prozess
+mit WP-001, PB-998 und den im Resolution Plan festgelegten Abhängigkeiten und
+Scope-Grenzen widerspruchsfrei.
 
-1. die Freigabeentscheidung für den unveränderten geprüften Stand dokumentiert ist,
-2. Status, Version, Datum und Metadaten den freigegebenen Stand wiedergeben,
-3. alle Review-Befunde geschlossen und ihre notwendigen Wiederholungsprüfungen bestanden sind,
-4. alle Checklisten und Freigabenachweise vollständig abgelegt sind,
-5. die freigegebene Fassung am kanonischen Pfad veröffentlicht ist,
-6. keine offene Aufgabe in PB-999 der Freigabe dieses Stands widerspricht.
+# Versionshistorie
 
-Nach Abschluss beginnt jede inhaltliche Erweiterung oder normative Änderung einen neuen versionierten Bearbeitungs- und Reviewzyklus. Die abgeschlossene Freigabe gilt nicht automatisch für spätere Änderungen.
+| Version | Datum | Status | Zusammenfassung |
+|---|---|---|---|
+| 1.1.0 | 2026-08-07 | Canonical | Den mit GA-001, GA-001-RES und WP-001 erprobten Governance-Lifecycle einschließlich AD-Lifecycle, Implementation, Verification, Closure, Work-Package-DoD und vollständiger Traceability dokumentiert. |
+| 1.0.0 | 2026-08-06 | Canonical | Ursprünglicher Review- und Freigabeprozess. |
