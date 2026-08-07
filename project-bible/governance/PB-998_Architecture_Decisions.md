@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.7.0
+version: 1.8.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -36,6 +36,7 @@ architecture_decisions:
   - AD-009
   - AD-010
   - AD-011
+  - AD-012
 tags:
   - governance
   - architecture-decisions
@@ -620,7 +621,7 @@ Alle sechs Einträge fassen bereits an anderer Stelle in PB-000 normativ geregel
 
 **Status**
 
-Pending
+Accepted
 
 **Entscheidungsdatum**
 
@@ -650,21 +651,50 @@ aus `GOV-B-014`.
 
 **Entscheidung**
 
-PB-000 und PB-997 erhalten getrennte, komplementäre Verantwortungen:
+Das Governance-Modell trennt **Authority**, **Ownership** und **Execution**:
 
-- **PB-000 definiert Governance-Regeln.** Dazu gehören die zulässigen
+- **Authority (Entscheidungsbefugnis)** bezeichnet das Recht, eine Regel,
+  Klassifikation oder Entscheidung verbindlich zu setzen, zu ändern oder
+  anzunehmen. Authority liegt bei den in PB-000 definierten Freigaberollen;
+  Architecture Decisions werden durch das Architecture Board angenommen und
+  ihr verbindlicher Status wird ausschließlich in PB-998 geführt.
+- **Ownership (kanonische Dokumentverantwortung)** bezeichnet die eindeutige
+  Zuständigkeit eines Dokuments für eine Informationsart. Ownership verleiht
+  einem Prozessakteur keine zusätzliche Authority und darf nicht auf
+  Nachweisartefakte übertragen werden.
+- **Execution (Prozessausführung)** bezeichnet die Durchführung der durch die
+  Governance-Regeln verlangten Aktivitäten, Prüfungen, Freigaben und
+  Protokollierung. Execution wendet Regeln an, setzt oder verändert sie aber
+  nicht.
+
+Die kanonische Ownership ist eindeutig verteilt:
+
+- **PB-000 owns governance rules.** PB-000 definiert Governance-Regeln. Dazu
+  gehören die zulässigen
   Änderungsklassen, die Namen und Auswahlkriterien der Review-Level, die
   grundlegenden Rollen und ihre Entscheidungsbefugnisse sowie die normative
   Pflicht, den jeweils anwendbaren Prozess aus PB-997 zu durchlaufen. PB-000
   beschreibt keinen ausführbaren Reviewablauf, keine Prozessphasen und keine
   dokumentinternen Reviewchecklisten.
-- **PB-997 definiert Governance-Prozesse.** Dazu gehören Auslöser, Reihenfolge
+- **PB-997 owns governance processes.** PB-997 definiert und operationalisiert
+  Governance-Prozesse. Dazu gehören Auslöser, Reihenfolge
   und Abschluss der Reviewaktivitäten, die je Review-Level anzuwendenden
   Prüfschritte, erforderliche Eingaben und Nachweise, Eskalation,
   Wiederholungsprüfung sowie die Protokollierung der Freigabeentscheidung.
-  PB-997 führt keine konkurrierenden Änderungsklassen, Review-Level oder
+  Prozessdokumente dürfen Governance-Regeln niemals neu definieren, verändern,
+  erweitern oder durch abweichende Formulierungen ersetzen. Insbesondere führt
+  PB-997 keine konkurrierenden Änderungsklassen, Review-Level oder
   Rollenbefugnisse ein, sondern operationalisiert ausschließlich die in PB-000
   definierten Regeln.
+- **PB-998 owns Architecture Decisions.** PB-998 ist die einzige kanonische
+  Heimat und das einzige Register für Architecture Decisions. Es dokumentiert
+  deren Kontext, Begründung, Konsequenzen und verbindlichen Lifecycle-Status;
+  weder PB-000 noch PB-997 noch ein Nachweisartefakt darf eine Architecture
+  Decision führen oder ihren Status setzen.
+- **GA documents own evidence only.** Governance-Audit-Dokumente der Familie
+  `GA` enthalten ausschließlich Evidenz zu Baseline, Findings, Durchführung,
+  Prüfergebnissen und Abschluss. Sie besitzen weder Regel-, Prozess- noch
+  Decision-Ownership und keine eigenständige Governance-Authority.
 - Bei einem Konflikt dieser Verantwortungsbereiche wird nicht nach Aktualität
   oder Detailgrad priorisiert. Die Regel beziehungsweise Klassifikation wird in
   PB-000 und der zugehörige Ablauf in PB-997 korrigiert; bis zur expliziten
@@ -744,6 +774,7 @@ Artefakte zu einer dritten Governance-Quelle werden.
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.8.0 | 2026-08-07 | Canonical | AD-012 nach Governance-Review angenommen und das Process Ownership Model durch die Trennung von Authority, Ownership und Execution sowie eindeutige Dokumentzuständigkeiten präzisiert. |
 | 1.7.0 | 2026-08-07 | Canonical | AD-012 als Pending Decision zum Process Ownership Model für GOV-B-006 und WP-003 vorbereitet; keine Umsetzung vorgenommen. |
 | 1.6.0 | 2026-08-07 | Canonical | AD-009 bis AD-011 umgesetzt: zentrales AD-Register, verbindlicher Lifecycle, Supersession, Frontmatter-Referenzen und vollständige WP-001-Traceability konsolidiert. |
 | 1.5.0 | 2026-08-07 | Canonical | AD-009 bis AD-011 als Accepted Decisions für WP-001 registriert. |
