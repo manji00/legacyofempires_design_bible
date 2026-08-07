@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.9.0
+version: 1.10.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -37,6 +37,7 @@ architecture_decisions:
   - AD-010
   - AD-011
   - AD-012
+  - AD-013
 tags:
   - governance
   - architecture-decisions
@@ -774,7 +775,7 @@ Artefakte zu einer dritten Governance-Quelle werden.
 
 **Status**
 
-Pending
+Accepted
 
 **Entscheidungsdatum**
 
@@ -813,6 +814,17 @@ modelliert. Es gibt keinen globalen Status, der gleichzeitig Dokument,
 Review, Architecture Decision, Work Package und Release beschreibt. Jedes
 Zustandsfeld bezeichnet genau ein Zustandsobjekt; Zustände unterschiedlicher
 Objekte dürfen weder gleichgesetzt noch stellvertretend fortgeschrieben werden.
+
+Alle Governance-Zustandsdimensionen sind **orthogonal**. Insbesondere bleiben
+Dokumentstatus, Reviewergebnis (`review_status`), Architecture-Decision-Status,
+Work-Package-Status und Release Stage voneinander unabhängige Zustandsmodelle;
+die Reviewphase (`review_phase`) ist ihnen gegenüber und gegenüber dem
+Reviewergebnis ebenfalls unabhängig. Zwischen den Dimensionen bestehen
+ausschließlich die in dieser Architecture Decision explizit definierten
+Interaktionen und Gates. Ein Übergang in einer Zustandsdimension darf niemals
+automatisch eine andere Zustandsdimension ändern, sofern eine solche
+dimensionenübergreifende Transition nicht ausdrücklich durch diese Architecture
+Decision definiert ist.
 
 ### Ownership und zulässige Zustände
 
@@ -860,8 +872,11 @@ Decisions gelten ohne Erweiterung oder Verkürzung die in AD-010 festgelegten
 
 Zustände dürfen nur mit der Identität des Zustandsobjekts, dem vorherigen und
 neuen Wert, Zeitpunkt, verantwortlicher Rolle und Nachweisreferenz geändert
-werden. Ein Zustandsübergang in einer Dimension löst niemals stillschweigend
-einen Übergang in einer anderen Dimension aus.
+werden. Dimensionenübergreifende Gates prüfen lediglich Voraussetzungen; sie
+setzen keinen Zustand der jeweils anderen Dimension. Ein Zustandsübergang in
+einer Dimension löst niemals stillschweigend oder automatisch einen Übergang in
+einer anderen Dimension aus, außer diese Architecture Decision definiert den
+dimensionenübergreifenden Übergang ausdrücklich.
 
 ### Freigabeverantwortlichkeiten und dimensionenübergreifende Gates
 
@@ -950,9 +965,9 @@ maschinenprüfbar.
 
 **Konsequenzen**
 
-- Solange diese Decision `Pending` ist, entsteht keine verbindliche neue Regel
-  und keine Umsetzung ist freigegeben.
-- Nach Annahme kann WP-003 die Zustandsfelder und Versionierungsregel in PB-000
+- Mit Annahme dieser Decision wird das orthogonale Governance-Zustandsmodell
+  verbindlich; die konkrete Umsetzung bleibt WP-003 vorbehalten.
+- WP-003 kann die Zustandsfelder und Versionierungsregel in PB-000
   sowie die Review-, Work-Package- und Releaseabläufe in PB-997 synchronisieren;
   PB-004 darf anschließend nur die ihm zugewiesenen Zustände referenzieren.
 - Bestehende Statusangaben und Nachweise müssen bei der späteren Umsetzung
@@ -983,6 +998,7 @@ maschinenprüfbar.
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.10.0 | 2026-08-07 | Canonical | AD-013 nach Governance-Review angenommen und die Orthogonalität aller Governance-Zustandsdimensionen sowie ausschließlich explizit definierte dimensionenübergreifende Interaktionen festgelegt. |
 | 1.9.0 | 2026-08-07 | Canonical | AD-013 als Pending Decision zum Unified Governance State Model für GOV-B-014 und WP-003 vorbereitet; keine Umsetzung vorgenommen. |
 | 1.8.0 | 2026-08-07 | Canonical | AD-012 nach Governance-Review angenommen und das Process Ownership Model durch die Trennung von Authority, Ownership und Execution sowie eindeutige Dokumentzuständigkeiten präzisiert. |
 | 1.7.0 | 2026-08-07 | Canonical | AD-012 als Pending Decision zum Process Ownership Model für GOV-B-006 und WP-003 vorbereitet; keine Umsetzung vorgenommen. |
