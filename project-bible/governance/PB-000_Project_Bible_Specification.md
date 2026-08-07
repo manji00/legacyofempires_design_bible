@@ -1,11 +1,11 @@
 ---
 document_id: PB-000
 title: Project Bible Specification
-version: 1.0.1
+version: 1.0.2
 status: Canonical
 category: Governance
 created: 2026-08-05
-updated: 2026-08-06
+updated: 2026-08-07
 owners:
   - Project Lead
 reviewers: []
@@ -43,6 +43,9 @@ design_goals:
   - DG-DOC-002
   - DG-DOC-003
   - DG-DOC-004
+architecture_decisions:
+  - AD-010
+  - AD-011
 tags:
   - governance
   - documentation
@@ -1348,42 +1351,15 @@ These questions do not block adoption of PB-000.
 
 ---
 
-## 34. Decisions
-
-### Decision PB-000-D01
-
-Markdown with YAML frontmatter is the canonical source format.
-
-### Decision PB-000-D02
-
-The Project Bible is the Single Source of Truth for product definition.
-
-### Decision PB-000-D03
-
-The documentation system uses stable IDs and explicit traceability.
-
-### Decision PB-000-D04
-
-Scenario-specific content is separated from generic engine documentation.
-
-### Decision PB-000-D05
-
-Prototyping is allowed under a lightweight exception, but successful prototypes must be documented before becoming production foundations.
-
-### Decision PB-000-D06
-
-AI assistants are contributors, not authorities. Their output follows the same review and canonicalization process as human-authored work.
-
----
-
-## 35. Change History
+## 34. Change History
 
 | Version | Date | Status | Summary |
 |---|---|---|---|
+| 1.0.2 | 2026-08-07 | Canonical | Removed the redundant local decision list; its statements remain normative in their subject-matter sections, with originating Architecture Decisions referenced through `architecture_decisions`. |
 | 1.0.0 | 2026-08-05 | Canonical | Initial Project Bible specification defining structure, metadata, IDs, lifecycle, traceability, AI usage, migration and prototyping rules. |
 
 ---
 
-## 36. Final Rule
+## 35. Final Rule
 
 > Document the intent. Define the rules. Trace the implementation. Preserve the history. Keep building.
