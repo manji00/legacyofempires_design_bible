@@ -1,11 +1,11 @@
 ---
 document_id: PB-000
 title: Project Bible Specification
-version: 1.0.0
+version: 1.0.1
 status: Canonical
 category: Governance
 created: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-06
 owners:
   - Project Lead
 reviewers: []
@@ -26,9 +26,6 @@ related_documents:
   - PB-002
   - PB-003
   - PB-004
-  - PB-005
-  - PB-006
-  - PB-007
 systems: []
 requirements:
   - REQ-DOC-001

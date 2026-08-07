@@ -1,21 +1,28 @@
 ---
 document_id: PB-001
 title: Projektmanifest
-version: 1.0
-status: Active
+version: 1.0.1
+status: Canonical
 category: Governance
 document_type: Manifest
 language: de
-last_updated: 2026-08-05
+created: 2026-08-05
+updated: 2026-08-06
+owners:
+  - Project Lead
+reviewers: []
 source_of_truth: true
-supersedes:
-  - PB-001 version 0.1
+supersedes: []
+superseded_by: null
 depends_on:
+  - CTX-000
   - PB-000
 related_documents:
   - PB-002
   - PB-003
-  - TECH-100
+systems: []
+requirements: []
+design_goals: []
 tags:
   - grand-strategy
   - emergent-history
@@ -26,11 +33,15 @@ tags:
   - deterministic-simulation
   - optional-ai
 audience:
-  - game-design
-  - development
-  - content-design
-  - modding
-  - ai-assistants
+  - Human Collaborators
+  - Designers
+  - Developers
+  - AI Assistants
+  - Modders
+  - Testers
+  - Future Maintainers
+canonical_path: project-bible/governance/PB-001_Projektmanifest.md
+context_priority: critical
 ---
 
 # PB-001 – Das Projektmanifest

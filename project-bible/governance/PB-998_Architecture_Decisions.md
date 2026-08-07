@@ -1,8 +1,8 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.2.0
-status: Living Document
+version: 1.2.1
+status: Canonical
 category: Governance
 created: 2026-08-06
 updated: 2026-08-06

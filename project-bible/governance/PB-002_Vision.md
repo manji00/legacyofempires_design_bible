@@ -1,11 +1,11 @@
 ---
 document_id: PB-002
 title: Vision
-version: 1.0.0
+version: 1.0.1
 status: Canonical
 category: Governance
 created: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-06
 owners:
   - Project Lead
 reviewers: []
@@ -29,8 +29,6 @@ depends_on:
 related_documents:
   - PB-003
   - PB-004
-  - GD-100
-  - TECH-100
 systems:
   - SYS-SIMULATION
   - SYS-POLITICS

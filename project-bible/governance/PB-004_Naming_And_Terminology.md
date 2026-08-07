@@ -1,8 +1,8 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.16.1
-status: Release Candidate
+version: 0.16.2
+status: Review
 release_stage: RC1
 review_status: Passed
 review_process: PB-997
