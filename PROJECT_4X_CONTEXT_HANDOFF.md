@@ -3,28 +3,39 @@ document_id: CTX-000
 title: Project 4X Context Handoff
 version: 1.0
 status: Active
-category: Governance
+category: Derived Operational Continuity Artifact
 purpose:
   - Preserve project continuity across new chats
   - Prevent restarting completed work
-  - Provide canonical project decisions and next steps
+  - Summarize canonical project state for operational continuity
 audience:
   - Human collaborators
   - ChatGPT
   - Coding assistants
   - Future maintainers
-source_of_truth: true
+source_of_truth: false
 ---
 
 # Project 4X – Context & Continuity Handoff
 
+> **Authority notice:** CTX-000 is a Derived Operational Continuity Artifact under
+> AD-009. It is neither canonical nor normative and is not a Source of Truth. The
+> responsible canonical PB documents always take precedence. Accepted Architecture
+> Decisions are maintained exclusively in
+> [`PB-998`](project-bible/governance/PB-998_Architecture_Decisions.md), and the
+> normative documentation rules are maintained in
+> [`PB-000`](project-bible/governance/PB-000_Project_Bible_Specification.md).
+
 ## 1. Purpose of This File
 
-This file exists to prevent loss of context when starting a new chat.
+This file exists to prevent loss of operational context when starting a new chat.
+It only summarizes information derived from the canonical Project Bible and does
+not establish project rules, decisions, status, or work priorities.
 
 A new chat must **not** restart the project, recreate already completed documents, or reinterpret the project from scratch.
 
-The assistant must first read this file and continue from the documented current state.
+The assistant uses this file as an entry point and verifies the current state in
+the responsible canonical PB documents before continuing.
 
 ## Mandatory Continuity Rule
 
@@ -595,7 +606,7 @@ Examples:
 
 Agreed as useful but not yet fully specified:
 
-- ADR – Architecture Decision Record
+- AD – Architecture Decision in the central PB-998 register
 - RFC – Request for Comments
 - DG – Design Goal
 - TEST – Test specification
@@ -684,7 +695,10 @@ These are candidate statements, not all necessarily final.
 
 ---
 
-# 16. Current Work State
+# 16. Historical Work-State Snapshot
+
+This section is a non-normative historical snapshot. Current document status must
+be read from each canonical PB document rather than inferred from this summary.
 
 ## Completed in Discussion
 
@@ -715,45 +729,15 @@ The following conceptual work is already agreed:
 
 ---
 
-# 17. Exact Next Step
+# 17. Derivation of the Next Step
 
-## Current Next Task
+CTX-000 does not define a current or subsequent task. The next step is derived at
+the time of use from:
 
-> **Create PB-000 – Project Bible Specification as the canonical documentation standard.**
-
-PB-000 should define:
-
-- folder structure,
-- document categories,
-- YAML frontmatter,
-- document IDs,
-- system IDs,
-- requirement IDs,
-- design goal IDs,
-- references,
-- context maps,
-- versioning,
-- status lifecycle,
-- review process,
-- human/developer/machine layers,
-- traceability,
-- ADRs,
-- RFCs,
-- relationship to GitHub,
-- AI usage,
-- templates,
-- migration rules for existing documents,
-- automatic generation targets,
-- scope control,
-- prototyping exceptions.
-
-## After PB-000
-
-1. rewrite PB-001 Project Manifest,
-2. rewrite PB-002 Vision,
-3. rewrite PB-003 Design Philosophy,
-4. rewrite TECH-100 Engine Architecture,
-5. continue with GD-100 Core Gameplay Loop.
+1. the status and content of the responsible canonical PB documents,
+2. the Accepted Architecture Decisions in
+   [`PB-998`](project-bible/governance/PB-998_Architecture_Decisions.md), and
+3. the expressly approved work order.
 
 ## Critical Continuity Instruction
 
@@ -763,7 +747,7 @@ Do not propose another new manifesto structure.
 
 Do not restart with introductory brainstorming.
 
-Continue with the exact next task above unless the user explicitly changes it.
+Do not treat a task or sequence preserved in this derived artifact as authority.
 
 ---
 
@@ -777,7 +761,8 @@ Continue from the documented current state.
 GO.
 ```
 
-The assistant should then begin PB-000.
+The assistant should then verify the canonical PB documents and follow the
+expressly approved work order.
 
 ---
 
@@ -807,8 +792,7 @@ The first scenario is Kaiserreich.
 
 The documentation system is the Project Bible.
 
-The immediate task is PB-000.
+This artifact does not define the immediate task.
 
-Do not restart.
-
-Continue.
+For current authority, consult the responsible canonical PB documents. This
+summary cannot prescribe the next action.
