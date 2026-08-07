@@ -1,11 +1,11 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.2.1
+version: 1.3.0
 status: Canonical
 category: Governance
 created: 2026-08-06
-updated: 2026-08-06
+updated: 2026-08-07
 owners:
   - Project Lead
 reviewers: []
@@ -433,3 +433,170 @@ Eine gemeinsame `Proposal`-Abstraktion verhindert doppelte Definitionen in mehre
 - AD-004
 - AD-005
 - AD-006
+
+# Governance-Architektur
+
+## AD-009 – CTX-000 ist eine abgeleitete operative Kontinuitätsansicht
+
+**Status**
+
+Pending
+
+**Entscheidungsdatum**
+
+Ausstehend
+
+**Betroffene Dokumente**
+
+- CTX-000
+- PB-000
+- PB-998
+
+**Kontext**
+
+CTX-000 dient der Arbeitskontinuität, beansprucht derzeit jedoch eigene normative Autorität und beschreibt einen gegenüber der kanonischen Project Bible veralteten Arbeitsstand. `GOV-B-001` des genehmigten Resolution Plans `GA-001-RES` verlangt deshalb vor jeder Korrektur von CTX-000 eine Architecture Decision über Autoritätsgrenze, Aktualisierungsverantwortung und Ableitung.
+
+**Entscheidung**
+
+Zur Entscheidung vorbereitet wird folgende Festlegung:
+
+- CTX-000 ist eine abgeleitete, nicht-kanonische operative Kontinuitätsansicht ohne eigene normative Autorität und keine Source of Truth.
+- Die jeweils zuständigen kanonischen Project-Bible-Dokumente und Accepted Architecture Decisions bleiben für alle in CTX-000 zusammengefassten Aussagen autoritativ.
+- Der Project Lead verantwortet die Aktualisierung von CTX-000. Eine Aktualisierung erfolgt nach Änderungen des kanonischen Projektstands, bevor CTX-000 erneut als Arbeitskontext verwendet wird.
+- Projektstand und nächster Arbeitsschritt werden ausschließlich aus dem Status der kanonischen Project-Bible-Dokumente, den Accepted Architecture Decisions und den ausdrücklich genehmigten Arbeitsaufträgen abgeleitet.
+- CTX-000 verweist auf diese Quellen, fasst sie nur für die operative Kontinuität zusammen und darf ihnen weder widersprechen noch einen konkurrierenden nächsten Arbeitsschritt festlegen.
+
+Diese vorbereitete Festlegung ist im Status `Pending` nicht verbindlich und darf noch nicht umgesetzt werden.
+
+**Begründung**
+
+Die Trennung bewahrt den praktischen Nutzen des Handoffs, ohne eine zweite Source of Truth neben der Project Bible zu schaffen. Eine benannte Verantwortung und eindeutige Ableitungsquellen verhindern, dass ein veralteter Handoff den kanonischen Projektstand überschreibt.
+
+**Konsequenzen**
+
+- Vor einer Annahme dieser Decision erfolgen keine daraus abgeleiteten Änderungen an CTX-000 oder PB-000.
+- Nach einem Statuswechsel zu `Accepted` werden CTX-000 und PB-000 ausschließlich im durch `GOV-B-001` freigegebenen Umfang angepasst.
+- Das Frontmatterprofil für CTX-000 ist nicht Gegenstand dieser Decision und bleibt der für `GOV-B-015` vorgesehenen Resolution vorbehalten.
+
+**Verwandte Entscheidungen**
+
+- AD-005
+- AD-007
+
+**Traceability**
+
+- GA-001-RES
+- GOV-B-001
+- WP-001
+
+## AD-010 – Architecture Decisions verwenden das zentrale AD-Register
+
+**Status**
+
+Pending
+
+**Entscheidungsdatum**
+
+Ausstehend
+
+**Betroffene Dokumente**
+
+- PB-000
+- PB-998
+
+**Kontext**
+
+PB-000 definiert `ADR-XXX` als Familie separater Architecture Decision Records, während PB-998 `AD-XXX` als globale ID-Familie eines zentralen Registers verwendet. `GOV-B-002` des genehmigten Resolution Plans `GA-001-RES` verlangt vor der Bereinigung dieses Konflikts eine Architecture Decision über ID-Familie, Registermodell, Supersession und Frontmatter-Referenzfeld.
+
+**Entscheidung**
+
+Zur Entscheidung vorbereitet wird folgende Festlegung:
+
+- Architecture Decisions verwenden ausschließlich global eindeutige IDs im Format `AD-XXX`.
+- PB-998 ist die einzige kanonische Ablage und das zentrale Register für Architecture Decisions; separate `ADR-XXX`-Dateien oder eine konkurrierende ADR-ID-Familie werden nicht verwendet.
+- Jede Architecture Decision besitzt genau einen Status aus `Pending`, `Accepted`, `Rejected` oder `Superseded`. Nur `Accepted` ist verbindlich.
+- Eine zu ersetzende Accepted Decision wird nicht inhaltlich umgeschrieben oder gelöscht. Eine neue AD mit der nächsten freien ID dokumentiert die neue Entscheidung; die bisherige AD wird auf `Superseded` gesetzt, und beide Einträge verweisen unter „Verwandte Entscheidungen“ aufeinander.
+- Das Frontmatter-Feld `architecture_decisions` referenziert die unmittelbar auf ein Dokument anwendbaren Accepted Decisions als Liste von `AD-XXX`-IDs. Leere Listen werden als `architecture_decisions: []` angegeben.
+
+Diese vorbereitete Festlegung ist im Status `Pending` nicht verbindlich und darf noch nicht umgesetzt werden.
+
+**Begründung**
+
+Eine einzige ID-Familie und Ablage beseitigen konkurrierende Regeln, erhalten die bereits etablierten AD-IDs und machen Status sowie Supersession an einer Stelle nachvollziehbar. Ein eindeutiges Frontmatter-Feld schafft die von `GOV-B-002` verlangte Referenzform, ohne die weitergehende Pflege aller Decision-Referenzen aus `GOV-B-010` vorwegzunehmen.
+
+**Konsequenzen**
+
+- Vor einer Annahme dieser Decision erfolgen keine daraus abgeleiteten Änderungen am ADR-Kapitel, an ID-Beispielen oder am Frontmatter-Modell von PB-000.
+- Nach einem Statuswechsel zu `Accepted` werden PB-000 und PB-998 im Umfang von `GOV-B-002` auf dasselbe Modell gebracht.
+- Die vollständige Befüllung und Validierung des Referenzfelds in weiteren Dokumenten bleibt außerhalb von WP-001.
+- Die Klassifikation der Einträge `PB-000-D01` bis `PB-000-D06` wird erst durch AD-011 entschieden.
+
+**Verwandte Entscheidungen**
+
+- AD-005
+- AD-007
+- AD-011
+
+**Traceability**
+
+- GA-001-RES
+- GOV-B-002
+- WP-001
+
+## AD-011 – PB-000-D01 bis PB-000-D06 sind normative Spezifikationsregeln
+
+**Status**
+
+Pending
+
+**Entscheidungsdatum**
+
+Ausstehend
+
+**Betroffene Dokumente**
+
+- PB-000
+- PB-998
+
+**Kontext**
+
+PB-000 führt sechs Einträge mit den IDs `PB-000-D01` bis `PB-000-D06` unter der Überschrift „Decisions“. Damit ist nicht erkennbar, ob sie Architecture Decisions, normative Regeln der Spezifikation oder nicht-normative Beschlüsse sind. `GOV-B-005` des genehmigten Resolution Plans `GA-001-RES` verlangt nach Festlegung des einheitlichen Decision-Modells eine Einzelklassifikation und gegebenenfalls die Migration echter Architecture Decisions.
+
+**Entscheidung**
+
+Unter der Voraussetzung, dass AD-010 den Status `Accepted` erhält, wird folgende Klassifikation zur Entscheidung vorbereitet:
+
+| Eintrag | Klassifikation | Normative Heimat in PB-000 |
+|---|---|---|
+| `PB-000-D01` | Normative Spezifikationsregel | Kapitel 4.2 sowie das Frontmatter- und Formatmodell |
+| `PB-000-D02` | Normative Spezifikationsregel | Kapitel 1 und 4.1 |
+| `PB-000-D03` | Normative Spezifikationsregel | Kapitel 4.6 sowie die ID- und Traceability-Regeln |
+| `PB-000-D04` | Normative Spezifikationsregel | Kapitel 4.4 und die Dokumentstruktur |
+| `PB-000-D05` | Normative Spezifikationsregel | Prototyping Exception in PB-000 |
+| `PB-000-D06` | Normative Spezifikationsregel | Regeln für AI Assistants in PB-000 |
+
+Keiner der sechs Einträge wird als eigenständige Architecture Decision oder nicht-normativer Beschluss klassifiziert. Ihre Aussagen bleiben als normative Regeln an ihrer jeweiligen fachlichen Heimat in PB-000 erhalten; die konkurrierende Decision-Liste und ihre lokalen `PB-000-DXX`-IDs entfallen nach Annahme dieser Decision.
+
+Diese vorbereitete Festlegung ist im Status `Pending` nicht verbindlich und darf noch nicht umgesetzt werden.
+
+**Begründung**
+
+Alle sechs Einträge fassen bereits an anderer Stelle in PB-000 normativ geregelte Inhalte zusammen. Sie treffen keine eigenständigen Architekturentscheidungen mit dokumentiertem Kontext, Alternativen und Konsequenzen. Ihre Einordnung als Spezifikationsregeln erhält die normativen Aussagen, ohne ein zweites Decision-Register zu führen.
+
+**Konsequenzen**
+
+- Vor der Annahme von AD-010 und dieser Decision wird PB-000 nicht geändert.
+- Nach einem Statuswechsel beider Decisions zu `Accepted` wird die lokale Decision-Liste aus PB-000 entfernt, ohne die klassifizierten normativen Regeln zu entfernen oder fachlich zu verändern.
+- Es werden keine `AD-XXX`-Einträge für `PB-000-D01` bis `PB-000-D06` migriert.
+
+**Verwandte Entscheidungen**
+
+- AD-005
+- AD-007
+- AD-010
+
+**Traceability**
+
+- GA-001-RES
+- GOV-B-005
+- WP-001
