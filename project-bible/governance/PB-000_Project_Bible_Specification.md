@@ -1,7 +1,7 @@
 ---
 document_id: PB-000
 title: Project Bible Specification
-version: 1.0.2
+version: 1.1.0
 status: Canonical
 category: Governance
 created: 2026-08-05
@@ -20,7 +20,7 @@ source_of_truth: true
 supersedes: []
 superseded_by: null
 depends_on:
-  - CTX-000
+  - PB-998
 related_documents:
   - PB-001
   - PB-002
@@ -44,6 +44,7 @@ design_goals:
   - DG-DOC-003
   - DG-DOC-004
 architecture_decisions:
+  - AD-009
   - AD-010
   - AD-011
 tags:
@@ -89,7 +90,7 @@ PB-000 defines:
 - human, developer and machine-readable layers,
 - requirement and design-goal traceability,
 - relationships between design, architecture, implementation and tests,
-- ADR and RFC usage,
+- Architecture Decision and RFC usage,
 - GitHub integration,
 - AI assistant usage,
 - templates,
@@ -201,7 +202,6 @@ legacyofempires_design_bible/
 │   ├── development/
 │   └── appendix/
 ├── decisions/
-│   ├── adr/
 │   └── rfc/
 ├── schemas/
 ├── templates/
@@ -217,7 +217,7 @@ legacyofempires_design_bible/
 ### 6.1 Directory Rules
 
 - `project-bible/` contains canonical product documentation.
-- `decisions/adr/` contains accepted architectural decisions.
+- `project-bible/governance/PB-998_Architecture_Decisions.md` is the only canonical Architecture Decision register.
 - `decisions/rfc/` contains substantial proposals under discussion.
 - `schemas/` contains JSON Schema, YAML schema or equivalent machine-readable definitions.
 - `templates/` contains canonical document templates.
@@ -244,7 +244,7 @@ legacyofempires_design_bible/
 
 | Prefix | Category | Purpose | Example |
 |---|---|---|---|
-| ADR | Architecture Decision Record | Accepted technical or structural decision | ADR-001 |
+| AD | Architecture Decision | Accepted technical or structural decision in PB-998 | AD-001 |
 | RFC | Request for Comments | Proposal requiring review before acceptance | RFC-001 |
 | API | API Specification | Contract between modules or external interfaces | API-001 |
 | SAVE | Savegame Specification | Persistent-state schema and migration rules | SAVE-001 |
@@ -295,7 +295,7 @@ Examples:
 PB-000_Project_Bible_Specification.md
 GD-100_Core_Gameplay_Loop.md
 TECH-100_Engine_Architecture.md
-ADR-001_Simulation_Authority.md
+PB-998_Architecture_Decisions.md
 ```
 
 Rules:
@@ -334,6 +334,7 @@ related_documents: []
 systems: []
 requirements: []
 design_goals: []
+architecture_decisions: []
 tags: []
 canonical_path: project-bible/game-design/GD-100_Core_Gameplay_Loop.md
 ```
@@ -349,7 +350,6 @@ implementation_repositories: []
 implementation_paths: []
 github_issues: []
 github_projects: []
-adr_references: []
 rfc_references: []
 test_references: []
 schema_references: []
@@ -367,6 +367,7 @@ confidentiality: internal
 - `created` and `updated` MUST use ISO `YYYY-MM-DD` format.
 - `source_of_truth` MUST be `true` for canonical documents.
 - references SHOULD use stable IDs rather than file paths where possible.
+- `architecture_decisions` MUST list directly applicable, Accepted and not superseded `AD-XXX` IDs; an empty list MUST be written as `architecture_decisions: []`.
 - scenario-specific documents MUST set `scenario`.
 - `canonical_path` MUST match the intended repository path.
 
@@ -456,7 +457,7 @@ A major Game Design or Technical document SHOULD use this structure:
 15. Requirements
 16. Test Expectations
 17. Open Questions
-18. Decisions and Change History
+18. Change History
 ```
 
 Sections MAY be omitted when not applicable.
@@ -713,13 +714,13 @@ They SHOULD remain small enough to prevent unnecessary AI context loading.
 
 ---
 
-## 17. Architecture Decision Records
+## 17. Architecture Decisions
 
-ADRs record important accepted decisions that should not be rediscovered repeatedly.
+Architecture Decisions record important structural decisions that should not be rediscovered repeatedly. PB-998 is their only canonical register.
 
-### 17.1 ADR Use Cases
+### 17.1 Architecture Decision Use Cases
 
-Create an ADR when deciding:
+Create an Architecture Decision in PB-998 when deciding:
 
 - simulation authority,
 - engine boundaries,
@@ -731,7 +732,7 @@ Create an ADR when deciding:
 - mod-loading rules,
 - major external dependency choices.
 
-### 17.2 ADR Structure
+### 17.2 Architecture Decision Structure
 
 ```text
 1. Context
@@ -742,11 +743,13 @@ Create an ADR when deciding:
 6. References
 ```
 
-### 17.3 ADR Rules
+### 17.3 Architecture Decision Rules
 
-- Accepted ADRs MUST NOT be edited to hide old reasoning.
-- A changed decision MUST create a new ADR that supersedes the old one.
-- ADRs SHOULD be concise.
+- Architecture Decisions MUST use the global `AD-XXX` family and be maintained only in PB-998.
+- Their lifecycle MUST be `Draft` → `Pending` → `Architecture Review` → `Accepted` → `Implemented` → `Verified` → `Superseded`.
+- A Decision MUST NOT be implemented before it is registered and `Accepted`.
+- An abrogating Decision MUST identify replaced Decisions through `supersedes`; replaced entries remain in PB-998 as `Superseded`.
+- Architecture Decisions SHOULD be concise.
 
 ---
 
@@ -774,7 +777,7 @@ RFC statuses:
 An accepted RFC MUST either:
 
 1. be migrated into canonical Project Bible documents,
-2. create one or more ADRs,
+2. create one or more Architecture Decisions in PB-998,
 3. explicitly state that the RFC itself remains the authoritative specification.
 
 The preferred approach is migration into canonical documents.
@@ -813,7 +816,7 @@ A major GitHub issue SHOULD reference:
 
 - canonical document IDs,
 - requirement IDs,
-- relevant ADRs,
+- relevant Architecture Decisions,
 - acceptance criteria,
 - test expectations.
 
@@ -988,7 +991,6 @@ templates/
 ├── Technical_System_Template.md
 ├── Content_Definition_Template.md
 ├── Balancing_Template.md
-├── ADR_Template.md
 ├── RFC_Template.md
 ├── Requirement_Template.md
 └── Context_Map_Template.yaml
@@ -1114,7 +1116,7 @@ Before promotion, successful prototype findings MUST be migrated into:
 
 - canonical design,
 - technical specification,
-- ADRs where needed,
+- Architecture Decisions in PB-998 where needed,
 - implementation requirements,
 - tests.
 
@@ -1184,7 +1186,7 @@ When documents conflict:
 3. prefer the more specific canonical document only when the higher-level document permits specialization,
 4. create an RFC or direct review item if the conflict affects design,
 5. update all impacted references after resolution,
-6. preserve the decision in change history or an ADR.
+6. preserve the decision in change history or an Architecture Decision in PB-998.
 
 An AI assistant MUST report material contradictions rather than silently choosing one.
 
@@ -1355,6 +1357,7 @@ These questions do not block adoption of PB-000.
 
 | Version | Date | Status | Summary |
 |---|---|---|---|
+| 1.1.0 | 2026-08-07 | Canonical | Implemented AD-009 through AD-011: removed CTX authority, standardized the central AD register and `architecture_decisions`, and retained only normative specification rules. |
 | 1.0.2 | 2026-08-07 | Canonical | Removed the redundant local decision list; its statements remain normative in their subject-matter sections, with originating Architecture Decisions referenced through `architecture_decisions`. |
 | 1.0.0 | 2026-08-05 | Canonical | Initial Project Bible specification defining structure, metadata, IDs, lifecycle, traceability, AI usage, migration and prototyping rules. |
 

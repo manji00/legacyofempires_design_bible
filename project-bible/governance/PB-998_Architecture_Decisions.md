@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.5.0
+version: 1.6.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -32,6 +32,10 @@ related_documents:
 systems: []
 requirements: []
 design_goals: []
+architecture_decisions:
+  - AD-009
+  - AD-010
+  - AD-011
 tags:
   - governance
   - architecture-decisions
@@ -46,33 +50,33 @@ context_priority: critical
 
 # Zweck
 
-PB-998 ist das zentrale Register sämtlicher Architecture Decisions von Project 4X. Es bewahrt ihren Kontext, ihren Status, ihre Begründung und ihre Konsequenzen, damit Architekturfragen nachvollziehbar bleiben, dieselben Grundsatzfragen nicht unbeabsichtigt wiederholt entschieden und bestehende Festlegungen nicht stillschweigend umgangen werden.
-
-Jede dokumentierte Entscheidung besitzt genau einen Status: `Accepted`, `Pending`, `Rejected` oder `Superseded`. Nur `Accepted` kennzeichnet eine beschlossene und projektweit verbindliche Entscheidung. `Pending` hält eine bewusst zurückgestellte Architekturfrage für eine spätere Bewertung ausdrücklich fest. `Rejected` bewahrt eine diskutierte und ausdrücklich verworfene Entscheidung zur Nachvollziehbarkeit. `Superseded` kennzeichnet eine früher gültige Entscheidung, die durch eine neuere Entscheidung ersetzt wurde; auch sie bleibt dauerhaft im Register erhalten.
-
-Unstrukturierte Diskussionen, Brainstorming-Ideen, TODOs und Entwürfe gehören nicht in dieses Register. Eine bewusst zurückgestellte Architekturfrage wird dagegen als vollständige Architecture Decision mit dem Status `Pending` dokumentiert.
+PB-998 ist die einzige kanonische Ablage und das zentrale Register sämtlicher Architecture Decisions von Project 4X. Es bewahrt Kontext, Status, Begründung und Konsequenzen jeder Decision. Separate Architecture-Decision-Dateien oder konkurrierende ID-Familien werden nicht geführt.
 
 # Verwendung
 
-Eine Architecture Decision wird erstellt, sobald eine Architekturfrage die fachliche oder technische Struktur, die Zuständigkeit eines kanonischen Dokuments, einen verbindlichen Arbeitsablauf oder eine projektweit geltende Benennung betrifft. Beschlossene Entscheidungen werden vor ihrer Umsetzung als `Accepted` dokumentiert; bewusst zurückgestellte Fragen werden als `Pending` festgehalten, ausdrücklich verworfene Lösungen als `Rejected`. Ihre AD-ID ist global eindeutig.
+Jede Architecture Decision erhält bei ihrer Registrierung die nächste freie, global eindeutige ID im Format `AD-XXX`. IDs werden niemals geändert oder erneut vergeben. Die fachlichen Themenbereiche dienen ausschließlich der Lesbarkeit.
 
-Neue Entscheidungen erhalten immer die nächste freie AD-ID. Bereits vergebene IDs werden niemals geändert oder erneut vergeben. Die fachlichen Themenbereiche dienen ausschließlich der Lesbarkeit: Sie bestimmen weder die ID noch eine chronologische Reihenfolge.
+Der verbindliche Lifecycle lautet:
 
-Bestehende Entscheidungen dürfen ergänzt werden, sofern ihre Aussage dadurch nicht verändert wird. Eine inhaltliche Änderung oder ein Statuswechsel ist nur mit dokumentierter Begründung zulässig. Eine veraltete Entscheidung wird nicht gelöscht, sondern als `Superseded` markiert und mit der sie ablösenden Entscheidung verknüpft. Frühere Begründungen und Konsequenzen bleiben nachvollziehbar erhalten.
+`Draft` → `Pending` → `Architecture Review` → `Accepted` → `Implemented` → `Verified` → `Superseded`
 
-Die Entscheidungen in PB-998 sind Bestandteil der Project Bible. Alle späteren Project-Bible-Dokumente, technischen Spezifikationen, Implementierungspläne und Umsetzungen müssen sich an `Accepted` Decisions orientieren und dürfen sie referenzieren. `Pending` Decisions dürfen nicht als verbindliche Grundlage für andere Dokumente verwendet werden. Auch `Rejected` und `Superseded` sind nicht verbindlich. Ein Widerspruch zu einer `Accepted` Decision darf nicht stillschweigend entstehen, sondern muss durch eine neue dokumentierte Architecture Decision und die ausdrückliche Aktualisierung der betroffenen Dokumente aufgelöst werden.
+- `Draft`: in Ausarbeitung und noch nicht prüfbereit.
+- `Pending`: vollständig formuliert und zur formalen Architekturprüfung vorgemerkt.
+- `Architecture Review`: in Prüfung auf Konsistenz, Auswirkungen und Entscheidungsreife.
+- `Accepted`: angenommen, projektweit verbindlich und zur Umsetzung freigegeben.
+- `Implemented`: die aus der Decision folgenden Änderungen sind umgesetzt; die Decision bleibt verbindlich.
+- `Verified`: Umsetzung und Wirkung sind geprüft; die Decision bleibt verbindlich.
+- `Superseded`: durch eine neuere Decision ersetzt, nicht mehr verbindlich und historisch erhalten.
 
-Für das Register gelten folgende Projektregeln:
+Die Stufen werden in dieser Reihenfolge durchlaufen. Eine Umsetzung darf erst beginnen, nachdem die Decision registriert und `Accepted` ist. Decisions vor `Accepted` und `Superseded` Decisions sind nicht verbindlich. Ab `Accepted` bleibt eine Decision bis zu ihrer Supersession verbindlich.
 
-- Architecture Decisions werden niemals gelöscht.
-- `Rejected` Decisions bleiben zur Dokumentation erhalten.
-- `Superseded` Decisions bleiben historisch erhalten.
-- `Pending` Decisions dürfen nicht als verbindliche Grundlage für andere Dokumente verwendet werden.
-- `Accepted` Decisions dürfen von allen zukünftigen Dokumenten referenziert werden.
+Eine Decision wird weder gelöscht noch inhaltlich umgeschrieben, um eine neue Festlegung abzubilden. Eine ablösende Decision nennt die ersetzten `AD-XXX`-IDs unter der gerichteten Beziehung `supersedes`; die ersetzten Decisions wechseln zu `Superseded`. „Verwandte Entscheidungen“ ersetzt diese Beziehung nicht.
+
+Unmittelbar anwendbare, verbindliche Decisions werden in Project-Bible-Dokumenten im Frontmatter-Feld `architecture_decisions` als Liste von `AD-XXX`-IDs referenziert. Leere Listen werden als `architecture_decisions: []` angegeben.
 
 # Entscheidungsformat
 
-Jede Entscheidung besitzt eine global eindeutige ID im Format `AD-XXX` und wird unter dem passenden fachlichen Themenbereich geführt. Jede Entscheidung verwendet mindestens folgende Struktur:
+Jede Decision wird unter dem passenden fachlichen Themenbereich geführt und enthält mindestens:
 
 ```text
 ## AD-XXX – Titel
@@ -94,14 +98,7 @@ Konsequenzen
 Verwandte Entscheidungen
 ```
 
-Jeder Eintrag enthält genau einen der nachfolgend definierten Status. Die übrigen Pflichtfelder dokumentieren das Entscheidungsdatum, die betroffenen Dokumente, den auslösenden Kontext, die Entscheidung beziehungsweise den bewerteten Entscheidungsvorschlag, ihre Begründung, die daraus folgenden Konsequenzen und Verweise auf verwandte Entscheidungen.
-
-- `Accepted`: Die Entscheidung ist beschlossen, projektweit verbindlich und darf von allen zukünftigen Dokumenten als Grundlage referenziert werden.
-- `Pending`: Die Architekturfrage wurde bewusst zurückgestellt und wird zu einem späteren Zeitpunkt erneut bewertet. Sie ist ausdrücklich dokumentiert, aber nicht verbindlich und darf nicht als verbindliche Grundlage anderer Dokumente dienen.
-- `Rejected`: Die Entscheidung wurde diskutiert und ausdrücklich verworfen. Ihr Eintrag bleibt erhalten, damit die geprüfte Option und die Gründe ihrer Ablehnung nachvollziehbar bleiben.
-- `Superseded`: Die Entscheidung war früher gültig und wurde durch eine neuere Entscheidung ersetzt. Sie ist nicht mehr verbindlich, wird niemals gelöscht und nennt ihren Nachfolger unter „Verwandte Entscheidungen“.
-
-Nur Entscheidungen mit dem Status `Accepted` sind verbindlich. Änderungen an einer Entscheidung und Wechsel ihres Status müssen in ihrem Eintrag begründet und über die Beziehungen zwischen den Entscheidungen nachvollziehbar sein.
+Für eine Supersession wird zusätzlich die Beziehung `supersedes` angegeben. Traceability-Einträge verbinden die Decision mit ihren auslösenden Findings, genehmigten Plänen und Work Packages.
 
 # Glossar & Dokumentation
 
@@ -618,3 +615,10 @@ Alle sechs Einträge fassen bereits an anderer Stelle in PB-000 normativ geregel
 - GA-001-RES
 - GOV-B-005
 - WP-001
+
+# Versionshistorie
+
+| Version | Datum | Status | Zusammenfassung |
+|---|---|---|---|
+| 1.6.0 | 2026-08-07 | Canonical | AD-009 bis AD-011 umgesetzt: zentrales AD-Register, verbindlicher Lifecycle, Supersession, Frontmatter-Referenzen und vollständige WP-001-Traceability konsolidiert. |
+| 1.5.0 | 2026-08-07 | Canonical | AD-009 bis AD-011 als Accepted Decisions für WP-001 registriert. |
