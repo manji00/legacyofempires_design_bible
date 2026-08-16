@@ -1,11 +1,11 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.10.0
+version: 1.12.0
 status: Canonical
 category: Governance
 created: 2026-08-06
-updated: 2026-08-07
+updated: 2026-08-16
 owners:
   - Project Lead
 reviewers: []
@@ -38,6 +38,7 @@ architecture_decisions:
   - AD-011
   - AD-012
   - AD-013
+  - AD-014
 tags:
   - governance
   - architecture-decisions
@@ -994,10 +995,141 @@ maschinenprüfbar.
 - GOV-B-014
 - WP-003
 
+## AD-014 – Governance Reference Model
+
+**Status**
+
+Accepted
+
+**Entscheidungsdatum**
+
+2026-08-16
+
+**Betroffene Dokumente**
+
+- CTX-000
+- PB-000
+- PB-002
+- PB-998
+
+**Kontext**
+
+`GOV-B-012` aus `GA-001` stellt fest, dass nicht auflösbare oder veraltete
+Dokumentreferenzen derzeit nicht eindeutig von beabsichtigt zukünftigen,
+externen oder historischen Verweisen unterschieden werden können. Der
+genehmigte Resolution Plan `GA-001-RES` ordnet das Finding `WP-005` zu und
+verlangt vor der Migration konkreter Referenzen eine Architecture Decision zu
+zulässigen Referenztypen, ihren Auflösungsregeln und dem Umgang mit nicht mehr
+vorhandenen historischen Quellen.
+
+Diese Decision legt ausschließlich die Typen und Auflösungssemantik von
+Referenzzielen fest. Sie führt weder ein Schema, eine Migration oder einen
+Validator noch eine neue Taxonomie für die semantische Beziehung zwischen
+Quelle und Ziel ein.
+
+**Entscheidung**
+
+Jede typisierte Governance-Referenz verwendet genau einen der folgenden fünf
+Referenztypen. Der Typ beschreibt ausschließlich die erwartete Existenz und
+Auflösbarkeit des referenzierten Ziels:
+
+| Referenztyp | Existenz- und Auflösungssemantik |
+|---|---|
+| `canonical` | Das Ziel ist ein gegenwärtig kanonisches Repository-Artefakt und MUSS repository-intern eindeutig auf seine kanonische Identität und Ablage auflösbar sein. |
+| `archived` | Das Ziel ist ein im Repository erhaltenes, nicht mehr gegenwärtig kanonisches Artefakt und MUSS repository-intern eindeutig auf die archivierte Identität und Ablage auflösbar sein. |
+| `planned` | Das Ziel ist ausdrücklich vorgesehen, existiert aber noch nicht. Die Referenz MUSS unaufgelöst bleiben, bis das Artefakt tatsächlich existiert; sie darf weder durch einen Platzhalter noch durch ein anderes bestehendes Artefakt als aufgelöst gelten. Sobald das Ziel existiert, ist der Referenztyp entsprechend seinem tatsächlichen Zustand zu ändern. |
+| `external` | Das Ziel liegt außerhalb des Repositorys. Die Referenz MUSS einen unmissverständlichen Locator enthalten, der das externe Ziel ohne repository-interne Annahmen identifiziert. |
+| `historical_evidence` | Das Ziel bezeichnet historische Evidenz, die nicht mehr repository-intern vorhanden oder auflösbar sein muss. Eine unaufgelöste Referenz ist nur zulässig, wenn die erforderlichen Provenienzmetadaten das frühere Ziel und seine Herkunft nachvollziehbar identifizieren. |
+
+### Architektonische Grenze
+
+**Reference Type**, **Relationship Semantics** und **Authority** sind drei
+orthogonale Konzepte und dürfen weder gleichgesetzt noch voneinander abgeleitet
+werden:
+
+- Der **Reference Type** definiert ausschließlich Auflösung und erwartete
+  Existenz des Ziels.
+- Die **Relationship Semantics** beschreiben unabhängig davon, in welcher
+  fachlichen Beziehung Quelle und Ziel stehen, etwa als Abhängigkeit,
+  verwandtes Dokument, Quelle, Implementierungsreferenz oder Evidenz. Die
+  bestehenden Beziehungsfelder und -regeln bleiben unverändert; diese Decision
+  führt keine neue Beziehungstaxonomie ein.
+- **Authority** bestimmt, ob und in welchem Umfang ein Artefakt normative
+  Geltung besitzt. Sie folgt ausschließlich den dafür zuständigen
+  Governance-Regeln und niemals dem Referenztyp, der Beziehung oder einer
+  erfolgreichen Auflösung.
+
+Damit gilt insbesondere: `canonical` bedeutet nicht automatisch Abhängigkeit,
+`archived` nicht automatisch historische Evidenz, `planned` nicht automatisch
+Roadmap-Abhängigkeit und `external` nicht automatisch normative Quelle. Ebenso
+begründet eine erfolgreiche Referenzvalidierung für keinen Typ normative
+Autorität; sie bestätigt nur die für Typ und ausdrücklich angegebene Beziehung
+prüfbaren Bedingungen.
+
+### Grundlage späterer Validierung
+
+Eine spätere Referenzvalidierung muss Typ, Beziehung und Authority als getrennte
+Prüfdimensionen behandeln. Für den Referenztyp muss sie mindestens:
+
+1. genau einen der fünf zulässigen Typwerte erkennen,
+2. `canonical` und `archived` entsprechend ihrem Typ repository-intern
+   eindeutig auflösen,
+3. `planned` als beabsichtigt unaufgelöst behandeln und eine vermeintliche
+   Auflösung vor tatsächlicher Existenz des Ziels zurückweisen,
+4. bei unaufgelöstem `historical_evidence` die erforderlichen
+   Provenienzmetadaten prüfen und
+5. für `external` einen unmissverständlichen Locator verlangen.
+
+Eine bestandene Typ- oder Auflösungsprüfung darf weder eine nicht ausdrücklich
+deklarierte Beziehung ergänzen noch Authority verleihen. Welche bestehenden
+Beziehungsfelder für eine konkrete Referenz gelten, wird unabhängig geprüft.
+Die konkrete Schema-, Metadaten-, Migrations- und Validatorimplementierung ist
+nicht Gegenstand dieser Decision.
+
+**Begründung**
+
+Die fünf Typen unterscheiden gegenwärtige, archivierte, zukünftige, externe
+und nur noch durch Provenienz belegte Ziele, ohne fehlende Artefakte pauschal
+als Fehler oder gültige Referenz zu behandeln. Die ausdrückliche Orthogonalität
+verhindert zugleich, dass technische Auflösbarkeit fachliche Abhängigkeiten
+erfindet oder normative Autorität erzeugt. Damit bleibt das Reference Model mit
+der Trennung von Authority, Ownership und Execution aus AD-012 sowie dem
+orthogonalen Zustandsmodell aus AD-013 vereinbar.
+
+**Konsequenzen**
+
+- Mit Annahme dieser Decision sind die fünf Referenztypen und ihre
+  Auflösungsregeln für die spätere Umsetzung von `GOV-B-012` verbindlich.
+- `WP-005` kann konkrete Referenzen in CTX-000 und PB-002 später typisieren und
+  die zugehörigen Metadaten- und Validatorregeln umsetzen; diese Arbeiten sind
+  nicht Teil dieser Decision.
+- Bestehende Relationship Semantics und Authority-Regeln werden nicht geändert.
+  Insbesondere darf aus dem Referenztyp keine Beziehung und aus erfolgreicher
+  Validierung keine normative Geltung abgeleitet werden.
+- Nicht vorhandene Ziele dürfen ausschließlich als `planned` oder, mit der
+  erforderlichen Provenienz, als `historical_evidence` regelkonform unaufgelöst
+  bleiben; `canonical` und `archived` müssen repository-intern auflösbar sein.
+
+**Verwandte Entscheidungen**
+
+- AD-009
+- AD-010
+- AD-012
+- AD-013
+
+**Traceability**
+
+- GA-001
+- GA-001-RES
+- GOV-B-012
+- WP-005
+
 # Versionshistorie
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.12.0 | 2026-08-16 | Canonical | AD-014 nach Governance-Review angenommen und die Orthogonalität von Referenztyp, Beziehungssemantik und Authority sowie die fünf typabhängigen Auflösungsregeln verbindlich festgelegt. |
+| 1.11.0 | 2026-08-16 | Canonical | AD-014 als Pending Decision zum Governance Reference Model für GOV-B-012 und WP-005 vorbereitet; keine Umsetzung vorgenommen. |
 | 1.10.0 | 2026-08-07 | Canonical | AD-013 nach Governance-Review angenommen und die Orthogonalität aller Governance-Zustandsdimensionen sowie ausschließlich explizit definierte dimensionenübergreifende Interaktionen festgelegt. |
 | 1.9.0 | 2026-08-07 | Canonical | AD-013 als Pending Decision zum Unified Governance State Model für GOV-B-014 und WP-003 vorbereitet; keine Umsetzung vorgenommen. |
 | 1.8.0 | 2026-08-07 | Canonical | AD-012 nach Governance-Review angenommen und das Process Ownership Model durch die Trennung von Authority, Ownership und Execution sowie eindeutige Dokumentzuständigkeiten präzisiert. |
