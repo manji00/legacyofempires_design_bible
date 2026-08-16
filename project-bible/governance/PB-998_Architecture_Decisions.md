@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.14.0
+version: 1.15.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -33,13 +33,10 @@ systems: []
 requirements: []
 design_goals: []
 architecture_decisions:
-  - AD-009
+  - AD-005
+  - AD-007
   - AD-010
-  - AD-011
-  - AD-012
-  - AD-013
   - AD-014
-  - AD-015
 tags:
   - governance
   - architecture-decisions
@@ -1433,6 +1430,7 @@ Governance-Modell.
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.15.0 | 2026-08-16 | Canonical | WP-005 operationalisiert: unmittelbar anwendbare Decision-Referenzen bereinigt und AD-014-Referenzmodell zur automatisierten Prüfung aktiviert. |
 | 1.14.0 | 2026-08-16 | Canonical | AD-015 nach Architecture Review angenommen und klargestellt, dass `canonical_sources` die relevante kanonische Quellenmenge als Provenienz identifiziert, ohne einen deterministischen Build-, Reproduzierbarkeits- oder Synchronisationsvertrag zu begründen; keine Umsetzung von WP-005 vorgenommen. |
 | 1.13.0 | 2026-08-16 | Canonical | AD-015 als Pending Decision zum Frontmatterprofil für Derived Operational Continuity Artifacts vorbereitet; keine CTX-Migration, Schema- oder Validatorimplementierung vorgenommen. |
 | 1.12.0 | 2026-08-16 | Canonical | AD-014 nach Architecture Review angenommen und Reference Type, Relationship Semantics und Authority als orthogonale Konzepte mit getrennten Validierungsfolgen präzisiert; keine Umsetzung oder Referenzmigration vorgenommen. |

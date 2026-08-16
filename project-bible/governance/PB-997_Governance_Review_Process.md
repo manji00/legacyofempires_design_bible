@@ -1,11 +1,11 @@
 ---
 document_id: PB-997
 title: Governance Review Process
-version: 2.0.0
+version: 2.0.1
 status: Canonical
 category: Governance
 created: 2026-08-06
-updated: 2026-08-07
+updated: 2026-08-16
 owners:
   - Project Lead
 reviewers: []
@@ -30,6 +30,8 @@ systems: []
 requirements: []
 design_goals: []
 architecture_decisions:
+  - AD-005
+  - AD-010
   - AD-012
   - AD-013
 tags:
@@ -281,6 +283,7 @@ WP-004.
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 2.0.1 | 2026-08-16 | Canonical | GOV-B-010 Decision-Traceability vervollständigt und die bereits trennscharfen Beziehungen aus GOV-B-013 validiert. |
 | 2.0.0 | 2026-08-07 | Canonical | AD-012 und AD-013 umgesetzt: PB-997 als alleinige Prozessheimat etabliert und Review-, Work-Package- und Releaseprozesse mit orthogonalen Zustandsautomaten, Rollen, Gates, Versionbindungen und Validierungsvertrag synchronisiert. |
 | 1.1.0 | 2026-08-07 | Canonical | Den mit GA-001, GA-001-RES und WP-001 erprobten Governance-Lifecycle einschließlich AD-Lifecycle, Implementation, Verification, Closure, Work-Package-DoD und vollständiger Traceability dokumentiert. |
 | 1.0.0 | 2026-08-06 | Canonical | Ursprünglicher Review- und Freigabeprozess. |

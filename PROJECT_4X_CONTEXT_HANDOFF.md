@@ -1,19 +1,42 @@
 ---
 document_id: CTX-000
 title: Project 4X Context Handoff
-version: 1.0
-status: Active
+version: 1.1.0
+status: Accepted
 category: Derived Operational Continuity Artifact
-purpose:
-  - Preserve project continuity across new chats
-  - Prevent restarting completed work
-  - Summarize canonical project state for operational continuity
+created: 2026-08-05
+updated: 2026-08-16
+owners:
+  - Project Lead
 audience:
   - Human collaborators
   - ChatGPT
   - Coding assistants
   - Future maintainers
 source_of_truth: false
+canonical_sources:
+  - reference_type: canonical
+    target: PB-000
+  - reference_type: canonical
+    target: PB-001
+  - reference_type: canonical
+    target: PB-002
+  - reference_type: canonical
+    target: PB-003
+  - reference_type: canonical
+    target: PB-997
+  - reference_type: canonical
+    target: PB-998
+architecture_decisions:
+  - AD-009
+  - AD-010
+  - AD-013
+  - AD-014
+  - AD-015
+tags:
+  - continuity
+  - derived
+  - handoff
 ---
 
 # Project 4X – Context & Continuity Handoff
@@ -644,18 +667,20 @@ They must not be treated as final until rewritten under PB-000.
 
 ---
 
-# 14. Current Governance Plan
+# 14. Historical Governance Plan
 
-The proposed governance sequence is:
+The following historical plan contains explicitly typed `planned` references.
+These targets do not exist and are neither current dependencies nor sources of authority:
 
-- PB-000 – Project Bible Specification
-- PB-001 – Project Manifest
-- PB-002 – Vision
-- PB-003 – Design Philosophy
-- PB-004 – Naming & Terminology
-- PB-005 – Documentation Standard
-- PB-006 – Requirement System
-- PB-007 – Project Structure
+```yaml
+historical_plan_references:
+  - reference_type: planned
+    target: PB-005
+  - reference_type: planned
+    target: PB-006
+  - reference_type: planned
+    target: PB-007
+```
 
 However, the most recent working direction was:
 
@@ -796,3 +821,10 @@ This artifact does not define the immediate task.
 
 For current authority, consult the responsible canonical PB documents. This
 summary cannot prescribe the next action.
+
+
+# Version History
+
+| Version | Date | Status | Summary |
+|---|---|---|---|
+| 1.1.0 | 2026-08-16 | Accepted | Migrated CTX-000 to the AD-015 derived-artifact profile; added canonical provenance, directly applicable Decisions, and typed planned references for WP-005. |
