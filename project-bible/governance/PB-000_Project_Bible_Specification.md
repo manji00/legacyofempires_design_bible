@@ -1,11 +1,11 @@
 ---
 document_id: PB-000
 title: Project Bible Specification
-version: 2.0.0
+version: 2.1.0
 status: Canonical
 category: Governance
 created: 2026-08-05
-updated: 2026-08-07
+updated: 2026-08-16
 owners:
   - Project Lead
 reviewers: []
@@ -20,12 +20,15 @@ source_of_truth: true
 supersedes: []
 superseded_by: null
 depends_on:
-  - PB-998
+  - reference_type: canonical
+    target: PB-998
 related_documents:
-  - PB-001
-  - PB-002
-  - PB-003
-  - PB-004
+  - reference_type: canonical
+    target: PB-001
+  - reference_type: canonical
+    target: PB-002
+  - reference_type: canonical
+    target: PB-003
 systems: []
 requirements:
   - REQ-DOC-001
@@ -49,6 +52,7 @@ architecture_decisions:
   - AD-011
   - AD-012
   - AD-013
+  - AD-014
 tags:
   - governance
   - documentation
@@ -369,6 +373,9 @@ confidentiality: internal
 - `created` and `updated` MUST use ISO `YYYY-MM-DD` format.
 - `source_of_truth` MUST be `true` for canonical documents.
 - references SHOULD use stable IDs rather than file paths where possible.
+- governance references MUST be objects containing one `reference_type` from `canonical`, `archived`, `planned`, `external`, or `historical_evidence` and a `target` (or, for `external`, an unambiguous `locator`).
+- `canonical` MUST resolve uniquely to a current canonical repository target; `archived` MUST resolve uniquely to a historical, archived, or superseded repository target; `planned` MUST not resolve and MUST NOT be treated as a dependency; `external` MUST provide a non-empty locator; unresolved `historical_evidence` MUST provide a stable historical name and provenance.
+- reference type controls resolution only. Relationship semantics remain in their relationship fields, and successful resolution never creates or transfers normative authority.
 - `architecture_decisions` MUST list directly applicable, Accepted and not superseded `AD-XXX` IDs; an empty list MUST be written as `architecture_decisions: []`.
 - scenario-specific documents MUST set `scenario`.
 - `canonical_path` MUST match the intended repository path.
@@ -655,6 +662,8 @@ Use these relationships:
 - `superseded_by`: identifies replacement,
 - `implements`: technical document or code implementing a design,
 - `verified_by`: tests validating requirements.
+
+Every entry in these relationship fields uses the reference-object contract from Section 9. Reference Type, relationship semantics, and authority are validated independently.
 
 ### 15.3 Broken References
 
@@ -1337,6 +1346,7 @@ These questions do not block adoption of PB-000.
 
 | Version | Date | Status | Summary |
 |---|---|---|---|
+| 2.1.0 | 2026-08-16 | Canonical | Implemented the AD-014 governance-reference contract and WP-005 metadata validation rules for GOV-B-010 and GOV-B-012. |
 | 2.0.0 | 2026-08-07 | Canonical | Implemented AD-012 and AD-013: assigned rule/process/Decision ownership, established the binding review classification matrix, and synchronized document status and Semantic Versioning with the orthogonal governance state model. |
 | 1.1.0 | 2026-08-07 | Canonical | Implemented AD-009 through AD-011: removed CTX authority, standardized the central AD register and `architecture_decisions`, and retained only normative specification rules. |
 | 1.0.2 | 2026-08-07 | Canonical | Removed the redundant local decision list; its statements remain normative in their subject-matter sections, with originating Architecture Decisions referenced through `architecture_decisions`. |

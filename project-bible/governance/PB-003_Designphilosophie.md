@@ -1,11 +1,11 @@
 ---
 document_id: PB-003
 title: Designphilosophie
-version: 1.0.1
+version: 1.0.2
 status: Canonical
 category: Governance
 created: 2026-08-05
-updated: 2026-08-06
+updated: 2026-08-16
 owners:
   - Project Lead
 reviewers: []
@@ -50,6 +50,9 @@ requirements:
   - REQ-DES-010
   - REQ-DES-011
   - REQ-DES-012
+architecture_decisions:
+  - AD-004
+  - AD-010
 design_goals:
   - DG-DES-001
   - DG-DES-002
@@ -1112,3 +1115,10 @@ Narrative Darstellung macht das Ergebnis verständlich und lebendig.
 > **Der Spieler formt Geschichte. Die Simulation macht sie glaubwürdig.**
 
 > **Baue Systeme. Lass Geschichte entstehen.**
+
+
+# Versionshistorie
+
+| Version | Datum | Status | Änderung |
+|---|---|---|---|
+| 1.0.2 | 2026-08-16 | Canonical | Unmittelbar anwendbare Accepted Decisions gemäß AD-010 für WP-005 ergänzt. |

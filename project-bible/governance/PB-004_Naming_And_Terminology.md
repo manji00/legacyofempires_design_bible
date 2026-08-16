@@ -1,14 +1,14 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.16.2
+version: 0.16.3
 status: Review
 release_stage: RC1
 review_status: Passed
 review_process: PB-997
 category: Governance
 created: 2026-08-05
-updated: 2026-08-06
+updated: 2026-08-16
 owners:
   - Project Lead
 reviewers: []
@@ -54,6 +54,14 @@ requirements:
   - REQ-TERM-017
   - REQ-TERM-018
 design_goals: []
+architecture_decisions:
+  - AD-001
+  - AD-002
+  - AD-003
+  - AD-004
+  - AD-006
+  - AD-008
+  - AD-010
 tags:
   - governance
   - terminology
@@ -14082,3 +14090,10 @@ Erst danach darf die Version `1.0.0` gesetzt werden. Das Setzen dieser Version v
 PB-004 ist als Release Candidate 1 (RC1) für den bevorstehenden Governance Audit ausgewiesen. Der Review nach PB-997 wurde erfolgreich bestanden; alle fünf Reviewphasen – Structure Review, Terminology Review, Editorial Review, Technical Review und Release Review – sind abgeschlossen.
 
 Dieser Stand enthält ausschließlich die Release-Metadaten und den Release-Hinweis zur Vorbereitung auf den Governance Audit. Version `1.0.0` wird erst nach Abschluss des vollständigen Governance Reviews vergeben.
+
+
+# Versionshistorie
+
+| Version | Datum | Status | Änderung |
+|---|---|---|---|
+| 0.16.3 | 2026-08-16 | Review | Unmittelbar anwendbare Accepted Decisions gemäß AD-010 für WP-005 ergänzt. |

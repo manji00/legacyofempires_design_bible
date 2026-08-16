@@ -1,11 +1,11 @@
 ---
 document_id: PB-002
 title: Vision
-version: 1.0.1
+version: 1.1.0
 status: Canonical
 category: Governance
 created: 2026-08-05
-updated: 2026-08-06
+updated: 2026-08-16
 owners:
   - Project Lead
 reviewers: []
@@ -19,16 +19,21 @@ audience:
   - Future Maintainers
 source_of_truth: true
 supersedes:
-  - 00_Vision_v2.md
-  - PaxHistoria_Kaiserreich_Grand_Strategy_Vision.md
+  - reference_type: historical_evidence
+    target: 00_Vision_v2.md
+    provenance: Historical source draft recorded during the initial Project Bible migration.
+  - reference_type: historical_evidence
+    target: PaxHistoria_Kaiserreich_Grand_Strategy_Vision.md
+    provenance: Historical source draft recorded during the initial Project Bible migration.
 superseded_by: null
 depends_on:
-  - CTX-000
-  - PB-000
-  - PB-001
+  - reference_type: canonical
+    target: PB-000
+  - reference_type: canonical
+    target: PB-001
 related_documents:
-  - PB-003
-  - PB-004
+  - reference_type: canonical
+    target: PB-003
 systems:
   - SYS-SIMULATION
   - SYS-POLITICS
@@ -833,6 +838,11 @@ These documents may refine implementation and scope, but they must remain consis
 ---
 
 ## 22. Decisions and Change History
+
+### Version 1.1.0 – 2026-08-16
+
+- Classified unavailable migration sources as `historical_evidence` with provenance for GOV-B-012.
+- Removed CTX-000 as a normative dependency in accordance with AD-009.
 
 ### Version 1.0.0 – 2026-08-05
 
