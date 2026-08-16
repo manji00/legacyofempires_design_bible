@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.13.0
+version: 1.14.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -39,6 +39,7 @@ architecture_decisions:
   - AD-012
   - AD-013
   - AD-014
+  - AD-015
 tags:
   - governance
   - architecture-decisions
@@ -1198,11 +1199,11 @@ Beziehungen oder normative Wirkung implizit setzt.
 
 **Status**
 
-Pending
+Accepted
 
 **Entscheidungsdatum**
 
-Noch nicht entschieden
+2026-08-16
 
 **Betroffene Dokumente**
 
@@ -1269,9 +1270,12 @@ kanonische Authority erscheinen zu lassen. Dateipfad und Repository-Ablage
 
 ### Kanonische Ableitungsquellen
 
-`canonical_sources` drückt ausschließlich die Beziehungssemantik
-**Ableitungsquelle** aus. Jeder Listeneintrag ist eine nach AD-014 typisierte
-Governance-Referenz mit genau diesen Schlüsseln:
+`canonical_sources` stellt die maschinenlesbare Provenienz der kanonischen
+Quellen bereit, auf denen das abgeleitete operative Artefakt basiert, und
+drückt dabei ausschließlich die Beziehungssemantik **Ableitungsquelle** aus.
+Das Feld muss ausreichen, um die für das konkrete Artefakt relevante
+kanonische Quellenmenge zu identifizieren. Jeder Listeneintrag ist eine nach
+AD-014 typisierte Governance-Referenz mit genau diesen Schlüsseln:
 
 ```yaml
 canonical_sources:
@@ -1297,10 +1301,15 @@ Reference Type, Relationship Semantics und Authority gemäß AD-014 getrennt:
 Eine erfolgreiche `canonical`-Referenz bestätigt nur die aktuelle
 Auflösbarkeit des Ziels. Sie macht CTX niemals kanonisch oder normativ und
 überträgt keine Authority der Quelle auf das abgeleitete Artefakt. Das
-Mindestmaß für die Nachvollziehbarkeit der Regenerierbarkeit besteht allein in
-der vollständigen, expliziten und auflösbaren Quellenliste. Generator,
-Build-Logik, Synchronisation und automatische Regeneration sind nicht Teil
-dieser Decision.
+Feld identifiziert die relevante Quellenmenge und macht ihre Provenienz
+nachvollziehbar. Seine Existenz begründet für sich allein jedoch weder einen
+deterministischen Build- noch einen Reproduzierbarkeitsvertrag. Diese Decision
+definiert keinen Generator, keine Transformationslogik, kein Build-Tooling,
+kein Synchronisationsverhalten, keine deterministische Reproduktion und keine
+Aktualisierungsplanung. Diese Implementierungs- und Betriebsfragen bleiben
+außerhalb ihres Scopes. Die durch AD-009 festgelegte Regenerierbarkeit von CTX
+als abgeleitetem operativem Kontinuitätsartefakt bleibt bestehen, wird hier
+aber nicht zu einer Implementierungsarchitektur erweitert.
 
 ### Architecture-Decision-Referenzen
 
@@ -1371,7 +1380,7 @@ Ein späterer Validator muss für ein CTX-Artefakt mindestens prüfen können:
 
 Dieser Vertrag legt nur fest, was später deterministisch validierbar sein muss.
 Er implementiert weder Schema noch Validator und autorisiert weder Migration
-noch automatische Regeneration.
+noch Generator, Synchronisationsmechanismus oder automatische Regeneration.
 
 **Begründung**
 
@@ -1383,18 +1392,19 @@ die bereits entschiedene Authority Classification eindeutig auszudrücken;
 zusätzliche Authority-Synonyme würden nur widersprüchliche Kombinationen
 ermöglichen.
 
-Eine explizite Liste typisierter kanonischer Ableitungsquellen macht die von
-AD-009 verlangte Regenerierbarkeit nachvollziehbar. Dabei verwendet sie die
-Taxonomie und Auflösungsregeln aus AD-014, hält die Quellenbeziehung von ihrem
-Referenztyp getrennt und überträgt keine Authority. Die unveränderte Anwendung
-von AD-010 und AD-013 hält Decision-Traceability, Versionierung und Zustand im
-bestehenden Governance-Modell.
+Eine explizite Liste typisierter kanonischer Ableitungsquellen identifiziert
+die relevante kanonische Quellenmenge und macht ihre Provenienz
+nachvollziehbar. Dabei verwendet sie die Taxonomie und Auflösungsregeln aus
+AD-014, hält die Quellenbeziehung von ihrem Referenztyp getrennt und überträgt
+keine Authority. Sie spezifiziert nicht, wie CTX reproduziert oder aktuell
+gehalten wird. Die unveränderte Anwendung von AD-010 und AD-013 hält
+Decision-Traceability, Versionierung und Zustand im bestehenden
+Governance-Modell.
 
 **Konsequenzen**
 
-- Vor Annahme dieser Decision entsteht keine verbindliche neue Regel und keine
-  Umsetzung ist freigegeben.
-- Nach einer späteren Annahme kann WP-005 CTX-000 kontrolliert auf dieses Profil
+- Mit Annahme dieser Decision wird das Frontmatterprofil verbindlich; WP-005
+  kann CTX-000 kontrolliert auf dieses Profil
   migrieren und die zuständigen Governance-Regeln operationalisieren.
 - Diese Vorbereitung ändert CTX-000, PB-000 und PB-997 nicht und implementiert
   weder Schema, Validator, Generator, Build-Logik noch Synchronisations- oder
@@ -1423,6 +1433,7 @@ bestehenden Governance-Modell.
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.14.0 | 2026-08-16 | Canonical | AD-015 nach Architecture Review angenommen und klargestellt, dass `canonical_sources` die relevante kanonische Quellenmenge als Provenienz identifiziert, ohne einen deterministischen Build-, Reproduzierbarkeits- oder Synchronisationsvertrag zu begründen; keine Umsetzung von WP-005 vorgenommen. |
 | 1.13.0 | 2026-08-16 | Canonical | AD-015 als Pending Decision zum Frontmatterprofil für Derived Operational Continuity Artifacts vorbereitet; keine CTX-Migration, Schema- oder Validatorimplementierung vorgenommen. |
 | 1.12.0 | 2026-08-16 | Canonical | AD-014 nach Architecture Review angenommen und Reference Type, Relationship Semantics und Authority als orthogonale Konzepte mit getrennten Validierungsfolgen präzisiert; keine Umsetzung oder Referenzmigration vorgenommen. |
 | 1.11.0 | 2026-08-16 | Canonical | AD-014 als Pending Decision zum Governance Reference Model für GOV-B-012 und WP-005 vorbereitet; keine Umsetzung oder Referenzmigration vorgenommen. |
