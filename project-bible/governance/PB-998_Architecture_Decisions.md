@@ -1,11 +1,11 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.10.0
+version: 1.11.0
 status: Canonical
 category: Governance
 created: 2026-08-06
-updated: 2026-08-07
+updated: 2026-08-16
 owners:
   - Project Lead
 reviewers: []
@@ -38,6 +38,7 @@ architecture_decisions:
   - AD-011
   - AD-012
   - AD-013
+  - AD-014
 tags:
   - governance
   - architecture-decisions
@@ -994,10 +995,179 @@ maschinenprüfbar.
 - GOV-B-014
 - WP-003
 
+## AD-014 – Governance Reference Model
+
+**Status**
+
+Pending
+
+**Entscheidungsdatum**
+
+2026-08-16
+
+**Betroffene Dokumente**
+
+- CTX-000
+- PB-000
+- PB-002
+- PB-998
+
+**Kontext**
+
+`GOV-B-012` aus `GA-001` stellt fest, dass Referenzen auf aktuelle, geplante
+und historische Dokumente nicht maschinenlesbar unterscheidbar sind. Dadurch
+kann ein fehlendes aktuelles Ziel nicht von einer zulässigen Erinnerung an eine
+nicht mehr vorhandene Quelle unterschieden werden. Der genehmigte Resolution
+Plan `GA-001-RES` ordnet das Finding `WP-005` zu und verlangt vor jeder
+Migration eine Architecture Decision über Referenztypen, Auflösungsregeln und
+den Umgang mit nicht vorhandenen historischen Quellen.
+
+Diese Decision legt ausschließlich das Governance-Referenzmodell fest. Sie
+typisiert weder bestehende Referenzen noch ändert sie Frontmatter, Dokumente
+oder Validatoren. Insbesondere entscheidet sie nicht das CTX-Frontmatterprofil
+aus `GOV-B-015`; dieses bleibt vollständig einer separaten Architecture
+Decision vorbehalten.
+
+**Entscheidung**
+
+Jede Governance-Referenz besitzt genau einen expliziten `reference_type` aus
+der folgenden, abschließenden Taxonomie. Der Typ bestimmt ausschließlich die
+Auflösungs- und Validierungssemantik der Referenz, nicht ihre fachliche
+Beziehungsart oder Authority.
+
+| `reference_type` | Semantische Bedeutung | Muss das Ziel existieren? | Muss es repository-intern auflösbar sein? | Behandlung fehlender oder historischer Ziele |
+|---|---|---|---|---|
+| `canonical` | Verweis auf ein gegenwärtig vorhandenes kanonisches Project-Bible-Dokument oder einen gegenwärtig vorhandenen kanonischen Eintrag darin. | Ja. | Ja, auf genau eine aktuelle kanonische Identität. | Ein fehlendes, mehrdeutiges, nur geplantes, archiviertes oder supersediertes Ziel ist ungültig. |
+| `archived` | Verweis auf ein vorhandenes, historisches oder supersediertes repository-internes Artefakt, das zur Nachvollziehbarkeit erhalten bleibt. | Ja. | Ja, auf genau ein als historisch, archiviert oder superseded gekennzeichnetes Ziel. | Ein nicht mehr vorhandenes Ziel ist kein `archived`-Ziel und muss, sofern nur seine Nachweisfunktion verbleibt, als `historical_evidence` referenziert werden. |
+| `planned` | Absichtserklärung für ein benanntes, noch nicht vorhandenes Artefakt; keine bestehende Dependency. | Nein; ist das Ziel bereits vorhanden, ist der Typ ungültig und neu zu klassifizieren. | Nein; die vorgesehene stabile Ziel-ID muss repository-intern noch unbesetzt sein. | Das Fehlen ist erwartet. Der Verweis muss ausdrücklich als geplant erkennbar bleiben und darf weder Existenz noch Fertigstellung behaupten. |
+| `external` | Verweis auf eine für den Governance-Kontext erforderliche Quelle außerhalb des Repositorys. | Die externe Ressource soll existieren; dauerhafte Verfügbarkeit kann nicht garantiert werden. | Nein. Stattdessen muss ein nicht leerer, eindeutig identifizierender Locator angegeben sein. | Nicht erreichbare Ziele werden als Validierungswarnung behandelt; fehlender Typ oder Locator ist ungültig. Externe Referenzen sind keine repository-internen Dependencies. |
+| `historical_evidence` | Provenienz- oder Nachweisverweis auf eine historische Quelle oder ein Artefakt, dessen aktueller repository-interner Bestand nicht vorausgesetzt wird. | Nein. | Nein. Falls kein Ziel auflösbar ist, müssen mindestens eine stabile historische Bezeichnung und eine Herkunftsnotiz vorhanden sein. | Fehlende Ziele sind zulässig. Ein vorhandener Nachfolger oder Migrationspfad soll als gesonderte Referenz angegeben werden; der historische Verweis wird dadurch weder aktuell noch normativ. |
+
+`canonical` ist ausschließlich für aktuell auflösbare kanonische Ziele
+zulässig. `archived` erhält auflösbare historische beziehungsweise
+supersedierte Artefakte als überprüfbare Repository-Geschichte.
+`historical_evidence` erhält dagegen die Nachweiskette, wenn die ursprüngliche
+Quelle nicht mehr vorhanden ist oder nur ihre historische Provenienz relevant
+bleibt. Ein historisches Ziel darf niemals allein zur Erfüllung einer aktuellen
+Dependency herangezogen werden. Wird ein aktueller Nachfolger benötigt, muss
+dieser zusätzlich mit einer eigenen `canonical`-Referenz bezeichnet werden.
+
+`planned` darf nicht als bestehende Dependency, erfüllte Voraussetzung oder
+verfügbare Authority ausgewertet werden. Sobald das geplante Ziel angelegt ist,
+ist die Referenz in dem kontrollierten Änderungsschritt auf den dann sachlich
+zutreffenden Typ umzustellen. Die reservierte Ziel-ID verhindert dabei keine
+spätere Anlage, behauptet aber auch nicht deren Existenz.
+
+`external` verlangt nur die für `GOV-B-012` notwendige minimale Semantik: Typ
+und eindeutiger Locator. Erreichbarkeitsprüfungen dürfen flüchtige externe
+Ausfälle nicht mit einem strukturell ungültigen Governance-Verweis
+gleichsetzen. Diese Decision entwirft keine allgemeine externe
+Link-Architektur.
+
+### Trennung von Referenztyp und Authority
+
+Eine Referenz erzeugt allein durch Existenz, Typ, Auflösbarkeit oder Position
+niemals normative Authority. Reference Type beantwortet nur, welche
+Auflösungsregel gilt. Authority folgt ausschließlich der zuständigen
+Governance-Quelle und ihrem eigenen Status:
+
+- PB-Dokumente besitzen die jeweils für sie definierte Authority.
+- PB-998 besitzt Architecture Decisions und führt deren Lifecycle-Status.
+- GA-, Resolution-, Review- und Closure-Artefakte sind Evidence und setzen
+  weder Regeln noch Decisions.
+- CTX ist gemäß AD-009 derived, non-canonical und ohne eigene normative
+  Authority.
+
+Damit kann insbesondere eine `canonical`-Referenz keine nicht normative Quelle
+normativ machen, eine `external`-Referenz keine externe Authority importieren
+und eine `historical_evidence`-Referenz keine frühere Aussage reaktivieren.
+Diese Trennung ist mit dem zentralen Decision- und
+Frontmatter-Referenzmodell aus AD-010 und AD-011 sowie der Trennung von
+Authority, Ownership und Execution aus AD-012 konsistent. Sie verändert keine
+der orthogonalen Zustandsdimensionen aus AD-013.
+
+### Architekturvertrag für automatische Validierung
+
+Ein späterer Validator muss Referenzen mindestens nach folgendem Vertrag
+prüfen können:
+
+1. `reference_type` ist vorhanden und entspricht exakt einem bekannten Wert
+   der abschließenden Taxonomie.
+2. `canonical` löst repository-intern eindeutig auf ein gegenwärtig
+   kanonisches Ziel auf; fehlende, externe, geplante oder historische Ziele
+   sind Fehler.
+3. `archived` löst repository-intern eindeutig auf und das Ziel ist als
+   historisch, archiviert oder superseded gekennzeichnet; ein aktuelles
+   kanonisches oder fehlendes Ziel ist eine ungültige Kombination.
+4. `planned` löst noch nicht auf, nennt eine syntaktisch gültige und unbesetzte
+   vorgesehene Ziel-ID und wird niemals als bestehende Dependency oder
+   Authority gezählt; ein bereits vorhandenes Ziel ist eine ungültige
+   Kombination.
+5. `external` besitzt einen eindeutigen nicht leeren Locator. Fehlende
+   Erreichbarkeit erzeugt höchstens eine Warnung, ein fehlender Locator einen
+   Fehler.
+6. `historical_evidence` darf unaufgelöst bleiben, muss dann aber historische
+   Bezeichnung und Herkunftsnotiz führen. Ein auflösbares aktuelles Ziel darf
+   nicht unter diesem Typ als aktuelle Abhängigkeit ausgewertet werden.
+7. Typ, Zielzustand, Auflösbarkeit und Locatorform werden gemeinsam geprüft,
+   sodass widersprüchliche Kombinationen nicht durch einen syntaktisch
+   gültigen Einzelwert verdeckt werden.
+8. Keine erfolgreiche Referenzprüfung darf Authority, Dokumentstatus,
+   Architecture-Decision-Status oder Erfüllung einer Dependency ableiten,
+   sofern die dafür zuständige Governance-Regel dies nicht unabhängig
+   feststellt.
+
+Dieser Vertrag entscheidet nur die spätere Validierungssemantik. Konkrete
+Feldnamen über `reference_type` hinaus, Schemas, Migrationsregeln,
+Fehlerausgaben und Validatorimplementierungen bleiben WP-005 vorbehalten und
+werden durch diese Pending Decision weder eingeführt noch freigegeben.
+
+**Begründung**
+
+Fünf Typen reichen aus, um die im Finding tatsächlich vorkommenden Fälle ohne
+semantische Überladung zu trennen: aktuelle kanonische Ziele, vorhandene
+historische Artefakte, noch nicht vorhandene Planungsziele, externe Quellen
+und reine historische Evidence. Die Unterscheidung zwischen `archived` und
+`historical_evidence` erhält sowohl prüfbare Repository-Artefakte als auch
+Provenienz nicht mehr vorhandener Quellen. Explizite Regeln für Existenz,
+interne Auflösung und zulässiges Fehlen machen die spätere Validierung
+deterministisch, ohne aus technischer Auflösbarkeit Authority abzuleiten.
+
+**Konsequenzen**
+
+- Vor Annahme dieser Decision entsteht keine verbindliche neue Regel und keine
+  Umsetzung oder Migration von WP-005 ist freigegeben.
+- Nach Annahme kann WP-005 das Referenzmodell in der zuständigen Governance-
+  Spezifikation operationalisieren, bestehende Referenzen kontrolliert
+  typisieren und einen Validator gegen den Architekturvertrag implementieren.
+- Bestehende Referenzen werden durch diese Vorbereitung weder umklassifiziert
+  noch als gültig oder ungültig entschieden.
+- Die Decision führt keine neuen Governance-Zustände, Review-, Release- oder
+  Architecture-Decision-Lifecycle-Regeln und keine normative Content Ownership
+  ein.
+- Das CTX-Frontmatterprofil und die vollständige Resolution von `GOV-B-015`
+  bleiben einer separaten Architecture Decision vorbehalten.
+
+**Verwandte Entscheidungen**
+
+- AD-009
+- AD-010
+- AD-011
+- AD-012
+- AD-013
+
+**Traceability**
+
+- GA-001
+- GA-001-RES
+- GOV-B-012
+- WP-005
+
 # Versionshistorie
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.11.0 | 2026-08-16 | Canonical | AD-014 als Pending Decision zum Governance Reference Model für GOV-B-012 und WP-005 vorbereitet; keine Umsetzung oder Referenzmigration vorgenommen. |
 | 1.10.0 | 2026-08-07 | Canonical | AD-013 nach Governance-Review angenommen und die Orthogonalität aller Governance-Zustandsdimensionen sowie ausschließlich explizit definierte dimensionenübergreifende Interaktionen festgelegt. |
 | 1.9.0 | 2026-08-07 | Canonical | AD-013 als Pending Decision zum Unified Governance State Model für GOV-B-014 und WP-003 vorbereitet; keine Umsetzung vorgenommen. |
 | 1.8.0 | 2026-08-07 | Canonical | AD-012 nach Governance-Review angenommen und das Process Ownership Model durch die Trennung von Authority, Ownership und Execution sowie eindeutige Dokumentzuständigkeiten präzisiert. |
