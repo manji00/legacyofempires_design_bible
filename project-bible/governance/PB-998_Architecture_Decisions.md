@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.11.0
+version: 1.12.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -999,7 +999,7 @@ maschinenprüfbar.
 
 **Status**
 
-Pending
+Accepted
 
 **Entscheidungsdatum**
 
@@ -1064,7 +1064,28 @@ Ausfälle nicht mit einem strukturell ungültigen Governance-Verweis
 gleichsetzen. Diese Decision entwirft keine allgemeine externe
 Link-Architektur.
 
-### Trennung von Referenztyp und Authority
+### Trennung von Referenztyp, Beziehungssemantik und Authority
+
+Reference Type und Relationship Semantics sind orthogonale Konzepte. Der
+Referenztyp definiert ausschließlich die Auflösungs- und Existenzsemantik des
+referenzierten Ziels. Er definiert nicht, welche fachliche Beziehung zwischen
+Quelle und Ziel besteht. Dependency, Related Document, Source,
+Implementation Reference, Evidence und vergleichbare Beziehungssemantiken
+bleiben unabhängig vom `reference_type` und müssen, wo Governance-Regeln sie
+verlangen, gesondert ausgedrückt und validiert werden.
+
+Insbesondere gilt:
+
+- `canonical` bedeutet nicht automatisch Dependency,
+- `archived` bedeutet nicht automatisch Historical Evidence,
+- `planned` bedeutet nicht automatisch Roadmap Dependency und
+- `external` bedeutet nicht automatisch Normative Source.
+
+Diese Decision führt keine neue Taxonomie für Beziehungssemantiken ein.
+`GOV-B-012` verlangt ausschließlich Referenztypen, ihre Auflösbarkeitsregeln
+und den Umgang mit nicht vorhandenen historischen Quellen. Bestehende
+Beziehungsfelder oder fachliche Beziehungen werden weder ersetzt noch durch
+den Referenztyp abgeleitet.
 
 Eine Referenz erzeugt allein durch Existenz, Typ, Auflösbarkeit oder Position
 niemals normative Authority. Reference Type beantwortet nur, welche
@@ -1081,6 +1102,10 @@ Governance-Quelle und ihrem eigenen Status:
 Damit kann insbesondere eine `canonical`-Referenz keine nicht normative Quelle
 normativ machen, eine `external`-Referenz keine externe Authority importieren
 und eine `historical_evidence`-Referenz keine frühere Aussage reaktivieren.
+Der verbindliche Architekturgrundsatz lautet daher:
+
+`Reference Type` ≠ `Relationship Semantics` ≠ `Authority`
+
 Diese Trennung ist mit dem zentralen Decision- und
 Frontmatter-Referenzmodell aus AD-010 und AD-011 sowie der Trennung von
 Authority, Ownership und Execution aus AD-012 konsistent. Sie verändert keine
@@ -1112,15 +1137,19 @@ prüfen können:
 7. Typ, Zielzustand, Auflösbarkeit und Locatorform werden gemeinsam geprüft,
    sodass widersprüchliche Kombinationen nicht durch einen syntaktisch
    gültigen Einzelwert verdeckt werden.
-8. Keine erfolgreiche Referenzprüfung darf Authority, Dokumentstatus,
-   Architecture-Decision-Status oder Erfüllung einer Dependency ableiten,
-   sofern die dafür zuständige Governance-Regel dies nicht unabhängig
-   feststellt.
+8. Referenztyp und eine gegebenenfalls gesondert ausgedrückte
+   Beziehungssemantik werden unabhängig validiert; aus dem Referenztyp darf
+   keine Dependency, Related-Document-, Source-, Implementation-Reference-
+   oder Evidence-Beziehung abgeleitet werden.
+9. Keine erfolgreiche Referenzprüfung darf normative Authority,
+   Dokumentstatus, Architecture-Decision-Status oder Erfüllung einer
+   Dependency ableiten. Diese Feststellungen erfordern stets die unabhängig
+   zuständige Governance-Regel und deren eigene Voraussetzungen.
 
 Dieser Vertrag entscheidet nur die spätere Validierungssemantik. Konkrete
 Feldnamen über `reference_type` hinaus, Schemas, Migrationsregeln,
 Fehlerausgaben und Validatorimplementierungen bleiben WP-005 vorbehalten und
-werden durch diese Pending Decision weder eingeführt noch freigegeben.
+werden durch diese Decision weder eingeführt noch freigegeben.
 
 **Begründung**
 
@@ -1132,13 +1161,15 @@ und reine historische Evidence. Die Unterscheidung zwischen `archived` und
 Provenienz nicht mehr vorhandener Quellen. Explizite Regeln für Existenz,
 interne Auflösung und zulässiges Fehlen machen die spätere Validierung
 deterministisch, ohne aus technischer Auflösbarkeit Authority abzuleiten.
+Die ausdrückliche Orthogonalität von Referenztyp, Beziehungssemantik und
+Authority verhindert zugleich, dass technische Zielklassifikation fachliche
+Beziehungen oder normative Wirkung implizit setzt.
 
 **Konsequenzen**
 
-- Vor Annahme dieser Decision entsteht keine verbindliche neue Regel und keine
-  Umsetzung oder Migration von WP-005 ist freigegeben.
-- Nach Annahme kann WP-005 das Referenzmodell in der zuständigen Governance-
-  Spezifikation operationalisieren, bestehende Referenzen kontrolliert
+- Mit Annahme dieser Decision wird das Referenzmodell verbindlich; WP-005 kann
+  es in der zuständigen Governance-Spezifikation operationalisieren,
+  bestehende Referenzen kontrolliert
   typisieren und einen Validator gegen den Architekturvertrag implementieren.
 - Bestehende Referenzen werden durch diese Vorbereitung weder umklassifiziert
   noch als gültig oder ungültig entschieden.
@@ -1167,6 +1198,7 @@ deterministisch, ohne aus technischer Auflösbarkeit Authority abzuleiten.
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.12.0 | 2026-08-16 | Canonical | AD-014 nach Architecture Review angenommen und Reference Type, Relationship Semantics und Authority als orthogonale Konzepte mit getrennten Validierungsfolgen präzisiert; keine Umsetzung oder Referenzmigration vorgenommen. |
 | 1.11.0 | 2026-08-16 | Canonical | AD-014 als Pending Decision zum Governance Reference Model für GOV-B-012 und WP-005 vorbereitet; keine Umsetzung oder Referenzmigration vorgenommen. |
 | 1.10.0 | 2026-08-07 | Canonical | AD-013 nach Governance-Review angenommen und die Orthogonalität aller Governance-Zustandsdimensionen sowie ausschließlich explizit definierte dimensionenübergreifende Interaktionen festgelegt. |
 | 1.9.0 | 2026-08-07 | Canonical | AD-013 als Pending Decision zum Unified Governance State Model für GOV-B-014 und WP-003 vorbereitet; keine Umsetzung vorgenommen. |
