@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.12.0
+version: 1.13.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -1194,10 +1194,236 @@ Beziehungen oder normative Wirkung implizit setzt.
 - GOV-B-012
 - WP-005
 
+## AD-015 – Derived Operational Artifact Frontmatter Profile
+
+**Status**
+
+Pending
+
+**Entscheidungsdatum**
+
+Noch nicht entschieden
+
+**Betroffene Dokumente**
+
+- CTX-000
+- PB-000
+- PB-998
+
+**Kontext**
+
+`GOV-B-015` aus `GA-001` stellt fest, dass das Frontmatter von CTX-000 weder
+dem kanonischen PB-000-Profil entspricht noch als zulässige Ausnahme
+maschinenlesbar definiert ist. Der genehmigte Resolution Plan `GA-001-RES`
+ordnet das Finding `WP-005` zu und verlangt nach der bereits erfolgten
+Festlegung der Dokumentklasse und Autoritätsgrenze in AD-009 eine eigene
+Architecture Decision über das Pflichtfrontmatter für abgeleitete operative
+Handoff-Artefakte.
+
+AD-009 ist unverändert maßgeblich: CTX ist eine Derived Operational Continuity
+Artifact-Dokumentklasse, non-canonical, keine Source of Truth und ohne
+normative Authority. Ausschließlich in CTX vorhandene Informationen besitzen
+keine normative Wirkung, und CTX kann aus kanonischen Quellen regeneriert
+werden. Diese Decision öffnet keine dieser Festlegungen neu. Sie bereitet nur
+das Metadatenprofil vor, mit dem die bestehende Grenze und die Herkunft eines
+CTX-Artefakts maschinenlesbar nachgewiesen werden können.
+
+**Entscheidung**
+
+### Profil und Pflichtfelder
+
+Ein Derived Operational Continuity Artifact der Dokumentklasse `CTX` verwendet
+das folgende reduzierte Frontmatterprofil. Die Feldnamen werden aus dem
+bestehenden PB-000-Modell übernommen; parallele Felder wie `document_type`,
+`canonical`, `authority` oder CTX-spezifische Status- und Versionsfelder werden
+nicht eingeführt.
+
+| Pflichtfeld | Vertrag |
+|---|---|
+| `document_id` | Global eindeutige, stabile CTX-Identität im Format `CTX-XXX`; sie stimmt mit dem Dateinamenpräfix überein. |
+| `title` | Nicht leerer, menschenlesbarer Titel, der der obersten Überschrift inhaltlich entspricht. |
+| `version` | Revision des Artefakts nach dem bestehenden Semantic-Versioning-Modell `MAJOR.MINOR.PATCH` aus PB-000 und AD-013. |
+| `status` | Dokumentstatus aus dem von PB-000 besessenen Zustandsmodell gemäß AD-013; kein alternatives CTX-Lifecycle-Feld. |
+| `category` | Exakt `Derived Operational Continuity Artifact`; dieses Feld klassifiziert die durch AD-009 festgelegte derived Dokumentklasse. |
+| `created` | Erstellungsdatum im bestehenden ISO-Format `YYYY-MM-DD`. |
+| `updated` | Datum der vorliegenden Revision im bestehenden ISO-Format `YYYY-MM-DD`. |
+| `owners` | Nicht leere Liste der nach dem bestehenden Governance-Modell verantwortlichen Rollen; für CTX-000 ist gemäß AD-009 der `Project Lead` verantwortlich. |
+| `audience` | Nicht leere Liste der vorgesehenen operativen Zielgruppen. |
+| `source_of_truth` | Muss der boolesche Wert `false` sein. |
+| `canonical_sources` | Nicht leere Liste der kanonischen Ableitungsquellen nach dem unten definierten, AD-014-konformen Referenzvertrag. |
+| `architecture_decisions` | Liste der unmittelbar anwendbaren Architecture Decisions gemäß AD-010; eine leere Liste wird ausdrücklich als `[]` geschrieben. |
+| `tags` | Liste für Retrieval und Klassifikation; eine leere Liste wird ausdrücklich als `[]` geschrieben. |
+
+`category: Derived Operational Continuity Artifact` und
+`source_of_truth: false` bilden zusammen mit der CTX-ID-Familie die bestehende
+Authority Classification maschinenlesbar ab: Das Artefakt ist derived,
+non-canonical, keine Source of Truth und besitzt keine normative Authority.
+Eine zusätzliche Authority-Kategorie oder ein Feld, das normative Wirkung
+behaupten könnte, ist unzulässig. Ein CTX-Artefakt erfüllt das Profil nur, wenn
+keine andere Metadatenkombination dieser Klassifikation widerspricht.
+
+Das Profil verwendet weder `canonical_path` noch einen kanonischen
+Dokumentfamilienwert, um den Ablageort oder die Identität von CTX als
+kanonische Authority erscheinen zu lassen. Dateipfad und Repository-Ablage
+ändern die durch AD-009 festgelegte Authority nicht.
+
+### Kanonische Ableitungsquellen
+
+`canonical_sources` drückt ausschließlich die Beziehungssemantik
+**Ableitungsquelle** aus. Jeder Listeneintrag ist eine nach AD-014 typisierte
+Governance-Referenz mit genau diesen Schlüsseln:
+
+```yaml
+canonical_sources:
+  - reference_type: canonical
+    target: PB-000
+```
+
+`target` enthält die stabile ID genau eines kanonischen PB-Dokuments oder eines
+gegenwärtig kanonischen Eintrags darin. `reference_type` muss für jede
+Ableitungsquelle `canonical` sein und unterliegt vollständig den Existenz-,
+Eindeutigkeits- und Auflösungsregeln aus AD-014. Die Liste muss alle
+kanonischen Quellen enthalten, aus denen die für das Artefakt notwendige
+operative Kontinuitätsinformation tatsächlich abgeleitet wird; mindestens ein
+Eintrag ist erforderlich.
+
+`canonical_sources` ersetzt weder `depends_on` noch `related_documents` und
+leitet diese Beziehungen nicht implizit ab. Umgekehrt gilt ein Eintrag in
+diesen allgemeinen Beziehungsfeldern nicht als Ableitungsquelle. Damit bleiben
+Reference Type, Relationship Semantics und Authority gemäß AD-014 getrennt:
+
+`Reference Type` ≠ `Relationship Semantics` ≠ `Authority`
+
+Eine erfolgreiche `canonical`-Referenz bestätigt nur die aktuelle
+Auflösbarkeit des Ziels. Sie macht CTX niemals kanonisch oder normativ und
+überträgt keine Authority der Quelle auf das abgeleitete Artefakt. Das
+Mindestmaß für die Nachvollziehbarkeit der Regenerierbarkeit besteht allein in
+der vollständigen, expliziten und auflösbaren Quellenliste. Generator,
+Build-Logik, Synchronisation und automatische Regeneration sind nicht Teil
+dieser Decision.
+
+### Architecture-Decision-Referenzen
+
+Für `architecture_decisions` gelten ohne Erweiterung die Regeln aus AD-010.
+Das Feld enthält ausschließlich unmittelbar auf das konkrete CTX-Artefakt
+anwendbare Decisions, die in PB-998 `Accepted`, `Implemented` oder `Verified`
+und nicht `Superseded` sind. Eine nur mittelbar geltende oder im Fließtext
+erwähnte Decision wird nicht allein deshalb in das Feld aufgenommen. Umgekehrt
+ersetzt eine Erwähnung im Inhalt niemals die erforderliche
+maschinenlesbare Referenz einer unmittelbar anwendbaren Decision.
+
+Die Decision-Referenz bezeichnet eine geltende Architekturgrundlage; sie
+verleiht CTX keine eigene Decision-, Governance- oder normative Authority.
+Insbesondere muss ein CTX-Artefakt AD-009 referenzieren, weil dessen
+Dokumentklasse und Autoritätsgrenze unmittelbar gelten. Weitere Einträge
+werden anhand des tatsächlichen Artefaktinhalts und der AD-010-Regel bestimmt,
+nicht pauschal aus Erwähnungen übernommen.
+
+### Versionierung und Dokumentstatus
+
+`version` verwendet ausschließlich das Semantic Versioning aus PB-000 und
+AD-013. `MAJOR`, `MINOR` und `PATCH` behalten ihre dort definierten
+Bedeutungen; eine CTX-spezifische Versionsfolge, Kurzversion oder Kopplung an
+Review-, AD-, Work-Package- oder Releasezustände ist unzulässig. Jede
+publizierte Metadaten- oder Statusänderung erhöht die Version mindestens um
+`PATCH`, wie es AD-013 für versionierte Dokumentrevisionen festlegt.
+
+`status` verwendet ausschließlich die von PB-000 besessene
+Dokumentstatusdimension und deren durch AD-013 festgelegte Werte, Ownership,
+Übergänge und Nachweispflichten. Das Profil führt weder `review_status`,
+`review_phase`, `ad_status`, `work_package_status`, `release_stage` noch einen
+CTX-spezifischen Lifecycle als Alias ein. Weil AD-009 CTX dauerhaft als
+non-canonical einordnet, ist eine Metadatenkombination mit
+`status: Canonical` für diese Dokumentklasse ungültig; diese
+Kompatibilitätsbedingung ändert weder die bestehende Zustandsdimension noch
+deren allgemeine Werte oder State Ownership.
+
+### Architekturvertrag für automatische Validierung
+
+Ein späterer Validator muss für ein CTX-Artefakt mindestens prüfen können:
+
+1. Alle Pflichtfelder des Profils sind vorhanden, besitzen den verlangten Typ
+   und verwenden keine konkurrierenden Synonyme.
+2. `document_id` entspricht `CTX-XXX`, stimmt mit dem Dateinamenpräfix überein
+   und ist repositoryweit eindeutig.
+3. `version` entspricht `MAJOR.MINOR.PATCH` und der bestehenden
+   Semantic-Versioning-Regel.
+4. `category` ist exakt `Derived Operational Continuity Artifact`, und die
+   CTX-ID sowie die Kategorie bilden gemeinsam dieselbe Dokumentklasse ab.
+5. `source_of_truth` ist der boolesche Wert `false`; kein Feldwert und keine
+   Feldkombination behauptet kanonische oder normative Authority.
+6. `canonical_sources` ist nicht leer, enthält strukturell gültige, eindeutige
+   Einträge und drückt die Ableitungsquellenbeziehung getrennt vom
+   `reference_type` aus.
+7. Jede Quellenreferenz besitzt `reference_type: canonical` und löst nach
+   AD-014 eindeutig auf ein gegenwärtig kanonisches Ziel auf; ihre Validität
+   wird nicht als Authority des CTX-Artefakts interpretiert.
+8. `architecture_decisions` löst nach AD-010 ausschließlich unmittelbar
+   anwendbare, Accepted beziehungsweise weiterhin verbindliche und nicht
+   supersedierte `AD-XXX`-Einträge auf; bloße Fließtexterwähnungen werden davon
+   unterschieden.
+9. `status` ist ein nach PB-000 und AD-013 zulässiger Dokumentstatus, und das
+   Artefakt führt keine zusätzliche Zustandsdimension oder einen Alias dafür.
+10. Die Kombination aus CTX-Dokumentklasse, `category`,
+    `source_of_truth`, Quellenreferenzen, Decision-Referenzen und `status`
+    bleibt mit der non-canonical, derived und nicht normativen Grenze aus
+    AD-009 vereinbar.
+
+Dieser Vertrag legt nur fest, was später deterministisch validierbar sein muss.
+Er implementiert weder Schema noch Validator und autorisiert weder Migration
+noch automatische Regeneration.
+
+**Begründung**
+
+Das reduzierte Profil übernimmt Identitäts-, Versions-, Status-, Datums-,
+Ownership- und Retrievalfelder aus PB-000, ohne CTX dem vollständigen
+Frontmatter kanonischer Project-Bible-Dokumente zu unterwerfen. Die vorhandenen
+Felder `category` und `source_of_truth` reichen zusammen mit der CTX-ID aus, um
+die bereits entschiedene Authority Classification eindeutig auszudrücken;
+zusätzliche Authority-Synonyme würden nur widersprüchliche Kombinationen
+ermöglichen.
+
+Eine explizite Liste typisierter kanonischer Ableitungsquellen macht die von
+AD-009 verlangte Regenerierbarkeit nachvollziehbar. Dabei verwendet sie die
+Taxonomie und Auflösungsregeln aus AD-014, hält die Quellenbeziehung von ihrem
+Referenztyp getrennt und überträgt keine Authority. Die unveränderte Anwendung
+von AD-010 und AD-013 hält Decision-Traceability, Versionierung und Zustand im
+bestehenden Governance-Modell.
+
+**Konsequenzen**
+
+- Vor Annahme dieser Decision entsteht keine verbindliche neue Regel und keine
+  Umsetzung ist freigegeben.
+- Nach einer späteren Annahme kann WP-005 CTX-000 kontrolliert auf dieses Profil
+  migrieren und die zuständigen Governance-Regeln operationalisieren.
+- Diese Vorbereitung ändert CTX-000, PB-000 und PB-997 nicht und implementiert
+  weder Schema, Validator, Generator, Build-Logik noch Synchronisations- oder
+  Regenerationsprozess.
+- AD-009, AD-010, AD-013 und AD-014 bleiben unverändert maßgeblich; diese
+  Decision schafft weder neue Authority noch ein konkurrierendes
+  Referenzmodell oder eine neue Zustandsdimension.
+- `GOV-B-013` und andere Findings oder Work Packages werden nicht umgesetzt
+  oder vorweggenommen.
+
+**Verwandte Entscheidungen**
+
+- AD-009
+- AD-010
+- AD-013
+- AD-014
+
+**Traceability**
+
+- GA-001
+- GA-001-RES
+- GOV-B-015
+- WP-005
+
 # Versionshistorie
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.13.0 | 2026-08-16 | Canonical | AD-015 als Pending Decision zum Frontmatterprofil für Derived Operational Continuity Artifacts vorbereitet; keine CTX-Migration, Schema- oder Validatorimplementierung vorgenommen. |
 | 1.12.0 | 2026-08-16 | Canonical | AD-014 nach Architecture Review angenommen und Reference Type, Relationship Semantics und Authority als orthogonale Konzepte mit getrennten Validierungsfolgen präzisiert; keine Umsetzung oder Referenzmigration vorgenommen. |
 | 1.11.0 | 2026-08-16 | Canonical | AD-014 als Pending Decision zum Governance Reference Model für GOV-B-012 und WP-005 vorbereitet; keine Umsetzung oder Referenzmigration vorgenommen. |
 | 1.10.0 | 2026-08-07 | Canonical | AD-013 nach Governance-Review angenommen und die Orthogonalität aller Governance-Zustandsdimensionen sowie ausschließlich explizit definierte dimensionenübergreifende Interaktionen festgelegt. |
