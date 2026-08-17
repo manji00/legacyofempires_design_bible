@@ -1,11 +1,11 @@
 ---
 document_id: CTX-000
 title: Project 4X Context Handoff
-version: 1.1.0
+version: 1.2.0
 status: Accepted
 category: Derived Operational Continuity Artifact
 created: 2026-08-05
-updated: 2026-08-16
+updated: 2026-08-17
 owners:
   - Project Lead
 audience:
@@ -33,6 +33,7 @@ architecture_decisions:
   - AD-013
   - AD-014
   - AD-015
+  - AD-016
 tags:
   - continuity
   - derived
@@ -59,6 +60,31 @@ A new chat must **not** restart the project, recreate already completed document
 
 The assistant uses this file as an entry point and verifies the current state in
 the responsible canonical PB documents before continuing.
+
+## Content Derivation and Source Precedence
+
+All project-identity, product-vision and design-philosophy content in this
+artifact is classified as **DERIVED SUMMARY**. CTX-000 owns only the selection,
+compression and usability of this operational handoff; it owns none of the
+normative content summarized here.
+
+| Derived summary in CTX-000 | Normative source |
+|---|---|
+| Sections 2–3 and the project-character statements in sections 5–8, 15 and 20 | [`PB-001`](project-bible/governance/PB-001_Projektmanifest.md) |
+| Sections 4–5 and product-oriented target or success statements in sections 7–8 and 20 | [`PB-002`](project-bible/governance/PB-002_Vision.md) |
+| Design heuristics and domain-design requirements summarized in sections 5–8 and 20 | [`PB-003`](project-bible/governance/PB-003_Designphilosophie.md) |
+
+The displayed maxim “The simulation decides. The AI narrates.” is a **QUOTE —
+normative source: PB-002, section 8**. All other shortened, translated or
+contextualized repetitions are **DERIVED SUMMARY**, not quotations. These
+source links use the existing `canonical` reference type recorded in
+`canonical_sources`; derivation semantics and authority remain separate from
+that reference type.
+
+If any representation in CTX-000 differs from its normative source, the
+responsible normative source always prevails. This rule preserves the AD-009
+authority boundary: no statement in CTX-000 can define project identity,
+product vision, design philosophy or a design requirement.
 
 ## Mandatory Continuity Rule
 
@@ -827,4 +853,5 @@ summary cannot prescribe the next action.
 
 | Version | Date | Status | Summary |
 |---|---|---|---|
+| 1.2.0 | 2026-08-17 | Accepted | Classified all project identity, product vision and design-philosophy content as derived summaries, identified their normative PB sources, and operationalized source precedence under AD-016 without changing summarized meaning. |
 | 1.1.0 | 2026-08-16 | Accepted | Migrated CTX-000 to the AD-015 derived-artifact profile; added canonical provenance, directly applicable Decisions, and typed planned references for WP-005. |

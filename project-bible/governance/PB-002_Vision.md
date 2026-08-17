@@ -1,11 +1,11 @@
 ---
 document_id: PB-002
 title: Vision
-version: 1.1.0
+version: 1.2.0
 status: Canonical
 category: Governance
 created: 2026-08-05
-updated: 2026-08-16
+updated: 2026-08-17
 owners:
   - Project Lead
 reviewers: []
@@ -54,6 +54,8 @@ requirements:
   - REQ-VIS-008
   - REQ-VIS-009
   - REQ-VIS-010
+architecture_decisions:
+  - AD-016
 design_goals:
   - DG-VIS-001
   - DG-VIS-002
@@ -85,6 +87,22 @@ It describes what kind of game and framework the project is intended to become, 
 PB-002 is not a feature list, roadmap or technical architecture. It is the authoritative product direction against which future systems, scenarios and implementation choices are evaluated.
 
 > Project 4X is a scenario-driven Grand Strategy sandbox in which societies, governments, ideologies, countries and power structures can emerge, transform and collapse through simulation.
+
+### 1.1 Normative Content Ownership
+
+PB-002 is the sole normative home, under AD-016, for the long-term product
+vision, product goals, product-oriented target requirements and
+product-oriented success requirements. The vision, success criteria, design
+goals and `REQ-VIS-*` requirements in this document are therefore classified
+as **OWNED NORMATIVE STATEMENT** for those product functions.
+
+Section 3.1 restates the fundamental project identity owned by PB-001 in a
+product-vision context and is classified as a **DERIVED SUMMARY — normative
+source: PB-001, sections 3 and 11**. The translated manifesto line “Build systems. Let history emerge.” in
+section 2 is a **DERIVED SUMMARY — normative source: PB-001, heading and
+section 19**. These classifications grant PB-002 no parallel ownership of the
+project WHY. Where either representation conflicts with PB-001, PB-001
+prevails; PB-002 remains authoritative only within its product-vision domain.
 
 ---
 
@@ -838,6 +856,10 @@ These documents may refine implementation and scope, but they must remain consis
 ---
 
 ## 22. Decisions and Change History
+
+### Version 1.2.0 – 2026-08-17
+
+Operationalized AD-016 by identifying PB-002 as the normative home of product vision, product goals, product target requirements and product success requirements, and by classifying the project-identity restatement and translated manifesto summary without changing their meaning.
 
 ### Version 1.1.0 – 2026-08-16
 

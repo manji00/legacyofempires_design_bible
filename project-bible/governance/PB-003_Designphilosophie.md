@@ -1,11 +1,11 @@
 ---
 document_id: PB-003
 title: Designphilosophie
-version: 1.0.2
+version: 1.1.0
 status: Canonical
 category: Governance
 created: 2026-08-05
-updated: 2026-08-16
+updated: 2026-08-17
 owners:
   - Project Lead
 reviewers: []
@@ -53,6 +53,7 @@ requirements:
 architecture_decisions:
   - AD-004
   - AD-010
+  - AD-016
 design_goals:
   - DG-DES-001
   - DG-DES-002
@@ -101,6 +102,24 @@ Die Designphilosophie ist der verbindliche Maßstab für:
 Ein Feature kann technisch funktionieren und trotzdem gegen die Designphilosophie verstoßen.
 
 Ein System gilt erst dann als erfolgreich, wenn es strategische Entscheidungen erzeugt, verständliche Konsequenzen besitzt und die langfristige Produktvision unterstützt.
+
+### 1.1 Normative Content Ownership
+
+**Klassifikation: OWNED NORMATIVE STATEMENT.** PB-003 ist gemäß AD-016 die
+alleinige normative Heimat für Designphilosophie, Designheuristiken und
+fachliche Designanforderungen. Dazu gehören insbesondere die Designziele in
+Abschnitt 3, die Gestaltungs- und Bewertungsregeln in den Abschnitten 4 bis 34
+sowie die `REQ-DES-*`-Anforderungen in Abschnitt 33. Die in PB-002
+formulierten Produktziele bleiben davon getrennt.
+
+Der Leitsatz „Baue Systeme. Lass Geschichte entstehen.“ in Abschnitt 2 und in
+der Zusammenfassung ist jeweils ein **QUOTE — normative Quelle: PB-001,
+Überschrift und Abschnitt 19**. Der Leitsatz „Der Spieler formt Geschichte.
+Die Simulation macht sie glaubwürdig.“ in der Zusammenfassung ist ein
+**QUOTE — normative Quelle: PB-001, Abschnitte 4 und 19**. Die Zitate besitzen
+hier keine unabhängige normative Authority. Für ihren Wortlaut und den
+fundamentalen Projektcharakter hat PB-001 Vorrang; die daraus abgeleiteten
+Designregeln bleiben innerhalb der Design-Domäne normativer Besitz von PB-003.
 
 ---
 
@@ -1121,4 +1140,5 @@ Narrative Darstellung macht das Ergebnis verständlich und lebendig.
 
 | Version | Datum | Status | Änderung |
 |---|---|---|---|
+| 1.1.0 | 2026-08-17 | Canonical | Normative Heimat für Designphilosophie, Designheuristiken und fachliche Requirements gemäß AD-016 ausgewiesen und wiederholte Manifest-Leitsätze als Zitate klassifiziert; fachliche Inhalte unverändert erhalten. |
 | 1.0.2 | 2026-08-16 | Canonical | Unmittelbar anwendbare Accepted Decisions gemäß AD-010 für WP-005 ergänzt. |
