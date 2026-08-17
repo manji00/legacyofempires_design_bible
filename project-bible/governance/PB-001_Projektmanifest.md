@@ -1,13 +1,13 @@
 ---
 document_id: PB-001
 title: Projektmanifest
-version: 1.0.1
+version: 1.1.0
 status: Canonical
 category: Governance
 document_type: Manifest
 language: de
 created: 2026-08-05
-updated: 2026-08-06
+updated: 2026-08-17
 owners:
   - Project Lead
 reviewers: []
@@ -23,6 +23,8 @@ related_documents:
 systems: []
 requirements: []
 design_goals: []
+architecture_decisions:
+  - AD-016
 tags:
   - grand-strategy
   - emergent-history
@@ -74,6 +76,21 @@ Das Manifest dient als dauerhafte Leitlinie für:
 Ein neues Feature darf die hier festgelegten Grundsätze konkretisieren, aber nicht stillschweigend ersetzen.
 
 Bei Widersprüchen muss die Entscheidung dokumentiert und das betroffene kanonische Dokument ausdrücklich überarbeitet werden.
+
+### 1.1 Normative Content Ownership
+
+**Klassifikation: OWNED NORMATIVE STATEMENT.** PB-001 ist gemäß AD-016 die
+alleinige normative Heimat für Projektidentität, Projektzweck, fundamentalen
+Projektcharakter und das unverlierbare Projekt-Warum. Dazu gehören in diesem
+Dokument insbesondere die Abschnitte 2 bis 5 sowie die projektweiten
+Grundsätze in den Abschnitten 11 bis 13 und 19. Ihre fachliche Bedeutung bleibt
+unverändert.
+
+PB-002 und PB-003 konkretisieren diese Basis ausschließlich innerhalb ihrer
+eigenen Ownership-Domänen. CTX-000 gibt Teile davon nur als abgeleitete
+operative Zusammenfassung wieder. Bei jeder Abweichung einer solchen
+Darstellung hat PB-001 für die hier besessene normative Funktion ausnahmslos
+Vorrang.
 
 ---
 
@@ -630,5 +647,6 @@ Es darf nicht verwendet werden, um offene Designfragen ohne eigenes Dokument vor
 
 | Version | Datum | Status | Änderung |
 |---|---|---|---|
+| 1.1.0 | 2026-08-17 | Canonical | Normative Heimat für Projektidentität, Zweck, fundamentalen Charakter und unverlierbares Warum gemäß AD-016 eindeutig ausgewiesen; Inhalte unverändert erhalten. |
 | 0.1 | 2026-08-05 | Superseded | Erste Manifestfassung vor Anwendung des Project-Bible-Standards. |
 | 1.0 | 2026-08-05 | Active | Vollständige Neufassung gemäß Project-Bible-Regeln und kanonischem Projektkontext. |
