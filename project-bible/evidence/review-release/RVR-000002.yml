@@ -1,0 +1,16 @@
+artifact_class: reverification
+version: 1.0.0
+review_run_id: RVR-000002
+original_review_run_id: RVR-000001
+finding_ids: [FND-000001]
+baseline:
+  - artifact_id: PB-999
+    version: 1.1.0
+    commit: 94f797ce1fa604e487254d54362e8aa352ff9e67
+    included_scope: Authority statements and backlog gate boundary
+    excluded_scope: Backlog item content and all WP-004 terminology questions
+method: Manual semantic review plus deterministic WP-002 validator
+result: Passed
+responsible_role: Architecture Board
+timestamp: '2026-08-17T11:00:00Z'
+evidence_references: [COR-000001, 'scripts/validate_wp002.rb']

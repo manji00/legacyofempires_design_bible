@@ -1,14 +1,12 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 0.16.3
+version: 0.16.4
 status: Review
-release_stage: RC1
-review_status: Passed
 review_process: PB-997
 category: Governance
 created: 2026-08-05
-updated: 2026-08-16
+updated: 2026-08-17
 owners:
   - Project Lead
 reviewers: []
@@ -74,6 +72,11 @@ context_priority: critical
 ---
 
 # PB-004 – Naming & Terminology
+
+> **Review evidence notice (GOV-B-003):** This revision makes no `Passed` or
+> Release Candidate claim. Any later `Passed` reference requires a controlled
+> Review Run ID, closed Findings, successful re-verification and documented
+> approval decision under PB-997.
 
 ## Kapitel 1 – Zweck und Geltungsbereich
 

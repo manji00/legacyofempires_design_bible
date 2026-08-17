@@ -1,0 +1,27 @@
+artifact_class: finding
+version: 1.0.0
+finding_id: FND-000001
+origin_review_run_id: RVR-000001
+affected_baseline:
+  - artifact_id: PB-999
+    version: 1.0.1
+    commit: 1d1cbb042ba650ea9cd0021d7792944d7eabaed5
+    included_scope: Authority statements and backlog gate boundary
+    excluded_scope: Backlog item content and all WP-004 terminology questions
+scope_location: PB-999 Arbeitsweise
+statement: The mutable backlog does not explicitly prohibit gate or closure authority.
+violated_requirement: AD-017 PB-999-Authority-Grenze
+release_blocking: true
+release_blocking_rationale: An ambiguous gate source invalidates the controlled evidence demonstration.
+correction_ids: [COR-000001]
+verification_review_run_ids: [RVR-000002]
+lifecycle_history:
+  - {from: null, to: Recorded, role: Governance Reviewer, timestamp: '2026-08-17T10:05:00Z', evidence: RVR-000001}
+  - {from: Recorded, to: Correction Required, role: Governance Reviewer, timestamp: '2026-08-17T10:10:00Z', evidence: RVR-000001}
+  - {from: Correction Required, to: Awaiting Verification, role: Governance Reviewer, timestamp: '2026-08-17T10:30:00Z', evidence: COR-000001}
+  - from: Awaiting Verification
+    to: Closed
+    role: Architecture Board
+    timestamp: '2026-08-17T11:00:00Z'
+    evidence: RVR-000002
+    closure_rationale: Explicit non-authority rules satisfy AD-017 and deterministic validation passed.

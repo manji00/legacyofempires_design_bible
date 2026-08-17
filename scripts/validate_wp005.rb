@@ -344,12 +344,12 @@ end
 # applicable Accepted Decisions implemented by later work packages. Generic
 # validation above deliberately does not infer these sets from free prose.
 expected_decisions = {
-  "PB-000" => %w[AD-009 AD-010 AD-011 AD-012 AD-013 AD-014],
+  "PB-000" => %w[AD-009 AD-010 AD-011 AD-012 AD-013 AD-014 AD-017],
   "PB-001" => %w[AD-016],
   "PB-002" => %w[AD-016],
   "PB-003" => %w[AD-004 AD-010 AD-016],
   "PB-004" => %w[AD-001 AD-002 AD-003 AD-004 AD-006 AD-008 AD-010],
-  "PB-997" => %w[AD-005 AD-010 AD-012 AD-013],
+  "PB-997" => %w[AD-005 AD-010 AD-012 AD-013 AD-017],
   "PB-998" => %w[AD-005 AD-007 AD-010 AD-014],
   "CTX-000" => %w[AD-009 AD-010 AD-013 AD-014 AD-015 AD-016]
 }.freeze
