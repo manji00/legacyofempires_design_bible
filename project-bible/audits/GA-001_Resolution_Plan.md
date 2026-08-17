@@ -226,6 +226,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-016 — Manifest, Vision und Designphilosophie wiederholen normative Grundsätze ohne explizite Ownership-Matrix
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED WITH AD
 - **Begründung:** Die gemeinsame kreative Basis bleibt erhalten, aber normative Ownership wird eindeutig zugewiesen: PB-001 besitzt das Warum, PB-002 die Produktziele, PB-003 Designheuristiken und fachliche Requirements; CTX-000 darf nur ableiten und verweisen.
 - **Resolution Path:** NEW ARCHITECTURE DECISION
@@ -237,6 +238,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-017 — Die grundlegende kreative und technische Richtung ist bemerkenswert konsistent
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED
 - **Begründung:** Das Board bestätigt die positive Beobachtung als Schutzbedingung für die Behebung. Die Governance-Korrekturen dürfen Scenario-First, Emergent History, Simulation Authority, Offline-First, optionale KI und politische Transformation nicht fachlich neu eröffnen.
 - **Resolution Path:** NO ACTION
@@ -289,6 +291,7 @@ Alle angenommenen Findings sind genau einem fachlich verantworteten Work Package
 
 ## WP-006 — Normative Content Ownership and Preservation
 
+- **Status:** Closed
 - **Verantwortung:** Product Governance
 - **Findings:** GOV-B-016, GOV-B-017
 - **Ergebnis:** Eine eindeutige Ownership-Matrix bei unveränderter kreativer und technischer Grundrichtung.
