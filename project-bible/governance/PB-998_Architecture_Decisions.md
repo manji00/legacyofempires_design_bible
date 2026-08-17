@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.18.0
+version: 1.19.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -1744,11 +1744,11 @@ Designrichtung neu eröffnet.
 
 **Status**
 
-Pending
+Accepted
 
 **Entscheidungsdatum**
 
-—
+2026-08-17
 
 **Betroffene Dokumente**
 
@@ -1800,9 +1800,23 @@ Die bestehende Ownership-Verteilung bleibt unverändert:
   Ausübung bestehender Authority; sie definieren keine Regeln, Prozesse,
   Decisions oder Rollen.
 
+Damit bleibt die AD-012-Zuordnung ausdrücklich unverändert: PB-000 ist die
+Heimat der Governance Rules, PB-997 die des Governance Process, PB-998 die der
+Architecture Decisions und Evidence ausschließlich Execution beziehungsweise
+Proof.
+
 Der verbindliche Grundsatz lautet:
 
 > Evidence records authority exercise. Evidence does not own authority.
+
+Dieser Grundsatz gilt einzeln für Review Run Record, Finding Record, Correction
+Record, Re-Review-/Re-Verification Record, Review Result Record und Release
+Record: Jeder dieser Records protokolliert Handlungen und Zustände, bewahrt
+Traceability und darf dort, wo das bestehende Governance-Modell dies festlegt,
+als kontrollierter State Keeper dienen. Keiner dieser Records erwirbt dadurch
+selbstständig Governance, Process, Decision oder Approval Authority. Diese
+Authority verbleibt ausschließlich bei den in PB-000 und PB-997 definierten
+Rollen.
 
 Der kontrollierte Review Record ist State Keeper und Evidence für
 `review_phase` und `review_status`; er besitzt selbst keine Governance
@@ -1874,10 +1888,12 @@ Die Baseline enthält verpflichtend:
 
 Bei mehreren Artefakten ist die vollständige, geordnete Menge dieser Bindungen
 die eine Run-Baseline. Ein Review Result gilt ausschließlich für diese
-Baseline. Eine inhaltlich geänderte Revision erbt weder `Passed` noch eine
-Freigabe. Re-Review und Re-Verification sind neue Runs mit neuen IDs und eigener
-Baseline; sie referenzieren den Ursprungs-Run und die erneut geprüften Findings.
-Sie dürfen frühere Ergebnisse nicht überschreiben.
+Baseline. Auch jede Release Decision gilt ausschließlich für ihre gebundene
+Release-Baseline. Eine materiell geänderte Revision erbt weder `Passed` noch
+Release Approval und erfordert nach dem bestehenden Prozess einen neuen oder
+ausdrücklich wiederholten Review. Re-Review und Re-Verification sind neue Runs
+mit neuen IDs und eigener Baseline; sie referenzieren den Ursprungs-Run und die
+erneut geprüften Findings. Sie dürfen frühere Ergebnisse nicht überschreiben.
 
 ### Finding-Identität und Lifecycle
 
@@ -1911,10 +1927,14 @@ fortbesteht oder für eine neue relevante Baseline erneut gilt; Ursache,
 autorisierte Rolle, Zeitpunkt und nachfolgende Prüfung bleiben in der Historie.
 
 Dieser Automat ist keine neue Governance State Dimension und erweitert AD-013
-nicht. Er beschreibt ausschließlich die Disposition genau eines
-Evidence-Artefakts und darf `status`, `review_phase`, `review_status`,
-`ad_status`, `work_package_status` oder `release_stage` weder ersetzen noch
-setzen. Die sechs AD-013-Dimensionen bleiben abschließend und orthogonal. Der
+nicht. Er ist ausschließlich der interne Lifecycle des Finding-Record-
+Artefakts und beschreibt die Disposition genau dieses Evidence-Artefakts. Er
+ist weder eine siebte AD-013-Dimension noch ein Ersatz für `review_phase`,
+`review_status`, `work_package_status`, Dokumentstatus (`status`),
+`release_stage` oder `ad_status`. Finding-Lifecycle-Übergänge dürfen als
+Voraussetzungen an Gates teilnehmen, dürfen aber niemals automatisch eine
+andere AD-013-Dimension setzen. Die sechs AD-013-Dimensionen bleiben
+abschließend und orthogonal. Der
 Finding-Automat ist erforderlich, damit Correction, Verification, Closure und
 Wiederöffnung deterministisch und historisch geprüft werden können, ohne aus
 einer gelöschten Aufgabe oder fremden Zustandsdimension einen Finding-Status
@@ -1924,10 +1944,14 @@ abzuleiten.
 
 Review Result bleibt ausschließlich `review_status` nach AD-013. Es entsteht
 keine konkurrierende Ergebnisdimension. Ein Review Result muss Run-ID,
-Baseline, gültigen Wert, autorisierte Approval Role, Entscheidung, Zeitpunkt
-und tragende Evidence referenzieren. Ein kontrollierter Record hält diesen
-Zustand und seine Historie, verleiht seinem Autor aber keine zusätzliche
-Authority.
+die exakt geprüfte Baseline, den daraus resultierenden gültigen Wert, die
+verantwortliche autorisierte Rolle, Approval Evidence, Zeitpunkt sowie die
+relevanten Findings und Verification Evidence referenzieren. Der Review Result
+Record dokumentiert damit die bestehende Dimension und erzeugt keine zweite
+Review-Result-Dimension. Ein kontrollierter Record hält diesen Zustand und
+seine Historie, verleiht seinem Autor aber keine zusätzliche Authority.
+`Passed` gilt ausschließlich für die exakt geprüfte Baseline; eine geänderte
+Baseline erbt `Passed` nicht.
 
 Der Release Record bindet jede Release-Kandidatur beziehungsweise jedes
 Release an eine exakte, unveränderliche Baseline und dokumentiert mindestens:
@@ -1950,6 +1974,17 @@ Gates prüfen Voraussetzungen; sie setzen keinen fremden Zustand automatisch.
 Eine erfolgreiche Freigabe ist unzulässig, solange für ihre exakte Baseline ein
 release-blockierendes Finding nicht kontrolliert geschlossen ist.
 
+Der Release Record dokumentiert ausschließlich einen autorisierten
+`release_stage`-Übergang und besitzt keine eigenständige Release Authority. Der
+Project Lead bleibt nach dem bestehenden Governance-Modell für `release_stage`
+verantwortlich; wo Architecture Review erforderlich ist, wird die zusätzliche
+Approval des Architecture Board als Voraussetzung protokolliert. Der Record
+darf eine erfolgreiche Release Decision nur dokumentieren, wenn alle
+erforderlichen Gates erfüllt sind. Er darf Release Approval insbesondere nicht
+allein aus `review_status: Passed`, dem Fehlen von PB-999-Aufgaben, dem
+Dokumentstatus, dem Abschluss eines Work Package oder der Acceptance einer
+Architecture Decision ableiten.
+
 Diese Decision führt keine neue fachliche Severity-Taxonomie ein. Ob ein
 Finding nach bestehenden Regeln release-blockierend ist, wird als explizite,
 historisierte Gate-Eigenschaft samt Begründung und zuständiger Rolle geführt.
@@ -1966,6 +2001,7 @@ anzeigen, informativ auf kontrollierte Finding-IDs verweisen und Arbeitsplanung
 unterstützen. Es darf nicht:
 
 - Finding Closure autorisieren,
+- ein Release Gate erfüllen,
 - `review_status` oder `release_stage` setzen,
 - Release Approval erteilen,
 - einen Releaseblocker durch Textänderung, Checkbox oder Löschung beseitigen
@@ -1979,7 +2015,8 @@ Finding Record noch Review Result, Approval Decision oder Release Stage.
 ### Retention, History und Traceability
 
 Die vollständige historische Evidence wird mindestens für die Lebensdauer des
-Repositorys aufbewahrt. Das betrifft Review-Run-Identität und Baseline,
+Repositorys aufbewahrt, sofern nicht eine künftige `Accepted` Architecture
+Decision diese Regel ausdrücklich supersediert. Das betrifft Review-Run-Identität und Baseline,
 Findings und ihre gesamte History, Corrections und Implementation References,
 Re-Reviews und Re-Verifications, Review Results sowie jede Release Decision.
 Records werden nicht gelöscht, weil ein Finding geschlossen oder ein
@@ -2036,28 +2073,31 @@ deterministisch prüfen können:
     ersetzt.
 
 Manuell bleiben mindestens die fachliche Richtigkeit eines Findings, die
-inhaltliche Vollständigkeit einer Correction, die fachliche Angemessenheit
-eines `Passed`, die Angemessenheit einer Releaseentscheidung und die
-Vollständigkeit des Review Scope. Diese Decision autorisiert weder Schema noch
+inhaltliche Vollständigkeit einer Correction, die Vollständigkeit des Review
+Scope, die fachliche Angemessenheit eines `Passed` und die Angemessenheit der
+Release Approval. Diese Decision autorisiert weder Schema noch
 Validator und macht keine heuristische Prosa-Auswertung zur Governance-Regel.
 
 ### Scope und Umsetzungsgrenze
 
-Diese Pending Decision bereitet ausschließlich die Architektur der
+Diese Accepted Decision legt ausschließlich die Architektur der
 kontrollierten Governance Evidence vor. Sie implementiert weder `WP-002` noch
 `GOV-B-003`, verändert PB-004, PB-997 oder PB-999 und erzeugt keinen Review Run,
 kein Finding, keinen Validator, keinen Test-Review-Run, keinen Release- oder
-Closure Report. Sie stellt nach späterer Acceptance lediglich die
-Evidence-Grundlage bereit, mit der WP-002 den unbelegten Passed-/RC1-Anspruch
-von PB-004 regelkonform korrigieren kann.
+Closure Report. Sie stellt lediglich die Evidence-Grundlage bereit, mit der
+WP-002 den unbelegten Passed-/RC1-Anspruch von PB-004 später regelkonform
+korrigieren kann.
 
 Terminology Release Boundary, terminologiespezifische Qualitätskriterien,
 allgemeine Release-Governance-Bereinigung in PB-004, `GOV-B-004`, `GOV-B-007`
 und jede Umsetzung von `WP-004` bleiben vollständig außerhalb dieser Decision.
+Insbesondere entscheidet sie weder terminologiespezifische Release-Kriterien
+noch die Entfernung allgemeiner Release Governance aus PB-004.
 
-WP-002 bleibt blockiert, bis diese Decision durch Architecture Review auf
-`Accepted` gesetzt wurde. Der Status `Pending` erteilt keine Implementation
-Authorization.
+Die Acceptance dieser Decision implementiert WP-002 nicht. GOV-B-003 bleibt
+ausschließlich nachgelagerter Umsetzungskontext: Änderungen an PB-004, seinem
+gegenwärtigen `review_status` oder RC1-Claims sowie ein Test Review Run gehören
+erst zur autorisierten WP-002-Umsetzung.
 
 **Begründung**
 
@@ -2073,9 +2113,10 @@ Blocker verschwinden lassen kann.
 
 **Konsequenzen**
 
-- AD-017 bleibt bis zur Architecture Review `Pending`, ist nicht verbindlich
-  und autorisiert keine Umsetzung.
-- Nach einer späteren Acceptance darf WP-002 ausschließlich innerhalb seines
+- AD-017 ist nach Architecture Review `Accepted` und damit als
+  Evidence-Architektur verbindlich; die Acceptance selbst implementiert
+  WP-002 nicht.
+- WP-002 darf ausschließlich innerhalb seines
   genehmigten Umfangs die Evidence-Familie in PB-000/PB-997 operationalisieren
   und PB-999 auf eine rein informative Arbeitsansicht begrenzen.
 - Review Result und Release Stage bleiben getrennte AD-013-Dimensionen;
@@ -2108,6 +2149,7 @@ Blocker verschwinden lassen kann.
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.19.0 | 2026-08-17 | Canonical | AD-017 nach Architecture Review angenommen; Finding-Lifecycle, Evidence/Authority, Review Result, Release Record, immutable Baseline, PB-999, Retention sowie Review-/Release-Orthogonalität präzisiert; keine WP-002-/WP-004-Umsetzung vorgenommen. |
 | 1.18.0 | 2026-08-17 | Canonical | AD-017 als gemeinsame Pending Decision zum Governance Review and Release Evidence Model für GOV-B-008/GOV-B-009 und WP-002 vorbereitet; keine WP-002-/WP-004-Umsetzung, Evidence-Datei, Schema-, Validator-, Review- oder Closure-Ausführung vorgenommen. |
 | 1.17.1 | 2026-08-17 | Canonical | WP-007 als Direct Fix umgesetzt: AD-005 auf die eindeutige Reihenfolge Entwurf, Registrierung, Pending, Architecture Review, Accepted, Umsetzung und Verifikation präzisiert; keine neue Architecture Decision oder Lifecycle-Stufe eingeführt. |
 | 1.17.0 | 2026-08-17 | Canonical | AD-016 nach Architecture Review angenommen und den ausnahmslosen Vorrang der einzigen normativen Quelle sowie die ausschließliche Änderungs-Ownership ihrer normativen Heimat klargestellt; keine Synchronisationsmechanik oder WP-006-Umsetzung eingeführt. |
