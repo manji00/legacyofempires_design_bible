@@ -168,6 +168,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-011 — AD-005 ist intern widersprüchlich formuliert
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED
 - **Begründung:** Die beabsichtigte Reihenfolge ist bereits erkennbar und wird explizit gemacht: Entwurf, registrierter AD-Eintrag, Status `Accepted`, danach Umsetzung. Es wird keine neue fachliche Entscheidung benötigt.
 - **Resolution Path:** DIRECT FIX
@@ -299,6 +300,7 @@ Alle angenommenen Findings sind genau einem fachlich verantworteten Work Package
 
 ## WP-007 — Decision Lifecycle Clarification
 
+- **Status:** Closed
 - **Verantwortung:** Architecture Decision Governance
 - **Findings:** GOV-B-011
 - **Ergebnis:** AD-005 schreibt die zwingende Reihenfolge von Registrierung, Acceptance und Umsetzung eindeutig fest.
