@@ -1,10 +1,10 @@
 artifact_class: release
-version: 1.0.0
+version: 1.0.1
 release_id: REL-000001
 baseline:
   - artifact_id: PB-999
     version: 1.1.0
-    commit: 94f797ce1fa604e487254d54362e8aa352ff9e67
+    commit: 19cc9527f238d46b651c3b9833cc9e39e6dcba72
     included_scope: Authority statements and backlog gate boundary
     excluded_scope: Backlog item content and all WP-004 terminology questions
 review_run_id: RVR-000002
@@ -13,9 +13,11 @@ review_result: Passed
 open_release_blocking_findings: []
 required_approval_roles: [Project Lead, Architecture Board]
 actual_approval_roles: [Project Lead, Architecture Board]
-approval_decision: Approved
+approval_decision: Not Approved
 timestamp: '2026-08-17T11:10:00Z'
 evidence_references: [RVR-000002, RES-000001, FND-000001]
-release_stage: Release Candidate
+release_stage: Unreleased
 authorized_by: Project Lead
-scope_note: Evidence test candidacy only; no Project Bible release or WP-004 authority is asserted.
+scope_note: Release Candidate was not approved because PB-999 1.1.0 is Draft; the record retains the explicit non-release decision and asserts no Project Bible release or WP-004 authority.
+amendment_history:
+  - {version: 1.0.1, timestamp: '2026-08-17T12:00:00Z', reason: Corrected the persisted baseline and replaced the invalid Draft-document candidacy with an explicit Unreleased decision, superseded_reference: 94f797ce1fa604e487254d54362e8aa352ff9e67, replacement_reference: 19cc9527f238d46b651c3b9833cc9e39e6dcba72}

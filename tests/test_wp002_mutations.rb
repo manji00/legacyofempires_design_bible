@@ -18,13 +18,28 @@ cases={
   "Re-Verification without Finding"=>->(r){edit(r,"RVR-000002.yml"){|d|d["finding_ids"]=["FND-999999"]}},
   "Passed on wrong baseline"=>->(r){edit(r,"RES-000001.yml"){|d|d["baseline"][0]["version"]="9.9.9"}},
   "Release without Review Result"=>->(r){edit(r,"REL-000001.yml"){|d|d.delete("review_result_id")}},
-  "Release with open blocker"=>->(r){edit(r,"REL-000001.yml"){|d|d["open_release_blocking_findings"]=["FND-000001"]}},
-  "Release without required role"=>->(r){edit(r,"REL-000001.yml"){|d|d["actual_approval_roles"]=["Project Lead"]}},
+  "Release with open blocker"=>->(r){edit(r,"REL-000001.yml"){|d|d["open_release_blocking_findings"]=["FND-000001"];d["release_stage"]="Release Candidate";d["approval_decision"]="Approved"}},
+  "Release without required role"=>->(r){edit(r,"REL-000001.yml"){|d|d["actual_approval_roles"]=["Project Lead"];d["release_stage"]="Release Candidate";d["approval_decision"]="Approved"}},
   "PB-999 as Gate Evidence"=>->(r){edit(r,"REL-000001.yml"){|d|d["evidence_references"]=["PB-999"]}},
   "changed baseline inherits Passed"=>->(r){edit(r,"RVR-000002.yml"){|d|d["baseline"][0]["commit"]="a"*40}},
   "invalid Finding lifecycle"=>->(r){edit(r,"FND-000001.yml"){|d|d["lifecycle_history"][1]["to"]="Resolved"}},
   "invalid Finding transition"=>->(r){edit(r,"FND-000001.yml"){|d|d["lifecycle_history"][1]["from"]="Closed"}},
-  "evidence sets foreign state"=>->(r){edit(r,"COR-000001.yml"){|d|d["ad_status"]="Accepted"}}
+  "evidence sets foreign state"=>->(r){edit(r,"COR-000001.yml"){|d|d["ad_status"]="Accepted"}},
+  "nonexistent Commit"=>->(r){edit(r,"COR-000001.yml"){|d|d["implementation_commit"]="0"*40}},
+  "review_phase differs from History endpoint"=>->(r){edit(r,"RVR-000001.yml"){|d|d["review_phase"]="Completed"}},
+  "interrupted Finding History"=>->(r){edit(r,"FND-000001.yml"){|d|d["lifecycle_history"][2]["from"]="Recorded"}},
+  "non-monotone timestamps"=>->(r){edit(r,"FND-000001.yml"){|d|d["lifecycle_history"][2]["timestamp"]="2026-08-17T09:00:00Z"}},
+  "Closed without successful Re-Verification"=>->(r){edit(r,"RVR-000002.yml"){|d|d["result"]="Failed"}},
+  "invalid review_status"=>->(r){edit(r,"RES-000001.yml"){|d|d["review_status"]="Successful"}},
+  "invalid release_stage"=>->(r){edit(r,"REL-000001.yml"){|d|d["release_stage"]="Test Candidate"}},
+  "wrong Approval Role"=>->(r){edit(r,"RES-000001.yml"){|d|d["responsible_role"]="Document Owner"}},
+  "Release Candidate for ineligible revision"=>->(r){edit(r,"REL-000001.yml"){|d|d["release_stage"]="Release Candidate";d["approval_decision"]="Approved"}},
+  "authorized_by wrong role"=>->(r){edit(r,"REL-000001.yml"){|d|d["authorized_by"]="Architecture Board"}},
+  "dangling Evidence Reference"=>->(r){edit(r,"REL-000001.yml"){|d|d["evidence_references"]=["RVR-999999"]}},
+  "duplicate Correction ID"=>->(r){FileUtils.cp(File.join(r,"project-bible/evidence/review-release/COR-000001.yml"),File.join(r,"project-bible/evidence/review-release/COR-copy.yml"))},
+  "duplicate Review Result ID"=>->(r){FileUtils.cp(File.join(r,"project-bible/evidence/review-release/RES-000001.yml"),File.join(r,"project-bible/evidence/review-release/RES-copy.yml"))},
+  "duplicate Release ID"=>->(r){FileUtils.cp(File.join(r,"project-bible/evidence/review-release/REL-000001.yml"),File.join(r,"project-bible/evidence/review-release/REL-copy.yml"))},
+  "class-specific forbidden state"=>->(r){edit(r,"COR-000001.yml"){|d|d["review_phase"]="Completed"}}
 }
 failed=[]
 cases.each do |name,mutation|

@@ -1,5 +1,5 @@
 artifact_class: correction
-version: 1.0.0
+version: 1.0.1
 correction_id: COR-000001
 finding_id: FND-000001
 affected_baseline:
@@ -10,7 +10,9 @@ affected_baseline:
     excluded_scope: Backlog item content and all WP-004 terminology questions
 changed_files:
   - project-bible/governance/PB-999_Editorial_Backlog.md
-implementation_commit: 94f797ce1fa604e487254d54362e8aa352ff9e67
+implementation_commit: 19cc9527f238d46b651c3b9833cc9e39e6dcba72
 responsible_role: Governance Review
-Timestamp: '2026-08-17T10:30:00Z'
+timestamp: '2026-08-17T10:30:00Z'
 description: Added explicit mutable non-canonical non-authority and controlled-evidence boundary statements.
+amendment_history:
+  - {version: 1.0.1, timestamp: '2026-08-17T12:00:00Z', reason: Corrected the non-persisted workspace commit reference to the persisted WP-002 implementation commit, superseded_reference: 94f797ce1fa604e487254d54362e8aa352ff9e67, replacement_reference: 19cc9527f238d46b651c3b9833cc9e39e6dcba72}
