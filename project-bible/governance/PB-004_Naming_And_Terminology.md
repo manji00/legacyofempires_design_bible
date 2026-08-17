@@ -14088,15 +14088,17 @@ PB-004 gilt erst dann als abgeschlossen, wenn sämtliche Punkte der Release Chec
 
 Erst danach darf die Version `1.0.0` gesetzt werden. Das Setzen dieser Version vor dem vollständigen Abschluss der Checkliste und dem erfolgreich abgeschlossenen Governance Review ist unzulässig.
 
-# Release Candidate
+# Reviewstand
 
-PB-004 ist als Release Candidate 1 (RC1) für den bevorstehenden Governance Audit ausgewiesen. Der Review nach PB-997 wurde erfolgreich bestanden; alle fünf Reviewphasen – Structure Review, Terminology Review, Editorial Review, Technical Review und Release Review – sind abgeschlossen.
-
-Dieser Stand enthält ausschließlich die Release-Metadaten und den Release-Hinweis zur Vorbereitung auf den Governance Audit. Version `1.0.0` wird erst nach Abschluss des vollständigen Governance Reviews vergeben.
+Der bisherige RC1-/Passed-Anspruch ist nicht gültig und wird erst nach einem
+kontrollierten Review Run mit geschlossenen Findings, Re-Verification und
+Approval Decision neu bewertet. PB-004 verbleibt im Dokumentstatus `Review`;
+dieser Hinweis behauptet weder Freigabereife noch eine Freigabe.
 
 
 # Versionshistorie
 
 | Version | Datum | Status | Änderung |
 |---|---|---|---|
+| 0.16.4 | 2026-08-17 | Review | GOV-B-003 korrigiert: unbelegten RC1-/Passed- und Freigabeanspruch neutralisiert; PB-004 verbleibt bis zu einem kontrollierten Review Run im Review. |
 | 0.16.3 | 2026-08-16 | Review | Unmittelbar anwendbare Accepted Decisions gemäß AD-010 für WP-005 ergänzt. |
