@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.22.0
+version: 1.23.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -2495,11 +2495,11 @@ GA-001
 
 **Status**
 
-Pending
+Accepted
 
 **Entscheidungsdatum**
 
-—
+2026-08-17
 
 **Betroffene Dokumente**
 
@@ -2691,8 +2691,8 @@ post-boundary Evidence ab.
 
 ### Scope und Umsetzungsgrenze
 
-Diese Pending Decision bereitet ausschließlich die Architecture Review der
-Migration Boundary vor. Sie nimmt keine Validator- oder Teständerung, keine
+Diese Accepted Decision legt ausschließlich die Migration Boundary und ihre
+Cutover-Semantik fest. Sie nimmt keine Validator- oder Teständerung, keine
 Carrieränderung oder Migration, keine Remediation und keine Closure vor. Sie
 ändert weder `GA-001-RES` noch den Status von WP-002, WP-003 oder WP-004 und
 führt keine State Dimension, Transition, Gate, Rolle oder Reference-Type-
@@ -2722,8 +2722,8 @@ geben.
   Ausnahme zu behandeln.
 - Es wird keine historische Evidence erfunden und keine neue Finding-ID für
   den Closure-Regressionsfall angelegt.
-- Vor Architecture Review und `Accepted` entsteht keine verbindliche neue
-  Regel; aus dieser Pending Decision folgt keine Implementation Authorization.
+- AD-019 ist nach Architecture Review `Accepted`; aus der Acceptance folgt
+  keine Implementation Authorization.
 
 **Alternativen betrachtet**
 
@@ -2765,6 +2765,7 @@ GA-001
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.23.0 | 2026-08-17 | Canonical | AD-019 nach Architecture Review angenommen; deterministischen Migration Cutover, strikt begrenzte Legacy Historical Incompleteness, vollständige post-boundary Evidence und kumulative Gate-Nachweise bestätigt; keine Implementation, Validator-, Test-, Carrier-, Closure- oder Remediation-Änderung vorgenommen. |
 | 1.22.0 | 2026-08-17 | Canonical | AD-019 als Pending Decision zur repositorygebundenen Governance State Migration Boundary vorbereitet; Cutover, Legacy-Ausnahme, vollständige post-boundary Evidence und kumulative Gate-Pflichten definiert; keine Implementation, Validator-, Test-, Carrier-, Closure- oder Remediation-Änderung vorgenommen. |
 | 1.21.0 | 2026-08-17 | Canonical | AD-018 nach Architecture Review angenommen; Exactly-one Carrier, Current State, append-only History, Legacy-Incompleteness, Gate-Evidence-, Authority-, Resolution-Plan- und Closure-Report-Grenzen präzisiert; keine WP-003-Remediation oder sonstige Umsetzung vorgenommen. |
 | 1.20.0 | 2026-08-17 | Canonical | AD-018 als Pending Decision zum maschinenlesbaren Governance State Evidence Carrier für `work_package_status` vorbereitet; keine WP-003-Remediation, Bestandsmigration, Schema-, Validator-, Test- oder Closure-Änderung vorgenommen. |
