@@ -1,0 +1,33 @@
+---
+work_package_id: WP-003
+version: 1.0.0
+work_package_status: Verification
+owner: Governance Process
+findings:
+- GOV-B-006
+- GOV-B-014
+architecture_decisions:
+- AD-012
+- AD-013
+- AD-018
+transition_history: []
+evidence_references:
+- project-bible/audits/GA-001_Resolution_Plan.md
+- git:023d06917b47852b153cc87ee74d745b8f2e1645
+- project-bible/governance/PB-998_Architecture_Decisions.md
+gate_evidence:
+  ready: []
+  verification:
+  - git:023d06917b47852b153cc87ee74d745b8f2e1645
+  closed:
+    approval: []
+    definition_of_done: []
+    verification: []
+    closure: []
+closure_evidence: []
+historical_completeness:
+  status: incomplete
+  missing_transition_details:
+  - timestamps for legacy status transitions
+  - actors or responsible roles for legacy status transitions
+  - evidence references for legacy status transitions

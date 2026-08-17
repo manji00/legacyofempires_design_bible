@@ -1,0 +1,34 @@
+---
+work_package_id: WP-006
+version: 1.0.0
+work_package_status: Closed
+owner: Product Governance
+findings:
+- GOV-B-016
+- GOV-B-017
+architecture_decisions:
+- AD-016
+transition_history: []
+evidence_references:
+- project-bible/audits/GA-001_Resolution_Plan.md
+- project-bible/audits/WP-006_Closure_Report.md
+gate_evidence:
+  ready: []
+  verification: []
+  closed:
+    approval:
+    - project-bible/audits/WP-006_Closure_Report.md
+    definition_of_done:
+    - project-bible/audits/WP-006_Closure_Report.md
+    verification:
+    - project-bible/audits/WP-006_Closure_Report.md
+    closure:
+    - project-bible/audits/WP-006_Closure_Report.md
+closure_evidence:
+- project-bible/audits/WP-006_Closure_Report.md
+historical_completeness:
+  status: incomplete
+  missing_transition_details:
+  - timestamps for legacy status transitions
+  - actors or responsible roles for legacy status transitions
+  - evidence references for legacy status transitions
