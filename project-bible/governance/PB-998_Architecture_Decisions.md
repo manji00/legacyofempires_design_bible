@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.17.0
+version: 1.17.1
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -255,7 +255,7 @@ Die inkrementelle Arbeitsweise begrenzt den Umfang einzelner Änderungen, schüt
 
 - AD-005
 
-## AD-005 – Architekturentscheidungen werden vor der Umsetzung getroffen
+## AD-005 – Architekturentscheidungen werden vor der Umsetzung registriert, geprüft und angenommen
 
 **Status**
 
@@ -277,7 +277,18 @@ Werden strukturelle Festlegungen erst während oder nach einer Umsetzung erkennb
 
 **Entscheidung**
 
-Architekturentscheidungen werden vor der Umsetzung getroffen und anschließend in PB-998 dokumentiert.
+Eine Architecture Decision wird zunächst als Entwurf ausgearbeitet und danach
+mit einer `AD-XXX`-ID in PB-998 registriert. Die registrierte Decision durchläuft
+anschließend `Pending` und `Architecture Review`. Erst nachdem sie den Status
+`Accepted` erhalten hat, darf die von ihr abhängige fachliche Umsetzung beginnen.
+
+Die verbindliche Prozessreihenfolge lautet:
+
+`Draft` → Registrierung als `AD-XXX` in PB-998 → `Pending` → `Architecture Review` → `Accepted` → Umsetzung → `Implemented` → Verifikation → `Verified` → gegebenenfalls `Superseded`
+
+Registrierung und `Accepted`-Status sind damit ausnahmslos Voraussetzungen der
+Umsetzung. Weder im Entwurf noch während `Pending` oder `Architecture Review`
+darf die fachliche Umsetzung beginnen.
 
 **Begründung**
 
@@ -285,9 +296,22 @@ Die Trennung von Entscheidung und Umsetzung stellt sicher, dass Architektur bewu
 
 **Konsequenzen**
 
-- Eine von einer Architekturentscheidung abhängige Umsetzung beginnt erst nach der Entscheidung.
-- Die getroffene Entscheidung wird vor ihrer Umsetzung mit einer AD-ID in PB-998 festgehalten.
-- Spätere Spezifikationen und Implementierungspläne referenzieren und beachten die einschlägigen Entscheidungen.
+- Eine von einer Architecture Decision abhängige Umsetzung beginnt erst, wenn
+  die Decision als `AD-XXX` in PB-998 registriert, im Architecture Review geprüft
+  und mit dem Status `Accepted` angenommen wurde.
+- Eine Registrierung nach Beginn der Umsetzung oder eine vorläufige Umsetzung
+  während `Pending` beziehungsweise `Architecture Review` ist unzulässig.
+- Spezifikationen und Implementierungspläne referenzieren und beachten die
+  einschlägigen Accepted Decisions; Umsetzung und Verifikation bilden danach
+  die Stufen `Implemented` und `Verified` ab.
+
+**Traceability**
+
+- GA-001
+- GA-001-RES
+- GOV-B-011
+- DIRECT FIX
+- WP-007
 
 **Verwandte Entscheidungen**
 
@@ -1717,6 +1741,7 @@ Designrichtung neu eröffnet.
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.17.1 | 2026-08-17 | Canonical | WP-007 als Direct Fix umgesetzt: AD-005 auf die eindeutige Reihenfolge Entwurf, Registrierung, Pending, Architecture Review, Accepted, Umsetzung und Verifikation präzisiert; keine neue Architecture Decision oder Lifecycle-Stufe eingeführt. |
 | 1.17.0 | 2026-08-17 | Canonical | AD-016 nach Architecture Review angenommen und den ausnahmslosen Vorrang der einzigen normativen Quelle sowie die ausschließliche Änderungs-Ownership ihrer normativen Heimat klargestellt; keine Synchronisationsmechanik oder WP-006-Umsetzung eingeführt. |
 | 1.16.0 | 2026-08-17 | Canonical | AD-016 als Pending Decision zum Normative Content Ownership Model für GOV-B-016 und WP-006 vorbereitet; GOV-B-017 ausschließlich als Preservation Constraint berücksichtigt und keine Content-Migration oder WP-006-Umsetzung vorgenommen. |
 | 1.15.0 | 2026-08-16 | Canonical | WP-005 operationalisiert: unmittelbar anwendbare Decision-Referenzen bereinigt und AD-014-Referenzmodell zur automatisierten Prüfung aktiviert. |
