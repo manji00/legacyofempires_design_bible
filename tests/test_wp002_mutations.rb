@@ -39,7 +39,12 @@ cases={
   "duplicate Correction ID"=>->(r){FileUtils.cp(File.join(r,"project-bible/evidence/review-release/COR-000001.yml"),File.join(r,"project-bible/evidence/review-release/COR-copy.yml"))},
   "duplicate Review Result ID"=>->(r){FileUtils.cp(File.join(r,"project-bible/evidence/review-release/RES-000001.yml"),File.join(r,"project-bible/evidence/review-release/RES-copy.yml"))},
   "duplicate Release ID"=>->(r){FileUtils.cp(File.join(r,"project-bible/evidence/review-release/REL-000001.yml"),File.join(r,"project-bible/evidence/review-release/REL-copy.yml"))},
-  "class-specific forbidden state"=>->(r){edit(r,"COR-000001.yml"){|d|d["review_phase"]="Completed"}}
+  "class-specific forbidden state"=>->(r){edit(r,"COR-000001.yml"){|d|d["review_phase"]="Completed"}},
+  "invalid Release approval decision"=>->(r){edit(r,"REL-000001.yml"){|d|d["approval_decision"]="Banana"}},
+  "invalid Review Result approval decision"=>->(r){edit(r,"RES-000001.yml"){|d|d["approval_decision"]="Banana"}},
+  "wrong Re-Verification role"=>->(r){edit(r,"RVR-000002.yml"){|d|d["responsible_role"]="Document Owner"}},
+  "invalid Correction role"=>->(r){edit(r,"COR-000001.yml"){|d|d["responsible_role"]="Banana"}},
+  "invalid actual approval role"=>->(r){edit(r,"REL-000001.yml"){|d|d["actual_approval_roles"]=["Banana"]}}
 }
 failed=[]
 cases.each do |name,mutation|
