@@ -1,7 +1,7 @@
 ---
 document_id: PB-002
 title: Vision
-version: 1.2.0
+version: 2.0.0
 status: Canonical
 category: Governance
 created: 2026-08-05
@@ -56,6 +56,31 @@ requirements:
   - REQ-VIS-010
 architecture_decisions:
   - AD-016
+normative_content:
+  - entry_id: PB002-PRODUCT-VISION-OWNER
+    topic_id: long-term-product-vision
+    classification: OWNED NORMATIVE STATEMENT
+    normative_home: PB-002
+  - entry_id: PB002-PRODUCT-GOALS-OWNER
+    topic_id: product-goals
+    classification: OWNED NORMATIVE STATEMENT
+    normative_home: PB-002
+  - entry_id: PB002-PROJECT-IDENTITY-SUMMARY
+    topic_id: project-identity-and-why
+    classification: DERIVED SUMMARY
+    normative_home: PB-001
+    source:
+      relationship: DERIVED SUMMARY
+      reference_type: canonical
+      target: PB-001
+  - entry_id: PB002-MANIFESTO-LINE-SUMMARY
+    topic_id: project-identity-and-why
+    classification: DERIVED SUMMARY
+    normative_home: PB-001
+    source:
+      relationship: DERIVED SUMMARY
+      reference_type: canonical
+      target: PB-001
 design_goals:
   - DG-VIS-001
   - DG-VIS-002
@@ -856,6 +881,13 @@ These documents may refine implementation and scope, but they must remain consis
 ---
 
 ## 22. Decisions and Change History
+
+### Version 2.0.0 – 2026-08-17
+
+Corrected the PB-000-required MAJOR increment for the AD-016 change to
+authoritative ownership and document boundaries, and registered the existing
+ownership and derivations in machine-readable form without changing subject
+matter content.
 
 ### Version 1.2.0 – 2026-08-17
 

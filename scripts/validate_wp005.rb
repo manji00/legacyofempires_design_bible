@@ -29,6 +29,27 @@ CTX_FORBIDDEN_FIELDS = %w[
   work_package_status release_stage ctx_status lifecycle ctx_lifecycle
   ctx_version short_version version_short
 ].freeze
+OWNERSHIP_CLASSIFICATIONS = [
+  "OWNED NORMATIVE STATEMENT", "QUOTE", "DERIVED SUMMARY"
+].freeze
+OWNERSHIP_HOMES = {
+  "project-identity-and-why" => "PB-001",
+  "long-term-product-vision" => "PB-002",
+  "product-goals" => "PB-002",
+  "design-philosophy" => "PB-003",
+  "design-heuristics" => "PB-003",
+  "design-requirements" => "PB-003"
+}.freeze
+WP006_ENTRY_IDS = %w[
+  PB001-PROJECT-IDENTITY-OWNER
+  PB002-PRODUCT-VISION-OWNER PB002-PRODUCT-GOALS-OWNER
+  PB002-PROJECT-IDENTITY-SUMMARY PB002-MANIFESTO-LINE-SUMMARY
+  PB003-DESIGN-PHILOSOPHY-OWNER PB003-DESIGN-HEURISTICS-OWNER
+  PB003-DESIGN-REQUIREMENTS-OWNER PB003-BUILD-SYSTEMS-QUOTE
+  PB003-PLAYER-SHAPES-HISTORY-QUOTE
+  CTX-PROJECT-IDENTITY-SUMMARY CTX-PRODUCT-VISION-SUMMARY
+  CTX-DESIGN-PHILOSOPHY-SUMMARY CTX-SIMULATION-AUTHORITY-QUOTE
+].freeze
 
 errors = []
 
@@ -195,6 +216,84 @@ documents.each do |path, data|
   end
 end
 
+# AD-016 / WP-006 normative-content registry. The declarations explicitly
+# encode ownership and derivation; this validator never infers either from
+# prose or from the AD-014 reference type.
+ownership_entries = []
+documents.each do |path, data|
+  next unless data.key?("normative_content")
+  entries = data["normative_content"]
+  unless entries.is_a?(Array)
+    errors << "#{relative(path)}: normative_content must be a list"
+    next
+  end
+  entries.each do |entry|
+    unless entry.is_a?(Hash)
+      errors << "#{relative(path)}: normative_content entry must be an object"
+      next
+    end
+    ownership_entries << [path, data, entry]
+  end
+end
+
+entry_ids = Hash.new { |hash, key| hash[key] = [] }
+ownership_entries.each { |path, _, entry| entry_ids[entry["entry_id"]] << path if non_empty_string?(entry["entry_id"]) }
+entry_ids.each do |id, paths|
+  errors << "WP-006: duplicate ownership entry_id #{id}" unless paths.one?
+end
+actual_entry_ids = ownership_entries.filter_map { |_, _, entry| entry["entry_id"] }
+missing_entries = WP006_ENTRY_IDS - actual_entry_ids
+unexpected_entries = actual_entry_ids - WP006_ENTRY_IDS
+errors << "WP-006: missing registered ownership entries #{missing_entries.inspect}" unless missing_entries.empty?
+errors << "WP-006: unapproved ownership entries #{unexpected_entries.inspect}" unless unexpected_entries.empty?
+
+ownership_entries.each do |path, document, entry|
+  label = "#{relative(path)}: ownership #{entry['entry_id'].inspect}"
+  required = %w[entry_id topic_id classification normative_home]
+  missing = required.reject { |field| non_empty_string?(entry[field]) }
+  errors << "#{label} missing required fields #{missing.inspect}" unless missing.empty?
+  classification = entry["classification"]
+  topic = entry["topic_id"]
+  home = entry["normative_home"]
+  errors << "#{label} has unknown classification #{classification.inspect}" unless OWNERSHIP_CLASSIFICATIONS.include?(classification)
+  expected_home = OWNERSHIP_HOMES[topic]
+  errors << "#{label} has unregistered topic_id #{topic.inspect}" unless expected_home
+  errors << "#{label} normative_home must be #{expected_home.inspect}, not #{home.inspect}" if expected_home && home != expected_home
+  errors << "#{label} CTX cannot be a normative home or normative source" if home == "CTX-000"
+
+  if classification == "OWNED NORMATIVE STATEMENT"
+    errors << "#{label} owned entry must contain exactly entry_id, topic_id, classification, and normative_home" unless entry.keys.sort == %w[classification entry_id normative_home topic_id]
+    errors << "#{label} must be declared by its normative home" unless document["document_id"] == home
+    errors << "#{label} owned statement must not have a source relationship" if entry.key?("source")
+  elsif %w[QUOTE DERIVED\ SUMMARY].include?(classification)
+    errors << "#{label} derived entry must keep authority separate and contain exactly entry_id, topic_id, classification, normative_home, and source" unless entry.keys.sort == %w[classification entry_id normative_home source topic_id]
+    source = entry["source"]
+    unless source.is_a?(Hash)
+      errors << "#{label} #{classification} requires a source object"
+      next
+    end
+    unless source.keys.sort == %w[reference_type relationship target]
+      errors << "#{label} source must contain exactly relationship, reference_type, and target"
+    end
+    errors << "#{label} relationship must explicitly equal classification" unless source["relationship"] == classification
+    errors << "#{label} source target must equal normative_home" unless source["target"] == home
+    # Source resolution uses AD-014. Relationship and authority were already
+    # read from separate fields and are deliberately not inferred here.
+    validate_reference(source.reject { |key, _| key == "relationship" }, "normative_content source", path, by_id, errors)
+    reference_count += 1
+  end
+end
+
+OWNERSHIP_HOMES.each do |topic, home|
+  owners = ownership_entries.select do |_, _, entry|
+    entry["topic_id"] == topic && entry["classification"] == "OWNED NORMATIVE STATEMENT"
+  end
+  errors << "WP-006: topic #{topic} must have exactly one normative home (found #{owners.length})" unless owners.one?
+  if owners.one? && owners.first[2]["normative_home"] != home
+    errors << "WP-006: topic #{topic} owner does not match the AD-016 home #{home}"
+  end
+end
+
 # AD-015 / AD-009 derived artifact profile and deterministic authority boundary.
 ctx_matches = by_id["CTX-000"]
 if ctx_matches.one?
@@ -246,6 +345,8 @@ end
 # validation above deliberately does not infer these sets from free prose.
 expected_decisions = {
   "PB-000" => %w[AD-009 AD-010 AD-011 AD-012 AD-013 AD-014],
+  "PB-001" => %w[AD-016],
+  "PB-002" => %w[AD-016],
   "PB-003" => %w[AD-004 AD-010 AD-016],
   "PB-004" => %w[AD-001 AD-002 AD-003 AD-004 AD-006 AD-008 AD-010],
   "PB-997" => %w[AD-005 AD-010 AD-012 AD-013],
@@ -264,6 +365,7 @@ if errors.empty?
   puts "Documents checked: #{documents.length}"
   puts "Architecture Decisions checked: #{decision_entries.length} registered, #{architecture_decision_references} references"
   puts "References checked: #{reference_count}"
+  puts "Ownership entries checked: #{ownership_entries.length} (#{ownership_entries.count { |_, _, entry| entry['classification'] == 'OWNED NORMATIVE STATEMENT' }} owned, #{ownership_entries.count { |_, _, entry| entry['classification'] == 'QUOTE' }} quote, #{ownership_entries.count { |_, _, entry| entry['classification'] == 'DERIVED SUMMARY' }} derived summary)"
   puts "MANUAL VERIFICATION REQUIREMENT: semantic applicability/completeness of Architecture Decisions, CTX prose fidelity/non-normativity, title-heading equivalence, source-set completeness, and external reachability."
 else
   warn errors.join("\n")
