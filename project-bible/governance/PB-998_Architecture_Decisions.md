@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.21.0
+version: 1.22.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -2491,10 +2491,281 @@ GA-001
   → AD-018
 ```
 
+## AD-019 – Governance State Migration Boundary
+
+**Status**
+
+Pending
+
+**Entscheidungsdatum**
+
+—
+
+**Betroffene Dokumente**
+
+- PB-998
+- PB-997
+- Work-Package-State-Carrier unter `project-bible/evidence/work-packages/`
+- Zukünftige Implementierung des Governance-State-Validators
+
+**Kontext**
+
+AD-018 erlaubt bei der Migration der Work Packages `WP-001` bis `WP-007`,
+nicht repositorygestützt rekonstruierbare Legacy-History ausdrücklich als
+`historical_completeness: incomplete` zu erhalten, statt Transitionen,
+Zeitpunkte, Actors, Approvals oder Gate Evidence zu erfinden. Zugleich verlangen
+AD-013 und PB-997 für kontrollierte State Transitions vollständige
+Transition- und Gate-Nachweise. AD-018 trennt Current-State-Evidence bereits von
+vollständiger historischer Rekonstruktion, bestimmt aber noch nicht, ab welcher
+persistierten Repository-Revision die Legacy-Ausnahme für neu entstehende
+Evidence nicht mehr verwendet werden darf.
+
+Diese offene Grenze wurde beim ersten produktiven Versuch sichtbar, `WP-003`
+nach der historisch bestandenen Verification #2 von `Verification` nach
+`Closed` zu überführen. Der Closure-Versuch wurde abgebrochen; die anschließend
+versuchte minimale Validator-Remediation wurde wegen dieser ungelösten
+Architektur- und Migrationsgrenze ebenfalls blockiert. Die bereits vor dem
+Carrier-Modell geschlossenen Legacy-Carrier `WP-001`, `WP-005`, `WP-006` und
+`WP-007` besitzen Closure Evidence, aber teilweise keine eigenständig befüllte
+`gate_evidence.verification`. Eine ausnahmslose kumulative Gate-Prüfung würde
+daher die gültige migrierte Baseline brechen; eine Ausnahme allein aufgrund des
+Flags `historical_completeness: incomplete` könnte dagegen neue mangelhafte
+Transitions verdecken.
+
+Das Repository benötigt deshalb eine eindeutige, repositoryauflösbare Grenze
+zwischen (A) historisch migrierten Zuständen, die bereits vor vollständiger
+Carrier-Evidence abgeschlossen waren, und (B) neuen State Transitions nach der
+Operationalisierung des AD-018-Carrier-Modells. Dieser bei der
+Operationalisierung entdeckte Closure-Regressionsfall ist kein neues Finding
+aus `GA-001` und erhält keine neue Finding-ID.
+
+**Entscheidung**
+
+### Migration Cutover
+
+Der deterministische Migration Cutover ist der persistierte Merge Commit
+
+```text
+7bf2d2850ad40f89c9345cf8333e4b20dce4aa36
+```
+
+mit dem Repository-Betreff `Merge pull request #70 from
+manji00/codex/implementiere-wp-003-state-evidence-trager`. Dieser Commit ist die
+erste integrierte Repository-Revision, in der die durch AD-018 beschlossenen
+Work-Package-State-Carrier als kontrolliertes Modell operationalisiert sind.
+Der vorherige Acceptance Merge von AD-018 legt den Architekturvertrag fest,
+operationalisiert aber noch keinen Carrier. Der fachliche Parent-Commit
+`22656c5368be358bc3849f53f4f9a2560e6e507e` erzeugt die Carrier; der gewählte
+Merge Commit bindet diese Umsetzung eindeutig an die persistierte gemeinsame
+Repository-Historie. Die Boundary ist daher durch Git-Objektauflösung und
+Ancestor-Prüfung maschinenlesbar bestimmbar und keine erfundene Kalendergrenze.
+
+Die Inhalte der initialen Carrier-Migration am Cutover dürfen ausschließlich
+Evidence über Ereignisse rekonstruieren oder als unvollständig kennzeichnen,
+die vor dem Cutover entstanden sind. Eine State Transition, Gate Decision,
+Approval oder andere State Evidence, die in einer Repository-Revision
+**nach** diesem Cutover neu entsteht, ist post-boundary controlled evidence.
+Der Cutover-Commit selbst legitimiert keine neue unvollständige Transition; er
+transportiert nur die ausdrücklich gekennzeichnete Legacy-Migration.
+
+### Legacy Historical Incompleteness
+
+Legacy Historical Incompleteness ist ausschließlich eine Migrationsausnahme.
+Ein Carrier darf eine Lücke nur behalten, wenn diese nachweislich ein Ereignis
+vor dem Migration Cutover betrifft und die fehlenden Angaben aus persistierten,
+auflösbaren Repository-Quellen nicht vollständig rekonstruierbar sind. Für ein
+historisch bereits geschlossenes Legacy-Work-Package ist eine solche Lücke
+zulässig, wenn:
+
+- der aktuelle `Closed`-State repositorypersistiert belegt ist,
+- auflösbare Closure Evidence existiert,
+- die konkret fehlenden alten Transitiondetails maschinenlesbar als
+  Historical Incompleteness dokumentiert sind,
+- die Lücke durch den Cutover eindeutig als pre-boundary eingeordnet werden
+  kann und
+- kein Zeitpunkt, Actor, Verantwortlicher, Gate, Approval, keine Transition und
+  keine Evidence Reference erfunden wird.
+
+Damit bleiben Current State und Historical Completeness getrennt: Ein aktueller
+`Closed`-State kann gültig migriert sein, obwohl seine vollständige alte
+Transition History nicht rekonstruierbar ist. Die Lücke behauptet weder eine
+unbelegte Transition noch ein erfülltes Gate.
+
+### Post-Boundary Controlled Evidence
+
+Jede nach dem Migration Cutover neu erzeugte State Transition muss vollständig
+nach dem jeweils geltenden Carrier Contract persistiert werden. Sie darf nie
+nachträglich als historische Lücke deklariert werden. Insbesondere darf Legacy
+Historical Incompleteness keine post-boundary erzeugten Transitionen, Gate
+Decisions, Approvals, Verification Evidence, Closure Evidence, Actors,
+Zeitpunkte oder Evidence References unvollständig lassen oder von der
+Validierung ausnehmen.
+
+Eine post-boundary Transition `Verification → Closed` verlangt kumulativ:
+
+- einen append-only Transition Entry mit `previous` und `new`,
+- einen auflösbaren Zeitpunkt,
+- Actor beziehungsweise verantwortliche Rolle,
+- auflösbare Evidence References,
+- Verification-Gate- und Implementation Evidence,
+- Approval Evidence der zuständigen Rolle,
+- Evidence gegen die vollständige Definition of Done,
+- Verification Evidence und
+- Closure Evidence.
+
+### Cumulative Gate Evidence
+
+Ein späterer Zustand löscht die Nachweispflicht bereits durchlaufener Gates
+nicht. Für post-boundary Transitions muss `Closed` weiterhin deterministisch auf
+einem gültig erfüllten Verification-Gate beruhen. Die Evidence des
+Verification-Gates und seiner Implementation-Voraussetzung bleibt deshalb auch
+im aktuellen `Closed`-State nachweisbar; Closure Evidence ersetzt sie nicht.
+
+Diese kumulative Pflicht verlangt keine rückwirkende Erfindung von Evidence für
+Legacy-Carrier. Es gilt die eindeutige Unterscheidung:
+
+```text
+pre-boundary historical gap       → zulässige, explizite Migration Gap
+post-boundary missing prerequisite → Validation Error
+```
+
+### Kein Grandfathering per Statusflag
+
+`historical_completeness: incomplete` allein aktiviert niemals eine Ausnahme.
+Eine Ausnahme erfordert zusätzlich repositoryauflösbaren Nachweis, dass die
+konkret bezeichnete fehlende Evidence vor dem Cutover entstanden ist. Weder ein
+neuer Carrier noch eine neue Carrier-Revision darf durch bloßes Setzen dieses
+Flags aktuelle Transition- oder Gate-Anforderungen umgehen. Prosa, Dateinamen,
+aktueller Status oder Plausibilität sind kein Ersatz für die Cutover-Bindung.
+
+### Validator Contract für eine spätere Implementierung
+
+Eine gesondert autorisierte spätere Implementierung muss ohne heuristische
+Prosa-Auswertung deterministisch zwischen pre-boundary historical evidence und
+post-boundary controlled evidence unterscheiden. Die Unterscheidung muss auf
+auflösbaren Git-Revisionen, ihrer Ancestor-Beziehung zum Cutover und
+maschinenlesbarer Carrier-Evidence beruhen.
+
+Für einen Legacy-Carrier darf fehlende alte Verification-Gate-Evidence nur dann
+zulässig sein, wenn die konkrete Lücke ausdrücklich dokumentiert und eindeutig
+pre-boundary ist. Für eine post-boundary Closure gelten mindestens folgende
+Ergebnisse:
+
+- fehlende Verification-Gate-Evidence → `FAIL`,
+- fehlende Implementation Evidence → `FAIL`,
+- fehlende Closure Evidence → `FAIL` und
+- unvollständige neue Transition → `FAIL`.
+
+Diese Decision definiert den Architekturvertrag, aber weder Schemafelder noch
+eine konkrete Migrations- oder Validatorimplementierung. Sie autorisiert keine
+Implementation.
+
+### Authority Boundary und AD-013-Konformität
+
+Es gelten unverändert:
+
+```text
+State Carrier ≠ State Authority
+Evidence ≠ Governance Rule
+Evidence ≠ Governance Process
+Evidence ≠ Architecture Decision
+Evidence ≠ Approval Authority
+```
+
+Diese Decision verändert keine der sechs AD-013-State-Dimensionen, keinen
+Statuswert, State Keeper, Übergang, kein Gate, keinen Reference Type, keine
+Authority Role und keine Approval Authority. Sie definiert ausschließlich die
+repositorybezogene zeitliche Evidence-Migrationsgrenze innerhalb des
+bestehenden Modells. Current-State-Evidence bleibt Evidence und setzt keine
+Governance Authority.
+
+### Beziehung zu AD-018
+
+AD-018 bleibt als Governance State Evidence Carrier Model vollständig gültig
+und wird weder ersetzt noch geändert. AD-019 präzisiert ausschließlich die in
+AD-018 noch offene Legacy Migration Boundary und ihre Cutover-Semantik. Die
+AD-018-Regeln gegen erfundene historische Transitionen, für Current-State-
+Evidence, Gate Evidence und append-only History bleiben unverändert. AD-019
+grenzt lediglich ihre Historical-Incompleteness-Ausnahme gegen neue
+post-boundary Evidence ab.
+
+### Scope und Umsetzungsgrenze
+
+Diese Pending Decision bereitet ausschließlich die Architecture Review der
+Migration Boundary vor. Sie nimmt keine Validator- oder Teständerung, keine
+Carrieränderung oder Migration, keine Remediation und keine Closure vor. Sie
+ändert weder `GA-001-RES` noch den Status von WP-002, WP-003 oder WP-004 und
+führt keine State Dimension, Transition, Gate, Rolle oder Reference-Type-
+Taxonomie ein. Sie erzeugt keinen Closure Report. Weder ihre Registrierung noch
+ein späteres `Accepted` allein ist eine Implementation Authorization; jede
+Umsetzung benötigt einen gesondert autorisierten Scope.
+
+**Begründung**
+
+Der gewählte WP-003-State-Carrier-Remediation-Merge bezeichnet erstmals die
+integrierte, kontrollierte Repräsentation, auf deren Vorhandensein neue
+Transitionen vertrauen können. AD-018 Acceptance war dafür notwendig, aber noch
+nicht operational. Eine Commit-Boundary ist reproduzierbar und vermeidet sowohl
+eine erfundene Zeitgrenze als auch unsichere Prosaheuristik. Die Kombination aus
+Cutover-Bindung und konkret dokumentierter Lücke bewahrt ehrliche Legacy-
+Migration, ohne neuen Carriern ein Schlupfloch zur Umgehung kumulativer Gates zu
+geben.
+
+**Konsequenzen**
+
+- Bestehende belegte `Closed`-States werden nicht allein wegen
+  nicht rekonstruierbarer pre-boundary Transitiondetails ungültig.
+- Neue Transitionen nach dem Cutover müssen vollständige Transition- und
+  kumulative Gate Evidence tragen; fehlende Voraussetzungen sind Fehler.
+- Eine spätere Implementierung muss Cutover und Evidence-Seite
+  maschinenlesbar abbilden, statt `historical_completeness` pauschal als
+  Ausnahme zu behandeln.
+- Es wird keine historische Evidence erfunden und keine neue Finding-ID für
+  den Closure-Regressionsfall angelegt.
+- Vor Architecture Review und `Accepted` entsteht keine verbindliche neue
+  Regel; aus dieser Pending Decision folgt keine Implementation Authorization.
+
+**Alternativen betrachtet**
+
+- **AD-018 Acceptance Merge als Cutover:** verworfen, weil Acceptance den
+  Vertrag verbindlich machte, aber noch keinen operationalisierten Carrier
+  bereitstellte.
+- **Freies Kalenderdatum:** verworfen, weil es keine deterministische
+  Repository-Semantik besitzt und einen Zeitpunkt erfinden würde.
+- **Pauschale Ausnahme bei `historical_completeness: incomplete`:** verworfen,
+  weil dadurch auch neue unvollständige Transitionen verborgen werden könnten.
+- **Ausnahmslose kumulative Gate-Prüfung aller Carrier:** verworfen, weil sie
+  belegte Legacy-Closures ohne rekonstruierbare alte Gate Evidence ungültig
+  machen oder zur Erfindung historischer Evidence drängen würde.
+
+**Verwandte Entscheidungen**
+
+- AD-005
+- AD-010
+- AD-012
+- AD-013
+- AD-017
+- AD-018
+
+**Traceability**
+
+```text
+GA-001
+  → GA-001-RES
+  → GOV-B-014
+  → AD-013
+  → WP-003
+  → WP003-V1-A
+  → AD-018
+  → Closure Regression
+  → AD-019 Governance State Migration Boundary
+```
+
 # Versionshistorie
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.22.0 | 2026-08-17 | Canonical | AD-019 als Pending Decision zur repositorygebundenen Governance State Migration Boundary vorbereitet; Cutover, Legacy-Ausnahme, vollständige post-boundary Evidence und kumulative Gate-Pflichten definiert; keine Implementation, Validator-, Test-, Carrier-, Closure- oder Remediation-Änderung vorgenommen. |
 | 1.21.0 | 2026-08-17 | Canonical | AD-018 nach Architecture Review angenommen; Exactly-one Carrier, Current State, append-only History, Legacy-Incompleteness, Gate-Evidence-, Authority-, Resolution-Plan- und Closure-Report-Grenzen präzisiert; keine WP-003-Remediation oder sonstige Umsetzung vorgenommen. |
 | 1.20.0 | 2026-08-17 | Canonical | AD-018 als Pending Decision zum maschinenlesbaren Governance State Evidence Carrier für `work_package_status` vorbereitet; keine WP-003-Remediation, Bestandsmigration, Schema-, Validator-, Test- oder Closure-Änderung vorgenommen. |
 | 1.19.0 | 2026-08-17 | Canonical | AD-017 nach Architecture Review angenommen; Finding-Lifecycle, Evidence/Authority, Review Result, Release Record, immutable Baseline, PB-999, Retention sowie Review-/Release-Orthogonalität präzisiert; keine WP-002-/WP-004-Umsetzung vorgenommen. |
