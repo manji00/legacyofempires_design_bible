@@ -156,6 +156,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-010 — Accepted Decisions werden nicht systematisch referenziert
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED WITH AD
 - **Begründung:** Maschinenlesbare Decision-Traceability ist erforderlich, kann aber erst nach der Entscheidung über AD-/ADR-Modell und Referenzfeld konsistent umgesetzt werden.
 - **Resolution Path:** NEW ARCHITECTURE DECISION
@@ -178,6 +179,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-012 — Nicht auflösbare beziehungsweise veraltete Dokumentreferenzen
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED WITH AD
 - **Begründung:** Geplante, historische, externe, archivierte und kanonische Ziele brauchen verschiedene maschinenlesbare Semantiken. Erst nach Festlegung dieser Typen können die konkreten Referenzen korrekt migriert werden.
 - **Resolution Path:** NEW ARCHITECTURE DECISION
@@ -189,6 +191,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-013 — Redundante Dependency- und Related-Document-Beziehungen
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED
 - **Begründung:** Die vorhandenen Definitionen reichen aus: Eine Beziehung wird in der stärksten zutreffenden Kategorie geführt. Die Bereinigung ist klein, deterministisch und benötigt keine neue Entscheidung.
 - **Resolution Path:** DIRECT FIX
@@ -211,6 +214,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-015 — Das Context-Handoff-Frontmatter entspricht nicht dem PB-000-Standard
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED WITH AD
 - **Begründung:** Das Board entscheidet nicht, CTX-000 zu einem kanonischen PB-Dokument zu machen. Sein reduziertes Frontmatter wird stattdessen als erlaubtes Profil für abgeleitete operative Artefakte definiert; erst danach wird es diesem Profil angepasst.
 - **Resolution Path:** NEW ARCHITECTURE DECISION
@@ -277,6 +281,7 @@ Alle angenommenen Findings sind genau einem fachlich verantworteten Work Package
 
 ## WP-005 — Metadata and Traceability
 
+- **Status:** Closed
 - **Verantwortung:** Documentation Architecture
 - **Findings:** GOV-B-010, GOV-B-012, GOV-B-013, GOV-B-015
 - **Ergebnis:** Einheitliche Decision-Referenzen, typisierte Dokumentreferenzen, semantisch trennscharfe Beziehungen und ein passendes Profil für operative Handoff-Artefakte.
