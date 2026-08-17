@@ -1,11 +1,11 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.15.0
+version: 1.16.0
 status: Canonical
 category: Governance
 created: 2026-08-06
-updated: 2026-08-16
+updated: 2026-08-17
 owners:
   - Project Lead
 reviewers: []
@@ -1426,10 +1426,268 @@ Governance-Modell.
 - GOV-B-015
 - WP-005
 
+## AD-016 – Normative Content Ownership Model
+
+**Status**
+
+Pending
+
+**Entscheidungsdatum**
+
+Noch nicht entschieden
+
+**Betroffene Dokumente**
+
+- PB-001
+- PB-002
+- PB-003
+- CTX-000
+- PB-998
+
+**Kontext**
+
+`GOV-B-016` aus `GA-001` stellt fest, dass PB-001, PB-002, PB-003 und
+CTX-000 wiederkehrende projektweite Grundsatzaussagen enthalten, ohne deren
+normative Ownership formal und trennscharf zuzuweisen. Der genehmigte
+Resolution Plan `GA-001-RES` ordnet das Finding `WP-006` zu und verlangt vor
+jeder Bereinigung eine Architecture Decision über normative Heimat sowie die
+Regeln für Wiederholung, Zitat und abgeleitete Zusammenfassung.
+
+Die vorhandenen Purpose- und Inhaltsgrenzen bestätigen bereits eine fachliche
+Staffelung: PB-001 beantwortet das unverlierbare Warum des Projekts, PB-002
+beschreibt die langfristige Produktrichtung und das angestrebte Produktbild,
+und PB-003 übersetzt diese Richtung in Designphilosophie, Heuristiken und
+fachliche Design-Requirements. Produktbezogene Requirements in PB-002 sind
+dabei operationalisierte Produktziele; fachliche Design-Requirements in
+PB-003 sind Regeln für die Gestaltung und Bewertung von Systemen, Features und
+Designentscheidungen. Gleichlautende Passagen ändern diese Zuständigkeiten
+nicht.
+
+`GOV-B-017` wird ausschließlich als Preservation Constraint berücksichtigt.
+Die bestätigte kreative und technische Grundrichtung – Scenario-First,
+Emergent History, Simulation Authority, Offline-First, optionale KI und
+politische Transformation – wird weder neu bewertet noch fachlich verändert.
+Diese Decision bestimmt nur, **wo** solche bestehenden Aussagen normativ
+beheimatet sind und **wie** ihre Wiederholungen behandelt werden.
+
+**Entscheidung**
+
+### Normative Heimat und ausschließliche Ownership
+
+Die **normative Heimat** einer projektweiten Grundsatzaussage ist genau das
+kanonische Governance-Dokument, das für ihren Themenbereich die primäre
+inhaltliche Definition, Pflege und Änderung besitzt. Jede normative Aussage
+hat genau eine solche primäre Heimat. Eine wortgleiche, sinngleiche oder
+verkürzte Wiedergabe außerhalb dieser Heimat überträgt oder teilt die Ownership
+nicht und begründet keine zweite normative Definition.
+
+Bei Überschneidungen wird die Aussage nach ihrer normativen Funktion, nicht
+nach einzelnen Schlagworten oder ihrem Ablageort, zugeordnet. Eine Aussage
+über den unverlierbaren Projektcharakter gehört deshalb PB-001, eine Aussage
+über das angestrebte Produktbild PB-002 und eine Regel zur Bewertung oder
+Gestaltung von Design PB-003. Soll eine Aussage künftig ihre normative
+Funktion wechseln, erfordert dies eine ausdrückliche Governance-Änderung; eine
+Wiederholung bewirkt diesen Wechsel niemals stillschweigend.
+
+### Verbindliche Ownership-Matrix
+
+| Themenbereich | Normative Heimat | Eigentumsgrenze |
+|---|---|---|
+| Projektidentität und unverlierbares Warum | PB-001 | Besitzt Projektzweck, fundamentalen Projektcharakter und die Grundprinzipien, die bei der Umsetzung nicht verloren gehen dürfen. |
+| Langfristige Produktvision | PB-002 | Besitzt langfristige Produktrichtung, Vision und angestrebtes Produktbild. |
+| Produktziele | PB-002 | Besitzt Produktambition, Design Goals und produktbezogene Ziel- beziehungsweise Erfolgsanforderungen; in PB-002 formulierte Requirements sind in dieser Matrix operationalisierte Produktziele. |
+| Designphilosophie | PB-003 | Besitzt die fachliche Übersetzung der Vision in Regeln dafür, wie das Produkt gestaltet und Designkonflikte beurteilt werden. |
+| Designheuristiken | PB-003 | Besitzt Prüfkriterien und Gestaltungsheuristiken für Systeme, Features, Inhalte und Spielerentscheidungen. |
+| Fachliche Requirements | PB-003 | Besitzt verbindliche fachliche Designanforderungen an Systeme und Features; dies sind keine konkurrierenden Produktziele aus PB-002. |
+| Operative Kontinuitätszusammenfassungen | CTX-000 | Besitzt ausschließlich die operative Zusammenstellung als abgeleitetes Artefakt, aber keine normative Content Ownership an den zusammengefassten Inhalten. |
+
+Die letzte Zeile bezeichnet ausschließlich die Verantwortung für Form und
+Nutzbarkeit der operativen Zusammenfassung. Sie macht CTX-000 weder zur
+normativen Heimat eines Themenbereichs noch zu einer Source of Truth.
+
+### Wiederholungs- und Ableitungsregeln
+
+Normative Inhalte dürfen außerhalb ihrer Heimat nur in einer der folgenden
+Formen erscheinen:
+
+1. **Zitat:** Eine inhaltlich identische Übernahme muss als Übernahme aus der
+   eindeutig bezeichneten Quelle erkennbar sein. Wortlaut und normative
+   Authority verbleiben bei der Heimat; das zitierende Dokument besitzt weder
+   Änderungsrecht noch eine parallele Definition.
+2. **Abgeleitete Zusammenfassung:** Eine verkürzte, umformulierte oder
+   kontextbezogene Wiedergabe muss als Ableitung erkennbar sein und ihre
+   normative Quelle eindeutig referenzieren. Sie darf die Quelle weder
+   erweitern noch einschränken und besitzt keine eigenständige normative
+   Authority. Bei Abweichung gilt ausschließlich die normative Heimat.
+3. **Eigene normative Aussage:** Eine neue oder eigenständig definierende
+   normative Aussage ist nur in dem Dokument zulässig, dem die Matrix für
+   ihre normative Funktion Ownership zuweist. Ein anderes Dokument muss sie
+   entweder als Zitat oder als abgeleitete Zusammenfassung behandeln oder in
+   die zuständige Heimat überführen lassen.
+
+Eine Wiederholung erzeugt unabhängig von Häufigkeit, Formulierung oder
+Dokumentstatus niemals stillschweigend gemeinsame Ownership. Die Herkunft
+muss so ausdrücklich und stabil bezeichnet sein, dass sie später
+maschinenlesbar aufgelöst werden kann. Diese Decision legt dafür weder ein
+neues Metadatenfeld noch eine konkrete Auszeichnung fest.
+
+### Ableitung, Referenzen und Authority
+
+Für die Auflösbarkeit von Quellen gilt unverändert AD-014. Eine verwendete
+Quellenreferenz nutzt einen dort bereits definierten passenden Reference Type;
+diese Decision führt keinen Reference Type ein. Die Aussage, dass ein Inhalt
+Zitat oder abgeleitete Zusammenfassung einer normativen Heimat ist, ist eine
+Ownership- beziehungsweise Ableitungssemantik und bleibt sowohl vom
+Reference Type als auch von Authority getrennt:
+
+`Reference Type` ≠ `Relationship Semantics` ≠ `Authority`
+
+Eine auflösbare Referenz weist die Herkunft nach, überträgt aber keine
+Authority. Umgekehrt ersetzt eine bloße textliche Ähnlichkeit keinen
+eindeutigen Herkunftsnachweis. Die spätere WP-006-Umsetzung muss die
+Ableitungsbeziehung maschinenlesbar referenzierbar machen, ohne aus einem
+Reference Type die Beziehung oder Authority abzuleiten. Konkrete Felder,
+Migrationen, Schemas und Validatorimplementierungen sind nicht Gegenstand
+dieser vorbereiteten Decision.
+
+### CTX-Grenze
+
+AD-009 bleibt vollständig und unverändert maßgeblich: CTX ist ein **Derived
+Operational Continuity Artifact**. CTX besitzt keine normative Content
+Ownership, definiert keine Projektgrundsätze, keine Produktvision, keine
+Designheuristiken und keine Requirements. Es darf normative Inhalte nur
+ableiten, zusammenfassen, zitieren oder referenzieren. Informationen, die
+ausschließlich in CTX existieren, erhalten dadurch keine normative Authority.
+
+Die Verantwortung von CTX für operative Kontinuitätszusammenfassungen umfasst
+nur Auswahl, Verdichtung und Nutzbarkeit des Handoffs. Alle darin
+wiedergegebenen normativen Aussagen bleiben Eigentum ihrer jeweiligen Heimat
+in PB-001, PB-002 oder PB-003.
+
+### Preservation Constraint und Content Preservation
+
+GOV-B-017 schützt Scenario-First, Emergent History, Simulation Authority,
+Offline-First, optionale KI und politische Transformation als bestehende
+kreative und technische Grundrichtung. AD-016 entscheidet nicht neu, ob diese
+Grundsätze gelten, und ändert weder ihre Bedeutung noch ihren fachlichen
+Geltungsanspruch. Eine spätere WP-006-Umsetzung darf ausschließlich Ownership,
+Ableitungskennzeichnung und Quellenbezug bereinigen.
+
+Eine Ownership-Bereinigung darf keinen fachlichen Bedeutungsverlust erzeugen.
+Bevor eine redundante normative Aussage später entfernt oder als abgeleitet
+umklassifiziert wird, muss sichergestellt sein, dass:
+
+- der vollständige bestehende Grundsatz in seiner normativen Heimat erhalten
+  ist,
+- jedes abgeleitete Dokument semantisch korrekt auf diese Heimat verweist,
+- weder Umfang noch Bedeutung der bestätigten Aussage unbeabsichtigt geändert
+  werden und
+- keine durch GOV-B-017 geschützte kreative oder technische Richtung neu
+  entschieden, abgeschwächt oder erweitert wird.
+
+Diese Architekturgrenze autorisiert jetzt keine Textmigration oder
+Umklassifizierung.
+
+### Architekturvertrag für die spätere WP-006-Verification
+
+Die spätere Verification muss deterministische Struktur- und Referenzprüfungen
+von manueller semantischer Inhaltsprüfung trennen.
+
+**Deterministisch maschinenlesbar** muss geprüft werden können:
+
+1. Jeder deklarierte wiederkehrende normative Themenbereich besitzt genau eine
+   primäre normative Heimat aus der Ownership-Matrix.
+2. Jede außerhalb dieser Heimat deklarierte Wiederholung ist eindeutig als
+   Zitat oder abgeleitete Zusammenfassung klassifiziert; sie wird nicht als
+   eigene normative Definition gezählt.
+3. Jede solche Wiederholung besitzt einen eindeutigen, nach AD-014
+   auflösbaren Quellenbezug auf ihre normative Heimat, wobei Reference Type,
+   Ableitungsbeziehung und Authority getrennt ausgewertet werden.
+4. CTX-000 kann für keinen Themenbereich als normative Heimat oder normative
+   Quelle deklariert werden.
+5. Für denselben Themenbereich kann keine zweite konkurrierende normative
+   Heimat registriert werden.
+
+Diese Prüfungen setzen explizite, strukturierte Deklarationen voraus. Eine
+heuristische Auswertung von Prosa auf vermeintliche Normativität,
+Sinnähnlichkeit oder Bedeutungsänderung ist ausdrücklich kein Bestandteil der
+Validatorarchitektur.
+
+**Manuelle semantische Content Verification** muss zusätzlich anhand eines
+inhaltlichen Vergleichs bestätigen:
+
+1. Der bestehende Grundsatz ist in seiner Heimat vollständig und ohne
+   Bedeutungsverlust erhalten.
+2. Zitate sind inhaltlich identisch; abgeleitete Zusammenfassungen geben die
+   Quelle korrekt wieder und verändern ihren Geltungsumfang nicht.
+3. Keine konkurrierende normative Definition verbleibt in einem anderen
+   Dokument.
+4. Scenario-First, Emergent History, Simulation Authority, Offline-First,
+   optionale KI und politische Transformation wurden gemäß GOV-B-017 fachlich
+   nicht verändert.
+
+Dieser Vertrag beschreibt nur die Nachweise der späteren Verification. Er
+implementiert weder Klassifikationsfelder, Migration, Validator noch
+WP-006 und gibt das Work Package nicht zur Umsetzung frei.
+
+**Begründung**
+
+Die Matrix formalisiert die bereits aus den Dokumentzwecken und tatsächlichen
+Inhalten erkennbare Kette vom Projekt-Warum über das Produktziel zu dessen
+fachlicher Designanwendung. Genau eine Heimat verhindert divergierende
+Definitionen, ohne notwendige Wiederholungen für Lesbarkeit und operative
+Kontinuität zu verbieten. Die Unterscheidung zwischen Zitat, abgeleiteter
+Zusammenfassung und eigener normativer Aussage hält Ownership auch dann
+eindeutig, wenn derselbe Grundsatz in mehreren Kontexten sichtbar bleiben
+muss.
+
+Die Trennung der explizit prüfbaren Struktur von der manuellen
+Bedeutungsprüfung ermöglicht deterministische Validation, ohne unzuverlässige
+Prosaheuristiken zur Governance-Authority zu machen. Die ausdrückliche
+Preservation Constraint stellt sicher, dass eine spätere Bereinigung nur die
+Dokumentarchitektur korrigiert und nicht die bereits bestätigte Produkt- und
+Designrichtung neu eröffnet.
+
+**Konsequenzen**
+
+- AD-016 bleibt bis zur Architecture Review `Pending`, ist nicht verbindlich
+  und gibt WP-006 nicht zur Umsetzung frei.
+- Nach einer späteren Acceptance kann WP-006 ausschließlich die hier
+  abgegrenzte Ownership-, Ableitungs- und Preservation-Semantik
+  operationalisieren.
+- Diese Vorbereitung verändert PB-001, PB-002, PB-003, CTX-000, AD-009 und
+  AD-014 nicht und führt keine Textmigration, Umklassifizierung, kein Schema
+  und keinen Validator aus.
+- Es werden keine kreativen Grundsätze, Designprinzipien, Produktziele,
+  Reference Types, State Dimensions oder Governance-Prozesse eingeführt oder
+  verändert.
+- Inhalte und Implementierungen aus WP-002, WP-004 und WP-007 werden weder
+  entschieden noch vorweggenommen.
+
+**Verwandte Entscheidungen**
+
+- AD-005
+- AD-007
+- AD-009
+- AD-010
+- AD-012
+- AD-013
+- AD-014
+- AD-015
+
+**Traceability**
+
+- GA-001
+- GA-001-RES
+- GOV-B-016
+- WP-006
+- GOV-B-017 — Preservation Constraint
+
 # Versionshistorie
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.16.0 | 2026-08-17 | Canonical | AD-016 als Pending Decision zum Normative Content Ownership Model für GOV-B-016 und WP-006 vorbereitet; GOV-B-017 ausschließlich als Preservation Constraint berücksichtigt und keine Content-Migration oder WP-006-Umsetzung vorgenommen. |
 | 1.15.0 | 2026-08-16 | Canonical | WP-005 operationalisiert: unmittelbar anwendbare Decision-Referenzen bereinigt und AD-014-Referenzmodell zur automatisierten Prüfung aktiviert. |
 | 1.14.0 | 2026-08-16 | Canonical | AD-015 nach Architecture Review angenommen und klargestellt, dass `canonical_sources` die relevante kanonische Quellenmenge als Provenienz identifiziert, ohne einen deterministischen Build-, Reproduzierbarkeits- oder Synchronisationsvertrag zu begründen; keine Umsetzung von WP-005 vorgenommen. |
 | 1.13.0 | 2026-08-16 | Canonical | AD-015 als Pending Decision zum Frontmatterprofil für Derived Operational Continuity Artifacts vorbereitet; keine CTX-Migration, Schema- oder Validatorimplementierung vorgenommen. |
