@@ -25,6 +25,13 @@ FINDING_TRANSITIONS=[[nil,"Recorded"],["Recorded","Correction Required"],["Corre
 REVIEW_STATUSES=["Pending","Changes Required","Passed","Rejected","Cancelled"].freeze
 RELEASE_STAGES=["Unreleased","Release Candidate","Released","Withdrawn"].freeze
 REVIEW_LEVEL_ROLES={"Lightweight Review"=>["Document Owner"],"Standard Review"=>["Document Owner","Project Lead"],"Architecture Review"=>["Architecture Board"]}.freeze
+APPROVAL_DECISIONS=["Approved","Not Approved"].freeze
+# PB-000/PB-997 name these execution and authority roles.  The two Governance
+# Review labels are retained vocabulary used by the persisted WP-002 evidence;
+# accepting them as roles does not assign either label any additional authority.
+ROLE_DOMAIN=["Document Owner","Delegated Reviewer","Responsible Reviewer",
+  "Governance Reviewer","Governance Review","Project Lead",
+  "Architecture Board","Work-Package Owner"].freeze
 
 def present?(v) = !v.nil? && (!v.respond_to?(:empty?) || !v.empty?)
 def timestamp?(v)
@@ -65,6 +72,7 @@ def history_valid(history,transitions,errors,label)
   history.each_with_index do |e,i|
     unless e.is_a?(Hash); errors << "#{label}: history event invalid"; next; end
     %w[to role timestamp evidence].each{|k|errors << "#{label}: history event missing #{k}" unless present?(e[k])}
+    errors << "#{label}: invalid history role #{e['role'].inspect}" unless ROLE_DOMAIN.include?(e["role"])
     errors << "#{label}: interrupted history" if i>0 && e["from"]!=previous
     errors << "#{label}: invalid transition #{e['from'].inspect}->#{e['to'].inspect}" unless transitions.include?([e["from"],e["to"]])
     if timestamp?(e["timestamp"])
@@ -120,6 +128,7 @@ Array(by_class["review_run"]).each do |path,d|
   history_valid(d["phase_history"],PHASE_TRANSITIONS,errors,path)
   errors << "#{path}: current review_phase differs from history endpoint" unless d.dig("phase_history",-1,"to")==d["review_phase"]
   expected=REVIEW_LEVEL_ROLES[d["review_level"]]||[]; errors << "#{path}: wrong required approval role" unless (expected-Array(d["required_approval_roles"])).empty?
+  Array(d["required_approval_roles"]).each{|role|errors << "#{path}: invalid required approval role #{role.inspect}" unless ROLE_DOMAIN.include?(role)}
   Array(d["finding_ids"]).each{|id|errors << "#{path}: dangling Finding #{id}" unless finding_map[id]}
   Array(d["reverification_review_run_ids"]).each{|id|errors << "#{path}: dangling Re-Verification #{id}" unless run_map[id]&.dig("artifact_class")=="reverification"}
 end
@@ -139,10 +148,13 @@ end
 corrections.each do |path,d|
   errors << "#{path}: Correction without Finding" unless finding_map[d["finding_id"]]&.then{|f|Array(f["correction_ids"]).include?(d["correction_id"])}
   errors << "#{path}: Correction without Implementation Commit" unless git_commit?(d["implementation_commit"])
+  errors << "#{path}: invalid Correction responsible role #{d['responsible_role'].inspect}" unless ROLE_DOMAIN.include?(d["responsible_role"])
   Array(d["changed_files"]).each{|f|errors << "#{path}: implementation commit lacks changed artifact #{f}" unless system("git","-C",REPO,"cat-file","-e","#{d['implementation_commit']}:#{f}",out:File::NULL,err:File::NULL)}
 end
 revers.each do |path,d|
   original=run_map[d["original_review_run_id"]]; errors << "#{path}: Re-Verification without original Review Run" unless original&.dig("artifact_class")=="review_run"
+  allowed=original&&REVIEW_LEVEL_ROLES[original["review_level"]]
+  errors << "#{path}: wrong Re-Verification responsible role" unless allowed&.include?(d["responsible_role"])
   Array(d["finding_ids"]).each{|id|errors << "#{path}: Re-Verification without Finding #{id}" unless finding_map[id]&&Array(finding_map[id]["verification_review_run_ids"]).include?(d["review_run_id"])}
   errors << "#{path}: invalid Re-Verification result" unless %w[Passed Failed].include?(d["result"])
   Array(d["evidence_references"]).each do |ref|
@@ -152,6 +164,9 @@ revers.each do |path,d|
 end
 results.each do |path,d|
   errors << "#{path}: invalid review_status" unless REVIEW_STATUSES.include?(d["review_status"])
+  errors << "#{path}: invalid approval_decision" unless APPROVAL_DECISIONS.include?(d["approval_decision"])
+  expected_decision=d["review_status"]=="Passed" ? "Approved" : "Not Approved"
+  errors << "#{path}: review_status and approval_decision disagree" unless d["approval_decision"]==expected_decision
   run=run_map[d["review_run_id"]]; errors << "#{path}: Review Result without Re-Verification Run" unless run&.dig("artifact_class")=="reverification"
   errors << "#{path}: Review Result baseline differs from Run" if run&&d["baseline"]!=run["baseline"]
   original=run&&run_map[run["original_review_run_id"]]; required=original&&REVIEW_LEVEL_ROLES[original["review_level"]]
@@ -161,6 +176,7 @@ results.each do |path,d|
 end
 releases.each do |path,d|
   errors << "#{path}: invalid release_stage" unless RELEASE_STAGES.include?(d["release_stage"])
+  errors << "#{path}: invalid approval_decision" unless APPROVAL_DECISIONS.include?(d["approval_decision"])
   res=result_map[d["review_result_id"]]; errors << "#{path}: Release without Review Result" unless res
   errors << "#{path}: Release baseline differs from Review Result" if res&&d["baseline"]!=res["baseline"]
   errors << "#{path}: Release Run differs from Review Result" if res&&d["review_run_id"]!=res["review_run_id"]
@@ -168,6 +184,9 @@ releases.each do |path,d|
   errors << "#{path}: authorized_by must be Project Lead" unless d["authorized_by"]=="Project Lead"
   original=run_map[run_map[d["review_run_id"]]&.dig("original_review_run_id")]; required=["Project Lead"]+(original&.dig("review_level")=="Architecture Review" ? ["Architecture Board"] : [])
   errors << "#{path}: wrong required approval roles" unless Array(d["required_approval_roles"]).sort==required.sort
+  Array(d["required_approval_roles"]).each{|role|errors << "#{path}: invalid required approval role #{role.inspect}" unless ROLE_DOMAIN.include?(role)}
+  Array(d["actual_approval_roles"]).each{|role|errors << "#{path}: invalid actual approval role #{role.inspect}" unless ROLE_DOMAIN.include?(role)}
+  errors << "#{path}: actual approval role was not required" unless (Array(d["actual_approval_roles"])-Array(d["required_approval_roles"])).empty?
   if ["Release Candidate","Released"].include?(d["release_stage"])
     errors << "#{path}: successful release decision must be Approved" unless d["approval_decision"]=="Approved"
     errors << "#{path}: Release Review Result not Passed" unless res&.dig("review_status")=="Passed"
