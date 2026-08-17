@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.19.0
+version: 1.20.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -2145,10 +2145,316 @@ Blocker verschwinden lassen kann.
 - WP-002
 - GOV-B-003 — downstream implementation context; Resolution Path: WORK PACKAGE
 
+# Work-Package Evidence Architecture
+
+## AD-018 – Governance State Evidence Carrier Model
+
+**Status**
+
+Pending
+
+**Entscheidungsdatum**
+
+—
+
+**Betroffene Dokumente**
+
+- PB-000
+- PB-997
+- PB-998
+- GA-001-RES
+- Künftige kontrollierte Work-Package-State-Evidence-Artefakte
+
+**Kontext**
+
+`GA-001` identifizierte mit `GOV-B-014` ein uneinheitliches Governance-
+Zustandsmodell. `GA-001-RES` ordnete das Finding `WP-003` zu. Die daraufhin
+angenommene `AD-013` definiert `work_package_status` bereits abschließend als
+orthogonale Governance State Dimension mit Zustandsobjekt, Domain, State
+Keeper, Übergängen und dimensionenübergreifenden Gates; PB-997
+operationalisiert diese Regeln. Die Domain ist unverändert `Planned`, `Ready`,
+`In Progress`, `Verification`, `Closed`, `Cancelled`, der State Keeper bleibt
+der benannte Work-Package Owner.
+
+Die Verification-Abweichung `WP003-V1-A` zeigt eine engere, nach AD-013 noch
+offene Repräsentationslücke: Die vorhandenen Darstellungen von `WP-001` bis
+`WP-007` verteilen Planungsstand, freie Statusangaben, Commit-Nachweise,
+Verification und Closure auf den veränderlichen Resolution Plan, Git-Historie
+und uneinheitliche historische Closure Reports. Es existiert kein einheitlicher,
+maschinenlesbarer Carrier, der aktuellen Work-Package-Status und vollständige
+Transition History zusammenführt. Ein Validator könnte diese fehlende
+persistierte Evidence nur heuristisch aus Prosa erraten und kann die Abweichung
+daher allein nicht beheben.
+
+PB-Dokumentrevisionen besitzen dagegen bereits den von PB-000 und AD-013
+vorgesehenen Document-Status-Carrier: `document_id`, `version` und `status` im
+kanonischen Frontmatter, die dokumenteigene Versionshistorie und die erhaltene
+Git-Historie. Diese Repräsentation ist für `status` hinreichend; ein zweiter
+Document-Status-Carrier würde konkurrierende Zustandsführung erzeugen. PB-998
+ist bereits der ausschließliche Carrier und State Keeper für `ad_status`.
+Reviewphase, Reviewergebnis und Release Stage besitzen durch AD-017 bereits
+kontrollierte Evidence Carrier. Diese Decision muss deshalb ausschließlich die
+Work-Package-Repräsentationslücke schließen.
+
+**Entscheidung**
+
+### Entscheidungsgrenze
+
+AD-013 bleibt alleinige normative Quelle für die Dimension
+`work_package_status`, ihre Werte, den Work-Package Owner als State Keeper,
+sämtliche Übergänge und die Cross-Dimensional Gates. AD-018 definiert kein
+neues State Model, keinen neuen Statuswert, keine neue Transition, kein neues
+Gate, keine Rolle und keine Authority. Sie entscheidet ausschließlich, wie der
+bereits definierte Zustand künftig eindeutig maschinenlesbar persistiert und
+historisiert wird.
+
+### Kontrollierter Work-Package-State-Carrier
+
+Für jedes Work Package wird bei der späteren, gesondert autorisierten
+Implementierung genau ein kontrolliertes, versioniertes YAML-Artefakt unter
+`project-bible/evidence/work-packages/` geführt. Der stabile Dateiname ist die
+bereits vergebene Work-Package-ID, beispielsweise `WP-003.yml`; das Artefakt
+bezeichnet genau dieses Zustandsobjekt. YAML wird gewählt, weil es die
+bestehende repositorygestützte Evidence-Architektur maschinenlesbar fortsetzt,
+ohne Markdown-Prosa zur Statusquelle zu erklären.
+
+Der Carrier muss mindestens eindeutig darstellen können:
+
+- die stabile `work_package_id`,
+- den aktuellen `work_package_status`,
+- den benannten Work-Package Owner,
+- die geordnete Transition History,
+- auflösbare Evidence References,
+- relevante Architecture Decisions,
+- zugeordnete Findings,
+- erforderliche Baseline-, Versions- und vollständige Commit-Bindungen,
+- Gate Evidence für den jeweils protokollierten Übergang und
+- Closure Evidence, sofern Closure tatsächlich erfolgt ist.
+
+Feldnamen und ein konkretes Schema werden erst durch eine nach Acceptance
+autorisierte WP-003-Remediation operationalisiert. Diese Decision autorisiert
+weder die Anlage des Verzeichnisses oder der Artefakte noch ein Schema, eine
+Migration oder einen Validator.
+
+Der Carrier ist der einzige kanonische persistierte State Carrier für den
+aktuellen `work_package_status` und seine Historie. Kanonisch bezeichnet hier
+die eindeutige Zustandsrepräsentation, nicht Governance Authority: Nur der nach
+AD-013 und PB-997 benannte Work-Package Owner darf einen Übergang setzen.
+
+### Transition History und Retention
+
+Jeder tatsächlich persistierte Übergang ist ein geordneter, append-only
+Historieneintrag und trägt genau die bereits durch AD-013/PB-997 verlangten
+Kerninformationen:
+
+- State Object als `work_package_id`,
+- vorheriger Wert,
+- neuer Wert,
+- Zeitpunkt,
+- verantwortliche Rolle beziehungsweise Actor und
+- mindestens eine auflösbare Evidence Reference.
+
+Die Kette verwendet ausschließlich den Normalpfad
+
+```text
+Planned → Ready → In Progress → Verification → Closed
+```
+
+sowie die bereits definierte terminale Cancellation aus `Planned`, `Ready`
+oder `In Progress`. Es gibt keine weiteren Kanten und keine impliziten
+Übergänge. Einträge müssen zeitlich monoton und in `previous`/`new`
+zusammenhängend sein; der aktuelle Status muss dem Endpunkt der vollständigen
+History entsprechen.
+
+Die History bleibt für die Lebensdauer des Repositorys erhalten. Ein neuer
+Übergang überschreibt oder löscht keinen früheren. Eine sachliche Korrektur
+wird als nachvollziehbarer neuer Korrekturvermerk mit Referenz auf den
+betroffenen Eintrag protokolliert; sie schreibt weder Zeitpunkt, Actor noch
+Gate-Nachweis still um. Der Korrekturvermerk ist Evidence und keine zusätzliche
+Statuskante.
+
+### Bestehende Gates als referenzierte Evidence
+
+Der Carrier macht ausschließlich die bestehenden Gates maschinenlesbar
+referenzierbar:
+
+- `Ready` referenziert den PB-998-Nachweis, dass alle vorgelagerten
+  Architecture Decisions `Accepted` waren,
+- `Verification` referenziert die abgeschlossene Implementation einschließlich
+  der erforderlichen Baseline- beziehungsweise Commit-Bindung und
+- `Closed` referenziert die zuständige Approval, die vollständige Definition
+  of Done, Verification Evidence und Closure Evidence.
+
+Diese Referenzen dokumentieren die zum Übergangszeitpunkt geprüften
+Voraussetzungen. Sie erzeugen kein Gate, ersetzen keine fachliche Prüfung und
+setzen keinen Zustand eines anderen Objekts.
+
+### Resolution Plan und Closure Reports
+
+Variante A, `GA-001_Resolution_Plan.md` selbst zum Carrier zu machen, wird
+verworfen. Der Plan ist ein Resolution- und Planungsartefakt mit
+Work-Package-Zuordnung, Dependency Graph und teilweise freier Statusprosa. Er
+ist veränderlich, verbindet mehrere Zustandsobjekte in einem Dokument und
+besitzt weder homogene Transition History noch eine eindeutige Evidence- und
+Authority-Grenze. Seine Aufwertung würde AD-012/AD-013, historische Retention
+und deterministische Validierung unnötig koppeln.
+
+Gewählt wird Variante B: Das separate kontrollierte YAML-Artefakt ist der
+Carrier. `GA-001-RES` bleibt Planungs-, Resolution- und Übersichtsartefakt. Es
+darf den Carrier referenzieren und dessen aktuellen Zustand zusammenfassen;
+eine solche Zusammenfassung setzt oder ersetzt keinen Status und darf nicht
+als Transition Evidence ausgewertet werden.
+
+Closure Reports bleiben historical, non-canonical, non-normative Evidence.
+Sie dürfen Closure, Approval, Definition of Done und Verification belegen,
+besitzen aber keine State Authority und sind weder alleiniger Carrier noch
+State Model. Bei `Closed` referenziert der Carrier den identifizierten Closure
+Report oder gleichwertige kontrollierte Closure Evidence auflösbar; der
+Statusübergang bleibt die vom Work-Package Owner protokollierte Ausübung der
+bestehenden Authority.
+
+### Historische Rekonstruktion von WP-001 bis WP-007
+
+Eine spätere Migration darf historische Übergänge ausschließlich aus bereits
+persistierten, auflösbaren Repository-Nachweisen rekonstruieren: dem
+Resolution Plan in seiner nachweisbaren Git-Revision, Accepted Decisions und
+ihren Registerständen, Implementation- und Merge-Commits, erhaltenen
+Verification-Nachweisen, kontrollierter Review-/Release-Evidence sowie
+vorhandenen Closure Reports. Jeder rekonstruierte Wert für Zeitpunkt, Actor,
+Übergang und Gate muss durch die referenzierte Quelle tatsächlich belegt sein.
+
+Fehlt dieser Nachweis, darf weder ein plausibler Zeitpunkt noch eine Rolle,
+Transition oder Gate-Erfüllung erfunden werden. Der Carrier muss eine
+maschinenlesbare Kennzeichnung unvollständiger historischer Evidence erlauben,
+die den bekannten aktuellen Zustand und die konkret belegten Ereignisse von
+unbekannten Legacy-Abschnitten trennt. Eine solche Kennzeichnung ist kein
+Statuswert, keine Transition und keine Behauptung, das Gate sei erfüllt.
+Rekonstruierte Ereignisse werden als Rekonstruktion mit ihren Quellen
+gekennzeichnet; spätere Belege ergänzen die History nachvollziehbar, statt sie
+still umzuschreiben. Diese Decision führt keine Rekonstruktion durch.
+
+### Bestehende Carrier der übrigen Dimensionen
+
+- **Document Status:** Es ist kein neuer Carrier erforderlich. Validatoren
+  verwenden das bestehende kanonische Frontmatter (`document_id`, `version`,
+  `status`), die Versionshistorie und repositorypersistierte Revisionen, um die
+  bestehende Domain, Transitionen sowie Canonical-, Implementation- und
+  Supersession-Gates zu prüfen. Eine heuristische Auswertung sonstiger Prosa
+  ist unzulässig.
+- **AD Status:** PB-998 bleibt alleiniger Carrier und State Keeper. Für die
+  deterministische Lifecycle-Prüfung wird ausschließlich der Status des
+  jeweiligen PB-998-Registereintrags verwendet; es entsteht keine zweite
+  AD-State-Ablage.
+- **Review und Release:** AD-017 und die bestehende kontrollierte
+  Review-/Release-Evidence-Familie bleiben unverändert. Es entsteht keine neue
+  Review-, Finding-, Result- oder Release-Evidence-Familie.
+
+### Architekturvertrag für spätere Validierung
+
+Nach einer gesondert autorisierten Implementierung muss ohne heuristische
+Prosa-Auswertung deterministisch prüfbar sein:
+
+1. für Work Packages: gültige stabile ID, gültiger aktueller Status, benannter
+   State Keeper, ausschließlich zulässige Übergänge, monotone append-only
+   History, zusammenhängende `previous`/`new`-Kette, Übereinstimmung des
+   aktuellen Status mit dem History-Endpunkt, Ready-, Verification- und
+   Closed-Gate-Evidence sowie auflösbare Evidence References;
+2. für Document Status aus dem bestehenden Carrier: Domain und zulässige
+   Transitionen sowie Canonical-, Implementation- und Supersession-Gate;
+3. für AD Status aus PB-998: bestehende Domain, Lifecycle-Reihenfolge,
+   `Accepted` vor Implementation und `Implemented` vor `Verified`;
+4. für Review und Release: Regression der bereits durch AD-017 und die
+   kontrollierte Evidence-Familie ermöglichten Prüfungen und
+5. dimensionsübergreifend: Gates prüfen Voraussetzungen, aber kein Gate und
+   kein Carrier setzt automatisch den Zustand eines fremden Objekts.
+
+Manuell bleiben insbesondere die fachliche Angemessenheit von Scope,
+Definition of Done, Verification und Approval. Diese Decision autorisiert
+keinen Validator und erweitert dessen Scope nicht.
+
+### Authority Boundary
+
+Es gelten ausdrücklich:
+
+```text
+State Carrier ≠ State Authority
+Evidence ≠ Governance Rule
+Evidence ≠ Process Rule
+Evidence ≠ Architecture Decision
+```
+
+Der Carrier protokolliert, wer den Zustand im Rahmen bereits bestehender
+Authority gesetzt hat. Evidence records authority exercise; evidence does not
+own authority. Authority und Ownership gemäß PB-000, PB-997, PB-998, AD-012
+und AD-013 bleiben unverändert.
+
+### Scope und Umsetzungsgrenze
+
+Diese Pending Decision bereitet ausschließlich die Auflösung der
+Repräsentationslücke aus `WP003-V1-A` vor, welche die vollständige
+deterministische Verification von AD-013 verhindert. Sie implementiert keine
+WP-003-Remediation, erzeugt oder migriert keine Work-Package-State-Daten,
+ändert keinen Validator oder Test und schließt weder Finding noch Work Package.
+Sie ändert insbesondere weder PB-000 noch PB-997, GA-001-RES, Closure Reports,
+Work Packages oder AD-017 und bearbeitet weder WP-002 noch WP-004.
+
+AD-018 bleibt bis zur Architecture Review unverbindlich. Es gibt kein
+Entscheidungsdatum und keine Implementation Authorization. WP-003 bleibt wegen
+`WP003-V1-A` blockiert; eine Remediation darf erst beginnen, nachdem AD-018 in
+PB-998 `Accepted` ist.
+
+**Begründung**
+
+Ein separates, kontrolliertes YAML-Artefakt pro Work Package trennt
+persistierten Zustand und Evidence von veränderlicher Planung und
+historischen Abschlussberichten. Es bewahrt die bestehende Authority-Grenze,
+ermöglicht append-only Retention und liefert eine eindeutige Eingabe für
+deterministische Validierung. Die Wiederverwendung der vorhandenen Carrier für
+Dokument-, AD-, Review- und Releasezustand vermeidet doppelte Zustandsmodelle
+und respektiert AD-012, AD-013 und AD-017.
+
+**Konsequenzen**
+
+- Vor Acceptance entsteht weder eine verbindliche neue Regel noch eine
+  Umsetzungserlaubnis.
+- Nach Acceptance darf eine gesonderte WP-003-Remediation den beschriebenen
+  Carrier, sein Schema, die kontrollierte Ablage, die historische Migration und
+  den zugehörigen Validator ausschließlich innerhalb dieses Vertrags
+  operationalisieren.
+- Die Domain, Transitionen, Gates und Rollen von `work_package_status` bleiben
+  unverändert aus AD-013/PB-997 übernommen.
+- Resolution Plan und Closure Reports bleiben Evidence beziehungsweise
+  Planung und erhalten keine State Authority.
+- Unbelegte Legacy-History muss als unvollständig erkennbar bleiben; sie darf
+  nicht vervollständigt erscheinen, indem Daten erfunden werden.
+- AD-017 sowie bestehende Document- und AD-Status-Carrier bleiben unverändert.
+
+**Verwandte Entscheidungen**
+
+- AD-005
+- AD-010
+- AD-012
+- AD-013
+- AD-014
+- AD-017
+
+**Traceability**
+
+```text
+GA-001
+  → GA-001-RES
+  → GOV-B-014
+  → AD-013
+  → WP-003
+  → WP003-V1-A
+  → AD-018
+```
+
 # Versionshistorie
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.20.0 | 2026-08-17 | Canonical | AD-018 als Pending Decision zum maschinenlesbaren Governance State Evidence Carrier für `work_package_status` vorbereitet; keine WP-003-Remediation, Bestandsmigration, Schema-, Validator-, Test- oder Closure-Änderung vorgenommen. |
 | 1.19.0 | 2026-08-17 | Canonical | AD-017 nach Architecture Review angenommen; Finding-Lifecycle, Evidence/Authority, Review Result, Release Record, immutable Baseline, PB-999, Retention sowie Review-/Release-Orthogonalität präzisiert; keine WP-002-/WP-004-Umsetzung vorgenommen. |
 | 1.18.0 | 2026-08-17 | Canonical | AD-017 als gemeinsame Pending Decision zum Governance Review and Release Evidence Model für GOV-B-008/GOV-B-009 und WP-002 vorbereitet; keine WP-002-/WP-004-Umsetzung, Evidence-Datei, Schema-, Validator-, Review- oder Closure-Ausführung vorgenommen. |
 | 1.17.1 | 2026-08-17 | Canonical | WP-007 als Direct Fix umgesetzt: AD-005 auf die eindeutige Reihenfolge Entwurf, Registrierung, Pending, Architecture Review, Accepted, Umsetzung und Verifikation präzisiert; keine neue Architecture Decision oder Lifecycle-Stufe eingeführt. |
