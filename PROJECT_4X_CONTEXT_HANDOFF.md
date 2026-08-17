@@ -1,7 +1,7 @@
 ---
 document_id: CTX-000
 title: Project 4X Context Handoff
-version: 1.2.0
+version: 1.3.0
 status: Accepted
 category: Derived Operational Continuity Artifact
 created: 2026-08-05
@@ -34,6 +34,39 @@ architecture_decisions:
   - AD-014
   - AD-015
   - AD-016
+normative_content:
+  - entry_id: CTX-PROJECT-IDENTITY-SUMMARY
+    topic_id: project-identity-and-why
+    classification: DERIVED SUMMARY
+    normative_home: PB-001
+    source:
+      relationship: DERIVED SUMMARY
+      reference_type: canonical
+      target: PB-001
+  - entry_id: CTX-PRODUCT-VISION-SUMMARY
+    topic_id: long-term-product-vision
+    classification: DERIVED SUMMARY
+    normative_home: PB-002
+    source:
+      relationship: DERIVED SUMMARY
+      reference_type: canonical
+      target: PB-002
+  - entry_id: CTX-DESIGN-PHILOSOPHY-SUMMARY
+    topic_id: design-philosophy
+    classification: DERIVED SUMMARY
+    normative_home: PB-003
+    source:
+      relationship: DERIVED SUMMARY
+      reference_type: canonical
+      target: PB-003
+  - entry_id: CTX-SIMULATION-AUTHORITY-QUOTE
+    topic_id: long-term-product-vision
+    classification: QUOTE
+    normative_home: PB-002
+    source:
+      relationship: QUOTE
+      reference_type: canonical
+      target: PB-002
 tags:
   - continuity
   - derived
@@ -853,5 +886,6 @@ summary cannot prescribe the next action.
 
 | Version | Date | Status | Summary |
 |---|---|---|---|
+| 1.3.0 | 2026-08-17 | Accepted | Added machine-readable traceability for the already classified summaries and quote. This MINOR revision operationalizes metadata without granting CTX normative ownership or changing subject matter content. |
 | 1.2.0 | 2026-08-17 | Accepted | Classified all project identity, product vision and design-philosophy content as derived summaries, identified their normative PB sources, and operationalized source precedence under AD-016 without changing summarized meaning. |
 | 1.1.0 | 2026-08-16 | Accepted | Migrated CTX-000 to the AD-015 derived-artifact profile; added canonical provenance, directly applicable Decisions, and typed planned references for WP-005. |

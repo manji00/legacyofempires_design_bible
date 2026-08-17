@@ -1,7 +1,7 @@
 ---
 document_id: PB-003
 title: Designphilosophie
-version: 1.1.0
+version: 2.0.0
 status: Canonical
 category: Governance
 created: 2026-08-05
@@ -54,6 +54,35 @@ architecture_decisions:
   - AD-004
   - AD-010
   - AD-016
+normative_content:
+  - entry_id: PB003-DESIGN-PHILOSOPHY-OWNER
+    topic_id: design-philosophy
+    classification: OWNED NORMATIVE STATEMENT
+    normative_home: PB-003
+  - entry_id: PB003-DESIGN-HEURISTICS-OWNER
+    topic_id: design-heuristics
+    classification: OWNED NORMATIVE STATEMENT
+    normative_home: PB-003
+  - entry_id: PB003-DESIGN-REQUIREMENTS-OWNER
+    topic_id: design-requirements
+    classification: OWNED NORMATIVE STATEMENT
+    normative_home: PB-003
+  - entry_id: PB003-BUILD-SYSTEMS-QUOTE
+    topic_id: project-identity-and-why
+    classification: QUOTE
+    normative_home: PB-001
+    source:
+      relationship: QUOTE
+      reference_type: canonical
+      target: PB-001
+  - entry_id: PB003-PLAYER-SHAPES-HISTORY-QUOTE
+    topic_id: project-identity-and-why
+    classification: QUOTE
+    normative_home: PB-001
+    source:
+      relationship: QUOTE
+      reference_type: canonical
+      target: PB-001
 design_goals:
   - DG-DES-001
   - DG-DES-002
@@ -1140,5 +1169,6 @@ Narrative Darstellung macht das Ergebnis verständlich und lebendig.
 
 | Version | Datum | Status | Änderung |
 |---|---|---|---|
+| 2.0.0 | 2026-08-17 | Canonical | Korrigiert den gemäß PB-000 erforderlichen MAJOR-Schritt für die mit AD-016 geänderte autoritative Ownership- und Dokumentgrenze und registriert bestehende Ownership und Zitate maschinenlesbar; fachliche Inhalte unverändert erhalten. |
 | 1.1.0 | 2026-08-17 | Canonical | Normative Heimat für Designphilosophie, Designheuristiken und fachliche Requirements gemäß AD-016 ausgewiesen und wiederholte Manifest-Leitsätze als Zitate klassifiziert; fachliche Inhalte unverändert erhalten. |
 | 1.0.2 | 2026-08-16 | Canonical | Unmittelbar anwendbare Accepted Decisions gemäß AD-010 für WP-005 ergänzt. |

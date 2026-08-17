@@ -1,7 +1,7 @@
 ---
 document_id: PB-001
 title: Projektmanifest
-version: 1.1.0
+version: 2.0.0
 status: Canonical
 category: Governance
 document_type: Manifest
@@ -25,6 +25,11 @@ requirements: []
 design_goals: []
 architecture_decisions:
   - AD-016
+normative_content:
+  - entry_id: PB001-PROJECT-IDENTITY-OWNER
+    topic_id: project-identity-and-why
+    classification: OWNED NORMATIVE STATEMENT
+    normative_home: PB-001
 tags:
   - grand-strategy
   - emergent-history
@@ -647,6 +652,7 @@ Es darf nicht verwendet werden, um offene Designfragen ohne eigenes Dokument vor
 
 | Version | Datum | Status | Änderung |
 |---|---|---|---|
+| 2.0.0 | 2026-08-17 | Canonical | Korrigiert den gemäß PB-000 erforderlichen MAJOR-Schritt für die mit AD-016 geänderte autoritative Ownership- und Dokumentgrenze und registriert die bestehende Ownership maschinenlesbar; fachliche Inhalte unverändert erhalten. |
 | 1.1.0 | 2026-08-17 | Canonical | Normative Heimat für Projektidentität, Zweck, fundamentalen Charakter und unverlierbares Warum gemäß AD-016 eindeutig ausgewiesen; Inhalte unverändert erhalten. |
 | 0.1 | 2026-08-05 | Superseded | Erste Manifestfassung vor Anwendung des Project-Bible-Standards. |
 | 1.0 | 2026-08-05 | Active | Vollständige Neufassung gemäß Project-Bible-Regeln und kanonischem Projektkontext. |
