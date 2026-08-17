@@ -1,7 +1,7 @@
 ---
 document_id: PB-000
 title: Project Bible Specification
-version: 2.1.0
+version: 2.2.0
 status: Canonical
 category: Governance
 created: 2026-08-05
@@ -53,6 +53,7 @@ architecture_decisions:
   - AD-012
   - AD-013
   - AD-014
+  - AD-017
 tags:
   - governance
   - documentation
@@ -589,6 +590,24 @@ PB-997 owns `review_phase`, `review_status`, `work_package_status` and
 `ad_status`. These fields MUST NOT be placed in document frontmatter as aliases
 for `status`; documents MAY only reference the responsible state object and its
 evidence.
+
+### 13.1 Controlled review and release evidence
+
+The controlled evidence classes are exactly `review_run`, `finding`,
+`correction`, `reverification`, `review_result` and `release`. Their normative
+repository home is `project-bible/evidence/review-release/`; each record MUST be
+a versioned YAML object with an immutable stable ID, `artifact_class`, semantic
+`version`, and the class-specific fields required by PB-997. Review-run IDs use
+`RVR-NNNNNN`, Finding IDs use `FND-NNNNNN`, and both namespaces are globally
+unique, monotonically allocated, never reused and independent of PB-999.
+
+Every repository-backed baseline MUST identify each artifact by stable identity,
+exact semantic version, full Git commit ID, and explicit included and excluded
+scope. Evidence records Execution and authorized decisions; it does not own
+Governance, Process, Architecture-Decision or Approval Authority. It MUST NOT
+set `status`, `ad_status`, `work_package_status`, or any state dimension it does
+not keep under Section 13 and PB-997. A changed baseline inherits neither
+`Passed` nor Release Approval.
 
 ---
 
@@ -1346,6 +1365,7 @@ These questions do not block adoption of PB-000.
 
 | Version | Date | Status | Summary |
 |---|---|---|---|
+| 2.2.0 | 2026-08-17 | Canonical | Operationalized AD-017 evidence classes, ID namespaces, immutable baseline metadata and authority boundaries for WP-002. |
 | 2.1.0 | 2026-08-16 | Canonical | Implemented the AD-014 governance-reference contract and WP-005 metadata validation rules for GOV-B-010 and GOV-B-012. |
 | 2.0.0 | 2026-08-07 | Canonical | Implemented AD-012 and AD-013: assigned rule/process/Decision ownership, established the binding review classification matrix, and synchronized document status and Semantic Versioning with the orthogonal governance state model. |
 | 1.1.0 | 2026-08-07 | Canonical | Implemented AD-009 through AD-011: removed CTX authority, standardized the central AD register and `architecture_decisions`, and retained only normative specification rules. |

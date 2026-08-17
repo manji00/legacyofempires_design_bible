@@ -1,11 +1,11 @@
 ---
 document_id: PB-999
 title: Editorial Backlog
-version: 1.0.1
+version: 1.1.0
 status: Draft
 category: Governance
 created: 2026-08-06
-updated: 2026-08-06
+updated: 2026-08-17
 owners:
   - Project Lead
 reviewers: []
@@ -19,6 +19,8 @@ depends_on:
   - PB-000
 related_documents:
   - PB-004
+architecture_decisions:
+  - AD-017
 systems: []
 requirements: []
 design_goals: []
@@ -44,6 +46,13 @@ Das Dokument enthält keine Architekturentscheidungen, keine Game-Design-Entsche
 - Abgeschlossene Punkte werden entfernt.
 - Die Liste bleibt bewusst klein und dient ausschließlich als Arbeitsliste.
 - Entscheidungen und offene Designfragen werden in den dafür vorgesehenen Dokumenten festgehalten, nicht in PB-999.
+
+PB-999 ist mutable, non-canonical und besitzt keine Gate Authority. Ein Punkt
+darf eine kontrollierte Finding-ID ausschließlich informativ referenzieren.
+Checkbox, Änderung, Entfernung oder Abschluss eines Punkts schließt kein
+Finding, setzt weder `review_status` noch `release_stage`, erteilt keine
+Release Approval und ersetzt keinen kontrollierten Evidence Record. Normative
+Gate-Prüfungen verwenden ausschließlich die in PB-997 geführte Evidence-Familie.
 
 # Prioritäten
 

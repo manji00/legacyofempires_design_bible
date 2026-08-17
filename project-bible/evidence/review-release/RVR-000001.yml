@@ -1,0 +1,19 @@
+artifact_class: review_run
+version: 1.0.0
+review_run_id: RVR-000001
+baseline:
+  - artifact_id: PB-999
+    version: 1.0.1
+    commit: 1d1cbb042ba650ea9cd0021d7792944d7eabaed5
+    included_scope: Authority statements and backlog gate boundary
+    excluded_scope: Backlog item content and all WP-004 terminology questions
+change_class: Governance architecture boundary test
+review_level: Architecture Review
+required_approval_roles: [Architecture Board]
+review_phase: Completed
+phase_history:
+  - {from: Planned, to: In Review, role: Governance Reviewer, timestamp: '2026-08-17T10:00:00Z', evidence: WP-002}
+  - {from: In Review, to: Rework, role: Governance Reviewer, timestamp: '2026-08-17T10:10:00Z', evidence: FND-000001}
+finding_ids: [FND-000001]
+reverification_review_run_ids: [RVR-000002]
+traceability: [GA-001, GA-001-RES, GOV-B-008, GOV-B-009, AD-017, WP-002]

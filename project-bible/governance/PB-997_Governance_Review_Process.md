@@ -1,11 +1,11 @@
 ---
 document_id: PB-997
 title: Governance Review Process
-version: 2.0.1
+version: 2.1.0
 status: Canonical
 category: Governance
 created: 2026-08-06
-updated: 2026-08-16
+updated: 2026-08-17
 owners:
   - Project Lead
 reviewers: []
@@ -34,6 +34,7 @@ architecture_decisions:
   - AD-010
   - AD-012
   - AD-013
+  - AD-017
 tags:
   - governance
   - review
@@ -55,11 +56,10 @@ and releases. It operationalizes the rules, change classes, review levels and
 role authority owned by PB-000; it MUST NOT redefine, extend or replace them.
 PB-998 remains the sole Architecture-Decision register and status authority.
 
-Audit reports, resolution plans, review records, finding lists, verification
-results, commit references, release records and closure reports are evidence.
-They demonstrate execution and decisions but possess no independent rule,
-process or Architecture-Decision authority. The controlled evidence family and
-its full lifecycle remain outside WP-003 pending GOV-B-008 and GOV-B-009.
+Audit reports, resolution plans and closure reports are evidence. Controlled
+review and release execution uses the evidence family in Section 4.6. Evidence
+records authority exercise; it does not own authority and cannot define rules,
+processes, Architecture Decisions or approval roles.
 
 ## 2. Process Ownership Model
 
@@ -172,6 +172,25 @@ change after review requires a new or explicitly repeated review against the
 new immutable baseline. The evidence retains prior findings and results as
 history; it MUST NOT rewrite them to imply approval of the new revision.
 
+### 4.6 Controlled Evidence Execution
+
+Each execution creates immutable, retained records in `project-bible/evidence/review-release/`. Records use only the six evidence classes defined by PB-000. Corrections are separate records; history is never rewritten or deleted, and all records are retained for the repository lifetime unless a later Accepted Architecture Decision supersedes this rule.
+
+A `review_run` binds one `RVR-NNNNNN` to an ordered immutable baseline, included and excluded scope, change class, review level, required approval roles, phase history, Findings and verification references. A re-review or re-verification is a `reverification` record with its own Review Run ID and baseline and references the original run and each relevant Finding.
+
+A `finding` binds one persistent `FND-NNNNNN` to its originating run, affected baseline and scope location, violated requirement, release-blocking decision and complete event history. Its local Evidence lifecycle is:
+
+```text
+Recorded → Correction Required → Awaiting Verification → Closed
+                                      ↓
+                                 Correction Required
+Closed → Reopened → Correction Required
+```
+
+Every event records role, timestamp and evidence. `Awaiting Verification` requires a Correction and repository-backed Implementation Commit. `Closed` requires successful re-verification, closure rationale, authorized role and timestamp. Failed verification returns to `Correction Required`; reopening requires the shown two transitions, reason and authority. This local lifecycle is not an AD-013 state dimension and never sets another state.
+
+A `correction` references its Finding, affected baseline, changed files, full Implementation Commit, role, timestamp and factual description. Semantic adequacy remains manual. A `reverification` additionally records method, result, role, timestamp and Evidence References. A `review_result` records only existing `review_status`, its Run, identical baseline, authorized role, Approval Evidence, timestamp, Findings and Verification Evidence. `Passed` requires every relevant Finding to be controlled `Closed` and applies only to that exact baseline.
+
 ## 5. Work-Package Process
 
 The normal Work-Package flow is:
@@ -218,6 +237,12 @@ A release record references exact document versions and baselines. If a document
 revision changes after creation of a Release Candidate, that revision requires a
 new or explicitly repeated review before release. Release Stage never replaces
 Semantic Versioning.
+
+### 6.1 Controlled Release Record
+
+Each candidacy or release creates a `release` record with stable release ID, exact ordered baseline, associated Review Run and Review Result, open release-blocking Finding snapshot, required and actual approval roles, explicit decision, timestamp, Evidence References and the `release_stage` authorized by the Project Lead. Architecture Review additionally requires the Architecture Board. Approval requires every required role, no open blocker and a `Passed` result for exactly the same baseline.
+
+The record documents the authorized transition and keeps `release_stage`; it does not own Release Authority or derive a stage from another dimension. A new baseline requires new review and release decisions. PB-999 may display work and informational Finding references only. It is mutable, non-canonical and `source_of_truth: false`; editing a row cannot close Findings, set results or stages, approve releases, satisfy gates or replace evidence.
 
 ## 7. Architecture-Decision Gate
 
@@ -273,16 +298,15 @@ records what occurred; it does not change PB-000 rules, PB-997 processes or
 PB-998 Decisions.
 
 Execution MUST stop at the approved Work-Package boundary. Findings assigned to
-another package remain outside scope even when they are adjacent. For WP-003,
-this process implements only GOV-B-006 and GOV-B-014 under GA-001-RES and
-AD-012/AD-013; it does not define the controlled evidence family reserved for
-GOV-B-008/GOV-B-009 or modify the terminology release boundary assigned to
-WP-004.
+another package remain outside scope even when they are adjacent. WP-002 operationalizes only GOV-B-003, GOV-B-008 and GOV-B-009 under
+GA-001-RES and AD-017. It does not modify the terminology release boundary
+assigned to WP-004.
 
 # Versionshistorie
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 2.1.0 | 2026-08-17 | Canonical | AD-017 umgesetzt: kontrollierte Evidence-Familie, Finding-Lifecycle, Re-Verification, Release Record, Retention und PB-999-Grenze operationalisiert. |
 | 2.0.1 | 2026-08-16 | Canonical | GOV-B-010 Decision-Traceability vervollständigt und die bereits trennscharfen Beziehungen aus GOV-B-013 validiert. |
 | 2.0.0 | 2026-08-07 | Canonical | AD-012 und AD-013 umgesetzt: PB-997 als alleinige Prozessheimat etabliert und Review-, Work-Package- und Releaseprozesse mit orthogonalen Zustandsautomaten, Rollen, Gates, Versionbindungen und Validierungsvertrag synchronisiert. |
 | 1.1.0 | 2026-08-07 | Canonical | Den mit GA-001, GA-001-RES und WP-001 erprobten Governance-Lifecycle einschließlich AD-Lifecycle, Implementation, Verification, Closure, Work-Package-DoD und vollständiger Traceability dokumentiert. |
