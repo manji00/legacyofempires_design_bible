@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.20.0
+version: 1.21.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -2151,11 +2151,11 @@ Blocker verschwinden lassen kann.
 
 **Status**
 
-Pending
+Accepted
 
 **Entscheidungsdatum**
 
-—
+2026-08-17
 
 **Betroffene Dokumente**
 
@@ -2208,13 +2208,23 @@ Gate, keine Rolle und keine Authority. Sie entscheidet ausschließlich, wie der
 bereits definierte Zustand künftig eindeutig maschinenlesbar persistiert und
 historisiert wird.
 
+Der Work-Package State Carrier ist kontrollierte Evidence. Er ist weder Owner
+der Governance Rules noch Owner des Governance Process, weder Work-Package
+Authority noch Work-Package Owner, weder Architecture Decision noch Ersatz für
+`GA-001-RES` oder einen Closure Report. Der Work-Package Owner bleibt der State
+Keeper. Der Carrier zeichnet ausschließlich die Ausübung dieser bereits
+bestehenden Authority auf. Deshalb gilt ausdrücklich: **State Carrier ≠ State
+Authority.**
+
 ### Kontrollierter Work-Package-State-Carrier
 
-Für jedes Work Package wird bei der späteren, gesondert autorisierten
-Implementierung genau ein kontrolliertes, versioniertes YAML-Artefakt unter
-`project-bible/evidence/work-packages/` geführt. Der stabile Dateiname ist die
-bereits vergebene Work-Package-ID, beispielsweise `WP-003.yml`; das Artefakt
-bezeichnet genau dieses Zustandsobjekt. YAML wird gewählt, weil es die
+Für jede stabile Work-Package-ID wird bei der späteren, gesondert autorisierten
+Implementierung **genau ein** kontrolliertes, versioniertes YAML-Artefakt unter
+`project-bible/evidence/work-packages/` geführt. Seine Dateiidentität wird nach
+den erst in der WP-003-Remediation festzulegenden Implementierungsregeln
+deterministisch aus der stabilen Work-Package-ID abgeleitet; das Artefakt
+bezeichnet genau dieses Zustandsobjekt. Kein zweiter oder konkurrierender State
+Carrier ist zulässig. YAML wird gewählt, weil es die
 bestehende repositorygestützte Evidence-Architektur maschinenlesbar fortsetzt,
 ohne Markdown-Prosa zur Statusquelle zu erklären.
 
@@ -2237,8 +2247,14 @@ weder die Anlage des Verzeichnisses oder der Artefakte noch ein Schema, eine
 Migration oder einen Validator.
 
 Der Carrier ist der einzige kanonische persistierte State Carrier für den
-aktuellen `work_package_status` und seine Historie. Kanonisch bezeichnet hier
-die eindeutige Zustandsrepräsentation, nicht Governance Authority: Nur der nach
+aktuellen `work_package_status` und seine Historie. Er exponiert genau ein
+Feld `work_package_status`, dessen Wert ausschließlich `Planned`, `Ready`, `In
+Progress`, `Verification`, `Closed` oder `Cancelled` sein darf. Aliaswerte,
+Freitextwerte und ein zweites Statusfeld sind unzulässig. Der aktuelle Wert
+muss dem terminalen `new`-Wert der erhaltenen History entsprechen; nur eine
+nach den Migrationsregeln ausdrücklich dokumentierte historische
+Evidence-Lücke darf diese Ableitung begrenzen. Kanonisch bezeichnet hier die
+eindeutige Zustandsrepräsentation, nicht Governance Authority: Nur der nach
 AD-013 und PB-997 benannte Work-Package Owner darf einen Übergang setzen.
 
 ### Transition History und Retention
@@ -2262,12 +2278,14 @@ Planned → Ready → In Progress → Verification → Closed
 
 sowie die bereits definierte terminale Cancellation aus `Planned`, `Ready`
 oder `In Progress`. Es gibt keine weiteren Kanten und keine impliziten
-Übergänge. Einträge müssen zeitlich monoton und in `previous`/`new`
-zusammenhängend sein; der aktuelle Status muss dem Endpunkt der vollständigen
-History entsprechen.
+Übergänge. Einträge müssen monoton geordnet sein und ihre Zeitpunkte müssen
+zeitlich monoton verlaufen. Die `previous`/`new`-Kette muss überall dort
+zusammenhängend sein, wo vollständige Evidence vorliegt; der aktuelle Status
+muss dem Endpunkt der vollständigen History entsprechen.
 
-Die History bleibt für die Lebensdauer des Repositorys erhalten. Ein neuer
-Übergang überschreibt oder löscht keinen früheren. Eine sachliche Korrektur
+Die History bleibt für die Lebensdauer des Repositorys erhalten. Transitionen
+werden niemals still umgeschrieben, und kein früherer Übergang wird gelöscht.
+Eine sachliche Korrektur
 wird als nachvollziehbarer neuer Korrekturvermerk mit Referenz auf den
 betroffenen Eintrag protokolliert; sie schreibt weder Zeitpunkt, Actor noch
 Gate-Nachweis still um. Der Korrekturvermerk ist Evidence und keine zusätzliche
@@ -2287,7 +2305,10 @@ referenzierbar:
 
 Diese Referenzen dokumentieren die zum Übergangszeitpunkt geprüften
 Voraussetzungen. Sie erzeugen kein Gate, ersetzen keine fachliche Prüfung und
-setzen keinen Zustand eines anderen Objekts.
+setzen keinen Zustand eines anderen Objekts. Der Carrier referenziert Gate
+Evidence; ein eingetragener Zielstatus erfüllt das Gate nicht selbst. Ein
+manuell eingetragenes `work_package_status: Closed` ohne die erforderliche
+Closure Evidence ist daher ungültig.
 
 ### Resolution Plan und Closure Reports
 
@@ -2303,15 +2324,22 @@ Gewählt wird Variante B: Das separate kontrollierte YAML-Artefakt ist der
 Carrier. `GA-001-RES` bleibt Planungs-, Resolution- und Übersichtsartefakt. Es
 darf den Carrier referenzieren und dessen aktuellen Zustand zusammenfassen;
 eine solche Zusammenfassung setzt oder ersetzt keinen Status und darf nicht
-als Transition Evidence ausgewertet werden.
+als Transition History oder Gate Evidence ausgewertet werden. Der Resolution
+Plan ist weder State Authority noch kanonischer Work-Package State Carrier.
+Wenn Plan und kontrollierter Carrier nach der Migration voneinander abweichen,
+ist der Carrier die maschinenlesbare State Evidence für die Validierung;
+Governance Authority und Regeln verbleiben bei PB-000/PB-997. Diese
+Evidence-Priorität verleiht dem Carrier keine normative Governance Authority.
 
 Closure Reports bleiben historical, non-canonical, non-normative Evidence.
 Sie dürfen Closure, Approval, Definition of Done und Verification belegen,
 besitzen aber keine State Authority und sind weder alleiniger Carrier noch
-State Model. Bei `Closed` referenziert der Carrier den identifizierten Closure
-Report oder gleichwertige kontrollierte Closure Evidence auflösbar; der
-Statusübergang bleibt die vom Work-Package Owner protokollierte Ausübung der
-bestehenden Authority.
+State Model. Ein Closure Report allein ist kein State Model; der State Carrier
+allein ist keine Closure Evidence. Das `Closed`-Gate verlangt die auflösbare
+Beziehung zwischen beiden. Bei `Closed` referenziert der Carrier den
+identifizierten Closure Report oder gleichwertige kontrollierte Closure Evidence
+auflösbar; der Statusübergang bleibt die vom Work-Package Owner protokollierte
+Ausübung der bestehenden Authority.
 
 ### Historische Rekonstruktion von WP-001 bis WP-007
 
@@ -2324,14 +2352,22 @@ vorhandenen Closure Reports. Jeder rekonstruierte Wert für Zeitpunkt, Actor,
 Übergang und Gate muss durch die referenzierte Quelle tatsächlich belegt sein.
 
 Fehlt dieser Nachweis, darf weder ein plausibler Zeitpunkt noch eine Rolle,
-Transition oder Gate-Erfüllung erfunden werden. Der Carrier muss eine
-maschinenlesbare Kennzeichnung unvollständiger historischer Evidence erlauben,
-die den bekannten aktuellen Zustand und die konkret belegten Ereignisse von
-unbekannten Legacy-Abschnitten trennt. Eine solche Kennzeichnung ist kein
+ein Actor, eine Transition, Approval oder Gate-Erfüllung erfunden werden. Eine
+Evidence-Lücke ist keine Erlaubnis zur Inferenz oder Erfindung. Der Carrier muss
+eine maschinenlesbare Kennzeichnung unvollständiger historischer Evidence
+erlauben, die den bekannten aktuellen Zustand und die konkret belegten
+Ereignisse von unbekannten Legacy-Abschnitten trennt. Eine solche Kennzeichnung ist kein
 Statuswert, keine Transition und keine Behauptung, das Gate sei erfüllt.
 Rekonstruierte Ereignisse werden als Rekonstruktion mit ihren Quellen
 gekennzeichnet; spätere Belege ergänzen die History nachvollziehbar, statt sie
 still umzuschreiben. Diese Decision führt keine Rekonstruktion durch.
+
+Ein bereits nachweisbar geschlossenes Work Package darf als aktuellen Wert
+`work_package_status: Closed` führen, wenn dieser Wert durch vorhandene Closure
+Evidence belegt ist. Nicht rekonstruierbare ältere Transitiondetails dürfen
+dabei ausdrücklich unvollständig bleiben; sie entkräften den belegten
+aktuellen `Closed`-Zustand nicht und dürfen nicht durch erfundene
+Zwischenübergänge ersetzt werden.
 
 ### Bestehende Carrier der übrigen Dimensionen
 
@@ -2340,11 +2376,13 @@ still umzuschreiben. Diese Decision führt keine Rekonstruktion durch.
   `status`), die Versionshistorie und repositorypersistierte Revisionen, um die
   bestehende Domain, Transitionen sowie Canonical-, Implementation- und
   Supersession-Gates zu prüfen. Eine heuristische Auswertung sonstiger Prosa
-  ist unzulässig.
+  ist unzulässig. WP-003 darf die bestehende Repräsentation deterministisch
+  validierbar machen, aber weder eine zweite Document-Status-Evidence-Familie
+  noch ein zweites Document-Status-Modell einführen.
 - **AD Status:** PB-998 bleibt alleiniger Carrier und State Keeper. Für die
   deterministische Lifecycle-Prüfung wird ausschließlich der Status des
   jeweiligen PB-998-Registereintrags verwendet; es entsteht keine zweite
-  AD-State-Ablage.
+  AD-State-Ablage und kein dupliziertes AD-History-Modell.
 - **Review und Release:** AD-017 und die bestehende kontrollierte
   Review-/Release-Evidence-Familie bleiben unverändert. Es entsteht keine neue
   Review-, Finding-, Result- oder Release-Evidence-Familie.
@@ -2355,12 +2393,14 @@ Nach einer gesondert autorisierten Implementierung muss ohne heuristische
 Prosa-Auswertung deterministisch prüfbar sein:
 
 1. für Work Packages: gültige stabile ID, gültiger aktueller Status, benannter
-   State Keeper, ausschließlich zulässige Übergänge, monotone append-only
-   History, zusammenhängende `previous`/`new`-Kette, Übereinstimmung des
-   aktuellen Status mit dem History-Endpunkt, Ready-, Verification- und
-   Closed-Gate-Evidence sowie auflösbare Evidence References;
+   und autorisierter State Keeper, genau ein Carrier, ausschließlich zulässige
+   Übergänge, monotone append-only History, zusammenhängende
+   `previous`/`new`-Kette überall bei vollständiger Evidence, monotone
+   Zeitpunkte, Übereinstimmung des aktuellen Status mit dem History-Endpunkt,
+   Ready-, Verification- und Closed-Gate-Evidence, auflösbare Evidence
+   References sowie ausdrücklich erkennbare historische Unvollständigkeit;
 2. für Document Status aus dem bestehenden Carrier: Domain und zulässige
-   Transitionen sowie Canonical-, Implementation- und Supersession-Gate;
+   Transitionen sowie Canonical-, Implemented- und Supersession-Gate;
 3. für AD Status aus PB-998: bestehende Domain, Lifecycle-Reihenfolge,
    `Accepted` vor Implementation und `Implemented` vor `Verified`;
 4. für Review und Release: Regression der bereits durch AD-017 und die
@@ -2379,8 +2419,9 @@ Es gelten ausdrücklich:
 ```text
 State Carrier ≠ State Authority
 Evidence ≠ Governance Rule
-Evidence ≠ Process Rule
+Evidence ≠ Governance Process
 Evidence ≠ Architecture Decision
+Evidence ≠ Approval Authority
 ```
 
 Der Carrier protokolliert, wer den Zustand im Rahmen bereits bestehender
@@ -2390,18 +2431,17 @@ und AD-013 bleiben unverändert.
 
 ### Scope und Umsetzungsgrenze
 
-Diese Pending Decision bereitet ausschließlich die Auflösung der
-Repräsentationslücke aus `WP003-V1-A` vor, welche die vollständige
+Diese Accepted Decision entscheidet ausschließlich die Auflösung der
+Repräsentationslücke aus `WP003-V1-A`, welche die vollständige
 deterministische Verification von AD-013 verhindert. Sie implementiert keine
 WP-003-Remediation, erzeugt oder migriert keine Work-Package-State-Daten,
 ändert keinen Validator oder Test und schließt weder Finding noch Work Package.
 Sie ändert insbesondere weder PB-000 noch PB-997, GA-001-RES, Closure Reports,
 Work Packages oder AD-017 und bearbeitet weder WP-002 noch WP-004.
 
-AD-018 bleibt bis zur Architecture Review unverbindlich. Es gibt kein
-Entscheidungsdatum und keine Implementation Authorization. WP-003 bleibt wegen
-`WP003-V1-A` blockiert; eine Remediation darf erst beginnen, nachdem AD-018 in
-PB-998 `Accepted` ist.
+Die Acceptance ist keine Implementation Authorization oder Umsetzung. WP-003
+bleibt wegen `WP003-V1-A` offen; seine gesonderte Remediation darf erst auf
+Grundlage dieser angenommenen Architektur beginnen.
 
 **Begründung**
 
@@ -2415,9 +2455,10 @@ und respektiert AD-012, AD-013 und AD-017.
 
 **Konsequenzen**
 
-- Vor Acceptance entsteht weder eine verbindliche neue Regel noch eine
-  Umsetzungserlaubnis.
-- Nach Acceptance darf eine gesonderte WP-003-Remediation den beschriebenen
+- AD-018 ist nach Architecture Review `Accepted`; die Acceptance selbst ist
+  weder WP-003-Remediation noch Umsetzungserlaubnis für Arbeiten außerhalb des
+  genehmigten WP-003-Scopes.
+- Eine gesonderte WP-003-Remediation darf den beschriebenen
   Carrier, sein Schema, die kontrollierte Ablage, die historische Migration und
   den zugehörigen Validator ausschließlich innerhalb dieses Vertrags
   operationalisieren.
@@ -2454,6 +2495,7 @@ GA-001
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.21.0 | 2026-08-17 | Canonical | AD-018 nach Architecture Review angenommen; Exactly-one Carrier, Current State, append-only History, Legacy-Incompleteness, Gate-Evidence-, Authority-, Resolution-Plan- und Closure-Report-Grenzen präzisiert; keine WP-003-Remediation oder sonstige Umsetzung vorgenommen. |
 | 1.20.0 | 2026-08-17 | Canonical | AD-018 als Pending Decision zum maschinenlesbaren Governance State Evidence Carrier für `work_package_status` vorbereitet; keine WP-003-Remediation, Bestandsmigration, Schema-, Validator-, Test- oder Closure-Änderung vorgenommen. |
 | 1.19.0 | 2026-08-17 | Canonical | AD-017 nach Architecture Review angenommen; Finding-Lifecycle, Evidence/Authority, Review Result, Release Record, immutable Baseline, PB-999, Retention sowie Review-/Release-Orthogonalität präzisiert; keine WP-002-/WP-004-Umsetzung vorgenommen. |
 | 1.18.0 | 2026-08-17 | Canonical | AD-017 als gemeinsame Pending Decision zum Governance Review and Release Evidence Model für GOV-B-008/GOV-B-009 und WP-002 vorbereitet; keine WP-002-/WP-004-Umsetzung, Evidence-Datei, Schema-, Validator-, Review- oder Closure-Ausführung vorgenommen. |
