@@ -1,7 +1,7 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.16.0
+version: 1.17.0
 status: Canonical
 category: Governance
 created: 2026-08-06
@@ -1430,11 +1430,11 @@ Governance-Modell.
 
 **Status**
 
-Pending
+Accepted
 
 **Entscheidungsdatum**
 
-Noch nicht entschieden
+2026-08-17
 
 **Betroffene Dokumente**
 
@@ -1530,6 +1530,36 @@ Dokumentstatus niemals stillschweigend gemeinsame Ownership. Die Herkunft
 muss so ausdrücklich und stabil bezeichnet sein, dass sie später
 maschinenlesbar aufgelöst werden kann. Diese Decision legt dafür weder ein
 neues Metadatenfeld noch eine konkrete Auszeichnung fest.
+
+### Vorrang der normativen Quelle
+
+Für jede normative Aussage und jeden normativen Themenbereich gibt es genau
+eine primäre normative Heimat. Ein Zitat, eine abgeleitete Zusammenfassung
+oder eine kontextbezogene Wiedergabe außerhalb dieser Heimat:
+
+- erlangt keine eigenständige normative Authority,
+- begründet keine gemeinsame Ownership,
+- muss auf die normative Quelle zurückführbar bleiben und
+- darf die Quellaussage nicht eigenständig erweitern, einschränken oder neu
+  definieren.
+
+Widerspricht eine abgeleitete Wiedergabe ihrer normativen Quelle, hat die
+**normative Quelle ausnahmslos Vorrang**. Die abgeleitete Wiedergabe muss
+korrigiert werden; der Konflikt darf nicht dadurch aufgelöst werden, dass
+beide Dokumente als gleich autoritativ behandelt werden.
+
+### Änderungs-Ownership
+
+Ein normatives Konzept darf inhaltlich nur in dem Dokument geändert werden,
+das seine normative Heimat besitzt. Ein Zitat oder eine abgeleitete
+Zusammenfassung ist kein eigenständiger Änderungspunkt.
+
+Ändert sich die beabsichtigte Projektbedeutung, wird zuerst die normative
+Heimat durch den jeweils anwendbaren Governance-Prozess geändert. Abhängige
+Zitate und abgeleitete Zusammenfassungen werden anschließend mit der
+geänderten Quelle synchronisiert. Diese Regel bestimmt ausschließlich die
+Ownership. Sie führt weder einen Synchronisationsprozess noch einen Generator
+oder einen Mechanismus zur automatischen Propagation ein.
 
 ### Ableitung, Referenzen und Authority
 
@@ -1650,12 +1680,12 @@ Designrichtung neu eröffnet.
 
 **Konsequenzen**
 
-- AD-016 bleibt bis zur Architecture Review `Pending`, ist nicht verbindlich
-  und gibt WP-006 nicht zur Umsetzung frei.
-- Nach einer späteren Acceptance kann WP-006 ausschließlich die hier
-  abgegrenzte Ownership-, Ableitungs- und Preservation-Semantik
+- AD-016 ist nach Architecture Review `Accepted` und damit projektweit
+  verbindlich; diese Acceptance implementiert WP-006 nicht.
+- Eine spätere, gesondert freigegebene WP-006-Umsetzung darf ausschließlich
+  die hier abgegrenzte Ownership-, Ableitungs- und Preservation-Semantik
   operationalisieren.
-- Diese Vorbereitung verändert PB-001, PB-002, PB-003, CTX-000, AD-009 und
+- Diese Acceptance verändert PB-001, PB-002, PB-003, CTX-000, AD-009 und
   AD-014 nicht und führt keine Textmigration, Umklassifizierung, kein Schema
   und keinen Validator aus.
 - Es werden keine kreativen Grundsätze, Designprinzipien, Produktziele,
@@ -1687,6 +1717,7 @@ Designrichtung neu eröffnet.
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.17.0 | 2026-08-17 | Canonical | AD-016 nach Architecture Review angenommen und den ausnahmslosen Vorrang der einzigen normativen Quelle sowie die ausschließliche Änderungs-Ownership ihrer normativen Heimat klargestellt; keine Synchronisationsmechanik oder WP-006-Umsetzung eingeführt. |
 | 1.16.0 | 2026-08-17 | Canonical | AD-016 als Pending Decision zum Normative Content Ownership Model für GOV-B-016 und WP-006 vorbereitet; GOV-B-017 ausschließlich als Preservation Constraint berücksichtigt und keine Content-Migration oder WP-006-Umsetzung vorgenommen. |
 | 1.15.0 | 2026-08-16 | Canonical | WP-005 operationalisiert: unmittelbar anwendbare Decision-Referenzen bereinigt und AD-014-Referenzmodell zur automatisierten Prüfung aktiviert. |
 | 1.14.0 | 2026-08-16 | Canonical | AD-015 nach Architecture Review angenommen und klargestellt, dass `canonical_sources` die relevante kanonische Quellenmenge als Provenienz identifiziert, ohne einen deterministischen Build-, Reproduzierbarkeits- oder Synchronisationsvertrag zu begründen; keine Umsetzung von WP-005 vorgenommen. |
