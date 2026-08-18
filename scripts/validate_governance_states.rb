@@ -15,6 +15,7 @@ WP_EDGES = [['Planned','Ready'],['Ready','In Progress'],['In Progress','Verifica
 ROLES = ['Project Lead','Document Owner','Reviewer','Responsible Reviewer','Architecture Board','Governance Architecture','Governance Review','Governance Process','Terminology Governance','Documentation Architecture','Product Governance','Architecture Decision Governance'].freeze
 FOREIGN_STATE_FIELDS = %w[status ad_status review_phase review_status release_stage].freeze
 REQUIRED_WP_FIELDS = %w[work_package_id version work_package_status owner findings architecture_decisions transition_history evidence_references gate_evidence closure_evidence historical_completeness].freeze
+MIGRATION_CUTOVER = '7bf2d2850ad40f89c9345cf8333e4b20dce4aa36'.freeze
 
 class GovernanceStateValidator
   attr_reader :errors, :warnings, :counts
@@ -34,6 +35,19 @@ class GovernanceStateValidator
   end
   def git_object?(sha)
     _,_,status=git('cat-file','-e',"#{sha}^{commit}"); status.success?
+  end
+  def git_ancestor?(ancestor,descendant='HEAD')
+    _,_,status=git('merge-base','--is-ancestor',ancestor,descendant); status.success?
+  end
+  def yaml_at(commit,path)
+    out,_,status=git('show',"#{commit}:#{rel(path)}"); return nil unless status.success?
+    Psych.safe_load(out,aliases:false)
+  rescue Psych::Exception
+    nil
+  end
+  def path_at?(commit,reference)
+    return false unless reference.is_a?(String) && !reference.empty? && !reference.start_with?('git:')
+    _,_,status=git('cat-file','-e',"#{commit}:#{reference}"); status.success?
   end
   def resolve(ref)
     return false unless ref.is_a?(String) && !ref.empty?
@@ -136,6 +150,9 @@ class GovernanceStateValidator
     end
   end
   def validate_work_packages
+    unless git_object?(MIGRATION_CUTOVER) && git_ancestor?(MIGRATION_CUTOVER)
+      @errors << "AD-019 migration cutover must resolve and be an ancestor of HEAD"
+    end
     dir=File.join(@root,'project-bible/evidence/work-packages'); paths=Dir.glob(File.join(dir,'*.y{a,}ml')).sort
     ids=Hash.new{|h,k|h[k]=[]}
     carriers=[]
@@ -197,7 +214,7 @@ class GovernanceStateValidator
     if complete && history.last.is_a?(Hash) && history.last['new']!=d['work_package_status']
       @errors << "#{label}: current status differs from complete history endpoint"
     end
-    validate_wp_gates(label,d)
+    validate_wp_gates(path,label,d)
   end
   def transition_supported?(event,role)
     texts=Array(event['evidence_references']).filter_map do |ref|
@@ -207,7 +224,24 @@ class GovernanceStateValidator
     required=[event['previous'],event['new'],event['timestamp'],role].map(&:to_s)
     texts.any?{|text| required.all?{|value| text.include?(value)}}
   end
-  def validate_wp_gates(label,d)
+  def pre_boundary_legacy_closed?(path,d)
+    return false unless git_object?(MIGRATION_CUTOVER) && git_ancestor?(MIGRATION_CUTOVER)
+    migrated=yaml_at(MIGRATION_CUTOVER,path)
+    return false unless migrated.is_a?(Hash) && migrated['work_package_status']=='Closed'
+    completeness=migrated['historical_completeness']
+    details=completeness.is_a?(Hash) ? completeness['missing_transition_details'] : nil
+    return false unless completeness&.fetch('status',nil)=='incomplete' && details.is_a?(Array) && !details.empty?
+    migrated_gates=migrated['gate_evidence']
+    return false unless migrated_gates.is_a?(Hash) && Array(migrated_gates['verification']).empty?
+    closure=Array(d['closure_evidence'])
+    closure.any? && closure.all?{|ref| resolve(ref) && path_at?(MIGRATION_CUTOVER,ref)}
+  end
+  def implementation_evidence?(references)
+    references.is_a?(Array) && references.any? do |ref|
+      ref.is_a?(String) && ref.start_with?('git:') && git_object?(ref.delete_prefix('git:'))
+    end
+  end
+  def validate_wp_gates(path,label,d)
     gates=d['gate_evidence']; unless gates.is_a?(Hash); @errors << "#{label}: gate_evidence must be an object"; return end
     allowed=%w[ready verification closed]; unknown=gates.keys-allowed
     @errors << "#{label}: gate attempts to set a foreign state dimension #{unknown.join(', ')}" unless unknown.empty?
@@ -226,6 +260,17 @@ class GovernanceStateValidator
       %w[approval definition_of_done verification closure].each{|key| refs("#{label}: Closed #{key} gate",closed[key])}
       refs("#{label}: closure_evidence",d['closure_evidence'])
       Array(d['closure_evidence']).each{|ref| @errors << "#{label}: closure evidence must resolve to a persisted Closure Report" unless ref.is_a?(String)&&ref.match?(/Closure_Report\.md\z/)&&resolve(ref)}
+      unless pre_boundary_legacy_closed?(path,d)
+        refs("#{label}: cumulative Verification gate",gates['verification'])
+        @errors << "#{label}: Closed requires repository-resolvable Implementation Evidence" unless implementation_evidence?(gates['verification'])
+        closure_transition=Array(d['transition_history']).last
+        unless closure_transition.is_a?(Hash) && closure_transition['previous']=='Verification' && closure_transition['new']=='Closed'
+          @errors << "#{label}: post-boundary Closed requires a persisted Verification -> Closed transition"
+        end
+        if d.dig('historical_completeness','status')!='complete'
+          @errors << "#{label}: post-boundary Closed cannot use Historical Incompleteness"
+        end
+      end
     end
   end
   def run
