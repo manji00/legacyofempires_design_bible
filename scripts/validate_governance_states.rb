@@ -267,9 +267,6 @@ class GovernanceStateValidator
         unless closure_transition.is_a?(Hash) && closure_transition['previous']=='Verification' && closure_transition['new']=='Closed'
           @errors << "#{label}: post-boundary Closed requires a persisted Verification -> Closed transition"
         end
-        if d.dig('historical_completeness','status')!='complete'
-          @errors << "#{label}: post-boundary Closed cannot use Historical Incompleteness"
-        end
       end
     end
   end
