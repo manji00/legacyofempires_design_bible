@@ -28,7 +28,6 @@ def close_wp003(root)
   REPORT
   edit_yaml(root,'WP-003') do |d|
     d['work_package_status']='Closed'
-    d['historical_completeness']={'status'=>'complete','missing_transition_details'=>[]}
     d['transition_history']=[transition('Verification','Closed','2026-08-18T12:00:00Z').merge('evidence_references'=>[report])]
     d['evidence_references'] |= ['git:023d06917b47852b153cc87ee74d745b8f2e1645',report]
     d['gate_evidence']['verification']=['git:023d06917b47852b153cc87ee74d745b8f2e1645']
@@ -61,10 +60,12 @@ cases={
   'post-boundary Closed without gate_evidence.verification'=>->(r){close_wp003(r);edit_yaml(r,'WP-003'){|d|d['gate_evidence']['verification']=[]}},
   'post-boundary Closed without Implementation Evidence'=>->(r){close_wp003(r);edit_yaml(r,'WP-003'){|d|d['gate_evidence']['verification']=['project-bible/audits/WP-003_Closure_Report.md']}},
   'post-boundary Closed without Closure Evidence'=>->(r){close_wp003(r);edit_yaml(r,'WP-003'){|d|d['closure_evidence']=[]}},
-  'post-boundary Closed cannot claim incomplete history'=>->(r){close_wp003(r);edit_yaml(r,'WP-003'){|d|d['historical_completeness']={'status'=>'incomplete','missing_transition_details'=>['verification evidence']}}},
+  'post-boundary Closure with incomplete transition timestamp'=>->(r){close_wp003(r);edit_yaml(r,'WP-003'){|d|d['transition_history'].last.delete('timestamp')}},
+  'post-boundary Closure with incomplete transition evidence references'=>->(r){close_wp003(r);edit_yaml(r,'WP-003'){|d|d['transition_history'].last.delete('evidence_references')}},
+  'incomplete history without concrete Legacy gaps'=>->(r){close_wp003(r);edit_yaml(r,'WP-003'){|d|d['historical_completeness']['missing_transition_details']=[]}},
   'pre-boundary Legacy Closed without Closure Evidence'=>->(r){edit_yaml(r,'WP-001'){|d|d['closure_evidence']=[]}},
   'claimed pre-boundary gap with post-boundary evidence'=>->(r){File.write(File.join(r,'project-bible/audits/Mutation_Closure_Report.md'),'post-boundary');system('git','-C',r,'add','project-bible/audits/Mutation_Closure_Report.md')&&system('git','-C',r,'-c','user.name=Mutation Test','-c','user.email=mutation@example.invalid','commit','-qm','post-boundary evidence') or abort('mutation commit failed');edit_yaml(r,'WP-001'){|d|d['closure_evidence']=['project-bible/audits/Mutation_Closure_Report.md']}},
-  'post-boundary Closure with incomplete transition entry'=>->(r){close_wp003(r);edit_yaml(r,'WP-003'){|d|d['transition_history'].last.delete('responsible_role')}}
+  'post-boundary Closure with incomplete transition actor'=>->(r){close_wp003(r);edit_yaml(r,'WP-003'){|d|d['transition_history'].last.delete('responsible_role')}}
 }
 failed=[]
 cases.each do |name,mutation|
@@ -86,6 +87,6 @@ Dir.mktmpdir('gov-state-closed-') do |tmp|
   repo=File.join(tmp,'repo')
   system('cp','--reflink=auto','-a',ROOT,repo) or abort('copy failed')
   close_wp003(repo)
-  abort('Complete post-boundary WP-003 Closure was unexpectedly rejected') unless system('ruby',VALIDATOR,repo,out:File::NULL,err:File::NULL)
+  abort('Post-boundary WP-003 Closure with explicit Legacy gaps was unexpectedly rejected') unless system('ruby',VALIDATOR,repo,out:File::NULL,err:File::NULL)
 end
-puts "Governance state mutation tests passed: #{cases.length}/#{cases.length} invalid mutations rejected; legacy and complete post-boundary Closed states accepted."
+puts "Governance state mutation tests passed: #{cases.length}/#{cases.length} invalid mutations rejected; legacy and post-boundary Closed states with explicit Legacy gaps accepted."
