@@ -1,6 +1,6 @@
 ---
 work_package_id: WP-004
-version: 1.1.0
+version: 1.1.1
 work_package_status: Verification
 owner: Terminology Governance
 findings:
@@ -35,12 +35,16 @@ transition_history:
   - project-bible/evidence/work-packages/WP-004_Implementation_Evidence.md
 evidence_references:
 - project-bible/audits/GA-001_Resolution_Plan.md
+- git:ec40429ddc0dcad23b71df426b160b08ac8df785
+- git:51a4d1d8cb5c23fa07e5e9329363fafee0d9327e
 - project-bible/audits/WP-003_Closure_Report.md
 - project-bible/evidence/work-packages/WP-004_Implementation_Evidence.md
 gate_evidence:
   ready:
   - project-bible/evidence/work-packages/WP-004_Implementation_Evidence.md
   verification:
+  - git:ec40429ddc0dcad23b71df426b160b08ac8df785
+  - git:51a4d1d8cb5c23fa07e5e9329363fafee0d9327e
   - project-bible/evidence/work-packages/WP-004_Implementation_Evidence.md
   closed:
     approval: []

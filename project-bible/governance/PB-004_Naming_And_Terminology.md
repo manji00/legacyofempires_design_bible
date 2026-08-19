@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 1.0.0
+version: 1.0.1
 status: Review
 review_process: PB-997
 category: Governance
@@ -60,6 +60,8 @@ architecture_decisions:
   - AD-006
   - AD-008
   - AD-010
+  - AD-012
+  - AD-017
 tags:
   - governance
   - terminology
@@ -80,7 +82,7 @@ context_priority: critical
 
 ## Kapitel 1 – Zweck und Geltungsbereich
 
-PB-004 schafft ein verbindliches, projektweites Vokabular, damit fachliche Konzepte über Dokumente, Implementierungen und Inhalte hinweg eindeutig bezeichnet und verstanden werden. Einheitliche Begriffe verhindern, dass unklare Synonyme dasselbe Konzept scheinbar trennen oder dass ein einzelner Ausdruck mehrere, miteinander unvereinbare Bedeutungen erhält.
+PB-004 beschreibt in seinem aktuellen Dokumentstatus `Review` die Review-Baseline für die vorgesehene projektweite Terminologie, damit fachliche Konzepte über Dokumente, Implementierungen und Inhalte hinweg eindeutig bezeichnet und verstanden werden können. Diese Revision ist noch nicht kanonisch oder autoritativ; ihre Terminologie erhält diese Authority erst durch einen nach PB-000 und PB-997 zulässigen Übergang in einen autoritativen Dokumentstatus. Einheitliche Begriffe verhindern, dass unklare Synonyme dasselbe Konzept scheinbar trennen oder dass ein einzelner Ausdruck mehrere, miteinander unvereinbare Bedeutungen erhält.
 
 Die in PB-004 festgelegte Terminologie gilt für Game Design, technische Architektur und Implementierung, Datenmodelle, Savegames, APIs, Modding-Schnittstellen und -Inhalte, Benutzeroberflächen, Szenarioinhalte sowie für Kontexte und Ausgaben von KI-Assistenten. Derselbe kanonische Begriff muss in diesen Bereichen konsistent dieselbe Bedeutung tragen, sofern eine ausdrücklich dokumentierte bereichsspezifische Abbildung oder lokalisierte Anzeigeform keine Abweichung erlaubt.
 
@@ -14022,6 +14024,7 @@ dieser Hinweis behauptet weder Freigabereife noch eine Freigabe.
 
 | Version | Datum | Status | Änderung |
 |---|---|---|---|
+| 1.0.1 | 2026-08-19 | Review | WP-004 Remediation #1: widersprüchlichen Authority-Claim an die bestehende Review-Baseline- und State-Transition-Grenze angepasst sowie die unmittelbar operationalisierten Accepted Decisions AD-012 und AD-017 im Frontmatter ergänzt; Terminologiedomäne und Regeln unverändert. |
 | 1.0.0 | 2026-08-19 | Review | Normative Authority- und Dokumentgrenze gemäß GOV-B-004/GOV-B-007 als MAJOR-Änderung umgesetzt: PB-004 auf Terminology/Naming und terminologiespezifische Qualitätskriterien begrenzt; allgemeine Review-/Release-Governance durch normativen PB-997-Verweis ersetzt; Review-Baseline ausdrücklich von kanonischer Autorität, Review Result und Release Stage getrennt. |
 | 0.16.4 | 2026-08-17 | Review | GOV-B-003 korrigiert: unbelegten RC1-/Passed- und Freigabeanspruch neutralisiert; PB-004 verbleibt bis zu einem kontrollierten Review Run im Review. |
 | 0.16.3 | 2026-08-16 | Review | Unmittelbar anwendbare Accepted Decisions gemäß AD-010 für WP-005 ergänzt. |
