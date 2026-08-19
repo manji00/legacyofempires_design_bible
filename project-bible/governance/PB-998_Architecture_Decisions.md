@@ -1,11 +1,11 @@
 ---
 document_id: PB-998
 title: Architecture Decisions
-version: 1.23.0
+version: 1.23.1
 status: Canonical
 category: Governance
 created: 2026-08-06
-updated: 2026-08-17
+updated: 2026-08-19
 owners:
   - Project Lead
 reviewers: []
@@ -440,8 +440,8 @@ Eine gemeinsame `Proposal`-Abstraktion verhindert doppelte Definitionen in mehre
 
 **Konsequenzen**
 
-- `Proposal` ist künftig ein kanonischer Gameplay-Begriff.
-- Die verbindliche Definition befindet sich in PB-004 Kapitel 10.
+- `Proposal` ist als allgemeines Gameplay-Konzept angenommen. Solange PB-004 den Dokumentstatus `Review` trägt, ist die dortige Terminologie jedoch nur Review-Baseline und nicht kraft AD-008 bereits kanonisch.
+- Die vorgesehene Definition befindet sich in PB-004 Kapitel 10; verbindliche Terminologie-Autorität erhält sie erst mit einem nach PB-000 und PB-997 zulässigen autoritativen Dokumentstatus.
 - Fachdomänen dürfen `Proposal` verwenden und spezialisieren.
 - Fachdomänen dürfen `Proposal` nicht unabhängig neu definieren.
 - `Diplomatic Proposal` baut auf der allgemeinen `Proposal`-Definition auf.
@@ -2765,6 +2765,7 @@ GA-001
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 1.23.1 | 2026-08-19 | Canonical | GOV-B-004 direkt korrigiert: AD-008 bestätigt das Proposal-Konzept, erhebt die PB-004-Review-Baseline aber nicht vor dem zulässigen Dokumentstatus zur kanonischen Terminologiequelle. |
 | 1.23.0 | 2026-08-17 | Canonical | AD-019 nach Architecture Review angenommen; deterministischen Migration Cutover, strikt begrenzte Legacy Historical Incompleteness, vollständige post-boundary Evidence und kumulative Gate-Nachweise bestätigt; keine Implementation, Validator-, Test-, Carrier-, Closure- oder Remediation-Änderung vorgenommen. |
 | 1.22.0 | 2026-08-17 | Canonical | AD-019 als Pending Decision zur repositorygebundenen Governance State Migration Boundary vorbereitet; Cutover, Legacy-Ausnahme, vollständige post-boundary Evidence und kumulative Gate-Pflichten definiert; keine Implementation, Validator-, Test-, Carrier-, Closure- oder Remediation-Änderung vorgenommen. |
 | 1.21.0 | 2026-08-17 | Canonical | AD-018 nach Architecture Review angenommen; Exactly-one Carrier, Current State, append-only History, Legacy-Incompleteness, Gate-Evidence-, Authority-, Resolution-Plan- und Closure-Report-Grenzen präzisiert; keine WP-003-Remediation oder sonstige Umsetzung vorgenommen. |
