@@ -112,6 +112,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-006 — Review-Verantwortung ist zwischen PB-000 und PB-997 doppelt normiert
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED WITH AD
 - **Begründung:** PB-000 soll die Meta-Klassifikation besitzen, PB-997 den ausführbaren Reviewprozess. Die verbindliche Zuständigkeits- und Abbildungsmatrix ist eine projektweite Governance-Architekturentscheidung.
 - **Resolution Path:** NEW ARCHITECTURE DECISION
@@ -204,6 +205,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-014 — Projektweite Versionierungsregel und Releaseprozess sind nicht vollständig synchronisiert
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED WITH AD
 - **Begründung:** Dokumentstatus, Prozessphase, Release Stage und Reviewstatus sind getrennte Dimensionen oder müssen konsolidiert werden. Zulässige Werte und Übergänge dürfen nicht durch Einzelkorrekturen implizit festgelegt werden.
 - **Resolution Path:** NEW ARCHITECTURE DECISION
@@ -270,6 +272,7 @@ Alle angenommenen Findings sind genau einem fachlich verantworteten Work Package
 
 ## WP-003 — Lifecycle and Process Model
 
+- **Status:** Closed
 - **Verantwortung:** Governance Process
 - **Findings:** GOV-B-006, GOV-B-014
 - **Ergebnis:** Eine Prozessheimat sowie ein gemeinsames Modell für Status, Reviewphase, Release Stage, Reviewstatus und Versionierung.
