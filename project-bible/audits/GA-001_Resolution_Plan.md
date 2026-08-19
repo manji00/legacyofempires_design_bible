@@ -78,6 +78,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-003 — PB-004 behauptet bestandenen Review trotz offener Review-Blocker
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED
 - **Begründung:** Ein bestandener Review darf nur auf einem identifizierbaren, vollständig geschlossenen Prüfstand beruhen. Der aktuelle `Passed`- beziehungsweise RC1-Anspruch wird bei der späteren Umsetzung bis zu einer ordnungsgemäßen Wiederholungsprüfung zurückgenommen.
 - **Resolution Path:** WORK PACKAGE
@@ -135,6 +136,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-008 — PB-997 hängt normativ von einem nicht-kanonischen Backlog ab
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED WITH AD
 - **Begründung:** PB-999 bleibt eine flexible Arbeitsliste und erhält keine Gate-Autorität. Releaseblocker werden künftig in einem kontrolliert versionierten, prüfstandbezogenen Reviewnachweis geführt.
 - **Resolution Path:** NEW ARCHITECTURE DECISION
@@ -146,6 +148,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-009 — Reviewnachweise und Finding-Lifecycle besitzen keine definierte kanonische Heimat
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED WITH AD
 - **Begründung:** Reproduzierbare Reviews benötigen persistente Identität, Ablage, Versionierung und Lifecycle. Der vorliegende Audit- und Resolution-Plan zeigt den Nutzen der Artefaktklasse, definiert sie jedoch nicht selbst normativ.
 - **Resolution Path:** NEW ARCHITECTURE DECISION
@@ -265,6 +268,7 @@ Alle angenommenen Findings sind genau einem fachlich verantworteten Work Package
 
 ## WP-002 — Review Evidence and Release Authority
 
+- **Status:** Closed
 - **Verantwortung:** Governance Review
 - **Findings:** GOV-B-003, GOV-B-008, GOV-B-009
 - **Ergebnis:** Reproduzierbare Review Runs und Releaseentscheidungen, die nicht von einem nicht-kanonischen Arbeitsbacklog abhängen.
