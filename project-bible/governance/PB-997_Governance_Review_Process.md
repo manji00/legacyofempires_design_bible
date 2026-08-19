@@ -1,11 +1,11 @@
 ---
 document_id: PB-997
 title: Governance Review Process
-version: 2.1.0
+version: 2.1.1
 status: Canonical
 category: Governance
 created: 2026-08-06
-updated: 2026-08-17
+updated: 2026-08-19
 owners:
   - Project Lead
 reviewers: []
@@ -55,6 +55,12 @@ PB-997 is the sole canonical process home for governance reviews, Work Packages
 and releases. It operationalizes the rules, change classes, review levels and
 role authority owned by PB-000; it MUST NOT redefine, extend or replace them.
 PB-998 remains the sole Architecture-Decision register and status authority.
+
+PB-004 owns terminology content, naming rules and terminology-specific quality
+criteria only. While its document status is `Review`, it is a review baseline,
+not an authoritative terminology source. PB-997 alone executes the review and
+release process; it does not grant terminology authority before PB-004 reaches
+an authoritative document status through the applicable gates.
 
 Audit reports, resolution plans and closure reports are evidence. Controlled
 review and release execution uses the evidence family in Section 4.6. Evidence
@@ -306,6 +312,7 @@ assigned to WP-004.
 
 | Version | Datum | Status | Zusammenfassung |
 |---|---|---|---|
+| 2.1.1 | 2026-08-19 | Canonical | GOV-B-004/GOV-B-007 präzisiert: PB-004 im Status Review ist Terminology-Review-Baseline; PB-997 bleibt alleinige Prozessheimat und verleiht keine vorzeitige Terminologie-Autorität. |
 | 2.1.0 | 2026-08-17 | Canonical | AD-017 umgesetzt: kontrollierte Evidence-Familie, Finding-Lifecycle, Re-Verification, Release Record, Retention und PB-999-Grenze operationalisiert. |
 | 2.0.1 | 2026-08-16 | Canonical | GOV-B-010 Decision-Traceability vervollständigt und die bereits trennscharfen Beziehungen aus GOV-B-013 validiert. |
 | 2.0.0 | 2026-08-07 | Canonical | AD-012 und AD-013 umgesetzt: PB-997 als alleinige Prozessheimat etabliert und Review-, Work-Package- und Releaseprozesse mit orthogonalen Zustandsautomaten, Rollen, Gates, Versionbindungen und Validierungsvertrag synchronisiert. |
