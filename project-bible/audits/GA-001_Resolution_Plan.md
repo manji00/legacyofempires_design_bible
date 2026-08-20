@@ -90,6 +90,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-004 — PB-004 ist noch nicht autoritativ, wird aber als kanonische Terminologiequelle vorausgesetzt
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED
 - **Begründung:** Während des Governance-1.0-Behebungszyklus dient PB-004 nur als ausdrücklich bezeichnete Review-Baseline. Autoritative Terminologie entsteht erst nach erfolgreichem Abschluss der vorgesehenen Reviews und dem zulässigen Statusübergang.
 - **Resolution Path:** WORK PACKAGE
@@ -125,6 +126,7 @@ Die Umsetzung erfolgt in zwei Ebenen: Zuerst werden die für Autorität, Decisio
 
 ## GOV-B-007 — Release-Governance liegt zusätzlich in PB-004
 
+- **Status:** Closed
 - **Resolution:** ACCEPTED
 - **Begründung:** PB-004 darf terminologiespezifische Qualitätskriterien behalten, aber keinen allgemeinen Releaseprozess besitzen. Statusübergänge, Freigaberollen und Release Gate werden ausschließlich aus der durch GOV-B-006 entschiedenen Prozessheimat referenziert.
 - **Resolution Path:** WORK PACKAGE
@@ -284,6 +286,7 @@ Alle angenommenen Findings sind genau einem fachlich verantworteten Work Package
 
 ## WP-004 — Terminology Release Boundary
 
+- **Status:** Closed
 - **Verantwortung:** Terminology Governance
 - **Findings:** GOV-B-004, GOV-B-007
 - **Ergebnis:** PB-004 ist bis zur Freigabe eindeutig Review-Baseline und enthält nur terminologiespezifische Qualitätskriterien, nicht den allgemeinen Releaseprozess.
