@@ -1,7 +1,7 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 1.0.2
+version: 1.0.3
 status: Review
 review_process: PB-997
 category: Governance
@@ -12830,7 +12830,7 @@ Der Begriff ermöglicht mehrsprachige Benutzeroberflächen, ohne Identity, Daten
 
 ### 13.7 Project Language Policy
 
-Dieser Abschnitt ist eine normative, verbindliche Projektrichtlinie und kein Glossareintrag. Die nachfolgenden Regeln sind projektweit anzuwenden.
+Dieser Abschnitt beschreibt innerhalb der Review-Baseline die normative Ziel- und Regelbedeutung der vorgesehenen Project Language Policy und ist kein Glossareintrag. Im aktuellen Dokumentstatus `Review` dienen die nachfolgenden Regeln als Qualitäts- und Prüfkriterien für Review, Abstimmung, Konsistenzprüfung und die Vorbereitung einer späteren autoritativen Fassung. Die Schlüsselwörter MUST, MUST NOT und SHOULD drücken innerhalb dieser Review-Baseline die vorgesehene Regelstärke aus; sie begründen in diesem Status noch keine kanonische Authority, normative projektweite Verbindlichkeit, Release Authority oder Freigabewirkung. Erst nach einem gemäß PB-000 und PB-997 zulässigen Übergang von PB-004 in einen autoritativen Dokumentstatus werden diese Regeln zur verbindlichen Projektterminologie und projektweit anwendbar.
 
 #### Zweck
 
@@ -12838,7 +12838,7 @@ Eine einheitliche Projektsprache sichert konsistente Benennungen und verhindert,
 
 #### Geltungsbereich
 
-Diese Richtlinie gilt verbindlich für sämtliche:
+Im Status `Review` werden Benennung und Sprache der folgenden Artefakte gegen diese Baseline geprüft und mit ihr abgestimmt; nach dem zulässigen Übergang in einen autoritativen Dokumentstatus gilt die Project Language Policy für diese Artefakte verbindlich:
 
 - Governance-Dokumente,
 - Design-Dokumente,
@@ -12853,12 +12853,12 @@ Diese Richtlinie gilt verbindlich für sämtliche:
 - Werkzeuge und
 - Benutzeroberflächen.
 
-#### Verbindliche Regeln
+#### Regeln der Review-Baseline
 
 ##### Dokumentation
 
 - Die offizielle Sprache der Project Bible MUST Deutsch sein.
-- Deutsche Dokumentation MUST die kanonischen Fachbegriffe aus PB-004 verwenden.
+- Deutsche Dokumentation MUST die in PB-004 als Review-Baseline geführten vorgesehenen Fachbegriffe verwenden. Diese Fachbegriffe werden erst nach dem zulässigen Übergang von PB-004 in einen autoritativen Dokumentstatus kanonisch.
 - Dokumente MUST innerhalb ihres jeweiligen sprachlichen und fachlichen Kontexts konsistent bleiben.
 
 ##### Quellcode
@@ -12923,6 +12923,10 @@ Diese Richtlinie gilt verbindlich für sämtliche:
 - PB-998 dokumentiert die zugehörigen Architekturentscheidungen.
 - Erst nach einem gemäß PB-000 und PB-997 zulässigen Übergang von PB-004 in einen autoritativen Dokumentstatus müssen TECH-Dokumente diese Regeln übernehmen.
 - Erst nach diesem zulässigen Statusübergang müssen GD-Dokumente diese Terminologie verwenden.
+
+#### Remediation-Traceability
+
+`WP004-V1-A` → `GOV-B-004` → `WP-004` → Remediation #1 → Verification #2 → Remediation #3 → Verification #3 → verbliebene Kapitel-13.7-Claims → Remediation #4 → Verification #4
 
 ## Kapitel 14 – Verbotene Synonyme und häufige Fehler
 
@@ -14024,6 +14028,7 @@ dieser Hinweis behauptet weder Freigabereife noch eine Freigabe.
 
 | Version | Datum | Status | Änderung |
 |---|---|---|---|
+| 1.0.3 | 2026-08-20 | Review | WP-004 Remediation #4: sämtliche verbliebenen gegenwartsbezogenen Authority-Claims in Kapitel 13.7 an den Dokumentstatus gebunden; normative Zielbedeutung, Terminologieregeln und Artefaktgeltungsbereich inhaltlich erhalten. |
 | 1.0.2 | 2026-08-20 | Review | WP-004 Remediation #3: verbliebenen Authority-Claim in Kapitel 13 einschließlich der TECH-/GD-Aussagen an den Dokumentstatus gebunden; Terminologieinhalt und Regeln unverändert. |
 | 1.0.1 | 2026-08-19 | Review | WP-004 Remediation #1: widersprüchlichen Authority-Claim an die bestehende Review-Baseline- und State-Transition-Grenze angepasst sowie die unmittelbar operationalisierten Accepted Decisions AD-012 und AD-017 im Frontmatter ergänzt; Terminologiedomäne und Regeln unverändert. |
 | 1.0.0 | 2026-08-19 | Review | Normative Authority- und Dokumentgrenze gemäß GOV-B-004/GOV-B-007 als MAJOR-Änderung umgesetzt: PB-004 auf Terminology/Naming und terminologiespezifische Qualitätskriterien begrenzt; allgemeine Review-/Release-Governance durch normativen PB-997-Verweis ersetzt; Review-Baseline ausdrücklich von kanonischer Autorität, Review Result und Release Stage getrennt. |
