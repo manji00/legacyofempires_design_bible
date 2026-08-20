@@ -1,12 +1,12 @@
 ---
 document_id: PB-004
 title: Naming & Terminology
-version: 1.0.1
+version: 1.0.2
 status: Review
 review_process: PB-997
 category: Governance
 created: 2026-08-05
-updated: 2026-08-19
+updated: 2026-08-20
 owners:
   - Project Lead
 reviewers: []
@@ -12919,10 +12919,10 @@ Diese Richtlinie gilt verbindlich für sämtliche:
 
 #### Beziehung zu anderen Dokumenten
 
-- PB-004 definiert die verbindliche Projektsprache und die projektweite Terminologie.
+- PB-004 definiert im Dokumentstatus `Review` die Review-Baseline der vorgesehenen gemeinsamen Projektsprache und projektweiten Terminologie. Während dieses Status dient die Baseline ausschließlich der Prüfung und Abstimmung und beansprucht keine kanonische oder autoritative Geltung.
 - PB-998 dokumentiert die zugehörigen Architekturentscheidungen.
-- TECH-Dokumente MUST diese Regeln übernehmen.
-- GD-Dokumente MUST diese Terminologie verwenden.
+- Erst nach einem gemäß PB-000 und PB-997 zulässigen Übergang von PB-004 in einen autoritativen Dokumentstatus müssen TECH-Dokumente diese Regeln übernehmen.
+- Erst nach diesem zulässigen Statusübergang müssen GD-Dokumente diese Terminologie verwenden.
 
 ## Kapitel 14 – Verbotene Synonyme und häufige Fehler
 
@@ -14024,6 +14024,7 @@ dieser Hinweis behauptet weder Freigabereife noch eine Freigabe.
 
 | Version | Datum | Status | Änderung |
 |---|---|---|---|
+| 1.0.2 | 2026-08-20 | Review | WP-004 Remediation #3: verbliebenen Authority-Claim in Kapitel 13 einschließlich der TECH-/GD-Aussagen an den Dokumentstatus gebunden; Terminologieinhalt und Regeln unverändert. |
 | 1.0.1 | 2026-08-19 | Review | WP-004 Remediation #1: widersprüchlichen Authority-Claim an die bestehende Review-Baseline- und State-Transition-Grenze angepasst sowie die unmittelbar operationalisierten Accepted Decisions AD-012 und AD-017 im Frontmatter ergänzt; Terminologiedomäne und Regeln unverändert. |
 | 1.0.0 | 2026-08-19 | Review | Normative Authority- und Dokumentgrenze gemäß GOV-B-004/GOV-B-007 als MAJOR-Änderung umgesetzt: PB-004 auf Terminology/Naming und terminologiespezifische Qualitätskriterien begrenzt; allgemeine Review-/Release-Governance durch normativen PB-997-Verweis ersetzt; Review-Baseline ausdrücklich von kanonischer Autorität, Review Result und Release Stage getrennt. |
 | 0.16.4 | 2026-08-17 | Review | GOV-B-003 korrigiert: unbelegten RC1-/Passed- und Freigabeanspruch neutralisiert; PB-004 verbleibt bis zu einem kontrollierten Review Run im Review. |
