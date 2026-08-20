@@ -1,7 +1,7 @@
 ---
 work_package_id: WP-004
-version: 1.1.1
-work_package_status: Verification
+version: 1.2.0
+work_package_status: Closed
 owner: Terminology Governance
 findings:
 - GOV-B-004
@@ -33,25 +33,53 @@ transition_history:
   responsible_role: Terminology Governance
   evidence_references:
   - project-bible/evidence/work-packages/WP-004_Implementation_Evidence.md
+- previous: Verification
+  new: Closed
+  timestamp: '2026-08-20T15:18:36Z'
+  responsible_role: Terminology Governance
+  evidence_references:
+  - project-bible/audits/WP-004_Closure_Report.md
 evidence_references:
 - project-bible/audits/GA-001_Resolution_Plan.md
 - git:ec40429ddc0dcad23b71df426b160b08ac8df785
 - git:51a4d1d8cb5c23fa07e5e9329363fafee0d9327e
 - project-bible/audits/WP-003_Closure_Report.md
 - project-bible/evidence/work-packages/WP-004_Implementation_Evidence.md
+- git:1c55876e66c02e358ad64c859e20e28d5caed89f
+- git:0f2c5c2abddfa839827502f11d380e32955ce2d0
+- git:635fcef9250f8007b8d1a17e567d2e6b76c3eb07
+- git:6b5f7e197af3159324fb8d07062dab2ea1df810a
+- git:41bdd8c372b31c66f46d980997f6450d598eebcb
+- git:a0c0cfd1ce828ffb4e829ce5091aaf3960d8b33a
+- git:649ef52e17f2f7d8bc87c05f3d348b5e34c6e29e
+- git:bf373e130d5be757c5ec309cb29e8c1c4cd29520
+- project-bible/audits/WP-004_Closure_Report.md
 gate_evidence:
   ready:
   - project-bible/evidence/work-packages/WP-004_Implementation_Evidence.md
   verification:
   - git:ec40429ddc0dcad23b71df426b160b08ac8df785
   - git:51a4d1d8cb5c23fa07e5e9329363fafee0d9327e
+  - git:1c55876e66c02e358ad64c859e20e28d5caed89f
+  - git:0f2c5c2abddfa839827502f11d380e32955ce2d0
+  - git:635fcef9250f8007b8d1a17e567d2e6b76c3eb07
+  - git:6b5f7e197af3159324fb8d07062dab2ea1df810a
+  - git:41bdd8c372b31c66f46d980997f6450d598eebcb
+  - git:a0c0cfd1ce828ffb4e829ce5091aaf3960d8b33a
+  - git:649ef52e17f2f7d8bc87c05f3d348b5e34c6e29e
+  - git:bf373e130d5be757c5ec309cb29e8c1c4cd29520
   - project-bible/evidence/work-packages/WP-004_Implementation_Evidence.md
   closed:
-    approval: []
-    definition_of_done: []
-    verification: []
-    closure: []
-closure_evidence: []
+    approval:
+    - project-bible/audits/WP-004_Closure_Report.md
+    definition_of_done:
+    - project-bible/audits/WP-004_Closure_Report.md
+    verification:
+    - project-bible/audits/WP-004_Closure_Report.md
+    closure:
+    - project-bible/audits/WP-004_Closure_Report.md
+closure_evidence:
+- project-bible/audits/WP-004_Closure_Report.md
 historical_completeness:
   status: incomplete
   missing_transition_details:
