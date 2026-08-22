@@ -1,0 +1,31 @@
+artifact_class: review_result
+version: 1.0.0
+review_result_id: RES-000002
+review_run_id: RVR-000003
+baseline:
+  - artifact_id: PB-000
+    version: 2.2.0
+    commit: 13ed16f3c8d155f824ec3959159e37a879473747
+    included_scope: Final Governance Verification of GA-001 resolution and the closed WP-001 through WP-007 governance baseline
+    excluded_scope: Governance 1.0 release decision, release-stage transition, PB-004 canonicalization, and Architecture Decision implementation or verification transitions
+review_status: Passed
+responsible_role: Architecture Board
+approval_evidence: RVR-000003
+approval_decision: Approved
+timestamp: '2026-08-22T17:27:48Z'
+timestamp_basis: Evidence-persistence timestamp; no unsupported historical verification timestamp is asserted.
+finding_ids: []
+verification_evidence: [RVR-000003]
+evidence_references:
+  - RVR-000003
+  - project-bible/audits/GA-001_Governance_Audit_Phase_B.md
+  - project-bible/audits/GA-001_Resolution_Plan.md
+  - project-bible/audits/WP-001_Closure_Report.md
+  - project-bible/audits/WP-002_Closure_Report.md
+  - project-bible/audits/WP-003_Closure_Report.md
+  - project-bible/audits/WP-004_Closure_Report.md
+  - project-bible/audits/WP-005_Closure_Report.md
+  - project-bible/audits/WP-006_Closure_Report.md
+  - project-bible/audits/WP-007_Closure_Report.md
+retention: Retained append-only for the repository lifetime unless superseded by a later Accepted Architecture Decision.
+authority_boundary: Approved applies only to this Architecture Review and exact baseline; it does not release Governance 1.0 or change release_stage, document status, Architecture Decision status, or Work-Package status.
