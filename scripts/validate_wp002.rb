@@ -95,7 +95,7 @@ records.each do |path,d|
   klass=d["artifact_class"]
   unless CLASSES.include?(klass); errors << "#{path}: invalid artifact_class #{klass.inspect}"; next end
   errors << "#{path}: invalid evidence version" unless d["version"].to_s.match?(/\A\d+\.\d+\.\d+\z/)
-  REQUIRED[klass].each{|k|errors << "#{path}: required field missing #{k}" unless present?(d[k]) || d[k]==false || (d[k].is_a?(Array)&&%w[finding_ids open_release_blocking_findings].include?(k))}
+  REQUIRED[klass].each{|k|errors << "#{path}: required field missing #{k}" unless present?(d[k]) || d[k]==false || (d[k].is_a?(Array)&&%w[finding_ids reverification_review_run_ids open_release_blocking_findings].include?(k))}
   bad=(STATE_FIELDS & d.keys)-Array(STATE_OWNER[klass]); errors << "#{path}: evidence sets foreign state #{bad.join(',')}" unless bad.empty?
   baseline_valid?(d["baseline"],errors,path) if d.key?("baseline")
   baseline_valid?(d["affected_baseline"],errors,path) if d.key?("affected_baseline")
@@ -167,12 +167,37 @@ results.each do |path,d|
   errors << "#{path}: invalid approval_decision" unless APPROVAL_DECISIONS.include?(d["approval_decision"])
   expected_decision=d["review_status"]=="Passed" ? "Approved" : "Not Approved"
   errors << "#{path}: review_status and approval_decision disagree" unless d["approval_decision"]==expected_decision
-  run=run_map[d["review_run_id"]]; errors << "#{path}: Review Result without Re-Verification Run" unless run&.dig("artifact_class")=="reverification"
+  run=run_map[d["review_run_id"]]
+  errors << "#{path}: Review Result without Review Run" unless %w[review_run reverification].include?(run&.dig("artifact_class"))
   errors << "#{path}: Review Result baseline differs from Run" if run&&d["baseline"]!=run["baseline"]
-  original=run&&run_map[run["original_review_run_id"]]; required=original&&REVIEW_LEVEL_ROLES[original["review_level"]]
+  original=run&.dig("artifact_class")=="reverification" ? run_map[run["original_review_run_id"]] : run
+  required=original&&REVIEW_LEVEL_ROLES[original["review_level"]]
   errors << "#{path}: wrong Approval Role" if required&&!required.include?(d["responsible_role"])
-  Array(d["finding_ids"]).each{|id|errors << "#{path}: Passed with non-closed Finding #{id}" if d["review_status"]=="Passed"&&finding_map[id]&.dig("lifecycle_history",-1,"to")!="Closed"}
-  Array(d["verification_evidence"]).each{|id|errors << "#{path}: dangling verification evidence #{id}" unless id==d["review_run_id"]&&run}
+  relevant_findings=findings.select{|_,f|f["origin_review_run_id"]==original&.dig("review_run_id")}.map{|_,f|f["finding_id"]}
+  Array(d["finding_ids"]).each do |id|
+    errors << "#{path}: Finding does not belong to Review Run #{id}" unless relevant_findings.include?(id)
+    errors << "#{path}: Passed with non-closed Finding #{id}" if d["review_status"]=="Passed"&&finding_map[id]&.dig("lifecycle_history",-1,"to")!="Closed"
+  end
+  errors << "#{path}: Review Result omits relevant Findings" unless (relevant_findings-Array(d["finding_ids"])).empty?
+
+  if run&.dig("artifact_class")=="review_run"
+    errors << "#{path}: direct Review Result requires Completed Review Run" unless run["review_phase"]=="Completed"
+    errors << "#{path}: direct Passed Review Result requires Re-Verification for Findings" if d["review_status"]=="Passed"&&!relevant_findings.empty?
+  end
+
+  run_timestamp = if run&.dig("artifact_class")=="review_run"
+    run.dig("phase_history",-1,"timestamp")
+  else
+    run&.dig("timestamp")
+  end
+  if timestamp?(d["timestamp"])&&timestamp?(run_timestamp)
+    errors << "#{path}: Review Result timestamp must be after Run" unless Time.iso8601(d["timestamp"])>Time.iso8601(run_timestamp)
+  end
+
+  evidence_resolves=->(ref){run_map[ref]||finding_map[ref]||correction_map[ref]||result_map[ref]||File.exist?(File.join(ROOT,ref.to_s))}
+  errors << "#{path}: dangling Approval Evidence #{d['approval_evidence']}" unless evidence_resolves.call(d["approval_evidence"])
+  Array(d["verification_evidence"]).each{|ref|errors << "#{path}: dangling verification evidence #{ref}" unless evidence_resolves.call(ref)}
+  errors << "#{path}: Verification Evidence does not reference Result Run" unless Array(d["verification_evidence"]).include?(d["review_run_id"])
 end
 releases.each do |path,d|
   errors << "#{path}: invalid release_stage" unless RELEASE_STAGES.include?(d["release_stage"])
@@ -182,7 +207,9 @@ releases.each do |path,d|
   errors << "#{path}: Release Run differs from Review Result" if res&&d["review_run_id"]!=res["review_run_id"]
   errors << "#{path}: Release review_result value differs" if res&&d["review_result"]!=res["review_status"]
   errors << "#{path}: authorized_by must be Project Lead" unless d["authorized_by"]=="Project Lead"
-  original=run_map[run_map[d["review_run_id"]]&.dig("original_review_run_id")]; required=["Project Lead"]+(original&.dig("review_level")=="Architecture Review" ? ["Architecture Board"] : [])
+  release_run=run_map[d["review_run_id"]]
+  original=release_run&.dig("artifact_class")=="reverification" ? run_map[release_run["original_review_run_id"]] : release_run
+  required=["Project Lead"]+(original&.dig("review_level")=="Architecture Review" ? ["Architecture Board"] : [])
   errors << "#{path}: wrong required approval roles" unless Array(d["required_approval_roles"]).sort==required.sort
   Array(d["required_approval_roles"]).each{|role|errors << "#{path}: invalid required approval role #{role.inspect}" unless ROLE_DOMAIN.include?(role)}
   Array(d["actual_approval_roles"]).each{|role|errors << "#{path}: invalid actual approval role #{role.inspect}" unless ROLE_DOMAIN.include?(role)}
