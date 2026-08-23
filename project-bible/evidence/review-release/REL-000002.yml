@@ -1,0 +1,39 @@
+artifact_class: release
+version: 1.0.0
+release_id: REL-000002
+baseline:
+  - artifact_id: PB-000
+    version: 2.2.0
+    commit: 13ed16f3c8d155f824ec3959159e37a879473747
+    included_scope: Final Governance Verification of GA-001 resolution and the closed WP-001 through WP-007 governance baseline
+    excluded_scope: Governance 1.0 release decision, release-stage transition, PB-004 canonicalization, and Architecture Decision implementation or verification transitions
+review_run_id: RVR-000003
+review_result_id: RES-000002
+review_result: Passed
+open_release_blocking_findings: []
+required_approval_roles: [Project Lead, Architecture Board]
+actual_approval_roles: [Project Lead, Architecture Board]
+approval_decision: Approved
+timestamp: '2026-08-23T19:00:51Z'
+evidence_references: [RVR-000003, RES-000002]
+release_stage: Released
+authorized_by: Project Lead
+scope_note: Governance 1.0 is released for the exact verified baseline; Architecture Board approval is retained by RVR-000003 and RES-000002, and this decision performs no new verification or foreign state transition.
+finding_snapshot:
+  ga_001_findings_treated: 17/17
+  open_governance_verification_deviations: []
+  new_findings: []
+work_package_snapshot:
+  WP-001: Closed
+  WP-002: Closed
+  WP-003: Closed
+  WP-004: Closed
+  WP-005: Closed
+  WP-006: Closed
+  WP-007: Closed
+governance_baseline_status: STABLE
+governance_1_0_readiness: READY FOR RELEASE
+deviations: NONE
+traceability: [GA-001, GA-001-RES, GOV-B-001, GOV-B-002, GOV-B-003, GOV-B-004, GOV-B-005, GOV-B-006, GOV-B-007, GOV-B-008, GOV-B-009, GOV-B-010, GOV-B-011, GOV-B-012, GOV-B-013, GOV-B-014, GOV-B-015, GOV-B-016, GOV-B-017, WP-001, WP-002, WP-003, WP-004, WP-005, WP-006, WP-007, RVR-000003, RES-000002, REL-000002]
+retention: Retained append-only for the repository lifetime unless superseded by a later Accepted Architecture Decision.
+authority_boundary: This record documents the Project Lead's exercise of existing release-stage authority with the required Architecture Board approval; it creates no Governance Rule, Governance Process, Architecture Decision, Approval Authority, State Authority, document status, Architecture Decision status, Work-Package status, Finding, or verification.
