@@ -1,0 +1,47 @@
+---
+work_package_id: WP-008
+version: 0.1.0
+work_package_status: In Progress
+owner: Project Lead
+title: Core Experience Contract
+scope:
+  included:
+  - GD-100 version 0.1.0 Draft
+  excluded:
+  - GD-101 and all other Game Design documents
+  - technical specifications and Architecture Decisions
+definition_of_done:
+- GD-100 defines the shared Core Gameplay Loop and all boundaries assigned by the approved work request.
+- Repository validators, mutation suites and git diff checks pass.
+- GD-100 is submitted to the applicable document review; Work-Package closure requires separate approval and closure evidence.
+findings: []
+architecture_decisions:
+- AD-008
+transition_history:
+- previous: Planned
+  new: Ready
+  timestamp: '2026-08-25T00:00:00Z'
+  responsible_role: Project Lead
+  evidence_references:
+  - project-bible/evidence/work-packages/WP-008.yml
+  - project-bible/governance/PB-998_Architecture_Decisions.md
+- previous: Ready
+  new: In Progress
+  timestamp: '2026-08-25T00:01:00Z'
+  responsible_role: Project Lead
+  evidence_references:
+  - project-bible/evidence/work-packages/WP-008.yml
+transition_evidence:
+- 'Planned -> Ready at 2026-08-25T00:00:00Z by Project Lead: scope, Definition of Done and accepted prerequisite AD-008 were recorded.'
+- 'Ready -> In Progress at 2026-08-25T00:01:00Z by Project Lead: bounded authoring of GD-100 was authorized.'
+evidence_references:
+- project-bible/game-design/GD-100_Core_Gameplay_Loop.md
+- project-bible/governance/PB-997_Governance_Review_Process.md
+- project-bible/governance/PB-998_Architecture_Decisions.md
+gate_evidence:
+  ready: []
+  verification: []
+  closed: {}
+closure_evidence: []
+historical_completeness:
+  status: complete
